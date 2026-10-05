@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CFB Top 25</title>
+<meta name="description" content="A college football Top 25 built from Strength of Record, Strength of Schedule and head-to-head results, with every placement explained.">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%8F%88%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="site">
+    <h1>CFB Top 25</h1>
+    <p class="tagline">
+      Ranked on Strength of Record and Strength of Schedule, then reordered so as few
+      head-to-head results as possible are contradicted. Every placement below opens
+      to show exactly why it is there.
+    </p>
+    <div class="controls">
+      <label for="week-select">Snapshot</label>
+      <select id="week-select"></select>
+      <button type="button" class="btn" id="theme-toggle" aria-pressed="false">Dark mode</button>
+      <span class="stamp" id="stamp"></span>
+    </div>
+    <p class="banner warn" id="banner-stale" hidden></p>
+    <p class="banner info" id="banner-sample" hidden></p>
+    <p class="banner warn" id="banner-error" hidden></p>
+  </header>
+
+  <main>
+    <section id="top25">
+      <h2>The Top 25</h2>
+      <ul class="pill-row" id="summary"></ul>
+      <div class="card">
+        <table id="rankings-table">
+          <caption id="rankings-caption">Select any row to see how that placement was reached.</caption>
+          <thead>
+            <tr>
+              <th scope="col" class="num">#</th>
+              <th scope="col">Move</th>
+              <th scope="col">Team</th>
+              <th scope="col" class="col-opt">Conf</th>
+              <th scope="col">Rec</th>
+              <th scope="col" class="num">SoR</th>
+              <th scope="col" class="num col-opt">SoS</th>
+              <th scope="col" class="num col-opt">FPI</th>
+              <th scope="col" class="num col-opt">Base</th>
+              <th scope="col">Notes</th>
+              <th scope="col" class="col-chev"><span class="sr-only">Expand</span></th>
+            </tr>
+          </thead>
+          <tbody id="rankings-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="contradictions">
+      <h2>Contradictions</h2>
+      <p class="lede">
+        When A beats B, B beats C and C beats A, no ordering can satisfy all three.
+        These are the loops in this week's results and which result was set aside in each.
+      </p>
+      <div id="cycles"></div>
+    </section>
+
+    <section id="overridden">
+      <h2>Results the ranking goes against</h2>
+      <p class="lede">
+        Every head-to-head result this ranking contradicts, least convincing first.
+        A win counts for less when it was narrow, at home, or against the power ratings &mdash;
+        and moving a team far from its resume position costs more than moving it a little.
+      </p>
+      <div class="card"><div id="overridden-list"></div></div>
+    </section>
+
+    <section id="regressions">
+      <h2>Upset regressions</h2>
+      <p class="lede">
+        When a result spans a wide gap, both teams are pulled toward their midpoint:
+        the upset says the winner was underrated and the loser overrated.
+      </p>
+      <div class="card"><div id="regression-list"></div></div>
+    </section>
+
+    <section id="justmissed">
+      <h2>Just missed</h2>
+      <p class="lede">The rest of the candidate pool, in order.</p>
+      <div class="card"><div id="tail-list"></div></div>
+    </section>
+  </main>
+
+  <footer class="site">
+    <p id="attribution"></p>
+    <p>
+      <a href="methodology.html">Full methodology</a> &middot;
+      <a href="data/rankings.json">Raw JSON</a> &middot;
+      <a href="https://github.com/thanejohannsen/CFB_Top25">Source</a>
+    </p>
+    <noscript><p>This page renders from <a href="data/rankings.json">data/rankings.json</a>, which contains the full ranking and every justification.</p></noscript>
+  </footer>
+
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

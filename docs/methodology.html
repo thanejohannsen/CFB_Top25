@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Methodology &mdash; CFB Top 25</title>
+<meta name="description" content="How the CFB Top 25 is computed: Strength of Record and Strength of Schedule, resume adjustment, upset regression, and weighted head-to-head ordering.">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%8F%88%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<div class="wrap">
+  <header class="site">
+    <h1>Methodology</h1>
+    <p class="tagline">
+      Five stages, every weight in one config file, and nothing hidden.
+      <a href="index.html">Back to the rankings</a>.
+    </p>
+    <p class="banner info" id="live-config" hidden></p>
+  </header>
+
+  <main>
+    <section>
+      <h2>The short version</h2>
+      <p class="lede">
+        Rank everyone by how good their record is for the schedule they played. Adjust for
+        what their losses actually look like. Then shuffle the order so the ranking
+        contradicts as few head-to-head results as possible &mdash; weighing how convincing
+        each result was against how far a team would have to move from where its resume
+        put it.
+      </p>
+    </section>
+
+    <section>
+      <h2>Stage 1 &mdash; Resume order</h2>
+      <div class="card"><div class="card-body">
+        <p class="formula" id="f-stage1">base = w_sor &times; SoR_rank + w_sos &times; SoS_rank</p>
+        <p class="lede">
+          <b>Strength of Record</b> is how impressive a team's win&ndash;loss record is given
+          who it played. <b>Strength of Schedule</b> is how hard that schedule was. Both
+          arrive as national ranks where 1 is best (for schedule, toughest), so the score
+          is a weighted rank average and lower is better.
+        </p>
+        <p class="lede">
+          SoR carries most of the weight because schedule strength on its own rewards no
+          one for winning: a team that loses every game to good opponents would top a
+          pure SoS list. The schedule term is there so a team cannot sit near the top by
+          feasting on a weak slate. It cuts the other way too, and this is a real
+          consequence rather than a bug: a team with a top-ten resume and a bottom-third
+          schedule will sit outside the top ten here.
+        </p>
+      </div></div>
+    </section>
+
+    <section>
+      <h2>Stage 2 &mdash; Resume adjustment</h2>
+      <div class="card"><div class="card-body">
+        <p class="lede">
+          Strength of Record knows who you played but not <em>how</em> you lost. A
+          three-point road loss to the eventual best team in the country and a 24-point
+          home loss to a middling one can produce the same SoR. They are not the same
+          result, so three penalties adjust the base score:
+        </p>
+        <ul class="reasons">
+          <li><b>Loss quality</b> &mdash; for each defeat, half the margin once venue is
+            accounted for, half the weakness of whoever beat you.</li>
+          <li><b>Best win</b> &mdash; how good the best team you beat was.</li>
+          <li><b>Game control</b> &mdash; the feed's average in-game win probability rank:
+            did you lead comfortably, or survive?</li>
+        </ul>
+        <p class="lede">
+          Each is a z-score scaled into rank points, so the adjustment is measured against
+          how teams actually vary this season rather than an arbitrary constant.
+        </p>
+      </div></div>
+    </section>
+
+    <section>
+      <h2>Stage 3 &mdash; Upset regression</h2>
+      <div class="card"><div class="card-body">
+        <p class="lede">
+          When a result spans a wide gap &mdash; say the 38th-best resume beats the 5th
+          &mdash; it is evidence that <em>both</em> teams were mis-rated, not just one. So
+          both are pulled toward the midpoint of their scores and the later stages sort
+          them out from there. The winner is not teleported to the top, and the loser does
+          not get to pretend the game never happened.
+        </p>
+        <p class="lede">
+          The pull is deliberately partial. At full strength the stage fights stage 4,
+          which simply drags the winner back where it started, and the result swings
+          wildly from week to week for no gain.
+        </p>
+      </div></div>
+    </section>
+
+    <section>
+      <h2>Stage 4 &mdash; Weighted head-to-head</h2>
+      <div class="card"><div class="card-body">
+        <p class="formula">cost(order) = strength &times; &Sigma; weight(overridden result) + drift_weight &times; &Sigma; |position &minus; base position|<sup>drift_exponent</sup></p>
+        <p class="lede">
+          Head-to-head is a strong preference, not an absolute rule. The ranking is the
+          ordering that minimises the cost above, so the results it ends up contradicting
+          are by construction the least convincing ones. Each result's
+          <b>conviction weight</b> comes from four signals:
+        </p>
+        <ul class="reasons">
+          <li><b>Location-adjusted margin</b> &mdash; winning on the road is worth more than
+            the same margin at home. A one-point home win scores <em>negative</em>: home
+            field alone is worth more than the margin.</li>
+          <li><b>FPI gap</b> &mdash; a result that contradicts the power ratings is weaker
+            evidence that the winner is genuinely better.</li>
+          <li><b>Recency</b> &mdash; later games say more about current strength.</li>
+          <li><b>Common opponents</b> &mdash; how the two fared against the teams they both
+            played.</li>
+        </ul>
+        <h3>Why not simply enforce every result?</h3>
+        <p class="lede">
+          Because strict enforcement means sorting the head-to-head graph topologically,
+          which holds a team behind <em>every</em> team its conqueror is behind. Schedule
+          density tracks schedule strength, so that systematically sinks teams who play
+          hard schedules and floats teams who play nobody. Tested on a real completed
+          season it put three teams with bottom-third schedules in the top twelve while
+          dropping the two best resumes to 17th and 20th.
+        </p>
+        <p class="lede">
+          Real head-to-head graphs are also not tidy triangles. One completed season
+          produced a single tangle of 22 mutually entangled teams, where resolving each
+          loop separately is not even computable. Weighing the results instead has neither
+          problem, and a team nobody in the pool played simply stays where its resume put it.
+        </p>
+        <p class="lede">
+          The <b>drift exponent</b> is what keeps a lone result from carrying a team across
+          the board: because long moves cost disproportionately more, how far a result can
+          move a team scales with how convincing that result was. A marginal win buys a few
+          places; an emphatic one buys many.
+        </p>
+      </div></div>
+    </section>
+
+    <section>
+      <h2>Stage 5 &mdash; Reporting contradictions</h2>
+      <div class="card"><div class="card-body">
+        <p class="lede">
+          Loops are found with Tarjan's algorithm for strongly connected components. They
+          are <em>reported</em>, not resolved &mdash; stage 4 already decided the order. Every
+          loop and every overridden result is published on the front page, because
+          &ldquo;my team beat them and is still ranked below them&rdquo; deserves a real answer.
+        </p>
+      </div></div>
+    </section>
+
+    <section>
+      <h2>Current weights</h2>
+      <div class="card"><div class="card-body" id="weights">
+        <p class="empty">Loading the configuration this snapshot was built with&hellip;</p>
+      </div></div>
+    </section>
+
+    <section>
+      <h2>Known limitations</h2>
+      <div class="card"><div class="card-body">
+        <ul class="reasons">
+          <li>The schedule term rewards playing a hard schedule independently of results, so
+            a good team in a weak conference is penalised for something it only partly controls.</li>
+          <li>Strength of Record, Strength of Schedule and FPI are ESPN metrics served through
+            CollegeFootballData.com. They are third-party opinions and they move during the week.</li>
+          <li>The ordering is found by local search. It is a strong local optimum, not a proven
+            global one; in practice it reaches the same answer from any starting permutation of
+            the inputs, but that is an observation rather than a guarantee.</li>
+          <li>A chain of individually reasonable moves can still add up to a large one: if A beat
+            B, B beat C and C beat D, A can end up well above its resume position. The
+            per-team drift is published so this is visible rather than hidden.</li>
+          <li>The FPI feed has no per-week endpoint, so a week's snapshot is taken when it is
+            generated and earlier weeks cannot be reconstructed after the fact.</li>
+          <li>Early in a season Strength of Record is volatile, and an undefeated team with a
+            soft schedule can look better than it is.</li>
+        </ul>
+      </div></div>
+    </section>
+  </main>
+
+  <footer class="site">
+    <p id="attribution"></p>
+    <p><a href="index.html">Rankings</a> &middot; <a href="data/rankings.json">Raw JSON</a> &middot;
+       <a href="https://github.com/thanejohannsen/CFB_Top25">Source</a></p>
+  </footer>
+</div>
+
+<script>
+/* Read the weights out of the snapshot so this page can never describe a
+   configuration the published ranking was not actually built with. */
+(function () {
+  "use strict";
+  function el(tag, attrs, kids) {
+    var n = document.createElement(tag);
+    Object.keys(attrs || {}).forEach(function (k) {
+      if (k === "class") n.className = attrs[k]; else if (k === "text") n.textContent = attrs[k];
+      else n.setAttribute(k, attrs[k]);
+    });
+    (kids || []).forEach(function (c) { n.appendChild(typeof c === "string" ? document.createTextNode(c) : c); });
+    return n;
+  }
+  fetch("data/rankings.json?t=" + Date.now(), { cache: "no-cache" })
+    .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+    .then(function (data) {
+      var meta = data.meta || {}, cfg = meta.config || {};
+      var s1 = cfg.stage1 || {}, s2 = cfg.stage2 || {}, s3 = cfg.stage3 || {}, s4 = cfg.stage4 || {};
+      var ev = s4.evidence || {};
+      document.getElementById("attribution").textContent = (meta.source || {}).attribution || "";
+
+      var f = document.getElementById("f-stage1");
+      if (s1.w_sor !== undefined) {
+        f.textContent = "base = " + s1.w_sor + " × SoR_rank + " + s1.w_sos + " × SoS_rank";
+      }
+
+      var banner = document.getElementById("live-config");
+      var season = meta.season || {};
+      banner.textContent = "Showing the configuration behind " + (season.label || "") + " " +
+        (season.year || "") + ", generated " + String(meta.generated_at || "").replace("T", " ").replace("Z", " UTC") + ".";
+      banner.hidden = false;
+
+      var rows = [
+        ["Strength of Record weight", s1.w_sor],
+        ["Strength of Schedule weight", s1.w_sos],
+        ["Candidate pool size", s1.pool_size],
+        ["Loss-quality weight", s2.w_loss_quality],
+        ["Best-win weight", s2.w_best_win],
+        ["Game-control weight", s2.w_game_control],
+        ["Upset regression", s3.enabled ? "on" : "off"],
+        ["  gap that triggers it", s3.gap],
+        ["  strength (1.0 = full midpoint)", s3.strength],
+        ["Head-to-head strength", s4.strength],
+        ["Drift weight", s4.drift_weight],
+        ["Drift exponent", s4.drift_exponent],
+        ["Split-series policy", s4.split_series],
+        ["  margin weight", ev.w_margin],
+        ["  FPI-gap weight", ev.w_fpi_gap],
+        ["  recency weight", ev.w_recency],
+        ["  common-opponent weight", ev.w_common_opponents],
+        ["  home-field points", ev.home_field_points],
+        ["  margin cap", ev.margin_cap]
+      ];
+      var dl = el("dl", { class: "kv" });
+      rows.forEach(function (r) {
+        if (r[1] === undefined || r[1] === null) return;
+        dl.appendChild(el("dt", { text: r[0] }));
+        dl.appendChild(el("dd", { text: String(r[1]) }));
+      });
+      var host = document.getElementById("weights");
+      while (host.firstChild) host.removeChild(host.firstChild);
+      host.appendChild(dl);
+      if (data.methodology && data.methodology.summary) {
+        host.appendChild(el("p", { class: "formula", text: data.methodology.summary }));
+      }
+    })
+    .catch(function () {
+      document.getElementById("weights").textContent =
+        "Could not load data/rankings.json, so the live weights are unavailable.";
+    });
+})();
+</script>
+</body>
+</html>

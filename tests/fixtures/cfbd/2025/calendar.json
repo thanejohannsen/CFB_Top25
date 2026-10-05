@@ -1,0 +1,121 @@
+[
+ {
+  "endDate": "2025-09-02T06:59:00.000Z",
+  "season": 2025,
+  "seasonType": "regular",
+  "startDate": "2025-08-23T07:00:00.000Z",
+  "week": 1
+ },
+ {
+  "endDate": "2025-09-08T06:59:00.000Z",
+  "season": 2025,
+  "seasonType": "regular",
+  "startDate": "2025-09-02T07:00:00.000Z",
+  "week": 2
+ },
+ {
+  "endDate": "2025-09-15T06:59:00.000Z",
+  "season": 2025,
+  "seasonType": "regular",
+  "startDate": "2025-09-08T07:00:00.000Z",
+  "week": 3
+ },
+ {
+  "endDate": "2025-09-22T06:59:00.000Z",
+  "season": 2025,
+  "seasonType": "regular",
+  "startDate": "2025-09-15T07:00:00.000Z",
+  "week": 4
+ },
+ {
+  "endDate": "2025-09-29T06:59:00.000Z",
+  "season": 2025,
+  "seasonType": "regular",
+  "startDate": "2025-09-22T07:00:00.000Z",
+  "week": 5
+ },
+ {
+  "endDate": "2025-10-06T06:59:00.000Z",
+  "season": 2025,
+  "seasonType": "regular",
+  "startDate": "2025-09-29T07:00:00.000Z",
+  "week": 6
+ },
+ {
+  "endDate": "2025-10-13T06:59:00.000Z",
+  "season": 2025,
+  "seasonType": "regular",
+  "startDate": "2025-10-06T07:00:00.000Z",
+  "week": 7
+ },
+ {
+  "endDate": "2025-10-20T06:59:00.000Z",
+  "season": 2025,
+  "seasonType": "regular",
+  "startDate": "2025-10-13T07:00:00.000Z",
+  "week": 8
+ },
+ {
+  "endDate": "2025-10-27T06:59:00.000Z",
+  "season": 2025,
+  "seasonType": "regular",
+  "startDate": "2025-10-20T07:00:00.000Z",
+  "week": 9
+ },
+ {
+  "endDate": "2025-11-03T07:59:00.000Z",
+  "season": 2025,
+  "seasonType": "regular",
+  "startDate": "2025-10-27T07:00:00.000Z",
+  "week": 10
+ },
+ {
+  "endDate": "2025-11-10T07:59:00.000Z",
+  "season": 2025,
+  "seasonType": "regular",
+  "startDate": "2025-11-03T08:00:00.000Z",
+  "week": 11
+ },
+ {
+  "endDate": "2025-11-17T07:59:00.000Z",
+  "season": 2025,
+  "seasonType": "regular",
+  "startDate": "2025-11-10T08:00:00.000Z",
+  "week": 12
+ },
+ {
+  "endDate": "2025-11-24T07:59:00.000Z",
+  "season": 2025,
+  "seasonType": "regular",
+  "startDate": "2025-11-17T08:00:00.000Z",
+  "week": 13
+ },
+ {
+  "endDate": "2025-12-01T07:59:00.000Z",
+  "season": 2025,
+  "seasonType": "regular",
+  "startDate": "2025-11-24T08:00:00.000Z",
+  "week": 14
+ },
+ {
+  "endDate": "2025-12-08T07:59:00.000Z",
+  "season": 2025,
+  "seasonType": "regular",
+  "startDate": "2025-12-01T08:00:00.000Z",
+  "week": 15
+ },
+ {
+  "endDate": "2025-12-13T07:59:00.000Z",
+  "season": 2025,
+  "seasonType": "regular",
+  "startDate": "2025-12-08T08:00:00.000Z",
+  "week": 16
+ },
+ {
+  "endDate": "2026-01-21T07:59:00.000Z",
+  "season": 2025,
+  "seasonType": "postseason",
+  "startDate": "2025-12-13T08:00:00.000Z",
+  "week": 1
+ }
+]

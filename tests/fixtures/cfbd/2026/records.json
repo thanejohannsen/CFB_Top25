@@ -1,0 +1,12278 @@
+[
+ {
+  "classification": "fbs",
+  "conference": "SEC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Auburn",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Southern Athletic",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Birmingham-Southern",
+  "total": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "American Athletic",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "UAB",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Sun Belt",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "South Alabama",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "NESCAC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Amherst",
+  "total": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "SEC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Arkansas",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Big 12",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Arizona State",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Rocky Mountain",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Colorado Mesa",
+  "total": {
+   "games": 6,
+   "losses": 3,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Big 12",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Arizona",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Big Sky",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Cal Poly",
+  "total": {
+   "games": 6,
+   "losses": 3,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Mid-American",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Sacramento State",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "So. Cal.",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Claremont Mudd Scripps",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "MSCAC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Bridgewater State",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Pac-12",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "San Diego State",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Mountain West",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "San José State",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "ACC",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Stanford",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "ACC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "California",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Big Ten",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "UCLA",
+  "total": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "So. Cal.",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Redlands",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Big Ten",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "USC",
+  "total": {
+   "games": 6,
+   "losses": 1,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "CCIW",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Carroll (WI)",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "NESCAC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Colby",
+  "total": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Pac-12",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Colorado State",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Big 12",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Colorado",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Commonwealth Coast",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Curry",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "FBS Independents",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "UConn",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Ivy",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Yale",
+  "total": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Patriot",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Georgetown",
+  "total": {
+   "games": 4,
+   "losses": 4,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "MEAC",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Howard",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Conference USA",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Delaware",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "American Rivers",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Dubuque",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "SWAC",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Florida A&M",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "ACC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Florida State",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Conference USA",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Jacksonville State",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Pioneer",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Stetson",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "SEC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Florida",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "American Athletic",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "South Florida",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "ACC",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Georgia Tech",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "SIAC",
+  "conferenceGames": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Morehouse",
+  "total": {
+   "games": 6,
+   "losses": 4,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "SEC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Georgia",
+  "total": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Mountain West",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Hawai'i",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "American Rivers",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Buena Vista",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Midwest",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Grinnell",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Big 12",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Iowa State",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Midwest",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "team": "Luther",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Pac-12",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Boise State",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Big Sky",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Idaho",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "CCIW",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Elmhurst",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "CCIW",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Millikin",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "CCIW",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "North Park",
+  "total": {
+   "games": 5,
+   "losses": 5,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Big Ten",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Northwestern",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "MVFC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Southern Illinois",
+  "total": {
+   "games": 6,
+   "losses": 3,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Midwest",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Chicago",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "NEWMAC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Springfield",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "North Coast",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "DePauw",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Big Ten",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Indiana",
+  "total": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Heartland",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Rose Hulman",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "FBS Independents",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Notre Dame",
+  "total": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "North Coast",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Wabash",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Mid America",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Pittsburg State",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "MVFC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Murray State",
+  "total": {
+   "games": 6,
+   "losses": 5,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "SEC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Kentucky",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "ACC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Louisville",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Conference USA",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Western Kentucky",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "SEC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "LSU",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "NACC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Eureka",
+  "total": {
+   "games": 5,
+   "losses": 5,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "ACC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Boston College",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Patriot",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Holy Cross",
+  "total": {
+   "games": 6,
+   "losses": 4,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Ivy",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Harvard",
+  "total": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "NEWMAC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "MIT",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "MSCAC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Mass Maritime",
+  "total": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "NESCAC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Tufts",
+  "total": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Mid-American",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Massachusetts",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "MSCAC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Fitchburg State",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Centennial",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Johns Hopkins",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Coastal Athletic",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Towson",
+  "total": {
+   "games": 6,
+   "losses": 6,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Big Ten",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Maryland",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "NESCAC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Bates",
+  "total": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Minnesota",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Augsburg",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "GLIAC",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Grand Valley State",
+  "total": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Michigan",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Kalamazoo",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Big Ten",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Michigan State",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "GLIAC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Northern Michigan",
+  "total": {
+   "games": 5,
+   "losses": 5,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "GLIAC",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Saginaw Valley State",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Big Ten",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Michigan",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "GLIAC",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Wayne State (MI)",
+  "total": {
+   "games": 5,
+   "losses": 5,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Northern Sun",
+  "conferenceGames": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Bemidji State",
+  "total": {
+   "games": 6,
+   "losses": 4,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Minnesota",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "St. Olaf",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Northern Sun",
+  "conferenceGames": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "team": "Minnesota Duluth",
+  "total": {
+   "games": 6,
+   "losses": 2,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Big Ten",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Minnesota",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Mid America",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Missouri Western",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Mid America",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Northwest Missouri State",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "SEC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Missouri",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "North Coast",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "team": "Washington St. Louis",
+  "total": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "SEC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Ole Miss",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Presidents'",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Grove City",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Big Sky",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Montana State",
+  "total": {
+   "games": 6,
+   "losses": 1,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Big Sky",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "team": "Montana",
+  "total": {
+   "games": 6,
+   "losses": 1,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "ACC",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Duke",
+  "total": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "American Athletic",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "East Carolina",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "ACC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "NC State",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "ACC",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "North Carolina",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "ACC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Wake Forest",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "MVFC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "North Dakota",
+  "total": {
+   "games": 6,
+   "losses": 1,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Big Ten",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Nebraska",
+  "total": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Ivy",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Dartmouth",
+  "total": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Coastal Athletic",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "New Hampshire",
+  "total": {
+   "games": 6,
+   "losses": 4,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Minnesota",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Hamline",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Ivy",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Princeton",
+  "total": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Big Ten",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Rutgers",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Conference USA",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "New Mexico State",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Mountain West",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "New Mexico",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Ivy",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Columbia",
+  "total": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Ivy",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Cornell",
+  "total": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Empire 8",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Hartwick",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Liberty League",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Hobart",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Liberty League",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Ithaca",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "ACC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Syracuse",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Liberty League",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Rochester (NY)",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Ohio",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Baldwin Wallace",
+  "total": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Mid-American",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Bowling Green",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Ohio",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Heidelberg",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Mid-American",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Miami (OH)",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Big Ten",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Ohio State",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Mid-American",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Ohio",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Independent DII",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Northeastern State",
+  "total": {
+   "games": 6,
+   "losses": 3,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Big 12",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Oklahoma State",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Great American",
+  "conferenceGames": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "team": "Southeastern Oklahoma State",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Great American",
+  "conferenceGames": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Southern Nazarene",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "SEC",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Oklahoma",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "American Athletic",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Tulsa",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Northwest",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Linfield",
+  "total": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Pac-12",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Oregon State",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Northwest",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Pacific (OR)",
+  "total": {
+   "games": 4,
+   "losses": 4,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Pennsylvania State Athletic",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Lock Haven",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Pennsylvania State Athletic",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 4,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Millersville",
+  "total": {
+   "games": 5,
+   "losses": 5,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Big Ten",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Penn State",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Pennsylvania State Athletic",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "team": "Slippery Rock",
+  "total": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Landmark Conference",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Susquehanna",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "American Athletic",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Temple",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Ivy",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Pennsylvania",
+  "total": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "ACC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Pittsburgh",
+  "total": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Patriot",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Villanova",
+  "total": {
+   "games": 6,
+   "losses": 4,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Pennsylvania State Athletic",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "West Chester",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Ivy",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Brown",
+  "total": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Coastal Athletic",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Rhode Island",
+  "total": {
+   "games": 6,
+   "losses": 3,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "ACC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Clemson",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Southern",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Furman",
+  "total": {
+   "games": 6,
+   "losses": 4,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "MVFC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "South Dakota",
+  "total": {
+   "games": 6,
+   "losses": 2,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "American Athletic",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Memphis",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Southern",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Chattanooga",
+  "total": {
+   "games": 6,
+   "losses": 3,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Liberty League",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Union",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "SEC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Vanderbilt",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Big 12",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Baylor",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "American Southwest",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "McMurry",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "American Athletic",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Rice",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "SEC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Texas A&M",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Landmark Conference",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Juniata",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Mid Atlantic",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "King's",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Big 12",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Houston",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "American Athletic",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "North Texas",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "SEC",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Texas",
+  "total": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Big 12",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "BYU",
+  "total": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Big Sky",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Southern Utah",
+  "total": {
+   "games": 6,
+   "losses": 4,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Big 12",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Utah",
+  "total": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Midwest",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 4,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Knox",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Sun Belt",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "James Madison",
+  "total": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Patriot",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Richmond",
+  "total": {
+   "games": 6,
+   "losses": 1,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "ACC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Virginia",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "ACC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Virginia Tech",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Midwest",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "team": "Lake Forest",
+  "total": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "American Rivers",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Loras",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Big Ten",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Washington",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Pac-12",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Washington State",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Midwest",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 4,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Beloit",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Midwest",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Lawrence",
+  "total": {
+   "games": 4,
+   "losses": 4,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Wisconsin",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Wisconsin Oshkosh",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Wisconsin",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Wisconsin Platteville",
+  "total": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Commonwealth Coast",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Maine Maritime",
+  "total": {
+   "games": 4,
+   "losses": 4,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Big Ten",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Wisconsin",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Sun Belt",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Marshall",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Big 12",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "West Virginia",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Pac-12",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Fresno State",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "MVFC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Indiana State",
+  "total": {
+   "games": 6,
+   "losses": 4,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "NEC",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Stonehill",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "USA South",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "North Carolina Wesleyan",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Sun Belt",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Georgia Southern",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "USA South",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Methodist",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Southland",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "UT Rio Grande Valley",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "New Jersey",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Vermont State Castleton",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Sun Belt",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Old Dominion",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Old Dominion",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Hampden Sydney",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Pioneer",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "San Diego",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Big Sky",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "UC Davis",
+  "total": {
+   "games": 6,
+   "losses": 2,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Big Sky",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Idaho State",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "CCIW",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Illinois Wesleyan",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Great Midwest Athletic",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Ashland",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Sun Belt",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Louisiana",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Coastal Athletic",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Maine",
+  "total": {
+   "games": 6,
+   "losses": 5,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Ohio",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Marietta",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Great American",
+  "conferenceGames": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Oklahoma Baptist",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Patriot",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Lafayette",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Landmark Conference",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Moravian",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Sun Belt",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Coastal Carolina",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Pac-12",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Texas State",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Pac-12",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Utah State",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "CIAA",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "team": "Virginia State",
+  "total": {
+   "games": 6,
+   "losses": 1,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Big Sky",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Eastern Washington",
+  "total": {
+   "games": 6,
+   "losses": 5,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Ohio",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Muskingum",
+  "total": {
+   "games": 4,
+   "losses": 4,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "SEC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Alabama",
+  "total": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "NESCAC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Wesleyan (CT)",
+  "total": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Conference USA",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Kennesaw State",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "NESCAC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Bowdoin",
+  "total": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Mountain East",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Frostburg State",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "SEC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Mississippi State",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "NESCAC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Hamilton",
+  "total": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "American Athletic",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Army",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "South Atlantic",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Wingate",
+  "total": {
+   "games": 6,
+   "losses": 4,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "North Coast",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Kenyon",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Michigan",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Olivet",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Big Ten",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Illinois",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Ohio",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Otterbein",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Empire 8",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Alfred",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Carolinas",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Ferrum",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Pennsylvania State Athletic",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 4,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Gannon",
+  "total": {
+   "games": 5,
+   "losses": 5,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Empire 8",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "St. John Fisher",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Minnesota",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "St. Scholastica",
+  "total": {
+   "games": 4,
+   "losses": 4,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "MSCAC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "UMass Dartmouth",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Southern Athletic",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Trinity (TX)",
+  "total": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Mid Atlantic",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Lebanon Valley",
+  "total": {
+   "games": 4,
+   "losses": 4,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Great Lakes",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Upper Iowa",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Empire 8",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Utica",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "North Coast",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 4,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Oberlin",
+  "total": {
+   "games": 5,
+   "losses": 5,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "CIAA",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "St. Augustine's",
+  "total": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "CCIW",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Wheaton (IL)",
+  "total": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Landmark Conference",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Wilkes",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Coastal Athletic",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "UAlbany",
+  "total": {
+   "games": 6,
+   "losses": 3,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "MSCAC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Worcester State",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "NACC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Concordia (WI)",
+  "total": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "So. Cal.",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Chapman",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Northwest",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "George Fox",
+  "total": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Southern Collegiate Athletic",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Gallaudet",
+  "total": {
+   "games": 4,
+   "losses": 4,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Southern Athletic",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Hendrix",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Ohio",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Capital",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Northern Sun",
+  "conferenceGames": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "team": "Northern State",
+  "total": {
+   "games": 6,
+   "losses": 1,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Ohio",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Mount Union",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Ohio",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Ohio Northern",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Upper Midwest",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Westminster (MO)",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Great Midwest Athletic",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Lake Erie",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Upper Midwest",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Martin Luther",
+  "total": {
+   "games": 4,
+   "losses": 4,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Commonwealth Coast",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Endicott",
+  "total": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Mountain East",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "West Virginia Wesleyan",
+  "total": {
+   "games": 6,
+   "losses": 4,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Mid Atlantic",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Stevenson",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "SIAC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Benedict",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Upper Midwest",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Crown",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "USA South",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "LaGrange",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Northern Sun",
+  "conferenceGames": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "University of Mary",
+  "total": {
+   "games": 6,
+   "losses": 3,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Northern Sun",
+  "conferenceGames": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Minot State",
+  "total": {
+   "games": 6,
+   "losses": 5,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Upper Midwest",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Northwestern (MN)",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Mountain East",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Notre Dame College",
+  "total": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Pennsylvania State Athletic",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Seton Hill",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Rocky Mountain",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "South Dakota Mines",
+  "total": {
+   "games": 6,
+   "losses": 1,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Great Midwest Athletic",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Tiffin University",
+  "total": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "UAC",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Abilene Christian",
+  "total": {
+   "games": 6,
+   "losses": 4,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Rocky Mountain",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 4,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Adams State",
+  "total": {
+   "games": 6,
+   "losses": 6,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Michigan",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Adrian",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Mountain West",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Air Force",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Mid-American",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Akron",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "SWAC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Alabama A&M",
+  "total": {
+   "games": 6,
+   "losses": 2,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "SWAC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Alabama State",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "SIAC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Albany State",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Mid Atlantic",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Albright",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "SWAC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Alcorn State",
+  "total": {
+   "games": 6,
+   "losses": 3,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Mountain East",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Alderson-Broaddus",
+  "total": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Presidents'",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Allegheny",
+  "total": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "SIAC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Allen",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Northeast 10",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "American International",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Heartland",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Anderson (IN)",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Lone Star",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Angelo State",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Sun Belt",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "App State",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Great American",
+  "conferenceGames": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Arkansas Monticello",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "SWAC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Arkansas-Pine Bluff",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Sun Belt",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Arkansas State",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Great American",
+  "conferenceGames": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Arkansas Tech",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Northeast 10",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Assumption",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "CCIW",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Augustana (IL)",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Northern Sun",
+  "conferenceGames": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Augustana (SD)",
+  "total": {
+   "games": 6,
+   "losses": 2,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "NACC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Aurora",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Southern Collegiate Athletic",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Austin",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "UAC",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Austin Peay",
+  "total": {
+   "games": 6,
+   "losses": 1,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Old Dominion",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Averett",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "So. Cal.",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Azusa Pacific",
+  "total": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Mid-American",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Ball State",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "USA South",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Belhaven",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Northeast 10",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Bentley",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Presidents'",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Bethany (WV)",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "SWAC",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Bethune-Cookman",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Rocky Mountain",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Black Hills State",
+  "total": {
+   "games": 6,
+   "losses": 2,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Pennsylvania State Athletic",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Bloomsburg",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Heartland",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Bluffton",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "CIAA",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Bowie State",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Old Dominion",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Bridgewater",
+  "total": {
+   "games": 4,
+   "losses": 4,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Patriot",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Bucknell",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Mid-American",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Buffalo",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Liberty League",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Buffalo State",
+  "total": {
+   "games": 5,
+   "losses": 5,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Pioneer",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Butler",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "So. Cal.",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Cal Lutheran",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Coastal Athletic",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Campbell",
+  "total": {
+   "games": 6,
+   "losses": 1,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Minnesota",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Carleton",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Presidents'",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Carnegie Mellon",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "South Atlantic",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Carson Newman",
+  "total": {
+   "games": 6,
+   "losses": 1,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "CCIW",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Carthage",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "South Atlantic",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Catawba",
+  "total": {
+   "games": 6,
+   "losses": 3,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Landmark Conference",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Catholic",
+  "total": {
+   "games": 5,
+   "losses": 5,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "UAC",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Central Arkansas",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "NEC",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Central Connecticut",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Big 12",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "UCF",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Mid-American",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Central Michigan",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Mid America",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Central Missouri",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "SIAC",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Central State",
+  "total": {
+   "games": 6,
+   "losses": 3,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Lone Star",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Central Washington",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Southern Athletic",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Centre",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Mid America",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Central Oklahoma",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Rocky Mountain",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 4,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Chadron State",
+  "total": {
+   "games": 6,
+   "losses": 5,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "OVC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Charleston Southern",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Mountain East",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Charleston (WV)",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Pennsylvania State Athletic",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Cheyney",
+  "total": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "FCS Independents",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Chicago State",
+  "total": {
+   "games": 6,
+   "losses": 5,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Big 12",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Cincinnati",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Pennsylvania State Athletic",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Clarion",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "American Rivers",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Coe",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Patriot",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Colgate",
+  "total": {
+   "games": 6,
+   "losses": 2,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Rocky Mountain",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Colorado School of Mines",
+  "total": {
+   "games": 6,
+   "losses": 2,
+   "ties": 1,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Mountain East",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Concord",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "NACC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Concordia Chicago",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Minnesota",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Concordia (MN)",
+  "total": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Midwest",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Cornell (IA)",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Pioneer",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Davidson",
+  "total": {
+   "games": 6,
+   "losses": 4,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Pioneer",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Dayton",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "MEAC",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Delaware State",
+  "total": {
+   "games": 6,
+   "losses": 3,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Gulf South",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Delta State",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "North Coast",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "team": "Denison",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Centennial",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Dickinson",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Pioneer",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Drake",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "NEC",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Duquesne",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Pennsylvania State Athletic",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "East Stroudsburg",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Great American",
+  "conferenceGames": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "team": "East Central",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Southern",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "East Tennessee State",
+  "total": {
+   "games": 6,
+   "losses": 2,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "American Southwest",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "East Texas Baptist",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "OVC",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Eastern Illinois",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "UAC",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Eastern Kentucky",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Mid-American",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Eastern Michigan",
+  "total": {
+   "games": 6,
+   "losses": 3,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Lone Star",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Eastern New Mexico",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Pennsylvania State Athletic",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Edinboro",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "SIAC",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "team": "Edward Waters",
+  "total": {
+   "games": 6,
+   "losses": 1,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "CIAA",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Elizabeth City State",
+  "total": {
+   "games": 5,
+   "losses": 5,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Coastal Athletic",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Elon",
+  "total": {
+   "games": 6,
+   "losses": 2,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "South Atlantic",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Emory & Henry",
+  "total": {
+   "games": 6,
+   "losses": 4,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Mid America",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Emporia State",
+  "total": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "CIAA",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Fayetteville State",
+  "total": {
+   "games": 6,
+   "losses": 3,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Mid Atlantic",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "FDU Florham",
+  "total": {
+   "games": 4,
+   "losses": 4,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "GLIAC",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Ferris State",
+  "total": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Great Midwest Athletic",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Findlay",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "American Athletic",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Florida Atlantic",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Conference USA",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Florida International",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Patriot",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Fordham",
+  "total": {
+   "games": 6,
+   "losses": 5,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Mid America",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Fort Hays",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "SIAC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Fort Valley State",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Heartland",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Franklin",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Centennial",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Franklin & Marshall",
+  "total": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Rocky Mountain",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Fort Lewis",
+  "total": {
+   "games": 6,
+   "losses": 3,
+   "ties": 1,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "OVC",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Gardner-Webb",
+  "total": {
+   "games": 6,
+   "losses": 4,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Presidents'",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Geneva",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Sun Belt",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Georgia State",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Centennial",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Gettysburg",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Mountain East",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Glenville State",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "USA South",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Greensboro",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Upper Midwest",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Greenville",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Old Dominion",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Guilford",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Coastal Athletic",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Hampton",
+  "total": {
+   "games": 6,
+   "losses": 5,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Heartland",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Hanover",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Great American",
+  "conferenceGames": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "team": "Harding",
+  "total": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Great American",
+  "conferenceGames": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "team": "Henderson State",
+  "total": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Great Midwest Athletic",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Hillsdale",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Presidents'",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Hiram",
+  "total": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Southland",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Houston Christian",
+  "total": {
+   "games": 6,
+   "losses": 3,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Commonwealth Coast",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Husson",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "NACC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Benedictine (IL)",
+  "total": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Midwest",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Illinois College",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "MVFC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Illinois State",
+  "total": {
+   "games": 6,
+   "losses": 2,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Pennsylvania State Athletic",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "team": "IU Pennsylvania",
+  "total": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Great Lakes",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Indianapolis",
+  "total": {
+   "games": 6,
+   "losses": 4,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Big Ten",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Iowa",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "SWAC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Jackson State",
+  "total": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Ohio",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "John Carroll",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "CIAA",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Johnson C. Smith",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Big 12",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Kansas",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Big 12",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Kansas State",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Mid-American",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Kent State",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "SIAC",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Kentucky State",
+  "total": {
+   "games": 6,
+   "losses": 2,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Pennsylvania State Athletic",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "team": "Kutztown",
+  "total": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Great Midwest Athletic",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Kentucky Wesleyan",
+  "total": {
+   "games": 5,
+   "losses": 5,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "So. Cal.",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "La Verne",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Southland",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Lamar",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "SIAC",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 4,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Lane College",
+  "total": {
+   "games": 6,
+   "losses": 6,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Patriot",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "team": "Lehigh",
+  "total": {
+   "games": 6,
+   "losses": 0,
+   "ties": 0,
+   "wins": 6
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "South Atlantic",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Lenoir Rhyne",
+  "total": {
+   "games": 6,
+   "losses": 4,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Northwest",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Lewis & Clark",
+  "total": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Conference USA",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Liberty",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "South Atlantic",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Limestone",
+  "total": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "CIAA",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Lincoln (PA)",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "NEC",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Long Island University",
+  "total": {
+   "games": 6,
+   "losses": 5,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Sun Belt",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Louisiana Tech",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Landmark Conference",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Lycoming",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Minnesota",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Macalester",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Heartland",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Manchester",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Northern Sun",
+  "conferenceGames": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "team": "Minnesota State",
+  "total": {
+   "games": 6,
+   "losses": 0,
+   "ties": 0,
+   "wins": 6
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Pioneer",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Marist",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "South Atlantic",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "team": "Mars Hill",
+  "total": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "American Southwest",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Mary Hardin Baylor",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "USA South",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Maryville (TN)",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Southland",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "McNeese",
+  "total": {
+   "games": 6,
+   "losses": 4,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Southern",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Mercer",
+  "total": {
+   "games": 6,
+   "losses": 2,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "NEWMAC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Merchant Marine",
+  "total": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "NEC",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Mercyhurst",
+  "total": {
+   "games": 6,
+   "losses": 5,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "ACC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Miami",
+  "total": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "GLIAC",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Michigan Tech",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Conference USA",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Middle Tennessee",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "NESCAC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Middlebury",
+  "total": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Lone Star",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Midwestern State",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "SIAC",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Miles",
+  "total": {
+   "games": 6,
+   "losses": 3,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Southern Athletic",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Millsaps",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Upper Midwest",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Minnesota Morris",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "SWAC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Mississippi Valley State",
+  "total": {
+   "games": 6,
+   "losses": 4,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Gulf South",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Mississippi College",
+  "total": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Great Lakes",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Missouri S&T",
+  "total": {
+   "games": 6,
+   "losses": 5,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Mid America",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Missouri Southern State",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Coastal Athletic",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Monmouth",
+  "total": {
+   "games": 6,
+   "losses": 2,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Pioneer",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Morehead State",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "MEAC",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Morgan State",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Heartland",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Mount St Joseph",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Centennial",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Muhlenberg",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Rocky Mountain",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "New Mexico Highlands",
+  "total": {
+   "games": 6,
+   "losses": 3,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "American Athletic",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Navy",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "MEAC",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "North Carolina Central",
+  "total": {
+   "games": 6,
+   "losses": 4,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "American Athletic",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Charlotte",
+  "total": {
+   "games": 5,
+   "losses": 5,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Sun Belt",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "UL Monroe",
+  "total": {
+   "games": 5,
+   "losses": 5,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Mid America",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Nebraska Kearney",
+  "total": {
+   "games": 5,
+   "losses": 5,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Mountain West",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "UNLV",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Mountain West",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Nevada",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "NEC",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "New Haven",
+  "total": {
+   "games": 6,
+   "losses": 5,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "New Jersey",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "The College of New Jersey",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "South Atlantic",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Newberry",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Southland",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Nicholls",
+  "total": {
+   "games": 6,
+   "losses": 4,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Coastal Athletic",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "North Carolina A&T",
+  "total": {
+   "games": 6,
+   "losses": 5,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Mountain West",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "North Dakota State",
+  "total": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "MEAC",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Norfolk State",
+  "total": {
+   "games": 6,
+   "losses": 3,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "UAC",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "North Alabama",
+  "total": {
+   "games": 6,
+   "losses": 2,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Big Sky",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Northern Colorado",
+  "total": {
+   "games": 6,
+   "losses": 4,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Mountain West",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Northern Illinois",
+  "total": {
+   "games": 4,
+   "losses": 4,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "MVFC",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Northern Iowa",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Big Sky",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Northern Arizona",
+  "total": {
+   "games": 6,
+   "losses": 2,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Southland",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Northwestern State",
+  "total": {
+   "games": 6,
+   "losses": 6,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "NEWMAC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Norwich",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "So. Cal.",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Occidental",
+  "total": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Great Midwest Athletic",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Ohio Dominican",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Big Ten",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Oregon",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Northwest",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Pacific Lutheran",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Northeast 10",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Pace",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Big Sky",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Portland State",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "SWAC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Prairie View A&M",
+  "total": {
+   "games": 6,
+   "losses": 4,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Pioneer",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Presbyterian",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Northwest",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Puget Sound",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Big Ten",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Purdue",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Old Dominion",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Randolph Macon",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Southern Athletic",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Rhodes",
+  "total": {
+   "games": 4,
+   "losses": 4,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "NEC",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Robert Morris",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "NACC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Rockford",
+  "total": {
+   "games": 5,
+   "losses": 5,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Liberty League",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Rensselaer",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Coastal Athletic",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Sacred Heart",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "New Jersey",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Salisbury",
+  "total": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Conference USA",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Sam Houston",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Southern",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Samford",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "SIAC",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Savannah State",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Southland",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "SE Louisiana",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "OVC",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Southeast Missouri State",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "CIAA",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Shaw",
+  "total": {
+   "games": 6,
+   "losses": 2,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Southern Athletic",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Sewanee",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "NEWMAC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Coast Guard",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Pennsylvania State Athletic",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 4,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Shippensburg",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Carolinas",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Shorter",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "American Rivers",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Simpson (IA)",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "ACC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "SMU",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Great American",
+  "conferenceGames": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Southern Arkansas",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "MEAC",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "South Carolina State",
+  "total": {
+   "games": 6,
+   "losses": 1,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Rocky Mountain",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "team": "CSU Pueblo",
+  "total": {
+   "games": 6,
+   "losses": 0,
+   "ties": 0,
+   "wins": 6
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "MVFC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "South Dakota State",
+  "total": {
+   "games": 6,
+   "losses": 1,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Sun Belt",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Southern Miss",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "SEC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "South Carolina",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "SWAC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Southern",
+  "total": {
+   "games": 6,
+   "losses": 4,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Northeast 10",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Southern Connecticut State",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Great Lakes",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Southwest Baptist",
+  "total": {
+   "games": 6,
+   "losses": 3,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Northern Sun",
+  "conferenceGames": {
+   "games": 5,
+   "losses": 5,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Southwest Minnesota State",
+  "total": {
+   "games": 6,
+   "losses": 5,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Southern Athletic",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Southwestern U",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Presidents'",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Saint Francis",
+  "total": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Minnesota",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Saint John's (MN)",
+  "total": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Great Lakes",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "St. Joseph's (IN)",
+  "total": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Presidents'",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Saint Vincent",
+  "total": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Southland",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Stephen F. Austin",
+  "total": {
+   "games": 6,
+   "losses": 0,
+   "ties": 0,
+   "wins": 6
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Coastal Athletic",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Stony Brook",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Conference USA",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Missouri State",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "UAC",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Tarleton State",
+  "total": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Big 12",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "TCU",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "OVC",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "UT Martin",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "SEC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Tennessee",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "OVC",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Tennessee State",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Southern",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Tennessee Tech",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "American Athletic",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "UTSA",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Mountain West",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "UTEP",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Southern Collegiate Athletic",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Texas Lutheran",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "SWAC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Texas Southern",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Big 12",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Texas Tech",
+  "total": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Southern",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "The Citadel",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Presidents'",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Thiel",
+  "total": {
+   "games": 5,
+   "losses": 5,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Great Midwest Athletic",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Thomas More",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Mid-American",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Toledo",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Michigan",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Trine",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Sun Belt",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Troy",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Great Lakes",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Truman State",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "American Athletic",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Tulane",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "SIAC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Tuskegee",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Lone Star",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Texas A&M-Kingsville",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Centennial",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Ursinus",
+  "total": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Gulf South",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Valdosta State",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Pioneer",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Valparaiso",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "CIAA",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "team": "Virginia Union",
+  "total": {
+   "games": 6,
+   "losses": 1,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Southern",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "VMI",
+  "total": {
+   "games": 6,
+   "losses": 6,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "NEC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Wagner",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Great Midwest Athletic",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Walsh",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "American Rivers",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Wartburg",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Presidents'",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Washington & Jefferson",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Mid America",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Washburn",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 1,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Old Dominion",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Washington and Lee",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Big Sky",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Weber State",
+  "total": {
+   "games": 6,
+   "losses": 3,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Gulf South",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "West Alabama",
+  "total": {
+   "games": 6,
+   "losses": 1,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "UAC",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "West Georgia",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Mountain East",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "West Liberty",
+  "total": {
+   "games": 6,
+   "losses": 1,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Centennial",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "McDaniel",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Commonwealth Coast",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Western New England",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Lone Star",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Western New Mexico",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Lone Star",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "West Texas",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Mountain East",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "West Virginia State",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "OVC",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Western Illinois",
+  "total": {
+   "games": 6,
+   "losses": 3,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Mid-American",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Western Michigan",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Rocky Mountain",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "team": "Western Colorado",
+  "total": {
+   "games": 6,
+   "losses": 0,
+   "ties": 0,
+   "wins": 6
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Southern",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Western Carolina",
+  "total": {
+   "games": 6,
+   "losses": 3,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Northwest",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Whitworth",
+  "total": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Wisconsin",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Wisconsin River Falls",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Mid Atlantic",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Widener",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Patriot",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "William & Mary",
+  "total": {
+   "games": 6,
+   "losses": 4,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "NESCAC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Williams",
+  "total": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Ohio",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Wilmington (OH)",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "CIAA",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Winston-Salem State",
+  "total": {
+   "games": 5,
+   "losses": 5,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Wisconsin",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Wisconsin Eau Claire",
+  "total": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Wisconsin",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Wisconsin La Crosse",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "NACC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Wisconsin Lutheran",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Wisconsin",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Wisconsin Stevens Point",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Wisconsin",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Wisconsin Stout",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Wisconsin",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Wisconsin Whitewater",
+  "total": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "North Coast",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 4,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Wittenberg",
+  "total": {
+   "games": 5,
+   "losses": 5,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Southern",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Wofford",
+  "total": {
+   "games": 6,
+   "losses": 3,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "North Coast",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Wooster",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "NEWMAC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "WPI",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fbs",
+  "conference": "Mountain West",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Wyoming",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "MVFC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Youngstown State",
+  "total": {
+   "games": 6,
+   "losses": 2,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "SWAC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Grambling",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Southern Athletic",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Berry",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "American Southwest",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Howard Payne",
+  "total": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "FCS Independents",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Merrimack",
+  "total": {
+   "games": 6,
+   "losses": 4,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "NEWMAC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Salve Regina",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Liberty League",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "St. Lawrence",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Empire 8",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Brockport",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Empire 8",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "SUNY Cortland",
+  "total": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Michigan",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Albion",
+  "total": {
+   "games": 5,
+   "losses": 5,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Michigan",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Alma",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Minnesota",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Bethel (MN)",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Coastal Athletic",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Bryant",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Carolinas",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Chowan",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "SIAC",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Clark Atlanta",
+  "total": {
+   "games": 6,
+   "losses": 5,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Mid Atlantic",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Delaware Valley",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "American Southwest",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Hardin Simmons",
+  "total": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Michigan",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Hope",
+  "total": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "OVC",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Lindenwood",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Great Lakes",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "McKendree",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Northern Sun",
+  "conferenceGames": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Minnesota St Moorhead",
+  "total": {
+   "games": 6,
+   "losses": 2,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "New Jersey",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Montclair State",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Carolinas",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "North Greenville",
+  "total": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Great American",
+  "conferenceGames": {
+   "games": 5,
+   "losses": 5,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Northwestern (OK)",
+  "total": {
+   "games": 5,
+   "losses": 5,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Great Lakes",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Quincy",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "New Jersey",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Rowan",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Old Dominion",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Shenandoah",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Lone Star",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Simon Fraser",
+  "total": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Northeast 10",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 4,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Saint Anselm",
+  "total": {
+   "games": 5,
+   "losses": 5,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "NACC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "St. Norbert",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Lone Star",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Sul Ross State",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Southland",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "East Texas A&M",
+  "total": {
+   "games": 6,
+   "losses": 4,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Great Midwest Athletic",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Tiffin",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "South Atlantic",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Tusculum",
+  "total": {
+   "games": 6,
+   "losses": 3,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "South Atlantic",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "UVA Wise",
+  "total": {
+   "games": 6,
+   "losses": 5,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Landmark Conference",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Western Connecticut State",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 1,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Northern Sun",
+  "conferenceGames": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "team": "Wayne State (NE)",
+  "total": {
+   "games": 6,
+   "losses": 1,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Presidents'",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Waynesburg",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Lone Star",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Western Oregon",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Presidents'",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Westminster (PA)",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "So. Cal.",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Whittier",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Northern Sun",
+  "conferenceGames": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Winona State",
+  "total": {
+   "games": 6,
+   "losses": 4,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Pennsylvania State Athletic",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "California (PA)",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "New Jersey",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Kean",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 1,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Great Lakes",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Lincoln (MO)",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Carolinas",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "UNC Pembroke",
+  "total": {
+   "games": 6,
+   "losses": 2,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Commonwealth Coast",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Nichols",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Great Midwest Athletic",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Northwood",
+  "total": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Great American",
+  "conferenceGames": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Ouachita Baptist",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Midwest",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Ripon",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Northern Sun",
+  "conferenceGames": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Sioux Falls",
+  "total": {
+   "games": 6,
+   "losses": 3,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "USA South",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Southern Virginia",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Pioneer",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "St. Thomas (MN)",
+  "total": {
+   "games": 6,
+   "losses": 2,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "MSCAC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Westfield State",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Great Lakes",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "William Jewell",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 1,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "USA South",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Brevard",
+  "total": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Southland",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Incarnate Word",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Midwest",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Monmouth (IL)",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "So. Cal.",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Pomona Pitzer",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Great American",
+  "conferenceGames": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Southwestern Oklahoma State",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Northwest",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Willamette",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "USA South",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Huntingdon",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Northern Sun",
+  "conferenceGames": {
+   "games": 5,
+   "losses": 5,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Jamestown",
+  "total": {
+   "games": 6,
+   "losses": 6,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "CIAA",
+  "conferenceGames": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Livingstone",
+  "total": {
+   "games": 6,
+   "losses": 4,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "NEWMAC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "SUNY Maritime",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Presidents'",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Case Western Reserve",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "American Rivers",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Central College",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "MSCAC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Framingham State",
+  "total": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Minnesota",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Gustavus Adolphus",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Mid Atlantic",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Misericordia",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "New Jersey",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "William Paterson",
+  "total": {
+   "games": 4,
+   "losses": 4,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "MSCAC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Plymouth State",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Pennsylvania State Athletic",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Shepherd",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "NESCAC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Trinity (CT)",
+  "total": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "North Coast",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Ohio Wesleyan",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Mountain East",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Fairmont State",
+  "total": {
+   "games": 6,
+   "losses": 4,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Northern Sun",
+  "conferenceGames": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Concordia St. Paul",
+  "total": {
+   "games": 6,
+   "losses": 3,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "CCIW",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "North Central College",
+  "total": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "Big Sky",
+  "conferenceGames": {
+   "games": 5,
+   "losses": 5,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Utah Tech",
+  "total": {
+   "games": 6,
+   "losses": 6,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Empire 8",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "SUNY Morrisville",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Independent DIII",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Apprentice School",
+  "total": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "New Jersey",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Christopher Newport",
+  "total": {
+   "games": 4,
+   "losses": 0,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Empire 8",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 1,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Alfred State",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "NACC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Lakeland",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "American Rivers",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Nebraska Wesleyan",
+  "total": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Southern Collegiate Athletic",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Lyon",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Southern Collegiate Athletic",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 0,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "Centenary (LA)",
+  "total": {
+   "games": 5,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Carolinas",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Erskine",
+  "total": {
+   "games": 4,
+   "losses": 3,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Upper Midwest",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Finlandia University",
+  "total": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "fcs",
+  "conference": "UAC",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 2,
+   "ties": 0,
+   "wins": 1
+  },
+  "team": "West Florida",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Lone Star",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "UT Permian Basin",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "GLIAC",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Davenport",
+  "total": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "MSCAC",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 4,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Dean",
+  "total": {
+   "games": 4,
+   "losses": 4,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Mid Atlantic",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 1,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Alvernia",
+  "total": {
+   "games": 4,
+   "losses": 2,
+   "ties": 0,
+   "wins": 2
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Commonwealth Coast",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "New England",
+  "total": {
+   "games": 5,
+   "losses": 5,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Northeast 10",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Franklin Pierce",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Mountain East",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Wheeling",
+  "total": {
+   "games": 5,
+   "losses": 2,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Carolinas",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 2,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Barton",
+  "total": {
+   "games": 6,
+   "losses": 5,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Independent DIII",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Keystone",
+  "total": {
+   "games": 5,
+   "losses": 4,
+   "ties": 0,
+   "wins": 1
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Independent DII",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Lincoln (CA)",
+  "total": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "CIAA",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 4,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Bluefield State",
+  "total": {
+   "games": 6,
+   "losses": 6,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Empire 8",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Hilbert",
+  "total": {
+   "games": 5,
+   "losses": 5,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "Northeast 10",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 3,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Post",
+  "total": {
+   "games": 5,
+   "losses": 5,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Mid Atlantic",
+  "conferenceGames": {
+   "games": 3,
+   "losses": 0,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Eastern",
+  "total": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "GLIAC",
+  "conferenceGames": {
+   "games": 1,
+   "losses": 1,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Roosevelt",
+  "total": {
+   "games": 5,
+   "losses": 1,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "ii",
+  "conference": "South Atlantic",
+  "conferenceGames": {
+   "games": 4,
+   "losses": 1,
+   "ties": 0,
+   "wins": 3
+  },
+  "team": "Anderson (SC)",
+  "total": {
+   "games": 6,
+   "losses": 2,
+   "ties": 0,
+   "wins": 4
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "Michigan",
+  "conferenceGames": {
+   "games": 2,
+   "losses": 0,
+   "ties": 0,
+   "wins": 2
+  },
+  "team": "Calvin",
+  "total": {
+   "games": 5,
+   "losses": 0,
+   "ties": 0,
+   "wins": 5
+  },
+  "year": 2026
+ },
+ {
+  "classification": "iii",
+  "conference": "American Southwest",
+  "conferenceGames": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "team": "Schreiner",
+  "total": {
+   "games": 0,
+   "losses": 0,
+   "ties": 0,
+   "wins": 0
+  },
+  "year": 2026
+ }
+]

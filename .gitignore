@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.cache/
+.venv/
+venv/
+*.egg-info/
+.DS_Store
+.cfbd_key

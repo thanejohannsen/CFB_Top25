@@ -1,0 +1,70 @@
+# CFB_Top25 ranking configuration.
+#
+# Every knob the algorithm reads lives here. Edit, commit, and the next
+# workflow run (or `make rank`) uses it. Overridable per run with:
+#   python3 -m cfbrank --set stage1.w_sor=0.6 --set stage4.strength=20
+schema_version = 1
+
+[season]
+year        = 2026
+week        = "auto"      # "auto" = latest completed week, or an integer
+season_type = "both"      # "regular" | "postseason" | "both"
+
+[source]
+base_url               = "https://api.collegefootballdata.com"
+cache_dir              = ".cache/cfbd"
+cache_ttl_minutes      = 360
+timeout_seconds        = 20.0
+max_retries            = 4
+retry_backoff_seconds  = 1.5
+serve_stale_on_failure = true
+offline                = false
+fixtures_dir           = "tests/fixtures/cfbd"
+fixture_year           = "2025"
+
+# -- Stage 1: base order from resume ranks (lower rank = better; 1 = best) ----
+[stage1]
+w_sor       = 0.75   # resumeRanks.strengthOfRecord
+w_sos       = 0.25   # resumeRanks.strengthOfSchedule (1 = toughest)
+pool_size   = 40     # candidate pool; H2H only considered inside it
+output_size = 25
+require_fpi = true   # teams with no /ratings/fpi entry are excluded
+fbs_only    = true   # /ratings/fpi carries a few non-FBS teams; drop them
+
+# -- Stage 2: resume adjustment ("how do your losses look") ------------------
+[stage2]
+w_loss_quality = 3.0   # rank points per standard deviation
+w_best_win     = 1.0
+w_game_control = 0.5
+
+# -- Stage 3: upset regression (big-gap results pull both toward midpoint) ---
+[stage3]
+enabled  = true
+gap      = 15    # base-position gap that triggers regression
+strength = 0.5   # 0.5 = halfway to the midpoint. Do NOT set 1.0 (unstable).
+
+# -- Stage 4: weighted head-to-head ordering --------------------------------
+[stage4]
+strength     = 14.0          # positions of drift one unit of conviction buys
+drift_weight   = 1.0         # cost per position of drift from the base order
+drift_exponent = 1.5         # >1 makes long moves disproportionately costly,
+                             # so conviction scales how far a result can move a team
+split_series = "most_recent" # "most_recent" | "drop" | "aggregate_margin"
+max_passes   = 400
+
+[stage4.evidence]
+w_margin           = 0.50
+w_fpi_gap          = 0.30
+w_recency          = 0.20
+w_common_opponents = 0.15
+home_field_points  = 2.5
+margin_cap         = 28
+recency_floor      = 0.25
+
+[output]
+rankings_path     = "docs/data/rankings.json"
+history_dir       = "docs/data/weeks"
+index_path        = "docs/data/index.json"
+float_precision   = 4
+previous_snapshot = "auto"
+include_pool_tail = true

@@ -1,0 +1,247 @@
+/* CFB Top 25 -- tokens first, then layout.
+   Dark mode is a selected set of steps, not an automatic inversion, and is
+   declared under both the OS media query and the data-theme scope so a
+   viewer's explicit choice wins either way. */
+
+:root {
+  color-scheme: light;
+
+  --plane:        #f9f9f7;
+  --surface:      #fcfcfb;
+  --surface-2:    #f3f3ef;
+  --ink:          #0b0b0b;
+  --ink-2:        #52514e;
+  --ink-muted:    #898781;
+  --rule:         #e1e0d9;
+  --rule-strong:  #c3c2b7;
+  --border:       rgba(11, 11, 11, 0.10);
+
+  --accent:       #2a78d6;
+  --good:         #0ca30c;
+  --good-ink:     #006300;
+  --critical:     #d03b3b;
+  --critical-ink: #a32b2b;
+  --warning:      #fab219;
+  --warning-ink:  #6b4a00;
+
+  --good-wash:     rgba(12, 163, 12, 0.10);
+  --critical-wash: rgba(208, 59, 59, 0.10);
+  --warning-wash:  rgba(250, 178, 25, 0.18);
+  --accent-wash:   rgba(42, 120, 214, 0.10);
+
+  --radius: 10px;
+  --shadow: 0 1px 2px rgba(11, 11, 11, 0.04);
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+    --plane:        #0d0d0d;
+    --surface:      #1a1a19;
+    --surface-2:    #232322;
+    --ink:          #ffffff;
+    --ink-2:        #c3c2b7;
+    --ink-muted:    #898781;
+    --rule:         #2c2c2a;
+    --rule-strong:  #383835;
+    --border:       rgba(255, 255, 255, 0.10);
+    --accent:       #3987e5;
+    --good-ink:     #0ca30c;
+    --critical-ink: #e66767;
+    --warning-ink:  #fab219;
+    --good-wash:     rgba(12, 163, 12, 0.16);
+    --critical-wash: rgba(208, 59, 59, 0.18);
+    --warning-wash:  rgba(250, 178, 25, 0.16);
+    --accent-wash:   rgba(57, 135, 229, 0.16);
+    --shadow: none;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --plane:        #0d0d0d;
+  --surface:      #1a1a19;
+  --surface-2:    #232322;
+  --ink:          #ffffff;
+  --ink-2:        #c3c2b7;
+  --ink-muted:    #898781;
+  --rule:         #2c2c2a;
+  --rule-strong:  #383835;
+  --border:       rgba(255, 255, 255, 0.10);
+  --accent:       #3987e5;
+  --good-ink:     #0ca30c;
+  --critical-ink: #e66767;
+  --warning-ink:  #fab219;
+  --good-wash:     rgba(12, 163, 12, 0.16);
+  --critical-wash: rgba(208, 59, 59, 0.18);
+  --warning-wash:  rgba(250, 178, 25, 0.16);
+  --accent-wash:   rgba(57, 135, 229, 0.16);
+  --shadow: none;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--plane);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+
+.wrap { max-width: 1060px; margin: 0 auto; padding: 0 16px 72px; }
+
+a { color: var(--accent); }
+a:hover { text-decoration-thickness: 2px; }
+
+/* ---------- header ---------- */
+header.site { padding: 32px 0 20px; }
+h1 { margin: 0 0 4px; font-size: 1.75rem; letter-spacing: -0.015em; }
+.tagline { margin: 0 0 18px; color: var(--ink-2); max-width: 62ch; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.controls label { color: var(--ink-2); font-size: 0.875rem; }
+select, .btn {
+  font: inherit; font-size: 0.9rem; color: var(--ink);
+  background: var(--surface); border: 1px solid var(--rule-strong);
+  border-radius: 8px; padding: 6px 10px; cursor: pointer;
+}
+select:focus-visible, .btn:focus-visible, [role="button"]:focus-visible, tr:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 2px;
+}
+.stamp { color: var(--ink-muted); font-size: 0.8125rem; font-variant-numeric: tabular-nums; }
+
+.banner {
+  margin: 16px 0 0; padding: 10px 14px; border-radius: var(--radius);
+  border: 1px solid var(--border); font-size: 0.875rem;
+}
+.banner.warn { background: var(--warning-wash); color: var(--warning-ink); }
+.banner.info { background: var(--accent-wash); }
+.banner[hidden] { display: none; }
+
+/* ---------- cards & sections ---------- */
+section { margin-top: 36px; }
+h2 { font-size: 1.1875rem; margin: 0 0 6px; letter-spacing: -0.01em; }
+h3 { font-size: 0.9375rem; margin: 0 0 6px; }
+.lede { margin: 0 0 16px; color: var(--ink-2); max-width: 74ch; font-size: 0.9375rem; }
+
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden;
+}
+.card + .card { margin-top: 12px; }
+.card-body { padding: 14px 16px; }
+
+/* ---------- table ---------- */
+table { width: 100%; border-collapse: collapse; }
+caption { text-align: left; padding: 0 0 8px; color: var(--ink-muted); font-size: 0.8125rem; }
+th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--rule); }
+thead th {
+  font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em;
+  color: var(--ink-muted); font-weight: 600; white-space: nowrap;
+  border-bottom: 1px solid var(--rule-strong);
+}
+tbody tr.row { cursor: pointer; }
+tbody tr.row:hover { background: var(--surface-2); }
+tbody tr.row[aria-expanded="true"] { background: var(--accent-wash); }
+.num { text-align: right; font-variant-numeric: tabular-nums; }
+.rank { font-weight: 650; width: 2.5rem; }
+.team { font-weight: 600; }
+.conf { color: var(--ink-2); font-size: 0.875rem; }
+.chev { color: var(--ink-muted); width: 1.5rem; text-align: center; }
+
+/* ---------- state encoding ----------
+   Honoured vs overridden is red-vs-green, which deuteranopes cannot separate
+   (measured CVD dE 4.1), so every state carries a glyph and a word; colour only
+   reinforces what the text already says. */
+.delta { font-variant-numeric: tabular-nums; white-space: nowrap; font-size: 0.875rem; }
+.delta.up   { color: var(--good-ink); }
+.delta.down { color: var(--critical-ink); }
+.delta.same, .delta.new { color: var(--ink-muted); }
+
+.badge {
+  display: inline-block; padding: 1px 7px; margin-right: 4px;
+  border-radius: 999px; font-size: 0.75rem; font-weight: 600;
+  border: 1px solid var(--border); white-space: nowrap;
+}
+.badge.cycle     { background: var(--accent-wash);   color: var(--accent); }
+.badge.regressed { background: var(--warning-wash);  color: var(--warning-ink); }
+.badge.lifted    { background: var(--good-wash);     color: var(--good-ink); }
+.badge.dropped   { background: var(--critical-wash); color: var(--critical-ink); }
+
+.state { font-size: 0.8125rem; font-weight: 600; white-space: nowrap; }
+.state.honored    { color: var(--good-ink); }
+.state.overridden { color: var(--critical-ink); }
+
+/* ---------- detail panel ---------- */
+tr.detail > td { background: var(--surface-2); padding: 0; border-bottom: 1px solid var(--rule-strong); }
+tr.detail[hidden] { display: none; }
+.detail-inner { padding: 16px 16px 0; display: grid; gap: 18px 28px; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); }
+.detail-wide { padding: 4px 16px 16px; }
+.detail-wide .lede { font-size: 0.8125rem; margin-bottom: 10px; }
+.reasons { margin: 0; padding-left: 18px; }
+.reasons li { margin-bottom: 6px; font-size: 0.9375rem; }
+.kv { display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; font-size: 0.875rem; margin: 0; }
+.kv dt { color: var(--ink-2); }
+.kv dd { margin: 0; font-variant-numeric: tabular-nums; }
+.h2h { width: 100%; font-size: 0.875rem; }
+.h2h th, .h2h td { padding: 5px 8px; border-bottom: 1px solid var(--rule); }
+.formula { font-family: var(--mono); font-size: 0.8125rem; color: var(--ink-2); }
+
+/* ---------- cycle diagram ---------- */
+.cycle-figure { margin: 0; display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; }
+.cycle-figure svg { flex: 0 0 auto; }
+.legend { display: flex; flex-wrap: wrap; gap: 14px; margin: 10px 0 0; padding: 0; list-style: none; font-size: 0.8125rem; color: var(--ink-2); }
+.legend li { display: flex; align-items: center; gap: 6px; }
+.swatch { width: 22px; height: 0; border-top-width: 2px; border-top-style: solid; display: inline-block; }
+.swatch.honored    { border-top-color: var(--ink-2); }
+.swatch.overridden { border-top-color: var(--critical); border-top-style: dashed; }
+
+.node-shape { fill: var(--surface); stroke: var(--rule-strong); stroke-width: 1.5; }
+.node-label { fill: var(--ink); font-size: 11px; font-weight: 600; }
+.node-rank  { fill: var(--ink-muted); font-size: 10px; }
+.edge-honored    { stroke: var(--ink-2); stroke-width: 2; fill: none; }
+.edge-overridden { stroke: var(--critical); stroke-width: 2; fill: none; stroke-dasharray: 5 4; }
+
+/* ---------- misc ---------- */
+.empty { color: var(--ink-muted); font-style: italic; padding: 14px 16px; }
+
+/* Wide data tables scroll within their own box. Narrowing the page instead
+   would mean dropping columns that are the whole point of the panel. */
+.table-scroll { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.table-scroll > table { min-width: 36rem; }
+.pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; padding: 0; list-style: none; }
+.pill {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 999px;
+  padding: 4px 11px; font-size: 0.8125rem; color: var(--ink-2);
+}
+.pill b { color: var(--ink); font-variant-numeric: tabular-nums; }
+footer.site { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--rule); color: var(--ink-muted); font-size: 0.8125rem; }
+footer.site p { margin: 4px 0; }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+@media (max-width: 860px) {
+  .detail-inner { grid-template-columns: 1fr; }
+}
+@media (max-width: 720px) {
+  body { font-size: 14px; }
+  .wrap { padding: 0 16px 56px; }
+  /* The main table must fit: drop the secondary columns and the chevron
+     (the whole row is the tap target) rather than scrolling the page. */
+  .col-opt, .col-chev { display: none; }
+  th, td { padding: 8px 5px; }
+  table { table-layout: fixed; width: 100%; }
+  .rank { width: 2.1rem; }
+  .team { word-break: break-word; }
+  /* Badges wrap inside the cell instead of forcing it wider. */
+  .badge { font-size: 0.6875rem; padding: 1px 6px; margin: 0 2px 2px 0; }
+  .detail-inner { padding: 12px; }
+  .table-scroll > table { min-width: 30rem; }
+}

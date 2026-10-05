@@ -1,0 +1,2722 @@
+[
+ {
+  "conference": "American Athletic",
+  "efficiencies": {
+   "defense": 17.484,
+   "offense": 41.031,
+   "overall": 21.277,
+   "specialTeams": 35.736
+  },
+  "fpi": -14.871,
+  "resumeRanks": {
+   "averageWinProbability": 128,
+   "fpi": 124,
+   "gameControl": 124,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 109,
+   "strengthOfSchedule": 84
+  },
+  "team": "UAB",
+  "year": 2025
+ },
+ {
+  "conference": "Sun Belt",
+  "efficiencies": {
+   "defense": 28.544,
+   "offense": 39.136,
+   "overall": 29.543,
+   "specialTeams": 46.308
+  },
+  "fpi": -10.665,
+  "resumeRanks": {
+   "averageWinProbability": 99,
+   "fpi": 105,
+   "gameControl": 102,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 116,
+   "strengthOfSchedule": 105
+  },
+  "team": "South Alabama",
+  "year": 2025
+ },
+ {
+  "conference": "SEC",
+  "efficiencies": {
+   "defense": 35.734,
+   "offense": 75.416,
+   "overall": 55.802,
+   "specialTeams": 44.38
+  },
+  "fpi": 6.597,
+  "resumeRanks": {
+   "averageWinProbability": 84,
+   "fpi": 42,
+   "gameControl": 43,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 100,
+   "strengthOfSchedule": 8
+  },
+  "team": "Arkansas",
+  "year": 2025
+ },
+ {
+  "conference": "Big 12",
+  "efficiencies": {
+   "defense": 68.001,
+   "offense": 51.669,
+   "overall": 59.451,
+   "specialTeams": 36.201
+  },
+  "fpi": 6.294,
+  "resumeRanks": {
+   "averageWinProbability": 70,
+   "fpi": 44,
+   "gameControl": 50,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 38,
+   "strengthOfSchedule": 43
+  },
+  "team": "Arizona State",
+  "year": 2025
+ },
+ {
+  "conference": "Big 12",
+  "efficiencies": {
+   "defense": 70.219,
+   "offense": 67.401,
+   "overall": 70.892,
+   "specialTeams": 37.508
+  },
+  "fpi": 10.097,
+  "resumeRanks": {
+   "averageWinProbability": 40,
+   "fpi": 29,
+   "gameControl": 42,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 33,
+   "strengthOfSchedule": 63
+  },
+  "team": "Arizona",
+  "year": 2025
+ },
+ {
+  "conference": "Mountain West",
+  "efficiencies": {
+   "defense": 71.963,
+   "offense": 37.199,
+   "overall": 60.907,
+   "specialTeams": 68.27
+  },
+  "fpi": 0.607,
+  "resumeRanks": {
+   "averageWinProbability": 25,
+   "fpi": 67,
+   "gameControl": 65,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 61,
+   "strengthOfSchedule": 117
+  },
+  "team": "San Diego State",
+  "year": 2025
+ },
+ {
+  "conference": "ACC",
+  "efficiencies": {
+   "defense": 46.629,
+   "offense": 46.552,
+   "overall": 45.953,
+   "specialTeams": 50.842
+  },
+  "fpi": -3.391,
+  "resumeRanks": {
+   "averageWinProbability": 68,
+   "fpi": 81,
+   "gameControl": 68,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 72,
+   "strengthOfSchedule": 79
+  },
+  "team": "California",
+  "year": 2025
+ },
+ {
+  "conference": "Big 12",
+  "efficiencies": {
+   "defense": 46.101,
+   "offense": 46.903,
+   "overall": 43.331,
+   "specialTeams": 38.62
+  },
+  "fpi": -2.678,
+  "resumeRanks": {
+   "averageWinProbability": 103,
+   "fpi": 77,
+   "gameControl": 73,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 97,
+   "strengthOfSchedule": 44
+  },
+  "team": "Colorado",
+  "year": 2025
+ },
+ {
+  "conference": "Conference USA",
+  "efficiencies": {
+   "defense": 24.324,
+   "offense": 35.349,
+   "overall": 26.46,
+   "specialTeams": 56.875
+  },
+  "fpi": -12.89,
+  "resumeRanks": {
+   "averageWinProbability": 82,
+   "fpi": 114,
+   "gameControl": 114,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 103,
+   "strengthOfSchedule": 131
+  },
+  "team": "Delaware",
+  "year": 2025
+ },
+ {
+  "conference": "Conference USA",
+  "efficiencies": {
+   "defense": 45.125,
+   "offense": 36.368,
+   "overall": 35.809,
+   "specialTeams": 36.367
+  },
+  "fpi": -9.497,
+  "resumeRanks": {
+   "averageWinProbability": 66,
+   "fpi": 100,
+   "gameControl": 111,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 88,
+   "strengthOfSchedule": 135
+  },
+  "team": "Jacksonville State",
+  "year": 2025
+ },
+ {
+  "conference": "American Athletic",
+  "efficiencies": {
+   "defense": 69.17,
+   "offense": 72.798,
+   "overall": 74.375,
+   "specialTeams": 43.632
+  },
+  "fpi": 11.054,
+  "resumeRanks": {
+   "averageWinProbability": 20,
+   "fpi": 25,
+   "gameControl": 29,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 39,
+   "strengthOfSchedule": 67
+  },
+  "team": "South Florida",
+  "year": 2025
+ },
+ {
+  "conference": "ACC",
+  "efficiencies": {
+   "defense": 44.042,
+   "offense": 72.335,
+   "overall": 64.682,
+   "specialTeams": 69.382
+  },
+  "fpi": 7.622,
+  "resumeRanks": {
+   "averageWinProbability": 59,
+   "fpi": 40,
+   "gameControl": 52,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 31,
+   "strengthOfSchedule": 59
+  },
+  "team": "Georgia Tech",
+  "year": 2025
+ },
+ {
+  "conference": "SEC",
+  "efficiencies": {
+   "defense": 76.333,
+   "offense": 78.141,
+   "overall": 83.305,
+   "specialTeams": 57.189
+  },
+  "fpi": 21.443,
+  "resumeRanks": {
+   "averageWinProbability": 11,
+   "fpi": 7,
+   "gameControl": 7,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 5,
+   "strengthOfSchedule": 17
+  },
+  "team": "Georgia",
+  "year": 2025
+ },
+ {
+  "conference": "Mountain West",
+  "efficiencies": {
+   "defense": 60.966,
+   "offense": 52.17,
+   "overall": 56.335,
+   "specialTeams": 42.225
+  },
+  "fpi": 3.588,
+  "resumeRanks": {
+   "averageWinProbability": 54,
+   "fpi": 55,
+   "gameControl": 63,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 51,
+   "strengthOfSchedule": 69
+  },
+  "team": "Boise State",
+  "year": 2025
+ },
+ {
+  "conference": "Big 12",
+  "efficiencies": {
+   "defense": 61.399,
+   "offense": 60.554,
+   "overall": 64.089,
+   "specialTeams": 52.974
+  },
+  "fpi": 8.627,
+  "resumeRanks": {
+   "averageWinProbability": 41,
+   "fpi": 35,
+   "gameControl": 41,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 37,
+   "strengthOfSchedule": 62
+  },
+  "team": "Iowa State",
+  "year": 2025
+ },
+ {
+  "conference": "Mid-American",
+  "efficiencies": {
+   "defense": 7.781,
+   "offense": 9.966,
+   "overall": 4.955,
+   "specialTeams": 57.438
+  },
+  "fpi": -30.516,
+  "resumeRanks": {
+   "averageWinProbability": 135,
+   "fpi": 136,
+   "gameControl": 124,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 136,
+   "strengthOfSchedule": 95
+  },
+  "team": "Massachusetts",
+  "year": 2025
+ },
+ {
+  "conference": "Big Ten",
+  "efficiencies": {
+   "defense": 59.308,
+   "offense": 38.262,
+   "overall": 48.945,
+   "specialTeams": 50.029
+  },
+  "fpi": -1.746,
+  "resumeRanks": {
+   "averageWinProbability": 73,
+   "fpi": 73,
+   "gameControl": 61,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 89,
+   "strengthOfSchedule": 52
+  },
+  "team": "Maryland",
+  "year": 2025
+ },
+ {
+  "conference": "Big Ten",
+  "efficiencies": {
+   "defense": 46.856,
+   "offense": 50.584,
+   "overall": 48.907,
+   "specialTeams": 52.208
+  },
+  "fpi": 0.838,
+  "resumeRanks": {
+   "averageWinProbability": 97,
+   "fpi": 66,
+   "gameControl": 62,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 81,
+   "strengthOfSchedule": 25
+  },
+  "team": "Michigan State",
+  "year": 2025
+ },
+ {
+  "conference": "SEC",
+  "efficiencies": {
+   "defense": 60.218,
+   "offense": 82.91,
+   "overall": 79.58,
+   "specialTeams": 62.185
+  },
+  "fpi": 19.342,
+  "resumeRanks": {
+   "averageWinProbability": 9,
+   "fpi": 9,
+   "gameControl": 8,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 6,
+   "strengthOfSchedule": 31
+  },
+  "team": "Ole Miss",
+  "year": 2025
+ },
+ {
+  "conference": "ACC",
+  "efficiencies": {
+   "defense": 37.994,
+   "offense": 73.014,
+   "overall": 58.977,
+   "specialTeams": 57.007
+  },
+  "fpi": 6.398,
+  "resumeRanks": {
+   "averageWinProbability": 67,
+   "fpi": 43,
+   "gameControl": 64,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 44,
+   "strengthOfSchedule": 72
+  },
+  "team": "Duke",
+  "year": 2025
+ },
+ {
+  "conference": "ACC",
+  "efficiencies": {
+   "defense": 78.248,
+   "offense": 35.156,
+   "overall": 59.654,
+   "specialTeams": 47.192
+  },
+  "fpi": 2.069,
+  "resumeRanks": {
+   "averageWinProbability": 24,
+   "fpi": 61,
+   "gameControl": 40,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 40,
+   "strengthOfSchedule": 77
+  },
+  "team": "Wake Forest",
+  "year": 2025
+ },
+ {
+  "conference": "Big Ten",
+  "efficiencies": {
+   "defense": 19.77,
+   "offense": 70.691,
+   "overall": 48.155,
+   "specialTeams": 62.206
+  },
+  "fpi": 1.453,
+  "resumeRanks": {
+   "averageWinProbability": 85,
+   "fpi": 63,
+   "gameControl": 58,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 63,
+   "strengthOfSchedule": 26
+  },
+  "team": "Rutgers",
+  "year": 2025
+ },
+ {
+  "conference": "Mountain West",
+  "efficiencies": {
+   "defense": 53.609,
+   "offense": 43.12,
+   "overall": 48.358,
+   "specialTeams": 50.864
+  },
+  "fpi": -2.688,
+  "resumeRanks": {
+   "averageWinProbability": 50,
+   "fpi": 78,
+   "gameControl": 67,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 49,
+   "strengthOfSchedule": 91
+  },
+  "team": "New Mexico",
+  "year": 2025
+ },
+ {
+  "conference": "Mid-American",
+  "efficiencies": {
+   "defense": 44.119,
+   "offense": 13.911,
+   "overall": 23.981,
+   "specialTeams": 59.165
+  },
+  "fpi": -11.847,
+  "resumeRanks": {
+   "averageWinProbability": 107,
+   "fpi": 112,
+   "gameControl": 119,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 122,
+   "strengthOfSchedule": 113
+  },
+  "team": "Bowling Green",
+  "year": 2025
+ },
+ {
+  "conference": "Mid-American",
+  "efficiencies": {
+   "defense": 50.451,
+   "offense": 34.563,
+   "overall": 42.954,
+   "specialTeams": 58.829
+  },
+  "fpi": -5.675,
+  "resumeRanks": {
+   "averageWinProbability": 76,
+   "fpi": 89,
+   "gameControl": 95,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 101,
+   "strengthOfSchedule": 120
+  },
+  "team": "Miami (OH)",
+  "year": 2025
+ },
+ {
+  "conference": "Big 12",
+  "efficiencies": {
+   "defense": 29.274,
+   "offense": 21.597,
+   "overall": 21.743,
+   "specialTeams": 57.631
+  },
+  "fpi": -12.121,
+  "resumeRanks": {
+   "averageWinProbability": 131,
+   "fpi": 113,
+   "gameControl": 104,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 124,
+   "strengthOfSchedule": 35
+  },
+  "team": "Oklahoma State",
+  "year": 2025
+ },
+ {
+  "conference": "Pac-12",
+  "efficiencies": {
+   "defense": 40.409,
+   "offense": 25.5,
+   "overall": 22.602,
+   "specialTeams": 18.609
+  },
+  "fpi": -11.628,
+  "resumeRanks": {
+   "averageWinProbability": 125,
+   "fpi": 111,
+   "gameControl": 124,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 128,
+   "strengthOfSchedule": 64
+  },
+  "team": "Oregon State",
+  "year": 2025
+ },
+ {
+  "conference": "American Athletic",
+  "efficiencies": {
+   "defense": 27.082,
+   "offense": 58.137,
+   "overall": 37.318,
+   "specialTeams": 39.816
+  },
+  "fpi": -8.426,
+  "resumeRanks": {
+   "averageWinProbability": 102,
+   "fpi": 97,
+   "gameControl": 97,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 96,
+   "strengthOfSchedule": 81
+  },
+  "team": "Temple",
+  "year": 2025
+ },
+ {
+  "conference": "ACC",
+  "efficiencies": {
+   "defense": 76.326,
+   "offense": 50.846,
+   "overall": 67.68,
+   "specialTeams": 50.886
+  },
+  "fpi": 7.657,
+  "resumeRanks": {
+   "averageWinProbability": 21,
+   "fpi": 39,
+   "gameControl": 23,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 42,
+   "strengthOfSchedule": 51
+  },
+  "team": "Pittsburgh",
+  "year": 2025
+ },
+ {
+  "conference": "SEC",
+  "efficiencies": {
+   "defense": 55.089,
+   "offense": 92.256,
+   "overall": 82.712,
+   "specialTeams": 46.509
+  },
+  "fpi": 17.048,
+  "resumeRanks": {
+   "averageWinProbability": 32,
+   "fpi": 14,
+   "gameControl": 18,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 14,
+   "strengthOfSchedule": 28
+  },
+  "team": "Vanderbilt",
+  "year": 2025
+ },
+ {
+  "conference": "American Athletic",
+  "efficiencies": {
+   "defense": 29.595,
+   "offense": 19.574,
+   "overall": 20.425,
+   "specialTeams": 56.509
+  },
+  "fpi": -17.315,
+  "resumeRanks": {
+   "averageWinProbability": 117,
+   "fpi": 127,
+   "gameControl": 122,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 107,
+   "strengthOfSchedule": 94
+  },
+  "team": "Rice",
+  "year": 2025
+ },
+ {
+  "conference": "Big 12",
+  "efficiencies": {
+   "defense": 63.146,
+   "offense": 59.448,
+   "overall": 61.621,
+   "specialTeams": 39.517
+  },
+  "fpi": 4.408,
+  "resumeRanks": {
+   "averageWinProbability": 52,
+   "fpi": 50,
+   "gameControl": 56,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 24,
+   "strengthOfSchedule": 70
+  },
+  "team": "Houston",
+  "year": 2025
+ },
+ {
+  "conference": "Big 12",
+  "efficiencies": {
+   "defense": 71.636,
+   "offense": 84.611,
+   "overall": 84.26,
+   "specialTeams": 48.097
+  },
+  "fpi": 20.065,
+  "resumeRanks": {
+   "averageWinProbability": 7,
+   "fpi": 8,
+   "gameControl": 12,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 15,
+   "strengthOfSchedule": 60
+  },
+  "team": "Utah",
+  "year": 2025
+ },
+ {
+  "conference": "Sun Belt",
+  "efficiencies": {
+   "defense": 70.005,
+   "offense": 60.061,
+   "overall": 68.089,
+   "specialTeams": 49.684
+  },
+  "fpi": 10.294,
+  "resumeRanks": {
+   "averageWinProbability": 15,
+   "fpi": 27,
+   "gameControl": 44,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 21,
+   "strengthOfSchedule": 82
+  },
+  "team": "James Madison",
+  "year": 2025
+ },
+ {
+  "conference": "Pac-12",
+  "efficiencies": {
+   "defense": 71.983,
+   "offense": 44.648,
+   "overall": 60.369,
+   "specialTeams": 52.988
+  },
+  "fpi": 1.397,
+  "resumeRanks": {
+   "averageWinProbability": 28,
+   "fpi": 64,
+   "gameControl": 28,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 59,
+   "strengthOfSchedule": 56
+  },
+  "team": "Washington State",
+  "year": 2025
+ },
+ {
+  "conference": "Big Ten",
+  "efficiencies": {
+   "defense": 71.625,
+   "offense": 22.518,
+   "overall": 46.687,
+   "specialTeams": 52.023
+  },
+  "fpi": 2.537,
+  "resumeRanks": {
+   "averageWinProbability": 121,
+   "fpi": 60,
+   "gameControl": 71,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 57,
+   "strengthOfSchedule": 1
+  },
+  "team": "Wisconsin",
+  "year": 2025
+ },
+ {
+  "conference": "Sun Belt",
+  "efficiencies": {
+   "defense": 41.467,
+   "offense": 42.865,
+   "overall": 41.682,
+   "specialTeams": 55.672
+  },
+  "fpi": -5.808,
+  "resumeRanks": {
+   "averageWinProbability": 77,
+   "fpi": 90,
+   "gameControl": 94,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 108,
+   "strengthOfSchedule": 93
+  },
+  "team": "Marshall",
+  "year": 2025
+ },
+ {
+  "conference": "Big 12",
+  "efficiencies": {
+   "defense": 53.71,
+   "offense": 32.035,
+   "overall": 41.185,
+   "specialTeams": 51.199
+  },
+  "fpi": -4.064,
+  "resumeRanks": {
+   "averageWinProbability": 122,
+   "fpi": 84,
+   "gameControl": 88,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 77,
+   "strengthOfSchedule": 33
+  },
+  "team": "West Virginia",
+  "year": 2025
+ },
+ {
+  "conference": "Sun Belt",
+  "efficiencies": {
+   "defense": 36.828,
+   "offense": 29.699,
+   "overall": 28.215,
+   "specialTeams": 42.525
+  },
+  "fpi": -10.619,
+  "resumeRanks": {
+   "averageWinProbability": 96,
+   "fpi": 103,
+   "gameControl": 103,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 106,
+   "strengthOfSchedule": 104
+  },
+  "team": "Louisiana",
+  "year": 2025
+ },
+ {
+  "conference": "Sun Belt",
+  "efficiencies": {
+   "defense": 45.804,
+   "offense": 23.798,
+   "overall": 30.129,
+   "specialTeams": 45.304
+  },
+  "fpi": -14.218,
+  "resumeRanks": {
+   "averageWinProbability": 111,
+   "fpi": 121,
+   "gameControl": 108,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 94,
+   "strengthOfSchedule": 87
+  },
+  "team": "Coastal Carolina",
+  "year": 2025
+ },
+ {
+  "conference": "Sun Belt",
+  "efficiencies": {
+   "defense": 34.649,
+   "offense": 67.551,
+   "overall": 49.339,
+   "specialTeams": 36.521
+  },
+  "fpi": -1.481,
+  "resumeRanks": {
+   "averageWinProbability": 34,
+   "fpi": 72,
+   "gameControl": 72,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 93,
+   "strengthOfSchedule": 119
+  },
+  "team": "Texas State",
+  "year": 2025
+ },
+ {
+  "conference": "Mountain West",
+  "efficiencies": {
+   "defense": 43.942,
+   "offense": 53.004,
+   "overall": 46.333,
+   "specialTeams": 42.242
+  },
+  "fpi": -3.022,
+  "resumeRanks": {
+   "averageWinProbability": 79,
+   "fpi": 80,
+   "gameControl": 76,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 86,
+   "strengthOfSchedule": 73
+  },
+  "team": "Utah State",
+  "year": 2025
+ },
+ {
+  "conference": "SEC",
+  "efficiencies": {
+   "defense": 79.932,
+   "offense": 73.695,
+   "overall": 80.557,
+   "specialTeams": 40.695
+  },
+  "fpi": 19.012,
+  "resumeRanks": {
+   "averageWinProbability": 37,
+   "fpi": 10,
+   "gameControl": 11,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 9,
+   "strengthOfSchedule": 2
+  },
+  "team": "Alabama",
+  "year": 2025
+ },
+ {
+  "conference": "Conference USA",
+  "efficiencies": {
+   "defense": 37.041,
+   "offense": 48.202,
+   "overall": 41.239,
+   "specialTeams": 52.687
+  },
+  "fpi": -7.993,
+  "resumeRanks": {
+   "averageWinProbability": 45,
+   "fpi": 95,
+   "gameControl": 81,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 60,
+   "strengthOfSchedule": 96
+  },
+  "team": "Kennesaw State",
+  "year": 2025
+ },
+ {
+  "conference": "American Athletic",
+  "efficiencies": {
+   "defense": 51.831,
+   "offense": 44.712,
+   "overall": 49.145,
+   "specialTeams": 58.788
+  },
+  "fpi": -2.677,
+  "resumeRanks": {
+   "averageWinProbability": 62,
+   "fpi": 76,
+   "gameControl": 69,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 76,
+   "strengthOfSchedule": 85
+  },
+  "team": "Army",
+  "year": 2025
+ },
+ {
+  "conference": "Mountain West",
+  "efficiencies": {
+   "defense": 15.975,
+   "offense": 62.606,
+   "overall": 34.281,
+   "specialTeams": 42.342
+  },
+  "fpi": -8.365,
+  "resumeRanks": {
+   "averageWinProbability": 98,
+   "fpi": 96,
+   "gameControl": 105,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 113,
+   "strengthOfSchedule": 123
+  },
+  "team": "Air Force",
+  "year": 2025
+ },
+ {
+  "conference": "Sun Belt",
+  "efficiencies": {
+   "defense": 29.905,
+   "offense": 31.064,
+   "overall": 26.399,
+   "specialTeams": 50.727
+  },
+  "fpi": -13.278,
+  "resumeRanks": {
+   "averageWinProbability": 92,
+   "fpi": 117,
+   "gameControl": 112,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 117,
+   "strengthOfSchedule": 116
+  },
+  "team": "App State",
+  "year": 2025
+ },
+ {
+  "conference": "Sun Belt",
+  "efficiencies": {
+   "defense": 40.85,
+   "offense": 30.939,
+   "overall": 34.322,
+   "specialTeams": 60.522
+  },
+  "fpi": -9.615,
+  "resumeRanks": {
+   "averageWinProbability": 93,
+   "fpi": 101,
+   "gameControl": 116,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 95,
+   "strengthOfSchedule": 128
+  },
+  "team": "Arkansas State",
+  "year": 2025
+ },
+ {
+  "conference": "Mid-American",
+  "efficiencies": {
+   "defense": 28.761,
+   "offense": 19.385,
+   "overall": 16.459,
+   "specialTeams": 31.43
+  },
+  "fpi": -19.352,
+  "resumeRanks": {
+   "averageWinProbability": 132,
+   "fpi": 132,
+   "gameControl": 124,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 114,
+   "strengthOfSchedule": 106
+  },
+  "team": "Ball State",
+  "year": 2025
+ },
+ {
+  "conference": "Mid-American",
+  "efficiencies": {
+   "defense": 44.584,
+   "offense": 15.074,
+   "overall": 24.691,
+   "specialTeams": 54.26
+  },
+  "fpi": -13.255,
+  "resumeRanks": {
+   "averageWinProbability": 89,
+   "fpi": 116,
+   "gameControl": 124,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 119,
+   "strengthOfSchedule": 136
+  },
+  "team": "Buffalo",
+  "year": 2025
+ },
+ {
+  "conference": "Big 12",
+  "efficiencies": {
+   "defense": 54.999,
+   "offense": 31.773,
+   "overall": 41.211,
+   "specialTeams": 50.589
+  },
+  "fpi": -0.768,
+  "resumeRanks": {
+   "averageWinProbability": 91,
+   "fpi": 70,
+   "gameControl": 77,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 83,
+   "strengthOfSchedule": 55
+  },
+  "team": "UCF",
+  "year": 2025
+ },
+ {
+  "conference": "Big 12",
+  "efficiencies": {
+   "defense": 43.059,
+   "offense": 75.015,
+   "overall": 61.499,
+   "specialTeams": 54.92
+  },
+  "fpi": 3.683,
+  "resumeRanks": {
+   "averageWinProbability": 51,
+   "fpi": 53,
+   "gameControl": 49,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 56,
+   "strengthOfSchedule": 58
+  },
+  "team": "Cincinnati",
+  "year": 2025
+ },
+ {
+  "conference": "American Athletic",
+  "efficiencies": {
+   "defense": 27.423,
+   "offense": 42.426,
+   "overall": 30.745,
+   "specialTeams": 48.692
+  },
+  "fpi": -11.303,
+  "resumeRanks": {
+   "averageWinProbability": 106,
+   "fpi": 108,
+   "gameControl": 101,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 110,
+   "strengthOfSchedule": 97
+  },
+  "team": "Florida Atlantic",
+  "year": 2025
+ },
+ {
+  "conference": "Conference USA",
+  "efficiencies": {
+   "defense": 43.769,
+   "offense": 31.587,
+   "overall": 33.269,
+   "specialTeams": 43.059
+  },
+  "fpi": -11.215,
+  "resumeRanks": {
+   "averageWinProbability": 86,
+   "fpi": 106,
+   "gameControl": 107,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 98,
+   "strengthOfSchedule": 108
+  },
+  "team": "Florida International",
+  "year": 2025
+ },
+ {
+  "conference": "Sun Belt",
+  "efficiencies": {
+   "defense": 21.263,
+   "offense": 32.039,
+   "overall": 19.462,
+   "specialTeams": 34.816
+  },
+  "fpi": -17.617,
+  "resumeRanks": {
+   "averageWinProbability": 129,
+   "fpi": 129,
+   "gameControl": 119,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 134,
+   "strengthOfSchedule": 68
+  },
+  "team": "Georgia State",
+  "year": 2025
+ },
+ {
+  "conference": "Mid-American",
+  "efficiencies": {
+   "defense": 19.307,
+   "offense": 25.838,
+   "overall": 18.876,
+   "specialTeams": 61.482
+  },
+  "fpi": -19.579,
+  "resumeRanks": {
+   "averageWinProbability": 116,
+   "fpi": 133,
+   "gameControl": 113,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 105,
+   "strengthOfSchedule": 66
+  },
+  "team": "Kent State",
+  "year": 2025
+ },
+ {
+  "conference": "Conference USA",
+  "efficiencies": {
+   "defense": 27.203,
+   "offense": 38.653,
+   "overall": 30.046,
+   "specialTeams": 55.695
+  },
+  "fpi": -10.658,
+  "resumeRanks": {
+   "averageWinProbability": 78,
+   "fpi": 104,
+   "gameControl": 98,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 121,
+   "strengthOfSchedule": 126
+  },
+  "team": "Liberty",
+  "year": 2025
+ },
+ {
+  "conference": "Conference USA",
+  "efficiencies": {
+   "defense": 54.011,
+   "offense": 33.01,
+   "overall": 46.034,
+   "specialTeams": 68.956
+  },
+  "fpi": -6.157,
+  "resumeRanks": {
+   "averageWinProbability": 61,
+   "fpi": 92,
+   "gameControl": 91,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 84,
+   "strengthOfSchedule": 127
+  },
+  "team": "Louisiana Tech",
+  "year": 2025
+ },
+ {
+  "conference": "Conference USA",
+  "efficiencies": {
+   "defense": 21.706,
+   "offense": 26.436,
+   "overall": 19.48,
+   "specialTeams": 51.314
+  },
+  "fpi": -17.987,
+  "resumeRanks": {
+   "averageWinProbability": 124,
+   "fpi": 130,
+   "gameControl": 124,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 131,
+   "strengthOfSchedule": 134
+  },
+  "team": "Middle Tennessee",
+  "year": 2025
+ },
+ {
+  "conference": "American Athletic",
+  "efficiencies": {
+   "defense": 23.821,
+   "offense": 8.062,
+   "overall": 9.975,
+   "specialTeams": 49.745
+  },
+  "fpi": -21.25,
+  "resumeRanks": {
+   "averageWinProbability": 136,
+   "fpi": 134,
+   "gameControl": 124,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 132,
+   "strengthOfSchedule": 71
+  },
+  "team": "Charlotte",
+  "year": 2025
+ },
+ {
+  "conference": "Sun Belt",
+  "efficiencies": {
+   "defense": 33.531,
+   "offense": 24.607,
+   "overall": 20.879,
+   "specialTeams": 25.265
+  },
+  "fpi": -19.167,
+  "resumeRanks": {
+   "averageWinProbability": 120,
+   "fpi": 131,
+   "gameControl": 124,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 127,
+   "strengthOfSchedule": 92
+  },
+  "team": "UL Monroe",
+  "year": 2025
+ },
+ {
+  "conference": "Mountain West",
+  "efficiencies": {
+   "defense": 32.316,
+   "offense": 63.152,
+   "overall": 48.063,
+   "specialTeams": 56.186
+  },
+  "fpi": 0.09,
+  "resumeRanks": {
+   "averageWinProbability": 64,
+   "fpi": 69,
+   "gameControl": 92,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 62,
+   "strengthOfSchedule": 125
+  },
+  "team": "UNLV",
+  "year": 2025
+ },
+ {
+  "conference": "Mountain West",
+  "efficiencies": {
+   "defense": 39.28,
+   "offense": 16.919,
+   "overall": 24.101,
+   "specialTeams": 57.074
+  },
+  "fpi": -14.332,
+  "resumeRanks": {
+   "averageWinProbability": 118,
+   "fpi": 123,
+   "gameControl": 118,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 120,
+   "strengthOfSchedule": 90
+  },
+  "team": "Nevada",
+  "year": 2025
+ },
+ {
+  "conference": "Mid-American",
+  "efficiencies": {
+   "defense": 37.237,
+   "offense": 16.226,
+   "overall": 22.224,
+   "specialTeams": 56.885
+  },
+  "fpi": -14.293,
+  "resumeRanks": {
+   "averageWinProbability": 100,
+   "fpi": 122,
+   "gameControl": 115,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 130,
+   "strengthOfSchedule": 124
+  },
+  "team": "Northern Illinois",
+  "year": 2025
+ },
+ {
+  "conference": "Big Ten",
+  "efficiencies": {
+   "defense": 36.524,
+   "offense": 44.732,
+   "overall": 38.108,
+   "specialTeams": 49.168
+  },
+  "fpi": -4.748,
+  "resumeRanks": {
+   "averageWinProbability": 119,
+   "fpi": 86,
+   "gameControl": 74,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 99,
+   "strengthOfSchedule": 4
+  },
+  "team": "Purdue",
+  "year": 2025
+ },
+ {
+  "conference": "Conference USA",
+  "efficiencies": {
+   "defense": 21.535,
+   "offense": 11.947,
+   "overall": 13.013,
+   "specialTeams": 62.033
+  },
+  "fpi": -24.254,
+  "resumeRanks": {
+   "averageWinProbability": 134,
+   "fpi": 135,
+   "gameControl": 124,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 133,
+   "strengthOfSchedule": 107
+  },
+  "team": "Sam Houston",
+  "year": 2025
+ },
+ {
+  "conference": "Sun Belt",
+  "efficiencies": {
+   "defense": 45.314,
+   "offense": 31.882,
+   "overall": 36.107,
+   "specialTeams": 51.068
+  },
+  "fpi": -8.573,
+  "resumeRanks": {
+   "averageWinProbability": 65,
+   "fpi": 98,
+   "gameControl": 100,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 102,
+   "strengthOfSchedule": 133
+  },
+  "team": "Southern Miss",
+  "year": 2025
+ },
+ {
+  "conference": "SEC",
+  "efficiencies": {
+   "defense": 71.148,
+   "offense": 42.094,
+   "overall": 62.857,
+   "specialTeams": 65.245
+  },
+  "fpi": 8.965,
+  "resumeRanks": {
+   "averageWinProbability": 75,
+   "fpi": 34,
+   "gameControl": 38,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 67,
+   "strengthOfSchedule": 13
+  },
+  "team": "South Carolina",
+  "year": 2025
+ },
+ {
+  "conference": "Conference USA",
+  "efficiencies": {
+   "defense": 31.654,
+   "offense": 46.477,
+   "overall": 33.779,
+   "specialTeams": 36.887
+  },
+  "fpi": -11.501,
+  "resumeRanks": {
+   "averageWinProbability": 94,
+   "fpi": 109,
+   "gameControl": 109,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 91,
+   "strengthOfSchedule": 101
+  },
+  "team": "Missouri State",
+  "year": 2025
+ },
+ {
+  "conference": "Big 12",
+  "efficiencies": {
+   "defense": 63.906,
+   "offense": 65.464,
+   "overall": 69.463,
+   "specialTeams": 57.832
+  },
+  "fpi": 9.43,
+  "resumeRanks": {
+   "averageWinProbability": 29,
+   "fpi": 32,
+   "gameControl": 24,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 27,
+   "strengthOfSchedule": 50
+  },
+  "team": "TCU",
+  "year": 2025
+ },
+ {
+  "conference": "SEC",
+  "efficiencies": {
+   "defense": 61.521,
+   "offense": 80.351,
+   "overall": 75.014,
+   "specialTeams": 43.233
+  },
+  "fpi": 14.31,
+  "resumeRanks": {
+   "averageWinProbability": 14,
+   "fpi": 19,
+   "gameControl": 14,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 35,
+   "strengthOfSchedule": 36
+  },
+  "team": "Tennessee",
+  "year": 2025
+ },
+ {
+  "conference": "American Athletic",
+  "efficiencies": {
+   "defense": 51.886,
+   "offense": 55.417,
+   "overall": 52.353,
+   "specialTeams": 39.082
+  },
+  "fpi": 1.558,
+  "resumeRanks": {
+   "averageWinProbability": 43,
+   "fpi": 62,
+   "gameControl": 59,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 75,
+   "strengthOfSchedule": 78
+  },
+  "team": "UTSA",
+  "year": 2025
+ },
+ {
+  "conference": "Mid-American",
+  "efficiencies": {
+   "defense": 72.538,
+   "offense": 45.425,
+   "overall": 62.112,
+   "specialTeams": 54.898
+  },
+  "fpi": 4.257,
+  "resumeRanks": {
+   "averageWinProbability": 16,
+   "fpi": 52,
+   "gameControl": 57,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 79,
+   "strengthOfSchedule": 114
+  },
+  "team": "Toledo",
+  "year": 2025
+ },
+ {
+  "conference": "Sun Belt",
+  "efficiencies": {
+   "defense": 53.346,
+   "offense": 25.471,
+   "overall": 38.104,
+   "specialTeams": 58.999
+  },
+  "fpi": -6.76,
+  "resumeRanks": {
+   "averageWinProbability": 101,
+   "fpi": 93,
+   "gameControl": 106,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 82,
+   "strengthOfSchedule": 99
+  },
+  "team": "Troy",
+  "year": 2025
+ },
+ {
+  "conference": "American Athletic",
+  "efficiencies": {
+   "defense": 57.27,
+   "offense": 59.306,
+   "overall": 62.994,
+   "specialTeams": 64.67
+  },
+  "fpi": 3.675,
+  "resumeRanks": {
+   "averageWinProbability": 22,
+   "fpi": 54,
+   "gameControl": 31,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 22,
+   "strengthOfSchedule": 65
+  },
+  "team": "Tulane",
+  "year": 2025
+ },
+ {
+  "conference": "Mountain West",
+  "efficiencies": {
+   "defense": 28.19,
+   "offense": 42.656,
+   "overall": 29.037,
+   "specialTeams": 35.346
+  },
+  "fpi": -13.662,
+  "resumeRanks": {
+   "averageWinProbability": 109,
+   "fpi": 119,
+   "gameControl": 117,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 125,
+   "strengthOfSchedule": 98
+  },
+  "team": "San José State",
+  "year": 2025
+ },
+ {
+  "conference": "Mid-American",
+  "efficiencies": {
+   "defense": 66.141,
+   "offense": 43.133,
+   "overall": 54.323,
+   "specialTeams": 44.438
+  },
+  "fpi": -2.711,
+  "resumeRanks": {
+   "averageWinProbability": 42,
+   "fpi": 79,
+   "gameControl": 79,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 55,
+   "strengthOfSchedule": 111
+  },
+  "team": "Western Michigan",
+  "year": 2025
+ },
+ {
+  "conference": "Big Ten",
+  "efficiencies": {
+   "defense": 56.841,
+   "offense": 87.314,
+   "overall": 78.395,
+   "specialTeams": 39.382
+  },
+  "fpi": 17.962,
+  "resumeRanks": {
+   "averageWinProbability": 36,
+   "fpi": 13,
+   "gameControl": 21,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 20,
+   "strengthOfSchedule": 30
+  },
+  "team": "USC",
+  "year": 2025
+ },
+ {
+  "conference": "Mountain West",
+  "efficiencies": {
+   "defense": 25.562,
+   "offense": 26.782,
+   "overall": 20.348,
+   "specialTeams": 43.764
+  },
+  "fpi": -13.188,
+  "resumeRanks": {
+   "averageWinProbability": 133,
+   "fpi": 115,
+   "gameControl": 124,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 129,
+   "strengthOfSchedule": 89
+  },
+  "team": "Colorado State",
+  "year": 2025
+ },
+ {
+  "conference": "FBS Independents",
+  "efficiencies": {
+   "defense": 31.752,
+   "offense": 63.294,
+   "overall": 48.684,
+   "specialTeams": 62.549
+  },
+  "fpi": -3.484,
+  "resumeRanks": {
+   "averageWinProbability": 18,
+   "fpi": 82,
+   "gameControl": 75,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 74,
+   "strengthOfSchedule": 132
+  },
+  "team": "UConn",
+  "year": 2025
+ },
+ {
+  "conference": "Mountain West",
+  "efficiencies": {
+   "defense": 39.501,
+   "offense": 43.035,
+   "overall": 42.258,
+   "specialTeams": 64.13
+  },
+  "fpi": -5.187,
+  "resumeRanks": {
+   "averageWinProbability": 48,
+   "fpi": 87,
+   "gameControl": 84,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 66,
+   "strengthOfSchedule": 112
+  },
+  "team": "Hawai'i",
+  "year": 2025
+ },
+ {
+  "conference": "Big Ten",
+  "efficiencies": {
+   "defense": 58.712,
+   "offense": 50.335,
+   "overall": 56.903,
+   "specialTeams": 58.415
+  },
+  "fpi": 3.514,
+  "resumeRanks": {
+   "averageWinProbability": 72,
+   "fpi": 56,
+   "gameControl": 51,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 46,
+   "strengthOfSchedule": 38
+  },
+  "team": "Northwestern",
+  "year": 2025
+ },
+ {
+  "conference": "Big Ten",
+  "efficiencies": {
+   "defense": 91.187,
+   "offense": 88.618,
+   "overall": 95.162,
+   "specialTeams": 67.448
+  },
+  "fpi": 31.487,
+  "resumeRanks": {
+   "averageWinProbability": 1,
+   "fpi": 1,
+   "gameControl": 1,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 1,
+   "strengthOfSchedule": 10
+  },
+  "team": "Indiana",
+  "year": 2025
+ },
+ {
+  "conference": "FBS Independents",
+  "efficiencies": {
+   "defense": 81.668,
+   "offense": 89.767,
+   "overall": 91.24,
+   "specialTeams": 52.082
+  },
+  "fpi": 25.279,
+  "resumeRanks": {
+   "averageWinProbability": 3,
+   "fpi": 3,
+   "gameControl": 6,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 13,
+   "strengthOfSchedule": 47
+  },
+  "team": "Notre Dame",
+  "year": 2025
+ },
+ {
+  "conference": "ACC",
+  "efficiencies": {
+   "defense": 74.491,
+   "offense": 56.287,
+   "overall": 71.783,
+   "specialTeams": 63.059
+  },
+  "fpi": 10.15,
+  "resumeRanks": {
+   "averageWinProbability": 27,
+   "fpi": 28,
+   "gameControl": 30,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 28,
+   "strengthOfSchedule": 53
+  },
+  "team": "Louisville",
+  "year": 2025
+ },
+ {
+  "conference": "Conference USA",
+  "efficiencies": {
+   "defense": 45.123,
+   "offense": 36.656,
+   "overall": 39.793,
+   "specialTeams": 54.05
+  },
+  "fpi": -7.439,
+  "resumeRanks": {
+   "averageWinProbability": 69,
+   "fpi": 94,
+   "gameControl": 96,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 68,
+   "strengthOfSchedule": 121
+  },
+  "team": "Western Kentucky",
+  "year": 2025
+ },
+ {
+  "conference": "SEC",
+  "efficiencies": {
+   "defense": 76.979,
+   "offense": 47.944,
+   "overall": 66.778,
+   "specialTeams": 48.994
+  },
+  "fpi": 10.712,
+  "resumeRanks": {
+   "averageWinProbability": 74,
+   "fpi": 26,
+   "gameControl": 36,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 34,
+   "strengthOfSchedule": 12
+  },
+  "team": "LSU",
+  "year": 2025
+ },
+ {
+  "conference": "American Athletic",
+  "efficiencies": {
+   "defense": 67.446,
+   "offense": 52.538,
+   "overall": 61.778,
+   "specialTeams": 48.403
+  },
+  "fpi": 5.119,
+  "resumeRanks": {
+   "averageWinProbability": 31,
+   "fpi": 48,
+   "gameControl": 55,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 45,
+   "strengthOfSchedule": 83
+  },
+  "team": "East Carolina",
+  "year": 2025
+ },
+ {
+  "conference": "Big Ten",
+  "efficiencies": {
+   "defense": 48.276,
+   "offense": 55.82,
+   "overall": 55.512,
+   "specialTeams": 63.965
+  },
+  "fpi": 5.45,
+  "resumeRanks": {
+   "averageWinProbability": 57,
+   "fpi": 45,
+   "gameControl": 45,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 47,
+   "strengthOfSchedule": 42
+  },
+  "team": "Nebraska",
+  "year": 2025
+ },
+ {
+  "conference": "Conference USA",
+  "efficiencies": {
+   "defense": 36.297,
+   "offense": 16.367,
+   "overall": 20.179,
+   "specialTeams": 47.882
+  },
+  "fpi": -17.171,
+  "resumeRanks": {
+   "averageWinProbability": 113,
+   "fpi": 126,
+   "gameControl": 124,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 126,
+   "strengthOfSchedule": 115
+  },
+  "team": "New Mexico State",
+  "year": 2025
+ },
+ {
+  "conference": "ACC",
+  "efficiencies": {
+   "defense": 47.348,
+   "offense": 20.405,
+   "overall": 28.959,
+   "specialTeams": 51.359
+  },
+  "fpi": -9.277,
+  "resumeRanks": {
+   "averageWinProbability": 127,
+   "fpi": 99,
+   "gameControl": 90,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 92,
+   "strengthOfSchedule": 19
+  },
+  "team": "Syracuse",
+  "year": 2025
+ },
+ {
+  "conference": "Big Ten",
+  "efficiencies": {
+   "defense": 90.977,
+   "offense": 86.089,
+   "overall": 92.368,
+   "specialTeams": 34.478
+  },
+  "fpi": 27.617,
+  "resumeRanks": {
+   "averageWinProbability": 4,
+   "fpi": 2,
+   "gameControl": 3,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 4,
+   "strengthOfSchedule": 20
+  },
+  "team": "Ohio State",
+  "year": 2025
+ },
+ {
+  "conference": "SEC",
+  "efficiencies": {
+   "defense": 67.439,
+   "offense": 47.332,
+   "overall": 57.176,
+   "specialTeams": 40.257
+  },
+  "fpi": 5.127,
+  "resumeRanks": {
+   "averageWinProbability": 90,
+   "fpi": 47,
+   "gameControl": 46,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 48,
+   "strengthOfSchedule": 11
+  },
+  "team": "Kentucky",
+  "year": 2025
+ },
+ {
+  "conference": "Mid-American",
+  "efficiencies": {
+   "defense": 46.133,
+   "offense": 53.53,
+   "overall": 49.232,
+   "specialTeams": 46.171
+  },
+  "fpi": -2.426,
+  "resumeRanks": {
+   "averageWinProbability": 30,
+   "fpi": 74,
+   "gameControl": 66,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 58,
+   "strengthOfSchedule": 88
+  },
+  "team": "Ohio",
+  "year": 2025
+ },
+ {
+  "conference": "SEC",
+  "efficiencies": {
+   "defense": 86.371,
+   "offense": 53.346,
+   "overall": 78.901,
+   "specialTeams": 64.179
+  },
+  "fpi": 15.944,
+  "resumeRanks": {
+   "averageWinProbability": 13,
+   "fpi": 15,
+   "gameControl": 10,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 12,
+   "strengthOfSchedule": 14
+  },
+  "team": "Oklahoma",
+  "year": 2025
+ },
+ {
+  "conference": "Big Ten",
+  "efficiencies": {
+   "defense": 62.784,
+   "offense": 69.457,
+   "overall": 73.817,
+   "specialTeams": 72.666
+  },
+  "fpi": 15.929,
+  "resumeRanks": {
+   "averageWinProbability": 38,
+   "fpi": 16,
+   "gameControl": 19,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 43,
+   "strengthOfSchedule": 22
+  },
+  "team": "Penn State",
+  "year": 2025
+ },
+ {
+  "conference": "ACC",
+  "efficiencies": {
+   "defense": 54.953,
+   "offense": 73.304,
+   "overall": 65.121,
+   "specialTeams": 31.148
+  },
+  "fpi": 9.396,
+  "resumeRanks": {
+   "averageWinProbability": 80,
+   "fpi": 33,
+   "gameControl": 53,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 71,
+   "strengthOfSchedule": 45
+  },
+  "team": "Florida State",
+  "year": 2025
+ },
+ {
+  "conference": "SEC",
+  "efficiencies": {
+   "defense": 67.748,
+   "offense": 47.747,
+   "overall": 62.852,
+   "specialTeams": 63.557
+  },
+  "fpi": 8.194,
+  "resumeRanks": {
+   "averageWinProbability": 87,
+   "fpi": 37,
+   "gameControl": 34,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 50,
+   "strengthOfSchedule": 3
+  },
+  "team": "Florida",
+  "year": 2025
+ },
+ {
+  "conference": "ACC",
+  "efficiencies": {
+   "defense": 65.835,
+   "offense": 58.532,
+   "overall": 63.659,
+   "specialTeams": 43.666
+  },
+  "fpi": 9.454,
+  "resumeRanks": {
+   "averageWinProbability": 56,
+   "fpi": 31,
+   "gameControl": 47,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 52,
+   "strengthOfSchedule": 57
+  },
+  "team": "Clemson",
+  "year": 2025
+ },
+ {
+  "conference": "American Athletic",
+  "efficiencies": {
+   "defense": 49.905,
+   "offense": 81.786,
+   "overall": 69.575,
+   "specialTeams": 36.544
+  },
+  "fpi": 7.014,
+  "resumeRanks": {
+   "averageWinProbability": 8,
+   "fpi": 41,
+   "gameControl": 37,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 26,
+   "strengthOfSchedule": 109
+  },
+  "team": "North Texas",
+  "year": 2025
+ },
+ {
+  "conference": "SEC",
+  "efficiencies": {
+   "defense": 78.609,
+   "offense": 65.289,
+   "overall": 78.654,
+   "specialTeams": 61.059
+  },
+  "fpi": 18.576,
+  "resumeRanks": {
+   "averageWinProbability": 46,
+   "fpi": 11,
+   "gameControl": 16,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 10,
+   "strengthOfSchedule": 9
+  },
+  "team": "Texas",
+  "year": 2025
+ },
+ {
+  "conference": "Big 12",
+  "efficiencies": {
+   "defense": 76.546,
+   "offense": 73.608,
+   "overall": 80.814,
+   "specialTeams": 55.279
+  },
+  "fpi": 15.333,
+  "resumeRanks": {
+   "averageWinProbability": 35,
+   "fpi": 17,
+   "gameControl": 17,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 8,
+   "strengthOfSchedule": 29
+  },
+  "team": "BYU",
+  "year": 2025
+ },
+ {
+  "conference": "ACC",
+  "efficiencies": {
+   "defense": 36.988,
+   "offense": 47.904,
+   "overall": 38.838,
+   "specialTeams": 41.003
+  },
+  "fpi": -1.216,
+  "resumeRanks": {
+   "averageWinProbability": 114,
+   "fpi": 71,
+   "gameControl": 82,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 90,
+   "strengthOfSchedule": 37
+  },
+  "team": "Virginia Tech",
+  "year": 2025
+ },
+ {
+  "conference": "Mountain West",
+  "efficiencies": {
+   "defense": 64.527,
+   "offense": 25.228,
+   "overall": 45.764,
+   "specialTeams": 64.634
+  },
+  "fpi": -4.268,
+  "resumeRanks": {
+   "averageWinProbability": 53,
+   "fpi": 85,
+   "gameControl": 83,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 64,
+   "strengthOfSchedule": 122
+  },
+  "team": "Fresno State",
+  "year": 2025
+ },
+ {
+  "conference": "Sun Belt",
+  "efficiencies": {
+   "defense": 20.708,
+   "offense": 53.918,
+   "overall": 32.785,
+   "specialTeams": 51.262
+  },
+  "fpi": -9.686,
+  "resumeRanks": {
+   "averageWinProbability": 81,
+   "fpi": 102,
+   "gameControl": 93,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 85,
+   "strengthOfSchedule": 86
+  },
+  "team": "Georgia Southern",
+  "year": 2025
+ },
+ {
+  "conference": "Sun Belt",
+  "efficiencies": {
+   "defense": 76.025,
+   "offense": 55.591,
+   "overall": 68.793,
+   "specialTeams": 39.479
+  },
+  "fpi": 4.84,
+  "resumeRanks": {
+   "averageWinProbability": 10,
+   "fpi": 49,
+   "gameControl": 26,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 30,
+   "strengthOfSchedule": 74
+  },
+  "team": "Old Dominion",
+  "year": 2025
+ },
+ {
+  "conference": "Mid-American",
+  "efficiencies": {
+   "defense": 38.165,
+   "offense": 21.793,
+   "overall": 22.333,
+   "specialTeams": 33.188
+  },
+  "fpi": -17.599,
+  "resumeRanks": {
+   "averageWinProbability": 95,
+   "fpi": 128,
+   "gameControl": 122,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 118,
+   "strengthOfSchedule": 130
+  },
+  "team": "Akron",
+  "year": 2025
+ },
+ {
+  "conference": "Mid-American",
+  "efficiencies": {
+   "defense": 48.363,
+   "offense": 32.128,
+   "overall": 37.671,
+   "specialTeams": 48.038
+  },
+  "fpi": -11.242,
+  "resumeRanks": {
+   "averageWinProbability": 58,
+   "fpi": 107,
+   "gameControl": 80,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 87,
+   "strengthOfSchedule": 100
+  },
+  "team": "Central Michigan",
+  "year": 2025
+ },
+ {
+  "conference": "Mid-American",
+  "efficiencies": {
+   "defense": 16.86,
+   "offense": 40.093,
+   "overall": 22.52,
+   "specialTeams": 49.528
+  },
+  "fpi": -13.458,
+  "resumeRanks": {
+   "averageWinProbability": 110,
+   "fpi": 118,
+   "gameControl": 124,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 123,
+   "strengthOfSchedule": 129
+  },
+  "team": "Eastern Michigan",
+  "year": 2025
+ },
+ {
+  "conference": "Big Ten",
+  "efficiencies": {
+   "defense": 81.542,
+   "offense": 60.036,
+   "overall": 79.077,
+   "specialTeams": 67.67
+  },
+  "fpi": 15.306,
+  "resumeRanks": {
+   "averageWinProbability": 23,
+   "fpi": 18,
+   "gameControl": 13,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 16,
+   "strengthOfSchedule": 16
+  },
+  "team": "Iowa",
+  "year": 2025
+ },
+ {
+  "conference": "Big Ten",
+  "efficiencies": {
+   "defense": 66.186,
+   "offense": 74.016,
+   "overall": 73.509,
+   "specialTeams": 44.873
+  },
+  "fpi": 14.243,
+  "resumeRanks": {
+   "averageWinProbability": 33,
+   "fpi": 20,
+   "gameControl": 15,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 19,
+   "strengthOfSchedule": 24
+  },
+  "team": "Michigan",
+  "year": 2025
+ },
+ {
+  "conference": "Big 12",
+  "efficiencies": {
+   "defense": 62.699,
+   "offense": 60.934,
+   "overall": 63.833,
+   "specialTeams": 45.357
+  },
+  "fpi": 7.784,
+  "resumeRanks": {
+   "averageWinProbability": 47,
+   "fpi": 38,
+   "gameControl": 33,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 54,
+   "strengthOfSchedule": 48
+  },
+  "team": "Kansas State",
+  "year": 2025
+ },
+ {
+  "conference": "ACC",
+  "efficiencies": {
+   "defense": 86.695,
+   "offense": 76.102,
+   "overall": 86.42,
+   "specialTeams": 44.924
+  },
+  "fpi": 22.396,
+  "resumeRanks": {
+   "averageWinProbability": 6,
+   "fpi": 5,
+   "gameControl": 4,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 3,
+   "strengthOfSchedule": 7
+  },
+  "team": "Miami",
+  "year": 2025
+ },
+ {
+  "conference": "Big Ten",
+  "efficiencies": {
+   "defense": 53.264,
+   "offense": 46.289,
+   "overall": 50.105,
+   "specialTeams": 51.177
+  },
+  "fpi": 1.067,
+  "resumeRanks": {
+   "averageWinProbability": 83,
+   "fpi": 65,
+   "gameControl": 70,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 41,
+   "strengthOfSchedule": 40
+  },
+  "team": "Minnesota",
+  "year": 2025
+ },
+ {
+  "conference": "Big Ten",
+  "efficiencies": {
+   "defense": 84.998,
+   "offense": 85.799,
+   "overall": 91.153,
+   "specialTeams": 56.687
+  },
+  "fpi": 23.872,
+  "resumeRanks": {
+   "averageWinProbability": 5,
+   "fpi": 4,
+   "gameControl": 2,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 2,
+   "strengthOfSchedule": 6
+  },
+  "team": "Oregon",
+  "year": 2025
+ },
+ {
+  "conference": "ACC",
+  "efficiencies": {
+   "defense": 71.378,
+   "offense": 69.092,
+   "overall": 74.94,
+   "specialTeams": 52.001
+  },
+  "fpi": 12.495,
+  "resumeRanks": {
+   "averageWinProbability": 17,
+   "fpi": 23,
+   "gameControl": 20,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 32,
+   "strengthOfSchedule": 61
+  },
+  "team": "SMU",
+  "year": 2025
+ },
+ {
+  "conference": "Big 12",
+  "efficiencies": {
+   "defense": 96.349,
+   "offense": 64.946,
+   "overall": 91.349,
+   "specialTeams": 63.255
+  },
+  "fpi": 21.536,
+  "resumeRanks": {
+   "averageWinProbability": 2,
+   "fpi": 6,
+   "gameControl": 5,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 11,
+   "strengthOfSchedule": 46
+  },
+  "team": "Texas Tech",
+  "year": 2025
+ },
+ {
+  "conference": "SEC",
+  "efficiencies": {
+   "defense": 73.458,
+   "offense": 59.559,
+   "overall": 69.838,
+   "specialTeams": 49.457
+  },
+  "fpi": 13.078,
+  "resumeRanks": {
+   "averageWinProbability": 49,
+   "fpi": 22,
+   "gameControl": 35,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 29,
+   "strengthOfSchedule": 32
+  },
+  "team": "Missouri",
+  "year": 2025
+ },
+ {
+  "conference": "ACC",
+  "efficiencies": {
+   "defense": 49.582,
+   "offense": 75.828,
+   "overall": 64.734,
+   "specialTeams": 42.798
+  },
+  "fpi": 5.215,
+  "resumeRanks": {
+   "averageWinProbability": 55,
+   "fpi": 46,
+   "gameControl": 39,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 36,
+   "strengthOfSchedule": 34
+  },
+  "team": "NC State",
+  "year": 2025
+ },
+ {
+  "conference": "ACC",
+  "efficiencies": {
+   "defense": 45.199,
+   "offense": 35.151,
+   "overall": 40.332,
+   "specialTeams": 60.52
+  },
+  "fpi": -5.878,
+  "resumeRanks": {
+   "averageWinProbability": 112,
+   "fpi": 91,
+   "gameControl": 99,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 104,
+   "strengthOfSchedule": 80
+  },
+  "team": "North Carolina",
+  "year": 2025
+ },
+ {
+  "conference": "American Athletic",
+  "efficiencies": {
+   "defense": 36.653,
+   "offense": 30.565,
+   "overall": 29.194,
+   "specialTeams": 47.221
+  },
+  "fpi": -13.969,
+  "resumeRanks": {
+   "averageWinProbability": 104,
+   "fpi": 120,
+   "gameControl": 110,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 115,
+   "strengthOfSchedule": 118
+  },
+  "team": "Tulsa",
+  "year": 2025
+ },
+ {
+  "conference": "SEC",
+  "efficiencies": {
+   "defense": 79.32,
+   "offense": 74.146,
+   "overall": 80.58,
+   "specialTeams": 46.36
+  },
+  "fpi": 18.374,
+  "resumeRanks": {
+   "averageWinProbability": 12,
+   "fpi": 12,
+   "gameControl": 9,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 7,
+   "strengthOfSchedule": 18
+  },
+  "team": "Texas A&M",
+  "year": 2025
+ },
+ {
+  "conference": "American Athletic",
+  "efficiencies": {
+   "defense": 46.794,
+   "offense": 58.473,
+   "overall": 54.928,
+   "specialTeams": 57.295
+  },
+  "fpi": 3.424,
+  "resumeRanks": {
+   "averageWinProbability": 63,
+   "fpi": 57,
+   "gameControl": 85,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 69,
+   "strengthOfSchedule": 102
+  },
+  "team": "Memphis",
+  "year": 2025
+ },
+ {
+  "conference": "ACC",
+  "efficiencies": {
+   "defense": 73.031,
+   "offense": 55.513,
+   "overall": 67.362,
+   "specialTeams": 51.704
+  },
+  "fpi": 8.247,
+  "resumeRanks": {
+   "averageWinProbability": 19,
+   "fpi": 36,
+   "gameControl": 32,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 23,
+   "strengthOfSchedule": 76
+  },
+  "team": "Virginia",
+  "year": 2025
+ },
+ {
+  "conference": "Big Ten",
+  "efficiencies": {
+   "defense": 73.905,
+   "offense": 73.295,
+   "overall": 77.16,
+   "specialTeams": 39.159
+  },
+  "fpi": 14.005,
+  "resumeRanks": {
+   "averageWinProbability": 26,
+   "fpi": 21,
+   "gameControl": 25,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 25,
+   "strengthOfSchedule": 41
+  },
+  "team": "Washington",
+  "year": 2025
+ },
+ {
+  "conference": "SEC",
+  "efficiencies": {
+   "defense": 52.91,
+   "offense": 55.394,
+   "overall": 56.988,
+   "specialTeams": 59.102
+  },
+  "fpi": 3.389,
+  "resumeRanks": {
+   "averageWinProbability": 88,
+   "fpi": 58,
+   "gameControl": 54,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 65,
+   "strengthOfSchedule": 21
+  },
+  "team": "Mississippi State",
+  "year": 2025
+ },
+ {
+  "conference": "Big Ten",
+  "efficiencies": {
+   "defense": 61.265,
+   "offense": 71.043,
+   "overall": 70.548,
+   "specialTeams": 52.183
+  },
+  "fpi": 10,
+  "resumeRanks": {
+   "averageWinProbability": 44,
+   "fpi": 30,
+   "gameControl": 22,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 18,
+   "strengthOfSchedule": 23
+  },
+  "team": "Illinois",
+  "year": 2025
+ },
+ {
+  "conference": "Big 12",
+  "efficiencies": {
+   "defense": 40.803,
+   "offense": 67.619,
+   "overall": 56.725,
+   "specialTeams": 59.126
+  },
+  "fpi": 4.37,
+  "resumeRanks": {
+   "averageWinProbability": 71,
+   "fpi": 51,
+   "gameControl": 48,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 73,
+   "strengthOfSchedule": 39
+  },
+  "team": "Kansas",
+  "year": 2025
+ },
+ {
+  "conference": "SEC",
+  "efficiencies": {
+   "defense": 71.044,
+   "offense": 59.124,
+   "overall": 68.748,
+   "specialTeams": 50.859
+  },
+  "fpi": 11.083,
+  "resumeRanks": {
+   "averageWinProbability": 60,
+   "fpi": 24,
+   "gameControl": 27,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 53,
+   "strengthOfSchedule": 15
+  },
+  "team": "Auburn",
+  "year": 2025
+ },
+ {
+  "conference": "Conference USA",
+  "efficiencies": {
+   "defense": 39.962,
+   "offense": 15.904,
+   "overall": 21.274,
+   "specialTeams": 40.479
+  },
+  "fpi": -16.554,
+  "resumeRanks": {
+   "averageWinProbability": 126,
+   "fpi": 125,
+   "gameControl": 124,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 135,
+   "strengthOfSchedule": 110
+  },
+  "team": "UTEP",
+  "year": 2025
+ },
+ {
+  "conference": "Mountain West",
+  "efficiencies": {
+   "defense": 53.002,
+   "offense": 19.083,
+   "overall": 28.552,
+   "specialTeams": 36.841
+  },
+  "fpi": -11.537,
+  "resumeRanks": {
+   "averageWinProbability": 115,
+   "fpi": 110,
+   "gameControl": 119,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 112,
+   "strengthOfSchedule": 103
+  },
+  "team": "Wyoming",
+  "year": 2025
+ },
+ {
+  "conference": "ACC",
+  "efficiencies": {
+   "defense": 53.624,
+   "offense": 30.282,
+   "overall": 38.865,
+   "specialTeams": 43.132
+  },
+  "fpi": -3.652,
+  "resumeRanks": {
+   "averageWinProbability": 123,
+   "fpi": 83,
+   "gameControl": 89,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 80,
+   "strengthOfSchedule": 27
+  },
+  "team": "Stanford",
+  "year": 2025
+ },
+ {
+  "conference": "Big 12",
+  "efficiencies": {
+   "defense": 34.732,
+   "offense": 61.911,
+   "overall": 50.092,
+   "specialTeams": 60.049
+  },
+  "fpi": 2.973,
+  "resumeRanks": {
+   "averageWinProbability": 105,
+   "fpi": 59,
+   "gameControl": 78,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 70,
+   "strengthOfSchedule": 49
+  },
+  "team": "Baylor",
+  "year": 2025
+ },
+ {
+  "conference": "ACC",
+  "efficiencies": {
+   "defense": 29.997,
+   "offense": 46.128,
+   "overall": 35.32,
+   "specialTeams": 48.831
+  },
+  "fpi": -5.231,
+  "resumeRanks": {
+   "averageWinProbability": 108,
+   "fpi": 88,
+   "gameControl": 87,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 111,
+   "strengthOfSchedule": 54
+  },
+  "team": "Boston College",
+  "year": 2025
+ },
+ {
+  "conference": "American Athletic",
+  "efficiencies": {
+   "defense": 42.556,
+   "offense": 67.557,
+   "overall": 57.983,
+   "specialTeams": 56.292
+  },
+  "fpi": 0.47,
+  "resumeRanks": {
+   "averageWinProbability": 39,
+   "fpi": 68,
+   "gameControl": 60,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 17,
+   "strengthOfSchedule": 75
+  },
+  "team": "Navy",
+  "year": 2025
+ },
+ {
+  "conference": "Big Ten",
+  "efficiencies": {
+   "defense": 40.829,
+   "offense": 42.176,
+   "overall": 39.77,
+   "specialTeams": 52.484
+  },
+  "fpi": -2.444,
+  "resumeRanks": {
+   "averageWinProbability": 130,
+   "fpi": 75,
+   "gameControl": 86,
+   "remainingStrengthOfSchedule": null,
+   "strengthOfRecord": 78,
+   "strengthOfSchedule": 5
+  },
+  "team": "UCLA",
+  "year": 2025
+ }
+]

@@ -1,0 +1,129 @@
+name: Rank
+
+on:
+  schedule:
+    # 12:37 UTC daily. An off-the-hour minute avoids the runner queue at :00,
+    # and most runs are no-ops that commit nothing.
+    - cron: "37 12 * * *"
+  workflow_dispatch:
+    inputs:
+      year:
+        description: "Season year (blank uses the config)"
+        required: false
+      week:
+        description: "Week number, or 'auto'"
+        required: false
+      force:
+        description: "Commit even if nothing changed"
+        type: boolean
+        default: false
+      dry_run:
+        description: "Compute but do not commit"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write    # needed to push the regenerated JSON back to main
+
+concurrency:
+  group: rank
+  cancel-in-progress: false   # never let two runs race on the same commit
+
+jobs:
+  rank:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Season guard
+        id: guard
+        run: |
+          # cron cannot express "August through mid-January", so gate here.
+          M=$(date -u +%m); D=$(date -u +%d)
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] \
+             || [ "$M" -ge 8 ] || { [ "$M" -eq 1 ] && [ "$D" -le 25 ]; }; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Out of season ($M-$D); skipping."
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.guard.outputs.run == 'true'
+        with:
+          ref: main
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        if: steps.guard.outputs.run == 'true'
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        if: steps.guard.outputs.run == 'true'
+        run: pip install -r requirements.txt
+
+      - name: Restore the API cache
+        if: steps.guard.outputs.run == 'true'
+        uses: actions/cache@v4
+        with:
+          path: .cache/cfbd
+          key: cfbd-${{ github.run_id }}
+          # The restore-key is what makes serve-stale-on-failure real rather
+          # than theoretical: yesterday's responses survive into today's run.
+          restore-keys: cfbd-
+
+      - name: Generate rankings
+        if: steps.guard.outputs.run == 'true'
+        id: gen
+        env:
+          CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
+        run: |
+          set +e
+          python -m cfbrank \
+            ${{ inputs.year && format('--year {0}', inputs.year) || '' }} \
+            ${{ inputs.week && format('--week {0}', inputs.week) || '' }} \
+            ${{ inputs.force == true && '--force' || '' }} \
+            ${{ inputs.dry_run == true && '--dry-run' || '' }} \
+            --print-top 25
+          CODE=$?
+          set -e
+          echo "code=$CODE" >> "$GITHUB_OUTPUT"
+          case $CODE in
+            0) echo "::notice::Rankings updated." ;;
+            2) echo "::notice::No change; nothing to commit." ;;
+            3) echo "::warning::CFBD unavailable; keeping the published snapshot."; exit 0 ;;
+            4) echo "::error::Configuration error."; exit 4 ;;
+            *) echo "::error::Generator failed with exit $CODE"; exit $CODE ;;
+          esac
+
+      - name: Commit and push
+        if: steps.guard.outputs.run == 'true' && steps.gen.outputs.code == '0' && inputs.dry_run != true
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Belt and braces: even if the exit code says "changed", commit
+          # nothing when the tree is actually clean.
+          if git diff --quiet -- docs/data; then
+            echo "::notice::Working tree clean; skipping commit."
+            exit 0
+          fi
+          SNAP=$(python -c "import json;print(json.load(open('docs/data/rankings.json'))['meta']['snapshot_id'])")
+          git add docs/data
+          git commit -m "rankings: $SNAP"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then exit 0; fi
+            echo "push failed (attempt $attempt); rebasing and retrying"
+            git pull --rebase --autostash origin main
+            sleep $((attempt * 3))
+          done
+          echo "::error::Could not push after 3 attempts"
+          exit 1
+
+      - name: Upload the generated data
+        if: always() && steps.guard.outputs.run == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: rankings-${{ github.run_id }}
+          path: docs/data
+          if-no-files-found: ignore

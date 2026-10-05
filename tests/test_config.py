@@ -1,0 +1,114 @@
+"""Config loading, strict key checking, and --set overrides."""
+
+from __future__ import annotations
+
+import tempfile
+import unittest
+from pathlib import Path
+
+from cfbrank.config import DEFAULTS, apply_override, load, validate
+from cfbrank.errors import ConfigError
+
+SHIPPED = "config/ranking.toml"
+
+
+class TestLoad(unittest.TestCase):
+    def test_shipped_config_is_valid(self):
+        cfg = load(SHIPPED)
+        self.assertEqual(cfg["schema_version"], 1)
+        self.assertAlmostEqual(cfg["stage1.w_sor"] + cfg["stage1.w_sos"], 1.0)
+
+    def test_defaults_alone_are_valid(self):
+        validate(DEFAULTS)
+
+    def test_missing_file_is_reported(self):
+        with self.assertRaises(ConfigError):
+            load("config/does-not-exist.toml")
+
+    def test_unknown_key_is_rejected(self):
+        with tempfile.TemporaryDirectory() as d:
+            p = Path(d) / "c.toml"
+            p.write_text("schema_version = 1\n[stage1]\nw_sosu = 0.3\n")
+            with self.assertRaises(ConfigError) as cm:
+                load(p)
+            self.assertIn("stage1.w_sosu", str(cm.exception))
+
+    def test_malformed_toml_is_reported(self):
+        with tempfile.TemporaryDirectory() as d:
+            p = Path(d) / "c.toml"
+            p.write_text("this is not = = toml\n")
+            with self.assertRaises(ConfigError):
+                load(p)
+
+    def test_section_and_missing_key(self):
+        cfg = load(SHIPPED)
+        self.assertIn("w_margin", cfg.section("stage4.evidence"))
+        self.assertEqual(cfg.get("nope.nope", "fallback"), "fallback")
+        with self.assertRaises(ConfigError):
+            cfg["nope.nope"]
+
+
+class TestOverrides(unittest.TestCase):
+    def test_types_are_coerced(self):
+        cfg = load(SHIPPED, ["stage1.w_sor=0.6", "stage1.pool_size=30",
+                             "stage3.enabled=false", "season.week=auto"])
+        self.assertIsInstance(cfg["stage1.w_sor"], float)
+        self.assertIsInstance(cfg["stage1.pool_size"], int)
+        self.assertIs(cfg["stage3.enabled"], False)
+        self.assertEqual(cfg["season.week"], "auto")
+
+    def test_unknown_path_is_rejected(self):
+        for bad in ["nope.x=1", "stage1.nope=1", "stage4.evidence.nope=1"]:
+            with self.assertRaises(ConfigError, msg=bad):
+                load(SHIPPED, [bad])
+
+    def test_malformed_assignment_is_rejected(self):
+        for bad in ["no-equals-sign", "=5"]:
+            with self.assertRaises(ConfigError, msg=bad):
+                load(SHIPPED, [bad])
+
+    def test_cannot_replace_a_whole_table(self):
+        with self.assertRaises(ConfigError):
+            apply_override({"stage1": {"w_sor": 1}}, "stage1=5")
+
+
+class TestValidation(unittest.TestCase):
+    def _bad(self, assignment):
+        with self.assertRaises(ConfigError, msg=assignment):
+            load(SHIPPED, [assignment])
+
+    def test_rejects_out_of_range_values(self):
+        self._bad("stage1.output_size=99")      # > pool_size
+        self._bad("stage1.output_size=0")
+        self._bad("stage1.pool_size=0")
+        self._bad("stage1.w_sor=-1")
+        self._bad("stage3.strength=1.5")
+        self._bad("stage3.gap=-1")
+        self._bad("stage4.strength=-1")
+        self._bad("stage4.drift_weight=-0.5")
+        self._bad("stage4.drift_exponent=0.5")
+        self._bad("stage4.drift_exponent=4")
+        self._bad("stage4.max_passes=0")
+        self._bad("stage4.split_series=coin-flip")
+        self._bad("stage4.evidence.margin_cap=0")
+        self._bad("stage4.evidence.recency_floor=2")
+        self._bad("stage4.evidence.home_field_points=-1")
+        self._bad("season.week=0")
+        self._bad("season.week=99")
+        self._bad("season.season_type=sometime")
+        self._bad("output.float_precision=-1")
+        self._bad("schema_version=2")
+
+    def test_both_base_weights_zero_is_rejected(self):
+        with self.assertRaises(ConfigError):
+            load(SHIPPED, ["stage1.w_sor=0", "stage1.w_sos=0"])
+
+    def test_accepts_the_documented_edges(self):
+        load(SHIPPED, ["stage3.strength=0", "stage3.strength=1.0"])
+        load(SHIPPED, ["stage4.drift_exponent=1.0"])
+        load(SHIPPED, ["season.week=1"])
+        load(SHIPPED, ["stage1.output_size=40"])
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"   # tomllib is stdlib from 3.11
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Byte-compile
+        run: python -m compileall -q cfbrank scripts tests
+
+      - name: Unit tests
+        # Every test runs offline against the checked-in fixtures; no API key.
+        run: python -m unittest discover -s tests -t . -v
+
+      - name: Rank from fixtures end to end
+        run: |
+          python -m cfbrank --offline --fixture-year 2025 --year 2025 --print-top 25 --dry-run
+          python -m cfbrank --offline --fixture-year 2026 --year 2026 --print-top 25 --dry-run
+
+      - name: Golden output is unchanged
+        # The 2025 fixtures are a completed season, so this pins the engine.
+        # docs/data is deliberately NOT compared here: the scheduled job
+        # rewrites it every week from live data, and that is not a CI failure.
+        run: python -m unittest tests.test_pipeline.TestGolden -v
+
+      - name: Check the site's JavaScript parses
+        run: |
+          node --check docs/assets/app.js
+          python - <<'PY'
+          import re, subprocess, sys, tempfile, pathlib
+          html = pathlib.Path("docs/methodology.html").read_text()
+          script = re.search(r"<script>(.*?)</script>", html, re.S).group(1)
+          with tempfile.NamedTemporaryFile("w", suffix=".js", delete=False) as fh:
+              fh.write(script)
+          sys.exit(subprocess.call(["node", "--check", fh.name]))
+          PY
