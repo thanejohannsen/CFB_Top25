@@ -1,5 +1,7 @@
 # CFB Top 25
 
+**Live site: <https://thanejohannsen.github.io/CFB_Top25/>**
+
 A college football Top 25 built from an explicit algorithm rather than opinion,
 published as a static GitHub Pages site where **every placement opens to show
 exactly why it is there**.
