@@ -2107,6 +2107,7 @@
         "year": 2025
       },
       "source": {
+        "api_key": "",
         "base_url": "https://api.collegefootballdata.com",
         "cache_dir": ".cache/cfbd",
         "cache_ttl_minutes": 360,
@@ -2153,7 +2154,7 @@
         "strength": 14.0
       }
     },
-    "content_hash": "sha256:07c6247ec16e9394e8e47356f2a9038341dba600139737a61dc9aeed43f44e34",
+    "content_hash": "sha256:1c415948943f49e82304811fc6638539e640fdd6e6faca52c6df185c3cf7fb99",
     "cost": {
       "drift": 168.0387,
       "overrides": 181.0526,

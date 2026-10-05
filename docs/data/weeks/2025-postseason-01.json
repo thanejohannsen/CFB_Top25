@@ -2107,6 +2107,7 @@
         "year": 2025
       },
       "source": {
+        "api_key": "",
         "base_url": "https://api.collegefootballdata.com",
         "cache_dir": ".cache/cfbd",
         "cache_ttl_minutes": 360,
@@ -2153,7 +2154,7 @@
         "strength": 14.0
       }
     },
-    "content_hash": "sha256:12e21bd8595a18ff22b141bd93d8b2a6315f55928690edb8bf16c5667d011198",
+    "content_hash": "sha256:cf05dfd00788aa676b0766978211fbe59cc3093c5bc5bbe88f61601bf7bcc011",
     "cost": {
       "drift": 168.0387,
       "overrides": 181.0526,
@@ -2175,7 +2176,7 @@
       "regressions": 4,
       "series_split": 6
     },
-    "generated_at": "2026-10-05T18:02:34Z",
+    "generated_at": "2026-10-05T20:21:18Z",
     "previous_snapshot_id": null,
     "season": {
       "label": "Postseason week 1",

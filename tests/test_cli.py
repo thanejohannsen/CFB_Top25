@@ -66,11 +66,60 @@ class TestExitCodes(unittest.TestCase):
         self.assertIn("fixture directory not found", err)
 
     def test_missing_key_without_offline_is_actionable(self):
+        # Both sources of a key must be cleared: the config carries one, so
+        # clearing only the environment would send this test at the live API.
         with mock.patch.dict(os.environ, {"CFBD_API_KEY": ""}, clear=False):
-            code, _, err = run(["--year", "2026", "-q"])
+            code, _, err = run(["--year", "2026", "-q", "--set", "source.api_key="])
         self.assertEqual(code, EXIT_UPSTREAM)
         self.assertIn("CFBD_API_KEY", err)
         self.assertIn("--offline", err, "the error should name the way out")
+
+
+class TestKeyResolution(unittest.TestCase):
+    """The committed key is a fallback; the environment always wins."""
+
+    def _key_for(self, env, overrides=()):
+        from cfbrank.config import load
+        from cfbrank.cli import open_source
+
+        cfg = load("config/ranking.toml", list(overrides))
+        with mock.patch.dict(os.environ, env, clear=False):
+            with mock.patch("cfbrank.sources.cfbd.CFBDClient.__init__", return_value=None) as init:
+                open_source(cfg, offline_env=False)
+        return init.call_args.kwargs["api_key"]
+
+    def test_config_key_is_used_when_the_environment_is_empty(self):
+        self.assertEqual(
+            self._key_for({"CFBD_API_KEY": ""}, ["source.api_key=from-config"]), "from-config"
+        )
+
+    def test_environment_beats_the_committed_key(self):
+        self.assertEqual(
+            self._key_for({"CFBD_API_KEY": "from-env"}, ["source.api_key=from-config"]), "from-env"
+        )
+
+    def test_whitespace_only_values_are_ignored(self):
+        self.assertEqual(
+            self._key_for({"CFBD_API_KEY": "   "}, ["source.api_key=from-config"]), "from-config"
+        )
+
+    def test_the_shipped_config_actually_carries_a_key(self):
+        # If this fails the scheduled workflow has silently lost its credentials.
+        from cfbrank.config import load
+
+        self.assertTrue(
+            load("config/ranking.toml")["source.api_key"].strip(),
+            "config/ranking.toml must carry an api_key, or the Action cannot run",
+        )
+
+    def test_offline_never_needs_a_key(self):
+        from cfbrank.config import load
+        from cfbrank.cli import open_source
+
+        cfg = load("config/ranking.toml", ["source.api_key=", "source.fixture_year=2026"])
+        with mock.patch.dict(os.environ, {"CFBD_API_KEY": ""}, clear=False):
+            source = open_source(cfg, offline_env=True)
+        self.assertEqual(type(source).__name__, "FixtureSource")
 
     def test_offline_env_var_is_honoured(self):
         with mock.patch.dict(os.environ, {"CFB_OFFLINE": "1", "CFBD_API_KEY": ""}, clear=False):

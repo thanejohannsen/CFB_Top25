@@ -154,6 +154,30 @@ def _team_entry(
     }
 
 
+#: Config paths blanked before the config is echoed into published JSON.
+REDACTED_CONFIG_PATHS = (("source", "api_key"),)
+
+
+def redacted_config(cfg: Config) -> dict[str, Any]:
+    """The resolved config, with credentials blanked.
+
+    `meta.config` is echoed into every published snapshot so the methodology
+    page can never describe weights the ranking was not built with. The API key
+    lives in that same config, so it has to be stripped here or it would be
+    copied into rankings.json, every weekly snapshot, and the history files.
+    """
+    data = cfg.as_dict()
+    for *parents, leaf in REDACTED_CONFIG_PATHS:
+        node = data
+        for part in parents:
+            node = node.get(part) if isinstance(node, dict) else None
+            if node is None:
+                break
+        if isinstance(node, dict) and node.get(leaf):
+            node[leaf] = ""
+    return data
+
+
 def build_payload(
     result: RankingResult,
     dataset: Dataset,
@@ -252,7 +276,7 @@ def build_payload(
                 ],
                 "stale": any(p.cache == "stale" for p in dataset.provenance),
             },
-            "config": cfg.as_dict(),
+            "config": redacted_config(cfg),
             "counts": dict(result.counts),
             "cost": {
                 "total": result.ordering.cost,

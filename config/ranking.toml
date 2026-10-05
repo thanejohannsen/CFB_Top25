@@ -11,6 +11,12 @@ week        = "auto"      # "auto" = latest completed week, or an integer
 season_type = "both"      # "regular" | "postseason" | "both"
 
 [source]
+# Committed deliberately, so the scheduled workflow needs no repository secret.
+# This repository is PUBLIC, so treat this key as disposable: if it stops
+# working, issue a new one at https://collegefootballdata.com/key and replace
+# the line below. A CFBD_API_KEY environment variable overrides this value, so
+# adding a GitHub Actions secret later takes effect with no code change.
+api_key                = "rV3zr53KeMCv9BsNNK+72HQtVn1+zcWE5Kn0fC0GcLgJSstUEbe6CxzI/P1N0TJ6"
 base_url               = "https://api.collegefootballdata.com"
 cache_dir              = ".cache/cfbd"
 cache_ttl_minutes      = 360

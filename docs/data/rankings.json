@@ -17,13 +17,14 @@
         "year": 2026
       },
       "source": {
+        "api_key": "",
         "base_url": "https://api.collegefootballdata.com",
         "cache_dir": ".cache/cfbd",
         "cache_ttl_minutes": 360,
-        "fixture_year": 2026,
+        "fixture_year": "2025",
         "fixtures_dir": "tests/fixtures/cfbd",
         "max_retries": 4,
-        "offline": true,
+        "offline": false,
         "retry_backoff_seconds": 1.5,
         "serve_stale_on_failure": true,
         "timeout_seconds": 20.0
@@ -63,7 +64,7 @@
         "strength": 14.0
       }
     },
-    "content_hash": "sha256:5ff272364a08aba4d78e32f69acaddfe70b2a28286e50be5fc9952840a2d258d",
+    "content_hash": "sha256:c37a14f5122c472b3792cd48f07219a8f286d370c938f6ea5a0bff37654220c3",
     "cost": {
       "drift": 22.8284,
       "overrides": 34.1988,
@@ -85,7 +86,7 @@
       "regressions": 2,
       "series_split": 0
     },
-    "generated_at": "2026-10-05T18:02:34Z",
+    "generated_at": "2026-10-05T20:23:11Z",
     "previous_snapshot_id": null,
     "season": {
       "label": "Week 5",
@@ -98,44 +99,46 @@
       "attribution": "Data: CollegeFootballData.com (FPI, Strength of Record and Strength of Schedule via ESPN)",
       "endpoints": [
         {
-          "cache": "fixture",
-          "fetched_at": "",
+          "cache": "hit",
+          "fetched_at": "2026-10-05T17:36:34Z",
           "params": {
-            "fixture": "tests/fixtures/cfbd/2026"
+            "year": "2026"
           },
           "path": "/ratings/fpi",
           "records": 138,
           "sha256": "sha256:96dd66ad3f64115150445c468959a7e47496948cf81b2ea364d1bf46da4dd473"
         },
         {
-          "cache": "fixture",
-          "fetched_at": "",
+          "cache": "hit",
+          "fetched_at": "2026-10-05T17:36:35Z",
           "params": {
-            "fixture": "tests/fixtures/cfbd/2026"
+            "classification": "fbs",
+            "seasonType": "both",
+            "year": "2026"
           },
           "path": "/games",
           "records": 888,
-          "sha256": "sha256:8a23fe0ce329af24ce91927857ca0719b9f83209508b1ebd05ccfdc810b1b206"
+          "sha256": "sha256:9469646c7c9b188d82a0dd054e53ad401d2fb60c93610ea17ab949683e401fac"
         },
         {
-          "cache": "fixture",
-          "fetched_at": "",
+          "cache": "hit",
+          "fetched_at": "2026-10-05T17:36:36Z",
           "params": {
-            "fixture": "tests/fixtures/cfbd/2026"
+            "year": "2026"
           },
           "path": "/records",
           "records": 682,
-          "sha256": "sha256:b69e022485de41006d4335b9ce811ddfb217e6aeb606fe113e9ca3466f6ae960"
+          "sha256": "sha256:3f230aef5a53fc12b8af65e6e7289d1cee2c3de138e2378aed5a1a2b0852f8eb"
         },
         {
-          "cache": "fixture",
-          "fetched_at": "",
+          "cache": "hit",
+          "fetched_at": "2026-10-05T17:36:36Z",
           "params": {
-            "fixture": "tests/fixtures/cfbd/2026"
+            "year": "2026"
           },
           "path": "/calendar",
           "records": 16,
-          "sha256": "sha256:e6c693cbdf2cdcf8de28797dfd12ab2c6795348c268f3a53eb2838490c9e4153"
+          "sha256": "sha256:eeaefe00636eb207b4c6499e3886b1c28578f8a5d706d11e0d63840609bac4e6"
         }
       ],
       "stale": false,

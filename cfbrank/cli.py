@@ -86,11 +86,14 @@ def open_source(cfg, offline_env: bool):
     from cfbrank.sources.cfbd import CFBDClient
     from cfbrank.sources.http_cache import HttpCache
 
-    key = os.environ.get("CFBD_API_KEY", "").strip()
+    # The environment wins over the committed value, so adding a GitHub Actions
+    # secret later silently takes precedence without touching the config.
+    key = os.environ.get("CFBD_API_KEY", "").strip() or str(cfg.get("source.api_key", "")).strip()
     if not key:
         raise UpstreamUnavailable(
-            "CFBD_API_KEY is not set.\n"
-            "  Get a free key at https://collegefootballdata.com/key, or\n"
+            "No CFBD API key.\n"
+            "  Set CFBD_API_KEY, or put one in config/ranking.toml under [source] api_key,\n"
+            "  get a free key at https://collegefootballdata.com/key, or\n"
             "  run with --offline to rank from the checked-in fixtures."
         )
     cache = HttpCache(cfg["source.cache_dir"], int(cfg["source.cache_ttl_minutes"]))

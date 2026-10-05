@@ -74,24 +74,43 @@ python3 -m cfbrank --set stage1.w_sor=0.6 --set stage4.strength=20 --dry-run --p
 
 ## Going live
 
-Everything above runs from checked-in fixtures. To publish real weekly rankings:
-
-1. **Get a free API key** at <https://collegefootballdata.com/key> (email only).
-2. **Add it as a repository secret** — Settings → Secrets and variables → Actions →
-   New repository secret, named `CFBD_API_KEY`. It is never written into any file
-   in this repository.
-3. **Turn on Pages** — Settings → Pages → Source: *Deploy from a branch*, branch
-   `main`, folder `/docs`. (The `/docs` option only appears once the directory
-   exists on the default branch, which it now does.)
-4. **Run it** — Actions → *Rank* → Run workflow. After that it runs daily at 12:37
-   UTC through the season.
-
-Locally, export the key and drop `--offline`:
+The published `docs/data/*.json` is pre-generated, so the site needs no key to
+work. The key only drives the scheduled refresh, and it is already committed:
 
 ```bash
-export CFBD_API_KEY=...
-python3 -m cfbrank --print-top 25
+python3 -m cfbrank --print-top 25      # live data, no setup
 ```
+
+One manual step remains, because it cannot be done from the API:
+
+**Turn on Pages** — Settings → Pages → Source: *Deploy from a branch*, branch
+`main`, folder `/docs`.
+
+After that, Actions → *Rank* → Run workflow, and it runs daily at 12:37 UTC
+through the season, committing a new snapshot only when the ranking actually
+changes.
+
+### About the committed key
+
+`config/ranking.toml` carries a real CollegeFootballData.com key under
+`[source] api_key`, so the workflow needs no repository secret. **This repository
+is public**, which was a deliberate trade: no setup, in exchange for a key anyone
+can read. Treat it as disposable — if it stops working, get a new one at
+<https://collegefootballdata.com/key> and replace that one line.
+
+The key is kept out of everything the site publishes: `redacted_config()` in
+`cfbrank/output/schema.py` blanks it before the config is echoed into each
+snapshot, and the test suite asserts it appears nowhere in the output.
+
+To use a different key without editing the file, set `CFBD_API_KEY` — the
+environment always wins:
+
+```bash
+CFBD_API_KEY=... python3 -m cfbrank --print-top 25
+```
+
+Adding a `CFBD_API_KEY` repository secret later works the same way, with no code
+change.
 
 ## Tuning
 

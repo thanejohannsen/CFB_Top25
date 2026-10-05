@@ -77,6 +77,10 @@ jobs:
         if: steps.guard.outputs.run == 'true'
         id: gen
         env:
+          # Optional. The key is committed in config/ranking.toml, so this job
+          # runs with no repository secret configured. An unset secret is an
+          # empty string, which falls through to the config value; setting the
+          # secret makes it win, with no code change.
           CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
         run: |
           set +e

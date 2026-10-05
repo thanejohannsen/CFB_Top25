@@ -18,6 +18,7 @@ DEFAULTS: dict[str, Any] = {
     "schema_version": 1,
     "season": {"year": 2026, "week": "auto", "season_type": "both"},
     "source": {
+        "api_key": "",
         "base_url": "https://api.collegefootballdata.com",
         "cache_dir": ".cache/cfbd",
         "cache_ttl_minutes": 360,

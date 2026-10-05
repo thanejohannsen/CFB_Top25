@@ -10,6 +10,7 @@ from dataclasses import replace
 from cfbrank.config import load
 from cfbrank.engine.pipeline import rank
 from cfbrank.models import Dataset
+from pathlib import Path
 from cfbrank.output.schema import build_payload, content_hash, validate_payload
 from cfbrank.output.writer import dumps_stable
 from cfbrank.sources.fixtures import FixtureSource
@@ -178,6 +179,46 @@ class TestPayload(unittest.TestCase):
         self.assertEqual(top["movement"]["previous_rank"], 5)
         self.assertEqual(top["movement"]["delta"], 4)
         self.assertEqual(top["movement"]["status"], "up")
+
+
+class TestCredentialsNeverReachOutput(unittest.TestCase):
+    """The key lives in the config, and the config is echoed into every
+    snapshot. Redaction is the only thing keeping it out of published files."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.ds = dataset(2026)
+        cls.cfg = config(2026, "source.api_key=SUPER-SECRET-SENTINEL")
+        cls.payload = build_payload(rank(cls.ds, cls.cfg), cls.ds, cls.cfg, GENERATED_AT)
+
+    def test_the_echoed_config_is_blank(self):
+        self.assertEqual(self.payload["meta"]["config"]["source"]["api_key"], "")
+
+    def test_the_key_appears_nowhere_in_the_serialized_payload(self):
+        self.assertNotIn("SUPER-SECRET-SENTINEL", dumps_stable(self.payload, 4))
+
+    def test_redaction_does_not_mutate_the_config(self):
+        self.assertEqual(self.cfg["source.api_key"], "SUPER-SECRET-SENTINEL")
+
+    def test_the_weights_are_still_echoed(self):
+        # methodology.html reads these; over-zealous redaction would blank them.
+        stage1 = self.payload["meta"]["config"]["stage1"]
+        self.assertEqual(stage1["w_sor"], self.cfg["stage1.w_sor"])
+        self.assertEqual(stage1["w_sos"], self.cfg["stage1.w_sos"])
+
+    def test_committed_snapshots_carry_no_key(self):
+        import glob
+
+        from cfbrank.config import load
+
+        real = load("config/ranking.toml")["source.api_key"].strip()
+        for path in glob.glob("docs/data/rankings.json") + glob.glob("docs/data/weeks/*.json"):
+            text = Path(path).read_text(encoding="utf-8")
+            self.assertEqual(
+                json.loads(text)["meta"]["config"]["source"]["api_key"], "", path
+            )
+            if real:
+                self.assertNotIn(real, text, path)
 
 
 class TestValidatorCatchesBreakage(unittest.TestCase):
