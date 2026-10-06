@@ -244,6 +244,13 @@
       pair("  " + k.replace(/_/g, " "), signed(comp[k], 2));
     });
     if (row.regression) pair("Upset regression", signed(row.regression.adjustment, 2) + " rank points");
+    pair("Base score", num(base.raw_score, 2) + " \u2014 the three numbers combined");
+    pair(
+      "Final score",
+      num(base.score, 2) + " \u2014 after " + signed(ra.total, 2) +
+        (row.regression ? " and " + signed(row.regression.adjustment, 2) + " regression" : "") +
+        ". Teams are sorted by this."
+    );
     pair("Starting position", "#" + base.rank + " (before adjustments)");
     pair("Final position", "#" + row.rank + " \u2014 " + driftText(row.placement.drift));
 
@@ -298,7 +305,7 @@
     }));
 
     return el("tr", { class: "detail" }, [
-      el("td", { colspan: "10" }, [
+      el("td", { colspan: "12" }, [
         el("div", { class: "detail-inner" }, [
           el("div", null, [el("h3", { text: "Why " + row.team + " is #" + row.rank }), reasons]),
           el("div", null, [el("h3", { text: "The numbers behind it" }), kv])
@@ -340,6 +347,8 @@
         // which a rank cannot tell you.
         el("td", { class: "num c-mkt", "data-label": "Mkt", text: marketText(row.market) }),
         el("td", { class: "num c-ppa", "data-label": "PPA", text: rankText(row.performance) }),
+        el("td", { class: "num c-base", "data-label": "Base", text: num(row.base.raw_score, 2) }),
+        el("td", { class: "num c-final", "data-label": "Final", text: num(row.base.score, 2) }),
         el("td", { class: "c-notes" }, [notesCell(row)]),
         el("td", { class: "chev c-chev", text: "›" })
       ]);
