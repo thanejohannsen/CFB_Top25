@@ -31,9 +31,9 @@ DEFAULTS: dict[str, Any] = {
         "fixture_year": "2025",
     },
     "stage1": {
-        "w_sor": 0.50,
+        "w_sor": 0.60,
         "w_market": 0.25,
-        "w_perf": 0.25,
+        "w_perf": 0.15,
         "w_fpi": 0.0,
         "w_sos": 0.0,
         "pool_size": 40,

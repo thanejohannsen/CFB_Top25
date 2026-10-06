@@ -29,10 +29,24 @@ class TestLoad(unittest.TestCase):
         """
         self.assertEqual(load(SHIPPED)["stage1.w_fpi"], 0.0)
 
-    def test_market_and_play_by_play_split_the_quality_half_evenly(self):
+    def test_both_quality_signals_carry_weight(self):
+        """Market and play-by-play know different things, so both must be on.
+
+        The ratio between them is the owner's call -- it has been 50/50 and is
+        now 25/15 -- and measurement cannot settle it (0.75/0.25 and 0.50/0.50
+        were within noise of each other). What the data does say clearly is that
+        the pair beats either alone, so neither may quietly go to zero.
+        """
         cfg = load(SHIPPED)
-        self.assertEqual(cfg["stage1.w_market"], cfg["stage1.w_perf"])
         self.assertGreater(cfg["stage1.w_market"], 0.0)
+        self.assertGreater(cfg["stage1.w_perf"], 0.0)
+
+    def test_the_resume_carries_the_most_weight(self):
+        """What a team has achieved should outrank how good it looks."""
+        cfg = load(SHIPPED)
+        self.assertGreater(
+            cfg["stage1.w_sor"], cfg["stage1.w_market"] + cfg["stage1.w_perf"]
+        )
 
     def test_lines_two_weeks_out_are_rejected(self):
         """A line that closes after next week has been played is look-ahead."""

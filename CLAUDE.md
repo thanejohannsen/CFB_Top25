@@ -28,15 +28,23 @@ and replace the single line in `config/ranking.toml`.
 ## The base formula
 
 ```
-base  = 0.50 x SoR_rank + 0.25 x Market_rank + 0.25 x PPA_rank
+base  = 0.60 x SoR_rank + 0.25 x Market_rank + 0.15 x PPA_rank
 score = base + resume adjustment (incl. cover) + upset regression
 ```
 
-Half the ranking is the record, half is how good the team actually is. The
-quality half is split evenly between the neutral-field rating implied by betting
-lines (`cfbrank/engine/market.py`) and opponent-adjusted points added per play
-(`cfbrank/engine/performance.py`). Both solve through the shared
-`cfbrank/engine/adjust.py`.
+In the owner's words: **SoR is the resume** (who you beat and how hard that was),
+**Mkt is Vegas's power ranking** (how good the money thinks you ARE,
+`engine/market.py`), **PPA is the game tape counted** (how well you actually
+PLAYED per snap, `engine/performance.py`). Mkt is an opinion formed before games;
+PPA measures what happened during them. Both solve through `engine/adjust.py`.
+
+The resume outweighs the two quality signals combined, deliberately -- what a
+team has achieved should outrank how good it looks. `tests/test_config.py` pins
+that relationship, and that both quality weights stay above zero.
+
+**`TUNING.md` is the owner-facing guide to every knob.** Keep it in step with
+`config/ranking.toml` when you add or retune anything; the file itself is the
+single source of truth and must stay that way (no second copy of these values).
 
 **The SoR term is computed here, not taken from ESPN.**
 `cfbrank/engine/resume_strength.py` walks a reference team (the 25th-best market
@@ -111,7 +119,8 @@ Two things the tool cannot settle, so do not claim it did:
   drops LSU from 8th to 17th in 2026. Pick a side and say so.
 - **The market:PPA ratio is inside the noise** (0.75/0.25 69.1%, 0.50/0.50 68.8%
   on 1,997 games). What the data does say clearly: both terms beat either alone
-  (pure PPA 64.3%).
+  (pure PPA 64.3%), so neither may go to zero. The split itself is the owner's
+  call and has moved (50/50, then 25/15); do not "restore" a previous ratio.
 
 ### Against the number (`stage2.w_cover`, `engine/cover.py`)
 

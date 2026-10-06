@@ -237,14 +237,14 @@
     var comp = ra.components || {};
     var kv = el("dl", { class: "kv" });
     function pair(k, v) { kv.appendChild(el("dt", { text: k })); kv.appendChild(el("dd", { text: v })); }
-    pair("Resume order", "#" + base.resume_rank);
+    pair("Order on the three alone", "#" + base.resume_rank);
     pair("Base formula", base.formula || "–");
     pair("Resume adjustment", signed(ra.total, 2) + " rank points");
     Object.keys(comp).sort().forEach(function (k) {
       pair("  " + k.replace(/_/g, " "), signed(comp[k], 2));
     });
     if (row.regression) pair("Upset regression", signed(row.regression.adjustment, 2) + " rank points");
-    pair("Base position", "#" + base.rank);
+    pair("Starting position", "#" + base.rank + " (before adjustments)");
     pair("Final position", "#" + row.rank + " \u2014 " + driftText(row.placement.drift));
 
     var res = row.resume || {}, cov = row.cover || {};
@@ -298,7 +298,7 @@
     }));
 
     return el("tr", { class: "detail" }, [
-      el("td", { colspan: "11" }, [
+      el("td", { colspan: "10" }, [
         el("div", { class: "detail-inner" }, [
           el("div", null, [el("h3", { text: "Why " + row.team + " is #" + row.rank }), reasons]),
           el("div", null, [el("h3", { text: "The numbers behind it" }), kv])
@@ -340,7 +340,6 @@
         // which a rank cannot tell you.
         el("td", { class: "num c-mkt", "data-label": "Mkt", text: marketText(row.market) }),
         el("td", { class: "num c-ppa", "data-label": "PPA", text: rankText(row.performance) }),
-        el("td", { class: "num col-opt c-base", "data-label": "Base", text: num(row.base.rank) }),
         el("td", { class: "c-notes" }, [notesCell(row)]),
         el("td", { class: "chev c-chev", text: "›" })
       ]);

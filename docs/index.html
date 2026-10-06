@@ -14,13 +14,35 @@
   <header class="site">
     <h1>CFB Top 25</h1>
     <p class="tagline">
-      Half the ranking is the record &mdash; how impressive it is, given who it was
-      played against. The other half is how good each team actually looks: the
-      neutral-field rating the betting market implies, and points added per play
-      once you adjust for opponents. The board is then reordered so as few
-      head-to-head results as possible are contradicted. Every placement opens to
-      show exactly why it is there.
+      A Top 25 built from three numbers, then reordered so it contradicts as few
+      head-to-head results as possible. Every placement opens to show its arithmetic.
     </p>
+
+    <ul class="inputs">
+      <li>
+        <b>SoR</b> &mdash; <i>the r&eacute;sum&eacute;.</i>
+        Who you beat and how hard that was. We walk a top-25 team through your exact
+        schedule and ask how often it would finish with your record. Rarely means a
+        better r&eacute;sum&eacute;.
+      </li>
+      <li>
+        <b>Mkt</b> &mdash; <i>Vegas's power ranking.</i>
+        How good the money thinks you <em>are</em>, in points on a neutral field. Solved
+        from betting lines, so +20 beats +15 by five on a neutral site.
+      </li>
+      <li>
+        <b>PPA</b> &mdash; <i>the game tape, counted.</i>
+        How well you actually <em>played</em>, snap by snap: points gained per play on
+        offence less points allowed on defence, adjusted for who you played.
+      </li>
+    </ul>
+
+    <p class="lede">
+      Mkt is an opinion formed before games; PPA measures what happened during them.
+      That is why both are here. The r&eacute;sum&eacute; carries the most weight, because
+      what a team has achieved should outrank how good it looks.
+    </p>
+
     <div class="controls">
       <label for="week-select">Week</label>
       <select id="week-select"></select>
@@ -49,7 +71,6 @@
               <th scope="col" class="num" title="Strength of Record: how impressive the record is, given who it was played against">SoR</th>
               <th scope="col" class="num" title="Points the betting market implies this team is worth on a neutral field">Mkt</th>
               <th scope="col" class="num" title="National rank in opponent-adjusted points added per play">PPA</th>
-              <th scope="col" class="num col-opt">Base</th>
               <th scope="col">Notes</th>
               <th scope="col" class="col-chev"><span class="sr-only">Expand</span></th>
             </tr>

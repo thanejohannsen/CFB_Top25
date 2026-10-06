@@ -19,7 +19,7 @@ exactly why it is there**.
 ## How it ranks
 
 1. **The record, the market and the play-by-play** —
-   `0.50 × StrengthOfRecord_rank + 0.25 × Market_rank + 0.25 × PPA_rank`. All three
+   `0.60 × StrengthOfRecord_rank + 0.25 × Market_rank + 0.15 × PPA_rank`. All three
    are national ranks where 1 is best, so lower is better.
 
    - **Strength of Record** is how hard the record was to earn, and it is computed
@@ -227,6 +227,19 @@ diff, and if the change was intended:
 python3 scripts/make_golden.py
 ```
 
+## Tuning it
+
+Every number the ranking reads lives in **[`config/ranking.toml`](config/ranking.toml)**.
+Edit it, commit, and the next scheduled run uses your values.
+**[`TUNING.md`](TUNING.md)** is the plain-language guide to what each knob does and
+which way it pushes.
+
+```bash
+# try something without committing
+python3 -m cfbrank --offline --fixture-year 2026 --year 2026 --print-top 25 --dry-run \
+  --set stage1.w_sor=0.7 --set stage1.w_perf=0.1
+```
+
 ## Layout
 
 ```
@@ -235,7 +248,7 @@ cfbrank/
                resume, regression, h2h, evidence, order, graph, pipeline
   sources/     cfbd (live), fixtures (offline), http_cache, loader
   output/      schema, writer, history
-config/        ranking.toml -- every weight, one file
+config/        ranking.toml -- every weight, one file (see TUNING.md)
 docs/          the published site (GitHub Pages serves this directory)
 scripts/       refresh_fixtures, make_golden, serve_docs
 tests/         unittest suite + real 2025 and 2026 fixtures + the golden file

@@ -315,7 +315,6 @@ footer.site p { margin: 4px 0; }
   }
   #rankings-body .c-notes:empty { display: none; }
   /* Both are in the expanded panel, where there is room to explain them. */
-  #rankings-body .c-base { display: none; }
   #rankings-body .c-sos,
   #rankings-body .c-fpi { display: none; }
   #rankings-body .c-chev { display: none; }          /* the card is the target */
@@ -365,4 +364,31 @@ footer.site p { margin: 4px 0; }
 /* Tablets: keep the table, drop only the secondary columns. */
 @media (min-width: 641px) and (max-width: 860px) {
   .col-opt { display: none; }
+}
+
+
+/* -- The three numbers, explained above the table ------------------------- */
+.inputs {
+  list-style: none;
+  margin: 14px 0 10px;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.inputs li {
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--surface);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.inputs b { color: var(--ink); font-size: 1rem; }
+.inputs i { font-style: normal; color: var(--ink); }
+
+/* Side by side once there is room for it. */
+@media (min-width: 900px) {
+  .inputs { grid-template-columns: repeat(3, 1fr); gap: 12px; }
 }

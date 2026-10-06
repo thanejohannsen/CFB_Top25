@@ -189,11 +189,11 @@ def compute_base(
     market_games: Mapping[str, int] | None = None,
     ppa_games: Mapping[str, int] | None = None,
 ) -> tuple[list[TeamBase], list[Warning_]]:
-    w_sor = float(cfg.get("w_sor", 0.50))  # type: ignore[arg-type]
+    w_sor = float(cfg.get("w_sor", 0.60))  # type: ignore[arg-type]
     w_sos = float(cfg.get("w_sos", 0.0))  # type: ignore[arg-type]
     w_fpi = float(cfg.get("w_fpi", 0.0))  # type: ignore[arg-type]
     w_market = float(cfg.get("w_market", 0.25))  # type: ignore[arg-type]
-    w_perf = float(cfg.get("w_perf", 0.25))  # type: ignore[arg-type]
+    w_perf = float(cfg.get("w_perf", 0.15))  # type: ignore[arg-type]
 
     resume_ranks = resume_ranks or {}
     resume_probs = resume_probs or {}

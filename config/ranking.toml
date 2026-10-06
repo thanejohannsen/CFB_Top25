@@ -1,8 +1,29 @@
-# CFB_Top25 ranking configuration.
+# ============================================================================
+#  CFB_Top25 -- every variable the ranking reads. This is THE file to edit.
+# ============================================================================
 #
-# Every knob the algorithm reads lives here. Edit, commit, and the next
-# workflow run (or `make rank`) uses it. Overridable per run with:
-#   python3 -m cfbrank --set stage1.w_sor=0.6 --set stage4.strength=20
+#  Change a number, commit, and the next scheduled run uses it. Nothing that
+#  affects the ranking is hard-coded anywhere else.
+#
+#  TUNING.md is the plain-language guide to all of it. The short version:
+#
+#    THE THREE NUMBERS            [stage1]   w_sor / w_market / w_perf
+#      SoR  the resume            who you beat and how hard that was
+#      Mkt  Vegas's power rating  how good the money thinks you ARE
+#      PPA  the game tape         how well you actually PLAYED, per snap
+#      -> these three should sum to 1.0 with w_fpi and w_sos
+#
+#    THEN ADJUSTED BY             [stage2]   covering the spread, bad losses,
+#                                            best win, game control
+#    THEN REORDERED BY            [stage4]   head-to-head results
+#
+#  Try something without committing:
+#    python3 -m cfbrank --offline --fixture-year 2026 --year 2026 \
+#      --print-top 25 --dry-run --set stage1.w_sor=0.7
+#
+#  Check whether it helped:
+#    python3 scripts/evaluate.py --year 2025 --offline
+#
 schema_version = 1
 
 [season]
@@ -32,9 +53,9 @@ fixture_year           = "2025"
 # Every input is a national rank (1 = best), so the base is a weighted rank
 # average and lower is better.
 [stage1]
-w_sor    = 0.50   # resumeRanks.strengthOfRecord -- how impressive the record is
-w_market = 0.25   # rank of the neutral-field rating implied by betting lines
-w_perf   = 0.25   # rank of opponent-adjusted net PPA -- the eye test, counted
+w_sor    = 0.60   # the resume: who you beat and how hard that was
+w_market = 0.25   # Vegas's power ranking: how good the money thinks you are
+w_perf   = 0.15   # the game tape, counted: how well you actually played per snap
 #
 # Market and PPA split the quality half evenly because that is what measured
 # best. Taking the 2025 season, ranking only on what was knowable at the time
