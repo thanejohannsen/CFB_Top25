@@ -2,215 +2,3477 @@
  {
   "polls": [
    {
-    "poll": "AFCA Division III Coaches Poll",
+    "poll": "Coaches Poll",
     "ranks": [
      {
       "rank": 1,
-      "school": "Wisconsin River Falls"
+      "school": "Texas"
      },
      {
       "rank": 2,
-      "school": "North Central College"
+      "school": "Ohio State"
      },
      {
       "rank": 3,
-      "school": "John Carroll"
+      "school": "Penn State"
      },
      {
       "rank": 4,
-      "school": "Johns Hopkins"
+      "school": "Georgia"
      },
      {
       "rank": 5,
-      "school": "Bethel (MN)"
+      "school": "Notre Dame"
      },
      {
       "rank": 6,
-      "school": "Mount Union"
+      "school": "Clemson"
      },
      {
       "rank": 7,
-      "school": "Wheaton (IL)"
+      "school": "Oregon"
      },
      {
       "rank": 8,
-      "school": "Saint John's (MN)"
+      "school": "Alabama"
      },
      {
       "rank": 9,
-      "school": "Berry"
+      "school": "LSU"
      },
      {
       "rank": 10,
-      "school": "Wisconsin La Crosse"
+      "school": "Miami"
      },
      {
       "rank": 11,
-      "school": "Wisconsin Platteville"
+      "school": "Arizona State"
      },
      {
       "rank": 12,
-      "school": "Salisbury"
+      "school": "Illinois"
      },
      {
       "rank": 13,
-      "school": "DePauw"
+      "school": "South Carolina"
      },
      {
       "rank": 14,
-      "school": "Wartburg"
+      "school": "Michigan"
      },
      {
       "rank": 15,
-      "school": "Susquehanna"
+      "school": "Ole Miss"
      },
      {
       "rank": 16,
-      "school": "Trinity (TX)"
+      "school": "SMU"
      },
      {
       "rank": 17,
-      "school": "Hope"
+      "school": "Florida"
      },
      {
       "rank": 18,
-      "school": "Christopher Newport"
+      "school": "Tennessee"
      },
      {
       "rank": 19,
-      "school": "Hardin Simmons"
+      "school": "Indiana"
      },
      {
       "rank": 20,
-      "school": "Wisconsin Whitewater"
+      "school": "Kansas State"
      },
      {
       "rank": 21,
-      "school": "Randolph Macon"
+      "school": "Iowa State"
      },
      {
-      "rank": 22,
-      "school": "Franklin & Marshall"
+      "rank": 21,
+      "school": "Texas A&M"
      },
      {
       "rank": 23,
-      "school": "Eastern"
+      "school": "BYU"
      },
      {
       "rank": 24,
-      "school": "Endicott"
+      "school": "Texas Tech"
      },
      {
       "rank": 25,
-      "school": "Alma"
+      "school": "Boise State"
      }
     ]
    },
    {
-    "poll": "FCS Coaches Poll",
+    "poll": "AP Top 25",
     "ranks": [
      {
       "rank": 1,
-      "school": "Montana State"
+      "school": "Texas"
      },
      {
       "rank": 2,
-      "school": "Illinois State"
+      "school": "Penn State"
      },
      {
       "rank": 3,
-      "school": "Montana"
+      "school": "Ohio State"
      },
      {
       "rank": 4,
-      "school": "Villanova"
+      "school": "Clemson"
      },
      {
       "rank": 5,
-      "school": "North Dakota State"
+      "school": "Georgia"
      },
      {
       "rank": 6,
-      "school": "Tarleton State"
+      "school": "Notre Dame"
      },
      {
       "rank": 7,
-      "school": "Stephen F. Austin"
+      "school": "Oregon"
      },
      {
       "rank": 8,
-      "school": "UC Davis"
+      "school": "Alabama"
      },
      {
       "rank": 9,
-      "school": "Lehigh"
+      "school": "LSU"
      },
      {
       "rank": 10,
-      "school": "Rhode Island"
+      "school": "Miami"
      },
      {
       "rank": 11,
-      "school": "South Dakota"
+      "school": "Arizona State"
      },
      {
       "rank": 12,
-      "school": "Abilene Christian"
+      "school": "Illinois"
      },
      {
       "rank": 13,
-      "school": "Yale"
+      "school": "South Carolina"
      },
      {
       "rank": 14,
-      "school": "South Dakota State"
+      "school": "Michigan"
      },
      {
       "rank": 15,
-      "school": "Tennessee Tech"
+      "school": "Florida"
      },
      {
       "rank": 16,
-      "school": "North Dakota"
+      "school": "SMU"
      },
      {
       "rank": 17,
-      "school": "Youngstown State"
+      "school": "Kansas State"
      },
      {
       "rank": 18,
-      "school": "Mercer"
+      "school": "Oklahoma"
      },
      {
       "rank": 19,
-      "school": "SE Louisiana"
+      "school": "Texas A&M"
      },
      {
       "rank": 20,
-      "school": "Monmouth"
+      "school": "Indiana"
      },
      {
       "rank": 21,
-      "school": "Lamar"
+      "school": "Ole Miss"
      },
      {
       "rank": 22,
-      "school": "Jackson State"
+      "school": "Iowa State"
      },
      {
       "rank": 23,
-      "school": "Harvard"
+      "school": "Texas Tech"
      },
      {
       "rank": 24,
-      "school": "West Georgia"
+      "school": "Tennessee"
      },
      {
       "rank": 25,
-      "school": "South Carolina State"
+      "school": "Boise State"
+     }
+    ]
+   }
+  ],
+  "season": 2025,
+  "seasonType": "regular",
+  "week": 1
+ },
+ {
+  "polls": [
+   {
+    "poll": "Coaches Poll",
+    "ranks": [
+     {
+      "rank": 1,
+      "school": "Ohio State"
+     },
+     {
+      "rank": 2,
+      "school": "Penn State"
+     },
+     {
+      "rank": 3,
+      "school": "Georgia"
+     },
+     {
+      "rank": 4,
+      "school": "LSU"
+     },
+     {
+      "rank": 5,
+      "school": "Oregon"
+     },
+     {
+      "rank": 6,
+      "school": "Texas"
+     },
+     {
+      "rank": 7,
+      "school": "Miami"
+     },
+     {
+      "rank": 8,
+      "school": "Clemson"
+     },
+     {
+      "rank": 9,
+      "school": "Notre Dame"
+     },
+     {
+      "rank": 10,
+      "school": "Arizona State"
+     },
+     {
+      "rank": 11,
+      "school": "South Carolina"
+     },
+     {
+      "rank": 12,
+      "school": "Illinois"
+     },
+     {
+      "rank": 13,
+      "school": "Michigan"
+     },
+     {
+      "rank": 14,
+      "school": "Ole Miss"
+     },
+     {
+      "rank": 15,
+      "school": "Florida"
+     },
+     {
+      "rank": 16,
+      "school": "SMU"
+     },
+     {
+      "rank": 17,
+      "school": "Tennessee"
+     },
+     {
+      "rank": 18,
+      "school": "Iowa State"
+     },
+     {
+      "rank": 19,
+      "school": "Florida State"
+     },
+     {
+      "rank": 20,
+      "school": "Alabama"
+     },
+     {
+      "rank": 21,
+      "school": "Indiana"
+     },
+     {
+      "rank": 22,
+      "school": "Texas A&M"
+     },
+     {
+      "rank": 23,
+      "school": "Texas Tech"
+     },
+     {
+      "rank": 24,
+      "school": "Oklahoma"
+     },
+     {
+      "rank": 25,
+      "school": "BYU"
      }
     ]
    },
+   {
+    "poll": "AP Top 25",
+    "ranks": [
+     {
+      "rank": 1,
+      "school": "Ohio State"
+     },
+     {
+      "rank": 2,
+      "school": "Penn State"
+     },
+     {
+      "rank": 3,
+      "school": "LSU"
+     },
+     {
+      "rank": 4,
+      "school": "Georgia"
+     },
+     {
+      "rank": 5,
+      "school": "Miami"
+     },
+     {
+      "rank": 6,
+      "school": "Oregon"
+     },
+     {
+      "rank": 7,
+      "school": "Texas"
+     },
+     {
+      "rank": 8,
+      "school": "Clemson"
+     },
+     {
+      "rank": 9,
+      "school": "Notre Dame"
+     },
+     {
+      "rank": 10,
+      "school": "South Carolina"
+     },
+     {
+      "rank": 11,
+      "school": "Illinois"
+     },
+     {
+      "rank": 12,
+      "school": "Arizona State"
+     },
+     {
+      "rank": 13,
+      "school": "Florida"
+     },
+     {
+      "rank": 14,
+      "school": "Florida State"
+     },
+     {
+      "rank": 15,
+      "school": "Michigan"
+     },
+     {
+      "rank": 16,
+      "school": "Iowa State"
+     },
+     {
+      "rank": 17,
+      "school": "SMU"
+     },
+     {
+      "rank": 18,
+      "school": "Oklahoma"
+     },
+     {
+      "rank": 19,
+      "school": "Texas A&M"
+     },
+     {
+      "rank": 20,
+      "school": "Ole Miss"
+     },
+     {
+      "rank": 21,
+      "school": "Alabama"
+     },
+     {
+      "rank": 22,
+      "school": "Tennessee"
+     },
+     {
+      "rank": 23,
+      "school": "Indiana"
+     },
+     {
+      "rank": 24,
+      "school": "Texas Tech"
+     },
+     {
+      "rank": 25,
+      "school": "Utah"
+     }
+    ]
+   }
+  ],
+  "season": 2025,
+  "seasonType": "regular",
+  "week": 2
+ },
+ {
+  "polls": [
+   {
+    "poll": "Coaches Poll",
+    "ranks": [
+     {
+      "rank": 1,
+      "school": "Ohio State"
+     },
+     {
+      "rank": 2,
+      "school": "Penn State"
+     },
+     {
+      "rank": 3,
+      "school": "Georgia"
+     },
+     {
+      "rank": 4,
+      "school": "LSU"
+     },
+     {
+      "rank": 5,
+      "school": "Oregon"
+     },
+     {
+      "rank": 6,
+      "school": "Miami"
+     },
+     {
+      "rank": 7,
+      "school": "Texas"
+     },
+     {
+      "rank": 8,
+      "school": "Notre Dame"
+     },
+     {
+      "rank": 9,
+      "school": "Illinois"
+     },
+     {
+      "rank": 10,
+      "school": "South Carolina"
+     },
+     {
+      "rank": 11,
+      "school": "Clemson"
+     },
+     {
+      "rank": 12,
+      "school": "Florida State"
+     },
+     {
+      "rank": 13,
+      "school": "Ole Miss"
+     },
+     {
+      "rank": 14,
+      "school": "Iowa State"
+     },
+     {
+      "rank": 15,
+      "school": "Tennessee"
+     },
+     {
+      "rank": 16,
+      "school": "Oklahoma"
+     },
+     {
+      "rank": 17,
+      "school": "Texas A&M"
+     },
+     {
+      "rank": 18,
+      "school": "Alabama"
+     },
+     {
+      "rank": 19,
+      "school": "Indiana"
+     },
+     {
+      "rank": 20,
+      "school": "Texas Tech"
+     },
+     {
+      "rank": 21,
+      "school": "Utah"
+     },
+     {
+      "rank": 22,
+      "school": "Michigan"
+     },
+     {
+      "rank": 23,
+      "school": "South Florida"
+     },
+     {
+      "rank": 24,
+      "school": "Arizona State"
+     },
+     {
+      "rank": 25,
+      "school": "BYU"
+     }
+    ]
+   },
+   {
+    "poll": "AP Top 25",
+    "ranks": [
+     {
+      "rank": 1,
+      "school": "Ohio State"
+     },
+     {
+      "rank": 2,
+      "school": "Penn State"
+     },
+     {
+      "rank": 3,
+      "school": "LSU"
+     },
+     {
+      "rank": 4,
+      "school": "Oregon"
+     },
+     {
+      "rank": 5,
+      "school": "Miami"
+     },
+     {
+      "rank": 6,
+      "school": "Georgia"
+     },
+     {
+      "rank": 7,
+      "school": "Texas"
+     },
+     {
+      "rank": 8,
+      "school": "Notre Dame"
+     },
+     {
+      "rank": 9,
+      "school": "Illinois"
+     },
+     {
+      "rank": 10,
+      "school": "Florida State"
+     },
+     {
+      "rank": 11,
+      "school": "South Carolina"
+     },
+     {
+      "rank": 12,
+      "school": "Clemson"
+     },
+     {
+      "rank": 13,
+      "school": "Oklahoma"
+     },
+     {
+      "rank": 14,
+      "school": "Iowa State"
+     },
+     {
+      "rank": 15,
+      "school": "Tennessee"
+     },
+     {
+      "rank": 16,
+      "school": "Texas A&M"
+     },
+     {
+      "rank": 17,
+      "school": "Ole Miss"
+     },
+     {
+      "rank": 18,
+      "school": "South Florida"
+     },
+     {
+      "rank": 19,
+      "school": "Alabama"
+     },
+     {
+      "rank": 20,
+      "school": "Utah"
+     },
+     {
+      "rank": 21,
+      "school": "Texas Tech"
+     },
+     {
+      "rank": 22,
+      "school": "Indiana"
+     },
+     {
+      "rank": 23,
+      "school": "Michigan"
+     },
+     {
+      "rank": 24,
+      "school": "Auburn"
+     },
+     {
+      "rank": 25,
+      "school": "Missouri"
+     }
+    ]
+   }
+  ],
+  "season": 2025,
+  "seasonType": "regular",
+  "week": 3
+ },
+ {
+  "polls": [
+   {
+    "poll": "Coaches Poll",
+    "ranks": [
+     {
+      "rank": 1,
+      "school": "Ohio State"
+     },
+     {
+      "rank": 2,
+      "school": "Penn State"
+     },
+     {
+      "rank": 3,
+      "school": "Georgia"
+     },
+     {
+      "rank": 4,
+      "school": "LSU"
+     },
+     {
+      "rank": 5,
+      "school": "Oregon"
+     },
+     {
+      "rank": 6,
+      "school": "Miami"
+     },
+     {
+      "rank": 7,
+      "school": "Texas"
+     },
+     {
+      "rank": 8,
+      "school": "Illinois"
+     },
+     {
+      "rank": 9,
+      "school": "Florida State"
+     },
+     {
+      "rank": 10,
+      "school": "Texas A&M"
+     },
+     {
+      "rank": 11,
+      "school": "Ole Miss"
+     },
+     {
+      "rank": 12,
+      "school": "Oklahoma"
+     },
+     {
+      "rank": 13,
+      "school": "Iowa State"
+     },
+     {
+      "rank": 14,
+      "school": "Alabama"
+     },
+     {
+      "rank": 15,
+      "school": "Tennessee"
+     },
+     {
+      "rank": 16,
+      "school": "Texas Tech"
+     },
+     {
+      "rank": 17,
+      "school": "Indiana"
+     },
+     {
+      "rank": 18,
+      "school": "Utah"
+     },
+     {
+      "rank": 19,
+      "school": "Georgia Tech"
+     },
+     {
+      "rank": 20,
+      "school": "Michigan"
+     },
+     {
+      "rank": 21,
+      "school": "Notre Dame"
+     },
+     {
+      "rank": 22,
+      "school": "Missouri"
+     },
+     {
+      "rank": 23,
+      "school": "Vanderbilt"
+     },
+     {
+      "rank": 24,
+      "school": "South Carolina"
+     },
+     {
+      "rank": 25,
+      "school": "Auburn"
+     }
+    ]
+   },
+   {
+    "poll": "AP Top 25",
+    "ranks": [
+     {
+      "rank": 1,
+      "school": "Ohio State"
+     },
+     {
+      "rank": 2,
+      "school": "Penn State"
+     },
+     {
+      "rank": 3,
+      "school": "LSU"
+     },
+     {
+      "rank": 4,
+      "school": "Miami"
+     },
+     {
+      "rank": 5,
+      "school": "Georgia"
+     },
+     {
+      "rank": 6,
+      "school": "Oregon"
+     },
+     {
+      "rank": 7,
+      "school": "Florida State"
+     },
+     {
+      "rank": 8,
+      "school": "Texas"
+     },
+     {
+      "rank": 9,
+      "school": "Illinois"
+     },
+     {
+      "rank": 10,
+      "school": "Texas A&M"
+     },
+     {
+      "rank": 11,
+      "school": "Oklahoma"
+     },
+     {
+      "rank": 12,
+      "school": "Iowa State"
+     },
+     {
+      "rank": 13,
+      "school": "Ole Miss"
+     },
+     {
+      "rank": 14,
+      "school": "Alabama"
+     },
+     {
+      "rank": 15,
+      "school": "Tennessee"
+     },
+     {
+      "rank": 16,
+      "school": "Utah"
+     },
+     {
+      "rank": 17,
+      "school": "Texas Tech"
+     },
+     {
+      "rank": 18,
+      "school": "Georgia Tech"
+     },
+     {
+      "rank": 19,
+      "school": "Indiana"
+     },
+     {
+      "rank": 20,
+      "school": "Vanderbilt"
+     },
+     {
+      "rank": 21,
+      "school": "Michigan"
+     },
+     {
+      "rank": 22,
+      "school": "Auburn"
+     },
+     {
+      "rank": 23,
+      "school": "Missouri"
+     },
+     {
+      "rank": 24,
+      "school": "Notre Dame"
+     },
+     {
+      "rank": 25,
+      "school": "USC"
+     }
+    ]
+   }
+  ],
+  "season": 2025,
+  "seasonType": "regular",
+  "week": 4
+ },
+ {
+  "polls": [
+   {
+    "poll": "Coaches Poll",
+    "ranks": [
+     {
+      "rank": 1,
+      "school": "Ohio State"
+     },
+     {
+      "rank": 2,
+      "school": "Penn State"
+     },
+     {
+      "rank": 3,
+      "school": "Georgia"
+     },
+     {
+      "rank": 4,
+      "school": "LSU"
+     },
+     {
+      "rank": 5,
+      "school": "Oregon"
+     },
+     {
+      "rank": 6,
+      "school": "Miami"
+     },
+     {
+      "rank": 7,
+      "school": "Texas"
+     },
+     {
+      "rank": 8,
+      "school": "Florida State"
+     },
+     {
+      "rank": 9,
+      "school": "Texas A&M"
+     },
+     {
+      "rank": 10,
+      "school": "Oklahoma"
+     },
+     {
+      "rank": 11,
+      "school": "Ole Miss"
+     },
+     {
+      "rank": 12,
+      "school": "Indiana"
+     },
+     {
+      "rank": 13,
+      "school": "Iowa State"
+     },
+     {
+      "rank": 14,
+      "school": "Texas Tech"
+     },
+     {
+      "rank": 15,
+      "school": "Tennessee"
+     },
+     {
+      "rank": 16,
+      "school": "Alabama"
+     },
+     {
+      "rank": 17,
+      "school": "Georgia Tech"
+     },
+     {
+      "rank": 18,
+      "school": "Michigan"
+     },
+     {
+      "rank": 19,
+      "school": "Missouri"
+     },
+     {
+      "rank": 20,
+      "school": "Vanderbilt"
+     },
+     {
+      "rank": 21,
+      "school": "Notre Dame"
+     },
+     {
+      "rank": 22,
+      "school": "USC"
+     },
+     {
+      "rank": 23,
+      "school": "Illinois"
+     },
+     {
+      "rank": 24,
+      "school": "BYU"
+     },
+     {
+      "rank": 25,
+      "school": "TCU"
+     }
+    ]
+   },
+   {
+    "poll": "AP Top 25",
+    "ranks": [
+     {
+      "rank": 1,
+      "school": "Ohio State"
+     },
+     {
+      "rank": 2,
+      "school": "Miami"
+     },
+     {
+      "rank": 3,
+      "school": "Penn State"
+     },
+     {
+      "rank": 4,
+      "school": "LSU"
+     },
+     {
+      "rank": 5,
+      "school": "Georgia"
+     },
+     {
+      "rank": 6,
+      "school": "Oregon"
+     },
+     {
+      "rank": 7,
+      "school": "Oklahoma"
+     },
+     {
+      "rank": 8,
+      "school": "Florida State"
+     },
+     {
+      "rank": 9,
+      "school": "Texas A&M"
+     },
+     {
+      "rank": 10,
+      "school": "Texas"
+     },
+     {
+      "rank": 11,
+      "school": "Indiana"
+     },
+     {
+      "rank": 12,
+      "school": "Texas Tech"
+     },
+     {
+      "rank": 13,
+      "school": "Ole Miss"
+     },
+     {
+      "rank": 14,
+      "school": "Iowa State"
+     },
+     {
+      "rank": 15,
+      "school": "Tennessee"
+     },
+     {
+      "rank": 16,
+      "school": "Georgia Tech"
+     },
+     {
+      "rank": 17,
+      "school": "Alabama"
+     },
+     {
+      "rank": 18,
+      "school": "Vanderbilt"
+     },
+     {
+      "rank": 19,
+      "school": "Michigan"
+     },
+     {
+      "rank": 20,
+      "school": "Missouri"
+     },
+     {
+      "rank": 21,
+      "school": "USC"
+     },
+     {
+      "rank": 22,
+      "school": "Notre Dame"
+     },
+     {
+      "rank": 23,
+      "school": "Illinois"
+     },
+     {
+      "rank": 24,
+      "school": "TCU"
+     },
+     {
+      "rank": 25,
+      "school": "BYU"
+     }
+    ]
+   }
+  ],
+  "season": 2025,
+  "seasonType": "regular",
+  "week": 5
+ },
+ {
+  "polls": [
+   {
+    "poll": "Coaches Poll",
+    "ranks": [
+     {
+      "rank": 1,
+      "school": "Ohio State"
+     },
+     {
+      "rank": 2,
+      "school": "Oregon"
+     },
+     {
+      "rank": 3,
+      "school": "Miami"
+     },
+     {
+      "rank": 4,
+      "school": "Ole Miss"
+     },
+     {
+      "rank": 5,
+      "school": "Texas A&M"
+     },
+     {
+      "rank": 6,
+      "school": "Penn State"
+     },
+     {
+      "rank": 7,
+      "school": "Texas"
+     },
+     {
+      "rank": 8,
+      "school": "Oklahoma"
+     },
+     {
+      "rank": 9,
+      "school": "Indiana"
+     },
+     {
+      "rank": 10,
+      "school": "Georgia"
+     },
+     {
+      "rank": 11,
+      "school": "Alabama"
+     },
+     {
+      "rank": 12,
+      "school": "Iowa State"
+     },
+     {
+      "rank": 13,
+      "school": "LSU"
+     },
+     {
+      "rank": 14,
+      "school": "Texas Tech"
+     },
+     {
+      "rank": 15,
+      "school": "Tennessee"
+     },
+     {
+      "rank": 16,
+      "school": "Georgia Tech"
+     },
+     {
+      "rank": 17,
+      "school": "Vanderbilt"
+     },
+     {
+      "rank": 18,
+      "school": "Missouri"
+     },
+     {
+      "rank": 19,
+      "school": "Florida State"
+     },
+     {
+      "rank": 20,
+      "school": "Michigan"
+     },
+     {
+      "rank": 21,
+      "school": "Notre Dame"
+     },
+     {
+      "rank": 22,
+      "school": "Illinois"
+     },
+     {
+      "rank": 23,
+      "school": "BYU"
+     },
+     {
+      "rank": 24,
+      "school": "Arizona State"
+     },
+     {
+      "rank": 25,
+      "school": "Utah"
+     }
+    ]
+   },
+   {
+    "poll": "AP Top 25",
+    "ranks": [
+     {
+      "rank": 1,
+      "school": "Ohio State"
+     },
+     {
+      "rank": 2,
+      "school": "Oregon"
+     },
+     {
+      "rank": 3,
+      "school": "Miami"
+     },
+     {
+      "rank": 4,
+      "school": "Ole Miss"
+     },
+     {
+      "rank": 5,
+      "school": "Oklahoma"
+     },
+     {
+      "rank": 6,
+      "school": "Texas A&M"
+     },
+     {
+      "rank": 7,
+      "school": "Penn State"
+     },
+     {
+      "rank": 8,
+      "school": "Indiana"
+     },
+     {
+      "rank": 9,
+      "school": "Texas"
+     },
+     {
+      "rank": 10,
+      "school": "Alabama"
+     },
+     {
+      "rank": 11,
+      "school": "Texas Tech"
+     },
+     {
+      "rank": 12,
+      "school": "Georgia"
+     },
+     {
+      "rank": 13,
+      "school": "LSU"
+     },
+     {
+      "rank": 14,
+      "school": "Iowa State"
+     },
+     {
+      "rank": 15,
+      "school": "Tennessee"
+     },
+     {
+      "rank": 16,
+      "school": "Vanderbilt"
+     },
+     {
+      "rank": 17,
+      "school": "Georgia Tech"
+     },
+     {
+      "rank": 18,
+      "school": "Florida State"
+     },
+     {
+      "rank": 19,
+      "school": "Missouri"
+     },
+     {
+      "rank": 20,
+      "school": "Michigan"
+     },
+     {
+      "rank": 21,
+      "school": "Notre Dame"
+     },
+     {
+      "rank": 22,
+      "school": "Illinois"
+     },
+     {
+      "rank": 23,
+      "school": "BYU"
+     },
+     {
+      "rank": 24,
+      "school": "Virginia"
+     },
+     {
+      "rank": 25,
+      "school": "Arizona State"
+     }
+    ]
+   }
+  ],
+  "season": 2025,
+  "seasonType": "regular",
+  "week": 6
+ },
+ {
+  "polls": [
+   {
+    "poll": "Coaches Poll",
+    "ranks": [
+     {
+      "rank": 1,
+      "school": "Ohio State"
+     },
+     {
+      "rank": 2,
+      "school": "Oregon"
+     },
+     {
+      "rank": 3,
+      "school": "Miami"
+     },
+     {
+      "rank": 4,
+      "school": "Ole Miss"
+     },
+     {
+      "rank": 5,
+      "school": "Texas A&M"
+     },
+     {
+      "rank": 6,
+      "school": "Oklahoma"
+     },
+     {
+      "rank": 7,
+      "school": "Indiana"
+     },
+     {
+      "rank": 8,
+      "school": "Alabama"
+     },
+     {
+      "rank": 9,
+      "school": "Georgia"
+     },
+     {
+      "rank": 10,
+      "school": "Texas Tech"
+     },
+     {
+      "rank": 11,
+      "school": "LSU"
+     },
+     {
+      "rank": 12,
+      "school": "Tennessee"
+     },
+     {
+      "rank": 13,
+      "school": "Georgia Tech"
+     },
+     {
+      "rank": 14,
+      "school": "Missouri"
+     },
+     {
+      "rank": 15,
+      "school": "Michigan"
+     },
+     {
+      "rank": 16,
+      "school": "Notre Dame"
+     },
+     {
+      "rank": 17,
+      "school": "Illinois"
+     },
+     {
+      "rank": 18,
+      "school": "BYU"
+     },
+     {
+      "rank": 19,
+      "school": "Texas"
+     },
+     {
+      "rank": 20,
+      "school": "Vanderbilt"
+     },
+     {
+      "rank": 21,
+      "school": "Iowa State"
+     },
+     {
+      "rank": 22,
+      "school": "Penn State"
+     },
+     {
+      "rank": 23,
+      "school": "Arizona State"
+     },
+     {
+      "rank": 24,
+      "school": "Virginia"
+     },
+     {
+      "rank": 25,
+      "school": "Memphis"
+     }
+    ]
+   },
+   {
+    "poll": "AP Top 25",
+    "ranks": [
+     {
+      "rank": 1,
+      "school": "Ohio State"
+     },
+     {
+      "rank": 2,
+      "school": "Miami"
+     },
+     {
+      "rank": 3,
+      "school": "Oregon"
+     },
+     {
+      "rank": 4,
+      "school": "Ole Miss"
+     },
+     {
+      "rank": 5,
+      "school": "Texas A&M"
+     },
+     {
+      "rank": 6,
+      "school": "Oklahoma"
+     },
+     {
+      "rank": 7,
+      "school": "Indiana"
+     },
+     {
+      "rank": 8,
+      "school": "Alabama"
+     },
+     {
+      "rank": 9,
+      "school": "Texas Tech"
+     },
+     {
+      "rank": 10,
+      "school": "Georgia"
+     },
+     {
+      "rank": 11,
+      "school": "LSU"
+     },
+     {
+      "rank": 12,
+      "school": "Tennessee"
+     },
+     {
+      "rank": 13,
+      "school": "Georgia Tech"
+     },
+     {
+      "rank": 14,
+      "school": "Missouri"
+     },
+     {
+      "rank": 15,
+      "school": "Michigan"
+     },
+     {
+      "rank": 16,
+      "school": "Notre Dame"
+     },
+     {
+      "rank": 17,
+      "school": "Illinois"
+     },
+     {
+      "rank": 18,
+      "school": "BYU"
+     },
+     {
+      "rank": 19,
+      "school": "Virginia"
+     },
+     {
+      "rank": 20,
+      "school": "Vanderbilt"
+     },
+     {
+      "rank": 21,
+      "school": "Arizona State"
+     },
+     {
+      "rank": 22,
+      "school": "Iowa State"
+     },
+     {
+      "rank": 23,
+      "school": "Memphis"
+     },
+     {
+      "rank": 24,
+      "school": "South Florida"
+     },
+     {
+      "rank": 25,
+      "school": "Florida State"
+     }
+    ]
+   }
+  ],
+  "season": 2025,
+  "seasonType": "regular",
+  "week": 7
+ },
+ {
+  "polls": [
+   {
+    "poll": "Coaches Poll",
+    "ranks": [
+     {
+      "rank": 1,
+      "school": "Ohio State"
+     },
+     {
+      "rank": 2,
+      "school": "Miami"
+     },
+     {
+      "rank": 3,
+      "school": "Indiana"
+     },
+     {
+      "rank": 4,
+      "school": "Texas A&M"
+     },
+     {
+      "rank": 5,
+      "school": "Ole Miss"
+     },
+     {
+      "rank": 6,
+      "school": "Alabama"
+     },
+     {
+      "rank": 7,
+      "school": "Georgia"
+     },
+     {
+      "rank": 8,
+      "school": "Texas Tech"
+     },
+     {
+      "rank": 9,
+      "school": "Oregon"
+     },
+     {
+      "rank": 10,
+      "school": "LSU"
+     },
+     {
+      "rank": 11,
+      "school": "Tennessee"
+     },
+     {
+      "rank": 12,
+      "school": "Georgia Tech"
+     },
+     {
+      "rank": 13,
+      "school": "Oklahoma"
+     },
+     {
+      "rank": 14,
+      "school": "BYU"
+     },
+     {
+      "rank": 15,
+      "school": "Notre Dame"
+     },
+     {
+      "rank": 16,
+      "school": "Missouri"
+     },
+     {
+      "rank": 17,
+      "school": "Texas"
+     },
+     {
+      "rank": 18,
+      "school": "Vanderbilt"
+     },
+     {
+      "rank": 19,
+      "school": "Virginia"
+     },
+     {
+      "rank": 20,
+      "school": "Memphis"
+     },
+     {
+      "rank": 21,
+      "school": "USC"
+     },
+     {
+      "rank": 22,
+      "school": "Utah"
+     },
+     {
+      "rank": 23,
+      "school": "South Florida"
+     },
+     {
+      "rank": 24,
+      "school": "Cincinnati"
+     },
+     {
+      "rank": 25,
+      "school": "Illinois"
+     }
+    ]
+   },
+   {
+    "poll": "AP Top 25",
+    "ranks": [
+     {
+      "rank": 1,
+      "school": "Ohio State"
+     },
+     {
+      "rank": 2,
+      "school": "Miami"
+     },
+     {
+      "rank": 3,
+      "school": "Indiana"
+     },
+     {
+      "rank": 4,
+      "school": "Texas A&M"
+     },
+     {
+      "rank": 5,
+      "school": "Ole Miss"
+     },
+     {
+      "rank": 6,
+      "school": "Alabama"
+     },
+     {
+      "rank": 7,
+      "school": "Texas Tech"
+     },
+     {
+      "rank": 8,
+      "school": "Oregon"
+     },
+     {
+      "rank": 9,
+      "school": "Georgia"
+     },
+     {
+      "rank": 10,
+      "school": "LSU"
+     },
+     {
+      "rank": 11,
+      "school": "Tennessee"
+     },
+     {
+      "rank": 12,
+      "school": "Georgia Tech"
+     },
+     {
+      "rank": 13,
+      "school": "Notre Dame"
+     },
+     {
+      "rank": 14,
+      "school": "Oklahoma"
+     },
+     {
+      "rank": 15,
+      "school": "BYU"
+     },
+     {
+      "rank": 16,
+      "school": "Missouri"
+     },
+     {
+      "rank": 17,
+      "school": "Vanderbilt"
+     },
+     {
+      "rank": 18,
+      "school": "Virginia"
+     },
+     {
+      "rank": 19,
+      "school": "South Florida"
+     },
+     {
+      "rank": 20,
+      "school": "USC"
+     },
+     {
+      "rank": 21,
+      "school": "Texas"
+     },
+     {
+      "rank": 22,
+      "school": "Memphis"
+     },
+     {
+      "rank": 23,
+      "school": "Utah"
+     },
+     {
+      "rank": 24,
+      "school": "Cincinnati"
+     },
+     {
+      "rank": 25,
+      "school": "Nebraska"
+     }
+    ]
+   }
+  ],
+  "season": 2025,
+  "seasonType": "regular",
+  "week": 8
+ },
+ {
+  "polls": [
+   {
+    "poll": "Coaches Poll",
+    "ranks": [
+     {
+      "rank": 1,
+      "school": "Ohio State"
+     },
+     {
+      "rank": 2,
+      "school": "Indiana"
+     },
+     {
+      "rank": 3,
+      "school": "Texas A&M"
+     },
+     {
+      "rank": 4,
+      "school": "Alabama"
+     },
+     {
+      "rank": 5,
+      "school": "Georgia"
+     },
+     {
+      "rank": 6,
+      "school": "Oregon"
+     },
+     {
+      "rank": 7,
+      "school": "Georgia Tech"
+     },
+     {
+      "rank": 8,
+      "school": "Ole Miss"
+     },
+     {
+      "rank": 9,
+      "school": "Miami"
+     },
+     {
+      "rank": 10,
+      "school": "BYU"
+     },
+     {
+      "rank": 11,
+      "school": "Oklahoma"
+     },
+     {
+      "rank": 12,
+      "school": "Vanderbilt"
+     },
+     {
+      "rank": 13,
+      "school": "Notre Dame"
+     },
+     {
+      "rank": 14,
+      "school": "Missouri"
+     },
+     {
+      "rank": 15,
+      "school": "Texas Tech"
+     },
+     {
+      "rank": 16,
+      "school": "Virginia"
+     },
+     {
+      "rank": 17,
+      "school": "Tennessee"
+     },
+     {
+      "rank": 18,
+      "school": "Texas"
+     },
+     {
+      "rank": 19,
+      "school": "LSU"
+     },
+     {
+      "rank": 20,
+      "school": "South Florida"
+     },
+     {
+      "rank": 21,
+      "school": "Cincinnati"
+     },
+     {
+      "rank": 22,
+      "school": "Louisville"
+     },
+     {
+      "rank": 23,
+      "school": "Illinois"
+     },
+     {
+      "rank": 24,
+      "school": "Michigan"
+     },
+     {
+      "rank": 25,
+      "school": "Arizona State"
+     }
+    ]
+   },
+   {
+    "poll": "AP Top 25",
+    "ranks": [
+     {
+      "rank": 1,
+      "school": "Ohio State"
+     },
+     {
+      "rank": 2,
+      "school": "Indiana"
+     },
+     {
+      "rank": 3,
+      "school": "Texas A&M"
+     },
+     {
+      "rank": 4,
+      "school": "Alabama"
+     },
+     {
+      "rank": 5,
+      "school": "Georgia"
+     },
+     {
+      "rank": 6,
+      "school": "Oregon"
+     },
+     {
+      "rank": 7,
+      "school": "Georgia Tech"
+     },
+     {
+      "rank": 8,
+      "school": "Ole Miss"
+     },
+     {
+      "rank": 9,
+      "school": "Miami"
+     },
+     {
+      "rank": 10,
+      "school": "Vanderbilt"
+     },
+     {
+      "rank": 11,
+      "school": "BYU"
+     },
+     {
+      "rank": 12,
+      "school": "Notre Dame"
+     },
+     {
+      "rank": 13,
+      "school": "Oklahoma"
+     },
+     {
+      "rank": 14,
+      "school": "Texas Tech"
+     },
+     {
+      "rank": 15,
+      "school": "Missouri"
+     },
+     {
+      "rank": 16,
+      "school": "Virginia"
+     },
+     {
+      "rank": 17,
+      "school": "Tennessee"
+     },
+     {
+      "rank": 18,
+      "school": "South Florida"
+     },
+     {
+      "rank": 19,
+      "school": "Louisville"
+     },
+     {
+      "rank": 20,
+      "school": "LSU"
+     },
+     {
+      "rank": 21,
+      "school": "Cincinnati"
+     },
+     {
+      "rank": 22,
+      "school": "Texas"
+     },
+     {
+      "rank": 23,
+      "school": "Illinois"
+     },
+     {
+      "rank": 24,
+      "school": "Arizona State"
+     },
+     {
+      "rank": 25,
+      "school": "Michigan"
+     }
+    ]
+   }
+  ],
+  "season": 2025,
+  "seasonType": "regular",
+  "week": 9
+ },
+ {
+  "polls": [
+   {
+    "poll": "Coaches Poll",
+    "ranks": [
+     {
+      "rank": 1,
+      "school": "Ohio State"
+     },
+     {
+      "rank": 2,
+      "school": "Indiana"
+     },
+     {
+      "rank": 3,
+      "school": "Texas A&M"
+     },
+     {
+      "rank": 4,
+      "school": "Alabama"
+     },
+     {
+      "rank": 5,
+      "school": "Georgia"
+     },
+     {
+      "rank": 6,
+      "school": "Oregon"
+     },
+     {
+      "rank": 7,
+      "school": "Georgia Tech"
+     },
+     {
+      "rank": 8,
+      "school": "Ole Miss"
+     },
+     {
+      "rank": 9,
+      "school": "Miami"
+     },
+     {
+      "rank": 10,
+      "school": "BYU"
+     },
+     {
+      "rank": 11,
+      "school": "Vanderbilt"
+     },
+     {
+      "rank": 12,
+      "school": "Notre Dame"
+     },
+     {
+      "rank": 13,
+      "school": "Texas Tech"
+     },
+     {
+      "rank": 14,
+      "school": "Tennessee"
+     },
+     {
+      "rank": 15,
+      "school": "Virginia"
+     },
+     {
+      "rank": 16,
+      "school": "Cincinnati"
+     },
+     {
+      "rank": 17,
+      "school": "Louisville"
+     },
+     {
+      "rank": 18,
+      "school": "Oklahoma"
+     },
+     {
+      "rank": 19,
+      "school": "Texas"
+     },
+     {
+      "rank": 20,
+      "school": "Missouri"
+     },
+     {
+      "rank": 21,
+      "school": "Michigan"
+     },
+     {
+      "rank": 22,
+      "school": "Houston"
+     },
+     {
+      "rank": 23,
+      "school": "Navy"
+     },
+     {
+      "rank": 24,
+      "school": "Utah"
+     },
+     {
+      "rank": 25,
+      "school": "Memphis"
+     }
+    ]
+   },
+   {
+    "poll": "AP Top 25",
+    "ranks": [
+     {
+      "rank": 1,
+      "school": "Ohio State"
+     },
+     {
+      "rank": 2,
+      "school": "Indiana"
+     },
+     {
+      "rank": 3,
+      "school": "Texas A&M"
+     },
+     {
+      "rank": 4,
+      "school": "Alabama"
+     },
+     {
+      "rank": 5,
+      "school": "Georgia"
+     },
+     {
+      "rank": 6,
+      "school": "Oregon"
+     },
+     {
+      "rank": 7,
+      "school": "Ole Miss"
+     },
+     {
+      "rank": 8,
+      "school": "Georgia Tech"
+     },
+     {
+      "rank": 9,
+      "school": "Vanderbilt"
+     },
+     {
+      "rank": 10,
+      "school": "BYU"
+     },
+     {
+      "rank": 10,
+      "school": "Miami"
+     },
+     {
+      "rank": 12,
+      "school": "Notre Dame"
+     },
+     {
+      "rank": 13,
+      "school": "Texas Tech"
+     },
+     {
+      "rank": 14,
+      "school": "Tennessee"
+     },
+     {
+      "rank": 15,
+      "school": "Virginia"
+     },
+     {
+      "rank": 16,
+      "school": "Louisville"
+     },
+     {
+      "rank": 17,
+      "school": "Cincinnati"
+     },
+     {
+      "rank": 18,
+      "school": "Oklahoma"
+     },
+     {
+      "rank": 19,
+      "school": "Missouri"
+     },
+     {
+      "rank": 20,
+      "school": "Texas"
+     },
+     {
+      "rank": 21,
+      "school": "Michigan"
+     },
+     {
+      "rank": 22,
+      "school": "Houston"
+     },
+     {
+      "rank": 23,
+      "school": "USC"
+     },
+     {
+      "rank": 24,
+      "school": "Utah"
+     },
+     {
+      "rank": 25,
+      "school": "Memphis"
+     }
+    ]
+   }
+  ],
+  "season": 2025,
+  "seasonType": "regular",
+  "week": 10
+ },
+ {
+  "polls": [
+   {
+    "poll": "Coaches Poll",
+    "ranks": [
+     {
+      "rank": 1,
+      "school": "Ohio State"
+     },
+     {
+      "rank": 2,
+      "school": "Indiana"
+     },
+     {
+      "rank": 3,
+      "school": "Texas A&M"
+     },
+     {
+      "rank": 4,
+      "school": "Alabama"
+     },
+     {
+      "rank": 5,
+      "school": "Georgia"
+     },
+     {
+      "rank": 6,
+      "school": "Oregon"
+     },
+     {
+      "rank": 7,
+      "school": "Ole Miss"
+     },
+     {
+      "rank": 8,
+      "school": "BYU"
+     },
+     {
+      "rank": 9,
+      "school": "Texas Tech"
+     },
+     {
+      "rank": 10,
+      "school": "Notre Dame"
+     },
+     {
+      "rank": 11,
+      "school": "Virginia"
+     },
+     {
+      "rank": 12,
+      "school": "Oklahoma"
+     },
+     {
+      "rank": 13,
+      "school": "Texas"
+     },
+     {
+      "rank": 14,
+      "school": "Georgia Tech"
+     },
+     {
+      "rank": 15,
+      "school": "Louisville"
+     },
+     {
+      "rank": 16,
+      "school": "Vanderbilt"
+     },
+     {
+      "rank": 17,
+      "school": "Missouri"
+     },
+     {
+      "rank": 18,
+      "school": "Miami"
+     },
+     {
+      "rank": 19,
+      "school": "Utah"
+     },
+     {
+      "rank": 20,
+      "school": "Michigan"
+     },
+     {
+      "rank": 21,
+      "school": "USC"
+     },
+     {
+      "rank": 22,
+      "school": "Tennessee"
+     },
+     {
+      "rank": 23,
+      "school": "Memphis"
+     },
+     {
+      "rank": 24,
+      "school": "Iowa"
+     },
+     {
+      "rank": 25,
+      "school": "Cincinnati"
+     }
+    ]
+   },
+   {
+    "poll": "AP Top 25",
+    "ranks": [
+     {
+      "rank": 1,
+      "school": "Ohio State"
+     },
+     {
+      "rank": 2,
+      "school": "Indiana"
+     },
+     {
+      "rank": 3,
+      "school": "Texas A&M"
+     },
+     {
+      "rank": 4,
+      "school": "Alabama"
+     },
+     {
+      "rank": 5,
+      "school": "Georgia"
+     },
+     {
+      "rank": 6,
+      "school": "Oregon"
+     },
+     {
+      "rank": 7,
+      "school": "Ole Miss"
+     },
+     {
+      "rank": 8,
+      "school": "BYU"
+     },
+     {
+      "rank": 9,
+      "school": "Texas Tech"
+     },
+     {
+      "rank": 10,
+      "school": "Notre Dame"
+     },
+     {
+      "rank": 11,
+      "school": "Oklahoma"
+     },
+     {
+      "rank": 12,
+      "school": "Virginia"
+     },
+     {
+      "rank": 13,
+      "school": "Texas"
+     },
+     {
+      "rank": 14,
+      "school": "Louisville"
+     },
+     {
+      "rank": 15,
+      "school": "Vanderbilt"
+     },
+     {
+      "rank": 16,
+      "school": "Georgia Tech"
+     },
+     {
+      "rank": 17,
+      "school": "Utah"
+     },
+     {
+      "rank": 18,
+      "school": "Miami"
+     },
+     {
+      "rank": 19,
+      "school": "Missouri"
+     },
+     {
+      "rank": 20,
+      "school": "USC"
+     },
+     {
+      "rank": 21,
+      "school": "Michigan"
+     },
+     {
+      "rank": 22,
+      "school": "Memphis"
+     },
+     {
+      "rank": 23,
+      "school": "Tennessee"
+     },
+     {
+      "rank": 24,
+      "school": "Washington"
+     },
+     {
+      "rank": 25,
+      "school": "Cincinnati"
+     }
+    ]
+   }
+  ],
+  "season": 2025,
+  "seasonType": "regular",
+  "week": 11
+ },
+ {
+  "polls": [
+   {
+    "poll": "Coaches Poll",
+    "ranks": [
+     {
+      "rank": 1,
+      "school": "Ohio State"
+     },
+     {
+      "rank": 2,
+      "school": "Indiana"
+     },
+     {
+      "rank": 3,
+      "school": "Texas A&M"
+     },
+     {
+      "rank": 4,
+      "school": "Alabama"
+     },
+     {
+      "rank": 5,
+      "school": "Georgia"
+     },
+     {
+      "rank": 6,
+      "school": "Oregon"
+     },
+     {
+      "rank": 7,
+      "school": "Ole Miss"
+     },
+     {
+      "rank": 8,
+      "school": "Texas Tech"
+     },
+     {
+      "rank": 9,
+      "school": "Notre Dame"
+     },
+     {
+      "rank": 10,
+      "school": "Oklahoma"
+     },
+     {
+      "rank": 10,
+      "school": "Texas"
+     },
+     {
+      "rank": 12,
+      "school": "Georgia Tech"
+     },
+     {
+      "rank": 12,
+      "school": "BYU"
+     },
+     {
+      "rank": 14,
+      "school": "Vanderbilt"
+     },
+     {
+      "rank": 15,
+      "school": "Utah"
+     },
+     {
+      "rank": 16,
+      "school": "Miami"
+     },
+     {
+      "rank": 17,
+      "school": "Michigan"
+     },
+     {
+      "rank": 18,
+      "school": "USC"
+     },
+     {
+      "rank": 19,
+      "school": "Virginia"
+     },
+     {
+      "rank": 20,
+      "school": "Tennessee"
+     },
+     {
+      "rank": 21,
+      "school": "Louisville"
+     },
+     {
+      "rank": 22,
+      "school": "Cincinnati"
+     },
+     {
+      "rank": 23,
+      "school": "Pittsburgh"
+     },
+     {
+      "rank": 24,
+      "school": "Missouri"
+     },
+     {
+      "rank": 25,
+      "school": "James Madison"
+     }
+    ]
+   },
+   {
+    "poll": "AP Top 25",
+    "ranks": [
+     {
+      "rank": 1,
+      "school": "Ohio State"
+     },
+     {
+      "rank": 2,
+      "school": "Indiana"
+     },
+     {
+      "rank": 3,
+      "school": "Texas A&M"
+     },
+     {
+      "rank": 4,
+      "school": "Alabama"
+     },
+     {
+      "rank": 5,
+      "school": "Georgia"
+     },
+     {
+      "rank": 6,
+      "school": "Ole Miss"
+     },
+     {
+      "rank": 7,
+      "school": "Oregon"
+     },
+     {
+      "rank": 8,
+      "school": "Texas Tech"
+     },
+     {
+      "rank": 9,
+      "school": "Notre Dame"
+     },
+     {
+      "rank": 10,
+      "school": "Texas"
+     },
+     {
+      "rank": 11,
+      "school": "Oklahoma"
+     },
+     {
+      "rank": 12,
+      "school": "BYU"
+     },
+     {
+      "rank": 13,
+      "school": "Vanderbilt"
+     },
+     {
+      "rank": 14,
+      "school": "Georgia Tech"
+     },
+     {
+      "rank": 15,
+      "school": "Utah"
+     },
+     {
+      "rank": 16,
+      "school": "Miami"
+     },
+     {
+      "rank": 17,
+      "school": "USC"
+     },
+     {
+      "rank": 18,
+      "school": "Michigan"
+     },
+     {
+      "rank": 19,
+      "school": "Louisville"
+     },
+     {
+      "rank": 20,
+      "school": "Virginia"
+     },
+     {
+      "rank": 21,
+      "school": "Tennessee"
+     },
+     {
+      "rank": 22,
+      "school": "Cincinnati"
+     },
+     {
+      "rank": 23,
+      "school": "Pittsburgh"
+     },
+     {
+      "rank": 24,
+      "school": "James Madison"
+     },
+     {
+      "rank": 25,
+      "school": "South Florida"
+     }
+    ]
+   }
+  ],
+  "season": 2025,
+  "seasonType": "regular",
+  "week": 12
+ },
+ {
+  "polls": [
+   {
+    "poll": "Coaches Poll",
+    "ranks": [
+     {
+      "rank": 1,
+      "school": "Ohio State"
+     },
+     {
+      "rank": 2,
+      "school": "Indiana"
+     },
+     {
+      "rank": 3,
+      "school": "Texas A&M"
+     },
+     {
+      "rank": 4,
+      "school": "Georgia"
+     },
+     {
+      "rank": 5,
+      "school": "Oregon"
+     },
+     {
+      "rank": 6,
+      "school": "Ole Miss"
+     },
+     {
+      "rank": 7,
+      "school": "Texas Tech"
+     },
+     {
+      "rank": 8,
+      "school": "Oklahoma"
+     },
+     {
+      "rank": 9,
+      "school": "Notre Dame"
+     },
+     {
+      "rank": 10,
+      "school": "Alabama"
+     },
+     {
+      "rank": 11,
+      "school": "BYU"
+     },
+     {
+      "rank": 12,
+      "school": "Georgia Tech"
+     },
+     {
+      "rank": 13,
+      "school": "Vanderbilt"
+     },
+     {
+      "rank": 14,
+      "school": "Utah"
+     },
+     {
+      "rank": 15,
+      "school": "Miami"
+     },
+     {
+      "rank": 16,
+      "school": "USC"
+     },
+     {
+      "rank": 17,
+      "school": "Michigan"
+     },
+     {
+      "rank": 18,
+      "school": "Texas"
+     },
+     {
+      "rank": 19,
+      "school": "Virginia"
+     },
+     {
+      "rank": 20,
+      "school": "Tennessee"
+     },
+     {
+      "rank": 21,
+      "school": "Missouri"
+     },
+     {
+      "rank": 22,
+      "school": "James Madison"
+     },
+     {
+      "rank": 23,
+      "school": "North Texas"
+     },
+     {
+      "rank": 24,
+      "school": "Houston"
+     },
+     {
+      "rank": 25,
+      "school": "Tulane"
+     }
+    ]
+   },
+   {
+    "poll": "AP Top 25",
+    "ranks": [
+     {
+      "rank": 1,
+      "school": "Ohio State"
+     },
+     {
+      "rank": 2,
+      "school": "Indiana"
+     },
+     {
+      "rank": 3,
+      "school": "Texas A&M"
+     },
+     {
+      "rank": 4,
+      "school": "Georgia"
+     },
+     {
+      "rank": 5,
+      "school": "Ole Miss"
+     },
+     {
+      "rank": 6,
+      "school": "Oregon"
+     },
+     {
+      "rank": 6,
+      "school": "Texas Tech"
+     },
+     {
+      "rank": 8,
+      "school": "Oklahoma"
+     },
+     {
+      "rank": 9,
+      "school": "Notre Dame"
+     },
+     {
+      "rank": 10,
+      "school": "Alabama"
+     },
+     {
+      "rank": 11,
+      "school": "BYU"
+     },
+     {
+      "rank": 12,
+      "school": "Vanderbilt"
+     },
+     {
+      "rank": 13,
+      "school": "Utah"
+     },
+     {
+      "rank": 14,
+      "school": "Miami"
+     },
+     {
+      "rank": 15,
+      "school": "Georgia Tech"
+     },
+     {
+      "rank": 16,
+      "school": "USC"
+     },
+     {
+      "rank": 17,
+      "school": "Texas"
+     },
+     {
+      "rank": 18,
+      "school": "Michigan"
+     },
+     {
+      "rank": 19,
+      "school": "Virginia"
+     },
+     {
+      "rank": 20,
+      "school": "Tennessee"
+     },
+     {
+      "rank": 21,
+      "school": "James Madison"
+     },
+     {
+      "rank": 22,
+      "school": "North Texas"
+     },
+     {
+      "rank": 23,
+      "school": "Missouri"
+     },
+     {
+      "rank": 24,
+      "school": "Tulane"
+     },
+     {
+      "rank": 25,
+      "school": "Houston"
+     }
+    ]
+   }
+  ],
+  "season": 2025,
+  "seasonType": "regular",
+  "week": 13
+ },
+ {
+  "polls": [
+   {
+    "poll": "Coaches Poll",
+    "ranks": [
+     {
+      "rank": 1,
+      "school": "Ohio State"
+     },
+     {
+      "rank": 2,
+      "school": "Indiana"
+     },
+     {
+      "rank": 3,
+      "school": "Texas A&M"
+     },
+     {
+      "rank": 4,
+      "school": "Georgia"
+     },
+     {
+      "rank": 5,
+      "school": "Oregon"
+     },
+     {
+      "rank": 6,
+      "school": "Ole Miss"
+     },
+     {
+      "rank": 7,
+      "school": "Texas Tech"
+     },
+     {
+      "rank": 8,
+      "school": "Oklahoma"
+     },
+     {
+      "rank": 9,
+      "school": "Notre Dame"
+     },
+     {
+      "rank": 10,
+      "school": "Alabama"
+     },
+     {
+      "rank": 11,
+      "school": "BYU"
+     },
+     {
+      "rank": 12,
+      "school": "Vanderbilt"
+     },
+     {
+      "rank": 13,
+      "school": "Miami"
+     },
+     {
+      "rank": 14,
+      "school": "Utah"
+     },
+     {
+      "rank": 15,
+      "school": "Michigan"
+     },
+     {
+      "rank": 16,
+      "school": "Texas"
+     },
+     {
+      "rank": 17,
+      "school": "Virginia"
+     },
+     {
+      "rank": 18,
+      "school": "Tennessee"
+     },
+     {
+      "rank": 19,
+      "school": "Georgia Tech"
+     },
+     {
+      "rank": 20,
+      "school": "USC"
+     },
+     {
+      "rank": 21,
+      "school": "James Madison"
+     },
+     {
+      "rank": 22,
+      "school": "North Texas"
+     },
+     {
+      "rank": 23,
+      "school": "Tulane"
+     },
+     {
+      "rank": 24,
+      "school": "Pittsburgh"
+     },
+     {
+      "rank": 25,
+      "school": "SMU"
+     }
+    ]
+   },
+   {
+    "poll": "AP Top 25",
+    "ranks": [
+     {
+      "rank": 1,
+      "school": "Ohio State"
+     },
+     {
+      "rank": 2,
+      "school": "Indiana"
+     },
+     {
+      "rank": 3,
+      "school": "Texas A&M"
+     },
+     {
+      "rank": 4,
+      "school": "Georgia"
+     },
+     {
+      "rank": 5,
+      "school": "Oregon"
+     },
+     {
+      "rank": 6,
+      "school": "Ole Miss"
+     },
+     {
+      "rank": 7,
+      "school": "Texas Tech"
+     },
+     {
+      "rank": 8,
+      "school": "Oklahoma"
+     },
+     {
+      "rank": 9,
+      "school": "Notre Dame"
+     },
+     {
+      "rank": 10,
+      "school": "Alabama"
+     },
+     {
+      "rank": 11,
+      "school": "BYU"
+     },
+     {
+      "rank": 12,
+      "school": "Vanderbilt"
+     },
+     {
+      "rank": 13,
+      "school": "Miami"
+     },
+     {
+      "rank": 14,
+      "school": "Utah"
+     },
+     {
+      "rank": 15,
+      "school": "Michigan"
+     },
+     {
+      "rank": 16,
+      "school": "Texas"
+     },
+     {
+      "rank": 17,
+      "school": "Virginia"
+     },
+     {
+      "rank": 18,
+      "school": "Tennessee"
+     },
+     {
+      "rank": 19,
+      "school": "USC"
+     },
+     {
+      "rank": 20,
+      "school": "James Madison"
+     },
+     {
+      "rank": 21,
+      "school": "North Texas"
+     },
+     {
+      "rank": 22,
+      "school": "Tulane"
+     },
+     {
+      "rank": 23,
+      "school": "Georgia Tech"
+     },
+     {
+      "rank": 24,
+      "school": "Pittsburgh"
+     },
+     {
+      "rank": 25,
+      "school": "SMU"
+     }
+    ]
+   }
+  ],
+  "season": 2025,
+  "seasonType": "regular",
+  "week": 14
+ },
+ {
+  "polls": [
+   {
+    "poll": "Coaches Poll",
+    "ranks": [
+     {
+      "rank": 1,
+      "school": "Ohio State"
+     },
+     {
+      "rank": 2,
+      "school": "Indiana"
+     },
+     {
+      "rank": 3,
+      "school": "Georgia"
+     },
+     {
+      "rank": 4,
+      "school": "Oregon"
+     },
+     {
+      "rank": 5,
+      "school": "Ole Miss"
+     },
+     {
+      "rank": 6,
+      "school": "Texas Tech"
+     },
+     {
+      "rank": 7,
+      "school": "Texas A&M"
+     },
+     {
+      "rank": 8,
+      "school": "Oklahoma"
+     },
+     {
+      "rank": 9,
+      "school": "Notre Dame"
+     },
+     {
+      "rank": 10,
+      "school": "Alabama"
+     },
+     {
+      "rank": 11,
+      "school": "BYU"
+     },
+     {
+      "rank": 12,
+      "school": "Vanderbilt"
+     },
+     {
+      "rank": 13,
+      "school": "Miami"
+     },
+     {
+      "rank": 14,
+      "school": "Texas"
+     },
+     {
+      "rank": 15,
+      "school": "Utah"
+     },
+     {
+      "rank": 16,
+      "school": "Virginia"
+     },
+     {
+      "rank": 17,
+      "school": "USC"
+     },
+     {
+      "rank": 18,
+      "school": "Michigan"
+     },
+     {
+      "rank": 19,
+      "school": "James Madison"
+     },
+     {
+      "rank": 20,
+      "school": "North Texas"
+     },
+     {
+      "rank": 21,
+      "school": "Tulane"
+     },
+     {
+      "rank": 22,
+      "school": "Arizona"
+     },
+     {
+      "rank": 23,
+      "school": "Georgia Tech"
+     },
+     {
+      "rank": 24,
+      "school": "Tennessee"
+     },
+     {
+      "rank": 25,
+      "school": "Navy"
+     }
+    ]
+   },
+   {
+    "poll": "AP Top 25",
+    "ranks": [
+     {
+      "rank": 1,
+      "school": "Ohio State"
+     },
+     {
+      "rank": 2,
+      "school": "Indiana"
+     },
+     {
+      "rank": 3,
+      "school": "Georgia"
+     },
+     {
+      "rank": 4,
+      "school": "Oregon"
+     },
+     {
+      "rank": 5,
+      "school": "Texas Tech"
+     },
+     {
+      "rank": 6,
+      "school": "Ole Miss"
+     },
+     {
+      "rank": 7,
+      "school": "Texas A&M"
+     },
+     {
+      "rank": 8,
+      "school": "Oklahoma"
+     },
+     {
+      "rank": 9,
+      "school": "Notre Dame"
+     },
+     {
+      "rank": 10,
+      "school": "Alabama"
+     },
+     {
+      "rank": 11,
+      "school": "BYU"
+     },
+     {
+      "rank": 12,
+      "school": "Miami"
+     },
+     {
+      "rank": 13,
+      "school": "Vanderbilt"
+     },
+     {
+      "rank": 14,
+      "school": "Texas"
+     },
+     {
+      "rank": 15,
+      "school": "Utah"
+     },
+     {
+      "rank": 16,
+      "school": "Virginia"
+     },
+     {
+      "rank": 17,
+      "school": "USC"
+     },
+     {
+      "rank": 18,
+      "school": "Michigan"
+     },
+     {
+      "rank": 19,
+      "school": "James Madison"
+     },
+     {
+      "rank": 20,
+      "school": "North Texas"
+     },
+     {
+      "rank": 21,
+      "school": "Tulane"
+     },
+     {
+      "rank": 22,
+      "school": "Arizona"
+     },
+     {
+      "rank": 23,
+      "school": "Navy"
+     },
+     {
+      "rank": 24,
+      "school": "Georgia Tech"
+     },
+     {
+      "rank": 25,
+      "school": "Missouri"
+     }
+    ]
+   }
+  ],
+  "season": 2025,
+  "seasonType": "regular",
+  "week": 15
+ },
+ {
+  "polls": [
+   {
+    "poll": "AP Top 25",
+    "ranks": [
+     {
+      "rank": 1,
+      "school": "Indiana"
+     },
+     {
+      "rank": 2,
+      "school": "Georgia"
+     },
+     {
+      "rank": 3,
+      "school": "Ohio State"
+     },
+     {
+      "rank": 4,
+      "school": "Texas Tech"
+     },
+     {
+      "rank": 5,
+      "school": "Oregon"
+     },
+     {
+      "rank": 6,
+      "school": "Ole Miss"
+     },
+     {
+      "rank": 7,
+      "school": "Texas A&M"
+     },
+     {
+      "rank": 8,
+      "school": "Oklahoma"
+     },
+     {
+      "rank": 9,
+      "school": "Notre Dame"
+     },
+     {
+      "rank": 10,
+      "school": "Miami"
+     },
+     {
+      "rank": 11,
+      "school": "Alabama"
+     },
+     {
+      "rank": 12,
+      "school": "BYU"
+     },
+     {
+      "rank": 13,
+      "school": "Vanderbilt"
+     },
+     {
+      "rank": 14,
+      "school": "Texas"
+     },
+     {
+      "rank": 15,
+      "school": "Utah"
+     },
+     {
+      "rank": 16,
+      "school": "USC"
+     },
+     {
+      "rank": 17,
+      "school": "Tulane"
+     },
+     {
+      "rank": 18,
+      "school": "Michigan"
+     },
+     {
+      "rank": 19,
+      "school": "James Madison"
+     },
+     {
+      "rank": 20,
+      "school": "Virginia"
+     },
+     {
+      "rank": 21,
+      "school": "Arizona"
+     },
+     {
+      "rank": 22,
+      "school": "Navy"
+     },
+     {
+      "rank": 23,
+      "school": "North Texas"
+     },
+     {
+      "rank": 24,
+      "school": "Georgia Tech"
+     },
+     {
+      "rank": 25,
+      "school": "Missouri"
+     }
+    ]
+   },
+   {
+    "poll": "Coaches Poll",
+    "ranks": [
+     {
+      "rank": 1,
+      "school": "Indiana"
+     },
+     {
+      "rank": 2,
+      "school": "Georgia"
+     },
+     {
+      "rank": 3,
+      "school": "Ohio State"
+     },
+     {
+      "rank": 4,
+      "school": "Texas Tech"
+     },
+     {
+      "rank": 5,
+      "school": "Oregon"
+     },
+     {
+      "rank": 6,
+      "school": "Ole Miss"
+     },
+     {
+      "rank": 7,
+      "school": "Texas A&M"
+     },
+     {
+      "rank": 8,
+      "school": "Oklahoma"
+     },
+     {
+      "rank": 9,
+      "school": "Notre Dame"
+     },
+     {
+      "rank": 10,
+      "school": "Miami"
+     },
+     {
+      "rank": 11,
+      "school": "Alabama"
+     },
+     {
+      "rank": 12,
+      "school": "Vanderbilt"
+     },
+     {
+      "rank": 13,
+      "school": "BYU"
+     },
+     {
+      "rank": 14,
+      "school": "Texas"
+     },
+     {
+      "rank": 15,
+      "school": "Utah"
+     },
+     {
+      "rank": 16,
+      "school": "USC"
+     },
+     {
+      "rank": 17,
+      "school": "Michigan"
+     },
+     {
+      "rank": 18,
+      "school": "Tulane"
+     },
+     {
+      "rank": 19,
+      "school": "James Madison"
+     },
+     {
+      "rank": 20,
+      "school": "Arizona"
+     },
+     {
+      "rank": 21,
+      "school": "Virginia"
+     },
+     {
+      "rank": 22,
+      "school": "Georgia Tech"
+     },
+     {
+      "rank": 23,
+      "school": "Tennessee"
+     },
+     {
+      "rank": 24,
+      "school": "Houston"
+     },
+     {
+      "rank": 25,
+      "school": "Navy"
+     }
+    ]
+   }
+  ],
+  "season": 2025,
+  "seasonType": "regular",
+  "week": 16
+ },
+ {
+  "polls": [
    {
     "poll": "AP Top 25",
     "ranks": [
@@ -313,111 +3575,6 @@
      {
       "rank": 25,
       "school": "TCU"
-     }
-    ]
-   },
-   {
-    "poll": "AFCA Division II Coaches Poll",
-    "ranks": [
-     {
-      "rank": 1,
-      "school": "Ferris State"
-     },
-     {
-      "rank": 2,
-      "school": "Harding"
-     },
-     {
-      "rank": 3,
-      "school": "Kutztown"
-     },
-     {
-      "rank": 4,
-      "school": "Newberry"
-     },
-     {
-      "rank": 5,
-      "school": "UT Permian Basin"
-     },
-     {
-      "rank": 6,
-      "school": "Pittsburg State"
-     },
-     {
-      "rank": 7,
-      "school": "Albany State"
-     },
-     {
-      "rank": 8,
-      "school": "Minnesota State"
-     },
-     {
-      "rank": 9,
-      "school": "West Florida"
-     },
-     {
-      "rank": 10,
-      "school": "Indianapolis"
-     },
-     {
-      "rank": 11,
-      "school": "CSU Pueblo"
-     },
-     {
-      "rank": 12,
-      "school": "Western Colorado"
-     },
-     {
-      "rank": 13,
-      "school": "Central Washington"
-     },
-     {
-      "rank": 14,
-      "school": "Frostburg State"
-     },
-     {
-      "rank": 15,
-      "school": "Ashland"
-     },
-     {
-      "rank": 16,
-      "school": "Minnesota Duluth"
-     },
-     {
-      "rank": 17,
-      "school": "Northwest Missouri State"
-     },
-     {
-      "rank": 18,
-      "school": "Johnson C. Smith"
-     },
-     {
-      "rank": 19,
-      "school": "Findlay"
-     },
-     {
-      "rank": 20,
-      "school": "Benedict"
-     },
-     {
-      "rank": 21,
-      "school": "Virginia Union"
-     },
-     {
-      "rank": 22,
-      "school": "California (PA)"
-     },
-     {
-      "rank": 23,
-      "school": "Chadron State"
-     },
-     {
-      "rank": 24,
-      "school": "Assumption"
-     },
-     {
-      "rank": 25,
-      "school": "Augustana (SD)"
      }
     ]
    },

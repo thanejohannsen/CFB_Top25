@@ -19,6 +19,8 @@ FILES = {
     "/games": "games.json",
     "/records": "records.json",
     "/calendar": "calendar.json",
+    "/lines": "lines.json",
+    "/ppa/games": "ppa_games.json",
     "/rankings": "rankings_polls.json",
 }
 
@@ -71,6 +73,20 @@ class FixtureSource:
 
     def calendar(self, year: int) -> list[dict]:
         return self._load("/calendar")
+
+    def lines(self, year: int, season_type: str = "both") -> list[dict]:
+        """A season with no lines fixture still ranks; the market term drops out."""
+        try:
+            return self._load("/lines")
+        except UpstreamUnavailable:
+            return []
+
+    def ppa_games(self, year: int, season_type: str = "both") -> list[dict]:
+        """As with lines: absent is a missing term, not a failed run."""
+        try:
+            return self._load("/ppa/games")
+        except UpstreamUnavailable:
+            return []
 
     def poll_rankings(self, year: int, season_type: str = "regular") -> list[dict]:
         """Only scripts/evaluate.py reads this; absent fixtures are not fatal."""

@@ -289,10 +289,10 @@ footer.site p { margin: 4px 0; }
   #rankings-body .c-conf { justify-self: start; }
   #rankings-body .c-rec  { justify-self: end; font-variant-numeric: tabular-nums; }
 
-  /* Third line: the numbers become labelled chips. */
+  /* Third line: the three base inputs become labelled chips. */
   #rankings-body .c-sor,
-  #rankings-body .c-sos,
-  #rankings-body .c-fpi {
+  #rankings-body .c-mkt,
+  #rankings-body .c-ppa {
     grid-area: nums;
     display: inline-flex; gap: 4px;
     margin-top: 5px;
@@ -300,21 +300,24 @@ footer.site p { margin: 4px 0; }
     text-align: left !important;
   }
   #rankings-body .c-sor::before,
-  #rankings-body .c-sos::before,
-  #rankings-body .c-fpi::before {
+  #rankings-body .c-mkt::before,
+  #rankings-body .c-ppa::before {
     content: attr(data-label) "\00a0";              /* keep label and value apart */
     color: var(--ink-muted); font-weight: 600;
   }
   #rankings-body .c-sor { justify-self: start; }
-  #rankings-body .c-sos { justify-self: center; }
-  #rankings-body .c-fpi { justify-self: end; }
+  #rankings-body .c-mkt { justify-self: center; }
+  #rankings-body .c-ppa { justify-self: end; }
 
   #rankings-body .c-notes {
     grid-area: note;
     display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
   }
   #rankings-body .c-notes:empty { display: none; }
-  #rankings-body .c-base { display: none; }          /* it is in the panel */
+  /* Both are in the expanded panel, where there is room to explain them. */
+  #rankings-body .c-base { display: none; }
+  #rankings-body .c-sos,
+  #rankings-body .c-fpi { display: none; }
   #rankings-body .c-chev { display: none; }          /* the card is the target */
   .badge { font-size: 0.6875rem; padding: 1px 7px; }
 

@@ -28,10 +28,48 @@ offline                = false
 fixtures_dir           = "tests/fixtures/cfbd"
 fixture_year           = "2025"
 
-# -- Stage 1: base order from resume ranks (lower rank = better; 1 = best) ----
+# -- Stage 1: base order -- the record, the market, and the play-by-play -------
+# Every input is a national rank (1 = best), so the base is a weighted rank
+# average and lower is better.
 [stage1]
-w_sor       = 0.75   # resumeRanks.strengthOfRecord -- how impressive the record is
-w_fpi       = 0.25   # our rank of the raw FPI rating -- the team-quality anchor
+w_sor    = 0.50   # resumeRanks.strengthOfRecord -- how impressive the record is
+w_market = 0.25   # rank of the neutral-field rating implied by betting lines
+w_perf   = 0.25   # rank of opponent-adjusted net PPA -- the eye test, counted
+#
+# Market and PPA split the quality half evenly because that is what measured
+# best. Taking the 2025 season, ranking only on what was knowable at the time
+# and then predicting the winner of every later game:
+#
+#     market alone          61.2% of ranked-vs-ranked games
+#     play-by-play alone    62.8%
+#     50/50 blend           67.3%
+#
+# Either signal on its own is worse than both together: the market knows about
+# injuries and suspensions that no box score shows, and the play-by-play knows
+# how a team actually moved the ball regardless of what the closing line said.
+#
+# w_sor is a different kind of number. It is the share of the ranking that
+# belongs to what teams have ACHIEVED rather than how good they look, and no
+# backtest can set it -- predicting games is not what a resume is for. 0.50 is a
+# judgement, not a measurement: half the ranking is the record, half is quality.
+#
+# The cost of that choice is visible and worth stating. On the completed 2025
+# season a 7-6 Penn State lands at #24: Strength of Record #43, but the market
+# rated them 13th and the play-by-play 16th. Push w_sor to 0.60 and they drop
+# off the board; drop it to 0.40 and LSU falls from 8th to 17th in 2026. There
+# is no setting that satisfies both instincts at once, so the site shows the
+# arithmetic for every team and this comment records which way the dial was
+# turned and what it cost.
+#
+# FPI is OFF in the base. Two reasons. The market and the play-by-play do its job
+# better, and FPI cannot be honestly backtested: /ratings/fpi serves one
+# end-of-season snapshot with no week dimension, so grading it on a finished
+# season is reading the answer key. (That bug is how an earlier version of this
+# file claimed 75.5% accuracy for SoR + FPI. It was not skill.) FPI still earns
+# its keep in stage 4, weighing which head-to-head result to set aside, and as
+# the last tiebreak when two teams score identically.
+w_fpi    = 0.0    # our rank of the raw FPI rating
+#
 # Strength of Schedule is OFF by design, not by oversight. Strength of Record
 # already means "how good is your record GIVEN who you played", so adding SoS on
 # top counts the schedule twice -- and rewards playing hard games whether or not
@@ -43,6 +81,36 @@ pool_size   = 40     # candidate pool; H2H only considered inside it
 output_size = 25
 require_fpi = true   # teams with no /ratings/fpi entry are excluded
 fbs_only    = true   # /ratings/fpi carries a few non-FBS teams; drop them
+
+# -- The market's neutral-field rating, solved from betting lines -------------
+# A spread prices a matchup, not a team, so it is decomposed:
+#   expected home margin = rating[home] - rating[away] + home_field
+# Only FBS-vs-FBS games that have already been PLAYED are used. A line on a game
+# nobody has played yet is next week's information, and on a completed season's
+# file it is information from the future -- which is the whole reason the old
+# backtests lied.
+[market]
+min_games         = 3     # fewer lined games than this and the team gets no rating
+fit_home_field    = true  # measure home field from the lines instead of assuming
+home_field_points = 2.5   # seed for the fit, and the value used if fitting is off
+#
+# horizon_weeks = 1 includes the lines for NEXT week's games, which have closed
+# knowing every result so far. That is what makes this a current rating instead
+# of an average of stale pre-game guesses: without it, Oklahoma State beating
+# Oregon in 2026 as a 24-point home underdog could never move their market
+# rating, because the only lines read would be the ones that made them an
+# underdog. Two weeks out is NOT allowed -- that line closes after next week has
+# been played, and reading it is look-ahead.
+horizon_weeks     = 1
+
+# -- The eye test, counted: opponent-adjusted points added per play -----------
+# Garbage time is excluded at the fetch. No recency weighting: it was built,
+# measured, and it made predictions worse every time. It is tempting because it
+# lifts a team that started badly and has since looked great -- which is exactly
+# how you talk yourself into a ranking the results do not support.
+[performance]
+min_games      = 3
+fit_home_edge  = true
 
 # -- Stage 2: resume adjustment ("how do your losses look") ------------------
 [stage2]
@@ -67,11 +135,29 @@ max_passes   = 400
 
 [stage4.evidence]
 w_margin           = 0.50
-w_fpi_gap          = 0.30
+w_rating_gap       = 0.30   # agreement with the power ratings (market, FPI if none)
 w_recency          = 0.20
 w_common_opponents = 0.15
-home_field_points  = 2.5
+home_field_points  = 2.5    # fallback; the market's own figure is used when fitted
+fit_home_field     = true   # take home field from [market] rather than the line above
 margin_cap         = 28
+
+# How cheap is the least convincing result on the board to ignore?
+#
+# Conviction is a blend of z-scores, so it sits near zero and runs about
+# -2.5..+2.5. Turning it into a price needs a floor, and the floor used to be
+# `0.10 + (conviction - weakest_on_the_board)`. That made the price RELATIVE:
+# whichever game happened to be least convincing was pinned at 0.10, roughly a
+# seventeenth of a typical result, however real that game was. It is why a 2025
+# Oklahoma State win over Oregon was overridden essentially for free.
+#
+# conviction_floor is now an absolute level. A result two standard deviations
+# below average costs weight_floor because it really is weak; a convincing one
+# costs about three times that, not seventeen. Raise weight_floor to make the
+# ranking honour head-to-head more stubbornly across the board; raise
+# conviction_floor to narrow the gap between a weak result and a strong one.
+weight_floor       = 1.0
+conviction_floor   = -2.0
 recency_floor      = 0.25
 
 [output]

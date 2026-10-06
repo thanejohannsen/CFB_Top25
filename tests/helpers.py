@@ -6,7 +6,7 @@ from typing import Iterable, Sequence
 
 from cfbrank.engine.evidence import EdgeFact
 from cfbrank.engine.graph import Digraph
-from cfbrank.models import Game, GameResult, Record, TeamRating
+from cfbrank.models import Game, GameLine, GameResult, Record, TeamGamePPA, TeamRating
 
 FIXTURES = "tests/fixtures/cfbd"
 
@@ -89,6 +89,57 @@ def record(team: str, w: int, l: int) -> Record:
     return Record(team=team, wins=w, losses=l)
 
 
+def line(
+    home: str,
+    away: str,
+    spread: float,
+    week: int = 5,
+    season_type: str = "regular",
+    neutral: bool = False,
+    game_id: int | None = None,
+    books: int = 2,
+) -> GameLine:
+    """`spread` keeps CFBD's convention: negative means the HOME team is favoured."""
+    return GameLine(
+        game_id=game_id,
+        week=week,
+        season_type=season_type,
+        start_date=f"2025-09-{week:02d}T00:00:00.000Z",
+        home_team=home,
+        away_team=away,
+        home_classification="fbs",
+        away_classification="fbs",
+        spread=spread,
+        books=books,
+        neutral_site=neutral,
+    )
+
+
+def ppa(
+    team: str,
+    opponent: str,
+    offense: float,
+    defense: float,
+    week: int = 5,
+    season_type: str = "regular",
+    game_id: int | None = None,
+    was_home: bool | None = True,
+    neutral: bool = False,
+) -> TeamGamePPA:
+    return TeamGamePPA(
+        game_id=game_id,
+        week=week,
+        season_type=season_type,
+        start_date=f"2025-09-{week:02d}T00:00:00.000Z",
+        team=team,
+        opponent=opponent,
+        offense=offense,
+        defense=defense,
+        neutral_site=neutral,
+        was_home=was_home,
+    )
+
+
 def fact(winner: str, loser: str, weight: float) -> EdgeFact:
     """A minimal EdgeFact when only the conviction weight matters."""
     return EdgeFact(
@@ -102,7 +153,7 @@ def fact(winner: str, loser: str, weight: float) -> EdgeFact:
         adj_margin=7.0,
         site="home",
         neutral_site=False,
-        fpi_gap=0.0,
+        rating_gap=0.0,
         common_opponents=(),
         common_diff=0.0,
         recency=1.0,

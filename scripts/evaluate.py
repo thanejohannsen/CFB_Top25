@@ -1,47 +1,111 @@
 #!/usr/bin/env python3
-"""Grade the ranking against the human polls.
+"""Grade a configuration by what it predicts, not by who it agrees with.
 
-The AP poll is a *yardstick, not ground truth* -- the point of this project is
-to disagree with the polls in a principled, explainable way. But disagreeing
-with AP and with FPI at the same time is usually a bug, not a brave take. That
-is how the original Strength-of-Schedule double-count was caught: it put a 3-2
-team at #16 and a 5-0 team with the country's #2 FPI at #23.
+Take the ranking as it stood after week N, then predict the winner of every game
+played after week N: the higher-ranked team wins. Count how often that is right.
+That is the only test of a ranking that cannot be gamed by copying somebody.
 
-    python3 scripts/evaluate.py --year 2026              # current config
-    python3 scripts/evaluate.py --year 2025 --grid       # sweep the weights
-    python3 scripts/evaluate.py --year 2026 --offline    # no network
+    python3 scripts/evaluate.py --year 2025
+    python3 scripts/evaluate.py --year 2025 --grid
+    python3 scripts/evaluate.py --year 2025 --set market.horizon_weeks=0
 
-Metrics, over the teams appearing in both top 25s:
-    overlap   how many of the 25 we agree belong there at all
-    gap       mean absolute rank difference
-    tau       Kendall rank correlation (-1 reversed, 0 unrelated, +1 identical)
-    top10     how many of AP's top 10 we also place in our top 10
+The AP poll is printed as one reference row, on exactly the same games, and that
+is all it is. It is not a target. In 2025 AP had Miami #18 in week 11 and they
+finished #2; it got 58.2% of its own ranked-vs-ranked games right, which is the
+worst figure this script produces. Tuning toward poll agreement is how you build
+a ranking that is wrong in the same places as everyone else's.
+
+LOOK-AHEAD -- read this before trusting any number here
+--------------------------------------------------------
+`/ratings/fpi` has no week parameter. It serves ONE snapshot, taken whenever the
+request is made, and on a completed season that snapshot is the final answer:
+Strength of Record, Strength of Schedule and FPI all describe the whole year. So
+ranking 2025 "through week 4" with any weight on those terms reads the answer key
+-- Indiana shows up first in week 4 because its stored Strength of Record is 1,
+earned in January. An earlier version of this project quoted 75.5% accuracy from
+exactly that mistake.
+
+Betting lines and per-game PPA are different: both are stamped per game, so a
+cutoff is a real cutoff. That is why this script zeroes the snapshot terms by
+default and refuses to pretend otherwise. `--allow-lookahead` puts them back and
+labels every number it prints as contaminated.
 """
 
 from __future__ import annotations
 
 import argparse
-import itertools
 import os
 import sys
+from dataclasses import dataclass, field
 from pathlib import Path
+from typing import Iterable, Mapping, Sequence
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from cfbrank.config import load  # noqa: E402
+from cfbrank.engine import h2h  # noqa: E402
 from cfbrank.engine.pipeline import rank  # noqa: E402
 from cfbrank.errors import CfbRankError  # noqa: E402
+from cfbrank.models import Dataset, SEASON_TYPE_ORDER  # noqa: E402
 from cfbrank.sources.loader import build_dataset  # noqa: E402
 
-DEFAULT_GRID = [
-    (1.00, 0.00, 0.00),
-    (0.85, 0.00, 0.15),
-    (0.75, 0.00, 0.25),
-    (0.60, 0.00, 0.40),
-    (0.70, 0.05, 0.25),
-    (0.65, 0.10, 0.25),
-    (0.75, 0.25, 0.00),
-]
+# Terms that come from a single season-long snapshot and therefore cannot be
+# backtested. Zeroed unless --allow-lookahead.
+SNAPSHOT_TERMS = ("stage1.w_sor", "stage1.w_sos", "stage1.w_fpi")
+
+# Weeks to rank through. Early weeks have too little signal to mean much and
+# late ones leave too few games to predict; this spans the useful middle.
+DEFAULT_WEEKS = (5, 7, 9, 11, 13)
+
+# (w_market, w_perf) pairs. The ratio between these two is the one thing in the
+# base formula that measurement can settle, so the sweep varies it alone.
+DEFAULT_GRID = (
+    (1.00, 0.00),
+    (0.75, 0.25),
+    (0.60, 0.40),
+    (0.50, 0.50),
+    (0.40, 0.60),
+    (0.25, 0.75),
+    (0.00, 1.00),
+)
+
+
+@dataclass(slots=True)
+class Tally:
+    right: int = 0
+    total: int = 0
+
+    def add(self, correct: bool) -> None:
+        self.total += 1
+        self.right += 1 if correct else 0
+
+    @property
+    def pct(self) -> float:
+        return 100.0 * self.right / self.total if self.total else float("nan")
+
+    def __iadd__(self, other: "Tally") -> "Tally":
+        self.right += other.right
+        self.total += other.total
+        return self
+
+    def __str__(self) -> str:
+        return "n/a" if not self.total else f"{self.pct:5.1f}% ({self.right}/{self.total})"
+
+
+@dataclass(slots=True)
+class Report:
+    overall: Tally = field(default_factory=Tally)
+    ranked: Tally = field(default_factory=Tally)
+    ap_shared: Tally = field(default_factory=Tally)
+    ap_own: Tally = field(default_factory=Tally)
+    violations: int = 0
+    honored: int = 0
+    weeks: int = 0
+
+    @property
+    def h2h_kept(self) -> float:
+        total = self.honored + self.violations
+        return 100.0 * self.honored / total if total else float("nan")
 
 
 def open_source(cfg, offline: bool):
@@ -63,109 +127,194 @@ def open_source(cfg, offline: bool):
     )
 
 
-def latest_ap(rows) -> dict[str, int]:
-    """The most recent AP top 25 in the payload."""
-    weeks = [r for r in rows if any("AP" in p.get("poll", "") for p in r.get("polls") or [])]
-    if not weeks:
-        return {}
-    newest = max(weeks, key=lambda r: (r.get("seasonType") != "regular", r.get("week") or 0))
-    for poll in newest.get("polls") or []:
-        if "AP" in poll.get("poll", ""):
-            return {r["school"]: r["rank"] for r in poll.get("ranks") or []}
-    return {}
+def ap_poll_at(rows: Iterable[Mapping], week: int) -> dict[str, int]:
+    """The AP top 25 as it stood after `week`, which is what AP knew then too."""
+    best: tuple[tuple[int, int], dict[str, int]] | None = None
+    for row in rows or []:
+        st = str(row.get("seasonType") or "regular")
+        wk = int(row.get("week") or 0)
+        if (SEASON_TYPE_ORDER.get(st, 9), wk) > (SEASON_TYPE_ORDER.get("regular", 0), week):
+            continue
+        for poll in row.get("polls") or []:
+            if "AP" not in str(poll.get("poll") or ""):
+                continue
+            ranks = {
+                str(r["school"]): int(r["rank"])
+                for r in poll.get("ranks") or []
+                if r.get("school") and r.get("rank")
+            }
+            key = (SEASON_TYPE_ORDER.get(st, 9), wk)
+            if ranks and (best is None or key > best[0]):
+                best = (key, ranks)
+    return best[1] if best else {}
 
 
-def score(mine: dict[str, int], ap: dict[str, int]) -> dict:
-    both = [(mine[t], ap[t]) for t in mine if t in ap]
-    if not both:
-        return {"overlap": 0, "gap": float("nan"), "tau": 0.0, "top10": 0}
-    gap = sum(abs(a - b) for a, b in both) / len(both)
-    conc = disc = 0
-    for (x1, y1), (x2, y2) in itertools.combinations(both, 2):
-        s = (x1 - x2) * (y1 - y2)
-        conc += s > 0
-        disc += s < 0
-    tau = (conc - disc) / (conc + disc) if conc + disc else 0.0
-    top10 = sum(1 for t, r in ap.items() if r <= 10 and mine.get(t, 99) <= 10)
-    return {"overlap": len(both), "gap": gap, "tau": tau, "top10": top10}
+def later_games(dataset: Dataset, cutoff) -> list[tuple[str, str]]:
+    """(winner, loser) for every decided game after the cutoff."""
+    results, _ = h2h.to_results(dataset.games)
+    return [(r.winner, r.loser) for r in results if r.order_key > cutoff]
 
 
-def run_once(year, overrides, dataset, config_path):
-    cfg = load(config_path, [f"season.year={year}", *overrides])
-    result = rank(dataset, cfg)
-    return cfg, result, {t: i + 1 for i, t in enumerate(result.order[:25])}
+def predict(ranks: Mapping[str, int], games: Sequence[tuple[str, str]], universe=None) -> Tally:
+    """Score one ranking: the better-ranked team is predicted to win.
+
+    A game is only counted when BOTH teams are ranked -- a ranking cannot be
+    held to a game it has no opinion about. `universe` narrows that further so
+    two systems can be compared on identical games, which is the comparison an
+    earlier version of this script got wrong: it graded AP on ranked-vs-ranked
+    games while grading the engine on everything, then called the engine better.
+    """
+    tally = Tally()
+    for winner, loser in games:
+        if winner not in ranks or loser not in ranks:
+            continue
+        if universe is not None and (winner not in universe or loser not in universe):
+            continue
+        tally.add(ranks[winner] < ranks[loser])
+    return tally
+
+
+def full_order(result) -> dict[str, int]:
+    """Every rated team, in order: the published pool first, then the rest.
+
+    The site shows 25 and reorders 40, but a prediction test wants an opinion on
+    every game, so teams outside the pool are appended by base score.
+    """
+    ranks = {t: i + 1 for i, t in enumerate(result.order)}
+    rest = sorted(
+        (tb for tb in result.teams.values() if tb.team not in ranks),
+        key=lambda tb: (tb.base_score, tb.sor_rank, tb.team),
+    )
+    for i, tb in enumerate(rest, len(ranks) + 1):
+        ranks[tb.team] = i
+    return ranks
+
+
+def evaluate(
+    year: int,
+    dataset: Dataset,
+    config_path: str,
+    overrides: Sequence[str],
+    weeks: Sequence[int],
+    polls: Sequence[Mapping],
+    top_n: int = 25,
+) -> Report:
+    report = Report()
+    for week in weeks:
+        cfg = load(config_path, [f"season.year={year}", f"season.week={week}", *overrides])
+        result = rank(dataset, cfg)
+        if result.week != week:
+            continue  # the season does not reach this week
+        _, _, cutoff = h2h.resolve_week(
+            dataset.games, dataset.calendar, week, str(cfg["season.season_type"])
+        )
+        games = later_games(dataset, cutoff)
+        if not games:
+            continue
+
+        ranks = full_order(result)
+        top = {t for t, r in ranks.items() if r <= top_n}
+        ap = ap_poll_at(polls, week)
+
+        report.overall += predict(ranks, games)
+        report.ranked += predict(ranks, games, universe=top)
+        if ap:
+            # Same games for both systems: those between two AP-ranked teams.
+            report.ap_own += predict(ap, games, universe=set(ap))
+            report.ap_shared += predict(ranks, games, universe=set(ap))
+        report.violations += result.counts["h2h_overridden"]
+        report.honored += result.counts["h2h_honored"]
+        report.weeks += 1
+    return report
 
 
 def main() -> int:
-    ap_ = argparse.ArgumentParser()
-    ap_.add_argument("--year", type=int, required=True)
-    ap_.add_argument("--config", default="config/ranking.toml")
-    ap_.add_argument("--offline", action="store_true")
-    ap_.add_argument("--grid", action="store_true", help="sweep w_sor/w_sos/w_fpi")
-    args = ap_.parse_args()
+    p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    p.add_argument("--year", type=int, required=True)
+    p.add_argument("--config", default="config/ranking.toml")
+    p.add_argument("--offline", action="store_true")
+    p.add_argument("--grid", action="store_true", help="sweep the market:PPA ratio")
+    p.add_argument("--set", dest="overrides", action="append", default=[], metavar="path=value")
+    p.add_argument(
+        "--weeks",
+        default=",".join(str(w) for w in DEFAULT_WEEKS),
+        help="comma-separated weeks to rank through",
+    )
+    p.add_argument("--top", type=int, default=25, help="size of the ranked-vs-ranked subset")
+    p.add_argument(
+        "--allow-lookahead",
+        action="store_true",
+        help="keep the season-snapshot terms (SoR/SoS/FPI). Every result is then contaminated.",
+    )
+    args = p.parse_args()
 
+    weeks = [int(w) for w in args.weeks.split(",") if w.strip()]
     cfg0 = load(args.config, [f"season.year={args.year}"])
     source = open_source(cfg0, args.offline)
     dataset = build_dataset(source, args.year, str(cfg0["season.season_type"]))
+    polls = list(source.poll_rankings(args.year, "regular") or [])
 
-    season_type = "postseason" if args.year < 2026 else "regular"
-    ap = latest_ap(source.poll_rankings(args.year, season_type))
-    if not ap:
-        print(f"no AP poll available for {args.year}", file=sys.stderr)
-        return 3
+    guard: list[str] = []
+    snapshot_weight = sum(float(cfg0[k]) for k in SNAPSHOT_TERMS)
+    if args.allow_lookahead:
+        print("!" * 72)
+        print("!! --allow-lookahead: SoR/SoS/FPI come from ONE end-of-season snapshot.")
+        print("!! Every accuracy below is reading the answer key. Do not quote these.")
+        print("!" * 72)
+    elif snapshot_weight > 0:
+        guard = [f"{k}=0.0" for k in SNAPSHOT_TERMS]
+        print(
+            f"note: zeroing {', '.join(k.split('.')[-1] for k in SNAPSHOT_TERMS)}"
+            f" (combined weight {snapshot_weight:g}) -- those terms have no week"
+            " dimension and cannot be scored honestly."
+        )
+        print("      what is measured below is the market + play-by-play half of the base.\n")
+
+    base_overrides = list(args.overrides) + guard
 
     if args.grid:
-        print(f"=== {args.year}: base = w_sor*SoR + w_sos*SoS + w_fpi*FPI ===")
-        print(f"{'w_sor':>6}{'w_sos':>6}{'w_fpi':>6} |{'overlap':>8}{'gap':>7}{'tau':>7}{'top10':>7}")
-        shipped = (
-            float(cfg0["stage1.w_sor"]),
-            float(cfg0["stage1.w_sos"]),
-            float(cfg0["stage1.w_fpi"]),
+        print(f"=== {args.year}: predicting every game after weeks {weeks} ===")
+        print(
+            "  read the 'all FBS' column: it is the same games in every row.\n"
+            "  'ranked v ranked' uses each row's OWN top 25, so its denominator moves\n"
+            "  and small differences there are composition, not skill.\n"
         )
-        for w_sor, w_sos, w_fpi in DEFAULT_GRID:
-            _, _, mine = run_once(
+        print(f"{'w_mkt':>6}{'w_ppa':>6} |{'all FBS':>18}{'ranked v ranked':>22}{'H2H kept':>11}")
+        # The grid rows sum to 1 while the shipped weights share the base with
+        # w_sor, so compare the RATIO rather than the raw pair.
+        mkt, perf = float(cfg0["stage1.w_market"]), float(cfg0["stage1.w_perf"])
+        shipped_ratio = mkt / (mkt + perf) if (mkt + perf) else 0.0
+        for w_market, w_perf in DEFAULT_GRID:
+            rep = evaluate(
                 args.year,
-                [f"stage1.w_sor={w_sor}", f"stage1.w_sos={w_sos}", f"stage1.w_fpi={w_fpi}"],
                 dataset,
                 args.config,
+                [*base_overrides, f"stage1.w_market={w_market}", f"stage1.w_perf={w_perf}"],
+                weeks,
+                polls,
+                args.top,
             )
-            m = score(mine, ap)
-            flag = "  <-- shipped" if (w_sor, w_sos, w_fpi) == shipped else ""
+            flag = "  <-- shipped ratio" if abs(w_market - shipped_ratio) < 1e-9 else ""
             print(
-                f"{w_sor:6.2f}{w_sos:6.2f}{w_fpi:6.2f} |{m['overlap']:8}{m['gap']:7.1f}"
-                f"{m['tau']:+7.2f}{m['top10']:7}{flag}"
+                f"{w_market:6.2f}{w_perf:6.2f} |{str(rep.overall):>18}{str(rep.ranked):>22}"
+                f"{rep.h2h_kept:10.1f}%{flag}"
             )
         return 0
 
-    cfg, result, mine = run_once(args.year, [], dataset, args.config)
-    m = score(mine, ap)
-    print(f"\n=== {result.snapshot_id} vs the AP top 25 ===")
-    print(
-        f"  base = {cfg['stage1.w_sor']:g} x SoR"
-        + (f" + {cfg['stage1.w_fpi']:g} x FPI" if cfg["stage1.w_fpi"] else "")
-        + (f" + {cfg['stage1.w_sos']:g} x SoS" if cfg["stage1.w_sos"] else "")
-    )
-    print(
-        f"  overlap {m['overlap']}/25   mean rank gap {m['gap']:.1f}"
-        f"   Kendall tau {m['tau']:+.2f}   AP top-10 matched {m['top10']}/10\n"
-    )
+    rep = evaluate(args.year, dataset, args.config, base_overrides, weeks, polls, args.top)
+    if not rep.weeks:
+        print(f"no week in {weeks} has games to predict for {args.year}", file=sys.stderr)
+        return 3
 
-    print(f"  {'#':>3}  {'team':22}{'AP':>4}{'diff':>6}")
-    for team, pos in mine.items():
-        a = ap.get(team)
-        diff = f"{a - pos:+d}" if a else ""
-        print(f"  {pos:3}. {team:22}{(a if a else '-'):>4}{diff:>6}")
-
-    only_mine = sorted(set(mine) - set(ap), key=lambda t: mine[t])
-    only_ap = sorted(set(ap) - set(mine), key=lambda t: ap[t])
-    print(f"\n  we rank, AP does not : {', '.join(f'{t} (#{mine[t]})' for t in only_mine) or 'none'}")
-    print(f"  AP ranks, we do not  : {', '.join(f'{t} (AP {ap[t]})' for t in only_ap) or 'none'}")
-
-    worst = sorted(((abs(ap[t] - mine[t]), t) for t in mine if t in ap), reverse=True)[:5]
-    if worst:
-        print("\n  biggest disagreements:")
-        for d, t in worst:
-            print(f"    {t:22} ours #{mine[t]:<3} AP #{ap[t]:<3} ({d} apart)")
+    print(f"=== {args.year}: ranked through {rep.weeks} week(s), predicting every later game ===\n")
+    print(f"  all FBS games          {rep.overall}")
+    print(f"  both in the top {args.top:<2}      {rep.ranked}")
+    if rep.ap_own.total:
+        print(f"\n  on AP-vs-AP games only:")
+        print(f"    this ranking          {rep.ap_shared}")
+        print(f"    the AP poll           {rep.ap_own}   (reference, not a target)")
+    print(f"\n  head-to-head results kept {rep.h2h_kept:.1f}%"
+          f"  ({rep.honored} honoured, {rep.violations} overridden)")
     return 0
 
 

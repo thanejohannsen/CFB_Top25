@@ -19,7 +19,10 @@ from cfbrank.engine.pipeline import RankingResult
 from cfbrank.models import Dataset
 
 SCHEMA_VERSION = 1
-ATTRIBUTION = "Data: CollegeFootballData.com (FPI, Strength of Record and Strength of Schedule via ESPN)"
+ATTRIBUTION = (
+    "Data: CollegeFootballData.com -- betting lines, play-by-play PPA, and "
+    "Strength of Record, Strength of Schedule and FPI via ESPN"
+)
 
 
 def _edge(fact: EdgeFact, rank_of: Mapping[str, int], overridden: bool) -> dict[str, Any]:
@@ -34,7 +37,7 @@ def _edge(fact: EdgeFact, rank_of: Mapping[str, int], overridden: bool) -> dict[
         "margin": fact.margin,
         "site": fact.site,
         "adj_margin": fact.adj_margin,
-        "fpi_gap": fact.fpi_gap,
+        "rating_gap": fact.rating_gap,
         "common_opponents": list(fact.common_opponents),
         "common_diff": fact.common_diff,
         "conviction": fact.conviction,
@@ -52,9 +55,6 @@ def _team_entry(
     overridden: set[tuple[str, str]],
     prev_ranks: Mapping[str, int],
     prev_id: str | None,
-    w_sor: float,
-    w_sos: float,
-    w_fpi: float,
 ) -> dict[str, Any]:
     wins = [f for k, f in result.edge_facts.items() if k[0] == tb.team]
     losses = [f for k, f in result.edge_facts.items() if k[1] == tb.team]
@@ -96,10 +96,24 @@ def _team_entry(
             "raw_score": tb.base_raw,
             "sor_rank": tb.sor_rank,
             "sos_rank": tb.sos_rank,
-            "w_sor": w_sor,
-            "w_sos": w_sos,
-            "w_fpi": w_fpi,
-            "formula": tb.formula(w_sor, w_sos, w_fpi),
+            "market_rank": tb.market_rank,
+            "ppa_rank": tb.ppa_rank,
+            # The weights actually applied to THIS team, which differ from the
+            # configured ones when an input is missing and the rest absorb it.
+            "weights": {label: weight for label, weight, _rank in tb.base_terms},
+            "missing": list(tb.missing_terms),
+            "formula": tb.formula(),
+        },
+        "market": {
+            "rating": tb.market_rating,
+            "rank": tb.market_rank,
+            "games": tb.market_games,
+        },
+        "performance": {
+            "rating": tb.ppa_rating,
+            "rank": tb.ppa_rank,
+            "unadjusted": tb.ppa_raw,
+            "games": tb.ppa_games,
         },
         "resume_adjustment": {
             "total": tb.resume_adj,
@@ -187,9 +201,15 @@ def build_payload(
     generated_at: str,
     previous: Mapping[str, Any] | None = None,
 ) -> dict[str, Any]:
-    w_sor = float(cfg["stage1.w_sor"])
-    w_sos = float(cfg["stage1.w_sos"])
-    w_fpi = float(cfg["stage1.w_fpi"])
+    weights = {
+        "SoR": float(cfg["stage1.w_sor"]),
+        "Mkt": float(cfg["stage1.w_market"]),
+        "PPA": float(cfg["stage1.w_perf"]),
+        "FPI": float(cfg["stage1.w_fpi"]),
+        "SoS": float(cfg["stage1.w_sos"]),
+    }
+    live = {label: w for label, w in weights.items() if w}
+    base_summary = " + ".join(f"{w:g} x {label}" for label, w in live.items()) or "no weighted terms"
     output_size = int(cfg["stage1.output_size"])
 
     rank_of = {t: i + 1 for i, t in enumerate(result.order)}
@@ -204,10 +224,7 @@ def build_payload(
                 prev_ranks[str(row["team"])] = int(row.get("rank") or 0)
 
     rankings = [
-        _team_entry(
-            result.teams[t], i + 1, result, rank_of, overridden, prev_ranks, prev_id,
-            w_sor, w_sos, w_fpi,
-        )
+        _team_entry(result.teams[t], i + 1, result, rank_of, overridden, prev_ranks, prev_id)
         for i, t in enumerate(result.order[:output_size])
     ]
 
@@ -224,6 +241,10 @@ def build_payload(
                     "base_rank": tb.base_rank,
                     "sor_rank": tb.sor_rank,
                     "sos_rank": tb.sos_rank,
+                    "market_rank": tb.market_rank,
+                    "market_rating": tb.market_rating,
+                    "ppa_rank": tb.ppa_rank,
+                    "ppa_rating": tb.ppa_rating,
                     "fpi": tb.fpi,
                 }
             )
@@ -282,6 +303,22 @@ def build_payload(
             },
             "config": redacted_config(cfg),
             "counts": dict(result.counts),
+            "ratings": {
+                "market": {
+                    "teams_rated": len(result.market.ratings),
+                    "lines_used": result.market.lines_used,
+                    "home_field_points": result.market.home_field_points,
+                    "schedule_groups": result.market.components,
+                    "converged": result.market.converged,
+                },
+                "performance": {
+                    "teams_rated": len(result.performance.ratings),
+                    "games_used": result.performance.games_used,
+                    "home_edge": result.performance.home_edge,
+                    "schedule_groups": result.performance.components,
+                    "converged": result.performance.converged,
+                },
+            },
             "cost": {
                 "total": result.ordering.cost,
                 "overrides": result.ordering.violation_cost,
@@ -335,10 +372,7 @@ def build_payload(
         ],
         "methodology": {
             "summary": (
-                f"base = {w_sor:g} x SoR"
-                + (f" + {w_fpi:g} x FPI" if w_fpi else "")
-                + (f" + {w_sos:g} x SoS" if w_sos else "")
-                + "; "
+                f"base = {base_summary}; "
                 f"pool {cfg['stage1.pool_size']}; "
                 f"H2H strength {cfg['stage4.strength']:g}, drift exponent {cfg['stage4.drift_exponent']:g}; "
                 f"upset regression {'on' if cfg['stage3.enabled'] else 'off'}"
@@ -346,9 +380,18 @@ def build_payload(
             ),
             "stages": [
                 "Stage 1 - rank every team by what it has achieved and how good it is: "
-                f"{w_sor:g} x Strength of Record"
-                + (f" + {w_fpi:g} x FPI rank" if w_fpi else "")
-                + (f" + {w_sos:g} x Strength of Schedule" if w_sos else "")
+                + " + ".join(
+                    f"{w:g} x {name}"
+                    for label, name in (
+                        ("SoR", "Strength of Record"),
+                        ("Mkt", "market neutral-field rank"),
+                        ("PPA", "opponent-adjusted points added per play"),
+                        ("FPI", "FPI rank"),
+                        ("SoS", "Strength of Schedule"),
+                    )
+                    for w in [live.get(label)]
+                    if w
+                )
                 + " (all national ranks, lower is better).",
                 "Stage 2 - adjust for how your losses actually look: the venue and margin of each defeat, the quality of your best win, and how comfortably you win.",
                 f"Stage 3 - when a result spans more than {cfg['stage3.gap']} places, pull both teams {cfg['stage3.strength']:g} of the way to their midpoint; the upset says both were mis-rated.",

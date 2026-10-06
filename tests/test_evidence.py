@@ -14,7 +14,7 @@ from cfbrank.engine.h2h import opponents
 from tests.helpers import result
 
 EV = {
-    "w_margin": 0.50, "w_fpi_gap": 0.30, "w_recency": 0.20, "w_common_opponents": 0.15,
+    "w_margin": 0.50, "w_rating_gap": 0.30, "w_recency": 0.20, "w_common_opponents": 0.15,
     "home_field_points": 2.5, "margin_cap": 28, "recency_floor": 0.25,
 }
 
@@ -111,7 +111,7 @@ class TestScoreEdges(unittest.TestCase):
         facts = score_edges(res, {"A": 1, "B": 0, "C": 1, "D": 0}, opponents(res), EV)
         self.assertEqual(
             sorted(facts[("A", "B")].components),
-            ["common_opponents", "fpi_gap", "margin", "recency"],
+            ["common_opponents", "margin", "rating_gap", "recency"],
         )
 
     def test_later_results_carry_more_recency(self):

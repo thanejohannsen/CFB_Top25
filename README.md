@@ -7,22 +7,36 @@ published as a static GitHub Pages site where **every placement opens to show
 exactly why it is there**.
 
 ```
- 1. Indiana        base #5    +4  16-0   SoR 1   FPI #1
- 2. Miami          base #14  +12  13-3   SoR 3   FPI #5   C1 regressed
- 3. Ohio State     base #1    -2  12-2   SoR 4   FPI #2   C1
- 4. Ole Miss       base #3    -1  13-2   SoR 6   FPI #9   C1
- 5. Georgia        base #2    -3  12-2   SoR 5   FPI #7   C1
+ 1. Indiana        base #1       16-0   SoR 1   Mkt +25.4   PPA #2
+ 2. Oregon         base #3   +1  13-2   SoR 2   Mkt +23.6   PPA #5
+ 3. Miami          base #2   -1  13-3   SoR 3   Mkt +20.3   PPA #6
+ 4. Ohio State     base #4       12-2   SoR 4   Mkt +27.4   PPA #4
+ 5. Ole Miss       base #5       13-2   SoR 6   Mkt +17.3   PPA #14
 
-89 of 100 head-to-head results honoured | 4 contradiction loops, largest 10
+100 of 109 head-to-head results honoured | 2 contradiction loops, largest 26
 ```
 
 ## How it ranks
 
-1. **Resume plus quality** — `0.75 × StrengthOfRecord_rank + 0.25 × FPI_rank`.
-   Both arrive as national ranks where 1 is best, so lower is better. Strength of
-   Record is the resume — how impressive your record is given who you played — and
-   carries most of the weight. FPI is the quality anchor that stops a good record
-   alone carrying a team to the top.
+1. **The record, the market and the play-by-play** —
+   `0.50 × StrengthOfRecord_rank + 0.25 × Market_rank + 0.25 × PPA_rank`. All three
+   are national ranks where 1 is best, so lower is better.
+
+   - **Strength of Record** is the resume: how impressive your record is given who
+     you played. Half the ranking, because half of what a ranking is for is
+     honouring what teams have actually done.
+   - **Market rating** is the neutral-field rating implied by betting lines. A
+     spread prices a *matchup*, so it is decomposed into one number per team:
+     `expected home margin = rating(home) − rating(away) + home field`. The output
+     is in points and reads directly — +19.5 beats +15.5 by four on neutral ground.
+     Home field is measured from the lines, not assumed, and lands near +2.4.
+   - **PPA** is points added per play on offence less points allowed on defence,
+     garbage time stripped, adjusted for opponent strength. The eye test, counted.
+
+   They know different things, and the pair beats either alone. Ranking 2025 only
+   on what was knowable at the time and predicting every later game: market alone
+   61.2% of ranked-vs-ranked games, play-by-play alone 62.8%, the two together
+   67.3%.
 2. **Resume adjustment** — Strength of Record knows *who* you played but not *how*
    you lost. A three-point road loss and a 24-point home loss are not the same
    result, so loss quality, best win and game control adjust the base score.
@@ -37,11 +51,25 @@ exactly why it is there**.
    ```
 
    so the results it contradicts are, by construction, the least convincing ones.
-   Conviction blends location-adjusted margin, the FPI gap, recency and common
-   opponents. A one-point home win scores *negative*: home field alone is worth
-   more than the margin.
+   Conviction blends location-adjusted margin, the power-rating gap, recency and
+   common opponents. A one-point home win scores *negative*: home field alone is
+   worth more than the margin. Overriding *any* result costs a real amount — the
+   cheapest one on the board still prices at a full unit of conviction.
 5. **Contradiction reporting** — loops (A beat B, B beat C, C beat A) are found with
    Tarjan's algorithm and published, along with every overridden result.
+
+### Why FPI is not in the formula
+
+It was the quality term, and two things pushed it out. The market and the
+play-by-play do its job better. And FPI **cannot be honestly checked**:
+`/ratings/fpi` has no week parameter, so it serves one snapshot — on a completed
+season, the finished year's answer. Ranking 2025 "through week 4" with it put
+Indiana first because its *stored* Strength of Record is 1, earned in January. An
+earlier version of this README quoted 75.5% accuracy from precisely that mistake.
+
+FPI still breaks ties, and still helps weigh which head-to-head result to set
+aside when the market has no line for either team. It just does not order the
+board.
 
 ### Why Strength of Schedule is not in the formula
 
@@ -51,27 +79,31 @@ good is your record *given who you played*". Weighting schedule again counts it
 twice and rewards playing hard games whether or not you win them.
 
 A 3-2 Clemson sat at 16th on schedule alone; a 5-0 Georgia with the country's #2
-rating sat at 23rd for playing an easy one. Dropping the term is worth a lot:
+rating sat at 23rd for playing an easy one.
 
-| base weights | 2026 τ vs AP | mean rank gap | 2025 τ vs AP |
-| --- | --- | --- | --- |
-| 0.75 SoR + 0.25 SoS (old) | +0.33 | 5.1 | +0.62 |
-| **0.75 SoR + 0.25 FPI** | **+0.52** | **4.2** | **+0.77** |
+Schedule strength is still published for every team and the weight is still a knob
+in `config/ranking.toml`. It just no longer moves the ranking.
 
-Schedule strength is still shown for every team and the weight is still a knob in
-`config/ranking.toml`. It just no longer moves the ranking.
-
-### Checking it against the polls
+### Checking it by what it predicts
 
 ```bash
-python3 scripts/evaluate.py --year 2026           # overlap, rank gap, Kendall tau
-python3 scripts/evaluate.py --year 2025 --grid    # sweep the weights
+python3 scripts/evaluate.py --year 2025           # rank through weeks, predict every later game
+python3 scripts/evaluate.py --year 2025 --grid    # sweep the market:play-by-play ratio
 ```
 
-The AP poll is a **yardstick, not ground truth** — the point of this project is to
-disagree with the polls in a principled, explainable way. But disagreeing with AP
-*and* with FPI at the same time is usually a bug, which is how the schedule
-double-count was caught.
+The test is prediction, not agreement: take the ranking as it stood after week N,
+predict the winner of every game after it, count how often that is right. That is
+the one test of a ranking that cannot be gamed by copying somebody.
+
+On identical games from 2025 — the ones between two AP-ranked teams — this ranking
+got **62.1%** and the AP poll **57.6%**. AP is printed as a reference row and is
+never a target; it is the worst number the tool produces. The poll had Miami 18th
+in week 11 of 2025 and they finished 2nd.
+
+The tool **zeroes Strength of Record, Strength of Schedule and FPI by default**,
+because all three come from that one undated snapshot and scoring them on a
+finished season is reading the answer key. `--allow-lookahead` puts them back and
+labels its own output as contaminated.
 
 ### Why head-to-head is weighted rather than absolute
 
@@ -177,7 +209,8 @@ python3 scripts/make_golden.py
 
 ```
 cfbrank/
-  engine/      base_score, resume, regression, h2h, evidence, order, graph, pipeline
+  engine/      base_score, market, performance, adjust, resume, regression,
+               h2h, evidence, order, graph, pipeline
   sources/     cfbd (live), fixtures (offline), http_cache, loader
   output/      schema, writer, history
 config/        ranking.toml -- every weight, one file
@@ -196,21 +229,42 @@ build step.
 
 ## Data
 
-Games, records, and ESPN's FPI, Strength of Record and Strength of Schedule all
-come from [CollegeFootballData.com](https://collegefootballdata.com). A full run
-makes four API calls, cached for six hours.
+Everything comes from [CollegeFootballData.com](https://collegefootballdata.com):
+games, records and the calendar; betting lines; per-game play-by-play PPA; and
+ESPN's FPI, Strength of Record and Strength of Schedule. A full run makes six API
+calls, cached for six hours.
 
-Two consequences worth knowing: those ratings are third-party opinions that move
-during the week, and the FPI endpoint has no per-week parameter — so a week's
-snapshot is taken when it is generated, and earlier weeks cannot be reconstructed
-after the fact.
+Three consequences worth knowing:
+
+- Those ESPN ratings are third-party opinions that move during the week, and the
+  endpoint has no per-week parameter — so a week's snapshot is taken when it is
+  generated and earlier weeks cannot be reconstructed after the fact. Lines and
+  PPA are stamped per game, so those *can* be reconstructed, which is the only
+  reason the backtesting is honest.
+- The market rating reads lines for games already played **and for the coming
+  week**, which is what makes it a current opinion rather than an average of stale
+  pre-game guesses. A closing line for next Saturday has priced in every result so
+  far and nothing after it. Two weeks out is rejected by config validation.
+- A spread knows about injuries, suspensions and weather that no box score shows.
+  That is why it predicts well, and it is also a real departure from a pure resume
+  ranking.
 
 ## Known limitations
 
 These are stated on the site's methodology page too, rather than buried here:
 
-- The schedule term rewards playing a hard schedule independently of results, so a
-  good team in a weak conference is penalised for something it only partly controls.
+- The market rating knows things results cannot — injuries, suspensions, weather.
+  A team can be rated highly here for reasons that never appear in a box score.
+- A team with too few lined games gets no market rating at all and is scored on the
+  terms it has, with the weights rescaled; its row says which input is missing.
+  Every FBS-vs-FBS game in both seasons checked had a line, so this mostly affects
+  the opening weeks.
+- Early in a season the schedule can split into groups that have not played each
+  other. Ratings only compare inside such a group, and the snapshot's warnings say
+  so when it happens.
+- Half the weight on Strength of Record is a judgement, not a measurement:
+  predicting games is not what a resume is for. The cost is visible — a 7-6 Penn
+  State lands 24th on the 2025 board.
 - The ordering is found by local search: a strong local optimum, not a proven global
   one. It reaches the same answer from any input ordering in practice, and the test
   suite checks that, but it is an observation rather than a guarantee.

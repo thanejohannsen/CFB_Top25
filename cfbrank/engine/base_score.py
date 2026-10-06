@@ -1,17 +1,39 @@
-"""Stage 1 -- the base order: what you achieved, anchored by how good you are.
+"""Stage 1 -- the base order: what you achieved, and how good you actually are.
 
-Every input is a national rank where 1 is best, so the score is a weighted rank
-average and lower is better.
+Three inputs, each a national rank where 1 is best, so the score is a weighted
+rank average and lower is better:
 
-    base = w_sor * SoR_rank + w_fpi * FPI_rank + w_sos * SoS_rank
+    base = w_sor * SoR_rank + w_market * Market_rank + w_perf * PPA_rank
 
-Strength of Record carries the most weight: it is the resume, "how impressive is
-your record given who you played". FPI is the quality anchor, and without it a
-team can ride a good record to the top five while rating 34th in the country.
+  * **Strength of Record** is the resume: how impressive is this record given who
+    it was played against. It is the term that honours what teams have actually
+    done, and its weight is a judgement about what a ranking is *for* -- it
+    cannot be set by a backtest and does not pretend to be.
+  * **Market** is the neutral-field rating implied by betting lines
+    (`engine.market`), the sharpest available read on how good a team is.
+  * **PPA** is opponent-adjusted points added per play (`engine.performance`) --
+    the eye test, counted.
 
-`w_sos` ships at 0. Strength of Record already accounts for the schedule, so
-adding it again double-counts and rewards playing hard games regardless of the
-result. The knob stays for anyone who wants it; see config/ranking.toml.
+Market and PPA split the quality half evenly, which is what measured best: on
+2025, predicting every later game from what was knowable at the time, market
+alone got 61.2% of ranked-vs-ranked games and PPA alone 62.8%, while a 50/50
+blend got 67.3%. Either signal alone is worse than both together.
+
+`w_fpi` and `w_sos` both ship at 0 and both stay available as knobs.
+
+  * FPI left the base because the market and PPA do its job better, and because
+    it cannot be honestly backtested: `/ratings/fpi` serves one end-of-season
+    snapshot with no week dimension, so grading it on a finished season reads the
+    answer. It is still used where a single number has to break a tie, and in
+    weighing which head-to-head result to set aside.
+  * Strength of Record already accounts for the schedule, so adding Strength of
+    Schedule on top double-counts it and rewards playing hard games regardless of
+    the result.
+
+A team missing a term (too few lined games to imply a market rating, say) is
+scored on the terms it has, with the weights renormalised so its base stays on
+the same scale as everyone else's. The renormalised weights are what `formula()`
+renders, so the published string always adds up to `raw_score`.
 """
 
 from __future__ import annotations
@@ -42,6 +64,19 @@ class TeamBase:
     eff_special: float | None = None
     record: Record | None = None
 
+    market_rating: float | None = None   # neutral-field points implied by the market
+    market_rank: int | None = None
+    market_games: int = 0
+    ppa_rating: float | None = None      # opponent-adjusted net PPA per play
+    ppa_rank: int | None = None
+    ppa_raw: float | None = None
+    ppa_games: int = 0
+
+    # (label, weight actually applied, rank used) for every term in the base.
+    # Stored rather than recomputed so the rendered formula cannot drift from
+    # the number it claims to explain.
+    base_terms: tuple[tuple[str, float, int], ...] = ()
+
     base_raw: float = 0.0           # stage 1 only
     raw_rank: int = 0
     resume_adj: float = 0.0         # stage 2 delta (positive = penalty)
@@ -57,19 +92,26 @@ class TeamBase:
 
     base_rank: int = 0              # rank by base_score, assigned by rerank()
 
-    def formula(self, w_sor: float, w_sos: float = 0.0, w_fpi: float = 0.0) -> str:
-        """Render only the terms actually in play.
+    def formula(self) -> str:
+        """Render the terms actually in play, at the weights actually applied.
 
         A zero-weight term must not appear, or the site shows a misleading
-        "+ 0 x SoS #97" next to a team the schedule did not move.
+        "+ 0 x SoS #97" next to a team the schedule did not move. A team missing
+        an input shows its renormalised weights, so the arithmetic on screen is
+        the arithmetic that produced the score.
         """
-        parts = [
-            (w_sor, "SoR", self.sor_rank),
-            (w_fpi, "FPI", self.fpi_rank),
-            (w_sos, "SoS", self.sos_rank),
-        ]
-        shown = [f"{w:g} x {label} #{rank}" for w, label, rank in parts if w]
+        shown = [f"{w:g} x {label} #{rank}" for label, w, rank in self.base_terms if w]
         return (" + ".join(shown) if shown else "no weighted terms") + f" = {self.base_raw:.2f}"
+
+    @property
+    def missing_terms(self) -> tuple[str, ...]:
+        """Base inputs this team has no value for, lowest-numbered first."""
+        present = {label for label, _w, _r in self.base_terms}
+        return tuple(
+            label
+            for label, value in (("Mkt", self.market_rank), ("PPA", self.ppa_rank))
+            if value is None and label not in present
+        )
 
 
 def rateable(
@@ -90,15 +132,66 @@ def rateable(
     return keep, warnings
 
 
+def weighted_terms(
+    candidates: Sequence[tuple[str, float, int | None]], warn_team: str | None = None
+) -> tuple[tuple[tuple[str, float, int], ...], float, list[Warning_]]:
+    """Pick the terms a team actually has, renormalise, and score them.
+
+    Dropping a term without renormalising would hand the team a *lower* (better)
+    base purely for missing data, which is the kind of bug that quietly rewards
+    the teams with the least information about them.
+    """
+    nominal = sum(w for _label, w, _rank in candidates if w)
+    live = [(label, w, rank) for label, w, rank in candidates if w and rank is not None]
+    warnings: list[Warning_] = []
+
+    if not live:
+        return (), 0.0, warnings
+    have = sum(w for _label, w, _rank in live)
+    scale = (nominal / have) if have else 0.0
+    terms = tuple((label, w * scale, int(rank)) for label, w, rank in live)  # type: ignore[arg-type]
+
+    if abs(scale - 1.0) > 1e-9 and warn_team is not None:
+        dropped = ", ".join(
+            label for label, w, rank in candidates if w and rank is None
+        )
+        warnings.append(
+            Warning_(
+                "base_term_missing",
+                f"no {dropped} rating; the remaining terms carry it "
+                f"(weights scaled x{scale:.2f})",
+                warn_team,
+            )
+        )
+    return terms, sum(w * rank for _label, w, rank in terms), warnings
+
+
 def compute_base(
     ratings: Sequence[TeamRating],
     records: Mapping[str, Record],
     fbs: AbstractSet[str],
     cfg: Mapping[str, object],
+    market_ranks: Mapping[str, int] | None = None,
+    market_ratings: Mapping[str, float] | None = None,
+    ppa_ranks: Mapping[str, int] | None = None,
+    ppa_ratings: Mapping[str, float] | None = None,
+    ppa_raw: Mapping[str, float] | None = None,
+    market_games: Mapping[str, int] | None = None,
+    ppa_games: Mapping[str, int] | None = None,
 ) -> tuple[list[TeamBase], list[Warning_]]:
-    w_sor = float(cfg.get("w_sor", 0.75))  # type: ignore[arg-type]
+    w_sor = float(cfg.get("w_sor", 0.50))  # type: ignore[arg-type]
     w_sos = float(cfg.get("w_sos", 0.0))  # type: ignore[arg-type]
-    w_fpi = float(cfg.get("w_fpi", 0.25))  # type: ignore[arg-type]
+    w_fpi = float(cfg.get("w_fpi", 0.0))  # type: ignore[arg-type]
+    w_market = float(cfg.get("w_market", 0.25))  # type: ignore[arg-type]
+    w_perf = float(cfg.get("w_perf", 0.25))  # type: ignore[arg-type]
+
+    market_ranks = market_ranks or {}
+    market_ratings = market_ratings or {}
+    ppa_ranks = ppa_ranks or {}
+    ppa_ratings = ppa_ratings or {}
+    ppa_raw = ppa_raw or {}
+    market_games = market_games or {}
+    ppa_games = ppa_games or {}
 
     usable, warnings = rateable(
         ratings, fbs, bool(cfg.get("require_fpi", True)), bool(cfg.get("fbs_only", True))
@@ -121,6 +214,17 @@ def compute_base(
                     r.team,
                 )
             )
+        terms, base_raw, term_warnings = weighted_terms(
+            [
+                ("SoR", w_sor, int(r.sor_rank)),  # type: ignore[arg-type]
+                ("Mkt", w_market, market_ranks.get(r.team)),
+                ("PPA", w_perf, ppa_ranks.get(r.team)),
+                ("FPI", w_fpi, own),
+                ("SoS", w_sos, int(r.sos_rank)),  # type: ignore[arg-type]
+            ],
+            warn_team=r.team,
+        )
+        warnings.extend(term_warnings)
         teams.append(
             TeamBase(
                 team=r.team,
@@ -138,11 +242,15 @@ def compute_base(
                 eff_defense=r.eff_defense,
                 eff_special=r.eff_special,
                 record=records.get(r.team),
-                base_raw=(
-                    w_sor * int(r.sor_rank)  # type: ignore[arg-type]
-                    + w_sos * int(r.sos_rank)  # type: ignore[arg-type]
-                    + w_fpi * own
-                ),
+                market_rating=market_ratings.get(r.team),
+                market_rank=market_ranks.get(r.team),
+                market_games=int(market_games.get(r.team, 0)),
+                ppa_rating=ppa_ratings.get(r.team),
+                ppa_rank=ppa_ranks.get(r.team),
+                ppa_raw=ppa_raw.get(r.team),
+                ppa_games=int(ppa_games.get(r.team, 0)),
+                base_terms=terms,
+                base_raw=base_raw,
             )
         )
 

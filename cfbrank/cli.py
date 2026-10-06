@@ -111,7 +111,11 @@ def print_table(result: RankingResult, n: int, out=None) -> None:
     out = sys.stdout if out is None else out
     season = f"{result.year} {result.season_type} week {result.week}"
     print(f"\n  CFB Top 25 -- {season}\n", file=out)
-    print(f"  {'#':>3}  {'team':22}{'rec':>7}  {'base':>5}{'move':>6}  {'SoR':>4}{'SoS':>5}{'FPI':>7}  flags", file=out)
+    print(
+        f"  {'#':>3}  {'team':22}{'rec':>7}  {'base':>5}{'move':>6}"
+        f"  {'SoR':>4}{'Mkt':>8}{'PPA':>5}  flags",
+        file=out,
+    )
     print("  " + "-" * 76, file=out)
     for i, team in enumerate(result.order[:n], 1):
         tb = result.teams[team]
@@ -121,10 +125,14 @@ def print_table(result: RankingResult, n: int, out=None) -> None:
             flags.append(result.team_cycle[team])
         if abs(tb.regression_adj) > 1e-9:
             flags.append("regressed")
+        if tb.missing_terms:
+            flags.append("no " + "/".join(tb.missing_terms))
+        mkt = f"{tb.market_rating:+.1f}" if tb.market_rating is not None else "--"
+        ppa = f"#{tb.ppa_rank}" if tb.ppa_rank is not None else "--"
         line = (
             f"  {i:3}. {team:22}{(tb.record.overall if tb.record else '?'):>7}"
             f"  {tb.base_rank:>5}{(f'{drift:+d}' if drift else ''):>6}"
-            f"  {tb.sor_rank:>4}{tb.sos_rank:>5}{tb.fpi:>+7.1f}  {' '.join(flags)}"
+            f"  {tb.sor_rank:>4}{mkt:>8}{ppa:>5}  {' '.join(flags)}"
         )
         print(line.rstrip(), file=out)
     c = result.counts
@@ -142,7 +150,7 @@ def print_table(result: RankingResult, n: int, out=None) -> None:
             f = result.edge_facts[(w, l)]
             print(
                 f"    {w} (#{rank_of[w]}) beat {l} (#{rank_of[l]}) {f.score} {f.site}"
-                f"  adj {f.adj_margin:+.1f}, FPI gap {f.fpi_gap:+.1f}, weight {f.weight:.2f}",
+                f"  adj {f.adj_margin:+.1f}, rating gap {f.rating_gap:+.1f}, weight {f.weight:.2f}",
                 file=out,
             )
     print(file=out)
@@ -162,6 +170,26 @@ def print_explain(result: RankingResult, team: str, out=None) -> int:
     print(f"\n  {match} -- #{final} (base #{tb.base_rank}, resume #{tb.raw_rank})\n", file=out)
     for line in result.reasons.get(match, []):
         print(f"    - {line}", file=out)
+
+    print("\n    quality inputs:", file=out)
+    if tb.market_rating is None:
+        print(f"      market      --  (only {tb.market_games} lined FBS game(s))", file=out)
+    else:
+        print(
+            f"      market      {tb.market_rating:+6.1f} pts on a neutral field"
+            f"  (#{tb.market_rank} of the board, {tb.market_games} games)",
+            file=out,
+        )
+    if tb.ppa_rating is None:
+        print(f"      play-by-play --  (only {tb.ppa_games} FBS game(s) with PPA)", file=out)
+    else:
+        raw = f", {tb.ppa_raw:+.3f} unadjusted" if tb.ppa_raw is not None else ""
+        print(
+            f"      play-by-play {tb.ppa_rating:+6.3f} net PPA per play"
+            f"  (#{tb.ppa_rank}{raw})",
+            file=out,
+        )
+    print(f"      FPI          {tb.fpi:+6.1f}  (#{tb.fpi_rank}, tiebreaks only)", file=out)
     print(f"\n    resume adjustment: {tb.resume_adj:+.2f}", file=out)
     for k, v in sorted(tb.resume_components.items()):
         print(f"      {k:16} {v:+.3f}", file=out)
@@ -185,7 +213,7 @@ def print_explain(result: RankingResult, team: str, out=None) -> int:
         state = "OVERRIDDEN" if (f.winner, f.loser) in overridden else "honoured"
         print(
             f"      {verb:8} {other:20} #{rank_of.get(other, '-'):<3} {score:>7} {where:18}"
-            f" adj {f.adj_margin:+6.1f}  FPI gap {f.fpi_gap:+6.1f}  weight {f.weight:.2f}  [{state}]",
+            f" adj {f.adj_margin:+6.1f}  gap {f.rating_gap:+6.1f}  weight {f.weight:.2f}  [{state}]",
             file=out,
         )
     print(file=out)

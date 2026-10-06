@@ -10,7 +10,8 @@ from cfbrank.engine.resume import _loss_badness, apply_resume_adjustment
 from dataclasses import replace
 from tests.helpers import rating, record, result
 
-S1 = {"w_sor": 0.75, "w_sos": 0.0, "w_fpi": 0.25, "require_fpi": True, "fbs_only": True}
+S1 = {"w_sor": 0.75, "w_market": 0.0, "w_perf": 0.0, "w_sos": 0.0, "w_fpi": 0.25,
+      "require_fpi": True, "fbs_only": True}
 S2 = {"w_loss_quality": 3.0, "w_best_win": 1.0, "w_game_control": 0.5}
 EV = {"home_field_points": 2.5, "margin_cap": 28}
 FBS = {"A", "B", "C", "D", "E"}
@@ -27,22 +28,70 @@ class TestBaseScore(unittest.TestCase):
         # One team, so it is FPI rank 1: 0.75*4 + 0.25*1.
         teams, _ = teams_for([("A", 4, 8, 10.0)])
         self.assertAlmostEqual(teams[0].base_raw, 0.75 * 4 + 0.25 * 1)
-        rendered = teams[0].formula(0.75, 0.0, 0.25)
+        rendered = teams[0].formula()
         self.assertIn("0.75 x SoR #4", rendered)
         self.assertIn("0.25 x FPI #1", rendered)
 
     def test_formula_omits_zero_weight_terms(self):
         # A "+ 0 x SoS #97" next to a team the schedule did not move is a lie.
         teams, _ = teams_for([("A", 4, 97, 10.0)])
-        self.assertNotIn("SoS", teams[0].formula(0.75, 0.0, 0.25))
-        self.assertIn("SoS", teams[0].formula(0.75, 0.25, 0.0))
-        self.assertNotIn("FPI", teams[0].formula(0.75, 0.25, 0.0))
+        self.assertNotIn("SoS", teams[0].formula())
+        with_sos, _ = compute_base(
+            [rating("A", 4, 97, 10.0)], {}, {"A"}, {**S1, "w_sos": 0.25, "w_fpi": 0.0}
+        )
+        self.assertIn("SoS", with_sos[0].formula())
+        self.assertNotIn("FPI", with_sos[0].formula())
 
     def test_formula_arithmetic_is_shown_correctly(self):
         teams, _ = teams_for([("A", 4, 8, 10.0), ("B", 2, 2, 50.0)])
         for tb in teams:
-            rendered = tb.formula(0.75, 0.0, 0.25)
+            rendered = tb.formula()
             self.assertTrue(rendered.endswith(f"= {tb.base_raw:.2f}"), rendered)
+
+    def test_the_quality_terms_enter_the_base(self):
+        ranks_mkt = {"A": 1, "B": 30}
+        ranks_ppa = {"A": 2, "B": 40}
+        teams, _ = compute_base(
+            [rating("A", 10, 10, 5.0), rating("B", 2, 2, 6.0)],
+            {},
+            {"A", "B"},
+            {"w_sor": 0.40, "w_market": 0.30, "w_perf": 0.30, "w_sos": 0.0, "w_fpi": 0.0,
+             "require_fpi": True, "fbs_only": True},
+            market_ranks=ranks_mkt,
+            ppa_ranks=ranks_ppa,
+        )
+        by = {t.team: t for t in teams}
+        self.assertAlmostEqual(by["A"].base_raw, 0.40 * 10 + 0.30 * 1 + 0.30 * 2)
+        self.assertAlmostEqual(by["B"].base_raw, 0.40 * 2 + 0.30 * 30 + 0.30 * 40)
+        # A's worse record is outweighed by two far better quality ranks.
+        self.assertEqual(by["A"].base_rank, 1)
+
+    def test_a_missing_term_renormalises_instead_of_discounting(self):
+        """Dropping a term outright would REWARD a team for missing data.
+
+        Without renormalisation the team with no market rating scores
+        0.4*SoR + 0.3*PPA, which is numerically smaller -- i.e. better -- than
+        the same team with a market rank. The weights have to be rescaled so the
+        two are on one scale.
+        """
+        s1 = {"w_sor": 0.40, "w_market": 0.30, "w_perf": 0.30, "w_sos": 0.0, "w_fpi": 0.0,
+              "require_fpi": True, "fbs_only": True}
+        teams, warnings = compute_base(
+            [rating("A", 10, 10, 5.0), rating("B", 10, 10, 5.0)],
+            {},
+            {"A", "B"},
+            s1,
+            market_ranks={"A": 10},        # B has no market rating
+            ppa_ranks={"A": 10, "B": 10},
+        )
+        by = {t.team: t for t in teams}
+        self.assertAlmostEqual(by["A"].base_raw, 10.0)
+        self.assertAlmostEqual(by["B"].base_raw, 10.0, msg="renormalised, not discounted")
+        self.assertEqual(by["B"].missing_terms, ("Mkt",))
+        self.assertIn("base_term_missing", [w.code for w in warnings])
+        # And the published formula still has to add up to the score it explains.
+        for tb in teams:
+            self.assertTrue(tb.formula().endswith(f"= {tb.base_raw:.2f}"), tb.formula())
 
     def test_quality_term_sinks_a_good_record_with_a_weak_rating(self):
         """The Kentucky case: Strength of Record #5 but FPI rank #34.
@@ -58,12 +107,12 @@ class TestBaseScore(unittest.TestCase):
         no_quality, _ = compute_base(
             [rating(t, sor, sos, fpi) for t, sor, sos, fpi in specs], {},
             {t for t, _, _, _ in specs},
-            {"w_sor": 1.0, "w_sos": 0.0, "w_fpi": 0.0, "require_fpi": True, "fbs_only": True},
+            {**S1, "w_sor": 1.0, "w_fpi": 0.0},
         )
         with_quality, _ = compute_base(
             [rating(t, sor, sos, fpi) for t, sor, sos, fpi in specs], {},
             {t for t, _, _, _ in specs},
-            {"w_sor": 0.75, "w_sos": 0.0, "w_fpi": 0.25, "require_fpi": True, "fbs_only": True},
+            S1,
         )
         before = {t.team: t.base_rank for t in no_quality}["Record"]
         after = {t.team: t.base_rank for t in with_quality}["Record"]
@@ -73,7 +122,7 @@ class TestBaseScore(unittest.TestCase):
     def test_schedule_term_can_still_be_switched_on(self):
         on, _ = compute_base(
             [rating("A", 5, 120, 10.0), rating("B", 6, 1, 10.5)], {}, {"A", "B"},
-            {"w_sor": 0.75, "w_sos": 0.25, "w_fpi": 0.0, "require_fpi": True, "fbs_only": True},
+            {**S1, "w_sos": 0.25, "w_fpi": 0.0},
         )
         by = {t.team: t.base_raw for t in on}
         self.assertAlmostEqual(by["A"], 0.75 * 5 + 0.25 * 120)
@@ -93,7 +142,7 @@ class TestBaseScore(unittest.TestCase):
         ratings = [rating("A", 1, 1, 5.0), rating("B", None, 4, 5.0)]
         teams, warnings = compute_base(ratings, {}, {"A", "B"}, S1)
         self.assertEqual([t.team for t in teams], ["A"])
-        self.assertEqual([w.code for w in warnings], ["excluded_missing_rating"])
+        self.assertIn("excluded_missing_rating", [w.code for w in warnings])
 
     def test_non_fbs_teams_are_excluded(self):
         ratings = [rating("A", 1, 1, 5.0), rating("Z", 2, 2, 4.0)]

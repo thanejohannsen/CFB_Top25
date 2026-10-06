@@ -31,14 +31,24 @@ DEFAULTS: dict[str, Any] = {
         "fixture_year": "2025",
     },
     "stage1": {
-        "w_sor": 0.75,
-        "w_fpi": 0.25,
+        "w_sor": 0.50,
+        "w_market": 0.25,
+        "w_perf": 0.25,
+        "w_fpi": 0.0,
         "w_sos": 0.0,
         "pool_size": 40,
         "output_size": 25,
         "require_fpi": True,
         "fbs_only": True,
     },
+    "market": {
+        "min_games": 3,
+        "horizon_weeks": 1,
+        "recency_half_life": 0.0,
+        "fit_home_field": True,
+        "home_field_points": 2.5,
+    },
+    "performance": {"min_games": 3, "fit_home_edge": True},
     "stage2": {"w_loss_quality": 3.0, "w_best_win": 1.0, "w_game_control": 0.5},
     "stage3": {"enabled": True, "gap": 15, "strength": 0.5},
     "stage4": {
@@ -49,12 +59,15 @@ DEFAULTS: dict[str, Any] = {
         "max_passes": 400,
         "evidence": {
             "w_margin": 0.50,
-            "w_fpi_gap": 0.30,
+            "w_rating_gap": 0.30,
             "w_recency": 0.20,
             "w_common_opponents": 0.15,
             "home_field_points": 2.5,
+            "fit_home_field": True,
             "margin_cap": 28,
             "recency_floor": 0.25,
+            "weight_floor": 1.0,
+            "conviction_floor": -2.0,
         },
     },
     "output": {
@@ -166,11 +179,26 @@ def validate(data: Mapping[str, Any]) -> None:
         raise ConfigError("stage1.pool_size must be a positive integer")
     if not isinstance(out, int) or not 0 < out <= pool:
         raise ConfigError("stage1.output_size must satisfy 0 < output_size <= pool_size")
-    for key in ("stage1.w_sor", "stage1.w_sos", "stage1.w_fpi"):
+    base_weights = ("stage1.w_sor", "stage1.w_market", "stage1.w_perf", "stage1.w_sos", "stage1.w_fpi")
+    for key in base_weights:
         if cfg[key] < 0:
             raise ConfigError(f"{key} must be >= 0")
-    if cfg["stage1.w_sor"] + cfg["stage1.w_sos"] + cfg["stage1.w_fpi"] <= 0:
-        raise ConfigError("at least one of stage1.w_sor/w_sos/w_fpi must be > 0")
+    if sum(cfg[key] for key in base_weights) <= 0:
+        raise ConfigError("at least one stage1 weight must be > 0")
+
+    for section in ("market", "performance"):
+        if not isinstance(cfg[f"{section}.min_games"], int) or cfg[f"{section}.min_games"] < 1:
+            raise ConfigError(f"{section}.min_games must be an integer >= 1")
+    if cfg["market.home_field_points"] < 0:
+        raise ConfigError("market.home_field_points must be >= 0")
+    if cfg["market.recency_half_life"] < 0:
+        raise ConfigError("market.recency_half_life must be >= 0 (0 turns it off)")
+    horizon = cfg["market.horizon_weeks"]
+    if not isinstance(horizon, int) or not 0 <= horizon <= 1:
+        raise ConfigError(
+            "market.horizon_weeks must be 0 or 1 -- a line two weeks out has already "
+            "priced in results this ranking is not allowed to see"
+        )
 
     if cfg["stage3.gap"] < 0:
         raise ConfigError("stage3.gap must be >= 0")
@@ -195,6 +223,10 @@ def validate(data: Mapping[str, Any]) -> None:
         raise ConfigError("stage4.evidence.recency_floor must be in 0.0..1.0")
     if ev["home_field_points"] < 0:
         raise ConfigError("stage4.evidence.home_field_points must be >= 0")
+    if ev["weight_floor"] <= 0:
+        raise ConfigError(
+            "stage4.evidence.weight_floor must be > 0 -- overriding a result has to cost something"
+        )
 
     prec = cfg["output.float_precision"]
     if not isinstance(prec, int) or not 0 <= prec <= 12:

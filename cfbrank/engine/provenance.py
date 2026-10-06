@@ -53,8 +53,10 @@ def override_reason(fact: EdgeFact) -> str:
         )
     else:
         bits.append(f"{fact.adj_margin:+.1f} adjusted margin")
-    if fact.fpi_gap < -1.0:
-        bits.append(f"the winner rates {abs(fact.fpi_gap):.1f} points worse by FPI")
+    if fact.rating_gap < -1.0:
+        bits.append(
+            f"the winner rates {abs(fact.rating_gap):.1f} points worse on the power ratings"
+        )
     if fact.common_opponents and fact.common_diff < 0:
         bits.append(f"the loser fared better against {len(fact.common_opponents)} shared opponents")
     return "; ".join(bits)
@@ -63,9 +65,6 @@ def override_reason(fact: EdgeFact) -> str:
 def team_reasons(
     tb: TeamBase,
     final_rank: int,
-    w_sor: float,
-    w_sos: float,
-    w_fpi: float,
     honored_wins: Sequence[tuple[EdgeFact, int]],
     overridden_losses: Sequence[tuple[EdgeFact, int]],
     overridden_wins: Sequence[tuple[EdgeFact, int]],
@@ -73,7 +72,7 @@ def team_reasons(
     cycle_size: int,
 ) -> list[str]:
     out: list[str] = [
-        f"Resume order #{tb.raw_rank} from {tb.formula(w_sor, w_sos, w_fpi)}."
+        f"Resume order #{tb.raw_rank} from {tb.formula()}."
     ]
 
     if abs(tb.resume_adj) > 0.05:

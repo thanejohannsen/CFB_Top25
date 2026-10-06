@@ -9,7 +9,7 @@ from dataclasses import dataclass, field
 from typing import Mapping, Sequence
 
 from cfbrank.config import Config
-from cfbrank.engine import h2h
+from cfbrank.engine import h2h, market, performance
 from cfbrank.engine.base_score import TeamBase, compute_base, pool, priority, rerank
 from cfbrank.engine.evidence import EdgeFact, score_edges
 from cfbrank.engine.graph import Digraph, nontrivial_sccs
@@ -53,6 +53,10 @@ class RankingResult:
     series_notes: list[h2h.SeriesNote]
     skipped: list[h2h.SkippedGame]
     warnings: list[Warning_]
+    market: market.MarketRatings = field(default_factory=market.MarketRatings)
+    performance: performance.PerformanceRatings = field(
+        default_factory=performance.PerformanceRatings
+    )
     reasons: dict[str, list[str]] = field(default_factory=dict)
     counts: dict[str, int] = field(default_factory=dict)
 
@@ -70,8 +74,8 @@ def rank(dataset: Dataset, cfg: Config) -> RankingResult:
     s3 = cfg.section("stage3")
     s4 = cfg.section("stage4")
     ev_cfg = cfg.section("stage4.evidence")
-    w_sor, w_sos = float(s1["w_sor"]), float(s1["w_sos"])
-    w_fpi = float(s1["w_fpi"])
+    mkt_cfg = cfg.section("market")
+    perf_cfg = cfg.section("performance")
 
     # -- the week to rank through -----------------------------------------
     week, season_type, cutoff = h2h.resolve_week(
@@ -89,9 +93,37 @@ def rank(dataset: Dataset, cfg: Config) -> RankingResult:
         if (cls or "").lower() == "fbs"
     }
 
+    # -- quality inputs ----------------------------------------------------
+    # Both are restricted to games already finished at the cutoff. A line posted
+    # for a game nobody has played is information the ranking is not entitled to,
+    # and on a completed season's file it is information from the future.
+    played_ids = {
+        g.game_id
+        for g in dataset.games
+        if g.game_id is not None
+        and g.completed
+        and g.home_points is not None
+        and g.away_points is not None
+        and g.order_key <= cutoff
+    }
+    mkt = market.compute(dataset.lines, fbs, cutoff, mkt_cfg, played_ids)
+    perf = performance.compute(dataset.ppa, fbs, cutoff, perf_cfg, played_ids)
+
     # -- stage 1 ----------------------------------------------------------
-    teams, warnings = compute_base(dataset.ratings, dataset.records_by_team(), fbs, s1)
-    warnings = list(dataset.warnings) + list(warnings)
+    teams, warnings = compute_base(
+        dataset.ratings,
+        dataset.records_by_team(),
+        fbs,
+        s1,
+        market_ranks=mkt.ranks,
+        market_ratings=mkt.ratings,
+        ppa_ranks=perf.ranks,
+        ppa_ratings=perf.ratings,
+        ppa_raw=perf.raw,
+        market_games=mkt.games,
+        ppa_games=perf.games,
+    )
+    warnings = list(dataset.warnings) + list(mkt.warnings) + list(perf.warnings) + list(warnings)
     by_team = {tb.team: tb for tb in teams}
 
     # -- stage 2 ----------------------------------------------------------
@@ -114,8 +146,20 @@ def rank(dataset: Dataset, cfg: Config) -> RankingResult:
     )
 
     # -- stage 4 ----------------------------------------------------------
-    fpi = {tb.team: tb.fpi for tb in final_pool}
-    edge_facts = score_edges(results, fpi, h2h.opponents(all_results), ev_cfg)
+    # The gap term reads the market's neutral-field points where they exist and
+    # falls back to FPI where they do not, which is the role FPI keeps: settling
+    # which result to set aside when nothing better is available.
+    quality = {
+        tb.team: (tb.market_rating if tb.market_rating is not None else tb.fpi)
+        for tb in final_pool
+    }
+    edge_facts = score_edges(
+        results,
+        quality,
+        h2h.opponents(all_results),
+        ev_cfg,
+        home_field_points=mkt.home_field_points if mkt else None,
+    )
     base_rank = {tb.team: tb.base_rank for tb in final_pool}
     # Pool ranks are 1..N so the drift term is measured inside the pool.
     pool_base_rank = {t: i + 1 for i, t in enumerate(pool_names)}
@@ -186,8 +230,7 @@ def rank(dataset: Dataset, cfg: Config) -> RankingResult:
         cid = team_cycle.get(team)
         size = next((c.size for c in cycles if c.cycle_id == cid), 0)
         reasons[team] = team_reasons(
-            tb, final_rank[team], w_sor, w_sos, w_fpi,
-            honored, over_losses, over_wins, cid, size,
+            tb, final_rank[team], honored, over_losses, over_wins, cid, size,
         )
 
     counts = {
@@ -201,6 +244,8 @@ def rank(dataset: Dataset, cfg: Config) -> RankingResult:
         "cycles": len(cycles),
         "largest_cycle": max((c.size for c in cycles), default=0),
         "regressions": len(regressions),
+        "market_rated": len(mkt.ratings),
+        "ppa_rated": len(perf.ratings),
         "max_rise": -min(ordering.drift.values(), default=0),
         "max_drop": max(ordering.drift.values(), default=0),
         "local_search_passes": ordering.passes,
@@ -223,6 +268,8 @@ def rank(dataset: Dataset, cfg: Config) -> RankingResult:
         series_notes=series_notes,
         skipped=skipped,
         warnings=warnings,
+        market=mkt,
+        performance=perf,
         reasons=reasons,
         counts=counts,
     )

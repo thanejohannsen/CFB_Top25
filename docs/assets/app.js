@@ -140,6 +140,16 @@
 
   var FLAG_TEXT = { cycle: "loop", lifted: "rose", dropped: "fell", regressed: "regressed" };
 
+  function marketText(m) {
+    // An em dash rather than a 0: a team with too few lined games has no market
+    // rating at all, and showing zero would read as "exactly average".
+    return m && m.rating !== null && m.rating !== undefined ? signed(m.rating, 1) : "\u2014";
+  }
+
+  function rankText(r) {
+    return r && r.rank !== null && r.rank !== undefined ? "#" + r.rank : "\u2014";
+  }
+
   function notesCell(row) {
     var frag = document.createDocumentFragment();
     if (row.cycle) frag.appendChild(el("span", { class: "badge cycle", text: row.cycle }));
@@ -170,7 +180,7 @@
         el("td", { class: "num h-score", "data-label": "Score", text: score }),
         el("td", { class: "h-at", "data-label": "At", text: where }),
         el("td", { class: "num h-adj", "data-label": "Adj", text: signed(e.adj_margin, 1) }),
-        el("td", { class: "num h-gap", "data-label": "FPI gap", text: signed(e.fpi_gap, 1) }),
+        el("td", { class: "num h-gap", "data-label": "Rating gap", text: signed(e.rating_gap, 1) }),
         el("td", { class: "h-state" }, [el("span", {
           class: "state " + e.status,
           text: e.status === "overridden" ? "✕ overridden" : "✓ honoured"
@@ -185,7 +195,7 @@
         el("th", { scope: "col", class: "num", text: "Score" }),
         el("th", { scope: "col", text: "At" }),
         el("th", { scope: "col", class: "num", text: "Adj" }),
-        el("th", { scope: "col", class: "num", text: "FPI gap" }),
+        el("th", { scope: "col", class: "num", text: "Rating gap" }),
         el("th", { scope: "col", text: "Status" })
       ])]),
       body
@@ -207,7 +217,34 @@
     if (row.regression) pair("Upset regression", signed(row.regression.adjustment, 2) + " rank points");
     pair("Base position", "#" + base.rank);
     pair("Final position", "#" + row.rank + " \u2014 " + driftText(row.placement.drift));
-    pair("FPI", num(row.fpi.rating, 1) + " (#" + row.fpi.rank + ")");
+
+    var mkt = row.market || {}, perf = row.performance || {};
+    if (mkt.rating !== null && mkt.rating !== undefined) {
+      pair(
+        "Market rating",
+        signed(mkt.rating, 1) + " points on a neutral field (#" + mkt.rank +
+          ", from " + mkt.games + " lined games)"
+      );
+    } else {
+      pair("Market rating", "none \u2014 too few lined games");
+    }
+    if (perf.rating !== null && perf.rating !== undefined) {
+      pair(
+        "Play-by-play",
+        signed(perf.rating, 3) + " net PPA per play (#" + perf.rank +
+          (perf.unadjusted !== null && perf.unadjusted !== undefined
+            ? ", " + signed(perf.unadjusted, 3) + " before adjusting for opponents"
+            : "") + ")"
+      );
+    } else {
+      pair("Play-by-play", "none \u2014 too few games with play data");
+    }
+    (base.missing || []).forEach(function (label) {
+      pair("Missing input", label + " \u2014 the other terms were rescaled to carry it");
+    });
+    // FPI no longer drives the ranking. It is kept here because it still breaks
+    // ties and still helps weigh which head-to-head result to set aside.
+    pair("FPI (tiebreaks only)", num(row.fpi.rating, 1) + " (#" + row.fpi.rank + ")");
 
     var reasons = el("ol", { class: "reasons" }, (row.placement.reasons || []).map(function (r) {
       return el("li", { text: r });
@@ -221,7 +258,7 @@
         ]),
         el("div", { class: "detail-wide" }, [
           el("h3", { text: "Head-to-head inside the pool" }),
-          el("p", { class: "lede", text: "\u201cAdj\u201d is the margin once venue is accounted for \u2014 a one-point home win is negative. \u201cFPI gap\u201d is how far apart the power ratings put the two teams." }),
+          el("p", { class: "lede", text: "\u201cAdj\u201d is the margin once venue is accounted for \u2014 a one-point home win is negative. \u201cRating gap\u201d is how many points apart the market puts the two teams." }),
           scrollable(h2hTable(row))
         ])
       ])
@@ -248,8 +285,11 @@
         el("td", { class: "conf col-opt c-conf", text: row.conference || "–" }),
         el("td", { class: "c-rec", text: (row.record && row.record.overall) || "–" }),
         el("td", { class: "num c-sor", "data-label": "SoR", text: num(row.base.sor_rank) }),
-        el("td", { class: "num col-opt c-sos", "data-label": "SoS", text: num(row.base.sos_rank) }),
-        el("td", { class: "num col-opt c-fpi", "data-label": "FPI", text: signed(row.fpi.rating, 1) }),
+        // The market rating is shown in points, not as a rank: "+19.5" says this
+        // team would be favoured by four over one at +15.5 on neutral ground,
+        // which a rank cannot tell you.
+        el("td", { class: "num c-mkt", "data-label": "Mkt", text: marketText(row.market) }),
+        el("td", { class: "num c-ppa", "data-label": "PPA", text: rankText(row.performance) }),
         el("td", { class: "num col-opt c-base", "data-label": "Base", text: num(row.base.rank) }),
         el("td", { class: "c-notes" }, [notesCell(row)]),
         el("td", { class: "chev c-chev", text: "›" })
@@ -355,7 +395,7 @@
         el("th", { scope: "col", class: "num", text: "Score" }),
         el("th", { scope: "col", text: "At" }),
         el("th", { scope: "col", class: "num", text: "Adj" }),
-        el("th", { scope: "col", class: "num", text: "FPI gap" }),
+        el("th", { scope: "col", class: "num", text: "Rating gap" }),
         el("th", { scope: "col", class: "num", text: "Weight" }),
         el("th", { scope: "col", text: "Status" })
       ])]),
@@ -369,7 +409,7 @@
           el("td", { class: "num", text: e.score }),
           el("td", { text: e.site }),
           el("td", { class: "num", text: signed(e.adj_margin, 1) }),
-          el("td", { class: "num", text: signed(e.fpi_gap, 1) }),
+          el("td", { class: "num", text: signed(e.rating_gap, 1) }),
           el("td", { class: "num", text: num(e.weight, 2) }),
           el("td", null, [el("span", {
             class: "state " + e.status,
@@ -486,8 +526,8 @@
         el("th", { scope: "col", text: "Conf" }),
         el("th", { scope: "col", text: "Rec" }),
         el("th", { scope: "col", class: "num", text: "SoR" }),
-        el("th", { scope: "col", class: "num", text: "SoS" }),
-        el("th", { scope: "col", class: "num", text: "FPI" })
+        el("th", { scope: "col", class: "num", text: "Mkt" }),
+        el("th", { scope: "col", class: "num", text: "PPA" })
       ])]),
       el("tbody", null, rows.map(function (r) {
         return el("tr", null, [
@@ -496,8 +536,8 @@
           el("td", { class: "conf", text: r.conference || "–" }),
           el("td", { text: r.record || "–" }),
           el("td", { class: "num", text: num(r.sor_rank) }),
-          el("td", { class: "num", text: num(r.sos_rank) }),
-          el("td", { class: "num", text: signed(r.fpi, 1) })
+          el("td", { class: "num", text: marketText({ rating: r.market_rating }) }),
+          el("td", { class: "num", text: rankText({ rank: r.ppa_rank }) })
         ]);
       }))
     ])));

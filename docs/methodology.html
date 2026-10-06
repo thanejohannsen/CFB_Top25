@@ -23,29 +23,70 @@
     <section>
       <h2>The short version</h2>
       <p class="lede">
-        Rank everyone by how good their record is for the schedule they played. Adjust for
-        what their losses actually look like. Then shuffle the order so the ranking
-        contradicts as few head-to-head results as possible &mdash; weighing how convincing
-        each result was against how far a team would have to move from where its resume
-        put it.
+        Rank everyone on three things: how good their record is for the schedule they
+        played, what the betting market thinks they are worth on a neutral field, and how
+        they have actually moved the ball once you adjust for who they played. Adjust for
+        what their losses look like. Then shuffle the order so the ranking contradicts as
+        few head-to-head results as possible &mdash; weighing how convincing each result was
+        against how far a team would have to move from where its resume put it.
       </p>
     </section>
 
     <section>
-      <h2>Stage 1 &mdash; Resume plus quality</h2>
+      <h2>Stage 1 &mdash; The record, the market, and the play-by-play</h2>
       <div class="card"><div class="card-body">
-        <p class="formula" id="f-stage1">base = w_sor &times; SoR_rank + w_fpi &times; FPI_rank</p>
+        <p class="formula" id="f-stage1">base = w_sor &times; SoR_rank + w_market &times; Mkt_rank + w_perf &times; PPA_rank</p>
         <p class="lede">
-          <b>Strength of Record</b> is how impressive a team's win&ndash;loss record is given
-          who it played. <b>FPI</b> is ESPN's power rating, used here as a rank. Both arrive
-          as national ranks where 1 is best, so the score is a weighted rank average and
-          lower is better.
+          All three arrive as national ranks where 1 is best, so the score is a weighted
+          rank average and lower is better.
+        </p>
+        <ul class="reasons">
+          <li><b>Strength of Record</b> &mdash; how impressive a team's win&ndash;loss record is
+            given who it played. This is the half that honours what teams have actually
+            <em>done</em>.</li>
+          <li><b>Market rating</b> &mdash; the neutral-field rating implied by betting lines. A
+            point spread prices a <em>matchup</em>, so it is decomposed into one number per
+            team: expected home margin = rating(home) &minus; rating(away) + home field. The
+            result is in points and reads directly &mdash; a team at +19.5 would be favoured
+            by four over a team at +15.5 on neutral ground. Home field is <em>measured</em>
+            from the lines rather than assumed, and comes out at about +2.4 points.</li>
+          <li><b>Play-by-play</b> &mdash; points added per play on offence less points allowed
+            on defence, garbage time stripped out, then adjusted for opponent strength the
+            same way. This is the eye test, counted: it does not care whether the ball
+            bounced your way at the end.</li>
+        </ul>
+        <h3>Why these two quality signals and not one</h3>
+        <p class="lede">
+          Because they know different things, and the pair beats either alone. Taking the
+          2025 season, ranking only on what was knowable at the time and then predicting
+          the winner of every later game, the market alone got 61.2% of ranked-vs-ranked
+          games right and the play-by-play alone 62.8% &mdash; while blending them 50/50 got
+          67.3%. The market prices injuries, suspensions and quiet improvement that no box
+          score shows; the play-by-play knows how a team actually played regardless of what
+          the closing line said.
         </p>
         <p class="lede">
-          Strength of Record carries most of the weight: it is the resume, and this is a
-          resume ranking. The quality term is the anchor that stops a good record alone
-          carrying a team to the top &mdash; without it, a team ranked 5th by record but
-          <em>34th</em> in the country by rating sat in the top five.
+          The split between the record and the quality signals, though, is a
+          <em>judgement</em> and not a measurement. Predicting games is not what a resume is
+          for, so no backtest can set it. It sits at half and half, and the cost of that
+          choice is visible: on the completed 2025 season a 7&ndash;6 Penn State lands at
+          24th, because its record was ordinary but the market rated it 13th and the
+          play-by-play 16th.
+        </p>
+        <h3>Why FPI is no longer in the formula</h3>
+        <p class="lede">
+          It used to be the quality term, and two things pushed it out. The market and the
+          play-by-play simply do its job better. And FPI cannot be honestly checked: the
+          feed serves <em>one</em> snapshot with no week dimension, so grading a ranking
+          built from it against a finished season is reading the answer key. An earlier
+          version of this project quoted 75.5% accuracy from exactly that mistake. Betting
+          lines and per-game play-by-play are both stamped per game, so a cutoff is a real
+          cutoff.
+        </p>
+        <p class="lede">
+          FPI is still here, in the two places where one number has to settle something: as
+          the last tiebreak when two teams score identically, and in weighing which
+          head-to-head result to set aside when no market rating exists for either team.
         </p>
         <h3>Why Strength of Schedule is not in the formula</h3>
         <p class="lede">
@@ -122,8 +163,10 @@
           <li><b>Location-adjusted margin</b> &mdash; winning on the road is worth more than
             the same margin at home. A one-point home win scores <em>negative</em>: home
             field alone is worth more than the margin.</li>
-          <li><b>FPI gap</b> &mdash; a result that contradicts the power ratings is weaker
-            evidence that the winner is genuinely better.</li>
+          <li><b>Rating gap</b> &mdash; a result that contradicts the power ratings is weaker
+            evidence that the winner is genuinely better. The gap is measured on the
+            market's neutral-field points, falling back to FPI where the market has no
+            opinion.</li>
           <li><b>Recency</b> &mdash; later games say more about current strength.</li>
           <li><b>Common opponents</b> &mdash; how the two fared against the teams they both
             played.</li>
@@ -142,6 +185,18 @@
           produced a single tangle of 22 mutually entangled teams, where resolving each
           loop separately is not even computable. Weighing the results instead has neither
           problem, and a team nobody in the pool played simply stays where its resume put it.
+        </p>
+        <h3>What it costs to override a result</h3>
+        <p class="lede">
+          Every result carries a real price, and that is a deliberate correction. Conviction
+          is a blend of z-scores, so it sits near zero and has to be shifted upward before
+          it can serve as a cost. That shift used to be measured from the weakest result on
+          the board, which meant whichever game happened to be least convincing was always
+          pinned at a token value &mdash; about a seventeenth of a typical result &mdash;
+          however real that game was. It is why a 2025 Oklahoma State win over Oregon was
+          set aside essentially for free. The floor is now an absolute level of conviction:
+          a weak result costs a full unit because it genuinely is weak, and a convincing one
+          costs roughly three times that rather than seventeen.
         </p>
         <p class="lede">
           The <b>drift exponent</b> is what keeps a lone result from carrying a team across
@@ -175,11 +230,24 @@
       <h2>Known limitations</h2>
       <div class="card"><div class="card-body">
         <ul class="reasons">
-          <li>Strength of Record and FPI are both ESPN metrics, so a quirk in either one
-            propagates straight into this ranking. They are also the only quality signals
-            here: there is no independent model of team strength.</li>
           <li>Strength of Record, Strength of Schedule and FPI are ESPN metrics served through
             CollegeFootballData.com. They are third-party opinions and they move during the week.</li>
+          <li><b>The market rating knows things results cannot.</b> A spread prices injuries,
+            suspensions and weather, which is exactly why it predicts well &mdash; and it is
+            also a departure from a pure resume ranking. A team can be rated highly here for
+            reasons that never appear in a box score.</li>
+          <li>The market rating also leans on lines for the coming week, which is what makes
+            it a <em>current</em> opinion rather than an average of stale pre-game guesses. A
+            closing line for next Saturday has priced in every result so far and nothing
+            after it, so this stays inside what is knowable &mdash; but it does mean the
+            rating moves when the market's view of a future game moves.</li>
+          <li>A team with too few lined games gets no market rating at all, and is scored on
+            the terms it has with the weights rescaled. Its row shows which input is
+            missing. In practice every FBS-vs-FBS game in both seasons checked had a line,
+            so this mostly affects the opening weeks.</li>
+          <li>Early in a season the schedule can split into groups that have not played each
+            other. Ratings are only comparable inside such a group, and the snapshot says so
+            in its warnings when it happens.</li>
           <li>The ordering is found by local search. It is a strong local optimum, not a proven
             global one; in practice it reaches the same answer from any starting permutation of
             the inputs, but that is an observation rather than a guarantee.</li>
@@ -187,7 +255,9 @@
             B, B beat C and C beat D, A can end up well above its resume position. The
             per-team drift is published so this is visible rather than hidden.</li>
           <li>The FPI feed has no per-week endpoint, so a week's snapshot is taken when it is
-            generated and earlier weeks cannot be reconstructed after the fact.</li>
+            generated and earlier weeks cannot be reconstructed after the fact. The same is
+            true of Strength of Record, which is why the backtesting tool refuses to score
+            either of them and reports only on the market and play-by-play half.</li>
           <li>Early in a season Strength of Record is volatile, and an undefeated team with a
             soft schedule can look better than it is.</li>
         </ul>
@@ -222,11 +292,21 @@
       var meta = data.meta || {}, cfg = meta.config || {};
       var s1 = cfg.stage1 || {}, s2 = cfg.stage2 || {}, s3 = cfg.stage3 || {}, s4 = cfg.stage4 || {};
       var ev = s4.evidence || {};
+      var mk = cfg.market || {}, pf = cfg.performance || {};
       document.getElementById("attribution").textContent = (meta.source || {}).attribution || "";
 
       var f = document.getElementById("f-stage1");
       if (s1.w_sor !== undefined) {
-        f.textContent = "base = " + s1.w_sor + " × SoR_rank + " + s1.w_sos + " × SoS_rank";
+        var LABELS = [
+          ["w_sor", "SoR_rank"], ["w_market", "Mkt_rank"], ["w_perf", "PPA_rank"],
+          ["w_fpi", "FPI_rank"], ["w_sos", "SoS_rank"]
+        ];
+        // Render only the terms actually carrying weight, so the page never shows
+        // a "+ 0 × SoS_rank" that plays no part in the ranking beside it.
+        f.textContent = "base = " + LABELS
+          .filter(function (p) { return s1[p[0]]; })
+          .map(function (p) { return s1[p[0]] + " × " + p[1]; })
+          .join(" + ");
       }
 
       var banner = document.getElementById("live-config");
@@ -237,7 +317,9 @@
 
       var rows = [
         ["Strength of Record weight", s1.w_sor],
-        ["FPI (quality) weight", s1.w_fpi],
+        ["Market weight", s1.w_market],
+        ["Play-by-play weight", s1.w_perf],
+        ["FPI weight", s1.w_fpi + " (tiebreaks only; see above)"],
         ["Strength of Schedule weight", s1.w_sos + " (off by design)"],
         ["Candidate pool size", s1.pool_size],
         ["Loss-quality weight", s2.w_loss_quality],
@@ -251,11 +333,18 @@
         ["Drift exponent", s4.drift_exponent],
         ["Split-series policy", s4.split_series],
         ["  margin weight", ev.w_margin],
-        ["  FPI-gap weight", ev.w_fpi_gap],
+        ["  rating-gap weight", ev.w_rating_gap],
         ["  recency weight", ev.w_recency],
         ["  common-opponent weight", ev.w_common_opponents],
         ["  home-field points", ev.home_field_points],
-        ["  margin cap", ev.margin_cap]
+        ["  margin cap", ev.margin_cap],
+        ["  weight floor (cheapest override)", ev.weight_floor],
+        ["  conviction floor", ev.conviction_floor],
+        ["Market: minimum lined games", mk.min_games],
+        ["Market: weeks of lines ahead", mk.horizon_weeks],
+        ["Market: home field fitted", mk.fit_home_field ? "yes" : "no"],
+        ["Market: recency half-life", mk.recency_half_life + " (0 = off; it measured worse)"],
+        ["Play-by-play: minimum games", pf.min_games]
       ];
       var dl = el("dl", { class: "kv" });
       rows.forEach(function (r) {

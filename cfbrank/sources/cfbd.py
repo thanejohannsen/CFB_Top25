@@ -1,6 +1,6 @@
 """CollegeFootballData.com REST client.
 
-Quota discipline: a full run makes at most four calls, all cacheable. The
+Quota discipline: a full run makes at most six calls, all cacheable. The
 retry policy distinguishes transient failures (retry with backoff) from
 permanent ones (fail immediately), and treats an HTTP 200 carrying an empty
 list as unavailable -- a wrong or future year returns [] with status 200, and
@@ -134,6 +134,22 @@ class CFBDClient:
 
     def calendar(self, year: int) -> list[dict]:
         return self._get("/calendar", {"year": year})
+
+    def lines(self, year: int, season_type: str = "both") -> list[dict]:
+        """Betting lines. The market's own neutral-field rating is solved from these."""
+        return self._get("/lines", {"year": year, "seasonType": season_type})
+
+    def ppa_games(self, year: int, season_type: str = "both") -> list[dict]:
+        """Per-game PPA, garbage time excluded.
+
+        `excludeGarbageTime` is not a nicety: a 49-7 win whose last two scores
+        came against the backups would otherwise read as dominance the starters
+        never produced.
+        """
+        return self._get(
+            "/ppa/games",
+            {"year": year, "seasonType": season_type, "excludeGarbageTime": "true"},
+        )
 
     def poll_rankings(self, year: int, season_type: str = "regular") -> list[dict]:
         """Human polls, used ONLY by scripts/evaluate.py as an external yardstick.

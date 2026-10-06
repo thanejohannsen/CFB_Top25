@@ -13,11 +13,33 @@ SHIPPED = "config/ranking.toml"
 
 
 class TestLoad(unittest.TestCase):
+    BASE_WEIGHTS = ("w_sor", "w_market", "w_perf", "w_sos", "w_fpi")
+
     def test_shipped_config_is_valid(self):
         cfg = load(SHIPPED)
         self.assertEqual(cfg["schema_version"], 1)
-        total = cfg["stage1.w_sor"] + cfg["stage1.w_sos"] + cfg["stage1.w_fpi"]
+        total = sum(cfg[f"stage1.{k}"] for k in self.BASE_WEIGHTS)
         self.assertAlmostEqual(total, 1.0, msg="the base weights should sum to 1")
+
+    def test_fpi_ships_out_of_the_base(self):
+        """FPI has no week dimension, so no weight on it can be backtested.
+
+        It stays in the file as a knob and keeps its stage-4 and tiebreak jobs;
+        it must not be the thing that orders the board. See config/ranking.toml.
+        """
+        self.assertEqual(load(SHIPPED)["stage1.w_fpi"], 0.0)
+
+    def test_market_and_play_by_play_split_the_quality_half_evenly(self):
+        cfg = load(SHIPPED)
+        self.assertEqual(cfg["stage1.w_market"], cfg["stage1.w_perf"])
+        self.assertGreater(cfg["stage1.w_market"], 0.0)
+
+    def test_lines_two_weeks_out_are_rejected(self):
+        """A line that closes after next week has been played is look-ahead."""
+        load(SHIPPED, ["market.horizon_weeks=0"])
+        load(SHIPPED, ["market.horizon_weeks=1"])
+        with self.assertRaises(ConfigError):
+            load(SHIPPED, ["market.horizon_weeks=2"])
 
     def test_schedule_weight_ships_off(self):
         # Deliberate: Strength of Record already accounts for the schedule, so
@@ -106,13 +128,24 @@ class TestValidation(unittest.TestCase):
         self._bad("output.float_precision=-1")
         self._bad("schema_version=2")
 
+    ZERO_BASE = [
+        "stage1.w_sor=0", "stage1.w_market=0", "stage1.w_perf=0",
+        "stage1.w_sos=0", "stage1.w_fpi=0",
+    ]
+
     def test_all_base_weights_zero_is_rejected(self):
         with self.assertRaises(ConfigError):
-            load(SHIPPED, ["stage1.w_sor=0", "stage1.w_sos=0", "stage1.w_fpi=0"])
+            load(SHIPPED, self.ZERO_BASE)
 
     def test_one_nonzero_base_weight_is_enough(self):
-        load(SHIPPED, ["stage1.w_sor=0", "stage1.w_sos=0", "stage1.w_fpi=1"])
-        load(SHIPPED, ["stage1.w_sor=1", "stage1.w_sos=0", "stage1.w_fpi=0"])
+        load(SHIPPED, [*self.ZERO_BASE, "stage1.w_fpi=1"])
+        load(SHIPPED, [*self.ZERO_BASE, "stage1.w_sor=1"])
+        load(SHIPPED, [*self.ZERO_BASE, "stage1.w_market=1"])
+
+    def test_a_free_override_is_rejected(self):
+        """Overriding a result has to cost something, or H2H is decorative."""
+        with self.assertRaises(ConfigError):
+            load(SHIPPED, ["stage4.evidence.weight_floor=0"])
 
     def test_accepts_the_documented_edges(self):
         load(SHIPPED, ["stage3.strength=0", "stage3.strength=1.0"])

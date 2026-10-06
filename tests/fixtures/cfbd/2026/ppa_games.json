@@ -1,0 +1,9256 @@
+[
+ {
+  "defense": {
+   "overall": -0.33
+  },
+  "gameId": 401864496,
+  "offense": {
+   "overall": 0.37
+  },
+  "opponent": "Duquesne",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Air Force",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.55
+  },
+  "gameId": 401858204,
+  "offense": {
+   "overall": -0.12
+  },
+  "opponent": "Wake Forest",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Akron",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.17
+  },
+  "gameId": 401856634,
+  "offense": {
+   "overall": 0.36
+  },
+  "opponent": "East Carolina",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Alabama",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.34
+  },
+  "gameId": 401866627,
+  "offense": {
+   "overall": 0.5
+  },
+  "opponent": "Maine",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "App State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.37
+  },
+  "gameId": 401856773,
+  "offense": {
+   "overall": 0.18
+  },
+  "opponent": "Northern Arizona",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Arizona",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.21
+  },
+  "gameId": 401856774,
+  "offense": {
+   "overall": 0.88
+  },
+  "opponent": "Morgan State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Arizona State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.07
+  },
+  "gameId": 401856635,
+  "offense": {
+   "overall": 0.09
+  },
+  "opponent": "North Alabama",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Arkansas",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.43
+  },
+  "gameId": 401862695,
+  "offense": {
+   "overall": 0.09
+  },
+  "opponent": "Memphis",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Arkansas State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.14
+  },
+  "gameId": 401862701,
+  "offense": {
+   "overall": 0.78
+  },
+  "opponent": "Bryant",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Army",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.01
+  },
+  "gameId": 401856636,
+  "offense": {
+   "overall": -0.04
+  },
+  "opponent": "Baylor",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Auburn",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.65
+  },
+  "gameId": 401858432,
+  "offense": {
+   "overall": -0.34
+  },
+  "opponent": "Ohio State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Ball State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.04
+  },
+  "gameId": 401856636,
+  "offense": {
+   "overall": -0.01
+  },
+  "opponent": "Auburn",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Baylor",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.17
+  },
+  "gameId": 401858433,
+  "offense": {
+   "overall": 0.05
+  },
+  "opponent": "Oregon",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Boise State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.24
+  },
+  "gameId": 401856777,
+  "offense": {
+   "overall": -0.09
+  },
+  "opponent": "Cincinnati",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Boston College",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.04
+  },
+  "gameId": 401866410,
+  "offense": {
+   "overall": -0.1
+  },
+  "opponent": "Tarleton State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Bowling Green",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.06
+  },
+  "gameId": 401866409,
+  "offense": {
+   "overall": 0.15
+  },
+  "opponent": "UAlbany",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Buffalo",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.8
+  },
+  "gameId": 401856775,
+  "offense": {
+   "overall": 0.6
+  },
+  "opponent": "Utah Tech",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "BYU",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.41
+  },
+  "gameId": 401858210,
+  "offense": {
+   "overall": -0.06
+  },
+  "opponent": "UCLA",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "California",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.3
+  },
+  "gameId": 401864498,
+  "offense": {
+   "overall": -0.36
+  },
+  "opponent": "New Mexico",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Central Michigan",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.33
+  },
+  "gameId": 401862694,
+  "offense": {
+   "overall": 0.17
+  },
+  "opponent": "The Citadel",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Charlotte",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.09
+  },
+  "gameId": 401856777,
+  "offense": {
+   "overall": 0.24
+  },
+  "opponent": "Boston College",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Cincinnati",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.31
+  },
+  "gameId": 401856660,
+  "offense": {
+   "overall": -0.54
+  },
+  "opponent": "LSU",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Clemson",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.13
+  },
+  "gameId": 401856780,
+  "offense": {
+   "overall": 0.17
+  },
+  "opponent": "West Virginia",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Coastal Carolina",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.07
+  },
+  "gameId": 401856776,
+  "offense": {
+   "overall": 0.05
+  },
+  "opponent": "Georgia Tech",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Colorado",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.13
+  },
+  "gameId": 401860878,
+  "offense": {
+   "overall": 0.3
+  },
+  "opponent": "Wyoming",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Colorado State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.31
+  },
+  "gameId": 401864424,
+  "offense": {
+   "overall": 0.58
+  },
+  "opponent": "Merrimack",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Delaware",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.13
+  },
+  "gameId": 401858209,
+  "offense": {
+   "overall": -0.13
+  },
+  "opponent": "Tulane",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Duke",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.36
+  },
+  "gameId": 401856634,
+  "offense": {
+   "overall": -0.17
+  },
+  "opponent": "Alabama",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "East Carolina",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.07
+  },
+  "gameId": 401864495,
+  "offense": {
+   "overall": -0.17
+  },
+  "opponent": "San José State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Eastern Michigan",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.12
+  },
+  "gameId": 401866408,
+  "offense": {
+   "overall": 0.06
+  },
+  "opponent": "Sacramento State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Eastern Michigan",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.02
+  },
+  "gameId": 401856637,
+  "offense": {
+   "overall": 0.62
+  },
+  "opponent": "Florida Atlantic",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Florida",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.62
+  },
+  "gameId": 401856637,
+  "offense": {
+   "overall": -0.02
+  },
+  "opponent": "Florida",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Florida Atlantic",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.06
+  },
+  "gameId": 401862699,
+  "offense": {
+   "overall": -0.12
+  },
+  "opponent": "South Florida",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Florida International",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.36
+  },
+  "gameId": 401858212,
+  "offense": {
+   "overall": 0.14
+  },
+  "opponent": "SMU",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Florida State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.11
+  },
+  "gameId": 401864570,
+  "offense": {
+   "overall": 0.27
+  },
+  "opponent": "New Mexico State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Florida State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.32
+  },
+  "gameId": 401858436,
+  "offense": {
+   "overall": -0.37
+  },
+  "opponent": "USC",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Fresno State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.15
+  },
+  "gameId": 401856658,
+  "offense": {
+   "overall": 0.67
+  },
+  "opponent": "Tennessee State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Georgia",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.31
+  },
+  "gameId": 401868170,
+  "offense": {
+   "overall": 0.29
+  },
+  "opponent": "Charleston Southern",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Georgia Southern",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.14
+  },
+  "gameId": 401866623,
+  "offense": {
+   "overall": 0.63
+  },
+  "opponent": "North Carolina A&T",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Georgia State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.05
+  },
+  "gameId": 401856776,
+  "offense": {
+   "overall": 0.07
+  },
+  "opponent": "Colorado",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Georgia Tech",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.31
+  },
+  "gameId": 401858201,
+  "offense": {
+   "overall": 0.05
+  },
+  "opponent": "Stanford",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Hawai'i",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.07
+  },
+  "gameId": 401864497,
+  "offense": {
+   "overall": -0.08
+  },
+  "opponent": "UNLV",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Hawai'i",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.06
+  },
+  "gameId": 401856778,
+  "offense": {
+   "overall": 0.28
+  },
+  "opponent": "Oregon State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Houston",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.11
+  },
+  "gameId": 401858424,
+  "offense": {
+   "overall": 0.46
+  },
+  "opponent": "UAB",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Illinois",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.15
+  },
+  "gameId": 401858425,
+  "offense": {
+   "overall": 0.59
+  },
+  "opponent": "North Texas",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Indiana",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.49
+  },
+  "gameId": 401858426,
+  "offense": {
+   "overall": 0.33
+  },
+  "opponent": "Northern Illinois",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Iowa",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.23
+  },
+  "gameId": 401856779,
+  "offense": {
+   "overall": 0.3
+  },
+  "opponent": "Southeast Missouri State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Iowa State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.22
+  },
+  "gameId": 401864577,
+  "offense": {
+   "overall": -0.48
+  },
+  "opponent": "North Dakota State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Jacksonville State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.28
+  },
+  "gameId": 401868140,
+  "offense": {
+   "overall": 0.54
+  },
+  "opponent": "Eastern Kentucky",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Jacksonville State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.02
+  },
+  "gameId": 401869960,
+  "offense": {
+   "overall": 0.28
+  },
+  "opponent": "Liberty",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "James Madison",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.25
+  },
+  "gameId": 401856769,
+  "offense": {
+   "overall": 0.55
+  },
+  "opponent": "Long Island University",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Kansas",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.33
+  },
+  "gameId": 401856771,
+  "offense": {
+   "overall": 0.4
+  },
+  "opponent": "Nicholls",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Kansas State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.42
+  },
+  "gameId": 401864425,
+  "offense": {
+   "overall": 0.39
+  },
+  "opponent": "West Georgia",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Kennesaw State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.74
+  },
+  "gameId": 401856665,
+  "offense": {
+   "overall": 0.05
+  },
+  "opponent": "South Carolina",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Kent State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.13
+  },
+  "gameId": 401856659,
+  "offense": {
+   "overall": 0.54
+  },
+  "opponent": "Youngstown State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Kentucky",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.28
+  },
+  "gameId": 401869960,
+  "offense": {
+   "overall": -0.02
+  },
+  "opponent": "James Madison",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Liberty",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.24
+  },
+  "gameId": 401869142,
+  "offense": {
+   "overall": 0.26
+  },
+  "opponent": "Lamar",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Louisiana",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.32
+  },
+  "gameId": 401869129,
+  "offense": {
+   "overall": 1.02
+  },
+  "opponent": "Northwestern State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Louisiana Tech",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.23
+  },
+  "gameId": 401856661,
+  "offense": {
+   "overall": 0.28
+  },
+  "opponent": "Ole Miss",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Louisville",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.54
+  },
+  "gameId": 401856660,
+  "offense": {
+   "overall": 0.31
+  },
+  "opponent": "Clemson",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "LSU",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.64
+  },
+  "gameId": 401858434,
+  "offense": {
+   "overall": -0.08
+  },
+  "opponent": "Penn State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Marshall",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.6
+  },
+  "gameId": 401858427,
+  "offense": {
+   "overall": 0.35
+  },
+  "opponent": "Hampton",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Maryland",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.08
+  },
+  "gameId": 401858423,
+  "offense": {
+   "overall": 0.33
+  },
+  "opponent": "Rutgers",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Massachusetts",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.09
+  },
+  "gameId": 401862695,
+  "offense": {
+   "overall": 0.43
+  },
+  "opponent": "Arkansas State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Memphis",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.02
+  },
+  "gameId": 401862693,
+  "offense": {
+   "overall": 0.22
+  },
+  "opponent": "UNLV",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Memphis",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.17
+  },
+  "gameId": 401858206,
+  "offense": {
+   "overall": 0.57
+  },
+  "opponent": "Stanford",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Miami",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.46
+  },
+  "gameId": 401858207,
+  "offense": {
+   "overall": 0.09
+  },
+  "opponent": "Pittsburgh",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Miami (OH)",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.04
+  },
+  "gameId": 401858428,
+  "offense": {
+   "overall": 0.15
+  },
+  "opponent": "Western Michigan",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Michigan",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.1
+  },
+  "gameId": 401858429,
+  "offense": {
+   "overall": 0.01
+  },
+  "opponent": "Toledo",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Michigan State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.09
+  },
+  "gameId": 401867866,
+  "offense": {
+   "overall": 0.39
+  },
+  "opponent": "Murray State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Middle Tennessee",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.42
+  },
+  "gameId": 401858422,
+  "offense": {
+   "overall": 0.51
+  },
+  "opponent": "Eastern Illinois",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Minnesota",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.28
+  },
+  "gameId": 401856662,
+  "offense": {
+   "overall": 0.65
+  },
+  "opponent": "UL Monroe",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Mississippi State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.26
+  },
+  "gameId": 401856663,
+  "offense": {
+   "overall": 0.47
+  },
+  "opponent": "Arkansas-Pine Bluff",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Missouri",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.3
+  },
+  "gameId": 401856668,
+  "offense": {
+   "overall": -0.59
+  },
+  "opponent": "Texas A&M",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Missouri State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.08
+  },
+  "gameId": 401862696,
+  "offense": {
+   "overall": 0.51
+  },
+  "opponent": "Towson",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Navy",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.32
+  },
+  "gameId": 401858202,
+  "offense": {
+   "overall": -0.25
+  },
+  "opponent": "Virginia",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "NC State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.05
+  },
+  "gameId": 401858430,
+  "offense": {
+   "overall": 0.46
+  },
+  "opponent": "Ohio",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Nebraska",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.04
+  },
+  "gameId": 401864432,
+  "offense": {
+   "overall": 0.56
+  },
+  "opponent": "Western Kentucky",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Nevada",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.36
+  },
+  "gameId": 401864498,
+  "offense": {
+   "overall": 0.3
+  },
+  "opponent": "Central Michigan",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "New Mexico",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.27
+  },
+  "gameId": 401864570,
+  "offense": {
+   "overall": 0.11
+  },
+  "opponent": "Florida State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "New Mexico State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.12
+  },
+  "gameId": 401870790,
+  "offense": {
+   "overall": 0.23
+  },
+  "opponent": "Mercyhurst",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "New Mexico State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.07
+  },
+  "gameId": 401856766,
+  "offense": {
+   "overall": -0.01
+  },
+  "opponent": "TCU",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "North Carolina",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.64
+  },
+  "gameId": 401864499,
+  "offense": {
+   "overall": 0.29
+  },
+  "opponent": "Fordham",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "North Dakota State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.48
+  },
+  "gameId": 401864577,
+  "offense": {
+   "overall": 0.22
+  },
+  "opponent": "Jacksonville State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "North Dakota State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.33
+  },
+  "gameId": 401858426,
+  "offense": {
+   "overall": -0.49
+  },
+  "opponent": "Iowa",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Northern Illinois",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.59
+  },
+  "gameId": 401858425,
+  "offense": {
+   "overall": 0.15
+  },
+  "opponent": "Indiana",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "North Texas",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.09
+  },
+  "gameId": 401858431,
+  "offense": {
+   "overall": 0.48
+  },
+  "opponent": "South Dakota State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Northwestern",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.1
+  },
+  "gameId": 401858438,
+  "offense": {
+   "overall": 0.35
+  },
+  "opponent": "Wisconsin",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Notre Dame",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.46
+  },
+  "gameId": 401858430,
+  "offense": {
+   "overall": 0.05
+  },
+  "opponent": "Nebraska",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Ohio",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.34
+  },
+  "gameId": 401858432,
+  "offense": {
+   "overall": 0.65
+  },
+  "opponent": "Ball State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Ohio State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.42
+  },
+  "gameId": 401856664,
+  "offense": {
+   "overall": 0.51
+  },
+  "opponent": "UTEP",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Oklahoma",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.18
+  },
+  "gameId": 401856772,
+  "offense": {
+   "overall": -0.2
+  },
+  "opponent": "Tulsa",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Oklahoma State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.27
+  },
+  "gameId": 401867973,
+  "offense": {
+   "overall": 0.04
+  },
+  "opponent": "Norfolk State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Old Dominion",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.28
+  },
+  "gameId": 401856661,
+  "offense": {
+   "overall": 0.23
+  },
+  "opponent": "Louisville",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Ole Miss",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.05
+  },
+  "gameId": 401858433,
+  "offense": {
+   "overall": 0.17
+  },
+  "opponent": "Boise State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Oregon",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.28
+  },
+  "gameId": 401856778,
+  "offense": {
+   "overall": 0.06
+  },
+  "opponent": "Houston",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Oregon State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.08
+  },
+  "gameId": 401858434,
+  "offense": {
+   "overall": 0.64
+  },
+  "opponent": "Marshall",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Penn State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.09
+  },
+  "gameId": 401858207,
+  "offense": {
+   "overall": 0.46
+  },
+  "opponent": "Miami (OH)",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Pittsburgh",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.06
+  },
+  "gameId": 401858435,
+  "offense": {
+   "overall": 0.44
+  },
+  "opponent": "Indiana State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Purdue",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.32
+  },
+  "gameId": 401862697,
+  "offense": {
+   "overall": 0.19
+  },
+  "opponent": "Houston Christian",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Rice",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.33
+  },
+  "gameId": 401858423,
+  "offense": {
+   "overall": -0.08
+  },
+  "opponent": "Massachusetts",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Rutgers",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.06
+  },
+  "gameId": 401866408,
+  "offense": {
+   "overall": -0.12
+  },
+  "opponent": "Eastern Michigan",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Sacramento State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.21
+  },
+  "gameId": 401866411,
+  "offense": {
+   "overall": 0.2
+  },
+  "opponent": "Mississippi Valley State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Sacramento State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.16
+  },
+  "gameId": 401870763,
+  "offense": {
+   "overall": 0.07
+  },
+  "opponent": "Troy",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Sam Houston",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.05
+  },
+  "gameId": 401860879,
+  "offense": {
+   "overall": 0.34
+  },
+  "opponent": "Portland State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "San Diego State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.4
+  },
+  "gameId": 401864494,
+  "offense": {
+   "overall": 0.12
+  },
+  "opponent": "USC",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "San José State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.17
+  },
+  "gameId": 401864495,
+  "offense": {
+   "overall": 0.07
+  },
+  "opponent": "Eastern Michigan",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "San José State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.14
+  },
+  "gameId": 401858212,
+  "offense": {
+   "overall": 0.36
+  },
+  "opponent": "Florida State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "SMU",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.14
+  },
+  "gameId": 401868316,
+  "offense": {
+   "overall": 0.06
+  },
+  "opponent": "SE Louisiana",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "South Alabama",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.05
+  },
+  "gameId": 401856665,
+  "offense": {
+   "overall": 0.74
+  },
+  "opponent": "Kent State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "South Carolina",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.3
+  },
+  "gameId": 401868356,
+  "offense": {
+   "overall": 0.44
+  },
+  "opponent": "Alcorn State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Southern Miss",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.12
+  },
+  "gameId": 401862699,
+  "offense": {
+   "overall": -0.06
+  },
+  "opponent": "Florida International",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "South Florida",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.57
+  },
+  "gameId": 401858206,
+  "offense": {
+   "overall": 0.17
+  },
+  "opponent": "Miami",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Stanford",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.05
+  },
+  "gameId": 401858201,
+  "offense": {
+   "overall": 0.31
+  },
+  "opponent": "Hawai'i",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Stanford",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.34
+  },
+  "gameId": 401858208,
+  "offense": {
+   "overall": 0.62
+  },
+  "opponent": "New Hampshire",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Syracuse",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.01
+  },
+  "gameId": 401856766,
+  "offense": {
+   "overall": -0.07
+  },
+  "opponent": "North Carolina",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "TCU",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0
+  },
+  "gameId": 401862698,
+  "offense": {
+   "overall": 0.24
+  },
+  "opponent": "Rhode Island",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Temple",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.4
+  },
+  "gameId": 401856666,
+  "offense": {
+   "overall": 0.46
+  },
+  "opponent": "Furman",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Tennessee",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.08
+  },
+  "gameId": 401856667,
+  "offense": {
+   "overall": 0.45
+  },
+  "opponent": "Texas State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Texas",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.59
+  },
+  "gameId": 401856668,
+  "offense": {
+   "overall": 0.3
+  },
+  "opponent": "Missouri State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Texas A&M",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.45
+  },
+  "gameId": 401856667,
+  "offense": {
+   "overall": 0.08
+  },
+  "opponent": "Texas",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Texas State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.22
+  },
+  "gameId": 401856770,
+  "offense": {
+   "overall": 0.25
+  },
+  "opponent": "Abilene Christian",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Texas Tech",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.01
+  },
+  "gameId": 401858429,
+  "offense": {
+   "overall": 0.1
+  },
+  "opponent": "Michigan State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Toledo",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.07
+  },
+  "gameId": 401870763,
+  "offense": {
+   "overall": 0.16
+  },
+  "opponent": "Sam Houston",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Troy",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.13
+  },
+  "gameId": 401858209,
+  "offense": {
+   "overall": -0.13
+  },
+  "opponent": "Duke",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Tulane",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.2
+  },
+  "gameId": 401856772,
+  "offense": {
+   "overall": 0.18
+  },
+  "opponent": "Oklahoma State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Tulsa",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.46
+  },
+  "gameId": 401858424,
+  "offense": {
+   "overall": 0.11
+  },
+  "opponent": "Illinois",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UAB",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.31
+  },
+  "gameId": 401856767,
+  "offense": {
+   "overall": 0.28
+  },
+  "opponent": "Bethune-Cookman",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UCF",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.06
+  },
+  "gameId": 401858210,
+  "offense": {
+   "overall": 0.41
+  },
+  "opponent": "California",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UCLA",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.29
+  },
+  "gameId": 401861962,
+  "offense": {
+   "overall": 0.46
+  },
+  "opponent": "Lafayette",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UConn",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.65
+  },
+  "gameId": 401856662,
+  "offense": {
+   "overall": -0.28
+  },
+  "opponent": "Mississippi State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UL Monroe",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.22
+  },
+  "gameId": 401862693,
+  "offense": {
+   "overall": 0.02
+  },
+  "opponent": "Memphis",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UNLV",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.08
+  },
+  "gameId": 401864497,
+  "offense": {
+   "overall": 0.07
+  },
+  "opponent": "Hawai'i",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UNLV",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.12
+  },
+  "gameId": 401864494,
+  "offense": {
+   "overall": 0.4
+  },
+  "opponent": "San José State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "USC",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.37
+  },
+  "gameId": 401858436,
+  "offense": {
+   "overall": 0.32
+  },
+  "opponent": "Fresno State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "USC",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.07
+  },
+  "gameId": 401856768,
+  "offense": {
+   "overall": 0.47
+  },
+  "opponent": "Idaho",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Utah",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.03
+  },
+  "gameId": 401860880,
+  "offense": {
+   "overall": -0.06
+  },
+  "opponent": "Idaho State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Utah State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.51
+  },
+  "gameId": 401856664,
+  "offense": {
+   "overall": -0.42
+  },
+  "opponent": "Oklahoma",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UTEP",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.29
+  },
+  "gameId": 401862700,
+  "offense": {
+   "overall": 0.36
+  },
+  "opponent": "UT Rio Grande Valley",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UTSA",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.03
+  },
+  "gameId": 401856669,
+  "offense": {
+   "overall": 0.26
+  },
+  "opponent": "Austin Peay",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Vanderbilt",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.25
+  },
+  "gameId": 401858202,
+  "offense": {
+   "overall": 0.32
+  },
+  "opponent": "NC State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Virginia",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.76
+  },
+  "gameId": 401858211,
+  "offense": {
+   "overall": 0.82
+  },
+  "opponent": "VMI",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Virginia Tech",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.12
+  },
+  "gameId": 401858204,
+  "offense": {
+   "overall": 0.55
+  },
+  "opponent": "Akron",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Wake Forest",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": -0.17
+  },
+  "gameId": 401858437,
+  "offense": {
+   "overall": 0.05
+  },
+  "opponent": "Washington State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Washington",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.05
+  },
+  "gameId": 401858437,
+  "offense": {
+   "overall": -0.17
+  },
+  "opponent": "Washington",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Washington State",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.56
+  },
+  "gameId": 401864432,
+  "offense": {
+   "overall": -0.04
+  },
+  "opponent": "Nevada",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Western Kentucky",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.15
+  },
+  "gameId": 401858428,
+  "offense": {
+   "overall": -0.04
+  },
+  "opponent": "Michigan",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Western Michigan",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.17
+  },
+  "gameId": 401856780,
+  "offense": {
+   "overall": 0.13
+  },
+  "opponent": "Coastal Carolina",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "West Virginia",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.35
+  },
+  "gameId": 401858438,
+  "offense": {
+   "overall": -0.1
+  },
+  "opponent": "Notre Dame",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Wisconsin",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.3
+  },
+  "gameId": 401860878,
+  "offense": {
+   "overall": -0.13
+  },
+  "opponent": "Colorado State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Wyoming",
+  "week": 1
+ },
+ {
+  "defense": {
+   "overall": 0.11
+  },
+  "gameId": 401864502,
+  "offense": {
+   "overall": 0.22
+  },
+  "opponent": "North Dakota State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Air Force",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.29
+  },
+  "gameId": 401866412,
+  "offense": {
+   "overall": 0.31
+  },
+  "opponent": "Robert Morris",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Akron",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.35
+  },
+  "gameId": 401856674,
+  "offense": {
+   "overall": 0.14
+  },
+  "opponent": "Kentucky",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Alabama",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.28
+  },
+  "gameId": 401864571,
+  "offense": {
+   "overall": 0.17
+  },
+  "opponent": "East Carolina",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "App State",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.46
+  },
+  "gameId": 401856810,
+  "offense": {
+   "overall": 0.11
+  },
+  "opponent": "BYU",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Arizona",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.01
+  },
+  "gameId": 401856683,
+  "offense": {
+   "overall": -0.27
+  },
+  "opponent": "Texas A&M",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Arizona State",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.63
+  },
+  "gameId": 401856670,
+  "offense": {
+   "overall": -0.04
+  },
+  "opponent": "Utah",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Arkansas",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.14
+  },
+  "gameId": 401868241,
+  "offense": {
+   "overall": 0.29
+  },
+  "opponent": "West Georgia",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Arkansas State",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.35
+  },
+  "gameId": 401862702,
+  "offense": {
+   "overall": 0.13
+  },
+  "opponent": "South Florida",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Army",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.2
+  },
+  "gameId": 401856671,
+  "offense": {
+   "overall": 0.32
+  },
+  "opponent": "Southern Miss",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Auburn",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.11
+  },
+  "gameId": 401866413,
+  "offense": {
+   "overall": 0.28
+  },
+  "opponent": "Stony Brook",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Ball State",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.31
+  },
+  "gameId": 401856784,
+  "offense": {
+   "overall": 0.36
+  },
+  "opponent": "Prairie View A&M",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Baylor",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.01
+  },
+  "gameId": 401860881,
+  "offense": {
+   "overall": 0.46
+  },
+  "opponent": "Memphis",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Boise State",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.08
+  },
+  "gameId": 401858214,
+  "offense": {
+   "overall": -0.02
+  },
+  "opponent": "Rutgers",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Boston College",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.68
+  },
+  "gameId": 401858441,
+  "offense": {
+   "overall": -0.21
+  },
+  "opponent": "Nebraska",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Bowling Green",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.11
+  },
+  "gameId": 401866414,
+  "offense": {
+   "overall": -0.03
+  },
+  "opponent": "Florida International",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Buffalo",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.11
+  },
+  "gameId": 401856810,
+  "offense": {
+   "overall": 0.46
+  },
+  "opponent": "Arizona",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "BYU",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.14
+  },
+  "gameId": 401858216,
+  "offense": {
+   "overall": -0.11
+  },
+  "opponent": "Syracuse",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "California",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.11
+  },
+  "gameId": 401866415,
+  "offense": {
+   "overall": -0.08
+  },
+  "opponent": "Colgate",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Central Michigan",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.37
+  },
+  "gameId": 401856676,
+  "offense": {
+   "overall": -0.01
+  },
+  "opponent": "Ole Miss",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Charlotte",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.18
+  },
+  "gameId": 401856786,
+  "offense": {
+   "overall": 0.71
+  },
+  "opponent": "Western Carolina",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Cincinnati",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.1
+  },
+  "gameId": 401858219,
+  "offense": {
+   "overall": -0.11
+  },
+  "opponent": "Georgia Southern",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Clemson",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.15
+  },
+  "gameId": 401868008,
+  "offense": {
+   "overall": 0.26
+  },
+  "opponent": "Fordham",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Coastal Carolina",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.1
+  },
+  "gameId": 401856785,
+  "offense": {
+   "overall": 0.69
+  },
+  "opponent": "Weber State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Colorado",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.01
+  },
+  "gameId": 401860882,
+  "offense": {
+   "overall": 0.59
+  },
+  "opponent": "Southern Utah",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Colorado State",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.08
+  },
+  "gameId": 401856684,
+  "offense": {
+   "overall": -0.18
+  },
+  "opponent": "Vanderbilt",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Delaware",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.06
+  },
+  "gameId": 401858217,
+  "offense": {
+   "overall": 0.4
+  },
+  "opponent": "Illinois",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Duke",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.17
+  },
+  "gameId": 401864571,
+  "offense": {
+   "overall": 0.28
+  },
+  "opponent": "App State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "East Carolina",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.26
+  },
+  "gameId": 401858440,
+  "offense": {
+   "overall": 0.07
+  },
+  "opponent": "Michigan State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Eastern Michigan",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.47
+  },
+  "gameId": 401856672,
+  "offense": {
+   "overall": 0.57
+  },
+  "opponent": "Campbell",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Florida",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.04
+  },
+  "gameId": 401862703,
+  "offense": {
+   "overall": 0.25
+  },
+  "opponent": "Navy",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Florida Atlantic",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.03
+  },
+  "gameId": 401866414,
+  "offense": {
+   "overall": 0.11
+  },
+  "opponent": "Buffalo",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Florida International",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.26
+  },
+  "gameId": 401860883,
+  "offense": {
+   "overall": 0.29
+  },
+  "opponent": "Sacramento State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Fresno State",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.25
+  },
+  "gameId": 401856673,
+  "offense": {
+   "overall": 1.17
+  },
+  "opponent": "Western Kentucky",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Georgia",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.11
+  },
+  "gameId": 401858219,
+  "offense": {
+   "overall": -0.1
+  },
+  "opponent": "Clemson",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Georgia Southern",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.02
+  },
+  "gameId": 401869955,
+  "offense": {
+   "overall": 0.26
+  },
+  "opponent": "Kennesaw State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Georgia State",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.24
+  },
+  "gameId": 401856681,
+  "offense": {
+   "overall": -0.07
+  },
+  "opponent": "Tennessee",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Georgia Tech",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.01
+  },
+  "gameId": 401864578,
+  "offense": {
+   "overall": 0.13
+  },
+  "opponent": "New Mexico State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Hawai'i",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.56
+  },
+  "gameId": 401856787,
+  "offense": {
+   "overall": 0.72
+  },
+  "opponent": "Southern",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Houston",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.4
+  },
+  "gameId": 401858217,
+  "offense": {
+   "overall": 0.06
+  },
+  "opponent": "Duke",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Illinois",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.5
+  },
+  "gameId": 401858439,
+  "offense": {
+   "overall": 0.73
+  },
+  "opponent": "Howard",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Indiana",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.08
+  },
+  "gameId": 401856788,
+  "offense": {
+   "overall": -0.04
+  },
+  "opponent": "Iowa State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Iowa",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.04
+  },
+  "gameId": 401856788,
+  "offense": {
+   "overall": 0.08
+  },
+  "opponent": "Iowa",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Iowa State",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.16
+  },
+  "gameId": 401866418,
+  "offense": {
+   "overall": 0.31
+  },
+  "opponent": "Ohio",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Jacksonville State",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.53
+  },
+  "gameId": 401867929,
+  "offense": {
+   "overall": 0.31
+  },
+  "opponent": "Wagner",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "James Madison",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.13
+  },
+  "gameId": 401856678,
+  "offense": {
+   "overall": -0.13
+  },
+  "opponent": "Missouri",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Kansas",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.24
+  },
+  "gameId": 401856781,
+  "offense": {
+   "overall": 0.16
+  },
+  "opponent": "Washington State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Kansas State",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.26
+  },
+  "gameId": 401869955,
+  "offense": {
+   "overall": 0.02
+  },
+  "opponent": "Georgia State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Kennesaw State",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.42
+  },
+  "gameId": 401866416,
+  "offense": {
+   "overall": 0.13
+  },
+  "opponent": "Wofford",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Kent State",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.14
+  },
+  "gameId": 401856674,
+  "offense": {
+   "overall": -0.35
+  },
+  "opponent": "Alabama",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Kentucky",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.14
+  },
+  "gameId": 401868187,
+  "offense": {
+   "overall": -0.21
+  },
+  "opponent": "Gardner-Webb",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Liberty",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.34
+  },
+  "gameId": 401858445,
+  "offense": {
+   "overall": 0.17
+  },
+  "opponent": "USC",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Louisiana",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0
+  },
+  "gameId": 401867796,
+  "offense": {
+   "overall": -0.64
+  },
+  "opponent": "LSU",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Louisiana Tech",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.04
+  },
+  "gameId": 401858215,
+  "offense": {
+   "overall": 0.65
+  },
+  "opponent": "Villanova",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Louisville",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.64
+  },
+  "gameId": 401867796,
+  "offense": {
+   "overall": 0
+  },
+  "opponent": "Louisiana Tech",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "LSU",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.17
+  },
+  "gameId": 401871045,
+  "offense": {
+   "overall": 0.1
+  },
+  "opponent": "Middle Tennessee",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Marshall",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.03
+  },
+  "gameId": 401858444,
+  "offense": {
+   "overall": 0.29
+  },
+  "opponent": "UConn",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Maryland",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.26
+  },
+  "gameId": 401866420,
+  "offense": {
+   "overall": 0.65
+  },
+  "opponent": "Sacred Heart",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Massachusetts",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.46
+  },
+  "gameId": 401860881,
+  "offense": {
+   "overall": 0.01
+  },
+  "opponent": "Boise State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Memphis",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.25
+  },
+  "gameId": 401858213,
+  "offense": {
+   "overall": 1.21
+  },
+  "opponent": "Florida A&M",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Miami",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.49
+  },
+  "gameId": 401866417,
+  "offense": {
+   "overall": 0.89
+  },
+  "opponent": "Holy Cross",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Miami (OH)",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.14
+  },
+  "gameId": 401856679,
+  "offense": {
+   "overall": 0.03
+  },
+  "opponent": "Oklahoma",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Michigan",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.07
+  },
+  "gameId": 401858440,
+  "offense": {
+   "overall": 0.26
+  },
+  "opponent": "Eastern Michigan",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Michigan State",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.1
+  },
+  "gameId": 401871045,
+  "offense": {
+   "overall": 0.17
+  },
+  "opponent": "Marshall",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Middle Tennessee",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.53
+  },
+  "gameId": 401856677,
+  "offense": {
+   "overall": -0.11
+  },
+  "opponent": "Mississippi State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Minnesota",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.11
+  },
+  "gameId": 401856677,
+  "offense": {
+   "overall": 0.53
+  },
+  "opponent": "Minnesota",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Mississippi State",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.13
+  },
+  "gameId": 401856678,
+  "offense": {
+   "overall": 0.13
+  },
+  "opponent": "Kansas",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Missouri",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.16
+  },
+  "gameId": 401871046,
+  "offense": {
+   "overall": 0.48
+  },
+  "opponent": "Lindenwood",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Missouri State",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.25
+  },
+  "gameId": 401862703,
+  "offense": {
+   "overall": 0.04
+  },
+  "opponent": "Florida Atlantic",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Navy",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.45
+  },
+  "gameId": 401858222,
+  "offense": {
+   "overall": 1.02
+  },
+  "opponent": "Richmond",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "NC State",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.21
+  },
+  "gameId": 401858441,
+  "offense": {
+   "overall": 0.68
+  },
+  "opponent": "Bowling Green",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Nebraska",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.14
+  },
+  "gameId": 401864500,
+  "offense": {
+   "overall": -0.18
+  },
+  "opponent": "Montana State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Nevada",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.4
+  },
+  "gameId": 401865252,
+  "offense": {
+   "overall": 0.29
+  },
+  "opponent": "Mercyhurst",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "New Mexico",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.13
+  },
+  "gameId": 401864578,
+  "offense": {
+   "overall": -0.01
+  },
+  "opponent": "Hawai'i",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "New Mexico State",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.26
+  },
+  "gameId": 401858218,
+  "offense": {
+   "overall": 0.67
+  },
+  "opponent": "East Tennessee State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "North Carolina",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.22
+  },
+  "gameId": 401864502,
+  "offense": {
+   "overall": 0.11
+  },
+  "opponent": "Air Force",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "North Dakota State",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.03
+  },
+  "gameId": 401864503,
+  "offense": {
+   "overall": -0.08
+  },
+  "opponent": "Illinois State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Northern Illinois",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.21
+  },
+  "gameId": 401862705,
+  "offense": {
+   "overall": 0.46
+  },
+  "opponent": "UNLV",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "North Texas",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.68
+  },
+  "gameId": 401859184,
+  "offense": {
+   "overall": 0.71
+  },
+  "opponent": "Rice",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Notre Dame",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.31
+  },
+  "gameId": 401866418,
+  "offense": {
+   "overall": 0.16
+  },
+  "opponent": "Jacksonville State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Ohio",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.06
+  },
+  "gameId": 401856682,
+  "offense": {
+   "overall": 0.12
+  },
+  "opponent": "Texas",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Ohio State",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.03
+  },
+  "gameId": 401856679,
+  "offense": {
+   "overall": -0.14
+  },
+  "opponent": "Michigan",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Oklahoma",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.08
+  },
+  "gameId": 401856782,
+  "offense": {
+   "overall": -0.04
+  },
+  "opponent": "Oregon",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Oklahoma State",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.28
+  },
+  "gameId": 401858221,
+  "offense": {
+   "overall": 0.15
+  },
+  "opponent": "Virginia Tech",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Old Dominion",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.01
+  },
+  "gameId": 401856676,
+  "offense": {
+   "overall": 0.37
+  },
+  "opponent": "Charlotte",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Ole Miss",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.04
+  },
+  "gameId": 401856782,
+  "offense": {
+   "overall": -0.08
+  },
+  "opponent": "Oklahoma State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Oregon",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.2
+  },
+  "gameId": 401856783,
+  "offense": {
+   "overall": 0.17
+  },
+  "opponent": "Texas Tech",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Oregon State",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.03
+  },
+  "gameId": 401858442,
+  "offense": {
+   "overall": 0.21
+  },
+  "opponent": "Temple",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Penn State",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.25
+  },
+  "gameId": 401856790,
+  "offense": {
+   "overall": -0.04
+  },
+  "opponent": "UCF",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Pittsburgh",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.32
+  },
+  "gameId": 401858224,
+  "offense": {
+   "overall": 0.28
+  },
+  "opponent": "Wake Forest",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Purdue",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.71
+  },
+  "gameId": 401859184,
+  "offense": {
+   "overall": -0.68
+  },
+  "opponent": "Notre Dame",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Rice",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.02
+  },
+  "gameId": 401858214,
+  "offense": {
+   "overall": -0.08
+  },
+  "opponent": "Boston College",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Rutgers",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.29
+  },
+  "gameId": 401860883,
+  "offense": {
+   "overall": -0.26
+  },
+  "opponent": "Fresno State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Sacramento State",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.01
+  },
+  "gameId": 401862707,
+  "offense": {
+   "overall": 0.07
+  },
+  "opponent": "Tulsa",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Sam Houston",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.1
+  },
+  "gameId": 401858443,
+  "offense": {
+   "overall": -0.23
+  },
+  "opponent": "UCLA",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "San Diego State",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.03
+  },
+  "gameId": 401864504,
+  "offense": {
+   "overall": 0.22
+  },
+  "opponent": "Cal Poly",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "San José State",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.47
+  },
+  "gameId": 401858223,
+  "offense": {
+   "overall": 1
+  },
+  "opponent": "UC Davis",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "SMU",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.36
+  },
+  "gameId": 401864575,
+  "offense": {
+   "overall": 0.26
+  },
+  "opponent": "Tulane",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "South Alabama",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.1
+  },
+  "gameId": 401856680,
+  "offense": {
+   "overall": 0.08
+  },
+  "opponent": "Towson",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "South Carolina",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.32
+  },
+  "gameId": 401856671,
+  "offense": {
+   "overall": -0.2
+  },
+  "opponent": "Auburn",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Southern Miss",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.13
+  },
+  "gameId": 401862702,
+  "offense": {
+   "overall": 0.35
+  },
+  "opponent": "Army",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "South Florida",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.11
+  },
+  "gameId": 401858216,
+  "offense": {
+   "overall": -0.14
+  },
+  "opponent": "California",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Syracuse",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0
+  },
+  "gameId": 401856789,
+  "offense": {
+   "overall": 0.61
+  },
+  "opponent": "Grambling",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "TCU",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.21
+  },
+  "gameId": 401858442,
+  "offense": {
+   "overall": 0.03
+  },
+  "opponent": "Penn State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Temple",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.07
+  },
+  "gameId": 401856681,
+  "offense": {
+   "overall": 0.24
+  },
+  "opponent": "Georgia Tech",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Tennessee",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.12
+  },
+  "gameId": 401856682,
+  "offense": {
+   "overall": 0.06
+  },
+  "opponent": "Ohio State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Texas",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.27
+  },
+  "gameId": 401856683,
+  "offense": {
+   "overall": 0.01
+  },
+  "opponent": "Arizona State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Texas A&M",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.23
+  },
+  "gameId": 401860884,
+  "offense": {
+   "overall": 0.14
+  },
+  "opponent": "UTSA",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Texas State",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.17
+  },
+  "gameId": 401856783,
+  "offense": {
+   "overall": 0.2
+  },
+  "opponent": "Oregon State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Texas Tech",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.39
+  },
+  "gameId": 401866419,
+  "offense": {
+   "overall": 0.44
+  },
+  "opponent": "Central Connecticut",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Toledo",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.23
+  },
+  "gameId": 401868326,
+  "offense": {
+   "overall": 0.21
+  },
+  "opponent": "Alabama State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Troy",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.26
+  },
+  "gameId": 401864575,
+  "offense": {
+   "overall": 0.36
+  },
+  "opponent": "South Alabama",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Tulane",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.07
+  },
+  "gameId": 401862707,
+  "offense": {
+   "overall": 0.01
+  },
+  "opponent": "Sam Houston",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Tulsa",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.18
+  },
+  "gameId": 401862708,
+  "offense": {
+   "overall": 0.11
+  },
+  "opponent": "UL Monroe",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UAB",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.04
+  },
+  "gameId": 401856790,
+  "offense": {
+   "overall": -0.25
+  },
+  "opponent": "Pittsburgh",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UCF",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.23
+  },
+  "gameId": 401858443,
+  "offense": {
+   "overall": 0.1
+  },
+  "opponent": "San Diego State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UCLA",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.29
+  },
+  "gameId": 401858444,
+  "offense": {
+   "overall": 0.03
+  },
+  "opponent": "Maryland",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UConn",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.11
+  },
+  "gameId": 401862708,
+  "offense": {
+   "overall": -0.18
+  },
+  "opponent": "UAB",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UL Monroe",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.46
+  },
+  "gameId": 401862705,
+  "offense": {
+   "overall": -0.21
+  },
+  "opponent": "North Texas",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UNLV",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.17
+  },
+  "gameId": 401858445,
+  "offense": {
+   "overall": 0.34
+  },
+  "opponent": "Louisiana",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "USC",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.04
+  },
+  "gameId": 401856670,
+  "offense": {
+   "overall": 0.63
+  },
+  "opponent": "Arkansas",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Utah",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.03
+  },
+  "gameId": 401858446,
+  "offense": {
+   "overall": -0.22
+  },
+  "opponent": "Washington",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Utah State",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.02
+  },
+  "gameId": 401864505,
+  "offense": {
+   "overall": 0.32
+  },
+  "opponent": "Texas Southern",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UTEP",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.14
+  },
+  "gameId": 401860884,
+  "offense": {
+   "overall": 0.23
+  },
+  "opponent": "Texas State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UTSA",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.18
+  },
+  "gameId": 401856684,
+  "offense": {
+   "overall": -0.08
+  },
+  "opponent": "Delaware",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Vanderbilt",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.28
+  },
+  "gameId": 401858220,
+  "offense": {
+   "overall": 0.52
+  },
+  "opponent": "Norfolk State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Virginia",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.15
+  },
+  "gameId": 401858221,
+  "offense": {
+   "overall": 0.28
+  },
+  "opponent": "Old Dominion",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Virginia Tech",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.28
+  },
+  "gameId": 401858224,
+  "offense": {
+   "overall": 0.32
+  },
+  "opponent": "Purdue",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Wake Forest",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.22
+  },
+  "gameId": 401858446,
+  "offense": {
+   "overall": 0.03
+  },
+  "opponent": "Utah State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Washington",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.16
+  },
+  "gameId": 401856781,
+  "offense": {
+   "overall": -0.24
+  },
+  "opponent": "Kansas State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Washington State",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 1.17
+  },
+  "gameId": 401856673,
+  "offense": {
+   "overall": -0.25
+  },
+  "opponent": "Georgia",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Western Kentucky",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.17
+  },
+  "gameId": 401866421,
+  "offense": {
+   "overall": 0.52
+  },
+  "opponent": "Monmouth",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Western Michigan",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.12
+  },
+  "gameId": 401856791,
+  "offense": {
+   "overall": 0.84
+  },
+  "opponent": "UT Martin",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "West Virginia",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.06
+  },
+  "gameId": 401858447,
+  "offense": {
+   "overall": 0.28
+  },
+  "opponent": "Western Illinois",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Wisconsin",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": -0.19
+  },
+  "gameId": 401864506,
+  "offense": {
+   "overall": 0.11
+  },
+  "opponent": "Northern Colorado",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Wyoming",
+  "week": 2
+ },
+ {
+  "defense": {
+   "overall": 0.12
+  },
+  "gameId": 401858451,
+  "offense": {
+   "overall": -0.22
+  },
+  "opponent": "Minnesota",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Akron",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.17
+  },
+  "gameId": 401856685,
+  "offense": {
+   "overall": 0.46
+  },
+  "opponent": "Florida State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Alabama",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.18
+  },
+  "gameId": 401864574,
+  "offense": {
+   "overall": 0.07
+  },
+  "opponent": "Charlotte",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "App State",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0
+  },
+  "gameId": 401856793,
+  "offense": {
+   "overall": 0.63
+  },
+  "opponent": "Northern Illinois",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Arizona",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.14
+  },
+  "gameId": 401856812,
+  "offense": {
+   "overall": -0.2
+  },
+  "opponent": "Kansas",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Arizona State",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.31
+  },
+  "gameId": 401856686,
+  "offense": {
+   "overall": -0.06
+  },
+  "opponent": "Georgia",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Arkansas",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.21
+  },
+  "gameId": 401856799,
+  "offense": {
+   "overall": -0.22
+  },
+  "opponent": "TCU",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Arkansas State",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.31
+  },
+  "gameId": 401856687,
+  "offense": {
+   "overall": 0.17
+  },
+  "opponent": "Florida",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Auburn",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.51
+  },
+  "gameId": 401866422,
+  "offense": {
+   "overall": 0.1
+  },
+  "opponent": "Liberty",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Ball State",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.01
+  },
+  "gameId": 401867804,
+  "offense": {
+   "overall": 0.21
+  },
+  "opponent": "Louisiana Tech",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Baylor",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.02
+  },
+  "gameId": 401860885,
+  "offense": {
+   "overall": 0.3
+  },
+  "opponent": "South Dakota",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Boise State",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.04
+  },
+  "gameId": 401858227,
+  "offense": {
+   "overall": -0.06
+  },
+  "opponent": "Maine",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Boston College",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.38
+  },
+  "gameId": 401856798,
+  "offense": {
+   "overall": -0.19
+  },
+  "opponent": "Iowa State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Bowling Green",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.56
+  },
+  "gameId": 401858456,
+  "offense": {
+   "overall": -0.24
+  },
+  "opponent": "Penn State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Buffalo",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.05
+  },
+  "gameId": 401856795,
+  "offense": {
+   "overall": 0.61
+  },
+  "opponent": "Colorado State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "BYU",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.06
+  },
+  "gameId": 401858233,
+  "offense": {
+   "overall": 0.65
+  },
+  "opponent": "Wagner",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "California",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.12
+  },
+  "gameId": 401864508,
+  "offense": {
+   "overall": 0.29
+  },
+  "opponent": "Wyoming",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Central Michigan",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.07
+  },
+  "gameId": 401864574,
+  "offense": {
+   "overall": -0.18
+  },
+  "opponent": "App State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Charlotte",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.22
+  },
+  "gameId": 401856797,
+  "offense": {
+   "overall": 0.23
+  },
+  "opponent": "Miami (OH)",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Cincinnati",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.08
+  },
+  "gameId": 401858229,
+  "offense": {
+   "overall": 0.19
+  },
+  "opponent": "North Carolina",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Clemson",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.16
+  },
+  "gameId": 401869940,
+  "offense": {
+   "overall": 0.29
+  },
+  "opponent": "Delaware",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Coastal Carolina",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.26
+  },
+  "gameId": 401856796,
+  "offense": {
+   "overall": -0.09
+  },
+  "opponent": "Northwestern",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Colorado",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.61
+  },
+  "gameId": 401856795,
+  "offense": {
+   "overall": 0.05
+  },
+  "opponent": "BYU",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Colorado State",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.29
+  },
+  "gameId": 401869940,
+  "offense": {
+   "overall": 0.16
+  },
+  "opponent": "Coastal Carolina",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Delaware",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.04
+  },
+  "gameId": 401858231,
+  "offense": {
+   "overall": 0.45
+  },
+  "opponent": "Stanford",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Duke",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.25
+  },
+  "gameId": 401862710,
+  "offense": {
+   "overall": -0.28
+  },
+  "opponent": "Old Dominion",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "East Carolina",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.4
+  },
+  "gameId": 401858460,
+  "offense": {
+   "overall": -0.2
+  },
+  "opponent": "Wisconsin",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Eastern Michigan",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.17
+  },
+  "gameId": 401856687,
+  "offense": {
+   "overall": 0.31
+  },
+  "opponent": "Auburn",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Florida",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.03
+  },
+  "gameId": 401862771,
+  "offense": {
+   "overall": 0.06
+  },
+  "opponent": "Florida International",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Florida Atlantic",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.06
+  },
+  "gameId": 401862771,
+  "offense": {
+   "overall": -0.03
+  },
+  "opponent": "Florida Atlantic",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Florida International",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.46
+  },
+  "gameId": 401856685,
+  "offense": {
+   "overall": 0.17
+  },
+  "opponent": "Alabama",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Florida State",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.17
+  },
+  "gameId": 401860888,
+  "offense": {
+   "overall": 0.04
+  },
+  "opponent": "San José State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Fresno State",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.06
+  },
+  "gameId": 401856686,
+  "offense": {
+   "overall": 0.31
+  },
+  "opponent": "Arkansas",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Georgia",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.37
+  },
+  "gameId": 401869948,
+  "offense": {
+   "overall": 0.04
+  },
+  "opponent": "Jacksonville State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Georgia Southern",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.23
+  },
+  "gameId": 401856800,
+  "offense": {
+   "overall": 0.05
+  },
+  "opponent": "UCF",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Georgia State",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.21
+  },
+  "gameId": 401858228,
+  "offense": {
+   "overall": 0.5
+  },
+  "opponent": "Mercer",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Georgia Tech",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.26
+  },
+  "gameId": 401856811,
+  "offense": {
+   "overall": 0.28
+  },
+  "opponent": "Texas Tech",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Houston",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.07
+  },
+  "gameId": 401858448,
+  "offense": {
+   "overall": 0.43
+  },
+  "opponent": "Southern Illinois",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Illinois",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.36
+  },
+  "gameId": 401858449,
+  "offense": {
+   "overall": 0.34
+  },
+  "opponent": "Western Kentucky",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Indiana",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.31
+  },
+  "gameId": 401858471,
+  "offense": {
+   "overall": 0.9
+  },
+  "opponent": "Northern Iowa",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Iowa",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.19
+  },
+  "gameId": 401856798,
+  "offense": {
+   "overall": 0.38
+  },
+  "opponent": "Bowling Green",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Iowa State",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.04
+  },
+  "gameId": 401869948,
+  "offense": {
+   "overall": 0.37
+  },
+  "opponent": "Georgia Southern",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Jacksonville State",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.08
+  },
+  "gameId": 401860887,
+  "offense": {
+   "overall": 0.17
+  },
+  "opponent": "San Diego State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "James Madison",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.2
+  },
+  "gameId": 401856812,
+  "offense": {
+   "overall": 0.14
+  },
+  "opponent": "Arizona State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Kansas",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.06
+  },
+  "gameId": 401856792,
+  "offense": {
+   "overall": 0.36
+  },
+  "opponent": "Tulane",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Kansas State",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.4
+  },
+  "gameId": 401856692,
+  "offense": {
+   "overall": -0.03
+  },
+  "opponent": "Tennessee",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Kennesaw State",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.36
+  },
+  "gameId": 401858454,
+  "offense": {
+   "overall": -0.46
+  },
+  "opponent": "Ohio State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Kent State",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.05
+  },
+  "gameId": 401856694,
+  "offense": {
+   "overall": 0.45
+  },
+  "opponent": "Texas A&M",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Kentucky",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.1
+  },
+  "gameId": 401866422,
+  "offense": {
+   "overall": 0.51
+  },
+  "opponent": "Ball State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Liberty",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.26
+  },
+  "gameId": 401862776,
+  "offense": {
+   "overall": 0.06
+  },
+  "opponent": "UAB",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Louisiana",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.21
+  },
+  "gameId": 401867804,
+  "offense": {
+   "overall": 0.01
+  },
+  "opponent": "Baylor",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Louisiana Tech",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0
+  },
+  "gameId": 401858230,
+  "offense": {
+   "overall": 0.41
+  },
+  "opponent": "SMU",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Louisville",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.31
+  },
+  "gameId": 401856688,
+  "offense": {
+   "overall": 0.23
+  },
+  "opponent": "Ole Miss",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "LSU",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.39
+  },
+  "gameId": 401871047,
+  "offense": {
+   "overall": 0.34
+  },
+  "opponent": "Missouri State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Marshall",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.39
+  },
+  "gameId": 401858232,
+  "offense": {
+   "overall": 0.31
+  },
+  "opponent": "Virginia Tech",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Maryland",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.43
+  },
+  "gameId": 401866424,
+  "offense": {
+   "overall": 0.07
+  },
+  "opponent": "Stonehill",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Massachusetts",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.07
+  },
+  "gameId": 401862772,
+  "offense": {
+   "overall": 0.42
+  },
+  "opponent": "UT Martin",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Memphis",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.05
+  },
+  "gameId": 401858226,
+  "offense": {
+   "overall": 0.25
+  },
+  "opponent": "Wake Forest",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Miami",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.23
+  },
+  "gameId": 401856797,
+  "offense": {
+   "overall": 0.22
+  },
+  "opponent": "Cincinnati",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Miami (OH)",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.18
+  },
+  "gameId": 401858450,
+  "offense": {
+   "overall": 0.35
+  },
+  "opponent": "UTEP",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Michigan",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.18
+  },
+  "gameId": 401858453,
+  "offense": {
+   "overall": -0.1
+  },
+  "opponent": "Notre Dame",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Michigan State",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.03
+  },
+  "gameId": 401864443,
+  "offense": {
+   "overall": 0.15
+  },
+  "opponent": "Nevada",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Middle Tennessee",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.22
+  },
+  "gameId": 401858451,
+  "offense": {
+   "overall": 0.12
+  },
+  "opponent": "Akron",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Minnesota",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.12
+  },
+  "gameId": 401856691,
+  "offense": {
+   "overall": 0.27
+  },
+  "opponent": "South Carolina",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Mississippi State",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.09
+  },
+  "gameId": 401856689,
+  "offense": {
+   "overall": 0.18
+  },
+  "opponent": "Troy",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Missouri",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.34
+  },
+  "gameId": 401871047,
+  "offense": {
+   "overall": 0.39
+  },
+  "opponent": "Marshall",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Missouri State",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.4
+  },
+  "gameId": 401856695,
+  "offense": {
+   "overall": 0.03
+  },
+  "opponent": "Vanderbilt",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "NC State",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.05
+  },
+  "gameId": 401858452,
+  "offense": {
+   "overall": 0.44
+  },
+  "opponent": "North Dakota",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Nebraska",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.15
+  },
+  "gameId": 401864443,
+  "offense": {
+   "overall": -0.03
+  },
+  "opponent": "Middle Tennessee",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Nevada",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.08
+  },
+  "gameId": 401856690,
+  "offense": {
+   "overall": -0.23
+  },
+  "opponent": "Oklahoma",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "New Mexico",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.19
+  },
+  "gameId": 401858229,
+  "offense": {
+   "overall": -0.08
+  },
+  "opponent": "Clemson",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "North Carolina",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.21
+  },
+  "gameId": 401864507,
+  "offense": {
+   "overall": 0.1
+  },
+  "opponent": "Sacramento State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "North Dakota State",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.63
+  },
+  "gameId": 401856793,
+  "offense": {
+   "overall": 0
+  },
+  "opponent": "Arizona",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Northern Illinois",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.53
+  },
+  "gameId": 401860889,
+  "offense": {
+   "overall": 0.23
+  },
+  "opponent": "Texas State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "North Texas",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.09
+  },
+  "gameId": 401856796,
+  "offense": {
+   "overall": 0.26
+  },
+  "opponent": "Colorado",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Northwestern",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.1
+  },
+  "gameId": 401858453,
+  "offense": {
+   "overall": 0.18
+  },
+  "opponent": "Michigan State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Notre Dame",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.39
+  },
+  "gameId": 401866423,
+  "offense": {
+   "overall": 0.39
+  },
+  "opponent": "South Alabama",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Ohio",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.46
+  },
+  "gameId": 401858454,
+  "offense": {
+   "overall": 0.36
+  },
+  "opponent": "Kent State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Ohio State",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.23
+  },
+  "gameId": 401856690,
+  "offense": {
+   "overall": -0.08
+  },
+  "opponent": "New Mexico",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Oklahoma",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.14
+  },
+  "gameId": 401856803,
+  "offense": {
+   "overall": 0.72
+  },
+  "opponent": "Murray State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Oklahoma State",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.28
+  },
+  "gameId": 401862710,
+  "offense": {
+   "overall": -0.25
+  },
+  "opponent": "East Carolina",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Old Dominion",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.23
+  },
+  "gameId": 401856688,
+  "offense": {
+   "overall": 0.31
+  },
+  "opponent": "LSU",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Ole Miss",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.41
+  },
+  "gameId": 401858455,
+  "offense": {
+   "overall": 0.81
+  },
+  "opponent": "Portland State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Oregon",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.16
+  },
+  "gameId": 401860886,
+  "offense": {
+   "overall": 0.6
+  },
+  "opponent": "Montana",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Oregon State",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.24
+  },
+  "gameId": 401858456,
+  "offense": {
+   "overall": 0.56
+  },
+  "opponent": "Buffalo",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Penn State",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.08
+  },
+  "gameId": 401858225,
+  "offense": {
+   "overall": 0.14
+  },
+  "opponent": "Syracuse",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Pittsburgh",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.52
+  },
+  "gameId": 401858458,
+  "offense": {
+   "overall": 0.39
+  },
+  "opponent": "UCLA",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Purdue",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.13
+  },
+  "gameId": 401862773,
+  "offense": {
+   "overall": 0.09
+  },
+  "opponent": "Western Michigan",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Rice",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.36
+  },
+  "gameId": 401858457,
+  "offense": {
+   "overall": 0.18
+  },
+  "opponent": "USC",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Rutgers",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.1
+  },
+  "gameId": 401864507,
+  "offense": {
+   "overall": -0.21
+  },
+  "opponent": "North Dakota State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Sacramento State",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.32
+  },
+  "gameId": 401870764,
+  "offense": {
+   "overall": 0.54
+  },
+  "opponent": "Nicholls",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Sam Houston",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.17
+  },
+  "gameId": 401860887,
+  "offense": {
+   "overall": -0.08
+  },
+  "opponent": "James Madison",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "San Diego State",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.04
+  },
+  "gameId": 401860888,
+  "offense": {
+   "overall": -0.17
+  },
+  "opponent": "Fresno State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "San José State",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.41
+  },
+  "gameId": 401858230,
+  "offense": {
+   "overall": 0
+  },
+  "opponent": "Louisville",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "SMU",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.39
+  },
+  "gameId": 401866423,
+  "offense": {
+   "overall": 0.39
+  },
+  "opponent": "Ohio",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "South Alabama",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.27
+  },
+  "gameId": 401856691,
+  "offense": {
+   "overall": 0.12
+  },
+  "opponent": "Mississippi State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "South Carolina",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.24
+  },
+  "gameId": 401861963,
+  "offense": {
+   "overall": -0.32
+  },
+  "opponent": "UConn",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Southern Miss",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.23
+  },
+  "gameId": 401862777,
+  "offense": {
+   "overall": 0.67
+  },
+  "opponent": "Delaware State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "South Florida",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.45
+  },
+  "gameId": 401858231,
+  "offense": {
+   "overall": -0.04
+  },
+  "opponent": "Duke",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Stanford",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.14
+  },
+  "gameId": 401858225,
+  "offense": {
+   "overall": -0.08
+  },
+  "opponent": "Pittsburgh",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Syracuse",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.22
+  },
+  "gameId": 401856799,
+  "offense": {
+   "overall": 0.21
+  },
+  "opponent": "Arkansas State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "TCU",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.35
+  },
+  "gameId": 401862774,
+  "offense": {
+   "overall": 0.3
+  },
+  "opponent": "Toledo",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Temple",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.03
+  },
+  "gameId": 401856692,
+  "offense": {
+   "overall": 0.4
+  },
+  "opponent": "Kennesaw State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Tennessee",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.18
+  },
+  "gameId": 401856693,
+  "offense": {
+   "overall": 0.02
+  },
+  "opponent": "UTSA",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Texas",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.45
+  },
+  "gameId": 401856694,
+  "offense": {
+   "overall": -0.05
+  },
+  "opponent": "Kentucky",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Texas A&M",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.23
+  },
+  "gameId": 401860889,
+  "offense": {
+   "overall": 0.53
+  },
+  "opponent": "North Texas",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Texas State",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.28
+  },
+  "gameId": 401856811,
+  "offense": {
+   "overall": 0.26
+  },
+  "opponent": "Houston",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Texas Tech",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.3
+  },
+  "gameId": 401862774,
+  "offense": {
+   "overall": 0.35
+  },
+  "opponent": "Temple",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Toledo",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.18
+  },
+  "gameId": 401856689,
+  "offense": {
+   "overall": -0.09
+  },
+  "opponent": "Missouri",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Troy",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.36
+  },
+  "gameId": 401856792,
+  "offense": {
+   "overall": 0.06
+  },
+  "opponent": "Kansas State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Tulane",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.17
+  },
+  "gameId": 401862775,
+  "offense": {
+   "overall": 0.27
+  },
+  "opponent": "East Texas A&M",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Tulsa",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.06
+  },
+  "gameId": 401862776,
+  "offense": {
+   "overall": -0.26
+  },
+  "opponent": "Louisiana",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UAB",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.05
+  },
+  "gameId": 401856800,
+  "offense": {
+   "overall": 0.23
+  },
+  "opponent": "Georgia State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UCF",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.39
+  },
+  "gameId": 401858458,
+  "offense": {
+   "overall": 0.52
+  },
+  "opponent": "Purdue",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UCLA",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.32
+  },
+  "gameId": 401861963,
+  "offense": {
+   "overall": 0.24
+  },
+  "opponent": "Southern Miss",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UConn",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.08
+  },
+  "gameId": 401868317,
+  "offense": {
+   "overall": -0.08
+  },
+  "opponent": "SE Louisiana",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UL Monroe",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.18
+  },
+  "gameId": 401858457,
+  "offense": {
+   "overall": 0.36
+  },
+  "opponent": "Rutgers",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "USC",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.07
+  },
+  "gameId": 401856801,
+  "offense": {
+   "overall": 0.32
+  },
+  "opponent": "Utah State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Utah",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.32
+  },
+  "gameId": 401856801,
+  "offense": {
+   "overall": -0.07
+  },
+  "opponent": "Utah",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Utah State",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.35
+  },
+  "gameId": 401858450,
+  "offense": {
+   "overall": -0.18
+  },
+  "opponent": "Michigan",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UTEP",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.02
+  },
+  "gameId": 401856693,
+  "offense": {
+   "overall": -0.18
+  },
+  "opponent": "Texas",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UTSA",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.03
+  },
+  "gameId": 401856695,
+  "offense": {
+   "overall": 0.4
+  },
+  "opponent": "NC State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Vanderbilt",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.3
+  },
+  "gameId": 401856802,
+  "offense": {
+   "overall": 0.15
+  },
+  "opponent": "West Virginia",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Virginia",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.31
+  },
+  "gameId": 401858232,
+  "offense": {
+   "overall": 0.39
+  },
+  "opponent": "Maryland",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Virginia Tech",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.25
+  },
+  "gameId": 401858226,
+  "offense": {
+   "overall": 0.05
+  },
+  "opponent": "Miami",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Wake Forest",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.18
+  },
+  "gameId": 401858459,
+  "offense": {
+   "overall": 0.48
+  },
+  "opponent": "Eastern Washington",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Washington",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0
+  },
+  "gameId": 401860890,
+  "offense": {
+   "overall": 0.38
+  },
+  "opponent": "Duquesne",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Washington State",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.34
+  },
+  "gameId": 401858449,
+  "offense": {
+   "overall": -0.36
+  },
+  "opponent": "Indiana",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Western Kentucky",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.09
+  },
+  "gameId": 401862773,
+  "offense": {
+   "overall": 0.13
+  },
+  "opponent": "Rice",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Western Michigan",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.15
+  },
+  "gameId": 401856802,
+  "offense": {
+   "overall": 0.3
+  },
+  "opponent": "Virginia",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "West Virginia",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": -0.2
+  },
+  "gameId": 401858460,
+  "offense": {
+   "overall": 0.4
+  },
+  "opponent": "Eastern Michigan",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Wisconsin",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.29
+  },
+  "gameId": 401864508,
+  "offense": {
+   "overall": 0.12
+  },
+  "opponent": "Central Michigan",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Wyoming",
+  "week": 3
+ },
+ {
+  "defense": {
+   "overall": 0.17
+  },
+  "gameId": 401864509,
+  "offense": {
+   "overall": 0.29
+  },
+  "opponent": "Nevada",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Air Force",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.45
+  },
+  "gameId": 401864512,
+  "offense": {
+   "overall": -0.16
+  },
+  "opponent": "UNLV",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Akron",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.06
+  },
+  "gameId": 401856696,
+  "offense": {
+   "overall": 0.51
+  },
+  "opponent": "South Carolina",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Alabama",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.27
+  },
+  "gameId": 401864572,
+  "offense": {
+   "overall": 0.09
+  },
+  "opponent": "NC State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "App State",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.08
+  },
+  "gameId": 401856804,
+  "offense": {
+   "overall": 0.17
+  },
+  "opponent": "Washington State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Arizona",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.03
+  },
+  "gameId": 401856697,
+  "offense": {
+   "overall": 0.09
+  },
+  "opponent": "Tulsa",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Arkansas",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.06
+  },
+  "gameId": 401869931,
+  "offense": {
+   "overall": 0.24
+  },
+  "opponent": "Kennesaw State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Arkansas State",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.35
+  },
+  "gameId": 401862779,
+  "offense": {
+   "overall": 0.25
+  },
+  "opponent": "Temple",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Army",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.15
+  },
+  "gameId": 401856698,
+  "offense": {
+   "overall": 0.02
+  },
+  "opponent": "Vanderbilt",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Auburn",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.19
+  },
+  "gameId": 401866425,
+  "offense": {
+   "overall": 0.06
+  },
+  "opponent": "Kent State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Ball State",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.15
+  },
+  "gameId": 401856813,
+  "offense": {
+   "overall": -0.07
+  },
+  "opponent": "Colorado",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Baylor",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.12
+  },
+  "gameId": 401860897,
+  "offense": {
+   "overall": 0.42
+  },
+  "opponent": "Western Michigan",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Boise State",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.08
+  },
+  "gameId": 401858242,
+  "offense": {
+   "overall": -0.01
+  },
+  "opponent": "Virginia Tech",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Boston College",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.12
+  },
+  "gameId": 401862785,
+  "offense": {
+   "overall": -0.21
+  },
+  "opponent": "South Florida",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Bowling Green",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0
+  },
+  "gameId": 401866426,
+  "offense": {
+   "overall": -0.03
+  },
+  "opponent": "Robert Morris",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Buffalo",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.06
+  },
+  "gameId": 401858234,
+  "offense": {
+   "overall": -0.32
+  },
+  "opponent": "Clemson",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "California",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.66
+  },
+  "gameId": 401858238,
+  "offense": {
+   "overall": -0.18
+  },
+  "opponent": "Miami",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Central Michigan",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.04
+  },
+  "gameId": 401862780,
+  "offense": {
+   "overall": -0.65
+  },
+  "opponent": "Louisiana",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Charlotte",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.21
+  },
+  "gameId": 401856814,
+  "offense": {
+   "overall": 0.37
+  },
+  "opponent": "Kansas State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Cincinnati",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.32
+  },
+  "gameId": 401858234,
+  "offense": {
+   "overall": 0.06
+  },
+  "opponent": "California",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Clemson",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.25
+  },
+  "gameId": 401869941,
+  "offense": {
+   "overall": -0.07
+  },
+  "opponent": "Liberty",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Coastal Carolina",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.07
+  },
+  "gameId": 401856813,
+  "offense": {
+   "overall": -0.15
+  },
+  "opponent": "Baylor",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Colorado",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.41
+  },
+  "gameId": 401860896,
+  "offense": {
+   "overall": 0.3
+  },
+  "opponent": "UTSA",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Colorado State",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.46
+  },
+  "gameId": 401858239,
+  "offense": {
+   "overall": -0.07
+  },
+  "opponent": "Virginia",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Delaware",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.04
+  },
+  "gameId": 401858244,
+  "offense": {
+   "overall": 0.55
+  },
+  "opponent": "William & Mary",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Duke",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.46
+  },
+  "gameId": 401862781,
+  "offense": {
+   "overall": 0.87
+  },
+  "opponent": "North Carolina Central",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "East Carolina",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.14
+  },
+  "gameId": 401866427,
+  "offense": {
+   "overall": 0.29
+  },
+  "opponent": "Lindenwood",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Eastern Michigan",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.15
+  },
+  "gameId": 401856699,
+  "offense": {
+   "overall": 0.39
+  },
+  "opponent": "Ole Miss",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Florida",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.22
+  },
+  "gameId": 401862782,
+  "offense": {
+   "overall": 0.36
+  },
+  "opponent": "UL Monroe",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Florida Atlantic",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.01
+  },
+  "gameId": 401867909,
+  "offense": {
+   "overall": 0.09
+  },
+  "opponent": "Long Island University",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Florida International",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.08
+  },
+  "gameId": 401858237,
+  "offense": {
+   "overall": 0.59
+  },
+  "opponent": "Central Arkansas",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Florida State",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.18
+  },
+  "gameId": 401860891,
+  "offense": {
+   "overall": 0.24
+  },
+  "opponent": "Rice",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Fresno State",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.37
+  },
+  "gameId": 401856700,
+  "offense": {
+   "overall": -0.16
+  },
+  "opponent": "Oklahoma",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Georgia",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.48
+  },
+  "gameId": 401856806,
+  "offense": {
+   "overall": 0.27
+  },
+  "opponent": "Houston",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Georgia Southern",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.06
+  },
+  "gameId": 401864511,
+  "offense": {
+   "overall": 0.23
+  },
+  "opponent": "Northern Illinois",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Georgia State",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.28
+  },
+  "gameId": 401858240,
+  "offense": {
+   "overall": 0.23
+  },
+  "opponent": "Stanford",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Georgia Tech",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.48
+  },
+  "gameId": 401864510,
+  "offense": {
+   "overall": 0.07
+  },
+  "opponent": "Wyoming",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Hawai'i",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.27
+  },
+  "gameId": 401856806,
+  "offense": {
+   "overall": 0.48
+  },
+  "opponent": "Georgia Southern",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Houston",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.56
+  },
+  "gameId": 401858465,
+  "offense": {
+   "overall": 0.32
+  },
+  "opponent": "Ohio State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Illinois",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.25
+  },
+  "gameId": 401858461,
+  "offense": {
+   "overall": 0.27
+  },
+  "opponent": "Northwestern",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Indiana",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.12
+  },
+  "gameId": 401858463,
+  "offense": {
+   "overall": 0.03
+  },
+  "opponent": "Michigan",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Iowa",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.31
+  },
+  "gameId": 401856816,
+  "offense": {
+   "overall": -0.11
+  },
+  "opponent": "Utah",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Iowa State",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.12
+  },
+  "gameId": 401871048,
+  "offense": {
+   "overall": 0.18
+  },
+  "opponent": "Middle Tennessee",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Jacksonville State",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.2
+  },
+  "gameId": 401869961,
+  "offense": {
+   "overall": 0.16
+  },
+  "opponent": "Old Dominion",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "James Madison",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.37
+  },
+  "gameId": 401856814,
+  "offense": {
+   "overall": 0.21
+  },
+  "opponent": "Cincinnati",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Kansas State",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.24
+  },
+  "gameId": 401869931,
+  "offense": {
+   "overall": 0.06
+  },
+  "opponent": "Arkansas State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Kennesaw State",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.06
+  },
+  "gameId": 401866425,
+  "offense": {
+   "overall": 0.19
+  },
+  "opponent": "Ball State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Kent State",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.01
+  },
+  "gameId": 401864576,
+  "offense": {
+   "overall": 0.37
+  },
+  "opponent": "South Alabama",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Kentucky",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.07
+  },
+  "gameId": 401869941,
+  "offense": {
+   "overall": 0.25
+  },
+  "opponent": "Coastal Carolina",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Liberty",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.65
+  },
+  "gameId": 401862780,
+  "offense": {
+   "overall": -0.04
+  },
+  "opponent": "Charlotte",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Louisiana",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.21
+  },
+  "gameId": 401858243,
+  "offense": {
+   "overall": 0.1
+  },
+  "opponent": "Wake Forest",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Louisville",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.12
+  },
+  "gameId": 401856702,
+  "offense": {
+   "overall": 0.49
+  },
+  "opponent": "Texas A&M",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "LSU",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.35
+  },
+  "gameId": 401868188,
+  "offense": {
+   "overall": 0.16
+  },
+  "opponent": "Gardner-Webb",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Marshall",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.05
+  },
+  "gameId": 401858462,
+  "offense": {
+   "overall": -0.53
+  },
+  "opponent": "UCLA",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Maryland",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.13
+  },
+  "gameId": 401866429,
+  "offense": {
+   "overall": 0.33
+  },
+  "opponent": "Sacramento State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Massachusetts",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.18
+  },
+  "gameId": 401858238,
+  "offense": {
+   "overall": 0.66
+  },
+  "opponent": "Central Michigan",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Miami",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.11
+  },
+  "gameId": 401861970,
+  "offense": {
+   "overall": 0.18
+  },
+  "opponent": "UConn",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Miami (OH)",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.03
+  },
+  "gameId": 401858463,
+  "offense": {
+   "overall": 0.12
+  },
+  "opponent": "Iowa",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Michigan",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.24
+  },
+  "gameId": 401858464,
+  "offense": {
+   "overall": -0.15
+  },
+  "opponent": "Nebraska",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Michigan State",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.18
+  },
+  "gameId": 401871048,
+  "offense": {
+   "overall": 0.12
+  },
+  "opponent": "Jacksonville State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Middle Tennessee",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.07
+  },
+  "gameId": 401858470,
+  "offense": {
+   "overall": 0.05
+  },
+  "opponent": "Washington",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Minnesota",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.12
+  },
+  "gameId": 401856703,
+  "offense": {
+   "overall": 0.17
+  },
+  "opponent": "Missouri",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Mississippi State",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.17
+  },
+  "gameId": 401856703,
+  "offense": {
+   "overall": 0.12
+  },
+  "opponent": "Mississippi State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Missouri",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.19
+  },
+  "gameId": 401858241,
+  "offense": {
+   "overall": -0.12
+  },
+  "opponent": "SMU",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Missouri State",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.18
+  },
+  "gameId": 401862778,
+  "offense": {
+   "overall": 0
+  },
+  "opponent": "UAB",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Navy",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.09
+  },
+  "gameId": 401864572,
+  "offense": {
+   "overall": 0.27
+  },
+  "opponent": "App State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "NC State",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.15
+  },
+  "gameId": 401858464,
+  "offense": {
+   "overall": 0.24
+  },
+  "opponent": "Michigan State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Nebraska",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.29
+  },
+  "gameId": 401864509,
+  "offense": {
+   "overall": 0.17
+  },
+  "opponent": "Air Force",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Nevada",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.05
+  },
+  "gameId": 401864579,
+  "offense": {
+   "overall": 0.49
+  },
+  "opponent": "New Mexico State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "New Mexico",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.49
+  },
+  "gameId": 401864579,
+  "offense": {
+   "overall": -0.05
+  },
+  "opponent": "New Mexico",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "New Mexico State",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.23
+  },
+  "gameId": 401864511,
+  "offense": {
+   "overall": -0.06
+  },
+  "opponent": "Georgia State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Northern Illinois",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.17
+  },
+  "gameId": 401862783,
+  "offense": {
+   "overall": 0.86
+  },
+  "opponent": "Houston Christian",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "North Texas",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.27
+  },
+  "gameId": 401858461,
+  "offense": {
+   "overall": 0.25
+  },
+  "opponent": "Indiana",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Northwestern",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.11
+  },
+  "gameId": 401858467,
+  "offense": {
+   "overall": 0.56
+  },
+  "opponent": "Purdue",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Notre Dame",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.23
+  },
+  "gameId": 401866428,
+  "offense": {
+   "overall": 0.38
+  },
+  "opponent": "Stonehill",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Ohio",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.32
+  },
+  "gameId": 401858465,
+  "offense": {
+   "overall": 0.56
+  },
+  "opponent": "Illinois",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Ohio State",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.16
+  },
+  "gameId": 401856700,
+  "offense": {
+   "overall": -0.37
+  },
+  "opponent": "Georgia",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Oklahoma",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.05
+  },
+  "gameId": 401856881,
+  "offense": {
+   "overall": 0.41
+  },
+  "opponent": "West Virginia",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Oklahoma State",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.16
+  },
+  "gameId": 401869961,
+  "offense": {
+   "overall": -0.2
+  },
+  "opponent": "James Madison",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Old Dominion",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.39
+  },
+  "gameId": 401856699,
+  "offense": {
+   "overall": 0.15
+  },
+  "opponent": "Florida",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Ole Miss",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.27
+  },
+  "gameId": 401858469,
+  "offense": {
+   "overall": 0.44
+  },
+  "opponent": "USC",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Oregon",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.22
+  },
+  "gameId": 401860895,
+  "offense": {
+   "overall": 0.37
+  },
+  "opponent": "UTEP",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Oregon State",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.03
+  },
+  "gameId": 401858466,
+  "offense": {
+   "overall": -0.17
+  },
+  "opponent": "Wisconsin",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Penn State",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.11
+  },
+  "gameId": 401858236,
+  "offense": {
+   "overall": 0.73
+  },
+  "opponent": "Bucknell",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Pittsburgh",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.56
+  },
+  "gameId": 401858467,
+  "offense": {
+   "overall": -0.11
+  },
+  "opponent": "Notre Dame",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Purdue",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.24
+  },
+  "gameId": 401860891,
+  "offense": {
+   "overall": 0.18
+  },
+  "opponent": "Fresno State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Rice",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.02
+  },
+  "gameId": 401858468,
+  "offense": {
+   "overall": 0.71
+  },
+  "opponent": "Howard",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Rutgers",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.33
+  },
+  "gameId": 401866429,
+  "offense": {
+   "overall": -0.13
+  },
+  "opponent": "Massachusetts",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Sacramento State",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.32
+  },
+  "gameId": 401856805,
+  "offense": {
+   "overall": -0.25
+  },
+  "opponent": "Texas Tech",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Sam Houston",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.26
+  },
+  "gameId": 401860893,
+  "offense": {
+   "overall": -0.19
+  },
+  "opponent": "Toledo",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "San Diego State",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.12
+  },
+  "gameId": 401858241,
+  "offense": {
+   "overall": 0.19
+  },
+  "opponent": "Missouri State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "SMU",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.37
+  },
+  "gameId": 401864576,
+  "offense": {
+   "overall": 0.01
+  },
+  "opponent": "Kentucky",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "South Alabama",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.51
+  },
+  "gameId": 401856696,
+  "offense": {
+   "overall": 0.06
+  },
+  "opponent": "Alabama",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "South Carolina",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.13
+  },
+  "gameId": 401862784,
+  "offense": {
+   "overall": 0.24
+  },
+  "opponent": "Tulane",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Southern Miss",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.21
+  },
+  "gameId": 401862785,
+  "offense": {
+   "overall": -0.12
+  },
+  "opponent": "Bowling Green",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "South Florida",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.23
+  },
+  "gameId": 401858240,
+  "offense": {
+   "overall": 0.28
+  },
+  "opponent": "Georgia Tech",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Stanford",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.05
+  },
+  "gameId": 401856815,
+  "offense": {
+   "overall": -0.07
+  },
+  "opponent": "UCF",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "TCU",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.25
+  },
+  "gameId": 401862779,
+  "offense": {
+   "overall": 0.35
+  },
+  "opponent": "Army",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Temple",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.14
+  },
+  "gameId": 401856704,
+  "offense": {
+   "overall": -0.17
+  },
+  "opponent": "Texas",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Tennessee",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.17
+  },
+  "gameId": 401856704,
+  "offense": {
+   "overall": -0.14
+  },
+  "opponent": "Tennessee",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Texas",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.49
+  },
+  "gameId": 401856702,
+  "offense": {
+   "overall": -0.12
+  },
+  "opponent": "LSU",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Texas A&M",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.08
+  },
+  "gameId": 401860892,
+  "offense": {
+   "overall": 0.86
+  },
+  "opponent": "Incarnate Word",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Texas State",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.25
+  },
+  "gameId": 401856805,
+  "offense": {
+   "overall": 0.32
+  },
+  "opponent": "Sam Houston",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Texas Tech",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.19
+  },
+  "gameId": 401860893,
+  "offense": {
+   "overall": 0.26
+  },
+  "opponent": "San Diego State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Toledo",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.15
+  },
+  "gameId": 401860894,
+  "offense": {
+   "overall": -0.15
+  },
+  "opponent": "Utah State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Troy",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.24
+  },
+  "gameId": 401862784,
+  "offense": {
+   "overall": 0.13
+  },
+  "opponent": "Southern Miss",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Tulane",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.09
+  },
+  "gameId": 401856697,
+  "offense": {
+   "overall": -0.03
+  },
+  "opponent": "Arkansas",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Tulsa",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0
+  },
+  "gameId": 401862778,
+  "offense": {
+   "overall": 0.18
+  },
+  "opponent": "Navy",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UAB",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.07
+  },
+  "gameId": 401856815,
+  "offense": {
+   "overall": -0.05
+  },
+  "opponent": "TCU",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UCF",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.53
+  },
+  "gameId": 401858462,
+  "offense": {
+   "overall": -0.05
+  },
+  "opponent": "Maryland",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UCLA",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.18
+  },
+  "gameId": 401861970,
+  "offense": {
+   "overall": 0.11
+  },
+  "opponent": "Miami (OH)",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UConn",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.36
+  },
+  "gameId": 401862782,
+  "offense": {
+   "overall": 0.22
+  },
+  "opponent": "Florida Atlantic",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UL Monroe",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.16
+  },
+  "gameId": 401864512,
+  "offense": {
+   "overall": 0.45
+  },
+  "opponent": "Akron",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UNLV",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.44
+  },
+  "gameId": 401858469,
+  "offense": {
+   "overall": 0.27
+  },
+  "opponent": "Oregon",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "USC",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.11
+  },
+  "gameId": 401856816,
+  "offense": {
+   "overall": 0.31
+  },
+  "opponent": "Iowa State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Utah",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.15
+  },
+  "gameId": 401860894,
+  "offense": {
+   "overall": 0.15
+  },
+  "opponent": "Troy",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Utah State",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.37
+  },
+  "gameId": 401860895,
+  "offense": {
+   "overall": -0.22
+  },
+  "opponent": "Oregon State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UTEP",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.3
+  },
+  "gameId": 401860896,
+  "offense": {
+   "overall": 0.41
+  },
+  "opponent": "Colorado State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UTSA",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.02
+  },
+  "gameId": 401856698,
+  "offense": {
+   "overall": -0.15
+  },
+  "opponent": "Auburn",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Vanderbilt",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.07
+  },
+  "gameId": 401858239,
+  "offense": {
+   "overall": 0.46
+  },
+  "opponent": "Delaware",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Virginia",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.01
+  },
+  "gameId": 401858242,
+  "offense": {
+   "overall": -0.08
+  },
+  "opponent": "Boston College",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Virginia Tech",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.1
+  },
+  "gameId": 401858243,
+  "offense": {
+   "overall": 0.21
+  },
+  "opponent": "Louisville",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Wake Forest",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.05
+  },
+  "gameId": 401858470,
+  "offense": {
+   "overall": 0.07
+  },
+  "opponent": "Minnesota",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Washington",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.17
+  },
+  "gameId": 401856804,
+  "offense": {
+   "overall": -0.08
+  },
+  "opponent": "Arizona",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Washington State",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.38
+  },
+  "gameId": 401870745,
+  "offense": {
+   "overall": 0.61
+  },
+  "opponent": "Mercyhurst",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Western Kentucky",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.42
+  },
+  "gameId": 401860897,
+  "offense": {
+   "overall": -0.12
+  },
+  "opponent": "Boise State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Western Michigan",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.41
+  },
+  "gameId": 401856881,
+  "offense": {
+   "overall": -0.05
+  },
+  "opponent": "Oklahoma State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "West Virginia",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.17
+  },
+  "gameId": 401858466,
+  "offense": {
+   "overall": -0.03
+  },
+  "opponent": "Penn State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Wisconsin",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": 0.07
+  },
+  "gameId": 401864510,
+  "offense": {
+   "overall": 0.48
+  },
+  "opponent": "Hawai'i",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Wyoming",
+  "week": 4
+ },
+ {
+  "defense": {
+   "overall": -0.01
+  },
+  "gameId": 401862791,
+  "offense": {
+   "overall": -0.15
+  },
+  "opponent": "Navy",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Air Force",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.42
+  },
+  "gameId": 401866430,
+  "offense": {
+   "overall": 0.18
+  },
+  "opponent": "Central Michigan",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Akron",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.18
+  },
+  "gameId": 401856707,
+  "offense": {
+   "overall": 0.48
+  },
+  "opponent": "Mississippi State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Alabama",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.17
+  },
+  "gameId": 401856820,
+  "offense": {
+   "overall": 0.27
+  },
+  "opponent": "Cincinnati",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Arizona",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.51
+  },
+  "gameId": 401856817,
+  "offense": {
+   "overall": 0.03
+  },
+  "opponent": "Baylor",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Arizona State",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.34
+  },
+  "gameId": 401856711,
+  "offense": {
+   "overall": -0.18
+  },
+  "opponent": "Texas A&M",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Arkansas",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.3
+  },
+  "gameId": 401869932,
+  "offense": {
+   "overall": 0.17
+  },
+  "opponent": "Louisiana",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Arkansas State",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.34
+  },
+  "gameId": 401869842,
+  "offense": {
+   "overall": 0.23
+  },
+  "opponent": "Louisiana Tech",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Army",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.09
+  },
+  "gameId": 401856710,
+  "offense": {
+   "overall": -0.12
+  },
+  "opponent": "Tennessee",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Auburn",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.19
+  },
+  "gameId": 401866431,
+  "offense": {
+   "overall": 0.05
+  },
+  "opponent": "Toledo",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Ball State",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.03
+  },
+  "gameId": 401856817,
+  "offense": {
+   "overall": 0.51
+  },
+  "opponent": "Arizona State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Baylor",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.07
+  },
+  "gameId": 401860898,
+  "offense": {
+   "overall": 0.33
+  },
+  "opponent": "Utah State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Boise State",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.08
+  },
+  "gameId": 401858246,
+  "offense": {
+   "overall": 0.13
+  },
+  "opponent": "SMU",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Boston College",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.01
+  },
+  "gameId": 401866477,
+  "offense": {
+   "overall": 0.15
+  },
+  "opponent": "Miami (OH)",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Bowling Green",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.12
+  },
+  "gameId": 401866432,
+  "offense": {
+   "overall": 0.08
+  },
+  "opponent": "Western Michigan",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Buffalo",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.09
+  },
+  "gameId": 401856818,
+  "offense": {
+   "overall": -0.05
+  },
+  "opponent": "TCU",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "BYU",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.16
+  },
+  "gameId": 401858247,
+  "offense": {
+   "overall": -0.05
+  },
+  "opponent": "UNLV",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "California",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.18
+  },
+  "gameId": 401866430,
+  "offense": {
+   "overall": 0.42
+  },
+  "opponent": "Akron",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Central Michigan",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.31
+  },
+  "gameId": 401862787,
+  "offense": {
+   "overall": 0.09
+  },
+  "opponent": "Memphis",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Charlotte",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.27
+  },
+  "gameId": 401856820,
+  "offense": {
+   "overall": -0.17
+  },
+  "opponent": "Arizona",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Cincinnati",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.33
+  },
+  "gameId": 401858249,
+  "offense": {
+   "overall": -0.12
+  },
+  "opponent": "Miami",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Clemson",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.25
+  },
+  "gameId": 401869942,
+  "offense": {
+   "overall": 0.06
+  },
+  "opponent": "Georgia Southern",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Coastal Carolina",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.15
+  },
+  "gameId": 401856821,
+  "offense": {
+   "overall": -0.26
+  },
+  "opponent": "Texas Tech",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Colorado",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.5
+  },
+  "gameId": 401860899,
+  "offense": {
+   "overall": 0.11
+  },
+  "opponent": "Oregon State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Colorado State",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.24
+  },
+  "gameId": 401871050,
+  "offense": {
+   "overall": -0.12
+  },
+  "opponent": "Liberty",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Delaware",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.02
+  },
+  "gameId": 401866433,
+  "offense": {
+   "overall": 0.39
+  },
+  "opponent": "Massachusetts",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Eastern Michigan",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.42
+  },
+  "gameId": 401856708,
+  "offense": {
+   "overall": -0.02
+  },
+  "opponent": "Missouri",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Florida",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.24
+  },
+  "gameId": 401862790,
+  "offense": {
+   "overall": 0.93
+  },
+  "opponent": "Texas Southern",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Florida Atlantic",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.11
+  },
+  "gameId": 401858253,
+  "offense": {
+   "overall": 0.36
+  },
+  "opponent": "Virginia",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Florida State",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.43
+  },
+  "gameId": 401860921,
+  "offense": {
+   "overall": 0.08
+  },
+  "opponent": "Washington State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Fresno State",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.17
+  },
+  "gameId": 401856705,
+  "offense": {
+   "overall": 0.47
+  },
+  "opponent": "Vanderbilt",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Georgia",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.06
+  },
+  "gameId": 401869942,
+  "offense": {
+   "overall": 0.25
+  },
+  "opponent": "Coastal Carolina",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Georgia Southern",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.24
+  },
+  "gameId": 401869956,
+  "offense": {
+   "overall": 0.35
+  },
+  "opponent": "Old Dominion",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Georgia State",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.16
+  },
+  "gameId": 401864513,
+  "offense": {
+   "overall": 0.01
+  },
+  "opponent": "San José State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Hawai'i",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.07
+  },
+  "gameId": 401856819,
+  "offense": {
+   "overall": 0.01
+  },
+  "opponent": "UCF",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Houston",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.3
+  },
+  "gameId": 401858472,
+  "offense": {
+   "overall": 0.09
+  },
+  "opponent": "Purdue",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Illinois",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.08
+  },
+  "gameId": 401858477,
+  "offense": {
+   "overall": 0.67
+  },
+  "opponent": "Rutgers",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Indiana",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.2
+  },
+  "gameId": 401858473,
+  "offense": {
+   "overall": -0.2
+  },
+  "opponent": "Ohio State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Iowa",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.37
+  },
+  "gameId": 401856822,
+  "offense": {
+   "overall": 0.34
+  },
+  "opponent": "West Virginia",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Iowa State",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.26
+  },
+  "gameId": 401869962,
+  "offense": {
+   "overall": 0.47
+  },
+  "opponent": "Marshall",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "James Madison",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.5
+  },
+  "gameId": 401856807,
+  "offense": {
+   "overall": 0.43
+  },
+  "opponent": "Middle Tennessee",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Kansas",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.1
+  },
+  "gameId": 401866434,
+  "offense": {
+   "overall": -0.07
+  },
+  "opponent": "Ohio",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Kent State",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.05
+  },
+  "gameId": 401856709,
+  "offense": {
+   "overall": 0.16
+  },
+  "opponent": "South Carolina",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Kentucky",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.12
+  },
+  "gameId": 401871050,
+  "offense": {
+   "overall": 0.24
+  },
+  "opponent": "Delaware",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Liberty",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.17
+  },
+  "gameId": 401869932,
+  "offense": {
+   "overall": 0.3
+  },
+  "opponent": "Arkansas State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Louisiana",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.23
+  },
+  "gameId": 401869842,
+  "offense": {
+   "overall": 0.34
+  },
+  "opponent": "Army",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Louisiana Tech",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.26
+  },
+  "gameId": 401858248,
+  "offense": {
+   "overall": 0.23
+  },
+  "opponent": "NC State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Louisville",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.2
+  },
+  "gameId": 401856706,
+  "offense": {
+   "overall": 0.42
+  },
+  "opponent": "McNeese",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "LSU",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.47
+  },
+  "gameId": 401869962,
+  "offense": {
+   "overall": 0.26
+  },
+  "opponent": "James Madison",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Marshall",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.21
+  },
+  "gameId": 401858475,
+  "offense": {
+   "overall": -0.23
+  },
+  "opponent": "Nebraska",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Maryland",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.39
+  },
+  "gameId": 401866433,
+  "offense": {
+   "overall": -0.02
+  },
+  "opponent": "Eastern Michigan",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Massachusetts",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.09
+  },
+  "gameId": 401862787,
+  "offense": {
+   "overall": 0.31
+  },
+  "opponent": "Charlotte",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Memphis",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.12
+  },
+  "gameId": 401858249,
+  "offense": {
+   "overall": 0.33
+  },
+  "opponent": "Clemson",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Miami",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.15
+  },
+  "gameId": 401866477,
+  "offense": {
+   "overall": 0.01
+  },
+  "opponent": "Bowling Green",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Miami (OH)",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.21
+  },
+  "gameId": 401858474,
+  "offense": {
+   "overall": -0.26
+  },
+  "opponent": "Minnesota",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Michigan",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.3
+  },
+  "gameId": 401858479,
+  "offense": {
+   "overall": -0.36
+  },
+  "opponent": "Wisconsin",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Michigan State",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.43
+  },
+  "gameId": 401856807,
+  "offense": {
+   "overall": -0.5
+  },
+  "opponent": "Kansas",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Middle Tennessee",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.26
+  },
+  "gameId": 401858474,
+  "offense": {
+   "overall": -0.21
+  },
+  "opponent": "Michigan",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Minnesota",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.48
+  },
+  "gameId": 401856707,
+  "offense": {
+   "overall": -0.18
+  },
+  "opponent": "Alabama",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Mississippi State",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.02
+  },
+  "gameId": 401856708,
+  "offense": {
+   "overall": 0.42
+  },
+  "opponent": "Florida",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Missouri",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.15
+  },
+  "gameId": 401862791,
+  "offense": {
+   "overall": -0.01
+  },
+  "opponent": "Air Force",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Navy",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.23
+  },
+  "gameId": 401858248,
+  "offense": {
+   "overall": 0.26
+  },
+  "opponent": "Louisville",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "NC State",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.23
+  },
+  "gameId": 401858475,
+  "offense": {
+   "overall": 0.21
+  },
+  "opponent": "Maryland",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Nebraska",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.44
+  },
+  "gameId": 401864514,
+  "offense": {
+   "overall": 0.38
+  },
+  "opponent": "UTEP",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "New Mexico",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.21
+  },
+  "gameId": 401871049,
+  "offense": {
+   "overall": -0.05
+  },
+  "opponent": "Western Kentucky",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "New Mexico State",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.27
+  },
+  "gameId": 401858250,
+  "offense": {
+   "overall": 0.17
+  },
+  "opponent": "Notre Dame",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "North Carolina",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.33
+  },
+  "gameId": 401864515,
+  "offense": {
+   "overall": 0.25
+  },
+  "opponent": "Wyoming",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "North Dakota State",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.15
+  },
+  "gameId": 401862786,
+  "offense": {
+   "overall": 0.12
+  },
+  "opponent": "Tulsa",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "North Texas",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.06
+  },
+  "gameId": 401858476,
+  "offense": {
+   "overall": 0.26
+  },
+  "opponent": "Penn State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Northwestern",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.17
+  },
+  "gameId": 401858250,
+  "offense": {
+   "overall": 0.27
+  },
+  "opponent": "North Carolina",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Notre Dame",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.07
+  },
+  "gameId": 401866434,
+  "offense": {
+   "overall": -0.1
+  },
+  "opponent": "Kent State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Ohio",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.2
+  },
+  "gameId": 401858473,
+  "offense": {
+   "overall": 0.2
+  },
+  "opponent": "Iowa",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Ohio State",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.35
+  },
+  "gameId": 401869956,
+  "offense": {
+   "overall": -0.24
+  },
+  "opponent": "Georgia State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Old Dominion",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.11
+  },
+  "gameId": 401860899,
+  "offense": {
+   "overall": 0.5
+  },
+  "opponent": "Colorado State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Oregon State",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.26
+  },
+  "gameId": 401858476,
+  "offense": {
+   "overall": 0.06
+  },
+  "opponent": "Northwestern",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Penn State",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.12
+  },
+  "gameId": 401858245,
+  "offense": {
+   "overall": 0.08
+  },
+  "opponent": "Virginia Tech",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Pittsburgh",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.09
+  },
+  "gameId": 401858472,
+  "offense": {
+   "overall": 0.3
+  },
+  "opponent": "Illinois",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Purdue",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.04
+  },
+  "gameId": 401862788,
+  "offense": {
+   "overall": -0.13
+  },
+  "opponent": "UTSA",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Rice",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.67
+  },
+  "gameId": 401858477,
+  "offense": {
+   "overall": -0.08
+  },
+  "opponent": "Indiana",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Rutgers",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.06
+  },
+  "gameId": 401860900,
+  "offense": {
+   "overall": -0.13
+  },
+  "opponent": "Texas State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "San Diego State",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.01
+  },
+  "gameId": 401864513,
+  "offense": {
+   "overall": 0.16
+  },
+  "opponent": "Hawai'i",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "San José State",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.13
+  },
+  "gameId": 401858246,
+  "offense": {
+   "overall": 0.08
+  },
+  "opponent": "Boston College",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "SMU",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.19
+  },
+  "gameId": 401871089,
+  "offense": {
+   "overall": 0.39
+  },
+  "opponent": "UL Monroe",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "South Alabama",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.16
+  },
+  "gameId": 401856709,
+  "offense": {
+   "overall": 0.05
+  },
+  "opponent": "Kentucky",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "South Carolina",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.06
+  },
+  "gameId": 401862792,
+  "offense": {
+   "overall": 0.01
+  },
+  "opponent": "Temple",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "South Florida",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.56
+  },
+  "gameId": 401858251,
+  "offense": {
+   "overall": -0.01
+  },
+  "opponent": "Wake Forest",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Stanford",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.09
+  },
+  "gameId": 401858252,
+  "offense": {
+   "overall": 0.19
+  },
+  "opponent": "UConn",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Syracuse",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.05
+  },
+  "gameId": 401856818,
+  "offense": {
+   "overall": -0.09
+  },
+  "opponent": "BYU",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "TCU",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.01
+  },
+  "gameId": 401862792,
+  "offense": {
+   "overall": 0.06
+  },
+  "opponent": "South Florida",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Temple",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.12
+  },
+  "gameId": 401856710,
+  "offense": {
+   "overall": 0.09
+  },
+  "opponent": "Auburn",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Tennessee",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.18
+  },
+  "gameId": 401856711,
+  "offense": {
+   "overall": 0.34
+  },
+  "opponent": "Arkansas",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Texas A&M",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.13
+  },
+  "gameId": 401860900,
+  "offense": {
+   "overall": 0.06
+  },
+  "opponent": "San Diego State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Texas State",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.26
+  },
+  "gameId": 401856821,
+  "offense": {
+   "overall": -0.15
+  },
+  "opponent": "Colorado",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Texas Tech",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.05
+  },
+  "gameId": 401866431,
+  "offense": {
+   "overall": 0.19
+  },
+  "opponent": "Ball State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Toledo",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.12
+  },
+  "gameId": 401862786,
+  "offense": {
+   "overall": 0.15
+  },
+  "opponent": "North Texas",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Tulsa",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.14
+  },
+  "gameId": 401862793,
+  "offense": {
+   "overall": 0.25
+  },
+  "opponent": "Samford",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UAB",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.01
+  },
+  "gameId": 401856819,
+  "offense": {
+   "overall": 0.07
+  },
+  "opponent": "Houston",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UCF",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.19
+  },
+  "gameId": 401858252,
+  "offense": {
+   "overall": 0.09
+  },
+  "opponent": "Syracuse",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UConn",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.39
+  },
+  "gameId": 401871089,
+  "offense": {
+   "overall": 0.19
+  },
+  "opponent": "South Alabama",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UL Monroe",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.05
+  },
+  "gameId": 401858247,
+  "offense": {
+   "overall": 0.16
+  },
+  "opponent": "California",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UNLV",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.02
+  },
+  "gameId": 401858478,
+  "offense": {
+   "overall": 0.18
+  },
+  "opponent": "Washington",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "USC",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.33
+  },
+  "gameId": 401860898,
+  "offense": {
+   "overall": -0.07
+  },
+  "opponent": "Boise State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Utah State",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.38
+  },
+  "gameId": 401864514,
+  "offense": {
+   "overall": -0.44
+  },
+  "opponent": "New Mexico",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UTEP",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.13
+  },
+  "gameId": 401862788,
+  "offense": {
+   "overall": 0.04
+  },
+  "opponent": "Rice",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "UTSA",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.47
+  },
+  "gameId": 401856705,
+  "offense": {
+   "overall": 0.17
+  },
+  "opponent": "Georgia",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Vanderbilt",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.36
+  },
+  "gameId": 401858253,
+  "offense": {
+   "overall": -0.11
+  },
+  "opponent": "Florida State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Virginia",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.08
+  },
+  "gameId": 401858245,
+  "offense": {
+   "overall": 0.12
+  },
+  "opponent": "Pittsburgh",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Virginia Tech",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.01
+  },
+  "gameId": 401858251,
+  "offense": {
+   "overall": 0.56
+  },
+  "opponent": "Stanford",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Wake Forest",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.18
+  },
+  "gameId": 401858478,
+  "offense": {
+   "overall": 0.02
+  },
+  "opponent": "USC",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Washington",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.08
+  },
+  "gameId": 401860921,
+  "offense": {
+   "overall": -0.43
+  },
+  "opponent": "Fresno State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Washington State",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.05
+  },
+  "gameId": 401871049,
+  "offense": {
+   "overall": -0.21
+  },
+  "opponent": "New Mexico State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Western Kentucky",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.08
+  },
+  "gameId": 401866432,
+  "offense": {
+   "overall": 0.12
+  },
+  "opponent": "Buffalo",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Western Michigan",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.34
+  },
+  "gameId": 401856822,
+  "offense": {
+   "overall": 0.37
+  },
+  "opponent": "Iowa State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "West Virginia",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": -0.36
+  },
+  "gameId": 401858479,
+  "offense": {
+   "overall": 0.3
+  },
+  "opponent": "Michigan State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Wisconsin",
+  "week": 5
+ },
+ {
+  "defense": {
+   "overall": 0.25
+  },
+  "gameId": 401864515,
+  "offense": {
+   "overall": -0.33
+  },
+  "opponent": "North Dakota State",
+  "season": 2026,
+  "seasonType": "regular",
+  "team": "Wyoming",
+  "week": 5
+ }
+]

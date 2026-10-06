@@ -1,15 +1,27 @@
 """How convincing was this win?
 
-Each head-to-head result gets a single *conviction* score. In stage 4 that
-score is the price of ranking against the result, so the results that end up
-overridden are by construction the least convincing ones -- the "drop the
-weakest win" rule, applied across the whole board rather than per cycle.
+Each head-to-head result gets a single *conviction* score. In stage 4 that score
+is the price of ranking against the result, so the results that end up overridden
+are by construction the least convincing ones -- the "drop the weakest win" rule,
+applied across the whole board rather than per cycle.
 
 Four signals, all configurable:
   margin           location-adjusted and capped
-  fpi_gap          does the result agree with the power ratings?
+  rating_gap       does the result agree with the power ratings?
   recency          later games say more about current strength
   common_opponents how did the two fare against the teams they both played?
+
+**The floor is load-bearing.** Conviction is a blend of z-scores, so it is
+centred near zero and runs roughly -2.5..+2.5; turning it into a price means
+adding a floor, and the floor decides how cheap the weakest result on the board
+is to ignore. This used to be `0.10 + (conviction - lowest_on_the_board)`, which
+had two bugs with the same root: the price was *relative*, so whichever game
+happened to be least convincing was always pinned at 0.10 -- about one
+seventeenth of a typical result -- however real that game was. A 2025 Oklahoma
+State win over Oregon was overridden at exactly that floor. Now the floor is an
+absolute conviction level (`conviction_floor`), so a weak result costs
+`weight_floor` because it is genuinely weak, not because something had to be last,
+and a convincing result costs maybe three times that rather than seventeen.
 """
 
 from __future__ import annotations
@@ -34,7 +46,7 @@ class EdgeFact:
     adj_margin: float
     site: str
     neutral_site: bool
-    fpi_gap: float
+    rating_gap: float
     common_opponents: tuple[str, ...]
     common_diff: float
     recency: float
@@ -54,10 +66,15 @@ class EdgeFact:
 def location_adjusted_margin(r: GameResult, home_field_points: float, margin_cap: float) -> float:
     """Margin, capped, then shifted to what it implies on neutral ground.
 
-    Winning on the road is worth more than the same margin at home. With the
-    default 2.5-point adjustment a one-point home win scores negative: home
-    field alone is worth more than the margin, so the result is weak evidence
-    that the winner is actually the better team.
+    Winning on the road is worth more than the same margin at home. With a
+    2.5-point adjustment a one-point home win scores negative: home field alone
+    is worth more than the margin, so the result is weak evidence that the winner
+    is actually the better team.
+
+    The 2.5 is only a fallback. The market prices home field every week and
+    `engine.market` solves for it, so the pipeline passes that measured value
+    through -- which on both seasons checked lands at about +2.35, close enough
+    to the old guess to be reassuring rather than embarrassing.
     """
     capped = clamp(float(r.margin), -margin_cap, margin_cap)
     if r.neutral_site:
@@ -107,20 +124,30 @@ def _signed_margin(r: GameResult, team: str, home_field_points: float, margin_ca
 
 def score_edges(
     results: Sequence[GameResult],
-    fpi: Mapping[str, float],
+    quality: Mapping[str, float],
     opponent_results: Mapping[str, Mapping[str, GameResult]],
     cfg: Mapping[str, float],
+    home_field_points: float | None = None,
 ) -> dict[tuple[str, str], EdgeFact]:
     """Score every result. z-scores are taken over the whole result set, so
-    conviction is comparable across cycles and stable week to week."""
+    conviction is comparable across cycles and stable week to week.
+
+    `quality` is one rating per team -- the market's neutral-field points where
+    they exist, FPI where they do not. Only the *gap* between two teams is read,
+    so the units do not matter as long as higher is better.
+
+    `home_field_points` overrides the configured fallback with a value measured
+    from this season's lines.
+    """
     if not results:
         return {}
 
-    hfp = float(cfg.get("home_field_points", 2.5))
+    cfg_hfp = float(cfg.get("home_field_points", 2.5))
+    hfp = cfg_hfp if home_field_points is None or not cfg.get("fit_home_field", True) else float(home_field_points)
     cap = float(cfg.get("margin_cap", 28))
     floor = float(cfg.get("recency_floor", 0.25))
     w_margin = float(cfg.get("w_margin", 0.50))
-    w_fpi = float(cfg.get("w_fpi_gap", 0.30))
+    w_gap = float(cfg.get("w_rating_gap", 0.30))
     w_rec = float(cfg.get("w_recency", 0.20))
     w_common = float(cfg.get("w_common_opponents", 0.15))
 
@@ -131,7 +158,7 @@ def score_edges(
     raw = []
     for r in results:
         adj = location_adjusted_margin(r, hfp, cap)
-        gap = float(fpi.get(r.winner, 0.0)) - float(fpi.get(r.loser, 0.0))
+        gap = float(quality.get(r.winner, 0.0)) - float(quality.get(r.loser, 0.0))
         shared, diff = common_opponent_diff(r.winner, r.loser, opponent_results, hfp, cap)
         raw.append((r, adj, gap, shared, diff, recency_weight(index_of[r.order_key], max_index, floor)))
 
@@ -143,7 +170,7 @@ def score_edges(
     for r, adj, gap, shared, diff, rec in raw:
         components = {
             "margin": w_margin * z_margin(adj),
-            "fpi_gap": w_fpi * z_gap(gap),
+            "rating_gap": w_gap * z_gap(gap),
             "recency": w_rec * rec,
             "common_opponents": w_common * z_common(diff) if shared else 0.0,
         }
@@ -158,7 +185,7 @@ def score_edges(
             adj_margin=adj,
             site=r.site,
             neutral_site=r.neutral_site,
-            fpi_gap=gap,
+            rating_gap=gap,
             common_opponents=shared,
             common_diff=diff,
             recency=rec,
@@ -167,11 +194,16 @@ def score_edges(
             components=components,
         )
 
-    # Shift conviction into a strictly positive weight. Overriding any result
-    # must cost something, so the floor is above zero.
-    lowest = min(f.conviction for f in facts.values())
+    # Turn conviction into a price. `conviction_floor` is an absolute z level,
+    # not the weakest result on this board, so the cheapest result to override is
+    # whichever one is genuinely unconvincing -- and in a week where every result
+    # was emphatic, nothing is cheap.
+    w_floor = float(cfg.get("weight_floor", 1.0))
+    z_floor = float(cfg.get("conviction_floor", -2.0))
     return {
-        key: EdgeFact(**{**_as_dict(f), "weight": 0.10 + (f.conviction - lowest)})
+        key: EdgeFact(
+            **{**_as_dict(f), "weight": w_floor + max(0.0, f.conviction - z_floor)}
+        )
         for key, f in facts.items()
     }
 
@@ -181,7 +213,7 @@ def _as_dict(f: EdgeFact) -> dict:
         "winner": f.winner, "loser": f.loser, "week": f.week, "season_type": f.season_type,
         "winner_points": f.winner_points, "loser_points": f.loser_points, "margin": f.margin,
         "adj_margin": f.adj_margin, "site": f.site, "neutral_site": f.neutral_site,
-        "fpi_gap": f.fpi_gap, "common_opponents": f.common_opponents, "common_diff": f.common_diff,
+        "rating_gap": f.rating_gap, "common_opponents": f.common_opponents, "common_diff": f.common_diff,
         "recency": f.recency, "conviction": f.conviction, "weight": f.weight,
         "components": f.components,
     }

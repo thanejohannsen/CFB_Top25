@@ -53,7 +53,9 @@ class TestExitCodes(unittest.TestCase):
             ]
             self.assertEqual(run(args)[0], EXIT_OK)
             self.assertEqual(run(args)[0], EXIT_UNCHANGED)
-            self.assertEqual(run(args + ["--set", "stage1.w_sor=0.5"])[0], EXIT_OK)
+            # Any override that really changes the ranking; keep it off the
+            # shipped values, or this asserts nothing the moment one of them moves.
+            self.assertEqual(run(args + ["--set", "stage1.w_sor=0.9"])[0], EXIT_OK)
 
     def test_bad_config_exits_four(self):
         code, _, err = run(BASE + ["--set", "stage1.output_size=999"])

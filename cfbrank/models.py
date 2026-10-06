@@ -92,6 +92,65 @@ class GameResult:
 
 
 @dataclass(frozen=True, slots=True)
+class GameLine:
+    """One game's consensus betting line.
+
+    `spread` keeps CFBD's convention: it is quoted from the HOME team's side and
+    negative means the home team is favoured. `home_margin` flips it into the
+    expected home points margin, which is what every caller actually wants.
+    """
+
+    game_id: int | None
+    week: int
+    season_type: str
+    start_date: str | None
+    home_team: str
+    away_team: str
+    home_classification: str | None
+    away_classification: str | None
+    spread: float
+    books: int
+    neutral_site: bool = False
+
+    @property
+    def order_key(self) -> tuple[int, int, str]:
+        return order_key(self.season_type, self.week, self.start_date)
+
+    @property
+    def home_margin(self) -> float:
+        """Points the market expects the home team to win by (negative = dog)."""
+        return -self.spread
+
+
+@dataclass(frozen=True, slots=True)
+class TeamGamePPA:
+    """One team's per-play efficiency in one game, garbage time already excluded.
+
+    `net` is the figure the ranking uses: points added per play on offence less
+    points allowed per play on defence.
+    """
+
+    game_id: int | None
+    week: int
+    season_type: str
+    start_date: str | None
+    team: str
+    opponent: str
+    offense: float
+    defense: float
+    neutral_site: bool = False
+    was_home: bool | None = None
+
+    @property
+    def order_key(self) -> tuple[int, int, str]:
+        return order_key(self.season_type, self.week, self.start_date)
+
+    @property
+    def net(self) -> float:
+        return self.offense - self.defense
+
+
+@dataclass(frozen=True, slots=True)
 class Record:
     team: str
     wins: int = 0
@@ -142,6 +201,8 @@ class Dataset:
     games: tuple[Game, ...] = ()
     records: tuple[Record, ...] = ()
     calendar: tuple[CalendarWeek, ...] = ()
+    lines: tuple[GameLine, ...] = ()
+    ppa: tuple[TeamGamePPA, ...] = ()
     provenance: tuple[EndpointProvenance, ...] = ()
     warnings: tuple[Warning_, ...] = ()
     synthetic: bool = False
