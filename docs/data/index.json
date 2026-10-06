@@ -5,8 +5,8 @@
     {
       "snapshots": [
         {
-          "content_hash": "sha256:51405439fcc8e8303c2e362ec76d8f73b4076f67b0b48900cdd9ba48b3e8e8ef",
-          "generated_at": "2026-10-06T20:50:52Z",
+          "content_hash": "sha256:140f0723044b5bf43d51a1f667925c69146cf294b17f31bc2f26935da9cf526c",
+          "generated_at": "2026-10-06T20:51:39Z",
           "id": "2026-regular-05",
           "label": "Week 5",
           "path": "weeks/2026-regular-05.json",
@@ -35,5 +35,5 @@
       "year": 2025
     }
   ],
-  "updated_at": "2026-10-06T20:50:52Z"
+  "updated_at": "2026-10-06T20:51:39Z"
 }
