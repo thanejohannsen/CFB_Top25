@@ -32,27 +32,42 @@
     </section>
 
     <section>
-      <h2>Stage 1 &mdash; Resume order</h2>
+      <h2>Stage 1 &mdash; Resume plus quality</h2>
       <div class="card"><div class="card-body">
-        <p class="formula" id="f-stage1">base = w_sor &times; SoR_rank + w_sos &times; SoS_rank</p>
+        <p class="formula" id="f-stage1">base = w_sor &times; SoR_rank + w_fpi &times; FPI_rank</p>
         <p class="lede">
           <b>Strength of Record</b> is how impressive a team's win&ndash;loss record is given
-          who it played. <b>Strength of Schedule</b> is how hard that schedule was. Both
-          arrive as national ranks where 1 is best (for schedule, toughest), so the score
-          is a weighted rank average and lower is better.
+          who it played. <b>FPI</b> is ESPN's power rating, used here as a rank. Both arrive
+          as national ranks where 1 is best, so the score is a weighted rank average and
+          lower is better.
         </p>
         <p class="lede">
-          SoR carries most of the weight because schedule strength on its own rewards no
-          one for winning: a team that loses every game to good opponents would top a
-          pure SoS list. The schedule term is there so a team cannot sit near the top by
-          feasting on a weak slate. It cuts the other way too, and this is a real
-          consequence rather than a bug: a team with a top-ten resume and a bottom-third
-          schedule will sit outside the top ten here.
+          Strength of Record carries most of the weight: it is the resume, and this is a
+          resume ranking. The quality term is the anchor that stops a good record alone
+          carrying a team to the top &mdash; without it, a team ranked 5th by record but
+          <em>34th</em> in the country by rating sat in the top five.
+        </p>
+        <h3>Why Strength of Schedule is not in the formula</h3>
+        <p class="lede">
+          It used to be, at a quarter of the weight, and it was the single biggest source of
+          nonsense. Strength of Record <em>already</em> accounts for the schedule &mdash; it
+          means "how good is your record <em>given who you played</em>". Adding schedule
+          strength again counts it twice, and worse, rewards playing hard games whether or
+          not you win them.
+        </p>
+        <p class="lede">
+          The damage was not subtle. A <b>3&ndash;2</b> Clemson sat at 16th on the strength of
+          its schedule alone, while a <b>5&ndash;0</b> Georgia with the country's second-best
+          rating sat at 23rd for having played an easy one. Measured against the AP poll across
+          two seasons, dropping the term moved rank correlation from &tau; +0.33 to +0.52 on the
+          current season and +0.62 to +0.77 on the last completed one.
+        </p>
+        <p class="lede">
+          Schedule strength is still shown for every team, and the weight is still a knob in
+          the config for anyone who wants it. It just no longer moves the ranking.
         </p>
       </div></div>
-    </section>
 
-    <section>
       <h2>Stage 2 &mdash; Resume adjustment</h2>
       <div class="card"><div class="card-body">
         <p class="lede">
@@ -160,8 +175,9 @@
       <h2>Known limitations</h2>
       <div class="card"><div class="card-body">
         <ul class="reasons">
-          <li>The schedule term rewards playing a hard schedule independently of results, so
-            a good team in a weak conference is penalised for something it only partly controls.</li>
+          <li>Strength of Record and FPI are both ESPN metrics, so a quirk in either one
+            propagates straight into this ranking. They are also the only quality signals
+            here: there is no independent model of team strength.</li>
           <li>Strength of Record, Strength of Schedule and FPI are ESPN metrics served through
             CollegeFootballData.com. They are third-party opinions and they move during the week.</li>
           <li>The ordering is found by local search. It is a strong local optimum, not a proven
@@ -221,7 +237,8 @@
 
       var rows = [
         ["Strength of Record weight", s1.w_sor],
-        ["Strength of Schedule weight", s1.w_sos],
+        ["FPI (quality) weight", s1.w_fpi],
+        ["Strength of Schedule weight", s1.w_sos + " (off by design)"],
         ["Candidate pool size", s1.pool_size],
         ["Loss-quality weight", s2.w_loss_quality],
         ["Best-win weight", s2.w_best_win],

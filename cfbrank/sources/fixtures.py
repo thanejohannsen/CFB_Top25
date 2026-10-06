@@ -19,6 +19,7 @@ FILES = {
     "/games": "games.json",
     "/records": "records.json",
     "/calendar": "calendar.json",
+    "/rankings": "rankings_polls.json",
 }
 
 
@@ -70,3 +71,10 @@ class FixtureSource:
 
     def calendar(self, year: int) -> list[dict]:
         return self._load("/calendar")
+
+    def poll_rankings(self, year: int, season_type: str = "regular") -> list[dict]:
+        """Only scripts/evaluate.py reads this; absent fixtures are not fatal."""
+        try:
+            return self._load("/rankings")
+        except UpstreamUnavailable:
+            return []

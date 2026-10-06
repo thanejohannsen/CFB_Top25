@@ -14,12 +14,12 @@
   <header class="site">
     <h1>CFB Top 25</h1>
     <p class="tagline">
-      Ranked on Strength of Record and Strength of Schedule, then reordered so as few
-      head-to-head results as possible are contradicted. Every placement below opens
-      to show exactly why it is there.
+      Ranked on what each team has achieved and how good it actually is, then
+      reordered so as few head-to-head results as possible are contradicted.
+      Every placement below opens to show exactly why it is there.
     </p>
     <div class="controls">
-      <label for="week-select">Snapshot</label>
+      <label for="week-select">Week</label>
       <select id="week-select"></select>
       <button type="button" class="btn" id="theme-toggle" aria-pressed="false">Dark mode</button>
       <span class="stamp" id="stamp"></span>
@@ -33,7 +33,7 @@
     <section id="top25">
       <h2>The Top 25</h2>
       <ul class="pill-row" id="summary"></ul>
-      <div class="card">
+      <div class="card cards-on-phone">
         <table id="rankings-table">
           <caption id="rankings-caption">Select any row to see how that placement was reached.</caption>
           <thead>

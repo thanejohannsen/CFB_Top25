@@ -165,13 +165,13 @@
       var score = won ? e.score : e.score.split("-").reverse().join("-");
       var where = e.site === "neutral" ? "neutral" : (won === (e.site === "home") ? "home" : "away");
       return el("tr", null, [
-        el("td", { text: verb }),
-        el("td", null, [el("strong", { text: (rank ? "#" + rank + " " : "") + other })]),
-        el("td", { class: "num", text: score }),
-        el("td", { text: where }),
-        el("td", { class: "num", text: signed(e.adj_margin, 1) }),
-        el("td", { class: "num", text: signed(e.fpi_gap, 1) }),
-        el("td", null, [el("span", {
+        el("td", { class: "h-verb", text: verb }),
+        el("td", { class: "h-opp" }, [el("strong", { text: (rank ? "#" + rank + " " : "") + other })]),
+        el("td", { class: "num h-score", "data-label": "Score", text: score }),
+        el("td", { class: "h-at", "data-label": "At", text: where }),
+        el("td", { class: "num h-adj", "data-label": "Adj", text: signed(e.adj_margin, 1) }),
+        el("td", { class: "num h-gap", "data-label": "FPI gap", text: signed(e.fpi_gap, 1) }),
+        el("td", { class: "h-state" }, [el("span", {
           class: "state " + e.status,
           text: e.status === "overridden" ? "✕ overridden" : "✓ honoured"
         })])
@@ -240,17 +240,19 @@
         "aria-expanded": "false",
         "aria-label": "Rank " + row.rank + ", " + row.team + ". Show reasoning."
       }, [
-        el("td", { class: "num rank", text: String(row.rank) }),
-        el("td", null, [deltaCell(row.movement)]),
-        el("td", { class: "team", text: row.team }),
-        el("td", { class: "conf col-opt", text: row.conference || "–" }),
-        el("td", { text: (row.record && row.record.overall) || "–" }),
-        el("td", { class: "num", text: num(row.base.sor_rank) }),
-        el("td", { class: "num col-opt", text: num(row.base.sos_rank) }),
-        el("td", { class: "num col-opt", text: signed(row.fpi.rating, 1) }),
-        el("td", { class: "num col-opt", text: num(row.base.rank) }),
-        el("td", null, [notesCell(row)]),
-        el("td", { class: "chev", text: "›" })
+        // Each cell carries its own class so the phone layout can place it in a
+        // card grid, and a data-label so a bare number still reads there.
+        el("td", { class: "num rank c-rank", text: String(row.rank) }),
+        el("td", { class: "c-move" }, [deltaCell(row.movement)]),
+        el("td", { class: "team c-team", text: row.team }),
+        el("td", { class: "conf col-opt c-conf", text: row.conference || "–" }),
+        el("td", { class: "c-rec", text: (row.record && row.record.overall) || "–" }),
+        el("td", { class: "num c-sor", "data-label": "SoR", text: num(row.base.sor_rank) }),
+        el("td", { class: "num col-opt c-sos", "data-label": "SoS", text: num(row.base.sos_rank) }),
+        el("td", { class: "num col-opt c-fpi", "data-label": "FPI", text: signed(row.fpi.rating, 1) }),
+        el("td", { class: "num col-opt c-base", "data-label": "Base", text: num(row.base.rank) }),
+        el("td", { class: "c-notes" }, [notesCell(row)]),
+        el("td", { class: "chev c-chev", text: "›" })
       ]);
 
       function toggle() {
@@ -508,7 +510,10 @@
     (index.seasons || []).forEach(function (season) {
       var group = el("optgroup", { label: String(season.year) });
       (season.snapshots || []).slice().reverse().forEach(function (s) {
-        var o = el("option", { value: s.id, text: (s.label || s.id) + (s.top1 ? " — " + s.top1 : "") });
+        // Spell the season out, so an archived 2025 entry can never be mistaken
+        // for the current ranking.
+        var text = season.year + " · " + (s.label || s.id) + (s.top1 ? " — " + s.top1 : "");
+        var o = el("option", { value: s.id, text: text });
         if (s.id === currentId) o.setAttribute("selected", "selected");
         group.appendChild(o);
       });

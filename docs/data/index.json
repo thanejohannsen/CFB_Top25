@@ -5,8 +5,8 @@
     {
       "snapshots": [
         {
-          "content_hash": "sha256:c37a14f5122c472b3792cd48f07219a8f286d370c938f6ea5a0bff37654220c3",
-          "generated_at": "2026-10-05T20:23:11Z",
+          "content_hash": "sha256:4953819762f4449816b282dcef3ae240996e69ddcc807bf0dd12c23549e7b766",
+          "generated_at": "2026-10-06T13:41:08Z",
           "id": "2026-regular-05",
           "label": "Week 5",
           "path": "weeks/2026-regular-05.json",
@@ -21,13 +21,13 @@
     {
       "snapshots": [
         {
-          "content_hash": "sha256:cf05dfd00788aa676b0766978211fbe59cc3093c5bc5bbe88f61601bf7bcc011",
-          "generated_at": "2026-10-05T20:21:18Z",
+          "content_hash": "sha256:4a315dd5eb3fde5bdf387e85ff2e2f097ba225b233e387063439c88f2f0a45c0",
+          "generated_at": "2026-10-06T13:41:08Z",
           "id": "2025-postseason-01",
           "label": "Postseason week 1",
           "path": "weeks/2025-postseason-01.json",
           "season_type": "postseason",
-          "top1": "Georgia",
+          "top1": "Indiana",
           "week": 1,
           "year": 2025
         }
@@ -35,5 +35,5 @@
       "year": 2025
     }
   ],
-  "updated_at": "2026-10-05T20:23:11Z"
+  "updated_at": "2026-10-06T13:41:08Z"
 }

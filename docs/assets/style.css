@@ -230,18 +230,136 @@ footer.site p { margin: 4px 0; }
 @media (max-width: 860px) {
   .detail-inner { grid-template-columns: 1fr; }
 }
-@media (max-width: 720px) {
-  body { font-size: 14px; }
-  .wrap { padding: 0 16px 56px; }
-  /* The main table must fit: drop the secondary columns and the chevron
-     (the whole row is the tap target) rather than scrolling the page. */
-  .col-opt, .col-chev { display: none; }
-  th, td { padding: 8px 5px; }
-  table { table-layout: fixed; width: 100%; }
-  .rank { width: 2.1rem; }
-  .team { word-break: break-word; }
-  /* Badges wrap inside the cell instead of forcing it wider. */
-  .badge { font-size: 0.6875rem; padding: 1px 6px; margin: 0 2px 2px 0; }
-  .detail-inner { padding: 12px; }
+/* ---------- phone: the table becomes a card list ----------
+   A six-column grid is unreadable at 390px, and hiding four columns (what this
+   used to do) throws away most of the comparison the table exists for. Below
+   640px each row becomes a card instead: nothing is dropped, the numbers carry
+   their own labels, and the whole card is the tap target. One DOM, no width
+   branching in JavaScript. */
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  .wrap { padding: 0 14px 56px; }
+
+  #rankings-table,
+  #rankings-table tbody,
+  #rankings-table tr,
+  #rankings-table td { display: block; width: auto; }
+  #rankings-table thead { display: none; }          /* labels live on the cells */
+  #rankings-table caption {
+    display: block; width: 100%;
+    padding: 0 0 12px; text-align: left;
+  }
+  .card.cards-on-phone { border: 0; background: none; box-shadow: none; }
+
+  #rankings-body tr.row {
+    display: grid;
+    grid-template-columns: 2.6rem minmax(0, 1fr) auto;
+    grid-template-areas:
+      "rank team move"
+      "rank meta meta"
+      "nums nums nums"
+      "note note note";
+    column-gap: 10px;
+    row-gap: 3px;
+    align-items: baseline;
+    padding: 12px 14px;
+    margin-bottom: 8px;
+    min-height: 44px;                                /* comfortable tap target */
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+  #rankings-body tr.row[aria-expanded="true"] {
+    background: var(--accent-wash);
+    border-color: var(--accent);
+  }
+  #rankings-body tr.row td { border-bottom: 0; padding: 0; }
+
+  #rankings-body .c-rank {
+    grid-area: rank;
+    font-size: 1.5rem; font-weight: 700; line-height: 1.1;
+    text-align: left !important;
+  }
+  #rankings-body .c-team { grid-area: team; font-size: 1.0625rem; }
+  #rankings-body .c-move { grid-area: move; justify-self: end; }
+
+  /* Conference and record share the second line, pushed to opposite ends. */
+  #rankings-body .c-conf,
+  #rankings-body .c-rec { grid-area: meta; color: var(--ink-2); font-size: 0.875rem; }
+  #rankings-body .c-conf { justify-self: start; }
+  #rankings-body .c-rec  { justify-self: end; font-variant-numeric: tabular-nums; }
+
+  /* Third line: the numbers become labelled chips. */
+  #rankings-body .c-sor,
+  #rankings-body .c-sos,
+  #rankings-body .c-fpi {
+    grid-area: nums;
+    display: inline-flex; gap: 4px;
+    margin-top: 5px;
+    font-size: 0.8125rem; color: var(--ink-2);
+    text-align: left !important;
+  }
+  #rankings-body .c-sor::before,
+  #rankings-body .c-sos::before,
+  #rankings-body .c-fpi::before {
+    content: attr(data-label) "\00a0";              /* keep label and value apart */
+    color: var(--ink-muted); font-weight: 600;
+  }
+  #rankings-body .c-sor { justify-self: start; }
+  #rankings-body .c-sos { justify-self: center; }
+  #rankings-body .c-fpi { justify-self: end; }
+
+  #rankings-body .c-notes {
+    grid-area: note;
+    display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+  }
+  #rankings-body .c-notes:empty { display: none; }
+  #rankings-body .c-base { display: none; }          /* it is in the panel */
+  #rankings-body .c-chev { display: none; }          /* the card is the target */
+  .badge { font-size: 0.6875rem; padding: 1px 7px; }
+
+  /* The expanded panel sits inside the card list, full width. */
+  tr.detail > td { border-bottom: 0; }
+  .detail-inner { padding: 12px 2px 0; }
+  .detail-wide { padding: 4px 2px 12px; }
+
+  /* Head-to-head: stack each opponent rather than scrolling sideways. */
+  .detail-wide .table-scroll { overflow: visible; }
+  .detail-wide .h2h,
+  .detail-wide .h2h tbody,
+  .detail-wide .h2h tr,
+  .detail-wide .h2h td { display: block; width: auto; }
+  .detail-wide .h2h { min-width: 0; }
+  .detail-wide .h2h thead { display: none; }
+  .detail-wide .h2h tbody tr {
+    border: 1px solid var(--border); border-radius: 8px;
+    padding: 10px 12px; margin-bottom: 8px; background: var(--surface);
+  }
+  .detail-wide .h2h td { border-bottom: 0; padding: 1px 0; }
+  .detail-wide .h2h .h-verb,
+  .detail-wide .h2h .h-opp,
+  .detail-wide .h2h .h-score { display: inline; }
+  .detail-wide .h-verb { color: var(--ink-2); }
+  .detail-wide .h-score { margin-left: 6px; font-variant-numeric: tabular-nums; }
+  .detail-wide .h2h .h-at,
+  .detail-wide .h2h .h-adj,
+  .detail-wide .h2h .h-gap {
+    display: inline-block; margin-right: 12px;
+    font-size: 0.8125rem; text-align: left !important;
+  }
+  .detail-wide .h-at::before,
+  .detail-wide .h-adj::before,
+  .detail-wide .h-gap::before {
+    content: attr(data-label) " ";
+    color: var(--ink-muted); font-weight: 600;
+  }
+  .detail-wide .h-state { margin-top: 4px; }
+
+  /* Every other wide table keeps its own horizontal scroll box. */
   .table-scroll > table { min-width: 30rem; }
+}
+
+/* Tablets: keep the table, drop only the secondary columns. */
+@media (min-width: 641px) and (max-width: 860px) {
+  .col-opt { display: none; }
 }

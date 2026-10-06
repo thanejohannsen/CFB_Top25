@@ -1,0 +1,534 @@
+[
+ {
+  "polls": [
+   {
+    "poll": "AFCA Division III Coaches Poll",
+    "ranks": [
+     {
+      "rank": 1,
+      "school": "Wisconsin River Falls"
+     },
+     {
+      "rank": 2,
+      "school": "North Central College"
+     },
+     {
+      "rank": 3,
+      "school": "John Carroll"
+     },
+     {
+      "rank": 4,
+      "school": "Johns Hopkins"
+     },
+     {
+      "rank": 5,
+      "school": "Bethel (MN)"
+     },
+     {
+      "rank": 6,
+      "school": "Mount Union"
+     },
+     {
+      "rank": 7,
+      "school": "Wheaton (IL)"
+     },
+     {
+      "rank": 8,
+      "school": "Saint John's (MN)"
+     },
+     {
+      "rank": 9,
+      "school": "Berry"
+     },
+     {
+      "rank": 10,
+      "school": "Wisconsin La Crosse"
+     },
+     {
+      "rank": 11,
+      "school": "Wisconsin Platteville"
+     },
+     {
+      "rank": 12,
+      "school": "Salisbury"
+     },
+     {
+      "rank": 13,
+      "school": "DePauw"
+     },
+     {
+      "rank": 14,
+      "school": "Wartburg"
+     },
+     {
+      "rank": 15,
+      "school": "Susquehanna"
+     },
+     {
+      "rank": 16,
+      "school": "Trinity (TX)"
+     },
+     {
+      "rank": 17,
+      "school": "Hope"
+     },
+     {
+      "rank": 18,
+      "school": "Christopher Newport"
+     },
+     {
+      "rank": 19,
+      "school": "Hardin Simmons"
+     },
+     {
+      "rank": 20,
+      "school": "Wisconsin Whitewater"
+     },
+     {
+      "rank": 21,
+      "school": "Randolph Macon"
+     },
+     {
+      "rank": 22,
+      "school": "Franklin & Marshall"
+     },
+     {
+      "rank": 23,
+      "school": "Eastern"
+     },
+     {
+      "rank": 24,
+      "school": "Endicott"
+     },
+     {
+      "rank": 25,
+      "school": "Alma"
+     }
+    ]
+   },
+   {
+    "poll": "FCS Coaches Poll",
+    "ranks": [
+     {
+      "rank": 1,
+      "school": "Montana State"
+     },
+     {
+      "rank": 2,
+      "school": "Illinois State"
+     },
+     {
+      "rank": 3,
+      "school": "Montana"
+     },
+     {
+      "rank": 4,
+      "school": "Villanova"
+     },
+     {
+      "rank": 5,
+      "school": "North Dakota State"
+     },
+     {
+      "rank": 6,
+      "school": "Tarleton State"
+     },
+     {
+      "rank": 7,
+      "school": "Stephen F. Austin"
+     },
+     {
+      "rank": 8,
+      "school": "UC Davis"
+     },
+     {
+      "rank": 9,
+      "school": "Lehigh"
+     },
+     {
+      "rank": 10,
+      "school": "Rhode Island"
+     },
+     {
+      "rank": 11,
+      "school": "South Dakota"
+     },
+     {
+      "rank": 12,
+      "school": "Abilene Christian"
+     },
+     {
+      "rank": 13,
+      "school": "Yale"
+     },
+     {
+      "rank": 14,
+      "school": "South Dakota State"
+     },
+     {
+      "rank": 15,
+      "school": "Tennessee Tech"
+     },
+     {
+      "rank": 16,
+      "school": "North Dakota"
+     },
+     {
+      "rank": 17,
+      "school": "Youngstown State"
+     },
+     {
+      "rank": 18,
+      "school": "Mercer"
+     },
+     {
+      "rank": 19,
+      "school": "SE Louisiana"
+     },
+     {
+      "rank": 20,
+      "school": "Monmouth"
+     },
+     {
+      "rank": 21,
+      "school": "Lamar"
+     },
+     {
+      "rank": 22,
+      "school": "Jackson State"
+     },
+     {
+      "rank": 23,
+      "school": "Harvard"
+     },
+     {
+      "rank": 24,
+      "school": "West Georgia"
+     },
+     {
+      "rank": 25,
+      "school": "South Carolina State"
+     }
+    ]
+   },
+   {
+    "poll": "AP Top 25",
+    "ranks": [
+     {
+      "rank": 1,
+      "school": "Indiana"
+     },
+     {
+      "rank": 2,
+      "school": "Miami"
+     },
+     {
+      "rank": 3,
+      "school": "Ole Miss"
+     },
+     {
+      "rank": 4,
+      "school": "Oregon"
+     },
+     {
+      "rank": 5,
+      "school": "Ohio State"
+     },
+     {
+      "rank": 6,
+      "school": "Georgia"
+     },
+     {
+      "rank": 7,
+      "school": "Texas Tech"
+     },
+     {
+      "rank": 8,
+      "school": "Texas A&M"
+     },
+     {
+      "rank": 9,
+      "school": "Alabama"
+     },
+     {
+      "rank": 10,
+      "school": "Notre Dame"
+     },
+     {
+      "rank": 11,
+      "school": "BYU"
+     },
+     {
+      "rank": 12,
+      "school": "Texas"
+     },
+     {
+      "rank": 13,
+      "school": "Oklahoma"
+     },
+     {
+      "rank": 14,
+      "school": "Utah"
+     },
+     {
+      "rank": 15,
+      "school": "Vanderbilt"
+     },
+     {
+      "rank": 16,
+      "school": "Virginia"
+     },
+     {
+      "rank": 17,
+      "school": "Iowa"
+     },
+     {
+      "rank": 18,
+      "school": "Tulane"
+     },
+     {
+      "rank": 19,
+      "school": "James Madison"
+     },
+     {
+      "rank": 20,
+      "school": "USC"
+     },
+     {
+      "rank": 21,
+      "school": "Michigan"
+     },
+     {
+      "rank": 22,
+      "school": "Houston"
+     },
+     {
+      "rank": 23,
+      "school": "Navy"
+     },
+     {
+      "rank": 24,
+      "school": "North Texas"
+     },
+     {
+      "rank": 25,
+      "school": "TCU"
+     }
+    ]
+   },
+   {
+    "poll": "AFCA Division II Coaches Poll",
+    "ranks": [
+     {
+      "rank": 1,
+      "school": "Ferris State"
+     },
+     {
+      "rank": 2,
+      "school": "Harding"
+     },
+     {
+      "rank": 3,
+      "school": "Kutztown"
+     },
+     {
+      "rank": 4,
+      "school": "Newberry"
+     },
+     {
+      "rank": 5,
+      "school": "UT Permian Basin"
+     },
+     {
+      "rank": 6,
+      "school": "Pittsburg State"
+     },
+     {
+      "rank": 7,
+      "school": "Albany State"
+     },
+     {
+      "rank": 8,
+      "school": "Minnesota State"
+     },
+     {
+      "rank": 9,
+      "school": "West Florida"
+     },
+     {
+      "rank": 10,
+      "school": "Indianapolis"
+     },
+     {
+      "rank": 11,
+      "school": "CSU Pueblo"
+     },
+     {
+      "rank": 12,
+      "school": "Western Colorado"
+     },
+     {
+      "rank": 13,
+      "school": "Central Washington"
+     },
+     {
+      "rank": 14,
+      "school": "Frostburg State"
+     },
+     {
+      "rank": 15,
+      "school": "Ashland"
+     },
+     {
+      "rank": 16,
+      "school": "Minnesota Duluth"
+     },
+     {
+      "rank": 17,
+      "school": "Northwest Missouri State"
+     },
+     {
+      "rank": 18,
+      "school": "Johnson C. Smith"
+     },
+     {
+      "rank": 19,
+      "school": "Findlay"
+     },
+     {
+      "rank": 20,
+      "school": "Benedict"
+     },
+     {
+      "rank": 21,
+      "school": "Virginia Union"
+     },
+     {
+      "rank": 22,
+      "school": "California (PA)"
+     },
+     {
+      "rank": 23,
+      "school": "Chadron State"
+     },
+     {
+      "rank": 24,
+      "school": "Assumption"
+     },
+     {
+      "rank": 25,
+      "school": "Augustana (SD)"
+     }
+    ]
+   },
+   {
+    "poll": "Coaches Poll",
+    "ranks": [
+     {
+      "rank": 1,
+      "school": "Indiana"
+     },
+     {
+      "rank": 2,
+      "school": "Miami"
+     },
+     {
+      "rank": 3,
+      "school": "Ole Miss"
+     },
+     {
+      "rank": 4,
+      "school": "Oregon"
+     },
+     {
+      "rank": 5,
+      "school": "Georgia"
+     },
+     {
+      "rank": 6,
+      "school": "Ohio State"
+     },
+     {
+      "rank": 7,
+      "school": "Texas Tech"
+     },
+     {
+      "rank": 8,
+      "school": "Texas A&M"
+     },
+     {
+      "rank": 9,
+      "school": "Alabama"
+     },
+     {
+      "rank": 10,
+      "school": "Oklahoma"
+     },
+     {
+      "rank": 11,
+      "school": "Notre Dame"
+     },
+     {
+      "rank": 12,
+      "school": "BYU"
+     },
+     {
+      "rank": 13,
+      "school": "Texas"
+     },
+     {
+      "rank": 14,
+      "school": "Utah"
+     },
+     {
+      "rank": 15,
+      "school": "Vanderbilt"
+     },
+     {
+      "rank": 16,
+      "school": "Virginia"
+     },
+     {
+      "rank": 17,
+      "school": "Iowa"
+     },
+     {
+      "rank": 18,
+      "school": "Tulane"
+     },
+     {
+      "rank": 19,
+      "school": "Houston"
+     },
+     {
+      "rank": 20,
+      "school": "James Madison"
+     },
+     {
+      "rank": 21,
+      "school": "USC"
+     },
+     {
+      "rank": 22,
+      "school": "Michigan"
+     },
+     {
+      "rank": 23,
+      "school": "Navy"
+     },
+     {
+      "rank": 24,
+      "school": "Georgia Tech"
+     },
+     {
+      "rank": 25,
+      "school": "Illinois"
+     }
+    ]
+   }
+  ],
+  "season": 2025,
+  "seasonType": "postseason",
+  "week": 1
+ }
+]

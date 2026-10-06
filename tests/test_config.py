@@ -16,7 +16,13 @@ class TestLoad(unittest.TestCase):
     def test_shipped_config_is_valid(self):
         cfg = load(SHIPPED)
         self.assertEqual(cfg["schema_version"], 1)
-        self.assertAlmostEqual(cfg["stage1.w_sor"] + cfg["stage1.w_sos"], 1.0)
+        total = cfg["stage1.w_sor"] + cfg["stage1.w_sos"] + cfg["stage1.w_fpi"]
+        self.assertAlmostEqual(total, 1.0, msg="the base weights should sum to 1")
+
+    def test_schedule_weight_ships_off(self):
+        # Deliberate: Strength of Record already accounts for the schedule, so
+        # weighting SoS again double-counts it. See config/ranking.toml.
+        self.assertEqual(load(SHIPPED)["stage1.w_sos"], 0.0)
 
     def test_defaults_alone_are_valid(self):
         validate(DEFAULTS)
@@ -82,6 +88,7 @@ class TestValidation(unittest.TestCase):
         self._bad("stage1.output_size=0")
         self._bad("stage1.pool_size=0")
         self._bad("stage1.w_sor=-1")
+        self._bad("stage1.w_fpi=-1")
         self._bad("stage3.strength=1.5")
         self._bad("stage3.gap=-1")
         self._bad("stage4.strength=-1")
@@ -99,9 +106,13 @@ class TestValidation(unittest.TestCase):
         self._bad("output.float_precision=-1")
         self._bad("schema_version=2")
 
-    def test_both_base_weights_zero_is_rejected(self):
+    def test_all_base_weights_zero_is_rejected(self):
         with self.assertRaises(ConfigError):
-            load(SHIPPED, ["stage1.w_sor=0", "stage1.w_sos=0"])
+            load(SHIPPED, ["stage1.w_sor=0", "stage1.w_sos=0", "stage1.w_fpi=0"])
+
+    def test_one_nonzero_base_weight_is_enough(self):
+        load(SHIPPED, ["stage1.w_sor=0", "stage1.w_sos=0", "stage1.w_fpi=1"])
+        load(SHIPPED, ["stage1.w_sor=1", "stage1.w_sos=0", "stage1.w_fpi=0"])
 
     def test_accepts_the_documented_edges(self):
         load(SHIPPED, ["stage3.strength=0", "stage3.strength=1.0"])

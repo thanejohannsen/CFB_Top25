@@ -71,6 +71,7 @@ def rank(dataset: Dataset, cfg: Config) -> RankingResult:
     s4 = cfg.section("stage4")
     ev_cfg = cfg.section("stage4.evidence")
     w_sor, w_sos = float(s1["w_sor"]), float(s1["w_sos"])
+    w_fpi = float(s1["w_fpi"])
 
     # -- the week to rank through -----------------------------------------
     week, season_type, cutoff = h2h.resolve_week(
@@ -185,7 +186,8 @@ def rank(dataset: Dataset, cfg: Config) -> RankingResult:
         cid = team_cycle.get(team)
         size = next((c.size for c in cycles if c.cycle_id == cid), 0)
         reasons[team] = team_reasons(
-            tb, final_rank[team], w_sor, w_sos, honored, over_losses, over_wins, cid, size
+            tb, final_rank[team], w_sor, w_sos, w_fpi,
+            honored, over_losses, over_wins, cid, size,
         )
 
     counts = {

@@ -98,6 +98,23 @@ def update_index(
 
     index["schema_version"] = SCHEMA_VERSION
     index["seasons"] = seasons
-    index["current"] = snapshot_id
+    # "current" is the newest ranking in the catalogue, not whichever file was
+    # written last -- regenerating an archived season must not make it current.
+    index["current"] = _newest(seasons) or snapshot_id
     index["updated_at"] = meta.get("generated_at")
     return index
+
+
+def _newest(seasons) -> str | None:
+    """The latest snapshot id across every season, by (year, type, week)."""
+    best = None
+    for season in seasons:
+        for snap in season.get("snapshots") or []:
+            key = (
+                int(snap.get("year") or 0),
+                0 if snap.get("season_type") == "regular" else 1,
+                int(snap.get("week") or 0),
+            )
+            if best is None or key > best[0]:
+                best = (key, str(snap.get("id")))
+    return best[1] if best else None

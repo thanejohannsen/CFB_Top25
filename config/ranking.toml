@@ -30,8 +30,15 @@ fixture_year           = "2025"
 
 # -- Stage 1: base order from resume ranks (lower rank = better; 1 = best) ----
 [stage1]
-w_sor       = 0.75   # resumeRanks.strengthOfRecord
-w_sos       = 0.25   # resumeRanks.strengthOfSchedule (1 = toughest)
+w_sor       = 0.75   # resumeRanks.strengthOfRecord -- how impressive the record is
+w_fpi       = 0.25   # our rank of the raw FPI rating -- the team-quality anchor
+# Strength of Schedule is OFF by design, not by oversight. Strength of Record
+# already means "how good is your record GIVEN who you played", so adding SoS on
+# top counts the schedule twice -- and rewards playing hard games whether or not
+# you win them. With this term at 0.25 a 3-2 Clemson sat at #16 on schedule alone
+# while a 5-0 Georgia with the #2 FPI sat at #23. It stays here as a tunable
+# knob, and SoS is still shown on the site; it just no longer moves the ranking.
+w_sos       = 0.0    # resumeRanks.strengthOfSchedule (1 = toughest)
 pool_size   = 40     # candidate pool; H2H only considered inside it
 output_size = 25
 require_fpi = true   # teams with no /ratings/fpi entry are excluded

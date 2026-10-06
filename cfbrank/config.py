@@ -32,7 +32,8 @@ DEFAULTS: dict[str, Any] = {
     },
     "stage1": {
         "w_sor": 0.75,
-        "w_sos": 0.25,
+        "w_fpi": 0.25,
+        "w_sos": 0.0,
         "pool_size": 40,
         "output_size": 25,
         "require_fpi": True,
@@ -165,11 +166,11 @@ def validate(data: Mapping[str, Any]) -> None:
         raise ConfigError("stage1.pool_size must be a positive integer")
     if not isinstance(out, int) or not 0 < out <= pool:
         raise ConfigError("stage1.output_size must satisfy 0 < output_size <= pool_size")
-    for key in ("stage1.w_sor", "stage1.w_sos"):
+    for key in ("stage1.w_sor", "stage1.w_sos", "stage1.w_fpi"):
         if cfg[key] < 0:
             raise ConfigError(f"{key} must be >= 0")
-    if cfg["stage1.w_sor"] + cfg["stage1.w_sos"] <= 0:
-        raise ConfigError("stage1.w_sor + stage1.w_sos must be > 0")
+    if cfg["stage1.w_sor"] + cfg["stage1.w_sos"] + cfg["stage1.w_fpi"] <= 0:
+        raise ConfigError("at least one of stage1.w_sor/w_sos/w_fpi must be > 0")
 
     if cfg["stage3.gap"] < 0:
         raise ConfigError("stage3.gap must be >= 0")

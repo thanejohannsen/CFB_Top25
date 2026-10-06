@@ -1,9 +1,17 @@
-"""Stage 1 -- the base order, from Strength of Record and Strength of Schedule.
+"""Stage 1 -- the base order: what you achieved, anchored by how good you are.
 
-Both inputs are national ranks where 1 is best (for SoS, toughest), so the
-score is a weighted rank average and lower is better.
+Every input is a national rank where 1 is best, so the score is a weighted rank
+average and lower is better.
 
-    base = w_sor * SoR_rank + w_sos * SoS_rank
+    base = w_sor * SoR_rank + w_fpi * FPI_rank + w_sos * SoS_rank
+
+Strength of Record carries the most weight: it is the resume, "how impressive is
+your record given who you played". FPI is the quality anchor, and without it a
+team can ride a good record to the top five while rating 34th in the country.
+
+`w_sos` ships at 0. Strength of Record already accounts for the schedule, so
+adding it again double-counts and rewards playing hard games regardless of the
+result. The knob stays for anyone who wants it; see config/ranking.toml.
 """
 
 from __future__ import annotations
@@ -49,11 +57,19 @@ class TeamBase:
 
     base_rank: int = 0              # rank by base_score, assigned by rerank()
 
-    def formula(self, w_sor: float, w_sos: float) -> str:
-        return (
-            f"{w_sor:g} x SoR #{self.sor_rank} + {w_sos:g} x SoS #{self.sos_rank}"
-            f" = {self.base_raw:.2f}"
-        )
+    def formula(self, w_sor: float, w_sos: float = 0.0, w_fpi: float = 0.0) -> str:
+        """Render only the terms actually in play.
+
+        A zero-weight term must not appear, or the site shows a misleading
+        "+ 0 x SoS #97" next to a team the schedule did not move.
+        """
+        parts = [
+            (w_sor, "SoR", self.sor_rank),
+            (w_fpi, "FPI", self.fpi_rank),
+            (w_sos, "SoS", self.sos_rank),
+        ]
+        shown = [f"{w:g} x {label} #{rank}" for w, label, rank in parts if w]
+        return (" + ".join(shown) if shown else "no weighted terms") + f" = {self.base_raw:.2f}"
 
 
 def rateable(
@@ -81,7 +97,8 @@ def compute_base(
     cfg: Mapping[str, object],
 ) -> tuple[list[TeamBase], list[Warning_]]:
     w_sor = float(cfg.get("w_sor", 0.75))  # type: ignore[arg-type]
-    w_sos = float(cfg.get("w_sos", 0.25))  # type: ignore[arg-type]
+    w_sos = float(cfg.get("w_sos", 0.0))  # type: ignore[arg-type]
+    w_fpi = float(cfg.get("w_fpi", 0.25))  # type: ignore[arg-type]
 
     usable, warnings = rateable(
         ratings, fbs, bool(cfg.get("require_fpi", True)), bool(cfg.get("fbs_only", True))
@@ -121,7 +138,11 @@ def compute_base(
                 eff_defense=r.eff_defense,
                 eff_special=r.eff_special,
                 record=records.get(r.team),
-                base_raw=w_sor * int(r.sor_rank) + w_sos * int(r.sos_rank),  # type: ignore[arg-type]
+                base_raw=(
+                    w_sor * int(r.sor_rank)  # type: ignore[arg-type]
+                    + w_sos * int(r.sos_rank)  # type: ignore[arg-type]
+                    + w_fpi * own
+                ),
             )
         )
 

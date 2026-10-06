@@ -10,7 +10,7 @@ from cfbrank.engine.resume import _loss_badness, apply_resume_adjustment
 from dataclasses import replace
 from tests.helpers import rating, record, result
 
-S1 = {"w_sor": 0.75, "w_sos": 0.25, "require_fpi": True, "fbs_only": True}
+S1 = {"w_sor": 0.75, "w_sos": 0.0, "w_fpi": 0.25, "require_fpi": True, "fbs_only": True}
 S2 = {"w_loss_quality": 3.0, "w_best_win": 1.0, "w_game_control": 0.5}
 EV = {"home_field_points": 2.5, "margin_cap": 28}
 FBS = {"A", "B", "C", "D", "E"}
@@ -24,18 +24,70 @@ def teams_for(specs):
 
 class TestBaseScore(unittest.TestCase):
     def test_formula(self):
+        # One team, so it is FPI rank 1: 0.75*4 + 0.25*1.
         teams, _ = teams_for([("A", 4, 8, 10.0)])
-        self.assertAlmostEqual(teams[0].base_raw, 0.75 * 4 + 0.25 * 8)
-        self.assertIn("0.75 x SoR #4", teams[0].formula(0.75, 0.25))
+        self.assertAlmostEqual(teams[0].base_raw, 0.75 * 4 + 0.25 * 1)
+        rendered = teams[0].formula(0.75, 0.0, 0.25)
+        self.assertIn("0.75 x SoR #4", rendered)
+        self.assertIn("0.25 x FPI #1", rendered)
+
+    def test_formula_omits_zero_weight_terms(self):
+        # A "+ 0 x SoS #97" next to a team the schedule did not move is a lie.
+        teams, _ = teams_for([("A", 4, 97, 10.0)])
+        self.assertNotIn("SoS", teams[0].formula(0.75, 0.0, 0.25))
+        self.assertIn("SoS", teams[0].formula(0.75, 0.25, 0.0))
+        self.assertNotIn("FPI", teams[0].formula(0.75, 0.25, 0.0))
+
+    def test_formula_arithmetic_is_shown_correctly(self):
+        teams, _ = teams_for([("A", 4, 8, 10.0), ("B", 2, 2, 50.0)])
+        for tb in teams:
+            rendered = tb.formula(0.75, 0.0, 0.25)
+            self.assertTrue(rendered.endswith(f"= {tb.base_raw:.2f}"), rendered)
+
+    def test_quality_term_sinks_a_good_record_with_a_weak_rating(self):
+        """The Kentucky case: Strength of Record #5 but FPI rank #34.
+
+        Without a quality term that team rides its record into the top five.
+        """
+        # Proportions taken from the real case: the record team is SoR #5 but
+        # bottom of the board on rating, while the teams just behind it on
+        # resume are the best teams in the country.
+        specs = [("Record", 5, 8, -50.0)]  # best-of-the-rest resume, worst rating
+        specs += [(f"Good{i}", 8 + i, 50, 30.0 - i) for i in range(6)]
+        specs += [(f"Filler{i}", 20 + i, 60, 10.0 - i) for i in range(14)]
+        no_quality, _ = compute_base(
+            [rating(t, sor, sos, fpi) for t, sor, sos, fpi in specs], {},
+            {t for t, _, _, _ in specs},
+            {"w_sor": 1.0, "w_sos": 0.0, "w_fpi": 0.0, "require_fpi": True, "fbs_only": True},
+        )
+        with_quality, _ = compute_base(
+            [rating(t, sor, sos, fpi) for t, sor, sos, fpi in specs], {},
+            {t for t, _, _, _ in specs},
+            {"w_sor": 0.75, "w_sos": 0.0, "w_fpi": 0.25, "require_fpi": True, "fbs_only": True},
+        )
+        before = {t.team: t.base_rank for t in no_quality}["Record"]
+        after = {t.team: t.base_rank for t in with_quality}["Record"]
+        self.assertEqual(before, 1, "record alone should put it first")
+        self.assertGreater(after, before, "the quality term must push it down")
+
+    def test_schedule_term_can_still_be_switched_on(self):
+        on, _ = compute_base(
+            [rating("A", 5, 120, 10.0), rating("B", 6, 1, 10.5)], {}, {"A", "B"},
+            {"w_sor": 0.75, "w_sos": 0.25, "w_fpi": 0.0, "require_fpi": True, "fbs_only": True},
+        )
+        by = {t.team: t.base_raw for t in on}
+        self.assertAlmostEqual(by["A"], 0.75 * 5 + 0.25 * 120)
+        self.assertAlmostEqual(by["B"], 0.75 * 6 + 0.25 * 1)
 
     def test_lower_score_ranks_first(self):
         teams, _ = teams_for([("A", 1, 1, 5.0), ("B", 50, 50, 5.0)])
         self.assertEqual([t.team for t in pool(teams, 2)], ["A", "B"])
 
-    def test_schedule_weight_actually_matters(self):
-        specs = [("A", 5, 90, 10.0), ("B", 8, 5, 10.0)]
-        teams, _ = teams_for(specs)
-        self.assertEqual(pool(teams, 1)[0].team, "B", "a brutal schedule outweighs 3 SoR places")
+    def test_schedule_does_not_move_the_shipped_order(self):
+        # Same records and ratings, wildly different schedules: with w_sos at 0
+        # the schedule must not decide it. SoR breaks the tie.
+        teams, _ = teams_for([("A", 5, 130, 10.0), ("B", 8, 1, 10.0)])
+        self.assertEqual(pool(teams, 1)[0].team, "A", "better SoR should win, not the schedule")
 
     def test_missing_ratings_are_excluded_with_a_warning(self):
         ratings = [rating("A", 1, 1, 5.0), rating("B", None, 4, 5.0)]

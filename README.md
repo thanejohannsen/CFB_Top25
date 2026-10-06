@@ -7,20 +7,22 @@ published as a static GitHub Pages site where **every placement opens to show
 exactly why it is there**.
 
 ```
- 1. Georgia      base #2   +1   12-2   SoR 5   SoS 17   FPI +21.4   C1
- 2. Indiana      base #4   +2   16-0   SoR 1   SoS 10   FPI +31.5
- 3. Oregon       base #1   -2   13-2   SoR 2   SoS  6   FPI +23.9
- 4. Miami        base #14 +10   13-3   SoR 3   SoS  7   FPI +22.4   C1 regressed
- ...
- 99 of 111 head-to-head results honoured | 2 contradiction loops, largest 22 teams
+ 1. Indiana        base #5    +4  16-0   SoR 1   FPI #1
+ 2. Miami          base #14  +12  13-3   SoR 3   FPI #5   C1 regressed
+ 3. Ohio State     base #1    -2  12-2   SoR 4   FPI #2   C1
+ 4. Ole Miss       base #3    -1  13-2   SoR 6   FPI #9   C1
+ 5. Georgia        base #2    -3  12-2   SoR 5   FPI #7   C1
+
+89 of 100 head-to-head results honoured | 4 contradiction loops, largest 10
 ```
 
 ## How it ranks
 
-1. **Resume order** — `0.75 × StrengthOfRecord_rank + 0.25 × StrengthOfSchedule_rank`.
-   Both are national ranks where 1 is best, so lower is better. Strength of Record
-   carries most of the weight because schedule strength alone rewards nobody for
-   winning; the schedule term stops a team sitting high on a soft slate.
+1. **Resume plus quality** — `0.75 × StrengthOfRecord_rank + 0.25 × FPI_rank`.
+   Both arrive as national ranks where 1 is best, so lower is better. Strength of
+   Record is the resume — how impressive your record is given who you played — and
+   carries most of the weight. FPI is the quality anchor that stops a good record
+   alone carrying a team to the top.
 2. **Resume adjustment** — Strength of Record knows *who* you played but not *how*
    you lost. A three-point road loss and a 24-point home loss are not the same
    result, so loss quality, best win and game control adjust the base score.
@@ -40,6 +42,36 @@ exactly why it is there**.
    more than the margin.
 5. **Contradiction reporting** — loops (A beat B, B beat C, C beat A) are found with
    Tarjan's algorithm and published, along with every overridden result.
+
+### Why Strength of Schedule is not in the formula
+
+It was, at a quarter of the weight, and it was the single biggest source of bad
+rankings. Strength of Record **already** accounts for the schedule — it means "how
+good is your record *given who you played*". Weighting schedule again counts it
+twice and rewards playing hard games whether or not you win them.
+
+A 3-2 Clemson sat at 16th on schedule alone; a 5-0 Georgia with the country's #2
+rating sat at 23rd for playing an easy one. Dropping the term is worth a lot:
+
+| base weights | 2026 τ vs AP | mean rank gap | 2025 τ vs AP |
+| --- | --- | --- | --- |
+| 0.75 SoR + 0.25 SoS (old) | +0.33 | 5.1 | +0.62 |
+| **0.75 SoR + 0.25 FPI** | **+0.52** | **4.2** | **+0.77** |
+
+Schedule strength is still shown for every team and the weight is still a knob in
+`config/ranking.toml`. It just no longer moves the ranking.
+
+### Checking it against the polls
+
+```bash
+python3 scripts/evaluate.py --year 2026           # overlap, rank gap, Kendall tau
+python3 scripts/evaluate.py --year 2025 --grid    # sweep the weights
+```
+
+The AP poll is a **yardstick, not ground truth** — the point of this project is to
+disagree with the polls in a principled, explainable way. But disagreeing with AP
+*and* with FPI at the same time is usually a bug, which is how the schedule
+double-count was caught.
 
 ### Why head-to-head is weighted rather than absolute
 

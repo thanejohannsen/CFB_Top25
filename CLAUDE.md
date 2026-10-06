@@ -25,6 +25,24 @@ Two rules that keep it from spreading further:
 If the key stops working, issue a new one at <https://collegefootballdata.com/key>
 and replace the single line in `config/ranking.toml`.
 
+## The base formula
+
+`base = 0.75 x SoR_rank + 0.25 x FPI_rank`. **`stage1.w_sos` ships at 0 on
+purpose** — do not "restore" it. Strength of Record already accounts for the
+schedule, so weighting Strength of Schedule again double-counts it and rewards
+playing hard games regardless of the result. With it at 0.25 a 3-2 team sat at
+#16 and a 5-0 team with the #2 FPI sat at #23. `config/ranking.toml` carries the
+long version, and `tests/test_config.py` pins the zero.
+
+Any weight change must be justified with `python3 scripts/evaluate.py`, which
+grades the ranking against the AP poll (overlap, mean rank gap, Kendall tau).
+Treat AP as a yardstick, not ground truth.
+
+`TeamBase.formula()` renders only non-zero terms, so a weight that is off never
+appears in the published string. Every caller must pass all three weights or the
+rendered formula will not match `raw_score`; `tests/test_pipeline.py` asserts it
+adds up.
+
 ## Conventions
 
 - Dependencies: `requests` only. Config is TOML via stdlib `tomllib`, tests are

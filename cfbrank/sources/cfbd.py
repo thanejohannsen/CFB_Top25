@@ -134,3 +134,11 @@ class CFBDClient:
 
     def calendar(self, year: int) -> list[dict]:
         return self._get("/calendar", {"year": year})
+
+    def poll_rankings(self, year: int, season_type: str = "regular") -> list[dict]:
+        """Human polls, used ONLY by scripts/evaluate.py as an external yardstick.
+
+        The ranking pipeline never calls this and must stay poll-free -- the
+        whole point is to derive a ranking from results, not to copy one.
+        """
+        return self._get("/rankings", {"year": year, "seasonType": season_type})

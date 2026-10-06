@@ -65,6 +65,7 @@ def team_reasons(
     final_rank: int,
     w_sor: float,
     w_sos: float,
+    w_fpi: float,
     honored_wins: Sequence[tuple[EdgeFact, int]],
     overridden_losses: Sequence[tuple[EdgeFact, int]],
     overridden_wins: Sequence[tuple[EdgeFact, int]],
@@ -72,7 +73,7 @@ def team_reasons(
     cycle_size: int,
 ) -> list[str]:
     out: list[str] = [
-        f"Resume order #{tb.raw_rank} from {tb.formula(w_sor, w_sos)}."
+        f"Resume order #{tb.raw_rank} from {tb.formula(w_sor, w_sos, w_fpi)}."
     ]
 
     if abs(tb.resume_adj) > 0.05:

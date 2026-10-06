@@ -54,6 +54,7 @@ def _team_entry(
     prev_id: str | None,
     w_sor: float,
     w_sos: float,
+    w_fpi: float,
 ) -> dict[str, Any]:
     wins = [f for k, f in result.edge_facts.items() if k[0] == tb.team]
     losses = [f for k, f in result.edge_facts.items() if k[1] == tb.team]
@@ -97,7 +98,8 @@ def _team_entry(
             "sos_rank": tb.sos_rank,
             "w_sor": w_sor,
             "w_sos": w_sos,
-            "formula": tb.formula(w_sor, w_sos),
+            "w_fpi": w_fpi,
+            "formula": tb.formula(w_sor, w_sos, w_fpi),
         },
         "resume_adjustment": {
             "total": tb.resume_adj,
@@ -187,6 +189,7 @@ def build_payload(
 ) -> dict[str, Any]:
     w_sor = float(cfg["stage1.w_sor"])
     w_sos = float(cfg["stage1.w_sos"])
+    w_fpi = float(cfg["stage1.w_fpi"])
     output_size = int(cfg["stage1.output_size"])
 
     rank_of = {t: i + 1 for i, t in enumerate(result.order)}
@@ -202,7 +205,8 @@ def build_payload(
 
     rankings = [
         _team_entry(
-            result.teams[t], i + 1, result, rank_of, overridden, prev_ranks, prev_id, w_sor, w_sos
+            result.teams[t], i + 1, result, rank_of, overridden, prev_ranks, prev_id,
+            w_sor, w_sos, w_fpi,
         )
         for i, t in enumerate(result.order[:output_size])
     ]
@@ -331,14 +335,21 @@ def build_payload(
         ],
         "methodology": {
             "summary": (
-                f"base = {w_sor:g} x SoR + {w_sos:g} x SoS; "
+                f"base = {w_sor:g} x SoR"
+                + (f" + {w_fpi:g} x FPI" if w_fpi else "")
+                + (f" + {w_sos:g} x SoS" if w_sos else "")
+                + "; "
                 f"pool {cfg['stage1.pool_size']}; "
                 f"H2H strength {cfg['stage4.strength']:g}, drift exponent {cfg['stage4.drift_exponent']:g}; "
                 f"upset regression {'on' if cfg['stage3.enabled'] else 'off'}"
                 f" (gap {cfg['stage3.gap']}, {cfg['stage3.strength']:g})"
             ),
             "stages": [
-                f"Stage 1 - rank every team by {w_sor:g} x Strength of Record + {w_sos:g} x Strength of Schedule (both are national ranks, lower is better).",
+                "Stage 1 - rank every team by what it has achieved and how good it is: "
+                f"{w_sor:g} x Strength of Record"
+                + (f" + {w_fpi:g} x FPI rank" if w_fpi else "")
+                + (f" + {w_sos:g} x Strength of Schedule" if w_sos else "")
+                + " (all national ranks, lower is better).",
                 "Stage 2 - adjust for how your losses actually look: the venue and margin of each defeat, the quality of your best win, and how comfortably you win.",
                 f"Stage 3 - when a result spans more than {cfg['stage3.gap']} places, pull both teams {cfg['stage3.strength']:g} of the way to their midpoint; the upset says both were mis-rated.",
                 "Stage 4 - reorder so as few head-to-head results as possible are contradicted, weighing each result by how convincing it was against how far a team would have to move.",

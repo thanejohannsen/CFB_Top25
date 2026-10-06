@@ -44,12 +44,13 @@ class TestCompletedSeason(unittest.TestCase):
         self.assertEqual(len(self.result.order), 40)
         self.assertEqual(len(set(self.result.order)), 40)
 
-    def test_detects_the_large_tangle(self):
-        # Real seasons do not produce tidy triangles. This one has a 22-team
-        # strongly connected component, which is why cycles are reported
-        # rather than resolved one at a time.
+    def test_detects_large_tangles(self):
+        # Real seasons do not produce tidy triangles. A completed season leaves
+        # several multi-team strongly connected components, which is why cycles
+        # are reported rather than resolved one at a time.
         sizes = sorted((c.size for c in self.result.cycles), reverse=True)
-        self.assertEqual(sizes, [22, 8])
+        self.assertEqual(sizes, [10, 9, 4, 3])
+        self.assertGreater(sizes[0], 6, "per-cycle enumeration would not be tractable here")
 
     def test_most_results_are_honoured(self):
         c = self.result.counts
@@ -179,6 +180,44 @@ class TestPayload(unittest.TestCase):
         self.assertEqual(top["movement"]["previous_rank"], 5)
         self.assertEqual(top["movement"]["delta"], 4)
         self.assertEqual(top["movement"]["status"], "up")
+
+
+class TestBaseWeightsArePublished(unittest.TestCase):
+    """The site renders the formula from the payload, so it has to be complete."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.ds = dataset(2026)
+        cls.cfg = config(2026)
+        cls.payload = build_payload(rank(cls.ds, cls.cfg), cls.ds, cls.cfg, GENERATED_AT)
+
+    def test_every_weight_is_published(self):
+        stage1 = self.payload["meta"]["config"]["stage1"]
+        for key in ("w_sor", "w_sos", "w_fpi"):
+            self.assertIn(key, stage1)
+        row = self.payload["rankings"][0]["base"]
+        for key in ("w_sor", "w_sos", "w_fpi"):
+            self.assertIn(key, row)
+
+    def test_the_rendered_formula_adds_up(self):
+        for row in self.payload["rankings"]:
+            b = row["base"]
+            expected = (
+                b["w_sor"] * b["sor_rank"]
+                + b["w_sos"] * b["sos_rank"]
+                + b["w_fpi"] * row["fpi"]["rank"]
+            )
+            self.assertAlmostEqual(expected, b["raw_score"], places=3, msg=row["team"])
+            self.assertTrue(
+                b["formula"].endswith(f"= {b['raw_score']:.2f}"),
+                f"{row['team']}: {b['formula']} vs raw {b['raw_score']}",
+            )
+
+    def test_the_formula_names_no_unweighted_term(self):
+        # w_sos ships at 0, so SoS must not appear in any rendered formula.
+        for row in self.payload["rankings"]:
+            self.assertNotIn("SoS", row["base"]["formula"], row["team"])
+            self.assertIn("FPI", row["base"]["formula"], row["team"])
 
 
 class TestCredentialsNeverReachOutput(unittest.TestCase):
@@ -314,4 +353,7 @@ class TestGolden(unittest.TestCase):
         self.assertEqual(len(payload["rankings"]), 25)
         self.assertEqual(validate_payload(payload), [])
         sizes = sorted((c["size"] for c in payload["cycles"]), reverse=True)
-        self.assertEqual(sizes, [22, 8], "the 22-team tangle is the point of this fixture")
+        self.assertEqual(sizes, [10, 9, 4, 3])
+        self.assertGreater(
+            sizes[0], 6, "large tangles are why cycles are reported, not resolved one by one"
+        )
