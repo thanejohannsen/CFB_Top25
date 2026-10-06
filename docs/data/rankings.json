@@ -65,7 +65,7 @@
         "strength": 14.0
       }
     },
-    "content_hash": "sha256:4953819762f4449816b282dcef3ae240996e69ddcc807bf0dd12c23549e7b766",
+    "content_hash": "sha256:f0b2e209733218a1dd9dc79ba1d2c02c9e07287d7aa9e06c0cfffeec8aeb5aa7",
     "cost": {
       "drift": 21.0246,
       "overrides": 1.4,
@@ -87,7 +87,7 @@
       "regressions": 1,
       "series_split": 0
     },
-    "generated_at": "2026-10-06T13:41:08Z",
+    "generated_at": "2026-10-06T18:35:51Z",
     "previous_snapshot_id": null,
     "season": {
       "label": "Week 5",
@@ -100,8 +100,8 @@
       "attribution": "Data: CollegeFootballData.com (FPI, Strength of Record and Strength of Schedule via ESPN)",
       "endpoints": [
         {
-          "cache": "hit",
-          "fetched_at": "2026-10-06T13:38:48Z",
+          "cache": "miss",
+          "fetched_at": "2026-10-06T18:35:50Z",
           "params": {
             "year": "2026"
           },
@@ -110,8 +110,8 @@
           "sha256": "sha256:96dd66ad3f64115150445c468959a7e47496948cf81b2ea364d1bf46da4dd473"
         },
         {
-          "cache": "hit",
-          "fetched_at": "2026-10-06T13:38:48Z",
+          "cache": "miss",
+          "fetched_at": "2026-10-06T18:35:51Z",
           "params": {
             "classification": "fbs",
             "seasonType": "both",
@@ -119,21 +119,21 @@
           },
           "path": "/games",
           "records": 888,
-          "sha256": "sha256:4f7b2ccf35f404e776a29bc2d61163a553c783e0a33a030a5f6ea11c3b8ef259"
+          "sha256": "sha256:440b560b69bc1759321f57cf9daf49df4af2b1cacdae45b1be3aa6a206d5ac78"
         },
         {
-          "cache": "hit",
-          "fetched_at": "2026-10-06T13:38:48Z",
+          "cache": "miss",
+          "fetched_at": "2026-10-06T18:35:51Z",
           "params": {
             "year": "2026"
           },
           "path": "/records",
           "records": 682,
-          "sha256": "sha256:3f230aef5a53fc12b8af65e6e7289d1cee2c3de138e2378aed5a1a2b0852f8eb"
+          "sha256": "sha256:79a19684d6c7be265898c48f205aa08a93852368485c68d4cafae9cfe81646a2"
         },
         {
-          "cache": "hit",
-          "fetched_at": "2026-10-06T13:38:48Z",
+          "cache": "miss",
+          "fetched_at": "2026-10-06T18:35:51Z",
           "params": {
             "year": "2026"
           },
