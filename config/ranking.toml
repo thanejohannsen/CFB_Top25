@@ -53,8 +53,8 @@ fixture_year           = "2025"
 # Every input is a national rank (1 = best), so the base is a weighted rank
 # average and lower is better.
 [stage1]
-w_sor    = 0.60   # the resume: who you beat and how hard that was
-w_market = 0.25   # Vegas's power ranking: how good the money thinks you are
+w_sor    = 0.55   # the resume: who you beat and how hard that was
+w_market = 0.30   # Vegas's power ranking: how good the money thinks you are
 w_perf   = 0.15   # the game tape, counted: how well you actually played per snap
 #
 # Market and PPA split the quality half evenly because that is what measured
