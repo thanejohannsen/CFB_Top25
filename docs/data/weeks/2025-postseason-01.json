@@ -2164,7 +2164,7 @@
       "resume_rated": 136,
       "series_split": 5
     },
-    "generated_at": "2026-10-06T21:11:03Z",
+    "generated_at": "2026-10-06T23:43:41Z",
     "previous_snapshot_id": null,
     "ratings": {
       "market": {
@@ -2239,8 +2239,8 @@
           "sha256": "sha256:9183735743e5ad4d4674af331fe905e8d968bb7e63667d5938947f55c8000efa"
         },
         {
-          "cache": "hit",
-          "fetched_at": "2026-10-06T15:28:32Z",
+          "cache": "miss",
+          "fetched_at": "2026-10-06T23:43:38Z",
           "params": {
             "seasonType": "both",
             "year": "2025"
@@ -2250,8 +2250,8 @@
           "sha256": "sha256:a8c05e58b5fb1548a5fdfb4b3e5646e30aa796686642f4d5e64c1eb67418e870"
         },
         {
-          "cache": "hit",
-          "fetched_at": "2026-10-06T15:28:35Z",
+          "cache": "miss",
+          "fetched_at": "2026-10-06T23:43:41Z",
           "params": {
             "excludeGarbageTime": "true",
             "seasonType": "both",

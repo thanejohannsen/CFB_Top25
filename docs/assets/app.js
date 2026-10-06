@@ -237,22 +237,21 @@
     var comp = ra.components || {};
     var kv = el("dl", { class: "kv" });
     function pair(k, v) { kv.appendChild(el("dt", { text: k })); kv.appendChild(el("dd", { text: v })); }
-    pair("Order on the three alone", "#" + base.resume_rank);
-    pair("Base formula", base.formula || "–");
-    pair("Resume adjustment", signed(ra.total, 2) + " rank points");
+    // Three positions, each AFTER a further stage. These used to be labelled in a
+    // way that implied base.rank came BEFORE the resume adjustment -- it does not,
+    // it is sorted on base_score which already contains it. A team could show the
+    // same number twice next to a large adjustment and look as though nothing had
+    // happened: Northwestern read "starting #8, final #8" beside -16.62, when the
+    // -16.62 is exactly what moved them from #20 to #8.
+    pair("1. On the three numbers", "#" + base.resume_rank + "  \u2014  Base " + num(base.raw_score, 2));
+    pair("     the arithmetic", base.formula || "\u2013");
+    pair("2. After the resume adjustment", "#" + base.rank + "  \u2014  Final " + num(base.score, 2));
+    pair("     adjustment", signed(ra.total, 2) + " rank points");
     Object.keys(comp).sort().forEach(function (k) {
-      pair("  " + k.replace(/_/g, " "), signed(comp[k], 2));
+      pair("       " + k.replace(/_/g, " "), signed(comp[k], 2));
     });
-    if (row.regression) pair("Upset regression", signed(row.regression.adjustment, 2) + " rank points");
-    pair("Base score", num(base.raw_score, 2) + " \u2014 the three numbers combined");
-    pair(
-      "Final score",
-      num(base.score, 2) + " \u2014 after " + signed(ra.total, 2) +
-        (row.regression ? " and " + signed(row.regression.adjustment, 2) + " regression" : "") +
-        ". Teams are sorted by this."
-    );
-    pair("Starting position", "#" + base.rank + " (before adjustments)");
-    pair("Final position", "#" + row.rank + " \u2014 " + driftText(row.placement.drift));
+    if (row.regression) pair("     upset regression", signed(row.regression.adjustment, 2) + " rank points");
+    pair("3. After head-to-head", "#" + row.rank + "  \u2014  " + driftText(row.placement.drift));
 
     var res = row.resume || {}, cov = row.cover || {};
     if (res.probability !== null && res.probability !== undefined) {
@@ -305,7 +304,7 @@
     }));
 
     return el("tr", { class: "detail" }, [
-      el("td", { colspan: "12" }, [
+      el("td", { colspan: "11" }, [
         el("div", { class: "detail-inner" }, [
           el("div", null, [el("h3", { text: "Why " + row.team + " is #" + row.rank }), reasons]),
           el("div", null, [el("h3", { text: "The numbers behind it" }), kv])
@@ -348,7 +347,6 @@
         el("td", { class: "num c-mkt", "data-label": "Mkt", text: marketText(row.market) }),
         el("td", { class: "num c-ppa", "data-label": "PPA", text: rankText(row.performance) }),
         el("td", { class: "num c-base", "data-label": "Base", text: num(row.base.raw_score, 2) }),
-        el("td", { class: "num c-final", "data-label": "Final", text: num(row.base.score, 2) }),
         el("td", { class: "c-notes" }, [notesCell(row)]),
         el("td", { class: "chev c-chev", text: "›" })
       ]);

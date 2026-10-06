@@ -315,22 +315,18 @@ footer.site p { margin: 4px 0; }
     display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
   }
   #rankings-body .c-notes:empty { display: none; }
-  /* Base and Final get their own line: five numbers across a 390px phone would
-     either wrap raggedly or shrink below readable. */
-  #rankings-body .c-base,
-  #rankings-body .c-final {
+  /* Base gets its own line rather than crowding the three rank chips above it. */
+  #rankings-body .c-base {
     grid-area: score;
     display: inline-flex; gap: 4px;
+    justify-self: start;
     font-size: 0.8125rem; color: var(--ink-2);
     text-align: left !important;
   }
-  #rankings-body .c-base::before,
-  #rankings-body .c-final::before {
+  #rankings-body .c-base::before {
     content: attr(data-label) "\00a0";
     color: var(--ink-muted); font-weight: 600;
   }
-  #rankings-body .c-base { justify-self: start; }
-  #rankings-body .c-final { justify-self: end; font-weight: 600; color: var(--ink); }
 
   /* Both are in the expanded panel, where there is room to explain them. */
   #rankings-body .c-sos,
