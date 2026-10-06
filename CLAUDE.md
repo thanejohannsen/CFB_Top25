@@ -148,6 +148,34 @@ games, accuracy runs 61.5% at `w_cover=0`, 67.0% at 4, 69.3% at 6, 70.4% at 10,
 *future ATS*, but margin against a per-game market line is a well opponent-adjusted
 measure of *team strength*, which is a different thing.
 
+### `stage4.strength = 4.0` is deliberate; do not "restore" it to 14
+
+It was 14. Three findings moved it, and without them 14 looks considered and 4
+looks like drift:
+
+- **The resume already prices head-to-head, so 14 paid for it twice.** A resume
+  is a list of games with win probabilities. Swap Ole Miss's win over LSU for a
+  cupcake at the same record and their resume goes 30.2% -> 63.1%: the win is
+  worth 2.1x before stage 4 touches anything. That double-count is what made the
+  ranking feel over-constrained.
+- **Lower predicts better, monotonically.** 2025, same 179 AP-vs-AP games: 65.9%
+  at 14, 67.0% at 6, 67.6% at 2, 68.2% at 0. Four games, but it never reverses.
+- **With the stage OFF, 20 of 27 results are still honoured** on 2026 week 5 --
+  the base order usually agrees already. It only ever argues about seven games.
+
+It is **not** 0, and that is a values call rather than a measurement: head-to-head
+is the premise of this project and the site promises "my team beat them and is
+ranked below them" a real answer. At 0 that section lists 58 contradictions the
+ranking does nothing about.
+
+The visible cost of 4, which the owner accepted: Ole Miss beating LSU goes back
+to being overridden (Ole Miss #15, LSU #7), because the forcer no longer drags
+LSU down to meet it. Honouring that one result was what the extra constraint
+bought.
+
+Do not add a signature-win bonus to the resume to compensate. That was built,
+measured and removed once already for the same double-counting reason.
+
 ### Head-to-head has to cost something
 
 Results also **fade with age**, on a half-life in weeks, and a convincing result

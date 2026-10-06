@@ -5,8 +5,8 @@
     {
       "snapshots": [
         {
-          "content_hash": "sha256:fcf565172d2dc8eaea1d66d806c336ab973420eb5cff5586ea9d4f2191389320",
-          "generated_at": "2026-10-06T20:41:21Z",
+          "content_hash": "sha256:51405439fcc8e8303c2e362ec76d8f73b4076f67b0b48900cdd9ba48b3e8e8ef",
+          "generated_at": "2026-10-06T20:50:52Z",
           "id": "2026-regular-05",
           "label": "Week 5",
           "path": "weeks/2026-regular-05.json",
@@ -21,8 +21,8 @@
     {
       "snapshots": [
         {
-          "content_hash": "sha256:bb961a7f4b95dee0887c9a6c16a47433edd5f69dc96fbb27ec70920a7b108672",
-          "generated_at": "2026-10-06T20:41:21Z",
+          "content_hash": "sha256:8faee64ec81415c27fbb71dad08055bfc45d5d52d97b2115d43311c5ea3ed588",
+          "generated_at": "2026-10-06T20:50:52Z",
           "id": "2025-postseason-01",
           "label": "Postseason week 1",
           "path": "weeks/2025-postseason-01.json",
@@ -35,5 +35,5 @@
       "year": 2025
     }
   ],
-  "updated_at": "2026-10-06T20:41:21Z"
+  "updated_at": "2026-10-06T20:50:52Z"
 }

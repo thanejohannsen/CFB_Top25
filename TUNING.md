@@ -108,9 +108,35 @@ upset says the winner was underrated *and* the loser overrated.
 The published order is the one that minimises
 `strength × (results it contradicts) + drift × (how far teams move)`.
 
+### How much should beating someone matter?
+
+`stage4.strength` is that dial, and it is probably the one you'll reach for most.
+
+| strength | H2H honoured | teams moved | biggest move |
+| --- | --- | --- | --- |
+| 14 | 26/27 | 21 | 10 places |
+| **4** ← now | 24/27 | 15 | 3 places |
+| 2 | 22/27 | 5 | 2 places |
+| 0 (off) | 20/27 | 0 | 0 |
+
+Two things worth knowing before you turn it:
+
+- **With it off entirely, 20 of 27 results are still honoured** — the résumé
+  usually already agrees. This stage only argues about a handful of games.
+- **The résumé already prices beating a good team.** It's a list of games with win
+  probabilities, so a win over a strong opponent counts there first. Swap Ole
+  Miss's win over LSU for a cupcake at the same record and their résumé goes from
+  30.2% to 63.1% — the win is worth 2.1x before this stage touches anything.
+  Turning `strength` up means paying for the same result twice, which is what made
+  the ranking feel over-constrained at 14.
+
+Useful settings: **2** makes it a tiebreak between teams already close together.
+**0** switches it off, and every contradiction is still *reported* — the ranking
+just stops reordering to fix them.
+
 | knob | now | what it means |
 | --- | --- | --- |
-| `strength` | 14.0 | How many places one unit of conviction buys. **Up = head-to-head wins more arguments** |
+| `strength` | **4.0** | How many places one unit of conviction buys. See above |
 | `drift_weight` | 1.0 | Cost per place moved from the starting order |
 | `drift_exponent` | 1.5 | Above 1, long moves cost disproportionately. This is what stops one result flinging a team across the board |
 | `split_series` | most_recent | How a rematch that flips the result is handled |

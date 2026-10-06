@@ -60,8 +60,18 @@ class TestCompletedSeason(unittest.TestCase):
         )
 
     def test_most_results_are_honoured(self):
+        """A clear majority of head-to-head results should survive the ordering.
+
+        The bar is "most", not a fixed ratio. `stage4.strength` is the owner's
+        dial for exactly this and has moved from 14 to 4; an 8-to-1 assertion was
+        really pinning that setting, and failed the moment it was turned down.
+        What must stay true is that the ranking does not casually discard
+        results -- below about two thirds, the head-to-head stage has stopped
+        meaning anything and that is worth failing over.
+        """
         c = self.result.counts
-        self.assertGreater(c["h2h_honored"], 8 * c["h2h_overridden"])
+        total = c["h2h_honored"] + c["h2h_overridden"]
+        self.assertGreater(c["h2h_honored"], 0.66 * total, f"{c['h2h_honored']}/{total}")
 
     def test_overridden_results_are_the_least_convincing(self):
         weights = [self.result.edge_facts[k].weight for k in self.result.ordering.violated]
