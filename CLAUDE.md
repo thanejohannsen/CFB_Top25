@@ -28,7 +28,7 @@ and replace the single line in `config/ranking.toml`.
 ## The base formula
 
 ```
-base  = 0.60 x SoR_rank + 0.25 x Market_rank + 0.15 x PPA_rank
+base  = 0.55 x SoR_rank + 0.30 x Market_rank + 0.15 x PPA_rank
 score = base + resume adjustment (incl. cover) + upset regression
 ```
 
@@ -194,6 +194,13 @@ without rescaling would hand it a better score for having less data.
   unchanged ranking produces an unchanged file.
 - Any engine change moves `tests/fixtures/golden/rankings_2025.json`. That is the
   point: read the diff, then regenerate with `python3 scripts/make_golden.py`.
+  It builds from `make_golden.FROZEN`, **not** from `config/ranking.toml`, so the
+  owner can retune weights from the GitHub web UI without reddening CI. Changing
+  FROZEN means the engine moved; changing the config does not. Do not "simplify"
+  it back to reading the live config.
+- A push touching `config/ranking.toml` triggers the Rank workflow with
+  `--force`, so a weight edit publishes itself. `docs/data` is pre-computed
+  output: without that trigger a config change is invisible until the next cron.
 - `cfbrank/engine/adjust.py` sweeps **Gauss-Seidel** (each team reads ratings
   already updated in the same pass), not Jacobi. Computing a whole pass against
   the previous one makes two teams who have only played each other oscillate for

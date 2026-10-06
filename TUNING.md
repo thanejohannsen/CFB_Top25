@@ -1,8 +1,14 @@
 # Tuning the ranking
 
 Every number that decides this ranking lives in one file: **[`config/ranking.toml`](config/ranking.toml)**.
-Edit it on GitHub, commit, and the next scheduled run uses your values. Nothing is
-hard-coded anywhere else.
+Edit it on GitHub and commit. **The site rebuilds itself within a few minutes** —
+a push that touches that file triggers the Rank workflow, which regenerates
+`docs/data` from the live API and publishes it.
+
+Nothing is hard-coded anywhere else, and editing weights will not break the
+build: the golden regression test runs on its own frozen weights
+(`scripts/make_golden.py`), so it catches engine changes rather than your dial
+settings.
 
 This page is the plain-language index of what each knob does and which way it
 pushes. The file itself carries the longer reasoning next to each setting.
@@ -21,8 +27,8 @@ The headline weights. **They should sum to 1.0.**
 
 | knob | now | what it means | turn it up to… |
 | --- | --- | --- | --- |
-| `w_sor` | **0.60** | The résumé — who you beat and how hard that was | reward what teams have achieved |
-| `w_market` | **0.25** | Vegas's power ranking — how good the money thinks you are | trust the market's read |
+| `w_sor` | **0.55** | The résumé — who you beat and how hard that was | reward what teams have achieved |
+| `w_market` | **0.30** | Vegas's power ranking — how good the money thinks you are | trust the market's read |
 | `w_perf` | **0.15** | The game tape — how well you actually played per snap | reward teams that look good on film |
 | `w_fpi` | 0.0 | ESPN's FPI | *leave at 0 — see below* |
 | `w_sos` | 0.0 | ESPN's Strength of Schedule | *leave at 0 — see below* |
@@ -148,5 +154,9 @@ python3 scripts/evaluate.py --year 2025 --offline   # does it predict better or 
 later game. It prints the AP poll on the same games as a reference — **not a
 target**. AP gets 58.7%; this ranking gets 67.0%.
 
-Any engine change moves `tests/fixtures/golden/rankings_2025.json`. That's
-intended — read the diff, then `python3 scripts/make_golden.py`.
+`tests/fixtures/golden/rankings_2025.json` is a byte-for-byte copy of the 2025
+output, used to catch accidental changes: 2025 is finished, so if the output
+moves, the *code* moved. It is built from the frozen weights in
+`scripts/make_golden.py`, **not** from your settings — so retuning never breaks
+it. An actual engine change does, and that is the point: read the diff, then
+`python3 scripts/make_golden.py`.

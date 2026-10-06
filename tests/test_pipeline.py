@@ -357,10 +357,15 @@ if __name__ == "__main__":
 
 
 class TestGolden(unittest.TestCase):
-    """A completed season pinned byte for byte.
+    """A completed season pinned byte for byte, at FROZEN weights.
 
-    2025 fixtures never change, so any diff here is a deliberate ranking
-    change. Regenerate with `python3 scripts/make_golden.py` and read the diff.
+    2025 fixtures never change, so any diff here is a deliberate ENGINE change.
+    Regenerate with `python3 scripts/make_golden.py` and read the diff.
+
+    It runs on `make_golden.FROZEN`, not on the shipped config, so retuning a
+    weight in config/ranking.toml does not break the build. That file is meant
+    to be edited from the GitHub web UI; a net that snapped every time somebody
+    moved a dial would just teach people to ignore it.
     """
 
     GOLDEN = "tests/fixtures/golden/rankings_2025.json"

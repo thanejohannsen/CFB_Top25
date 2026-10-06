@@ -5,6 +5,15 @@ on:
     # 12:37 UTC daily. An off-the-hour minute avoids the runner queue at :00,
     # and most runs are no-ops that commit nothing.
     - cron: "37 12 * * *"
+  push:
+    branches: [main]
+    paths:
+      # Tuning the weights should publish the result, not sit there until the
+      # next nightly run. docs/data is pre-computed output, so a config edit
+      # alone changes nothing a visitor can see until the generator reruns.
+      # The `paths` filter means this job's own "rankings: ..." commit, which
+      # only touches docs/data, cannot retrigger it.
+      - "config/ranking.toml"
   workflow_dispatch:
     inputs:
       year:
@@ -39,7 +48,10 @@ jobs:
         run: |
           # cron cannot express "August through mid-January", so gate here.
           M=$(date -u +%m); D=$(date -u +%d)
+          # A hand-triggered run or a config edit always goes through; only
+          # the nightly cron is gated on the season.
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] \
+             || [ "${{ github.event_name }}" = "push" ] \
              || [ "$M" -ge 8 ] || { [ "$M" -eq 1 ] && [ "$D" -le 25 ]; }; then
             echo "run=true" >> "$GITHUB_OUTPUT"
           else
@@ -87,7 +99,7 @@ jobs:
           python -m cfbrank \
             ${{ inputs.year && format('--year {0}', inputs.year) || '' }} \
             ${{ inputs.week && format('--week {0}', inputs.week) || '' }} \
-            ${{ inputs.force == true && '--force' || '' }} \
+            ${{ (inputs.force == true || github.event_name == 'push') && '--force' || '' }} \
             ${{ inputs.dry_run == true && '--dry-run' || '' }} \
             --print-top 25
           CODE=$?

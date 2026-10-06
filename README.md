@@ -19,7 +19,7 @@ exactly why it is there**.
 ## How it ranks
 
 1. **The record, the market and the play-by-play** —
-   `0.60 × StrengthOfRecord_rank + 0.25 × Market_rank + 0.15 × PPA_rank`. All three
+   `0.55 × StrengthOfRecord_rank + 0.30 × Market_rank + 0.15 × PPA_rank`. All three
    are national ranks where 1 is best, so lower is better.
 
    - **Strength of Record** is how hard the record was to earn, and it is computed
