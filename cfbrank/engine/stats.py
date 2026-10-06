@@ -51,6 +51,18 @@ def clamp(x: float, lo: float, hi: float) -> float:
     return lo if x < lo else (hi if x > hi else x)
 
 
+def half_life_weight(age_weeks: float, half_life: float, floor: float = 0.0) -> float:
+    """How much a thing `age_weeks` old still counts, halving every `half_life`.
+
+    `floor` is what it decays toward rather than zero: an old game fades, it does
+    not stop having happened. A non-positive `half_life` turns decay off.
+    """
+    if half_life <= 0:
+        return 1.0
+    decayed = 0.5 ** (max(0.0, age_weeks) / half_life)
+    return floor + (1.0 - floor) * decayed
+
+
 def round_floats(obj: Any, precision: int) -> Any:
     """Recursively round floats so serialized output diffs stay clean."""
     if isinstance(obj, float):

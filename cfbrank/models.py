@@ -15,6 +15,17 @@ def order_key(season_type: str, week: int, start_date: str | None) -> tuple[int,
     return (SEASON_TYPE_ORDER.get(season_type, 9), int(week), start_date or "")
 
 
+# Postseason weeks restart at 1, so a bowl would otherwise look older than a
+# week 15 game. Offsetting past the longest regular season keeps "weeks ago"
+# arithmetic honest across the boundary.
+POSTSEASON_WEEK_OFFSET = 20
+
+
+def week_index(season_type: str, week: int) -> float:
+    """A week number that keeps increasing into the postseason."""
+    return float(week) + (0.0 if season_type == "regular" else POSTSEASON_WEEK_OFFSET)
+
+
 @dataclass(frozen=True, slots=True)
 class TeamRating:
     """One row of /ratings/fpi. All resumeRanks are national ranks, 1 = best."""

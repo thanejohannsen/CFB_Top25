@@ -132,7 +132,7 @@ def print_table(result: RankingResult, n: int, out=None) -> None:
         line = (
             f"  {i:3}. {team:22}{(tb.record.overall if tb.record else '?'):>7}"
             f"  {tb.base_rank:>5}{(f'{drift:+d}' if drift else ''):>6}"
-            f"  {tb.sor_rank:>4}{mkt:>8}{ppa:>5}  {' '.join(flags)}"
+            f"  {(tb.resume_rank or tb.sor_rank):>4}{mkt:>8}{ppa:>5}  {' '.join(flags)}"
         )
         print(line.rstrip(), file=out)
     c = result.counts
@@ -171,6 +171,35 @@ def print_explain(result: RankingResult, team: str, out=None) -> int:
     for line in result.reasons.get(match, []):
         print(f"    - {line}", file=out)
 
+    print("\n    resume:", file=out)
+    if tb.resume_prob is None:
+        print("      not scored -- too few completed games", file=out)
+    else:
+        print(
+            f"      #{tb.resume_rank} of the board: a top-25 team matches this record"
+            f" {tb.resume_prob:.1%} of the time",
+            file=out,
+        )
+        print(
+            f"      won {tb.resume_actual_wins} of {len(result.resume.games.get(match, ()))}"
+            f"; such a team would average {tb.resume_expected_wins:.2f}",
+            file=out,
+        )
+        for g in result.resume.games.get(match, ()):
+            where = "home" if g.site > 0 else ("away" if g.site < 0 else "neutral")
+            print(
+                f"        {'W' if g.won else 'L'}  {g.opponent:22} {where:8}"
+                f" a top-25 team wins this {g.win_probability:.0%}",
+                file=out,
+            )
+    cov = tb.resume_detail.get("mean_cover_margin")
+    if cov is not None:
+        print(
+            f"      against the number: {cov:+.1f} per game,"
+            f" covered {tb.resume_detail.get('covers')} of {tb.resume_detail.get('cover_games')}"
+            + (f" (worst {tb.resume_detail['worst_cover']})" if tb.resume_detail.get("worst_cover") else ""),
+            file=out,
+        )
     print("\n    quality inputs:", file=out)
     if tb.market_rating is None:
         print(f"      market      --  (only {tb.market_games} lined FBS game(s))", file=out)

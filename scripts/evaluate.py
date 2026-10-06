@@ -19,16 +19,16 @@ LOOK-AHEAD -- read this before trusting any number here
 --------------------------------------------------------
 `/ratings/fpi` has no week parameter. It serves ONE snapshot, taken whenever the
 request is made, and on a completed season that snapshot is the final answer:
-Strength of Record, Strength of Schedule and FPI all describe the whole year. So
-ranking 2025 "through week 4" with any weight on those terms reads the answer key
--- Indiana shows up first in week 4 because its stored Strength of Record is 1,
-earned in January. An earlier version of this project quoted 75.5% accuracy from
-exactly that mistake.
+Strength of Schedule and FPI describe the whole year. So ranking 2025 "through
+week 4" with any weight on those terms reads the answer key. An earlier version
+of this project quoted 75.5% accuracy from exactly that mistake, back when
+Strength of Record came from the same snapshot.
 
 Betting lines and per-game PPA are different: both are stamped per game, so a
-cutoff is a real cutoff. That is why this script zeroes the snapshot terms by
-default and refuses to pretend otherwise. `--allow-lookahead` puts them back and
-labels every number it prints as contaminated.
+cutoff is a real cutoff. The resume is now computed from those lines rather than
+taken from ESPN, which is what finally lets the WHOLE formula be scored instead
+of half of it. Only ESPN's own undated metrics are still zeroed by default;
+`--allow-lookahead` puts them back and labels every number as contaminated.
 """
 
 from __future__ import annotations
@@ -51,7 +51,10 @@ from cfbrank.sources.loader import build_dataset  # noqa: E402
 
 # Terms that come from a single season-long snapshot and therefore cannot be
 # backtested. Zeroed unless --allow-lookahead.
-SNAPSHOT_TERMS = ("stage1.w_sor", "stage1.w_sos", "stage1.w_fpi")
+# The resume is computed here now (engine/resume_strength), from per-game
+# betting lines, so it HAS a real cutoff and can be scored. Only ESPN's own
+# undated metrics stay on this list.
+SNAPSHOT_TERMS = ("stage1.w_sos", "stage1.w_fpi")
 
 # Weeks to rank through. Early weeks have too little signal to mean much and
 # late ones leave too few games to predict; this spans the useful middle.
@@ -265,10 +268,9 @@ def main() -> int:
         guard = [f"{k}=0.0" for k in SNAPSHOT_TERMS]
         print(
             f"note: zeroing {', '.join(k.split('.')[-1] for k in SNAPSHOT_TERMS)}"
-            f" (combined weight {snapshot_weight:g}) -- those terms have no week"
-            " dimension and cannot be scored honestly."
+            f" (combined weight {snapshot_weight:g}) -- ESPN serves those from one"
+            " undated snapshot, so they cannot be scored honestly.\n"
         )
-        print("      what is measured below is the market + play-by-play half of the base.\n")
 
     base_overrides = list(args.overrides) + guard
 

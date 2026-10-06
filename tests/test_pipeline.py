@@ -206,6 +206,8 @@ class TestBaseWeightsArePublished(unittest.TestCase):
         cls.payload = build_payload(rank(cls.ds, cls.cfg), cls.ds, cls.cfg, GENERATED_AT)
 
     RANK_FOR = {
+        # The SoR term reads our own resume rank, which `base.sor_rank`
+        # carries; ESPN's is published separately and is not an input.
         "SoR": lambda row: row["base"]["sor_rank"],
         "SoS": lambda row: row["base"]["sos_rank"],
         "FPI": lambda row: row["fpi"]["rank"],

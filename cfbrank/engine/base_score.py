@@ -5,10 +5,10 @@ rank average and lower is better:
 
     base = w_sor * SoR_rank + w_market * Market_rank + w_perf * PPA_rank
 
-  * **Strength of Record** is the resume: how impressive is this record given who
-    it was played against. It is the term that honours what teams have actually
-    done, and its weight is a judgement about what a ranking is *for* -- it
-    cannot be set by a backtest and does not pretend to be.
+  * **Strength of Record** is the resume, and it is now computed here rather
+    than taken from ESPN: `engine.resume_strength` asks how often a top-25 team
+    would match this record against this schedule. Lower is harder. Its weight is
+    a judgement about what a ranking is *for*, not something a backtest sets.
   * **Market** is the neutral-field rating implied by betting lines
     (`engine.market`), the sharpest available read on how good a team is.
   * **PPA** is opponent-adjusted points added per play (`engine.performance`) --
@@ -25,7 +25,9 @@ blend got 67.3%. Either signal alone is worse than both together.
     it cannot be honestly backtested: `/ratings/fpi` serves one end-of-season
     snapshot with no week dimension, so grading it on a finished season reads the
     answer. It is still used where a single number has to break a tie, and in
-    weighing which head-to-head result to set aside.
+    weighing which head-to-head result to set aside. ESPN's Strength of Record
+    came from the same undated snapshot, which is why the resume is computed
+    here now -- it is what lets the whole formula be scored honestly.
   * Strength of Record already accounts for the schedule, so adding Strength of
     Schedule on top double-counts it and rewards playing hard games regardless of
     the result.
@@ -64,6 +66,10 @@ class TeamBase:
     eff_special: float | None = None
     record: Record | None = None
 
+    resume_prob: float | None = None     # P(a top-25 team matches this record)
+    resume_rank: int | None = None       # our own SoR; ESPN's stays in sor_rank
+    resume_expected_wins: float | None = None
+    resume_actual_wins: int | None = None
     market_rating: float | None = None   # neutral-field points implied by the market
     market_rank: int | None = None
     market_games: int = 0
@@ -171,6 +177,10 @@ def compute_base(
     records: Mapping[str, Record],
     fbs: AbstractSet[str],
     cfg: Mapping[str, object],
+    resume_ranks: Mapping[str, int] | None = None,
+    resume_probs: Mapping[str, float] | None = None,
+    resume_expected: Mapping[str, float] | None = None,
+    resume_actual: Mapping[str, int] | None = None,
     market_ranks: Mapping[str, int] | None = None,
     market_ratings: Mapping[str, float] | None = None,
     ppa_ranks: Mapping[str, int] | None = None,
@@ -185,6 +195,10 @@ def compute_base(
     w_market = float(cfg.get("w_market", 0.25))  # type: ignore[arg-type]
     w_perf = float(cfg.get("w_perf", 0.25))  # type: ignore[arg-type]
 
+    resume_ranks = resume_ranks or {}
+    resume_probs = resume_probs or {}
+    resume_expected = resume_expected or {}
+    resume_actual = resume_actual or {}
     market_ranks = market_ranks or {}
     market_ratings = market_ratings or {}
     ppa_ranks = ppa_ranks or {}
@@ -214,9 +228,13 @@ def compute_base(
                     r.team,
                 )
             )
+        # Our own resume rank is the SoR term. ESPN's is the fallback for a team
+        # we could not score (too few completed games) and stays published for
+        # comparison either way.
+        own_resume = resume_ranks.get(r.team)
         terms, base_raw, term_warnings = weighted_terms(
             [
-                ("SoR", w_sor, int(r.sor_rank)),  # type: ignore[arg-type]
+                ("SoR", w_sor, own_resume if own_resume is not None else int(r.sor_rank)),
                 ("Mkt", w_market, market_ranks.get(r.team)),
                 ("PPA", w_perf, ppa_ranks.get(r.team)),
                 ("FPI", w_fpi, own),
@@ -242,6 +260,10 @@ def compute_base(
                 eff_defense=r.eff_defense,
                 eff_special=r.eff_special,
                 record=records.get(r.team),
+                resume_prob=resume_probs.get(r.team),
+                resume_rank=resume_ranks.get(r.team),
+                resume_expected_wins=resume_expected.get(r.team),
+                resume_actual_wins=resume_actual.get(r.team),
                 market_rating=market_ratings.get(r.team),
                 market_rank=market_ranks.get(r.team),
                 market_games=int(market_games.get(r.team, 0)),
@@ -262,7 +284,8 @@ def compute_base(
 
 def priority(tb: TeamBase) -> tuple[float, int, int, tuple[str, str]]:
     """The total, deterministic ordering key. Every tie bottoms out in the name."""
-    return (tb.base_score, tb.sor_rank, tb.fpi_rank, sort_key(tb.team))
+    resume = tb.resume_rank if tb.resume_rank is not None else tb.sor_rank
+    return (tb.base_score, resume, tb.fpi_rank, sort_key(tb.team))
 
 
 def rerank(teams: Sequence[TeamBase]) -> list[TeamBase]:

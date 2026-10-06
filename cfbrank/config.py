@@ -49,7 +49,13 @@ DEFAULTS: dict[str, Any] = {
         "home_field_points": 2.5,
     },
     "performance": {"min_games": 3, "fit_home_edge": True},
-    "stage2": {"w_loss_quality": 3.0, "w_best_win": 1.0, "w_game_control": 0.5},
+    "stage2": {
+        "w_loss_quality": 3.0,
+        "w_best_win": 1.0,
+        "w_game_control": 0.5,
+        "w_cover": 4.0,
+    },
+    "resume": {"min_games": 3, "margin_sigma": 13.5, "reference_place": 25},
     "stage3": {"enabled": True, "gap": 15, "strength": 0.5},
     "stage4": {
         "strength": 14.0,
@@ -60,12 +66,14 @@ DEFAULTS: dict[str, Any] = {
         "evidence": {
             "w_margin": 0.50,
             "w_rating_gap": 0.30,
-            "w_recency": 0.20,
+            "w_recency": 1.20,
             "w_common_opponents": 0.15,
             "home_field_points": 2.5,
             "fit_home_field": True,
             "margin_cap": 28,
-            "recency_floor": 0.25,
+            "recency_floor": 0.15,
+            "recency_half_life_good": 8.0,
+            "recency_half_life_bad": 6.0,
             "weight_floor": 1.0,
             "conviction_floor": -2.0,
         },
@@ -186,7 +194,15 @@ def validate(data: Mapping[str, Any]) -> None:
     if sum(cfg[key] for key in base_weights) <= 0:
         raise ConfigError("at least one stage1 weight must be > 0")
 
-    for section in ("market", "performance"):
+    if cfg["stage2.w_cover"] < 0:
+        raise ConfigError("stage2.w_cover must be >= 0 (0 turns the cover modifier off)")
+    if cfg["resume.margin_sigma"] <= 0:
+        raise ConfigError("resume.margin_sigma must be > 0")
+    place = cfg["resume.reference_place"]
+    if not isinstance(place, int) or place < 1:
+        raise ConfigError("resume.reference_place must be an integer >= 1")
+
+    for section in ("market", "performance", "resume"):
         if not isinstance(cfg[f"{section}.min_games"], int) or cfg[f"{section}.min_games"] < 1:
             raise ConfigError(f"{section}.min_games must be an integer >= 1")
     if cfg["market.home_field_points"] < 0:
@@ -223,6 +239,14 @@ def validate(data: Mapping[str, Any]) -> None:
         raise ConfigError("stage4.evidence.recency_floor must be in 0.0..1.0")
     if ev["home_field_points"] < 0:
         raise ConfigError("stage4.evidence.home_field_points must be >= 0")
+    for key in ("recency_half_life_good", "recency_half_life_bad"):
+        if ev[key] <= 0:
+            raise ConfigError(f"stage4.evidence.{key} must be > 0")
+    if ev["recency_half_life_good"] < ev["recency_half_life_bad"]:
+        raise ConfigError(
+            "stage4.evidence.recency_half_life_good must be >= recency_half_life_bad "
+            "-- a convincing result should not fade faster than a weak one"
+        )
     if ev["weight_floor"] <= 0:
         raise ConfigError(
             "stage4.evidence.weight_floor must be > 0 -- overriding a result has to cost something"

@@ -94,7 +94,10 @@ def _team_entry(
             "resume_rank": tb.raw_rank,
             "score": tb.base_score,
             "raw_score": tb.base_raw,
-            "sor_rank": tb.sor_rank,
+            # The rank the SoR term actually used is OURS; ESPN's is published
+            # beside it for comparison and is no longer an input.
+            "sor_rank": tb.resume_rank if tb.resume_rank is not None else tb.sor_rank,
+            "espn_sor_rank": tb.sor_rank,
             "sos_rank": tb.sos_rank,
             "market_rank": tb.market_rank,
             "ppa_rank": tb.ppa_rank,
@@ -103,6 +106,30 @@ def _team_entry(
             "weights": {label: weight for label, weight, _rank in tb.base_terms},
             "missing": list(tb.missing_terms),
             "formula": tb.formula(),
+        },
+        "resume": {
+            "rank": tb.resume_rank,
+            "probability": tb.resume_prob,
+            "expected_wins": tb.resume_expected_wins,
+            "actual_wins": tb.resume_actual_wins,
+            "espn_rank": tb.sor_rank,
+            "schedule": [
+                {
+                    "opponent": g.opponent,
+                    "won": g.won,
+                    "site": "home" if g.site > 0 else ("away" if g.site < 0 else "neutral"),
+                    "week": g.week,
+                    "reference_win_probability": g.win_probability,
+                }
+                for g in result.resume.games.get(tb.team, ())
+            ],
+        },
+        "cover": {
+            "games": tb.resume_detail.get("cover_games"),
+            "covers": tb.resume_detail.get("covers"),
+            "mean_margin": tb.resume_detail.get("mean_cover_margin"),
+            "worst": tb.resume_detail.get("worst_cover"),
+            "adjustment": tb.resume_components.get("cover"),
         },
         "market": {
             "rating": tb.market_rating,
@@ -310,6 +337,10 @@ def build_payload(
                     "home_field_points": result.market.home_field_points,
                     "schedule_groups": result.market.components,
                     "converged": result.market.converged,
+                },
+                "resume": {
+                    "teams_rated": len(result.resume.probability),
+                    "reference_rating": result.resume.reference_rating,
                 },
                 "performance": {
                     "teams_rated": len(result.performance.ratings),

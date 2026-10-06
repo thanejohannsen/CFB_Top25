@@ -118,6 +118,51 @@ w_loss_quality = 3.0   # rank points per standard deviation
 w_best_win     = 1.0
 w_game_control = 0.5
 
+# Performance against the number the market set, in rank points per standard
+# deviation. The resume says WHO you beat; this says whether you looked like you
+# meant it. Beating a bad team by 17 when you were favoured by 28 is a miss;
+# beating a good team by 1 when you were favoured by 3 is par -- the asymmetry
+# falls out of the arithmetic rather than needing a rule.
+#
+# On 2026 week 5 this is what moves Notre Dame off the top line: 5-0, but only
+# +0.8 against the number (-12 vs Michigan State, -10 at North Carolina), while
+# Alabama is +14.1. At 4.0 the top six goes
+#   Alabama, Georgia, Miami, Notre Dame, Texas, Ohio State
+# against, with this term off,
+#   Notre Dame, Alabama, Georgia, Texas, Miami, Ohio State
+#
+# TWO HONEST CAVEATS, both in engine/cover.py at length:
+#  * This can only ever be a MODIFIER. Ranked on its own, cover margin puts
+#    Georgia State and New Mexico top of the country -- it measures exceeding
+#    expectations, not being good.
+#  * Markets are efficient, so this is close to noise: cover rates sit near 50%
+#    and past covering barely predicts future covering. Carrying it is a
+#    judgement that a ranking should describe how teams have LOOKED, not only
+#    what they predict. Set to 0 to turn it off.
+w_cover        = 4.0
+
+# -- The resume: how hard was this record to earn? ---------------------------
+# Walk a reference team through the schedule this team actually played and ask
+# how often it would come out with at least this many wins. Low = few teams
+# could have matched it. Texas opening 4-0 with Ohio State and Tennessee on the
+# card scores 2.6%; a 5-0 against nobody scores far higher.
+#
+# This REPLACES ESPN's resumeRanks.strengthOfRecord, which it tracks closely at
+# the top. The reason is not accuracy, it is honesty: /ratings/fpi serves one
+# undated snapshot, so on a finished season it describes the finished season and
+# any backtest reading it is reading the answer key. Betting lines are stamped
+# per game, so a resume built from them has a real cutoff -- which is what lets
+# the whole formula finally be scored. ESPN's number is still published beside
+# ours for comparison.
+[resume]
+min_games       = 3
+margin_sigma    = 13.5  # std dev of actual margin around the spread, in points.
+                        # The curve is a NORMAL CDF, not a logistic: a logistic
+                        # at this scale prices a 30-point favourite at 0.90 when
+                        # the real figure is 0.99, and made every resume look
+                        # harder than it was.
+reference_place = 25    # "could a top-25 team have done this?"
+
 # -- Stage 3: upset regression (big-gap results pull both toward midpoint) ---
 [stage3]
 enabled  = true
@@ -136,7 +181,12 @@ max_passes   = 400
 [stage4.evidence]
 w_margin           = 0.50
 w_rating_gap       = 0.30   # agreement with the power ratings (market, FPI if none)
-w_recency          = 0.20
+# 0.20 left this dial almost disconnected -- age moved only 4.3% of the
+# conviction range, so a week-1 result and a week-12 result cost nearly the same
+# to override. At 1.2 age accounts for 23.8% of the range, and a ten-week-old
+# result costs 16.3% less to set aside than an identical fresh one, while margin
+# remains the single biggest signal.
+w_recency          = 1.20
 w_common_opponents = 0.15
 home_field_points  = 2.5    # fallback; the market's own figure is used when fitted
 fit_home_field     = true   # take home field from [market] rather than the line above
@@ -158,7 +208,29 @@ margin_cap         = 28
 # conviction_floor to narrow the gap between a weak result and a strong one.
 weight_floor       = 1.0
 conviction_floor   = -2.0
-recency_floor      = 0.25
+
+# How fast a head-to-head result stops mattering.
+#
+# A result fades with a half-life in WEEKS, and a convincing one fades slower:
+# beating a good team by three scores keeps its force into November, while
+# scraping past a bad one in September does not. The split is the board's own
+# median conviction, measured WITHOUT the recency term so the half-life a result
+# gets is not a function of the age it is about to be judged on.
+#
+#     weeks old      bad (6wk)    good (8wk)
+#             3        0.75          0.81
+#             6        0.58          0.66
+#            12        0.36          0.45
+#
+# recency_floor is what they decay TOWARD: an old game fades, it never stops
+# having happened.
+#
+# Note the tension this creates with signature wins, because it is real: Oklahoma
+# State beat Oregon in week 2, and that result gets cheaper to override every
+# week even on the slower clock.
+recency_half_life_good = 8.0
+recency_half_life_bad  = 6.0
+recency_floor      = 0.15
 
 [output]
 rankings_path     = "docs/data/rankings.json"

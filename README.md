@@ -22,21 +22,19 @@ exactly why it is there**.
    `0.50 × StrengthOfRecord_rank + 0.25 × Market_rank + 0.25 × PPA_rank`. All three
    are national ranks where 1 is best, so lower is better.
 
-   - **Strength of Record** is the resume: how impressive your record is given who
-     you played. Half the ranking, because half of what a ranking is for is
-     honouring what teams have actually done.
+   - **Strength of Record** is how hard the record was to earn, and it is computed
+     here rather than taken from ESPN. Walk a *reference team* — the 25th best on
+     the board — through the schedule a team actually played, and ask how often it
+     would finish with at least that many wins. Texas opening 4-0 with Ohio State
+     and Tennessee on the card scores **2.6%**; a 5-0 against nobody scores far
+     higher. Every game and its probability is published in the team's panel.
    - **Market rating** is the neutral-field rating implied by betting lines. A
      spread prices a *matchup*, so it is decomposed into one number per team:
-     `expected home margin = rating(home) − rating(away) + home field`. The output
-     is in points and reads directly — +19.5 beats +15.5 by four on neutral ground.
-     Home field is measured from the lines, not assumed, and lands near +2.4.
+     `expected home margin = rating(home) − rating(away) + home field`. Home field
+     is measured from the lines, not assumed, and lands near +2.4.
    - **PPA** is points added per play on offence less points allowed on defence,
      garbage time stripped, adjusted for opponent strength. The eye test, counted.
 
-   They know different things, and the pair beats either alone. Ranking 2025 only
-   on what was knowable at the time and predicting every later game: market alone
-   61.2% of ranked-vs-ranked games, play-by-play alone 62.8%, the two together
-   67.3%.
 2. **Resume adjustment** — Strength of Record knows *who* you played but not *how*
    you lost. A three-point road loss and a 24-point home loss are not the same
    result, so loss quality, best win and game control adjust the base score.
@@ -58,18 +56,42 @@ exactly why it is there**.
 5. **Contradiction reporting** — loops (A beat B, B beat C, C beat A) are found with
    Tarjan's algorithm and published, along with every overridden result.
 
-### Why FPI is not in the formula
+### Against the number
 
-It was the quality term, and two things pushed it out. The market and the
-play-by-play do its job better. And FPI **cannot be honestly checked**:
-`/ratings/fpi` has no week parameter, so it serves one snapshot — on a completed
-season, the finished year's answer. Ranking 2025 "through week 4" with it put
-Indiana first because its *stored* Strength of Record is 1, earned in January. An
-earlier version of this README quoted 75.5% accuracy from precisely that mistake.
+A resume says *who* you beat. It cannot say whether you looked like you meant it,
+so stage 2 also measures each team against what the market expected of it:
 
-FPI still breaks ties, and still helps weigh which head-to-head result to set
-aside when the market has no line for either team. It just does not order the
-board.
+```
+cover margin = actual margin − the posted line
+```
+
+The asymmetry falls out of the arithmetic rather than needing a rule. Beating a
+bad team by 17 when you were favoured by 28 is a miss; beating a good team by 1
+when you were favoured by 3 is par. The easier a game was supposed to be, the more
+a flat performance costs you.
+
+This is what separates two unbeaten teams. In week 5 of 2026, Alabama were **+14.1**
+per game against the number and Notre Dame **+0.8**, having missed by 12 against
+Michigan State and by 10 at North Carolina — and that, not their record, is why
+Notre Dame is not first.
+
+It can only ever be a *modifier*. Ranked on its own this measure puts Georgia
+State, James Madison and New Mexico top of the country, because it measures
+exceeding expectations rather than being good.
+
+### Why FPI and ESPN's Strength of Record are not in the formula
+
+FPI was the quality term and ESPN's SoR was the resume. Both left for the same
+reason: `/ratings/fpi` has no week parameter, so it serves one snapshot — on a
+completed season, the finished year's answer. Ranking 2025 "through week 4" with
+them put Indiana first because its *stored* Strength of Record is 1, earned in
+January. An earlier version of this README quoted 75.5% accuracy from precisely
+that mistake.
+
+Betting lines are stamped per game, so computing the resume from them has a real
+cutoff. That is what lets the whole ranking finally be graded rather than half of
+it. ESPN's numbers are still published alongside for comparison, and FPI still
+breaks ties and helps weigh which head-to-head result to set aside.
 
 ### Why Strength of Schedule is not in the formula
 
@@ -96,14 +118,14 @@ predict the winner of every game after it, count how often that is right. That i
 the one test of a ranking that cannot be gamed by copying somebody.
 
 On identical games from 2025 — the ones between two AP-ranked teams — this ranking
-got **62.1%** and the AP poll **57.6%**. AP is printed as a reference row and is
+got **67.0%** and the AP poll **58.7%**. AP is printed as a reference row and is
 never a target; it is the worst number the tool produces. The poll had Miami 18th
 in week 11 of 2025 and they finished 2nd.
 
-The tool **zeroes Strength of Record, Strength of Schedule and FPI by default**,
-because all three come from that one undated snapshot and scoring them on a
-finished season is reading the answer key. `--allow-lookahead` puts them back and
-labels its own output as contaminated.
+The tool **zeroes Strength of Schedule and FPI by default**, because ESPN serves
+them from one undated snapshot and scoring them on a finished season is reading
+the answer key. `--allow-lookahead` puts them back and labels its own output as
+contaminated.
 
 ### Why head-to-head is weighted rather than absolute
 
@@ -209,8 +231,8 @@ python3 scripts/make_golden.py
 
 ```
 cfbrank/
-  engine/      base_score, market, performance, adjust, resume, regression,
-               h2h, evidence, order, graph, pipeline
+  engine/      base_score, resume_strength, cover, market, performance, adjust,
+               resume, regression, h2h, evidence, order, graph, pipeline
   sources/     cfbd (live), fixtures (offline), http_cache, loader
   output/      schema, writer, history
 config/        ranking.toml -- every weight, one file

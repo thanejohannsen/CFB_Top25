@@ -209,8 +209,35 @@ class TestResumeAdjustment(unittest.TestCase):
         teams, _ = teams_for([("A", 1, 1, 20.0), ("B", 2, 2, 10.0)])
         apply_resume_adjustment(teams, [result("A", "B")], S2, EV)
         self.assertEqual(
-            sorted(teams[0].resume_components), ["best_win", "game_control", "loss_quality"]
+            sorted(teams[0].resume_components),
+            ["best_win", "cover", "game_control", "loss_quality"],
         )
+
+    def test_beating_the_number_is_a_credit_and_missing_it_is_a_penalty(self):
+        from cfbrank.engine.cover import CoverGame, CoverRecord
+
+        def rec(*margins):
+            return CoverRecord(
+                tuple(
+                    CoverGame(opponent="X", week=i + 1, season_type="regular",
+                              expected=0.0, actual=m)
+                    for i, m in enumerate(margins)
+                )
+            )
+
+        teams, _ = teams_for([("A", 1, 1, 20.0), ("B", 2, 2, 10.0), ("C", 3, 3, 5.0)])
+        covers = {"A": rec(14, 18, 21), "B": rec(0, 1, -1), "C": rec(-12, -9, -14)}
+        apply_resume_adjustment(teams, [result("A", "B")], S2, EV, covers)
+        by = {t.team: t.resume_components["cover"] for t in teams}
+        self.assertLess(by["A"], 0, "beating the number should earn rank points back")
+        self.assertGreater(by["C"], 0, "failing to cover should cost rank points")
+        self.assertLess(abs(by["B"]), abs(by["A"]), "par performance should barely move")
+
+    def test_a_team_with_no_lines_takes_no_cover_adjustment(self):
+        teams, _ = teams_for([("A", 1, 1, 20.0), ("B", 2, 2, 10.0)])
+        apply_resume_adjustment(teams, [result("A", "B")], S2, EV, {})
+        for tb in teams:
+            self.assertEqual(tb.resume_components["cover"], 0.0)
 
     def test_adjustment_changes_the_order(self):
         teams, _ = teams_for([("A", 1, 1, 20.0), ("B", 2, 2, 10.0), ("C", 3, 3, 5.0)])

@@ -5,13 +5,13 @@
     {
       "snapshots": [
         {
-          "content_hash": "sha256:5ccbf1454abcf65cfc80c1acf6f409c2039e178f5e4c897710dd9efc93e8fe99",
-          "generated_at": "2026-10-06T18:59:46Z",
+          "content_hash": "sha256:aa6030be08bf0c092f565af27655661c614b2c5b21e079993593f2fc121cd727",
+          "generated_at": "2026-10-06T19:52:28Z",
           "id": "2026-regular-05",
           "label": "Week 5",
           "path": "weeks/2026-regular-05.json",
           "season_type": "regular",
-          "top1": "Notre Dame",
+          "top1": "Alabama",
           "week": 5,
           "year": 2026
         }
@@ -21,8 +21,8 @@
     {
       "snapshots": [
         {
-          "content_hash": "sha256:446d95a2ed2ad31aa31630e35abc96356a41a3823cfb2693adbe7b4ef0f3028f",
-          "generated_at": "2026-10-06T18:58:07Z",
+          "content_hash": "sha256:e9e5b1ced312474620ea2b51f3d0dba49ca47c2b45bee2569cf2d50c284bcb1b",
+          "generated_at": "2026-10-06T19:52:26Z",
           "id": "2025-postseason-01",
           "label": "Postseason week 1",
           "path": "weeks/2025-postseason-01.json",
@@ -35,5 +35,5 @@
       "year": 2025
     }
   ],
-  "updated_at": "2026-10-06T18:59:46Z"
+  "updated_at": "2026-10-06T19:52:28Z"
 }

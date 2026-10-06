@@ -41,9 +41,13 @@
           rank average and lower is better.
         </p>
         <ul class="reasons">
-          <li><b>Strength of Record</b> &mdash; how impressive a team's win&ndash;loss record is
-            given who it played. This is the half that honours what teams have actually
-            <em>done</em>.</li>
+          <li><b>Strength of Record</b> &mdash; how hard this record was to earn, computed
+            here rather than taken from ESPN. Walk a <em>reference team</em> (the 25th best
+            on the board) through the schedule this team actually played, and ask how often
+            it would finish with at least this many wins. Texas opening 4&ndash;0 with Ohio
+            State and Tennessee on the card scores <b>2.6%</b> &mdash; about one time in
+            forty. A 5&ndash;0 against nobody scores far higher. Every game and its
+            probability is published in each team's panel.</li>
           <li><b>Market rating</b> &mdash; the neutral-field rating implied by betting lines. A
             point spread prices a <em>matchup</em>, so it is decomposed into one number per
             team: expected home margin = rating(home) &minus; rating(away) + home field. The
@@ -72,6 +76,23 @@
           choice is visible: on the completed 2025 season a 7&ndash;6 Penn State lands at
           24th, because its record was ordinary but the market rated it 13th and the
           play-by-play 16th.
+        </p>
+        <h3>Why the resume is computed here and not taken from ESPN</h3>
+        <p class="lede">
+          It tracks ESPN's Strength of Record closely at the top, so this is not a change of
+          opinion. It is a change of <em>provenance</em>. ESPN serves that number from one
+          undated snapshot, which means on a finished season it describes the finished
+          season &mdash; so no backtest could ever check it, and the evaluation tool had to
+          leave it out and score half the formula. Betting lines are stamped per game.
+          Computing the resume from them is what finally lets the whole ranking be graded.
+        </p>
+        <p class="lede">
+          It also means the number is <em>inspectable</em>. The curve from a point spread to
+          a win probability is a normal distribution with a standard deviation of 13.5
+          points &mdash; a 14-point favourite wins about 85% of the time, a 30-point
+          favourite about 99%. Getting that curve wrong is quiet and expensive: an earlier
+          draft used a logistic at the same scale, priced a 30-point favourite at 90%, and
+          made every resume in the country look harder to earn than it was.
         </p>
         <h3>Why FPI is no longer in the formula</h3>
         <p class="lede">
@@ -115,7 +136,7 @@
           Strength of Record knows who you played but not <em>how</em> you lost. A
           three-point road loss to the eventual best team in the country and a 24-point
           home loss to a middling one can produce the same SoR. They are not the same
-          result, so three penalties adjust the base score:
+          result, so four adjustments move the base score:
         </p>
         <ul class="reasons">
           <li><b>Loss quality</b> &mdash; for each defeat, half the margin once venue is
@@ -123,7 +144,37 @@
           <li><b>Best win</b> &mdash; how good the best team you beat was.</li>
           <li><b>Game control</b> &mdash; the feed's average in-game win probability rank:
             did you lead comfortably, or survive?</li>
+          <li><b>Against the number</b> &mdash; how the team played compared with what the
+            market expected of it, game by game.</li>
         </ul>
+        <h3>Against the number</h3>
+        <p class="lede">
+          A resume says <em>who</em> you beat. It cannot say whether you looked like you
+          meant it. The market posts, before kickoff, how much a team should win by; the
+          difference between that and what happened is the cleanest statement of "did they
+          play well" the data offers.
+        </p>
+        <p class="lede">
+          The asymmetry falls out of the arithmetic rather than needing a rule. Beating a
+          bad team by 17 when you were favoured by 28 is a <em>miss</em>. Beating a good
+          team by 1 when you were favoured by 3 is par. The easier a game was supposed to
+          be, the more a flat performance costs you &mdash; and a team whose close wins came
+          against good opponents loses almost nothing.
+        </p>
+        <p class="lede">
+          This is what separates two unbeaten teams. In week 5 of 2026, Alabama were
+          <b>+14.1</b> per game against the number and Notre Dame <b>+0.8</b>, having failed
+          to cover against Michigan State by 12 and at North Carolina by 10 &mdash; and that,
+          not their record, is why Notre Dame is not first.
+        </p>
+        <p class="lede">
+          <b>It can only ever be a modifier.</b> Ranked on its own, this measure puts
+          Georgia State, James Madison and New Mexico at the top of the country, because it
+          measures <em>exceeding expectations</em> rather than <em>being good</em> &mdash; a
+          bad team losing by 10 as a 20-point underdog covers. It adjusts a resume that
+          already knows who you beat, and it is deliberately kept small enough not to
+          behave like a ranking term of its own.
+        </p>
         <p class="lede">
           Each is a z-score scaled into rank points, so the adjustment is measured against
           how teams actually vary this season rather than an arbitrary constant.
@@ -292,7 +343,7 @@
       var meta = data.meta || {}, cfg = meta.config || {};
       var s1 = cfg.stage1 || {}, s2 = cfg.stage2 || {}, s3 = cfg.stage3 || {}, s4 = cfg.stage4 || {};
       var ev = s4.evidence || {};
-      var mk = cfg.market || {}, pf = cfg.performance || {};
+      var mk = cfg.market || {}, pf = cfg.performance || {}, rsm = cfg.resume || {};
       document.getElementById("attribution").textContent = (meta.source || {}).attribution || "";
 
       var f = document.getElementById("f-stage1");
@@ -325,6 +376,9 @@
         ["Loss-quality weight", s2.w_loss_quality],
         ["Best-win weight", s2.w_best_win],
         ["Game-control weight", s2.w_game_control],
+        ["Against-the-number weight", s2.w_cover],
+        ["Resume: reference team", "#" + rsm.reference_place + " on the board"],
+        ["Resume: margin sigma", rsm.margin_sigma + " points"],
         ["Upset regression", s3.enabled ? "on" : "off"],
         ["  gap that triggers it", s3.gap],
         ["  strength (1.0 = full midpoint)", s3.strength],
@@ -335,6 +389,8 @@
         ["  margin weight", ev.w_margin],
         ["  rating-gap weight", ev.w_rating_gap],
         ["  recency weight", ev.w_recency],
+        ["  half-life, convincing result", ev.recency_half_life_good + " weeks"],
+        ["  half-life, weak result", ev.recency_half_life_bad + " weeks"],
         ["  common-opponent weight", ev.w_common_opponents],
         ["  home-field points", ev.home_field_points],
         ["  margin cap", ev.margin_cap],

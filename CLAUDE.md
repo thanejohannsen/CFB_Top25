@@ -28,7 +28,8 @@ and replace the single line in `config/ranking.toml`.
 ## The base formula
 
 ```
-base = 0.50 x SoR_rank + 0.25 x Market_rank + 0.25 x PPA_rank
+base  = 0.50 x SoR_rank + 0.25 x Market_rank + 0.25 x PPA_rank
+score = base + resume adjustment (incl. cover) + upset regression
 ```
 
 Half the ranking is the record, half is how good the team actually is. The
@@ -36,6 +37,30 @@ quality half is split evenly between the neutral-field rating implied by betting
 lines (`cfbrank/engine/market.py`) and opponent-adjusted points added per play
 (`cfbrank/engine/performance.py`). Both solve through the shared
 `cfbrank/engine/adjust.py`.
+
+**The SoR term is computed here, not taken from ESPN.**
+`cfbrank/engine/resume_strength.py` walks a reference team (the 25th-best market
+rating) through the schedule a team actually played and asks how often it would
+finish with at least that many wins. Texas opening 4-0 with Ohio State and
+Tennessee scores 2.6%; a 5-0 against nobody scores far higher.
+
+Two things about it must not be broken:
+
+- **The curve is a NORMAL CDF with sigma 13.5, not a logistic.** A logistic at
+  the same scale prices a 30-point favourite at 0.90 against a real ~0.99 and a
+  14-point favourite at 0.74 against ~0.85, which made every resume in the
+  country look harder to earn than it was. `tests/test_ratings.py` pins the curve
+  against known spread/probability pairs.
+- **The per-game list is sorted before the Poisson-binomial DP.** `at_least()`
+  accumulates floats game by game, so an unsorted list changes the last bits of
+  the probability, which can flip a rank and break byte-stability. The same
+  applies to `engine/cover.py`. `tests/test_pipeline.py::TestDeterminism`
+  shuffles `dataset.games` directly and will catch it.
+
+ESPN's SoR is still published beside ours for comparison and is no longer an
+input. Replacing it is what lets the WHOLE formula be backtested: ESPN serves it
+from one undated snapshot, so `scripts/evaluate.py` used to zero it and could
+only score half the base.
 
 ### Four weights that ship off, and must stay off
 
@@ -49,12 +74,13 @@ lines (`cfbrank/engine/market.py`) and opponent-adjusted points added per play
   so weighting Strength of Schedule again double-counts it and rewards playing
   hard games regardless of the result. At 0.25 a 3-2 team sat at #16 and a 5-0
   team with the #2 FPI sat at #23.
-- **`market.recency_half_life = 0`.** Weighting recent lines more heavily was
-  built and measured: all-FBS accuracy fell monotonically (69.1% off, 68.7% at a
-  two-week half-life). The same idea was tried on PPA and failed the same way. It
-  is tempting because it lifts a team that started badly and has looked great
-  since, which is exactly how you talk yourself into a ranking the results do not
-  support.
+- **`market.recency_half_life = 0`.** Weighting recent *lines* more heavily was
+  built and measured. The evidence is genuinely mixed rather than damning, and an
+  earlier version of this file overstated it: after the Gauss-Seidel fix, all-FBS
+  accuracy goes 68.6% (off) / 67.9% (6-week) / 68.1% (3-week), while AP-vs-AP
+  goes 64.2% / 64.8% / **67.0%**. It is off because the market term already reads
+  next week's lines and is a current opinion by construction, not because the
+  numbers condemn it. Head-to-head and play-by-play decay instead; see below.
 - **The signature-win credit was built, measured and deleted.** It helped on a
   partial season and hurt on a completed one — the signature of a term that
   double-counts once a full resume exists. Strength of Record already measures
@@ -69,11 +95,14 @@ rejects 2.
 ### Justifying a weight change
 
 `python3 scripts/evaluate.py --year 2025` ranks through a series of weeks and
-predicts every later game. **It zeroes SoR/SoS/FPI by default** because they
-cannot be scored honestly, and `--allow-lookahead` labels its own output as
-contaminated. The AP poll is printed as one reference row on identical games and
-is never a target — the owner's position, and it also loses: 57.6% to this
-ranking's 62.1% on the same 2025 games.
+predicts every later game. It zeroes **SoS and FPI** by default -- ESPN serves
+those from one undated snapshot -- and `--allow-lookahead` labels its own output
+as contaminated. Since the resume is computed here now, the whole formula is
+scored rather than half of it.
+
+The AP poll is printed as one reference row on identical games and is never a
+target. It also loses, by a lot: **67.0% to 58.7%** on the same 179 games from
+2025.
 
 Two things the tool cannot settle, so do not claim it did:
 
@@ -84,7 +113,43 @@ Two things the tool cannot settle, so do not claim it did:
   on 1,997 games). What the data does say clearly: both terms beat either alone
   (pure PPA 64.3%).
 
+### Against the number (`stage2.w_cover`, `engine/cover.py`)
+
+A resume says who you beat; it cannot say whether you looked like you meant it.
+`cover margin = actual margin - the posted line`, per game, z-scored across the
+board and converted to rank points in stage 2.
+
+It is what separates two unbeaten teams: in 2026 week 5 Alabama were +14.1 per
+game against the number and Notre Dame +0.8, and that is why Notre Dame is not
+first. The asymmetry the owner asked for falls out of the arithmetic -- the
+easier a game was supposed to be, the more a flat performance costs, so Texas
+loses almost nothing for close wins over good teams.
+
+**It can only ever be a modifier.** Ranked alone it puts Georgia State and New
+Mexico top of the country, because it measures exceeding expectations rather than
+being good. At `w_cover = 6` that leak is already visible on the real board:
+Northwestern at 3-1 climbs to #6 and UCLA into the top 12. 4.0 is the shipped
+value for that reason, not for the accuracy curve.
+
+**I was wrong about this term and the record should say so.** I predicted it
+would cost predictive accuracy, on the grounds that markets are efficient and
+cover rates sit near 50%. It does the opposite -- on identical 2025 AP-vs-AP
+games, accuracy runs 61.5% at `w_cover=0`, 67.0% at 4, 69.3% at 6, 70.4% at 10,
+68.7% at 14. The error was conflating two questions: past ATS barely predicts
+*future ATS*, but margin against a per-game market line is a well opponent-adjusted
+measure of *team strength*, which is a different thing.
+
 ### Head-to-head has to cost something
+
+Results also **fade with age**, on a half-life in weeks, and a convincing result
+fades slower: `recency_half_life_good = 8.0`, `recency_half_life_bad = 6.0`,
+split at the board's median conviction measured WITHOUT its own recency component
+so the half-life is not a function of the age it is about to judge. `w_recency`
+is 1.20, not the old 0.20: at 0.20 age moved only 4.3% of the conviction range,
+so a week-1 result and a week-12 result cost nearly the same to override. At 1.20
+age is 23.8% of the range and a ten-week-old result costs 16.3% less to set aside.
+Note the live tension: this makes an early signature win (Oklahoma State over
+Oregon, week 2) cheaper to override as the season runs.
 
 `stage4.evidence.weight_floor` and `conviction_floor` set the price of overriding
 a result. The floor is an *absolute* conviction level on purpose. It used to be

@@ -202,6 +202,35 @@
     ]);
   }
 
+  function resumeTable(row) {
+    var sched = (row.resume || {}).schedule || [];
+    if (!sched.length) {
+      return el("p", { class: "empty", text: "No completed games yet." });
+    }
+    return el("table", { class: "h2h" }, [
+      el("thead", null, [el("tr", null, [
+        el("th", { scope: "col", text: "" }),
+        el("th", { scope: "col", text: "Opponent" }),
+        el("th", { scope: "col", text: "At" }),
+        el("th", { scope: "col", class: "num", text: "Wk" }),
+        el("th", { scope: "col", class: "num", text: "A top-25 team wins this" })
+      ])]),
+      el("tbody", null, sched.map(function (g) {
+        return el("tr", null, [
+          el("td", null, [el("span", {
+            class: "state " + (g.won ? "honored" : "overridden"),
+            text: g.won ? "W" : "L"
+          })]),
+          el("td", null, [el("strong", { text: g.opponent })]),
+          el("td", { "data-label": "At", text: g.site }),
+          el("td", { class: "num", "data-label": "Wk", text: String(g.week) }),
+          el("td", { class: "num", "data-label": "Win prob",
+                     text: (100 * g.reference_win_probability).toFixed(0) + "%" })
+        ]);
+      }))
+    ]);
+  }
+
   function detailPanel(row) {
     var base = row.base || {};
     var ra = row.resume_adjustment || {};
@@ -217,6 +246,24 @@
     if (row.regression) pair("Upset regression", signed(row.regression.adjustment, 2) + " rank points");
     pair("Base position", "#" + base.rank);
     pair("Final position", "#" + row.rank + " \u2014 " + driftText(row.placement.drift));
+
+    var res = row.resume || {}, cov = row.cover || {};
+    if (res.probability !== null && res.probability !== undefined) {
+      pair(
+        "Resume",
+        "#" + res.rank + " \u2014 a top-25 team matches this record " +
+          (100 * res.probability).toFixed(1) + "% of the time"
+      );
+      pair("  record vs expected", res.actual_wins + " wins; such a team would average " +
+        num(res.expected_wins, 2));
+    }
+    if (cov.mean_margin !== null && cov.mean_margin !== undefined) {
+      pair(
+        "Against the number",
+        signed(cov.mean_margin, 1) + " per game, covered " + cov.covers + " of " + cov.games +
+          (cov.worst ? " (worst " + cov.worst + ")" : "")
+      );
+    }
 
     var mkt = row.market || {}, perf = row.performance || {};
     if (mkt.rating !== null && mkt.rating !== undefined) {
@@ -257,6 +304,9 @@
           el("div", null, [el("h3", { text: "The numbers behind it" }), kv])
         ]),
         el("div", { class: "detail-wide" }, [
+          el("h3", { text: "The resume, game by game" }),
+          el("p", { class: "lede", text: "How often a top-25 team would win each of these, and what the market expected. Winning games you were supposed to win does not move the resume; the schedule is what makes a record hard to earn." }),
+          scrollable(resumeTable(row)),
           el("h3", { text: "Head-to-head inside the pool" }),
           el("p", { class: "lede", text: "\u201cAdj\u201d is the margin once venue is accounted for \u2014 a one-point home win is negative. \u201cRating gap\u201d is how many points apart the market puts the two teams." }),
           scrollable(h2hTable(row))

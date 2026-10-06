@@ -48,14 +48,27 @@ class TestLocationAdjustedMargin(unittest.TestCase):
 
 
 class TestRecency(unittest.TestCase):
-    def test_respects_the_floor_and_ceiling(self):
-        self.assertAlmostEqual(recency_weight(0, 15, 0.25), 0.25)
-        self.assertAlmostEqual(recency_weight(15, 15, 0.25), 1.0)
-        self.assertGreater(recency_weight(10, 15, 0.25), recency_weight(2, 15, 0.25))
+    """A result fades with a half-life in weeks, toward a floor rather than zero."""
 
-    def test_single_game_season_does_not_divide_by_zero(self):
-        self.assertAlmostEqual(recency_weight(0, 0, 0.25), 1.0)
+    def test_a_fresh_result_counts_in_full(self):
+        self.assertAlmostEqual(recency_weight(0, 6.0, 0.15), 1.0)
 
+    def test_one_half_life_is_halfway_to_the_floor(self):
+        # 0.15 + 0.85 * 0.5
+        self.assertAlmostEqual(recency_weight(6.0, 6.0, 0.15), 0.575)
+
+    def test_it_decays_toward_the_floor_and_never_below(self):
+        self.assertGreater(recency_weight(100.0, 6.0, 0.15), 0.15)
+        self.assertLess(recency_weight(100.0, 6.0, 0.15), 0.16)
+
+    def test_a_longer_half_life_fades_slower(self):
+        good = recency_weight(10.0, 8.0, 0.15)
+        bad = recency_weight(10.0, 6.0, 0.15)
+        self.assertGreater(good, bad, "a convincing result should outlast a weak one")
+
+    def test_age_is_monotonic(self):
+        weights = [recency_weight(w, 6.0, 0.15) for w in range(0, 15)]
+        self.assertEqual(weights, sorted(weights, reverse=True))
 
 class TestCommonOpponents(unittest.TestCase):
     def test_no_shared_opponents(self):

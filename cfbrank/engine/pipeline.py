@@ -9,13 +9,14 @@ from dataclasses import dataclass, field
 from typing import Mapping, Sequence
 
 from cfbrank.config import Config
-from cfbrank.engine import h2h, market, performance
+from cfbrank.engine import h2h, market, performance, resume_strength
 from cfbrank.engine.base_score import TeamBase, compute_base, pool, priority, rerank
 from cfbrank.engine.evidence import EdgeFact, score_edges
 from cfbrank.engine.graph import Digraph, nontrivial_sccs
 from cfbrank.engine.order import Edge, OrderResult, minimum_violations_order
 from cfbrank.engine.provenance import cycle_explanation, team_reasons
 from cfbrank.engine.regression import RegressionEvent, apply_upset_regression
+from cfbrank.engine import cover
 from cfbrank.engine.resume import apply_resume_adjustment
 from cfbrank.models import Dataset, GameResult, Warning_
 from cfbrank.normalize import sort_key
@@ -53,6 +54,9 @@ class RankingResult:
     series_notes: list[h2h.SeriesNote]
     skipped: list[h2h.SkippedGame]
     warnings: list[Warning_]
+    resume: resume_strength.ResumeRatings = field(
+        default_factory=resume_strength.ResumeRatings
+    )
     market: market.MarketRatings = field(default_factory=market.MarketRatings)
     performance: performance.PerformanceRatings = field(
         default_factory=performance.PerformanceRatings
@@ -76,6 +80,7 @@ def rank(dataset: Dataset, cfg: Config) -> RankingResult:
     ev_cfg = cfg.section("stage4.evidence")
     mkt_cfg = cfg.section("market")
     perf_cfg = cfg.section("performance")
+    resume_cfg = cfg.section("resume")
 
     # -- the week to rank through -----------------------------------------
     week, season_type, cutoff = h2h.resolve_week(
@@ -108,6 +113,11 @@ def rank(dataset: Dataset, cfg: Config) -> RankingResult:
     }
     mkt = market.compute(dataset.lines, fbs, cutoff, mkt_cfg, played_ids)
     perf = performance.compute(dataset.ppa, fbs, cutoff, perf_cfg, played_ids)
+    # The resume is measured against the market's view of each opponent, so it
+    # has to come after the market solve.
+    res = resume_strength.compute(
+        dataset.games, mkt.ratings, mkt.home_field_points, fbs, cutoff, resume_cfg
+    )
 
     # -- stage 1 ----------------------------------------------------------
     teams, warnings = compute_base(
@@ -115,6 +125,10 @@ def rank(dataset: Dataset, cfg: Config) -> RankingResult:
         dataset.records_by_team(),
         fbs,
         s1,
+        resume_ranks=res.ranks,
+        resume_probs=res.probability,
+        resume_expected={t: res.expected_wins(t) or 0.0 for t in res.ranks},
+        resume_actual={t: res.actual_wins(t) or 0 for t in res.ranks},
         market_ranks=mkt.ranks,
         market_ratings=mkt.ratings,
         ppa_ranks=perf.ranks,
@@ -123,11 +137,17 @@ def rank(dataset: Dataset, cfg: Config) -> RankingResult:
         market_games=mkt.games,
         ppa_games=perf.games,
     )
-    warnings = list(dataset.warnings) + list(mkt.warnings) + list(perf.warnings) + list(warnings)
+    warnings = (
+        list(dataset.warnings)
+        + list(mkt.warnings)
+        + list(perf.warnings)
+        + list(res.warnings)
+        + list(warnings)
+    )
     by_team = {tb.team: tb for tb in teams}
 
     # -- stage 2 ----------------------------------------------------------
-    apply_resume_adjustment(teams, all_results, s2, ev_cfg)
+    apply_resume_adjustment(teams, all_results, s2, ev_cfg, cover.cover_margins(dataset.lines, dataset.games, cutoff))
 
     # -- stage 3 (measured on the provisional pool) ------------------------
     pool_size = int(s1["pool_size"])
@@ -244,6 +264,7 @@ def rank(dataset: Dataset, cfg: Config) -> RankingResult:
         "cycles": len(cycles),
         "largest_cycle": max((c.size for c in cycles), default=0),
         "regressions": len(regressions),
+        "resume_rated": len(res.probability),
         "market_rated": len(mkt.ratings),
         "ppa_rated": len(perf.ratings),
         "max_rise": -min(ordering.drift.values(), default=0),
@@ -268,6 +289,7 @@ def rank(dataset: Dataset, cfg: Config) -> RankingResult:
         series_notes=series_notes,
         skipped=skipped,
         warnings=warnings,
+        resume=res,
         market=mkt,
         performance=perf,
         reasons=reasons,

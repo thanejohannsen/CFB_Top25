@@ -363,3 +363,192 @@ class TestAgainstTheRealSeason(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestWinProbability(unittest.TestCase):
+    """The curve that turns a point spread into a chance of winning.
+
+    Pinned against reality because getting it wrong is quiet: an earlier draft
+    used a LOGISTIC at the same scale, which priced a 30-point favourite at 0.90
+    against a real ~0.99 and made every resume look harder to earn than it was.
+    """
+
+    KNOWN = ((0, 0.500), (3, 0.588), (7, 0.698), (10, 0.771), (14, 0.850), (21, 0.940), (30, 0.987))
+
+    def test_matches_the_real_curve(self):
+        from cfbrank.engine.resume_strength import win_probability
+
+        for points, expected in self.KNOWN:
+            self.assertAlmostEqual(win_probability(points), expected, places=3, msg=f"{points:+}")
+
+    def test_a_logistic_at_this_scale_would_not(self):
+        import math
+
+        from cfbrank.engine.resume_strength import win_probability
+
+        logistic = lambda p: 1 / (1 + math.exp(-p / 13.5))
+        self.assertGreater(win_probability(30) - logistic(30), 0.08)
+
+    def test_it_is_symmetric_about_a_pick_em(self):
+        from cfbrank.engine.resume_strength import win_probability
+
+        for points in (3, 7, 14, 28):
+            self.assertAlmostEqual(win_probability(points) + win_probability(-points), 1.0)
+
+    def test_a_degenerate_sigma_does_not_divide_by_zero(self):
+        from cfbrank.engine.resume_strength import win_probability
+
+        self.assertEqual(win_probability(7, sigma=0), 1.0)
+        self.assertEqual(win_probability(-7, sigma=0), 0.0)
+        self.assertEqual(win_probability(0, sigma=0), 0.5)
+
+
+class TestPoissonBinomial(unittest.TestCase):
+    def test_three_coin_flips(self):
+        from cfbrank.engine.resume_strength import at_least
+
+        self.assertAlmostEqual(at_least([0.5, 0.5, 0.5], 2), 0.5)
+        self.assertAlmostEqual(at_least([0.5, 0.5, 0.5], 3), 0.125)
+
+    def test_hand_computable_unequal_odds(self):
+        from cfbrank.engine.resume_strength import at_least
+
+        # P(both) = 0.8*0.6; P(exactly one) = 0.8*0.4 + 0.2*0.6
+        self.assertAlmostEqual(at_least([0.8, 0.6], 2), 0.48)
+        self.assertAlmostEqual(at_least([0.8, 0.6], 1), 0.92)
+
+    def test_the_edges(self):
+        from cfbrank.engine.resume_strength import at_least
+
+        self.assertEqual(at_least([0.3, 0.7], 0), 1.0, "winning none is certain")
+        self.assertEqual(at_least([0.3], 5), 0.0, "cannot win more than you played")
+
+    def test_order_does_not_change_the_answer(self):
+        from cfbrank.engine.resume_strength import at_least
+
+        ps = [0.91, 0.42, 0.77, 0.13, 0.65]
+        first = at_least(ps, 3)
+        for shift in range(1, len(ps)):
+            rotated = ps[shift:] + ps[:shift]
+            self.assertAlmostEqual(at_least(rotated, 3), first, places=12)
+
+
+class TestResumeStrength(unittest.TestCase):
+    def setUp(self):
+        from cfbrank.sources.fixtures import FixtureSource
+        from cfbrank.sources.loader import build_dataset
+        from tests.helpers import FIXTURES
+
+        self.ds = build_dataset(FixtureSource(FIXTURES, 2026), 2026)
+        self.fbs = {
+            n
+            for g in self.ds.games
+            for n, c in ((g.home_team, g.home_classification), (g.away_team, g.away_classification))
+            if (c or "").lower() == "fbs"
+        }
+
+    def ratings(self):
+        from cfbrank.engine import market
+
+        played = {
+            g.game_id
+            for g in self.ds.games
+            if g.game_id is not None and g.completed and g.home_points is not None
+        }
+        return market.compute(self.ds.lines, self.fbs, None, {"min_games": 3}, played)
+
+    def test_a_hard_schedule_beats_a_soft_one_at_the_same_record(self):
+        """Texas 4-0 having played Ohio State and Tennessee outranks 5-0 runs."""
+        from cfbrank.engine import resume_strength
+
+        mkt = self.ratings()
+        out = resume_strength.compute(
+            self.ds.games, mkt.ratings, mkt.home_field_points, self.fbs, None, {"min_games": 3}
+        )
+        self.assertEqual(out.ranks["Texas"], 1)
+        self.assertLess(out.probability["Texas"], out.probability["Notre Dame"])
+        self.assertLess(out.probability["Texas"], 0.05)
+
+    def test_a_good_three_win_resume_can_beat_an_empty_five_win_one(self):
+        from cfbrank.engine import resume_strength
+
+        mkt = self.ratings()
+        out = resume_strength.compute(
+            self.ds.games, mkt.ratings, mkt.home_field_points, self.fbs, None, {"min_games": 3}
+        )
+        # Ole Miss 3-1 (beat LSU) against Indiana 5-0 (North Texas, Howard, ...)
+        self.assertLess(out.ranks["Ole Miss"], out.ranks["Indiana"])
+
+    def test_expected_wins_sit_below_a_perfect_record(self):
+        from cfbrank.engine import resume_strength
+
+        mkt = self.ratings()
+        out = resume_strength.compute(
+            self.ds.games, mkt.ratings, mkt.home_field_points, self.fbs, None, {"min_games": 3}
+        )
+        self.assertEqual(out.actual_wins("Notre Dame"), 5)
+        self.assertLess(out.expected_wins("Notre Dame"), 5)
+
+    def test_games_after_the_cutoff_are_invisible(self):
+        from cfbrank.engine import resume_strength
+
+        mkt = self.ratings()
+        early = resume_strength.compute(
+            self.ds.games, mkt.ratings, mkt.home_field_points, self.fbs,
+            (0, 2, "￿"), {"min_games": 1},
+        )
+        self.assertLessEqual(len(early.games["Notre Dame"]), 2)
+
+    def test_no_market_ratings_is_a_warning_not_a_crash(self):
+        from cfbrank.engine import resume_strength
+
+        out = resume_strength.compute(self.ds.games, {}, 2.5, self.fbs, None, {})
+        self.assertFalse(out)
+        self.assertEqual([w.code for w in out.warnings], ["resume_unavailable"])
+
+
+class TestCover(unittest.TestCase):
+    def test_a_favourite_winning_by_less_than_the_line_is_punished(self):
+        from cfbrank.engine.cover import cover_margins
+        from tests.helpers import game, line
+
+        g = game("Home", "Away", 37, 26, week=5)
+        g = type(g)(**{**{f.name: getattr(g, f.name) for f in g.__dataclass_fields__.values()},
+                       "game_id": 1})
+        ln = line("Home", "Away", -21.0, week=5, game_id=1)
+        rec = cover_margins([ln], [g])
+        self.assertAlmostEqual(rec["Home"].mean_margin, -10.0)
+        self.assertFalse(rec["Home"].games[0].covered)
+        # The loser's side is the mirror image: they beat the number.
+        self.assertAlmostEqual(rec["Away"].mean_margin, +10.0)
+        self.assertTrue(rec["Away"].games[0].covered)
+
+    def test_an_underdog_losing_narrowly_is_not_punished(self):
+        from cfbrank.engine.cover import cover_margins
+        from tests.helpers import game, line
+
+        g = game("Home", "Away", 24, 21, week=3)
+        g = type(g)(**{**{f.name: getattr(g, f.name) for f in g.__dataclass_fields__.values()},
+                       "game_id": 7})
+        ln = line("Home", "Away", -14.0, week=3, game_id=7)
+        rec = cover_margins([ln], [g])
+        self.assertGreater(rec["Away"].mean_margin, 0, "losing by 3 as a 14-point dog beats the number")
+
+    def test_few_games_are_shrunk_toward_zero(self):
+        from cfbrank.engine.cover import CoverGame, CoverRecord
+
+        def rec(n):
+            return CoverRecord(tuple(
+                CoverGame(opponent="X", week=i + 1, season_type="regular", expected=0.0, actual=20.0)
+                for i in range(n)
+            ))
+
+        self.assertAlmostEqual(rec(3).mean_margin, 20.0)
+        self.assertLess(rec(3).shrunk_margin, rec(12).shrunk_margin)
+        self.assertLess(rec(3).shrunk_margin, 20.0)
+
+    def test_a_game_with_no_line_is_skipped(self):
+        from cfbrank.engine.cover import cover_margins
+        from tests.helpers import game
+
+        self.assertEqual(cover_margins([], [game("A", "B", 30, 0)]), {})

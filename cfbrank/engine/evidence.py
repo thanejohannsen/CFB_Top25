@@ -29,8 +29,8 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Mapping, Sequence
 
-from cfbrank.engine.stats import clamp, zscorer
-from cfbrank.models import GameResult
+from cfbrank.engine.stats import clamp, half_life_weight, zscorer
+from cfbrank.models import GameResult, week_index
 from cfbrank.normalize import sort_key
 
 
@@ -82,12 +82,17 @@ def location_adjusted_margin(r: GameResult, home_field_points: float, margin_cap
     return capped + (home_field_points if not r.winner_was_home else -home_field_points)
 
 
-def recency_weight(order_index: int, max_index: int, floor: float) -> float:
-    """Scale a result by how late in the season it happened, never below `floor`."""
-    if max_index <= 0:
-        return 1.0
-    frac = clamp(order_index / max_index, 0.0, 1.0)
-    return floor + (1.0 - floor) * frac
+def recency_weight(
+    age_weeks: float, half_life: float, floor: float
+) -> float:
+    """How much a result `age_weeks` old still counts.
+
+    A true half-life in weeks, not a position in the list of game dates. The old
+    shape scaled by index into the sorted distinct dates, so the same September
+    game decayed differently depending on how many distinct dates happened to be
+    in the pool -- which is not a property of football.
+    """
+    return half_life_weight(age_weeks, half_life, floor)
 
 
 def common_opponent_diff(
@@ -145,29 +150,48 @@ def score_edges(
     cfg_hfp = float(cfg.get("home_field_points", 2.5))
     hfp = cfg_hfp if home_field_points is None or not cfg.get("fit_home_field", True) else float(home_field_points)
     cap = float(cfg.get("margin_cap", 28))
-    floor = float(cfg.get("recency_floor", 0.25))
+    floor = float(cfg.get("recency_floor", 0.15))
+    hl_good = float(cfg.get("recency_half_life_good", 8.0))
+    hl_bad = float(cfg.get("recency_half_life_bad", 6.0))
     w_margin = float(cfg.get("w_margin", 0.50))
     w_gap = float(cfg.get("w_rating_gap", 0.30))
     w_rec = float(cfg.get("w_recency", 0.20))
     w_common = float(cfg.get("w_common_opponents", 0.15))
 
-    ordered_keys = sorted({r.order_key for r in results})
-    index_of = {k: i for i, k in enumerate(ordered_keys)}
-    max_index = max(len(ordered_keys) - 1, 1)
+    latest = max(week_index(r.season_type, r.week) for r in results)
 
     raw = []
     for r in results:
         adj = location_adjusted_margin(r, hfp, cap)
         gap = float(quality.get(r.winner, 0.0)) - float(quality.get(r.loser, 0.0))
         shared, diff = common_opponent_diff(r.winner, r.loser, opponent_results, hfp, cap)
-        raw.append((r, adj, gap, shared, diff, recency_weight(index_of[r.order_key], max_index, floor)))
+        raw.append((r, adj, gap, shared, diff, latest - week_index(r.season_type, r.week)))
 
     z_margin = zscorer([x[1] for x in raw])
     z_gap = zscorer([x[2] for x in raw])
     z_common = zscorer([x[4] for x in raw])
 
+    # Quality WITHOUT the recency term, so the half-life a result gets is not a
+    # function of the age it is about to be judged on. A good win keeps its
+    # relevance longer than a bad one; the threshold is the board's own median,
+    # so "good" means good for this week's set of results.
+    def quality_of(adj, gap, shared, diff):
+        return (
+            w_margin * z_margin(adj)
+            + w_gap * z_gap(gap)
+            + (w_common * z_common(diff) if shared else 0.0)
+        )
+
+    qualities = sorted(quality_of(x[1], x[2], x[3], x[4]) for x in raw)
+    mid = len(qualities) // 2
+    median_quality = (
+        qualities[mid] if len(qualities) % 2 else (qualities[mid - 1] + qualities[mid]) / 2.0
+    )
+
     facts: dict[tuple[str, str], EdgeFact] = {}
-    for r, adj, gap, shared, diff, rec in raw:
+    for r, adj, gap, shared, diff, age in raw:
+        good = quality_of(adj, gap, shared, diff) >= median_quality
+        rec = recency_weight(age, hl_good if good else hl_bad, floor)
         components = {
             "margin": w_margin * z_margin(adj),
             "rating_gap": w_gap * z_gap(gap),
