@@ -196,13 +196,85 @@ class TestWeekOnlyAdvancesWhenPlayed(unittest.TestCase):
         week, st, _ = resolve_week(self.board(1), [], "auto", "both")
         self.assertEqual((st, week), ("regular", 5))
 
-    def test_the_week_advances_once_half_of_it_is_final(self):
-        week, _, _ = resolve_week(self.board(5), [], "auto", "both")
-        self.assertEqual(week, 6)
+    def test_half_a_week_is_not_enough(self):
+        """Half was the first fix and was not enough: half a week is still a
+        week in progress, and the owner wants a ranking once its games are done."""
+        self.assertEqual(resolve_week(self.board(5), [], "auto", "both")[0], 5)
+        self.assertEqual(resolve_week(self.board(9), [], "auto", "both")[0], 5)
+
+    def test_the_week_advances_once_every_game_is_final(self):
+        self.assertEqual(resolve_week(self.board(10), [], "auto", "both")[0], 6)
 
     def test_the_threshold_is_tunable(self):
         self.assertEqual(resolve_week(self.board(2), [], "auto", "both", 0.2)[0], 6)
         self.assertEqual(resolve_week(self.board(2), [], "auto", "both", 0.9)[0], 5)
+
+
+class TestStragglerEscape(unittest.TestCase):
+    """One abandoned game must not hold a finished week hostage -- but only when
+    nobody is waiting on it, and only once the week has visibly moved past it."""
+
+    def week6(self, straggler_home="X9", straggler_away="Y9", straggler_last=True):
+        """Week 5 complete; week 6 complete except one unplayed game.
+
+        `straggler_last` puts that game's kickoff before the week's last final
+        game (so the week has overtaken it) or after it (so it is merely late).
+        """
+        games = [game(f"H{i}", f"A{i}", 21, 14, week=5) for i in range(4)]
+        games += [
+            game(f"X{i}", f"Y{i}", 21, 14, week=6, start_date=f"2026-10-10T{12 + i:02d}:00:00.000Z")
+            for i in range(4)
+        ]
+        games.append(
+            game(
+                straggler_home,
+                straggler_away,
+                None,
+                None,
+                week=6,
+                completed=False,
+                start_date="2026-10-10T13:00:00.000Z" if straggler_last else "2026-10-10T23:00:00.000Z",
+            )
+        )
+        return games
+
+    def test_strict_by_default(self):
+        """With no material_teams the escape is off, which is right for a
+        season's first run: nothing is published, so nothing is known."""
+        self.assertEqual(resolve_week(self.week6(), [], "auto", "both")[0], 5)
+
+    def test_an_overtaken_game_nobody_is_waiting_on_is_skipped(self):
+        week, _, _ = resolve_week(
+            self.week6(), [], "auto", "both", material_teams=frozenset({"H0", "A0"})
+        )
+        self.assertEqual(week, 6)
+
+    def test_a_game_involving_a_ranked_team_still_holds_the_week(self):
+        week, _, _ = resolve_week(
+            self.week6(), [], "auto", "both", material_teams=frozenset({"X9"})
+        )
+        self.assertEqual(week, 5, "the board is waiting on this result")
+
+    def test_a_merely_late_game_still_holds_the_week(self):
+        """The guard must not clear at Saturday lunchtime because the late
+        kickoffs are late. Only a game the week has passed is written off."""
+        week, _, _ = resolve_week(
+            self.week6(straggler_last=False),
+            [],
+            "auto",
+            "both",
+            material_teams=frozenset({"H0"}),
+        )
+        self.assertEqual(week, 5)
+
+    def test_an_abandoned_week_does_not_strand_the_board(self):
+        """Week 6 never finishes; week 7 does. The latest settled week wins, so
+        week 6 loses its snapshot and week 7 publishes on time."""
+        games = [game(f"H{i}", f"A{i}", 21, 14, week=5) for i in range(4)]
+        games += [game(f"X{i}", f"Y{i}", 21, 14, week=6) for i in range(3)]
+        games.append(game("X9", "Y9", None, None, week=6, completed=False))
+        games += [game(f"P{i}", f"Q{i}", 28, 7, week=7) for i in range(4)]
+        self.assertEqual(resolve_week(games, [], "auto", "both")[0], 7)
 
     def test_an_opening_night_with_no_settled_week_still_ranks(self):
         """Falls back to the latest week with any result rather than refusing."""
@@ -213,4 +285,7 @@ class TestWeekOnlyAdvancesWhenPlayed(unittest.TestCase):
 
     def test_an_explicit_week_is_still_honoured(self):
         """The guard only governs "auto"; --week 6 means week 6."""
-        self.assertEqual(resolve_week(self.board(1), [], 6, "both")[0], 6)
+        games = [game(f"H{i}", f"A{i}", 21, 14, week=5) for i in range(4)]
+        games += [game("X0", "Y0", 21, 14, week=6)]
+        games += [game(f"X{i}", f"Y{i}", None, None, week=6, completed=False) for i in range(1, 5)]
+        self.assertEqual(resolve_week(games, [], 6, "both")[0], 6)

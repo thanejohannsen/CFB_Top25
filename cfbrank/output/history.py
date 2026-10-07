@@ -63,6 +63,36 @@ def load_previous(
     return load_json(snapshot_path(history_dir, str(entries[-1]["id"])))
 
 
+def published_board(
+    index_path: str | Path, history_dir: str | Path, year: int | None = None
+) -> frozenset[str]:
+    """Every team named by the newest published snapshot of this season.
+
+    That is the top 25 plus `pool_tail`, i.e. the `stage1.pool_size` teams the
+    ranking actually considers -- so it answers "is anyone waiting on this
+    game?" without the engine having to rank anything first, which would be
+    circular. Empty before a season's first snapshot exists, and the week
+    resolver reads empty as "wait for every game".
+    """
+    index = load_json(index_path) or {}
+    entries = [
+        e
+        for season in index.get("seasons") or []
+        for e in (season.get("snapshots") or [])
+        if isinstance(e, Mapping) and e.get("id")
+    ]
+    if year is not None:
+        entries = [e for e in entries if int(e.get("year") or 0) == int(year)]
+    if not entries:
+        return frozenset()
+    entries.sort(key=lambda e: (int(e.get("year") or 0), str(e.get("id", ""))))
+    snap = load_json(snapshot_path(history_dir, str(entries[-1]["id"]))) or {}
+    rows = list(snap.get("rankings") or []) + list(snap.get("pool_tail") or [])
+    return frozenset(
+        str(r["team"]) for r in rows if isinstance(r, Mapping) and r.get("team")
+    )
+
+
 def update_index(
     index_path: str | Path, payload: Mapping[str, Any], history_dir: str | Path
 ) -> dict[str, Any]:

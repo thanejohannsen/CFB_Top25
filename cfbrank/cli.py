@@ -14,6 +14,7 @@ from __future__ import annotations
 import argparse
 import os
 import sys
+from dataclasses import replace
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Sequence
@@ -23,7 +24,12 @@ from cfbrank.config import load as load_config
 from cfbrank.engine.pipeline import RankingResult, rank
 from cfbrank.errors import ConfigError, DataQualityError, UpstreamUnavailable
 from cfbrank.models import Dataset
-from cfbrank.output.history import load_previous, snapshot_path, update_index
+from cfbrank.output.history import (
+    load_previous,
+    published_board,
+    snapshot_path,
+    update_index,
+)
 from cfbrank.output.schema import build_payload, validate_payload
 from cfbrank.output.writer import dumps_stable, write_if_changed
 from cfbrank.sources.loader import build_dataset
@@ -200,6 +206,13 @@ def print_explain(result: RankingResult, team: str, out=None) -> int:
             + (f" (worst {tb.resume_detail['worst_cover']})" if tb.resume_detail.get("worst_cover") else ""),
             file=out,
         )
+        scored = tb.resume_detail.get("shrunk_cover_margin")
+        if scored is not None:
+            print(
+                f"        scored as {scored:+.1f} per game, pulled toward zero on"
+                f" {tb.resume_detail.get('cover_games')} lined game(s)",
+                file=out,
+            )
     print("\n    quality inputs:", file=out)
     if tb.market_rating is None:
         print(f"      market      --  (only {tb.market_games} lined FBS game(s))", file=out)
@@ -256,10 +269,20 @@ def run(argv: Sequence[str] | None = None) -> int:
     cfg = load_config(args.config, _overrides_from_flags(args))
     year = int(cfg["season.year"])
 
+    rankings_path = Path(cfg["output.rankings_path"])
+    history_dir = Path(cfg["output.history_dir"])
+    index_path = Path(cfg["output.index_path"])
+    precision = int(cfg["output.float_precision"])
+
     source = open_source(cfg, os.environ.get("CFB_OFFLINE") == "1")
     dataset: Dataset = build_dataset(source, year, str(cfg["season.season_type"]))
     if not dataset.ratings:
         raise DataQualityError(f"no usable ratings for {year}")
+
+    # Which unplayed games are worth holding a week back for. Read from the last
+    # published snapshot, so it costs nothing and cannot depend on the ranking
+    # this run is about to produce.
+    dataset = replace(dataset, material_teams=published_board(index_path, history_dir, year))
 
     result = rank(dataset, cfg)
     log(
@@ -275,11 +298,6 @@ def run(argv: Sequence[str] | None = None) -> int:
         code = print_explain(result, args.explain)
         if code != EXIT_OK:
             return code
-
-    rankings_path = Path(cfg["output.rankings_path"])
-    history_dir = Path(cfg["output.history_dir"])
-    index_path = Path(cfg["output.index_path"])
-    precision = int(cfg["output.float_precision"])
 
     previous = load_previous(
         index_path,
@@ -303,6 +321,23 @@ def run(argv: Sequence[str] | None = None) -> int:
         log("dry run: nothing written")
         return EXIT_OK
 
+    # A PUBLISHED WEEK IS FINAL. Week 5 of 2026 was republished five times with
+    # different numbers, and none of it was new games: every run refetched
+    # /lines, and five hours of Monday line movement moves the market rating,
+    # which moves BOTH the Mkt term and the SoR term (the resume measures
+    # opponents by market rating), i.e. 85% of the base. On a board whose median
+    # gap between adjacent teams is under a rank point, that reshuffles the
+    # middle. Recomputing a finished week cannot improve it -- the games are
+    # over -- so the only thing left to publish is noise.
+    #
+    # --force is the deliberate way back in, which keeps two behaviours intact:
+    # a push touching config/ranking.toml runs with --force, so retuning still
+    # republishes immediately; and deleting a week's file un-freezes it, which
+    # is how a wrongly published week gets withdrawn.
+    if snapshot_path(history_dir, result.snapshot_id).exists() and not args.force:
+        log(f"{result.snapshot_id} is already published; frozen (--force to rebuild)")
+        return EXIT_UNCHANGED
+
     existing = None
     if rankings_path.exists():
         try:
@@ -311,9 +346,15 @@ def run(argv: Sequence[str] | None = None) -> int:
             existing = json.loads(rankings_path.read_text(encoding="utf-8"))
         except (OSError, ValueError):
             existing = None
+    # Reaching here means the week's snapshot is missing, or --force was passed.
+    # A missing snapshot must be rewritten even when rankings.json already holds
+    # this week with the same hash, or deleting a week file to force a rebuild
+    # would instead delete it permanently: no-op, nothing written, catalogue
+    # entry gone.
     unchanged = bool(
         existing
         and (existing.get("meta") or {}).get("content_hash") == payload["meta"]["content_hash"]
+        and snapshot_path(history_dir, result.snapshot_id).exists()
     )
 
     if unchanged and not args.force:

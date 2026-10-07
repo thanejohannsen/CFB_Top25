@@ -42,9 +42,75 @@ class SeriesNote:
 
 
 # A week becomes "the current week" only once this share of its games are final.
-# Half is deliberately forgiving: it clears on Saturday evening rather than
-# waiting for a Monday make-up game, while ignoring a lone midweek fixture.
-WEEK_SETTLED_FRACTION = 0.5
+# ONE means all of them: the owner wants a ranking a week, after that week has
+# actually been played, and anything less publishes a week that is still running.
+# Measured before shipping it: every week of the finished 2025 season reached
+# 100% -- all sixteen, including week 15 (9 games) and week 16 (1 game) -- so
+# this is not a bar real data fails to clear.
+WEEK_SETTLED_FRACTION = 1.0
+
+
+def _settled_weeks(
+    games: Sequence[Game],
+    played_keys: Mapping[tuple[str, int], int],
+    season_type: str,
+    min_fraction: float,
+    material_teams: AbstractSet[str],
+) -> list[tuple[str, int]]:
+    """Which (season_type, week) pairs count as finished.
+
+    A week qualifies when every scheduled game is final, or -- the straggler
+    escape -- when each one that is not final is BOTH inconsequential and
+    overtaken:
+
+      * inconsequential: neither team is in `material_teams`, the teams the
+        board actually ranks, so nobody is waiting on the result;
+      * overtaken: some game scheduled LATER in the same week is already final.
+
+    The second condition is what stops a week settling at Saturday lunchtime
+    just because its late kickoffs are late. It is also deliberately clock-free
+    -- "the week has moved past this game" is a statement about the data, not
+    about now -- because the engine reads no clock.
+
+    Both are required, so with `material_teams` empty this degrades to strict
+    "all games final", which is the right default for a season's first run.
+    """
+    scheduled: dict[tuple[str, int], list[Game]] = defaultdict(list)
+    for g in games:
+        if season_type in ("regular", "postseason") and g.season_type != season_type:
+            continue
+        scheduled[(g.season_type, g.week)].append(g)
+
+    settled: list[tuple[str, int]] = []
+    for key, week_games in scheduled.items():
+        if not week_games:
+            continue
+        done = played_keys.get(key, 0)
+        if done / len(week_games) >= min_fraction:
+            settled.append(key)
+            continue
+        if not material_teams or not done:
+            continue
+
+        def is_final(g: Game) -> bool:
+            return g.completed and g.home_points is not None and g.away_points is not None
+
+        latest_final = max(
+            (g.start_date for g in week_games if is_final(g) and g.start_date), default=None
+        )
+        if latest_final is None:
+            continue
+        stragglers = [g for g in week_games if not is_final(g)]
+        if all(
+            g.home_team not in material_teams
+            and g.away_team not in material_teams
+            and g.start_date is not None
+            and g.start_date < latest_final
+            for g in stragglers
+        ):
+            settled.append(key)
+
+    return settled
 
 
 def resolve_week(
@@ -53,12 +119,14 @@ def resolve_week(
     want: int | str,
     season_type: str,
     min_fraction: float = WEEK_SETTLED_FRACTION,
+    material_teams: AbstractSet[str] = frozenset(),
 ) -> tuple[int, str, Cutoff]:
     """Pick the week to rank through, and the chronological cutoff for it.
 
     "auto" means the latest week that has actually been PLAYED -- not merely
-    started. Dates are not used: calendar windows overlap, and a week can close
-    before its last game is logged.
+    started, and not merely half done. Dates are not used to pick the week:
+    calendar windows overlap, and a week can close before its last game is
+    logged.
 
     The "played, not started" part is load-bearing. It used to be the latest week
     with *any* completed game, and on 2026-10-07 a single Wednesday fixture
@@ -68,10 +136,16 @@ def resolve_week(
     betting lines and swapped in week-7 ones, churning about 50 of the 329 inputs
     on the strength of one game nobody had asked about.
 
-    So a week only becomes current once `min_fraction` of its scheduled games are
-    final. If no week clears that bar yet -- the opening Thursday of a season --
-    it falls back to the latest week with any result, which is the old behaviour
-    and the best available answer at that point.
+    A half-finished week was the first fix and was not enough, because half a
+    week is still a week in progress. The bar is now every game -- see
+    `_settled_weeks` for the one escape, and `WEEK_SETTLED_FRACTION` for the
+    evidence that real seasons clear it.
+
+    A week that never completes does not strand the board: this returns the
+    LATEST settled week, so an abandoned fixture costs that week its snapshot
+    while every later week still publishes on time. If nothing has settled yet --
+    the opening Thursday of a season -- it falls back to the latest week with any
+    result, which is the best available answer at that point.
     """
     played = [g for g in games if g.completed and g.home_points is not None and g.away_points is not None]
     if season_type in ("regular", "postseason"):
@@ -82,20 +156,11 @@ def resolve_week(
             weeks = [c for c in calendar if c.season_type == "regular"]
             week, st = (weeks[0].week if weeks else 1), "regular"
         else:
-            scheduled: dict[tuple[str, int], int] = defaultdict(int)
             finished: dict[tuple[str, int], int] = defaultdict(int)
-            for g in games:
-                if season_type in ("regular", "postseason") and g.season_type != season_type:
-                    continue
-                scheduled[(g.season_type, g.week)] += 1
             for g in played:
                 finished[(g.season_type, g.week)] += 1
 
-            settled = [
-                key
-                for key, total in scheduled.items()
-                if total and finished[key] / total >= min_fraction
-            ]
+            settled = _settled_weeks(games, finished, season_type, min_fraction, material_teams)
             if settled:
                 st, week = max(settled, key=lambda k: (SEASON_TYPE_ORDER.get(k[0], 9), k[1]))
             else:

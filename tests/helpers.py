@@ -52,13 +52,17 @@ def game(
     neutral: bool = False,
     home_cls: str = "fbs",
     away_cls: str = "fbs",
+    start_date: str | None = None,
 ) -> Game:
     return Game(
         game_id=None,
         year=2025,
         week=week,
         season_type=season_type,
-        start_date=f"2025-09-{week:02d}T00:00:00.000Z",
+        # Derived from the week by default, so games in a week sort together.
+        # Pass it explicitly to order games WITHIN a week, which the
+        # settled-week rule needs (a straggler has to be shown as overtaken).
+        start_date=start_date or f"2025-09-{week:02d}T00:00:00.000Z",
         completed=completed,
         neutral_site=neutral,
         conference_game=False,

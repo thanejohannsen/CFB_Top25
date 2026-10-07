@@ -217,6 +217,11 @@ class Dataset:
     provenance: tuple[EndpointProvenance, ...] = ()
     warnings: tuple[Warning_, ...] = ()
     synthetic: bool = False
+    # Teams the board actually ranks, read from the last published snapshot.
+    # `h2h.resolve_week` uses it to tell a straggler worth waiting for from one
+    # that is not; empty means wait for every game. It is input data rather than
+    # something the engine looks up, so `rank()` stays pure.
+    material_teams: frozenset[str] = frozenset()
 
     def records_by_team(self) -> dict[str, Record]:
         return {r.team: r for r in self.records}

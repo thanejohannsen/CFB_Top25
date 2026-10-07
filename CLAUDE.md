@@ -109,8 +109,18 @@ as contaminated. Since the resume is computed here now, the whole formula is
 scored rather than half of it.
 
 The AP poll is printed as one reference row on identical games and is never a
-target. It also loses, by a lot: **67.0% to 58.7%** on the same 179 games from
-2025.
+target. It also loses, by a lot: **65.4% to 58.7%** on the same 179 games from
+2025, measured on `--weeks 4,6,8,10,12`. On the default `--weeks 5,7,9,11,13`
+it is **63.4% to 56.5%** over 161 games: the same ~7-point edge, different
+sample.
+
+**Re-measure before quoting a number.** An earlier version of this file said
+67.0%, which was true when it was written and is not now: the shipped config has
+moved since (`w_adjust` 0.5, `stage4.strength` 4, weights 0.55/0.30/0.15) and
+nobody re-ran the tool. AP's 58.7% is config-independent and reproduces exactly,
+which is the cheap way to confirm you are on the same week set as a quoted
+figure. The sweeps recorded further down this file are dated records of what was
+measured at the time, not claims about today's absolute level.
 
 Two things the tool cannot settle, so do not claim it did:
 
@@ -142,9 +152,18 @@ regression net.
 team leading the field on this stage still leads it: Northwestern, whose
 four-game cover credit prompted the dial, moved one place at 0.5. The
 "Northwestern is flattered by a small sample" problem is still open -- the
-candidates are a cap on the cover component, or scoring cover on an absolute
-scale so sample size actually counts (shrinkage is currently inert because the
-z-scoring normalises it straight back out).
+remaining candidate is a cap on the cover component.
+
+**`cover.SHRINKAGE_GAMES` is NOT inert, and an earlier version of this file said
+it was.** I claimed the z-score normalises it straight back out. That is only
+true if every team has the same number of lined games. It is a per-team factor
+`n/(n+4)`, and on 2026 week 5 the board splits 31 teams on 4 games (0.500), 105
+on 5 (0.556) and 2 on 6 (0.600). A z-score undoes ONE global affine transform,
+not 138 different ones, so the shrinkage does real differential work: it costs
+Northwestern 0.38 rank points and drops them from 2nd to 5th on the cover
+leaderboard. It is a live lever on exactly the small-sample problem, which is
+why "scoring cover on an absolute scale so sample size counts" is no longer
+listed above as a thing still to build -- it is already partly built.
 
 ### Against the number (`stage2.w_cover`, `engine/cover.py`)
 
@@ -250,14 +269,47 @@ without rescaling would hand it a better score for having less data.
   owner can retune weights from the GitHub web UI without reddening CI. Changing
   FROZEN means the engine moved; changing the config does not. Do not "simplify"
   it back to reading the live config.
-- **The cron runs Sundays only** (`37 12 * * 0`), which is the owner's stated
-  cadence: one ranking a week, after Saturday's games. It used to run daily.
-- **`h2h.resolve_week("auto")` advances only once half a week's games are
+- **A PUBLISHED WEEK IS FROZEN.** `cli.run` refuses to rewrite a week whose
+  snapshot file already exists unless `--force` is passed. This is the fix for
+  the churn, and the churn was real: week 5 of 2026 was republished five times
+  with different numbers and not one new game. Every run refetched `/lines`, and
+  five hours of Monday line movement (same 1141 games, different sha256) moved
+  the market ratings. `--force` is the way back in, which keeps a config push
+  republishing immediately and keeps "delete the file" as the way to withdraw a
+  bad week. `tests/test_cli.py` pins both.
+- **Lines move BOTH quality terms and the resume, i.e. 85% of the base.**
+  `/lines` -> market ratings -> the Mkt term (0.30) *and* the SoR term (0.55),
+  because `resume_strength` takes its reference team and every opponent's
+  strength from market ratings. On the published week 5 a lines-only refetch
+  moved 11 teams' SoR ranks. Combined with a board whose median gap between
+  adjacent teams is 0.93 rank points -- 8 of 24 gaps under 0.50, five under 0.25
+  -- a one-place input slip (worth 0.55) moves a team several places. When the
+  board "shifts for no reason", this is almost always why; check
+  `meta.source.endpoints[].sha256` before suspecting the engine.
+- **The cron runs Sunday 07:55 CDT, with retries Sunday afternoon and Monday
+  morning** (`55 12 * * 0`, `55 19 * * 0`, `55 12 * * 1`). The retries are not
+  extra rankings: a run that has nothing new to publish exits 2 and commits
+  nothing, so exactly one run a week lands. Without them a single late-logged
+  score would cost a full week.
+- **`h2h.resolve_week("auto")` advances only once EVERY game in a week is
   final.** It used to take the latest week with ANY completed game, and on
   2026-10-07 one Wednesday fixture promoted the board to week 6 with 57 of 58
   games unplayed. That is not cosmetic: the cutoff drives the market term, so
   advancing dropped 57 unplayed week-6 lines and swapped in week-7 ones --
-  ~50 of 329 inputs churned on one game. `tests/test_h2h.py` pins it.
+  ~50 of 329 inputs churned on one game. Half a week was the first fix and was
+  not enough, because half a week is still a week in progress. Every week of the
+  finished 2025 season reached 100%, all sixteen, so the bar is one real data
+  clears. A week that never completes does not strand the board: the resolver
+  returns the LATEST settled week, so an abandoned fixture costs that week its
+  snapshot and every later week publishes on time. `tests/test_h2h.py` pins it.
+- **The straggler escape needs `Dataset.material_teams`.** One abandoned game
+  may be written off, but only when neither team is in the last published
+  board's 40 AND a later-starting game in the same week is already final. The
+  second condition is what stops a week settling at Saturday lunchtime because
+  its late kickoffs are late, and it is deliberately clock-free -- "the week has
+  moved past this game" is a fact about the data. `material_teams` is read by
+  the CLI from the last snapshot and passed in as input, so `rank()` stays pure
+  and the test cannot be circular. Empty means wait for every game.
 - **`output/history.update_index` drops catalogue entries whose snapshot file is
   gone.** The index drives the site's week selector, so a stale entry is a 404,
   and snapshots do get withdrawn legitimately.

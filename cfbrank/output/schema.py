@@ -128,6 +128,12 @@ def _team_entry(
             "games": tb.resume_detail.get("cover_games"),
             "covers": tb.resume_detail.get("covers"),
             "mean_margin": tb.resume_detail.get("mean_cover_margin"),
+            # `scored_margin` is what the adjustment is computed from: the mean
+            # pulled toward zero by games/(games+4), so four loud afternoons
+            # cannot read as a season-defining trait. Both are published because
+            # the raw mean is the human-legible one and the shrunk one is the
+            # one the arithmetic uses.
+            "scored_margin": tb.resume_detail.get("shrunk_cover_margin"),
             "worst": tb.resume_detail.get("worst_cover"),
             "adjustment": tb.resume_components.get("cover"),
         },

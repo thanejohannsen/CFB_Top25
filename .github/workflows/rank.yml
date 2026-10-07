@@ -2,18 +2,25 @@ name: Rank
 
 on:
   schedule:
-    # Sundays at 12:37 UTC, which is ~08:37 Eastern -- after Saturday's late
-    # kickoffs have finished and been logged, and once a week as intended.
+    # One ranking a week, on Sunday morning, once the week has actually been
+    # played. 12:55 UTC is 07:55 CDT; the latest Saturday kickoffs (Hawai'i)
+    # finish around 08:00 UTC, so there is roughly five hours of slack for the
+    # scores to be logged. Off-the-hour avoids the runner queue at :00.
     #
-    # It used to run daily, which published a new snapshot whenever a midweek
-    # game touched the next week. An off-the-hour minute avoids the runner queue
-    # at :00.
-    - cron: "37 12 * * 0"
+    # The two later runs are retries, not extra rankings. The generator will
+    # not advance to a week until EVERY game in it is final, and will not
+    # rewrite a week it has already published, so a run with nothing new to say
+    # exits 2 and commits nothing. Without them, one late-logged score would
+    # cost a full week.
+    - cron: "55 12 * * 0"   # Sun 07:55 CDT -- the ranking
+    - cron: "55 19 * * 0"   # Sun 14:55 CDT -- retry
+    - cron: "55 12 * * 1"   # Mon 07:55 CDT -- last retry
+
   push:
     branches: [main]
     paths:
-      # Tuning the weights should publish the result, not sit there until the
-      # next nightly run. docs/data is pre-computed output, so a config edit
+      # Tuning the weights should publish the result, not sit there until
+      # Sunday. docs/data is pre-computed output, so a config edit
       # alone changes nothing a visitor can see until the generator reruns.
       # The `paths` filter means this job's own "rankings: ..." commit, which
       # only touches docs/data, cannot retrigger it.
@@ -53,7 +60,7 @@ jobs:
           # cron cannot express "August through mid-January", so gate here.
           M=$(date -u +%m); D=$(date -u +%d)
           # A hand-triggered run or a config edit always goes through; only
-          # the nightly cron is gated on the season.
+          # the scheduled run is gated on the season.
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] \
              || [ "${{ github.event_name }}" = "push" ] \
              || [ "$M" -ge 8 ] || { [ "$M" -eq 1 ] && [ "$D" -le 25 ]; }; then

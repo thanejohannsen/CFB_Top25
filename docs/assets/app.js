@@ -269,6 +269,15 @@
         signed(cov.mean_margin, 1) + " per game, covered " + cov.covers + " of " + cov.games +
           (cov.worst ? " (worst " + cov.worst + ")" : "")
       );
+      // The adjustment is scored off the shrunk figure, not the raw mean, so
+      // the raw mean alone left the panel unable to explain its own number.
+      if (cov.scored_margin !== null && cov.scored_margin !== undefined) {
+        pair(
+          "  scored as",
+          signed(cov.scored_margin, 1) + " per game — pulled toward zero because " +
+            "it rests on " + cov.games + " lined game" + (cov.games === 1 ? "" : "s")
+        );
+      }
     }
 
     var mkt = row.market || {}, perf = row.performance || {};

@@ -128,6 +128,10 @@ def apply_resume_adjustment(
             "cover_games": rec.played if rec else 0,
             "covers": rec.covers if rec else None,
             "mean_cover_margin": rec.mean_margin if rec else None,
+            # The number the adjustment is actually computed from. Publishing
+            # only the raw mean made the panel irreconcilable: Northwestern
+            # showed +17.81 beside an adjustment scored off +8.91.
+            "shrunk_cover_margin": rec.shrunk_margin if rec else None,
             "worst_cover": (
                 f"{rec.worst.margin:+.0f} vs {rec.worst.opponent}"
                 if rec and rec.worst

@@ -2129,7 +2129,7 @@
         "strength": 14.0
       }
     },
-    "content_hash": "sha256:de3c805eaed8bd2e7d0c7a47bd7857b7d6a184023a21e21108fc5bf5a2a860ef",
+    "content_hash": "sha256:b5241849c744bc8c92ed9766b48ff6768112976cdb611e1578648caefbc800be",
     "cost": {
       "drift": 279.658,
       "overrides": 320.8703,
@@ -2771,6 +2771,7 @@
         "covers": 10,
         "games": 16,
         "mean_margin": 12.7031,
+        "scored_margin": 10.1625,
         "worst": "-11 vs Penn State"
       },
       "cycle": null,
@@ -3161,6 +3162,7 @@
           "losses_considered": 0,
           "mean_cover_margin": 12.7031,
           "mean_loss_badness": null,
+          "shrunk_cover_margin": 10.1625,
           "worst_cover": "-11 vs Penn State"
         },
         "total": -14.3489
@@ -3200,6 +3202,7 @@
         "covers": 11,
         "games": 16,
         "mean_margin": 4.6875,
+        "scored_margin": 3.75,
         "worst": "-14 vs SMU"
       },
       "cycle": "C1",
@@ -3684,6 +3687,7 @@
           "losses_considered": 3,
           "mean_cover_margin": 4.6875,
           "mean_loss_badness": 5.1471,
+          "shrunk_cover_margin": 3.75,
           "worst_cover": "-14 vs SMU"
         },
         "total": -11.8447
@@ -3723,6 +3727,7 @@
         "covers": 10,
         "games": 14,
         "mean_margin": 3.7321,
+        "scored_margin": 2.9028,
         "worst": "-18 vs Miami"
       },
       "cycle": "C1",
@@ -4106,6 +4111,7 @@
           "losses_considered": 2,
           "mean_cover_margin": 3.7321,
           "mean_loss_badness": 3.6912,
+          "shrunk_cover_margin": 2.9028,
           "worst_cover": "-18 vs Miami"
         },
         "total": -11.539
@@ -4145,6 +4151,7 @@
         "covers": 9,
         "games": 15,
         "mean_margin": 4.5167,
+        "scored_margin": 3.5658,
         "worst": "-30 vs Washington State"
       },
       "cycle": "C1",
@@ -4443,6 +4450,7 @@
           "losses_considered": 2,
           "mean_cover_margin": 4.5167,
           "mean_loss_badness": 2.9632,
+          "shrunk_cover_margin": 3.5658,
           "worst_cover": "-30 vs Washington State"
         },
         "total": -12.9033
@@ -4482,6 +4490,7 @@
         "covers": 8,
         "games": 15,
         "mean_margin": 3.4667,
+        "scored_margin": 2.7368,
         "worst": "-31 vs Indiana"
       },
       "cycle": null,
@@ -4860,6 +4869,7 @@
           "losses_considered": 2,
           "mean_cover_margin": 3.4667,
           "mean_loss_badness": 10.2721,
+          "shrunk_cover_margin": 2.7368,
           "worst_cover": "-31 vs Indiana"
         },
         "total": -7.4484
@@ -4899,6 +4909,7 @@
         "covers": 6,
         "games": 14,
         "mean_margin": -0.4464,
+        "scored_margin": -0.3472,
         "worst": "-25 vs Austin Peay"
       },
       "cycle": "C1",
@@ -5243,6 +5254,7 @@
           "losses_considered": 2,
           "mean_cover_margin": -0.4464,
           "mean_loss_badness": 3.8015,
+          "shrunk_cover_margin": -0.3472,
           "worst_cover": "-25 vs Austin Peay"
         },
         "total": -7.651
@@ -5282,6 +5294,7 @@
         "covers": 5,
         "games": 13,
         "mean_margin": -1.6346,
+        "scored_margin": -1.25,
         "worst": "-22 vs UTEP"
       },
       "cycle": "C1",
@@ -5618,6 +5631,7 @@
           "losses_considered": 3,
           "mean_cover_margin": -1.6346,
           "mean_loss_badness": 7.7696,
+          "shrunk_cover_margin": -1.25,
           "worst_cover": "-22 vs UTEP"
         },
         "total": -4.1129
@@ -5657,6 +5671,7 @@
         "covers": 5,
         "games": 13,
         "mean_margin": -0.6923,
+        "scored_margin": -0.5294,
         "worst": "-16 vs South Carolina"
       },
       "cycle": "C1",
@@ -5998,6 +6013,7 @@
           "losses_considered": 2,
           "mean_cover_margin": -0.6923,
           "mean_loss_badness": 5.4265,
+          "shrunk_cover_margin": -0.5294,
           "worst_cover": "-16 vs South Carolina"
         },
         "total": -6.4114
@@ -6037,6 +6053,7 @@
         "covers": 6,
         "games": 12,
         "mean_margin": 4.625,
+        "scored_margin": 3.4688,
         "worst": "-16 vs Boston College"
       },
       "cycle": "C1",
@@ -6345,6 +6362,7 @@
           "losses_considered": 2,
           "mean_cover_margin": 4.625,
           "mean_loss_badness": 1.8088,
+          "shrunk_cover_margin": 3.4688,
           "worst_cover": "-16 vs Boston College"
         },
         "total": -13.1964
@@ -6384,6 +6402,7 @@
         "covers": 8,
         "games": 15,
         "mean_margin": -0.55,
+        "scored_margin": -0.4342,
         "worst": "-28 vs Florida State"
       },
       "cycle": "C1",
@@ -6799,6 +6818,7 @@
           "losses_considered": 4,
           "mean_cover_margin": -0.55,
           "mean_loss_badness": 10.3676,
+          "shrunk_cover_margin": -0.4342,
           "worst_cover": "-28 vs Florida State"
         },
         "total": -3.6747
@@ -6838,6 +6858,7 @@
         "covers": 7,
         "games": 13,
         "mean_margin": 0.3846,
+        "scored_margin": 0.2941,
         "worst": "-14 vs Texas"
       },
       "cycle": "C1",
@@ -7231,6 +7252,7 @@
           "losses_considered": 3,
           "mean_cover_margin": 0.3846,
           "mean_loss_badness": 7.9902,
+          "shrunk_cover_margin": 0.2941,
           "worst_cover": "-14 vs Texas"
         },
         "total": -5.8735
@@ -7270,6 +7292,7 @@
         "covers": 11,
         "games": 14,
         "mean_margin": 7.7321,
+        "scored_margin": 6.0139,
         "worst": "-24 vs Oregon"
       },
       "cycle": "C2",
@@ -7603,6 +7626,7 @@
           "losses_considered": 2,
           "mean_cover_margin": 7.7321,
           "mean_loss_badness": 8.9191,
+          "shrunk_cover_margin": 6.0139,
           "worst_cover": "-24 vs Oregon"
         },
         "total": -12.0453
@@ -7642,6 +7666,7 @@
         "covers": 10,
         "games": 14,
         "mean_margin": 5.6071,
+        "scored_margin": 4.3611,
         "worst": "-14 vs Texas Tech"
       },
       "cycle": "C2",
@@ -7993,6 +8018,7 @@
           "losses_considered": 2,
           "mean_cover_margin": 5.6071,
           "mean_loss_badness": 13.0956,
+          "shrunk_cover_margin": 4.3611,
           "worst_cover": "-14 vs Texas Tech"
         },
         "total": -7.4244
@@ -8032,6 +8058,7 @@
         "covers": 9,
         "games": 13,
         "mean_margin": 8.5577,
+        "scored_margin": 6.5441,
         "worst": "-28 vs Texas Tech"
       },
       "cycle": "C2",
@@ -8295,6 +8322,7 @@
           "losses_considered": 2,
           "mean_cover_margin": 8.5577,
           "mean_loss_badness": 8.6618,
+          "shrunk_cover_margin": 6.5441,
           "worst_cover": "-28 vs Texas Tech"
         },
         "total": -12.1512
@@ -8334,6 +8362,7 @@
         "covers": 5,
         "games": 13,
         "mean_margin": 1.7115,
+        "scored_margin": 1.3088,
         "worst": "-8 vs Illinois"
       },
       "cycle": "C1",
@@ -8672,6 +8701,7 @@
           "losses_considered": 4,
           "mean_cover_margin": 1.7115,
           "mean_loss_badness": 4.8346,
+          "shrunk_cover_margin": 1.3088,
           "worst_cover": "-8 vs Illinois"
         },
         "total": -8.5685
@@ -8711,6 +8741,7 @@
         "covers": 5,
         "games": 12,
         "mean_margin": 2.125,
+        "scored_margin": 1.5938,
         "worst": "-16 vs BYU"
       },
       "cycle": "C2",
@@ -9030,6 +9061,7 @@
           "losses_considered": 4,
           "mean_cover_margin": 2.125,
           "mean_loss_badness": 11.0882,
+          "shrunk_cover_margin": 1.5938,
           "worst_cover": "-16 vs BYU"
         },
         "total": -4.8855
@@ -9069,6 +9101,7 @@
         "covers": 9,
         "games": 13,
         "mean_margin": 6.3462,
+        "scored_margin": 4.8529,
         "worst": "-14 vs Michigan State"
       },
       "cycle": "C1",
@@ -9416,6 +9449,7 @@
           "losses_considered": 4,
           "mean_cover_margin": 6.3462,
           "mean_loss_badness": 3.6765,
+          "shrunk_cover_margin": 4.8529,
           "worst_cover": "-14 vs Michigan State"
         },
         "total": -13.6642
@@ -9455,6 +9489,7 @@
         "covers": 10,
         "games": 13,
         "mean_margin": 9.0769,
+        "scored_margin": 6.9412,
         "worst": "-10 vs Iowa"
       },
       "cycle": "C1",
@@ -9820,6 +9855,7 @@
           "losses_considered": 3,
           "mean_cover_margin": 9.0769,
           "mean_loss_badness": 5.2647,
+          "shrunk_cover_margin": 6.9412,
           "worst_cover": "-10 vs Iowa"
         },
         "total": -15.0103
@@ -9859,6 +9895,7 @@
         "covers": 4,
         "games": 13,
         "mean_margin": -2.2308,
+        "scored_margin": -1.7059,
         "worst": "-18 vs New Mexico"
       },
       "cycle": "C1",
@@ -10174,6 +10211,7 @@
           "losses_considered": 4,
           "mean_cover_margin": -2.2308,
           "mean_loss_badness": 8.8566,
+          "shrunk_cover_margin": -1.7059,
           "worst_cover": "-18 vs New Mexico"
         },
         "total": -2.5497
@@ -10213,6 +10251,7 @@
         "covers": 7,
         "games": 13,
         "mean_margin": 6.4615,
+        "scored_margin": 4.9412,
         "worst": "-14 vs Wisconsin"
       },
       "cycle": "C1",
@@ -10505,6 +10544,7 @@
           "losses_considered": 4,
           "mean_cover_margin": 6.4615,
           "mean_loss_badness": 9.3015,
+          "shrunk_cover_margin": 4.9412,
           "worst_cover": "-14 vs Wisconsin"
         },
         "total": -10.0477
@@ -10544,6 +10584,7 @@
         "covers": 7,
         "games": 13,
         "mean_margin": -1.5385,
+        "scored_margin": -1.1765,
         "worst": "-28 vs BYU"
       },
       "cycle": "C2",
@@ -10889,6 +10930,7 @@
           "losses_considered": 4,
           "mean_cover_margin": -1.5385,
           "mean_loss_badness": 9.9926,
+          "shrunk_cover_margin": -1.1765,
           "worst_cover": "-28 vs BYU"
         },
         "total": -2.5378
@@ -10928,6 +10970,7 @@
         "covers": 6,
         "games": 13,
         "mean_margin": 1.1923,
+        "scored_margin": 0.9118,
         "worst": "-22 vs East Texas A&M"
       },
       "cycle": "C2",
@@ -11248,6 +11291,7 @@
           "losses_considered": 4,
           "mean_cover_margin": 1.1923,
           "mean_loss_badness": 8.5368,
+          "shrunk_cover_margin": 0.9118,
           "worst_cover": "-22 vs East Texas A&M"
         },
         "total": -6.2036
@@ -11287,6 +11331,7 @@
         "covers": 9,
         "games": 14,
         "mean_margin": 4.9107,
+        "scored_margin": 3.8194,
         "worst": "-14 vs Washington State"
       },
       "cycle": "C1",
@@ -11558,6 +11603,7 @@
           "losses_considered": 3,
           "mean_cover_margin": 4.9107,
           "mean_loss_badness": 9.4706,
+          "shrunk_cover_margin": 3.8194,
           "worst_cover": "-14 vs Washington State"
         },
         "total": -8.57
@@ -11597,6 +11643,7 @@
         "covers": 6,
         "games": 13,
         "mean_margin": 1.5,
+        "scored_margin": 1.1471,
         "worst": "-14 vs Texas A&M"
       },
       "cycle": null,
@@ -11938,6 +11985,7 @@
           "losses_considered": 5,
           "mean_cover_margin": 1.5,
           "mean_loss_badness": 6.8,
+          "shrunk_cover_margin": 1.1471,
           "worst_cover": "-14 vs Texas A&M"
         },
         "total": -6.5586
@@ -11977,6 +12025,7 @@
         "covers": 4,
         "games": 13,
         "mean_margin": -1.9231,
+        "scored_margin": -1.4706,
         "worst": "-28 vs SMU"
       },
       "cycle": "C1",
@@ -12323,6 +12372,7 @@
           "losses_considered": 4,
           "mean_cover_margin": -1.9231,
           "mean_loss_badness": 10.5882,
+          "shrunk_cover_margin": -1.4706,
           "worst_cover": "-28 vs SMU"
         },
         "total": -2.0091

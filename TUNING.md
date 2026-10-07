@@ -1,9 +1,13 @@
 # Tuning the ranking
 
-> **When does the site update?** Sundays, automatically, after Saturday's games.
-> A week only becomes the current ranking once half its games are final, so a
-> stray midweek fixture cannot publish a near-empty week. Editing
-> `config/ranking.toml` also publishes immediately, whatever day it is.
+> **When does the site update?** Sunday morning, automatically, after Saturday's
+> games — and **once**. A week becomes the current ranking only when *every* one
+> of its games is final, so a stray midweek fixture cannot publish a near-empty
+> week; and once a week is published it is **frozen**, so it never quietly
+> changes underneath you afterwards. (It used to: week 5 of 2026 was republished
+> five times with different numbers, purely because each run refetched betting
+> lines.) Editing `config/ranking.toml` still publishes immediately, whatever day
+> it is — that is the one thing allowed to rebuild a finished week.
 
 Every number that decides this ranking lives in one file: **[`config/ranking.toml`](config/ranking.toml)**.
 Edit it on GitHub and commit. **The site rebuilds itself within a few minutes** —
@@ -224,7 +228,14 @@ python3 scripts/evaluate.py --year 2025 --offline   # does it predict better or 
 
 `evaluate.py` ranks through several weeks of a finished season and predicts every
 later game. It prints the AP poll on the same games as a reference — **not a
-target**. AP gets 58.7%; this ranking gets 67.0%.
+target**. On `--weeks 4,6,8,10,12`: AP gets **58.7%**, this ranking **65.4%**.
+On the default weeks: AP **56.5%**, this ranking **63.4%**. Either way about
+seven points ahead.
+
+Those are measured at the weights shipped today. **Re-run the tool rather than
+quoting them** — change the weights and the number changes, which is rather the
+point of the tool. AP's figure does not move, so if yours disagrees with the
+number above, check you are on the same `--weeks`.
 
 `tests/fixtures/golden/rankings_2025.json` is a byte-for-byte copy of the 2025
 output, used to catch accidental changes: 2025 is finished, so if the output

@@ -84,7 +84,11 @@ def rank(dataset: Dataset, cfg: Config) -> RankingResult:
 
     # -- the week to rank through -----------------------------------------
     week, season_type, cutoff = h2h.resolve_week(
-        dataset.games, dataset.calendar, cfg["season.week"], cfg["season.season_type"]
+        dataset.games,
+        dataset.calendar,
+        cfg["season.week"],
+        cfg["season.season_type"],
+        material_teams=dataset.material_teams,
     )
     all_results, skipped = h2h.to_results(dataset.games, cutoff)
 

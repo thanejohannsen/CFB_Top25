@@ -239,6 +239,40 @@ class TestResumeAdjustment(unittest.TestCase):
         for tb in teams:
             self.assertEqual(tb.resume_components["cover"], 0.0)
 
+    def test_the_cover_margin_the_adjustment_uses_is_published(self):
+        """The panel has to be able to explain its own number.
+
+        Stage 2 scores the SHRUNK mean, but only the raw mean was published, so
+        Northwestern showed +17.81 beside an adjustment computed from +8.91.
+        """
+        from cfbrank.engine.cover import SHRINKAGE_GAMES, CoverGame, CoverRecord
+
+        def rec(*margins):
+            return CoverRecord(
+                tuple(
+                    CoverGame(opponent="X", week=i + 1, season_type="regular",
+                              expected=0.0, actual=m)
+                    for i, m in enumerate(margins)
+                )
+            )
+
+        teams, _ = teams_for([("A", 1, 1, 20.0), ("B", 2, 2, 10.0), ("C", 3, 3, 5.0)])
+        covers = {"A": rec(20, 20, 20, 20), "B": rec(0, 0, 0, 0, 0), "C": rec(-10, -10, -10)}
+        apply_resume_adjustment(teams, [result("A", "B")], S2, EV, covers)
+        for tb in teams:
+            n = tb.resume_detail["cover_games"]
+            raw = tb.resume_detail["mean_cover_margin"]
+            scored = tb.resume_detail["shrunk_cover_margin"]
+            self.assertAlmostEqual(scored, raw * n / (n + SHRINKAGE_GAMES), places=9)
+
+        # And it is differential, not a constant the z-score cancels out: A and
+        # C have different game counts, so they are shrunk by different factors.
+        a, c = (next(t for t in teams if t.team == x) for x in ("A", "C"))
+        self.assertNotAlmostEqual(
+            a.resume_detail["shrunk_cover_margin"] / a.resume_detail["mean_cover_margin"],
+            c.resume_detail["shrunk_cover_margin"] / c.resume_detail["mean_cover_margin"],
+        )
+
     def test_adjustment_changes_the_order(self):
         teams, _ = teams_for([("A", 1, 1, 20.0), ("B", 2, 2, 10.0), ("C", 3, 3, 5.0)])
         before = [t.team for t in pool(teams, 3)]

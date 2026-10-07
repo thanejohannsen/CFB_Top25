@@ -191,6 +191,9 @@ tr.detail[hidden] { display: none; }
 .h2h { width: 100%; font-size: 0.875rem; }
 .h2h th, .h2h td { padding: 5px 8px; border-bottom: 1px solid var(--rule); }
 .formula { font-family: var(--mono); font-size: 0.8125rem; color: var(--ink-2); }
+/* Worked arithmetic is column-aligned, so it cannot wrap -- scroll it sideways
+   rather than let it widen the page on a phone. */
+pre.formula { margin: 10px 0; overflow-x: auto; -webkit-overflow-scrolling: touch; line-height: 1.5; }
 
 /* ---------- cycle diagram ---------- */
 .cycle-figure { margin: 0; display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; }

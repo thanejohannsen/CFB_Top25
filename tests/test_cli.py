@@ -44,7 +44,16 @@ class TestExitCodes(unittest.TestCase):
             self.assertEqual(run(args)[0], EXIT_UNCHANGED, "a rerun must be a no-op")
             self.assertEqual(run(args + ["--force"])[0], EXIT_OK, "--force overrides the no-op")
 
-    def test_changing_the_configuration_makes_it_change_again(self):
+    def test_a_published_week_is_frozen_even_against_a_config_change(self):
+        """Retuning does not silently rewrite a finished week.
+
+        A published week is final: its games are over, so a rerun can only
+        republish noise (see the comment in cli.run). That holds even when the
+        ranking really would come out different, which is why this uses an
+        override big enough to move the board. The Rank workflow passes --force
+        on a push touching config/ranking.toml, so tuning from the web UI still
+        publishes immediately -- that is the second half of this test.
+        """
         with tempfile.TemporaryDirectory() as d:
             args = BASE + [
                 "--out", f"{d}/r.json",
@@ -55,7 +64,25 @@ class TestExitCodes(unittest.TestCase):
             self.assertEqual(run(args)[0], EXIT_UNCHANGED)
             # Any override that really changes the ranking; keep it off the
             # shipped values, or this asserts nothing the moment one of them moves.
-            self.assertEqual(run(args + ["--set", "stage1.w_sor=0.9"])[0], EXIT_OK)
+            moved = args + ["--set", "stage1.w_sor=0.9"]
+            self.assertEqual(run(moved)[0], EXIT_UNCHANGED, "frozen without --force")
+            self.assertEqual(run(moved + ["--force"])[0], EXIT_OK, "--force rebuilds it")
+
+    def test_deleting_a_snapshot_unfreezes_that_week(self):
+        """The withdrawal path: removing the file is how a bad week is retracted."""
+        with tempfile.TemporaryDirectory() as d:
+            args = BASE + [
+                "--out", f"{d}/r.json",
+                "--set", f"output.history_dir={d}/weeks",
+                "--set", f"output.index_path={d}/index.json",
+            ]
+            self.assertEqual(run(args)[0], EXIT_OK)
+            snaps = list(Path(f"{d}/weeks").glob("*.json"))
+            self.assertEqual(len(snaps), 1)
+            self.assertEqual(run(args)[0], EXIT_UNCHANGED)
+            snaps[0].unlink()
+            self.assertEqual(run(args)[0], EXIT_OK, "a missing snapshot is not frozen")
+            self.assertTrue(snaps[0].exists())
 
     def test_bad_config_exits_four(self):
         code, _, err = run(BASE + ["--set", "stage1.output_size=999"])

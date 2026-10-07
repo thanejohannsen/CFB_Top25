@@ -199,6 +199,52 @@
           Each is a z-score scaled into rank points, so the adjustment is measured against
           how teams actually vary this season rather than an arbitrary constant.
         </p>
+        <h3>How the number is actually arrived at</h3>
+        <p class="lede">
+          Every one of the four has the same shape, and the units are the same rank points
+          as the base &mdash; so <b>1.0 of adjustment is worth exactly one position of
+          Strength of Record</b>. Positive is a penalty; negative is credit.
+        </p>
+        <pre class="formula">component = dial &times; (&plusmn;weight) &times; z(your raw number against the board)</pre>
+        <p class="lede">
+          Each weight therefore reads as "rank points per standard deviation". At the
+          current dial of a half, those are <b>against the number 2.0</b>, <b>loss quality
+          1.5</b>, <b>best win 0.5</b>, <b>game control 0.25</b>. Opponent strength is
+          measured on the stage&nbsp;1 order, frozen, so the stage cannot feed on its own
+          output. Two details worth knowing: an undefeated team takes a flat zero on loss
+          quality rather than the credit a z-score would hand it, and loss quality is
+          scored only against <em>other teams that have lost</em>.
+        </p>
+        <p class="lede">
+          Worked, for Northwestern in week 5 of 2026 &mdash; four covers from four, by an
+          average of 17.8 points, and the best-looking single loss on the board:
+        </p>
+        <pre class="formula">against the number  mean +17.81, scored as +8.91 after small-sample shrinkage
+                    board mean 0.36, sd 3.78  &rarr;  z = +2.26
+                    -4.0 &times; 2.26 &times; 0.5                            = -4.52
+loss quality        lost at Indiana by 6; venue-adjusted 6 - 2.5 = 3.5
+                    0.5 &times; 3.5 + 0.5 &times; (10/138 &times; 40)            = 3.20
+                    board mean 13.31, sd 5.07  &rarr;  z = -1.99
+                    3.0 &times; -1.99 &times; 0.5                            = -2.99
+best win            beat Colorado, 47th on the stage-1 order
+                    board mean 88.16, sd 43.94  &rarr;  z = -0.94
+                    1.0 &times; -0.94 &times; 0.5                            = -0.47
+game control        11th; board mean 69.5, sd 39.84  &rarr;  z = -1.47
+                    0.5 &times; -1.47 &times; 0.5                            = -0.37
+                                                               total = -8.35</pre>
+        <p class="lede">
+          Their base is <code>0.55 &times; 18 + 0.30 &times; 32 + 0.15 &times; 11 =
+          21.15</code>, and 21.15 &minus; 8.35 = <b>12.80</b>, which lands them ninth.
+        </p>
+        <h3>Why "scored as" is smaller than the raw average</h3>
+        <p class="lede">
+          A cover average built on four games is weaker evidence than the same average
+          built on twelve, so it is pulled toward zero by
+          <code>games / (games + 4)</code> &mdash; four loud afternoons should not read as a
+          season-defining trait. Northwestern's +17.81 is scored as +8.91 for that reason.
+          Both figures are shown in each team's panel, because the raw one is the legible
+          one and the shrunk one is the one the arithmetic uses.
+        </p>
       </div></div>
     </section>
 
