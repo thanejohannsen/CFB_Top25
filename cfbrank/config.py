@@ -56,6 +56,7 @@ DEFAULTS: dict[str, Any] = {
         "w_game_control": 0.5,
         "w_cover": 4.0,
         "cover_game_cap": 0.0,
+        "best_win_place": 25,
         "fit_cover_venue": True,
     },
     "resume": {"min_games": 3, "margin_sigma": 13.5, "reference_place": 25},

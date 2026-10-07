@@ -223,6 +223,40 @@ team with nothing the `worst = n + 20` sentinel instead, which is a genuine
 continuum. `cover` has the same `0.0` branch but it is dead code (every rateable
 team has a line) and `cover` is two-sided on purpose — covering is meant to pay.
 
+### `best_win` is RATING points past a bar, not a rank. Do not put the rank back
+
+The owner asked what Notre Dame's best win was and how it could be anywhere near
+Texas beating Ohio State. It was a fair question: the answer was **0.28 rank
+points**, half of ONE place of SoR rank.
+
+**A rank cannot carry this credit.** Rank is not linear in quality — #1 to #10 is
+a chasm, #100 to #110 is nothing — and z-scored over all 138 teams with 20 pinned
+at the no-good-win sentinel, the population had mean 88.12 and sd 43.96. Beating
+#6 and beating #16 differed by 0.25 sd. The whole meaningful range, beating #6
+through beating #46, fitted inside 0.91 sd. Using the opponent's `base_raw`
+instead is no better (0.33 points) because that is itself a weighted sum of
+*ranks* and inherits the same non-linearity. By market rating the same pair differ
+by **1.58**.
+
+So: the best **market rating** beaten, minus the `best_win_place`-th best rating
+on the board, floored at zero.
+
+- **Anchored, not centred**, for the same reason as `loss_quality`: 0 means no
+  qualifying win, and 0 must be the FLOOR of a credit. Centring would hand a
+  PENALTY to whichever team's best scalp happened to be the weakest qualifying
+  one — worse than beating nobody good.
+- **A FIXED divisor, not `penalty_scaler`.** This is the trap and it is the
+  opposite of the usual one: only 18 of 138 teams have a qualifying win, so the
+  board spread is set by the 120 zeros and collapses to 2.31. That inflated
+  Texas's single win to **−9.27 rank points**, larger than the rest of the
+  adjustment put together, while the #1 team scored nothing. Dividing by
+  `max(rating) - bar` instead bounds the credit at exactly `w_best_win` and makes
+  it independent of how many teams happen to qualify this week.
+- **The bar means 11 of the published top 25 score 0**, Alabama included (their
+  best win, South Carolina, is 1.9 rating points short). That is the owner's
+  explicit choice — "0 pts if they have no best win" — but it means the term is
+  silent about half the board, so read it before raising `w_best_win`.
+
 ### A GLOBAL transform on a z-scored term is invisible. Check before building one
 
 This has now bitten three times in one session, so it is a rule rather than an

@@ -313,11 +313,55 @@ class TestResumeAdjustment(unittest.TestCase):
         )
 
     def test_adjustment_changes_the_order(self):
+        # TWO losers, so loss_quality has a spread to scale against. With only
+        # one the sample is degenerate and the term is 0 for everybody -- this
+        # test used to pass on best_win instead, despite what it says it tests.
         teams, _ = teams_for([("A", 1, 1, 20.0), ("B", 2, 2, 10.0), ("C", 3, 3, 5.0)])
         before = [t.team for t in pool(teams, 3)]
-        apply_resume_adjustment(teams, [result("C", "A", 50, 0, site="away")], S2, EV)
+        apply_resume_adjustment(
+            teams,
+            [result("C", "A", 50, 0, site="away"), result("C", "B", 24, 21, site="away")],
+            S2,
+            EV,
+        )
         after = [t.team for t in pool(teams, 3)]
         self.assertNotEqual(before, after, "a 50-0 home loss should cost something")
+
+    def test_best_win_needs_a_top_25_scalp_and_is_measured_in_rating_points(self):
+        """It used to be the opponent's RANK, which could not tell good from great.
+
+        Z-scored over all 138 teams (mean 88, sd 44, with 20 pinned at the
+        no-good-win sentinel) beating #6 and beating #16 differed by 0.25 sd:
+        Texas over Ohio State outscored Notre Dame over Wisconsin by 0.28 rank
+        points, half of ONE place of SoR rank.
+        """
+        teams, _ = teams_for([(chr(65 + i), i + 1, i + 1, 30.0 - i) for i in range(6)])
+        by = {t.team: t for t in teams}
+        # A is elite, B is good, F is poor. The bar is the 3rd-best rating.
+        for name, mkt in [("A", 30.0), ("B", 20.0), ("C", 10.0),
+                          ("D", 0.0), ("E", -10.0), ("F", -20.0)]:
+            by[name].market_rating = mkt
+        cfg = {**S2, "best_win_place": 3}
+
+        apply_resume_adjustment(
+            teams,
+            [result("D", "A"), result("E", "B"), result("F", "F2")],
+            cfg,
+            EV,
+        )
+        got = {t.team: t.resume_components["best_win"] for t in teams}
+
+        self.assertLess(got["D"], got["E"], "beating the best team beats beating the 2nd")
+        self.assertLess(got["E"], 0.0, "a top-3 scalp is a credit")
+        for team in ("A", "B", "C", "F"):
+            self.assertAlmostEqual(
+                got[team], 0.0,
+                msg=f"{team} beat nobody inside the bar, so no credit -- and 0 is the floor",
+            )
+        # The anchor is the bar, not the mean: nobody is PENALISED for their best
+        # scalp being the weakest of the qualifying ones.
+        for team, v in got.items():
+            self.assertLessEqual(v, 1e-12, f"{team} was penalised for a good win")
 
 
 class TestUpsetRegression(unittest.TestCase):

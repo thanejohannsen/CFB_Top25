@@ -36,6 +36,7 @@ from typing import Mapping, Sequence
 from cfbrank.engine.base_score import TeamBase, rerank
 from cfbrank.engine.cover import CoverRecord
 from cfbrank.engine.evidence import location_adjusted_margin
+from cfbrank.engine.resume_strength import reference_rating
 from cfbrank.engine.stats import mean, penalty_scaler, zscorer
 from cfbrank.models import GameResult
 
@@ -90,8 +91,18 @@ def apply_resume_adjustment(
     n = len(teams)
     worst = n + UNRATED_PENALTY
 
+    # Opponent QUALITY in points, for the best-win credit. A rank cannot carry
+    # that credit: see the comment on `best_raw` below.
+    market = {tb.team: tb.market_rating for tb in teams if tb.market_rating is not None}
+    place = int(cfg.get("best_win_place", 25))  # type: ignore[arg-type]
+    # "A top-25 team" means the project's existing definition of one -- the
+    # place-th best market rating, the same yardstick the resume walks its
+    # reference team through.
+    top_rating = reference_rating(market, place) if market else 0.0
+
     losses: dict[str, list[tuple[GameResult, float]]] = {tb.team: [] for tb in teams}
     best_win: dict[str, int] = {}
+    best_quality: dict[str, tuple[float, str]] = {}
 
     for r in results:
         if r.loser in by_team:
@@ -101,6 +112,9 @@ def apply_resume_adjustment(
             opp_rank = rank_of.get(r.loser, worst)
             if opp_rank < best_win.get(r.winner, worst + 1):
                 best_win[r.winner] = opp_rank
+            q = market.get(r.loser)
+            if q is not None and q > best_quality.get(r.winner, (float("-inf"), ""))[0]:
+                best_quality[r.winner] = (q, r.loser)
 
     loss_raw = {t: mean([b for _, b in v]) for t, v in losses.items() if v}
     # NOT z-scored: this is a penalty, and badness is already anchored at zero.
@@ -109,8 +123,43 @@ def apply_resume_adjustment(
     # `sorted` is load-bearing for byte-stability: it pins the float summation
     # order inside `pstdev`.
     scale_loss = penalty_scaler(sorted(loss_raw.values()))
-    best_raw = {tb.team: float(best_win.get(tb.team, worst)) for tb in teams}
-    z_best = zscorer([best_raw[tb.team] for tb in teams])
+    # A ONE-SIDED CREDIT, measured in rating points past the top-25 bar.
+    #
+    # It used to be the opponent's RANK, z-scored over all 138 teams, and that
+    # could not tell a good win from a great one. Rank is not linear in quality --
+    # #1 to #10 is a chasm, #100 to #110 is nothing -- and the population is
+    # dominated by the 20 teams pinned at the no-good-win sentinel, giving mean
+    # 88 and sd 44. So beating #6 and beating #16 differed by 0.25 sd: Texas
+    # beating Ohio State outscored Notre Dame beating Wisconsin by 0.28 rank
+    # points, half of ONE place of SoR rank. By rating the same pair differ by
+    # 1.58. The opponent's base score is no better (0.33), because base_raw is
+    # itself a weighted sum of ranks and inherits the same non-linearity.
+    #
+    # Anchored at the top-25 bar rather than centred, for the reason
+    # `loss_quality` is: no qualifying win scores 0, and 0 must be the FLOOR of a
+    # credit, not its middle. Centring would hand a positive (a penalty) to
+    # whichever team's best scalp happened to be the weakest of the qualifying
+    # ones -- worse than beating nobody good at all. Beating exactly the 25th
+    # team also scores ~0, so there is no cliff at the bar.
+    best_raw = {
+        tb.team: max(0.0, best_quality.get(tb.team, (float("-inf"), ""))[0] - top_rating)
+        for tb in teams
+    }
+    # A FIXED scale, not the board's spread. `penalty_scaler` is wrong here: only
+    # 18 of 138 teams have a qualifying win, so the spread is set by the 120
+    # zeros and collapses to 2.31, which inflated Texas's one win over Ohio State
+    # to -9.27 rank points -- larger than the whole rest of the adjustment, while
+    # the #1 team got nothing.
+    #
+    # The natural scale is the bar itself: from the top-25 rating up to the best
+    # rating on the board. The credit then runs 0 (beat exactly the 25th team) to
+    # 1 (beat the best team in the country), so the most this term can ever be
+    # worth is w_best_win, and it does not move with how many teams happen to
+    # qualify this week.
+    best_span = (max(market.values()) - top_rating) if market else 0.0
+    scale_best = (
+        (lambda x: x / best_span) if best_span > 1e-9 else (lambda _x: 0.0)
+    )
     gc_raw = {tb.team: float(tb.game_control_rank or worst) for tb in teams}
     z_gc = zscorer([gc_raw[tb.team] for tb in teams])
 
@@ -125,7 +174,10 @@ def apply_resume_adjustment(
             # score available rather than a middling one. A good loss costs
             # nearly nothing; it can never pay.
             "loss_quality": w_loss * scale_loss(loss_raw[tb.team]) if tb.team in loss_raw else 0.0,
-            "best_win": w_best * z_best(best_raw[tb.team]),
+            # Negated: beating a good team is a credit, and 0 means no
+            # qualifying win, which is the worst outcome rather than an average
+            # one.
+            "best_win": -w_best * scale_best(best_raw[tb.team]),
             "game_control": w_gc * z_gc(gc_raw[tb.team]),
             # Negative is a credit: beating the number lowers the base score,
             # which is better. Two-sided on purpose -- covering is meant to pay.
@@ -143,6 +195,11 @@ def apply_resume_adjustment(
             "losses_considered": len(losses[tb.team]),
             "mean_loss_badness": loss_raw.get(tb.team),
             "best_win_opponent_base_rank": best_win.get(tb.team),
+            # What the credit is actually computed from: the strongest top-25
+            # team beaten, and how far past the bar they were.
+            "best_win_opponent": best_quality.get(tb.team, (None, None))[1],
+            "best_win_opponent_rating": best_quality.get(tb.team, (None, None))[0],
+            "best_win_over_bar": best_raw.get(tb.team),
             "game_control_rank": tb.game_control_rank,
             "cover_games": rec.played if rec else 0,
             "covers": rec.covers if rec else None,

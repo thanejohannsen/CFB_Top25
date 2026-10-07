@@ -131,7 +131,8 @@ Rank points, applied after the base order. **Positive = worse.**
 | --- | --- | --- | --- |
 | `w_cover` | **3.5** | Performance against the posted line — did you look like you meant it | punish teams that don't beat the number |
 | `w_loss_quality` | **2.5** | How bad your losses look: margin, venue, and who beat you. **Positive only** — see below | punish ugly losses |
-| `w_best_win` | **2.5** | Credit for the best team you beat | reward one big scalp |
+| `w_best_win` | **2.5** | Credit for the best team you beat, **if they're top 25**. See below | reward one big scalp |
+| `best_win_place` | 25 | How good an opponent has to be to count at all |  |
 | `w_game_control` | 0.5 | Did you lead comfortably or survive | reward wire-to-wire wins |
 | `cover_game_cap` | 0.0 | How far one game may move your cover average. **Off** — measured and switched off, see below |  |
 | `fit_cover_venue` | true | Measure the market's home-field bias and centre each game on it | *leave on* |
@@ -139,6 +140,38 @@ Rank points, applied after the base order. **Positive = worse.**
 `w_cover` and `w_best_win` are the two that carry the stage now. Above ~6,
 `w_cover` starts floating 3-1 teams with soft schedules into the top ten, because
 it measures *exceeding expectations* rather than *being good*.
+
+### Best win: rating points past the top-25 bar, not places
+
+This term asks one question — **did you beat anybody really good?** — and it used
+to answer it badly.
+
+It was the opponent's *rank*, z-scored over all 138 teams. Rank is not linear in
+quality: #1 to #10 is a chasm, #100 to #110 is nothing. With 20 teams pinned at
+the no-good-win sentinel the population had mean 88 and sd 44, so the entire
+meaningful range lived inside one standard deviation. **Texas beating Ohio State
+(#6) outscored Notre Dame beating Wisconsin (#16) by 0.28 rank points** — half of
+one place of SoR rank. Using the opponent's base score instead is no better
+(0.33), because that is itself a weighted sum of ranks.
+
+It is now measured in **market rating points past the top-25 bar**:
+
+- the bar is the **`best_win_place`-th best market rating**, the same yardstick
+  the résumé walks its reference team through
+- beat nobody that good and the credit is **0**, which is the worst outcome on
+  this term, not an average one
+- beating exactly the 25th-best team also scores ~0, so there is no cliff
+- the scale runs from the bar up to the **best rating on the board**, so beating
+  the best team in the country is worth exactly `w_best_win`, and the term cannot
+  balloon in a week when few teams qualify
+
+On 2026 week 5 that makes Texas's win over Ohio State worth the full **−1.25**,
+Georgia's over Oklahoma **−0.46**, and Notre Dame's over Wisconsin **0**.
+
+Worth knowing before you turn the weight up: **11 of the published top 25 score 0
+here**, Alabama among them — their best win is South Carolina, 1.9 rating points
+short of the bar. That is the bar doing its job, but it means this term says
+nothing at all about half the board.
 
 ### The posted line under-prices home field
 

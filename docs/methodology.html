@@ -162,7 +162,9 @@
           <li><b>Loss quality</b> &mdash; for each defeat, half the margin once venue is
             accounted for, half the weakness of whoever beat you. This one can only ever
             cost a team points: the best a loss can do is not hurt you.</li>
-          <li><b>Best win</b> &mdash; how good the best team you beat was.</li>
+          <li><b>Best win</b> &mdash; how good the best team you beat was, measured in
+            rating points past the top-25 bar. Beat nobody that good and this is zero,
+            which is the worst outcome here rather than an average one.</li>
           <li><b>Game control</b> &mdash; the feed's average in-game win probability rank:
             did you lead comfortably, or survive?</li>
           <li><b>Against the number</b> &mdash; how the team played compared with what the
@@ -258,15 +260,17 @@ loss quality        lost at Indiana by 6; venue-adjusted 6 - 2.5 = 3.5
                     0.5 &times; 3.5 + 0.5 &times; (10/138 &times; 40)            = 3.20
                     board spread 5.07, NOT centred  &rarr;  3.20 / 5.07 = 0.63
                     2.5 &times; 0.63 &times; 0.5                             = +0.79
-best win            beat Colorado, 46th on the stage-1 order
-                    2.5 &times; z &times; 0.5                                 = -1.20
+best win            beat Penn State, rated +15.6 against a top-25 bar of +12.6
+                    3.06 points past the bar, on a scale that runs to the
+                    best rating on the board
+                    -2.5 &times; 0.179 &times; 0.5                             = -0.22
 game control        11th of 138
                     0.5 &times; z &times; 0.5                                 = -0.37
-                                                               total = -4.63</pre>
+                                                               total = -3.66</pre>
         <p class="lede">
           Their base is <code>0.55 &times; 18 + 0.30 &times; 32 + 0.15 &times; 11 =
-          21.15</code>, and 21.15 &minus; 4.63 = <b>16.52</b>, which lands them
-          fourteenth.
+          21.15</code>, and 21.15 &minus; 3.66 = <b>17.49</b>, which lands them
+          thirteenth.
         </p>
         <p class="lede">
           Notice that loss quality is the only one of the four without a board mean

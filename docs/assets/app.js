@@ -247,8 +247,19 @@
     pair("     the arithmetic", base.formula || "\u2013");
     pair("2. After the resume adjustment", "#" + base.rank + "  \u2014  Final " + num(base.score, 2));
     pair("     adjustment", signed(ra.total, 2) + " rank points");
+    var det = ra.detail || {};
     Object.keys(comp).sort().forEach(function (k) {
       pair("       " + k.replace(/_/g, " "), signed(comp[k], 2));
+      // Name the scalp, because "best win -0.22" on its own does not say whose.
+      if (k === "best_win") {
+        pair(
+          "         over",
+          det.best_win_opponent
+            ? det.best_win_opponent + " (" + signed(det.best_win_opponent_rating, 1) + ")" +
+                (det.best_win_over_bar ? "" : " — outside the top 25, so no credit")
+            : "nobody inside the top 25"
+        );
+      }
     });
     if (row.regression) pair("     upset regression", signed(row.regression.adjustment, 2) + " rank points");
     pair("3. After head-to-head", "#" + row.rank + "  \u2014  " + driftText(row.placement.drift));
