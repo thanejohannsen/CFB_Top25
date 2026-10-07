@@ -159,10 +159,17 @@ w_loss_quality = 2.5   # rank points per standard deviation
 w_best_win     = 2.5
 
 # What counts as a "best win" at all: the opponent must be inside the top this
-# many by MARKET RATING -- the project's existing definition of a top-25 team,
-# the same yardstick the resume walks its reference team through. Beat nobody
-# that good and the credit is 0, which is the worst outcome on this term rather
-# than an average one.
+# many of OUR OWN BASE ORDER -- the Base column on the site, which is the three
+# numbers before any adjustment. Beat nobody that good and the credit is 0, which
+# is the worst outcome on this term rather than an average one.
+#
+# It is NOT the top 25 by market rating, which is a different set and was a bug:
+# Mississippi State are 12th on the base order and 14th on the published board but
+# only 31st by rating, so a rating gate denied Alabama any credit for beating them.
+# It is also not the AP top 25, which this ranking never reads.
+#
+# The base order rather than the published one because the published order is
+# circular -- stage 4 reorders using these very credits.
 #
 # The credit is measured in RATING POINTS past that bar, not in places. It used
 # to be the opponent's rank, and a rank cannot carry this credit: #1 to #10 is a

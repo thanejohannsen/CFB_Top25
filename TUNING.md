@@ -154,24 +154,28 @@ meaningful range lived inside one standard deviation. **Texas beating Ohio State
 one place of SoR rank. Using the opponent's base score instead is no better
 (0.33), because that is itself a weighted sum of ranks.
 
-It is now measured in **market rating points past the top-25 bar**:
+Two separate questions, and it helps to keep them apart:
 
-- the bar is the **`best_win_place`-th best market rating**, the same yardstick
-  the résumé walks its reference team through
-- beat nobody that good and the credit is **0**, which is the worst outcome on
-  this term, not an average one
-- beating exactly the 25th-best team also scores ~0, so there is no cliff
-- the scale runs from the bar up to the **best rating on the board**, so beating
-  the best team in the country is worth exactly `w_best_win`, and the term cannot
-  balloon in a week when few teams qualify
+**Who counts?** The top `best_win_place` of **our own Base order** — the Base
+column on the site, the three numbers before any adjustment. Not the top 25 by
+market rating (a different set), and not the AP poll (which this ranking never
+reads). The Base order rather than the published one because the published order
+is circular: head-to-head reorders using these very credits.
 
-On 2026 week 5 that makes Texas's win over Ohio State worth the full **−1.25**,
-Georgia's over Oklahoma **−0.46**, and Notre Dame's over Wisconsin **0**.
+**How much is it worth?** **Market rating points**, on a scale running from the
+weakest team inside the bar up to the strongest. So beating the best team in the
+country is worth exactly `w_best_win`; beating the 25th-best is worth ~0, which
+means there is no cliff at the bar; and beating nobody inside it is 0 — the worst
+outcome on this term, not an average one.
 
-Worth knowing before you turn the weight up: **11 of the published top 25 score 0
-here**, Alabama among them — their best win is South Carolina, 1.9 rating points
-short of the bar. That is the bar doing its job, but it means this term says
-nothing at all about half the board.
+On 2026 week 5: Texas over Ohio State **−1.25** (the maximum), Ole Miss over LSU
+**−0.79**, Florida over Ole Miss **−0.60**, Alabama over Mississippi State
+**−0.24**, Notre Dame over Wisconsin **−0.14**.
+
+Worth knowing before you turn the weight up: **15 of the published top 25 score 0
+here**, including Georgia — they beat Oklahoma, who are rated +18.8 but sit 33rd
+on the Base order, so that win does not qualify. The term is silent about more than
+half the board by design.
 
 ### The posted line under-prices home field
 

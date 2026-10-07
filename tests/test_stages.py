@@ -328,24 +328,28 @@ class TestResumeAdjustment(unittest.TestCase):
         self.assertNotEqual(before, after, "a 50-0 home loss should cost something")
 
     def test_best_win_needs_a_top_25_scalp_and_is_measured_in_rating_points(self):
-        """It used to be the opponent's RANK, which could not tell good from great.
+        """Who counts is the BASE top 25; how much it is worth is rating points.
 
-        Z-scored over all 138 teams (mean 88, sd 44, with 20 pinned at the
-        no-good-win sentinel) beating #6 and beating #16 differed by 0.25 sd:
-        Texas over Ohio State outscored Notre Dame over Wisconsin by 0.28 rank
-        points, half of ONE place of SoR rank.
+        Two separate things, and both were wrong at some point. The credit used to
+        be the opponent's RANK, z-scored over 138 teams (mean 88, sd 44, 20 pinned
+        at the no-good-win sentinel), so beating #6 and beating #16 differed by
+        0.25 sd. And eligibility was once the top 25 BY RATING, which is a
+        different set from the top 25 of our own order: Mississippi State are 12th
+        on the base order and 31st by rating, so that gate denied Alabama any
+        credit for beating them.
         """
         teams, _ = teams_for([(chr(65 + i), i + 1, i + 1, 30.0 - i) for i in range(6)])
         by = {t.team: t for t in teams}
-        # A is elite, B is good, F is poor. The bar is the 3rd-best rating.
+        # A, B, C are the base top 3. D has the best rating of the ineligible
+        # teams, to prove eligibility is by base rank and not by rating.
         for name, mkt in [("A", 30.0), ("B", 20.0), ("C", 10.0),
-                          ("D", 0.0), ("E", -10.0), ("F", -20.0)]:
+                          ("D", 25.0), ("E", -10.0), ("F", -20.0)]:
             by[name].market_rating = mkt
         cfg = {**S2, "best_win_place": 3}
 
         apply_resume_adjustment(
             teams,
-            [result("D", "A"), result("E", "B"), result("F", "F2")],
+            [result("D", "A"), result("E", "B"), result("F", "D")],
             cfg,
             EV,
         )
@@ -353,7 +357,11 @@ class TestResumeAdjustment(unittest.TestCase):
 
         self.assertLess(got["D"], got["E"], "beating the best team beats beating the 2nd")
         self.assertLess(got["E"], 0.0, "a top-3 scalp is a credit")
-        for team in ("A", "B", "C", "F"):
+        self.assertAlmostEqual(
+            got["F"], 0.0,
+            msg="F beat D, rated +25 but OUTSIDE the base top 3, so it does not count",
+        )
+        for team in ("A", "B", "C"):
             self.assertAlmostEqual(
                 got[team], 0.0,
                 msg=f"{team} beat nobody inside the bar, so no credit -- and 0 is the floor",

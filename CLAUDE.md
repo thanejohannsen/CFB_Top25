@@ -238,8 +238,17 @@ instead is no better (0.33 points) because that is itself a weighted sum of
 *ranks* and inherits the same non-linearity. By market rating the same pair differ
 by **1.58**.
 
-So: the best **market rating** beaten, minus the `best_win_place`-th best rating
-on the board, floored at zero.
+**And WHO counts is a separate question from how much it is worth.** Eligibility
+is the top `best_win_place` of the **base order** (`raw_rank`, the Base column on
+the site); the credit is then **market rating points** within that set. Gating on
+the top 25 BY RATING instead was a bug the owner caught: Mississippi State are
+12th on the base order and 14th published but only 31st by rating, so a rating
+gate denied Alabama any credit for beating them. It is not the AP poll either --
+this ranking never reads one. The base order and not the published order because
+the published order is circular: stage 4 reorders using these credits.
+
+So: the best market rating beaten among base-top-25 opponents, minus the weakest
+rating inside that set, floored at zero.
 
 - **Anchored, not centred**, for the same reason as `loss_quality`: 0 means no
   qualifying win, and 0 must be the FLOOR of a credit. Centring would hand a
@@ -252,10 +261,14 @@ on the board, floored at zero.
   adjustment put together, while the #1 team scored nothing. Dividing by
   `max(rating) - bar` instead bounds the credit at exactly `w_best_win` and makes
   it independent of how many teams happen to qualify this week.
-- **The bar means 11 of the published top 25 score 0**, Alabama included (their
-  best win, South Carolina, is 1.9 rating points short). That is the owner's
-  explicit choice — "0 pts if they have no best win" — but it means the term is
-  silent about half the board, so read it before raising `w_best_win`.
+- **The bar means 15 of the published top 25 score 0**, Georgia included: they
+  beat Oklahoma, rated +18.8 but 33rd on the base order, so it does not qualify.
+  That is the owner's explicit choice — "0 pts if they have no best win" — but the
+  term is silent about more than half the board, so read it before raising
+  `w_best_win`.
+- **Take the MINIMUM rating in the eligible set as the floor, not the
+  `place`-th rating.** Rank and rating disagree, so the lowest-rated team in the
+  base top 25 is not always the 25th one.
 
 ### A GLOBAL transform on a z-scored term is invisible. Check before building one
 

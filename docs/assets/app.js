@@ -251,13 +251,18 @@
     Object.keys(comp).sort().forEach(function (k) {
       pair("       " + k.replace(/_/g, " "), signed(comp[k], 2));
       // Name the scalp, because "best win -0.22" on its own does not say whose.
+      // Only a top-25 opponent is ever named here, so a named opponent with a
+      // credit near zero means a marginal qualifier rather than a non-qualifier:
+      // the scale starts at the weakest team inside the 25, so beating them is
+      // worth almost nothing. That is deliberate -- it is what stops a cliff at
+      // the bar.
       if (k === "best_win") {
         pair(
           "         over",
           det.best_win_opponent
-            ? det.best_win_opponent + " (" + signed(det.best_win_opponent_rating, 1) + ")" +
-                (det.best_win_over_bar ? "" : " — outside the top 25, so no credit")
-            : "nobody inside the top 25"
+            ? det.best_win_opponent + " (rated " +
+                signed(det.best_win_opponent_rating, 1) + ")"
+            : "nobody in the top 25"
         );
       }
     });

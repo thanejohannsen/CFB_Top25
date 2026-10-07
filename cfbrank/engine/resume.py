@@ -36,7 +36,6 @@ from typing import Mapping, Sequence
 from cfbrank.engine.base_score import TeamBase, rerank
 from cfbrank.engine.cover import CoverRecord
 from cfbrank.engine.evidence import location_adjusted_margin
-from cfbrank.engine.resume_strength import reference_rating
 from cfbrank.engine.stats import mean, penalty_scaler, zscorer
 from cfbrank.models import GameResult
 
@@ -95,10 +94,24 @@ def apply_resume_adjustment(
     # that credit: see the comment on `best_raw` below.
     market = {tb.team: tb.market_rating for tb in teams if tb.market_rating is not None}
     place = int(cfg.get("best_win_place", 25))  # type: ignore[arg-type]
-    # "A top-25 team" means the project's existing definition of one -- the
-    # place-th best market rating, the same yardstick the resume walks its
-    # reference team through.
-    top_rating = reference_rating(market, place) if market else 0.0
+
+    # WHO COUNTS as a top-25 team: the top `place` of OUR OWN order, not the top
+    # `place` by market rating. Those are different sets and using the wrong one
+    # was a bug -- Mississippi State are 12th on the stage-1 order and 14th on the
+    # published board but only 31st by rating, so gating on rating denied Alabama
+    # any credit for beating them.
+    #
+    # `raw_rank` is the stage-1 order, frozen before this stage runs. The final
+    # published order would be circular: stage 4 reorders using these very
+    # credits. This is the same reason `rank_of` above uses raw_rank.
+    eligible = {tb.team for tb in teams if tb.raw_rank is not None and tb.raw_rank <= place}
+    eligible_ratings = sorted(market[t] for t in sorted(eligible) if t in market)
+    # The scale runs from the WEAKEST top-25 team to the strongest, so beating the
+    # 25th-best team is worth ~0 and beating the best is worth the full weight.
+    # Taking the min rather than the place-th rating matters: rank and rating
+    # disagree, so the lowest-rated team in the set is not always the last one.
+    top_floor = eligible_ratings[0] if eligible_ratings else 0.0
+    top_ceiling = eligible_ratings[-1] if eligible_ratings else 0.0
 
     losses: dict[str, list[tuple[GameResult, float]]] = {tb.team: [] for tb in teams}
     best_win: dict[str, int] = {}
@@ -112,7 +125,7 @@ def apply_resume_adjustment(
             opp_rank = rank_of.get(r.loser, worst)
             if opp_rank < best_win.get(r.winner, worst + 1):
                 best_win[r.winner] = opp_rank
-            q = market.get(r.loser)
+            q = market.get(r.loser) if r.loser in eligible else None
             if q is not None and q > best_quality.get(r.winner, (float("-inf"), ""))[0]:
                 best_quality[r.winner] = (q, r.loser)
 
@@ -142,7 +155,7 @@ def apply_resume_adjustment(
     # ones -- worse than beating nobody good at all. Beating exactly the 25th
     # team also scores ~0, so there is no cliff at the bar.
     best_raw = {
-        tb.team: max(0.0, best_quality.get(tb.team, (float("-inf"), ""))[0] - top_rating)
+        tb.team: max(0.0, best_quality.get(tb.team, (float("-inf"), ""))[0] - top_floor)
         for tb in teams
     }
     # A FIXED scale, not the board's spread. `penalty_scaler` is wrong here: only
@@ -156,7 +169,7 @@ def apply_resume_adjustment(
     # 1 (beat the best team in the country), so the most this term can ever be
     # worth is w_best_win, and it does not move with how many teams happen to
     # qualify this week.
-    best_span = (max(market.values()) - top_rating) if market else 0.0
+    best_span = top_ceiling - top_floor
     scale_best = (
         (lambda x: x / best_span) if best_span > 1e-9 else (lambda _x: 0.0)
     )
