@@ -425,3 +425,56 @@ class TestGolden(unittest.TestCase):
             r["team"] for r in payload["pool_tail"]
         }
         self.assertTrue(named <= pooled, named - pooled)
+
+
+class TestIndexIsSelfHealing(unittest.TestCase):
+    """The catalogue drives the site's week selector, so it must not list files
+    that are gone -- a stale entry is a 404 the moment somebody picks that week.
+
+    Snapshots do legitimately get deleted: a week published off a single midweek
+    game, or a season regenerated under a different id.
+    """
+
+    def test_an_entry_whose_file_vanished_is_dropped(self):
+        import json
+        import tempfile
+        from pathlib import Path
+
+        from cfbrank.output.history import update_index
+
+        def payload(snapshot_id, year, week):
+            return {
+                "meta": {
+                    "snapshot_id": snapshot_id,
+                    "season": {"year": year, "week": week, "season_type": "regular",
+                               "label": f"Week {week}"},
+                    "generated_at": GENERATED_AT,
+                    "content_hash": "sha256:x",
+                },
+                "rankings": [{"team": "A"}],
+            }
+
+        with tempfile.TemporaryDirectory() as d:
+            weeks = Path(d) / "weeks"
+            weeks.mkdir()
+            index_path = Path(d) / "index.json"
+
+            for wk in (5, 6):
+                sid = f"2026-regular-0{wk}"
+                (weeks / f"{sid}.json").write_text("{}")
+                index_path.write_text(json.dumps(update_index(index_path, payload(sid, 2026, wk), weeks)))
+
+            listed = lambda: [
+                s["id"] for y in json.loads(index_path.read_text())["seasons"]
+                for s in y["snapshots"]
+            ]
+            self.assertEqual(sorted(listed()), ["2026-regular-05", "2026-regular-06"])
+            self.assertEqual(json.loads(index_path.read_text())["current"], "2026-regular-06")
+
+            # week 6 is withdrawn; regenerating week 5 must forget it
+            (weeks / "2026-regular-06.json").unlink()
+            index_path.write_text(
+                json.dumps(update_index(index_path, payload("2026-regular-05", 2026, 5), weeks))
+            )
+            self.assertEqual(listed(), ["2026-regular-05"])
+            self.assertEqual(json.loads(index_path.read_text())["current"], "2026-regular-05")

@@ -2,9 +2,13 @@ name: Rank
 
 on:
   schedule:
-    # 12:37 UTC daily. An off-the-hour minute avoids the runner queue at :00,
-    # and most runs are no-ops that commit nothing.
-    - cron: "37 12 * * *"
+    # Sundays at 12:37 UTC, which is ~08:37 Eastern -- after Saturday's late
+    # kickoffs have finished and been logged, and once a week as intended.
+    #
+    # It used to run daily, which published a new snapshot whenever a midweek
+    # game touched the next week. An off-the-hour minute avoids the runner queue
+    # at :00.
+    - cron: "37 12 * * 0"
   push:
     branches: [main]
     paths:

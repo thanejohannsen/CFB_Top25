@@ -86,11 +86,30 @@ def update_index(
     }
 
     seasons = [s for s in index.get("seasons") or [] if isinstance(s, dict)]
+    # A season whose every snapshot file is gone should leave no empty husk.
+    for other in seasons:
+        if other.get("year") != year:
+            other["snapshots"] = [
+                s
+                for s in other.get("snapshots") or []
+                if snapshot_path(history_dir, str(s.get("id"))).exists()
+            ]
+    seasons = [s for s in seasons if s.get("snapshots") or s.get("year") == year]
     bucket = next((s for s in seasons if s.get("year") == year), None)
     if bucket is None:
         bucket = {"year": year, "snapshots": []}
         seasons.append(bucket)
-    snaps = [s for s in bucket.get("snapshots") or [] if s.get("id") != snapshot_id]
+    snaps = [
+        s
+        for s in bucket.get("snapshots") or []
+        # Drop the entry being rewritten, and any whose file has gone. The
+        # catalogue is what the week selector reads, so a stale entry is a 404
+        # waiting to happen -- and snapshots do legitimately get deleted: a
+        # week published off one midweek game, a season regenerated under a new
+        # id. Rebuilding from the directory each time keeps the two in step.
+        if s.get("id") != snapshot_id
+        and snapshot_path(history_dir, str(s.get("id"))).exists()
+    ]
     snaps.append(entry)
     snaps.sort(key=lambda s: str(s.get("id")))
     bucket["snapshots"] = snaps

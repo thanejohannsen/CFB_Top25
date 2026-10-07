@@ -41,14 +41,37 @@ class SeriesNote:
     used: GameResult | None = None
 
 
+# A week becomes "the current week" only once this share of its games are final.
+# Half is deliberately forgiving: it clears on Saturday evening rather than
+# waiting for a Monday make-up game, while ignoring a lone midweek fixture.
+WEEK_SETTLED_FRACTION = 0.5
+
+
 def resolve_week(
-    games: Sequence[Game], calendar: Sequence[CalendarWeek], want: int | str, season_type: str
+    games: Sequence[Game],
+    calendar: Sequence[CalendarWeek],
+    want: int | str,
+    season_type: str,
+    min_fraction: float = WEEK_SETTLED_FRACTION,
 ) -> tuple[int, str, Cutoff]:
     """Pick the week to rank through, and the chronological cutoff for it.
 
-    "auto" means the latest week that actually has a completed game, which is
-    more reliable than today's date (calendar windows overlap and a week can
-    end before its last game is logged).
+    "auto" means the latest week that has actually been PLAYED -- not merely
+    started. Dates are not used: calendar windows overlap, and a week can close
+    before its last game is logged.
+
+    The "played, not started" part is load-bearing. It used to be the latest week
+    with *any* completed game, and on 2026-10-07 a single Wednesday fixture
+    (Southern Miss at Troy) promoted the whole board to week 6 while 57 of that
+    week's 58 games were still unplayed. That is not just a cosmetic label: the
+    cutoff drives the market term, and advancing it dropped 57 unplayed week-6
+    betting lines and swapped in week-7 ones, churning about 50 of the 329 inputs
+    on the strength of one game nobody had asked about.
+
+    So a week only becomes current once `min_fraction` of its scheduled games are
+    final. If no week clears that bar yet -- the opening Thursday of a season --
+    it falls back to the latest week with any result, which is the old behaviour
+    and the best available answer at that point.
     """
     played = [g for g in games if g.completed and g.home_points is not None and g.away_points is not None]
     if season_type in ("regular", "postseason"):
@@ -59,8 +82,25 @@ def resolve_week(
             weeks = [c for c in calendar if c.season_type == "regular"]
             week, st = (weeks[0].week if weeks else 1), "regular"
         else:
-            latest = max(played, key=lambda g: g.order_key)
-            week, st = latest.week, latest.season_type
+            scheduled: dict[tuple[str, int], int] = defaultdict(int)
+            finished: dict[tuple[str, int], int] = defaultdict(int)
+            for g in games:
+                if season_type in ("regular", "postseason") and g.season_type != season_type:
+                    continue
+                scheduled[(g.season_type, g.week)] += 1
+            for g in played:
+                finished[(g.season_type, g.week)] += 1
+
+            settled = [
+                key
+                for key, total in scheduled.items()
+                if total and finished[key] / total >= min_fraction
+            ]
+            if settled:
+                st, week = max(settled, key=lambda k: (SEASON_TYPE_ORDER.get(k[0], 9), k[1]))
+            else:
+                latest = max(played, key=lambda g: g.order_key)
+                week, st = latest.week, latest.season_type
     else:
         week = int(want)
         st = "regular" if season_type == "both" else season_type

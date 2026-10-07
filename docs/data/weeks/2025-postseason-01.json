@@ -2163,7 +2163,7 @@
       "resume_rated": 136,
       "series_split": 5
     },
-    "generated_at": "2026-10-07T14:57:15Z",
+    "generated_at": "2026-10-07T15:07:23Z",
     "previous_snapshot_id": null,
     "ratings": {
       "market": {
@@ -2196,7 +2196,7 @@
       "attribution": "Data: CollegeFootballData.com -- betting lines, play-by-play PPA, and Strength of Record, Strength of Schedule and FPI via ESPN",
       "endpoints": [
         {
-          "cache": "miss",
+          "cache": "hit",
           "fetched_at": "2026-10-07T14:57:06Z",
           "params": {
             "year": "2025"
@@ -2206,7 +2206,7 @@
           "sha256": "sha256:370a1fe5b9a0a91f391da23249b16fe7e1644f13f8071c7d3fbb2c09c5a475d2"
         },
         {
-          "cache": "miss",
+          "cache": "hit",
           "fetched_at": "2026-10-07T14:57:06Z",
           "params": {
             "classification": "fbs",
@@ -2218,7 +2218,7 @@
           "sha256": "sha256:958851db9245a280b02e58a3005127e28564b0ce55ba0d37b9d6433e03f63696"
         },
         {
-          "cache": "miss",
+          "cache": "hit",
           "fetched_at": "2026-10-07T14:57:07Z",
           "params": {
             "year": "2025"
@@ -2228,7 +2228,7 @@
           "sha256": "sha256:45176da8dc01fdabcb3bf9cc9fa861d087f7f5c509c647d4c8fdfbd9f3feaeb2"
         },
         {
-          "cache": "miss",
+          "cache": "hit",
           "fetched_at": "2026-10-07T14:57:10Z",
           "params": {
             "year": "2025"
@@ -2238,7 +2238,7 @@
           "sha256": "sha256:9183735743e5ad4d4674af331fe905e8d968bb7e63667d5938947f55c8000efa"
         },
         {
-          "cache": "miss",
+          "cache": "hit",
           "fetched_at": "2026-10-07T14:57:11Z",
           "params": {
             "seasonType": "both",
@@ -2249,7 +2249,7 @@
           "sha256": "sha256:a8c05e58b5fb1548a5fdfb4b3e5646e30aa796686642f4d5e64c1eb67418e870"
         },
         {
-          "cache": "miss",
+          "cache": "hit",
           "fetched_at": "2026-10-07T14:57:15Z",
           "params": {
             "excludeGarbageTime": "true",

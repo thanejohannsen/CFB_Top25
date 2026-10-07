@@ -250,6 +250,17 @@ without rescaling would hand it a better score for having less data.
   owner can retune weights from the GitHub web UI without reddening CI. Changing
   FROZEN means the engine moved; changing the config does not. Do not "simplify"
   it back to reading the live config.
+- **The cron runs Sundays only** (`37 12 * * 0`), which is the owner's stated
+  cadence: one ranking a week, after Saturday's games. It used to run daily.
+- **`h2h.resolve_week("auto")` advances only once half a week's games are
+  final.** It used to take the latest week with ANY completed game, and on
+  2026-10-07 one Wednesday fixture promoted the board to week 6 with 57 of 58
+  games unplayed. That is not cosmetic: the cutoff drives the market term, so
+  advancing dropped 57 unplayed week-6 lines and swapped in week-7 ones --
+  ~50 of 329 inputs churned on one game. `tests/test_h2h.py` pins it.
+- **`output/history.update_index` drops catalogue entries whose snapshot file is
+  gone.** The index drives the site's week selector, so a stale entry is a 404,
+  and snapshots do get withdrawn legitimately.
 - A push touching `config/ranking.toml` triggers the Rank workflow with
   `--force`, so a weight edit publishes itself. `docs/data` is pre-computed
   output: without that trigger a config change is invisible until the next cron.

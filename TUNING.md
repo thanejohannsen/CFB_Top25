@@ -1,5 +1,10 @@
 # Tuning the ranking
 
+> **When does the site update?** Sundays, automatically, after Saturday's games.
+> A week only becomes the current ranking once half its games are final, so a
+> stray midweek fixture cannot publish a near-empty week. Editing
+> `config/ranking.toml` also publishes immediately, whatever day it is.
+
 Every number that decides this ranking lives in one file: **[`config/ranking.toml`](config/ranking.toml)**.
 Edit it on GitHub and commit. **The site rebuilds itself within a few minutes** —
 a push that touches that file triggers the Rank workflow, which regenerates

@@ -171,3 +171,46 @@ class TestResolveWeek(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestWeekOnlyAdvancesWhenPlayed(unittest.TestCase):
+    """A week becomes current once it is PLAYED, not once it has started.
+
+    Regression for 2026-10-07: one Wednesday fixture (Southern Miss at Troy)
+    promoted the board to week 6 with 57 of 58 games unplayed. That moved the
+    cutoff, which drove the market term to drop 57 unplayed week-6 betting lines
+    and swap in week-7 ones -- roughly 50 of 329 inputs churned on one game.
+    """
+
+    def board(self, played_in_6):
+        """Week 5 fully played; week 6 scheduled with `played_in_6` finished."""
+        games = [game(f"H{i}", f"A{i}", 21, 14, week=5) for i in range(10)]
+        games += [
+            game(f"X{i}", f"Y{i}", 21, 14, week=6) if i < played_in_6
+            else game(f"X{i}", f"Y{i}", None, None, week=6, completed=False)
+            for i in range(10)
+        ]
+        return games
+
+    def test_a_single_midweek_game_does_not_advance_the_week(self):
+        week, st, _ = resolve_week(self.board(1), [], "auto", "both")
+        self.assertEqual((st, week), ("regular", 5))
+
+    def test_the_week_advances_once_half_of_it_is_final(self):
+        week, _, _ = resolve_week(self.board(5), [], "auto", "both")
+        self.assertEqual(week, 6)
+
+    def test_the_threshold_is_tunable(self):
+        self.assertEqual(resolve_week(self.board(2), [], "auto", "both", 0.2)[0], 6)
+        self.assertEqual(resolve_week(self.board(2), [], "auto", "both", 0.9)[0], 5)
+
+    def test_an_opening_night_with_no_settled_week_still_ranks(self):
+        """Falls back to the latest week with any result rather than refusing."""
+        games = [game("H", "A", 21, 14, week=1)] + [
+            game(f"X{i}", f"Y{i}", None, None, week=1, completed=False) for i in range(20)
+        ]
+        self.assertEqual(resolve_week(games, [], "auto", "both")[0], 1)
+
+    def test_an_explicit_week_is_still_honoured(self):
+        """The guard only governs "auto"; --week 6 means week 6."""
+        self.assertEqual(resolve_week(self.board(1), [], 6, "both")[0], 6)
