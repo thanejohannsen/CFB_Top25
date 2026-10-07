@@ -274,8 +274,9 @@
       if (cov.scored_margin !== null && cov.scored_margin !== undefined) {
         pair(
           "  scored as",
-          signed(cov.scored_margin, 1) + " per game — pulled toward zero because " +
-            "it rests on " + cov.games + " lined game" + (cov.games === 1 ? "" : "s")
+          signed(cov.scored_margin, 1) + " per game — centred on each game's venue, " +
+            "then pulled toward zero because it rests on " + cov.games +
+            " lined game" + (cov.games === 1 ? "" : "s")
         );
       }
     }

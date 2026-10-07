@@ -223,6 +223,50 @@ team with nothing the `worst = n + 20` sentinel instead, which is a genuine
 continuum. `cover` has the same `0.0` branch but it is dead code (every rateable
 team has a line) and `cover` is two-sided on purpose — covering is meant to pay.
 
+### A GLOBAL transform on a z-scored term is invisible. Check before building one
+
+This has now bitten three times in one session, so it is a rule rather than an
+anecdote. These terms are z-scored across the board, so **anything that moves
+every team the same way is normalised straight back out.** Only the *differential*
+part survives.
+
+- `cover.SHRINKAGE_GAMES` DOES work, but only because `n/(n+4)` is a per-team
+  factor (teams have different game counts). I first called it inert, which was
+  wrong for that reason.
+- `cover.GAME_CAP` does NOT work. Clipping compresses the whole board, so every
+  absolute number improves and every standing survives. Ole Miss came out 15th at
+  every cap from 10 to none. Built, measured, shipped off.
+- `loss_quality`'s centring DID matter, because it moved the *anchor* rather than
+  the scale: an undefeated team's hard `0.0` does not shift with the mean, so
+  subtracting a mean changed where zero sat relative to everybody.
+
+The test: does the change alter the *ordering* of the raw quantity, or the ratio
+of one team's value to another's? If not, the z-score will eat it. Measure the
+spread of team means before and after, not just one team's number.
+
+### The posted line under-prices home field, and the cover term corrects for it
+
+`cover.venue_bias` measures it from the season's own lines; `fit_cover_venue`
+shipped on. Measured on completed non-neutral lined games, home teams beat the
+number by **+1.045** in 2025 (n=870, SE 0.511) and **+1.640** in 2026 (n=384, SE
+0.762) — same direction both seasons at about two standard errors each, and in
+2026 home teams covered 54.7% against road teams' 44.0%.
+
+That is counter-intuitive enough to be worth stating plainly: the line already
+contains home field, so this term *looks* venue-neutral and is not. Uncorrected it
+is a standing penalty on a road-heavy schedule that says nothing about the team.
+Measured rather than assumed, for the same reason `market.fit_home_field` is.
+
+`VENUE_MIN_GAMES = 50` is load-bearing: fitted on one game the bias EQUALS that
+game's cover margin, so subtracting it zeroes the result. The suite caught that.
+
+Two things it is not. It is **not** the fix for a team held down by one blowout —
+Ole Miss are home-heavy (2 home, 1 away, 1 neutral through week 5), so the
+correction nets them −0.41 and makes them slightly *worse*. And a big favourite
+failing to cover is **not** a real effect: checked by spread bucket across both
+seasons, there is no monotone pattern and the seasons disagree bucket by bucket.
+Beating a 44-point line is no harder than beating a 4-point one.
+
 ### Against the number (`stage2.w_cover`, `engine/cover.py`)
 
 A resume says who you beat; it cannot say whether you looked like you meant it.

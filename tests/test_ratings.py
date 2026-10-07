@@ -538,14 +538,85 @@ class TestCover(unittest.TestCase):
         from cfbrank.engine.cover import CoverGame, CoverRecord
 
         def rec(n):
+            # Under the per-game cap, so this test is about shrinkage alone.
             return CoverRecord(tuple(
-                CoverGame(opponent="X", week=i + 1, season_type="regular", expected=0.0, actual=20.0)
+                CoverGame(opponent="X", week=i + 1, season_type="regular", expected=0.0, actual=10.0)
                 for i in range(n)
             ))
 
-        self.assertAlmostEqual(rec(3).mean_margin, 20.0)
+        self.assertAlmostEqual(rec(3).mean_margin, 10.0)
         self.assertLess(rec(3).shrunk_margin, rec(12).shrunk_margin)
-        self.assertLess(rec(3).shrunk_margin, 20.0)
+        self.assertLess(rec(3).shrunk_margin, 10.0)
+
+    def test_the_per_game_cap_ships_off(self):
+        """It was built and measured, then switched off -- see cover.GAME_CAP.
+
+        A cap moves nobody, because the term is z-scored: clipping compresses the
+        whole board, so absolute numbers improve and standing does not. Ole Miss
+        came out 15th at every cap from 10 to none, while a cap at 14 threw away
+        29% of the term's spread.
+        """
+        from cfbrank.engine.cover import GAME_CAP, CoverGame
+
+        self.assertEqual(GAME_CAP, 0.0, "the cap ships off; read the comment before changing it")
+        huge = CoverGame(opponent="X", week=1, season_type="regular",
+                         expected=0.0, actual=-30.0)
+        self.assertAlmostEqual(huge.margin, -30.0, msg="0 means no cap, not clamp to zero")
+        self.assertFalse(huge.clipped)
+
+    def test_the_cap_clips_when_one_is_set(self):
+        from cfbrank.engine.cover import CoverGame, CoverRecord
+
+        def g(margin, week, cap):
+            return CoverGame(opponent="X", week=week, season_type="regular",
+                             expected=0.0, actual=margin, cap=cap)
+
+        blowout = g(-30.0, 1, 14.0)
+        self.assertAlmostEqual(blowout.raw_margin, -30.0, msg="what happened is reported")
+        self.assertAlmostEqual(blowout.margin, -14.0, msg="what is scored is capped")
+        self.assertTrue(blowout.clipped)
+
+        ordinary = g(-6.0, 2, 14.0)
+        self.assertAlmostEqual(ordinary.margin, -6.0, msg="ordinary games are untouched")
+        self.assertFalse(ordinary.clipped)
+
+        self.assertAlmostEqual(CoverRecord((blowout, ordinary)).mean_margin, -10.0)
+
+    def test_the_venue_bias_is_measured_and_credits_the_road(self):
+        """The posted line already contains home field, but under-prices it.
+
+        Home teams beat the number by +1.045 in 2025 and +1.640 in 2026, so a
+        road-heavy schedule carries a penalty that says nothing about the team.
+        """
+        from cfbrank.engine.cover import CoverGame
+
+        # Same raw performance, different venue: the road team is credited.
+        at_home = CoverGame(opponent="X", week=1, season_type="regular",
+                            expected=0.0, actual=0.0, site=+1, bias=1.5)
+        away = CoverGame(opponent="X", week=1, season_type="regular",
+                         expected=0.0, actual=0.0, site=-1, bias=1.5)
+        neutral = CoverGame(opponent="X", week=1, season_type="regular",
+                            expected=0.0, actual=0.0, site=0, bias=1.5)
+        self.assertAlmostEqual(at_home.margin, -1.5)
+        self.assertAlmostEqual(away.margin, +1.5)
+        self.assertAlmostEqual(neutral.margin, 0.0, msg="a neutral site has no bias to remove")
+
+    def test_the_venue_bias_is_not_fitted_on_a_handful_of_games(self):
+        """Fitted on one game it equals that game's margin, and zeroes it."""
+        from cfbrank.engine.cover import VENUE_MIN_GAMES, venue_bias
+        from tests.helpers import game, line
+
+        def with_id(g, gid):
+            return type(g)(**{**{f.name: getattr(g, f.name)
+                                 for f in g.__dataclass_fields__.values()}, "game_id": gid})
+
+        gs = [with_id(game(f"H{i}", f"A{i}", 31, 17, week=1), i) for i in range(5)]
+        lns = [line(f"H{i}", f"A{i}", -7.0, week=1, game_id=i) for i in range(5)]
+        self.assertEqual(venue_bias(lns, gs), 0.0, f"needs {VENUE_MIN_GAMES} games")
+
+        many = [with_id(game(f"H{i}", f"A{i}", 31, 17, week=1), i) for i in range(VENUE_MIN_GAMES)]
+        many_lns = [line(f"H{i}", f"A{i}", -7.0, week=1, game_id=i) for i in range(VENUE_MIN_GAMES)]
+        self.assertAlmostEqual(venue_bias(many_lns, many), 7.0, msg="won by 14 as a 7-point favourite")
 
     def test_a_game_with_no_line_is_skipped(self):
         from cfbrank.engine.cover import cover_margins

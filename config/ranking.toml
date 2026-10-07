@@ -155,8 +155,8 @@ fit_home_edge  = true
 
 # -- Stage 2: resume adjustment ("how do your losses look") ------------------
 [stage2]
-w_loss_quality = 3.0   # rank points per standard deviation
-w_best_win     = 1.0
+w_loss_quality = 2.5   # rank points per standard deviation
+w_best_win     = 2.5
 w_game_control = 0.5
 
 # Performance against the number the market set, in rank points per standard
@@ -180,7 +180,45 @@ w_game_control = 0.5
 #    and past covering barely predicts future covering. Carrying it is a
 #    judgement that a ranking should describe how teams have LOOKED, not only
 #    what they predict. Set to 0 to turn it off.
-w_cover        = 4.0
+w_cover        = 3.5
+
+# How far ONE game may move a team's average, in points past the line.
+# OFF, and it was built and measured before being switched off.
+#
+# The idea: one afternoon should not define a season. Ole Miss lost at Florida by
+# 20 against the number on 2026 week 5, and that game alone took their average
+# from -1.73 to -6.31.
+#
+# Why it is off: A CAP DOES NOT MOVE ANYBODY, because this term is z-scored.
+# Clipping compresses the whole board, so a team's absolute number improves while
+# its standing among 138 teams does not. Ole Miss came out 15th at every cap from
+# 10 to none. Meanwhile the cost is real -- the per-game margin has an sd of
+# 14.97, so:
+#
+#    cap    clips     spread of team means
+#     10    48.7%     5.83
+#     14    34.9%     7.39
+#     21    14.4%     9.13
+#      0    none     10.36   <- shipped
+#
+# The one real effect is incidental: a cap clips Northwestern's outsized CREDIT
+# and drops them 12th -> 14th, which is the small-sample flattery problem from
+# another angle. If that is worth chasing, this is the knob.
+cover_game_cap = 0.0
+
+# Centre each game on its VENUE's mean rather than on zero.
+#
+# The posted line already contains home field, so it is natural to assume this
+# measure is venue-neutral. It is not. Measured on completed non-neutral games
+# with a line, home teams beat the number by +1.045 in 2025 (n=870, SE 0.511)
+# and +1.640 in 2026 (n=384, SE 0.762) -- same direction both seasons at about
+# two standard errors each. Home teams covered 54.7% of the time in 2026 against
+# road teams' 44.0%. Uncorrected, that is a standing penalty on a road-heavy
+# schedule which says nothing about the team.
+#
+# Measured from the season's own lines rather than assumed, like
+# market.fit_home_field. Setting it false scores raw margin against the number.
+fit_cover_venue = true
 
 # -- The resume: how hard was this record to earn? ---------------------------
 # Walk a reference team through the schedule this team actually played and ask

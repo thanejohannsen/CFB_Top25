@@ -146,7 +146,8 @@ def apply_resume_adjustment(
             "game_control_rank": tb.game_control_rank,
             "cover_games": rec.played if rec else 0,
             "covers": rec.covers if rec else None,
-            "mean_cover_margin": rec.mean_margin if rec else None,
+            # What happened, uncorrected -- the legible one the site shows.
+            "mean_cover_margin": rec.raw_mean_margin if rec else None,
             # The number the adjustment is actually computed from. Publishing
             # only the raw mean made the panel irreconcilable: Northwestern
             # showed +17.81 beside an adjustment scored off +8.91.

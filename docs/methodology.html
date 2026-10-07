@@ -209,10 +209,26 @@
         <pre class="formula">component = dial &times; (&plusmn;weight) &times; z(your raw number against the board)</pre>
         <p class="lede">
           Each weight therefore reads as "rank points per standard deviation". At the
-          current dial of a half, those are <b>against the number 2.0</b>, <b>loss quality
-          1.5</b>, <b>best win 0.5</b>, <b>game control 0.25</b>. Opponent strength is
+          current dial of a half, those are <b>against the number 1.75</b>, <b>loss quality
+          1.25</b>, <b>best win 1.25</b>, <b>game control 0.25</b>. Opponent strength is
           measured on the stage&nbsp;1 order, frozen, so the stage cannot feed on its own
           output.
+        </p>
+        <h3>The posted line under-prices home field</h3>
+        <p class="lede">
+          It would be reasonable to assume this measure is venue-neutral &mdash; the line
+          already contains home field, so beating the number on the road ought to be the
+          same achievement as beating it at home. It is not. Measured on completed
+          non-neutral games, home teams beat the number by <b>+1.045</b> in 2025 (870
+          games) and <b>+1.640</b> in 2026 (384 games), and in 2026 home teams covered
+          54.7% of the time against road teams' 44.0%.
+        </p>
+        <p class="lede">
+          Left alone, that is a standing penalty on a road-heavy schedule which says
+          nothing about the team. So each game is centred on its venue's mean, measured
+          from the season's own lines rather than assumed &mdash; the same approach the
+          market rating takes to home field. Each team's panel shows both numbers: what
+          happened, and what was scored.
         </p>
         <p class="lede">
           <b>Loss quality is the one term that can only ever cost.</b> The best a loss can
@@ -235,22 +251,22 @@
           Worked, for Northwestern in week 5 of 2026 &mdash; four covers from four, by an
           average of 17.8 points, and the best-looking single loss on the board:
         </p>
-        <pre class="formula">against the number  mean +17.81, scored as +8.91 after small-sample shrinkage
-                    board mean 0.36, sd 3.78  &rarr;  z = +2.26
-                    -4.0 &times; 2.26 &times; 0.5                            = -4.52
+        <pre class="formula">against the number  mean +17.81, scored as +8.50 once venue-corrected
+                    and shrunk for resting on only four lined games
+                    -3.5 &times; z &times; 0.5                                = -3.86
 loss quality        lost at Indiana by 6; venue-adjusted 6 - 2.5 = 3.5
                     0.5 &times; 3.5 + 0.5 &times; (10/138 &times; 40)            = 3.20
                     board spread 5.07, NOT centred  &rarr;  3.20 / 5.07 = 0.63
-                    3.0 &times; 0.63 &times; 0.5                             = +0.94
-best win            beat Colorado, 47th on the stage-1 order
-                    board mean 88.16, sd 43.94  &rarr;  z = -0.94
-                    1.0 &times; -0.94 &times; 0.5                            = -0.47
-game control        11th; board mean 69.5, sd 39.84  &rarr;  z = -1.47
-                    0.5 &times; -1.47 &times; 0.5                            = -0.37
-                                                               total = -4.41</pre>
+                    2.5 &times; 0.63 &times; 0.5                             = +0.79
+best win            beat Colorado, 46th on the stage-1 order
+                    2.5 &times; z &times; 0.5                                 = -1.20
+game control        11th of 138
+                    0.5 &times; z &times; 0.5                                 = -0.37
+                                                               total = -4.63</pre>
         <p class="lede">
           Their base is <code>0.55 &times; 18 + 0.30 &times; 32 + 0.15 &times; 11 =
-          21.15</code>, and 21.15 &minus; 4.41 = <b>16.74</b>, which lands them twelfth.
+          21.15</code>, and 21.15 &minus; 4.63 = <b>16.52</b>, which lands them
+          fourteenth.
         </p>
         <p class="lede">
           Notice that loss quality is the only one of the four without a board mean

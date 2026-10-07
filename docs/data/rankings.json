@@ -58,10 +58,12 @@
         "w_sos": 0.0
       },
       "stage2": {
-        "w_best_win": 1.0,
-        "w_cover": 4.0,
+        "cover_game_cap": 0.0,
+        "fit_cover_venue": true,
+        "w_best_win": 2.5,
+        "w_cover": 3.5,
         "w_game_control": 0.5,
-        "w_loss_quality": 3.0
+        "w_loss_quality": 2.5
       },
       "stage3": {
         "enabled": true,
@@ -90,24 +92,24 @@
         "strength": 4.0
       }
     },
-    "content_hash": "sha256:f4611cbd37abf22e5a13696d0f9f55121d009c82bedf7dc11e1a5ddde8322426",
+    "content_hash": "sha256:5e021968bf138f33f19d9e0734f5e11bfb827c9ba68f6093cac8190106bec11f",
     "cost": {
-      "drift": 9.6569,
-      "overrides": 55.848,
-      "passes": 2,
-      "total": 65.5049
+      "drift": 14.3923,
+      "overrides": 42.0179,
+      "passes": 4,
+      "total": 56.4102
     },
     "counts": {
       "cycles": 0,
       "games_considered": 390,
-      "h2h_honored": 24,
-      "h2h_overridden": 4,
+      "h2h_honored": 26,
+      "h2h_overridden": 3,
       "largest_cycle": 0,
-      "local_search_passes": 2,
+      "local_search_passes": 4,
       "market_rated": 138,
-      "max_drop": 2,
-      "max_rise": 2,
-      "pool_results": 28,
+      "max_drop": 3,
+      "max_rise": 3,
+      "pool_results": 29,
       "pool_size": 40,
       "ppa_rated": 138,
       "rated_teams": 138,
@@ -115,12 +117,12 @@
       "resume_rated": 138,
       "series_split": 0
     },
-    "generated_at": "2026-10-07T20:03:24Z",
+    "generated_at": "2026-10-07T21:18:13Z",
     "previous_snapshot_id": null,
     "ratings": {
       "market": {
         "converged": true,
-        "home_field_points": 2.4725,
+        "home_field_points": 2.4732,
         "lines_used": 329,
         "schedule_groups": 1,
         "teams_rated": 138
@@ -133,7 +135,7 @@
         "teams_rated": 138
       },
       "resume": {
-        "reference_rating": 12.5458,
+        "reference_rating": 12.5645,
         "teams_rated": 138
       }
     },
@@ -149,7 +151,7 @@
       "endpoints": [
         {
           "cache": "hit",
-          "fetched_at": "2026-10-07T14:56:52Z",
+          "fetched_at": "2026-10-07T21:02:45Z",
           "params": {
             "year": "2026"
           },
@@ -159,7 +161,7 @@
         },
         {
           "cache": "hit",
-          "fetched_at": "2026-10-07T14:56:52Z",
+          "fetched_at": "2026-10-07T21:02:46Z",
           "params": {
             "classification": "fbs",
             "seasonType": "both",
@@ -167,11 +169,11 @@
           },
           "path": "/games",
           "records": 888,
-          "sha256": "sha256:d02e358291b901c5a9b65ffa87572e0c7924a21f57c74166a44dad5a354e141f"
+          "sha256": "sha256:f610860539a184be1c47cf6583f2d314f68971a4550dbbd80d9e6635e7b0df8f"
         },
         {
           "cache": "hit",
-          "fetched_at": "2026-10-07T14:56:53Z",
+          "fetched_at": "2026-10-07T21:02:46Z",
           "params": {
             "year": "2026"
           },
@@ -181,7 +183,7 @@
         },
         {
           "cache": "hit",
-          "fetched_at": "2026-10-07T14:56:55Z",
+          "fetched_at": "2026-10-07T21:02:46Z",
           "params": {
             "year": "2026"
           },
@@ -191,18 +193,18 @@
         },
         {
           "cache": "hit",
-          "fetched_at": "2026-10-07T14:56:56Z",
+          "fetched_at": "2026-10-07T21:02:47Z",
           "params": {
             "seasonType": "both",
             "year": "2026"
           },
           "path": "/lines",
           "records": 1142,
-          "sha256": "sha256:17d5c1a72ddbbf4573a002a5ca2b5ba57ac2d4722ae2340cdf126c2ce7acd9f6"
+          "sha256": "sha256:4297741e29b725cea41e15fc4d20558c040d631017c1867c0cb1f8f86da80e79"
         },
         {
           "cache": "hit",
-          "fetched_at": "2026-10-07T14:56:58Z",
+          "fetched_at": "2026-10-07T21:02:49Z",
           "params": {
             "excludeGarbageTime": "true",
             "seasonType": "both",
@@ -231,110 +233,82 @@
   },
   "overridden_results": [
     {
-      "adj_margin": 5.5275,
+      "adj_margin": 5.5268,
       "common_diff": 0.0,
       "common_opponents": [],
       "components": {
         "common_opponents": 0.0,
-        "margin": -0.3312,
-        "rating_gap": -0.7497,
+        "margin": -0.3799,
+        "rating_gap": -0.7658,
         "recency": 0.9012
       },
-      "conviction": -0.1797,
+      "conviction": -0.2444,
       "cycle": null,
       "loser": "Oregon",
-      "loser_rank": 22,
+      "loser_rank": 19,
       "margin": 8,
-      "rating_gap": -20.2715,
-      "reason": "+5.5 adjusted margin; the winner rates 20.3 points worse on the power ratings",
+      "rating_gap": -20.182,
+      "reason": "+5.5 adjusted margin; the winner rates 20.2 points worse on the power ratings",
       "score": "39-31",
       "season_type": "regular",
       "site": "home",
       "status": "overridden",
       "week": 2,
-      "weight": 2.8203,
+      "weight": 2.7556,
       "winner": "Oklahoma State",
       "winner_rank": 33
     },
     {
-      "adj_margin": 4.5275,
-      "common_diff": 0.0,
-      "common_opponents": [
-        "UTEP"
-      ],
-      "components": {
-        "common_opponents": -0.0339,
-        "margin": -0.3797,
-        "rating_gap": -0.2822,
-        "recency": 0.9012
-      },
-      "conviction": 0.2054,
-      "cycle": null,
-      "loser": "Oklahoma",
-      "loser_rank": 35,
-      "margin": 7,
-      "rating_gap": -4.9725,
-      "reason": "+4.5 adjusted margin; the winner rates 5.0 points worse on the power ratings",
-      "score": "17-10",
-      "season_type": "regular",
-      "site": "home",
-      "status": "overridden",
-      "week": 2,
-      "weight": 3.2054,
-      "winner": "Michigan",
-      "winner_rank": 40
-    },
-    {
-      "adj_margin": 5.5275,
+      "adj_margin": 5.5268,
       "common_diff": 0.0,
       "common_opponents": [],
       "components": {
         "common_opponents": 0.0,
-        "margin": -0.3312,
-        "rating_gap": -0.2416,
+        "margin": -0.3799,
+        "rating_gap": -0.2662,
         "recency": 0.9896
       },
-      "conviction": 0.4168,
+      "conviction": 0.3436,
       "cycle": null,
       "loser": "LSU",
       "loser_rank": 7,
       "margin": 8,
-      "rating_gap": -3.6421,
+      "rating_gap": -3.6042,
       "reason": "+5.5 adjusted margin; the winner rates 3.6 points worse on the power ratings",
       "score": "32-24",
       "season_type": "regular",
       "site": "home",
       "status": "overridden",
       "week": 3,
-      "weight": 3.4168,
+      "weight": 3.3436,
       "winner": "Ole Miss",
-      "winner_rank": 15
+      "winner_rank": 13
     },
     {
-      "adj_margin": 25.5275,
+      "adj_margin": 25.5268,
       "common_diff": 0.0,
       "common_opponents": [],
       "components": {
         "common_opponents": 0.0,
-        "margin": 0.6382,
-        "rating_gap": -0.3187,
+        "margin": 0.5483,
+        "rating_gap": -0.3431,
         "recency": 1.2
       },
-      "conviction": 1.5195,
+      "conviction": 1.4053,
       "cycle": null,
       "loser": "Florida",
       "loser_rank": 11,
       "margin": 28,
-      "rating_gap": -6.1665,
+      "rating_gap": -6.156,
       "reason": "+25.5 adjusted margin; the winner rates 6.2 points worse on the power ratings",
       "score": "45-17",
       "season_type": "regular",
       "site": "home",
       "status": "overridden",
       "week": 5,
-      "weight": 4.5195,
+      "weight": 4.4053,
       "winner": "Missouri",
-      "winner_rank": 21
+      "winner_rank": 20
     }
   ],
   "pool_tail": [
@@ -343,7 +317,7 @@
       "conference": "ACC",
       "fpi": 11.095,
       "market_rank": 46,
-      "market_rating": 5.5826,
+      "market_rating": 5.5792,
       "ppa_rank": 31,
       "ppa_rating": 0.2116,
       "rank": 26,
@@ -357,7 +331,7 @@
       "conference": "ACC",
       "fpi": 9.596,
       "market_rank": 48,
-      "market_rating": 5.3046,
+      "market_rating": 5.3029,
       "ppa_rank": 38,
       "ppa_rating": 0.1373,
       "rank": 27,
@@ -367,53 +341,53 @@
       "team": "Duke"
     },
     {
-      "base_rank": 30,
-      "conference": "SEC",
-      "fpi": 12.518,
-      "market_rank": 21,
-      "market_rating": 13.75,
-      "ppa_rank": 44,
-      "ppa_rating": 0.1106,
-      "rank": 28,
-      "record": "3-2",
-      "sor_rank": 38,
-      "sos_rank": 18,
-      "team": "Auburn"
-    },
-    {
       "base_rank": 28,
-      "conference": "Big 12",
-      "fpi": 11.224,
-      "market_rank": 42,
-      "market_rating": 7.8211,
-      "ppa_rank": 33,
-      "ppa_rating": 0.1921,
-      "rank": 29,
-      "record": "4-1",
-      "sor_rank": 37,
-      "sos_rank": 86,
-      "team": "Baylor"
-    },
-    {
-      "base_rank": 29,
       "conference": "Big 12",
       "fpi": 12.205,
       "market_rank": 28,
-      "market_rating": 11.7302,
+      "market_rating": 11.698,
       "ppa_rank": 27,
       "ppa_rating": 0.2394,
-      "rank": 30,
+      "rank": 28,
       "record": "4-1",
       "sor_rank": 29,
       "sos_rank": 53,
       "team": "Houston"
     },
     {
+      "base_rank": 30,
+      "conference": "SEC",
+      "fpi": 12.518,
+      "market_rank": 21,
+      "market_rating": 13.753,
+      "ppa_rank": 44,
+      "ppa_rating": 0.1106,
+      "rank": 29,
+      "record": "3-2",
+      "sor_rank": 38,
+      "sos_rank": 18,
+      "team": "Auburn"
+    },
+    {
+      "base_rank": 29,
+      "conference": "Big 12",
+      "fpi": 11.224,
+      "market_rank": 42,
+      "market_rating": 7.8204,
+      "ppa_rank": 33,
+      "ppa_rating": 0.1921,
+      "rank": 30,
+      "record": "4-1",
+      "sor_rank": 37,
+      "sos_rank": 86,
+      "team": "Baylor"
+    },
+    {
       "base_rank": 31,
       "conference": "Pac-12",
       "fpi": 11.623,
       "market_rank": 50,
-      "market_rating": 4.7413,
+      "market_rating": 4.7622,
       "ppa_rank": 13,
       "ppa_rating": 0.3933,
       "rank": 31,
@@ -427,7 +401,7 @@
       "conference": "SEC",
       "fpi": 16.264,
       "market_rank": 15,
-      "market_rating": 17.2489,
+      "market_rating": 17.2586,
       "ppa_rank": 42,
       "ppa_rating": 0.1309,
       "rank": 32,
@@ -441,7 +415,7 @@
       "conference": "Big 12",
       "fpi": 6.798,
       "market_rank": 47,
-      "market_rating": 5.3523,
+      "market_rating": 5.4817,
       "ppa_rank": 36,
       "ppa_rating": 0.1766,
       "rank": 33,
@@ -455,7 +429,7 @@
       "conference": "Big 12",
       "fpi": 8.642,
       "market_rank": 33,
-      "market_rating": 8.8563,
+      "market_rating": 8.8331,
       "ppa_rank": 41,
       "ppa_rating": 0.133,
       "rank": 34,
@@ -465,20 +439,6 @@
       "team": "Arizona"
     },
     {
-      "base_rank": 35,
-      "conference": "SEC",
-      "fpi": 13.517,
-      "market_rank": 11,
-      "market_rating": 18.8245,
-      "ppa_rank": 29,
-      "ppa_rating": 0.2165,
-      "rank": 35,
-      "record": "2-2",
-      "sor_rank": 42,
-      "sos_rank": 3,
-      "team": "Oklahoma"
-    },
-    {
       "base_rank": 36,
       "conference": "ACC",
       "fpi": 8.995,
@@ -486,67 +446,81 @@
       "market_rating": 12.9598,
       "ppa_rank": 89,
       "ppa_rating": -0.1121,
-      "rank": 36,
+      "rank": 35,
       "record": "4-1",
       "sor_rank": 31,
       "sos_rank": 63,
       "team": "SMU"
     },
     {
-      "base_rank": 37,
-      "conference": "Sun Belt",
-      "fpi": 6.417,
-      "market_rank": 71,
-      "market_rating": -1.417,
-      "ppa_rank": 45,
-      "ppa_rating": 0.1035,
-      "rank": 37,
-      "record": "5-0",
-      "sor_rank": 28,
-      "sos_rank": 132,
-      "team": "James Madison"
-    },
-    {
       "base_rank": 39,
-      "conference": "ACC",
-      "fpi": 8.237,
-      "market_rank": 34,
-      "market_rating": 8.7107,
-      "ppa_rank": 74,
-      "ppa_rating": -0.0607,
-      "rank": 38,
-      "record": "4-1",
-      "sor_rank": 43,
-      "sos_rank": 109,
-      "team": "Virginia Tech"
-    },
-    {
-      "base_rank": 40,
       "conference": "Big Ten",
       "fpi": 2.975,
       "market_rank": 51,
-      "market_rating": 4.692,
+      "market_rating": 4.6923,
       "ppa_rank": 90,
       "ppa_rating": -0.114,
-      "rank": 39,
+      "rank": 36,
       "record": "4-1",
       "sor_rank": 33,
       "sos_rank": 69,
       "team": "Minnesota"
     },
     {
-      "base_rank": 38,
+      "base_rank": 37,
       "conference": "Big Ten",
       "fpi": 10.6,
       "market_rank": 20,
-      "market_rating": 13.852,
+      "market_rating": 13.8402,
       "ppa_rank": 59,
       "ppa_rating": 0.0486,
-      "rank": 40,
+      "rank": 37,
       "record": "3-2",
       "sor_rank": 54,
       "sos_rank": 64,
       "team": "Michigan"
+    },
+    {
+      "base_rank": 35,
+      "conference": "SEC",
+      "fpi": 13.517,
+      "market_rank": 11,
+      "market_rating": 18.8088,
+      "ppa_rank": 29,
+      "ppa_rating": 0.2165,
+      "rank": 38,
+      "record": "2-2",
+      "sor_rank": 42,
+      "sos_rank": 3,
+      "team": "Oklahoma"
+    },
+    {
+      "base_rank": 38,
+      "conference": "Sun Belt",
+      "fpi": 6.417,
+      "market_rank": 71,
+      "market_rating": -1.4328,
+      "ppa_rank": 45,
+      "ppa_rating": 0.1035,
+      "rank": 39,
+      "record": "5-0",
+      "sor_rank": 28,
+      "sos_rank": 132,
+      "team": "James Madison"
+    },
+    {
+      "base_rank": 40,
+      "conference": "ACC",
+      "fpi": 6.335,
+      "market_rank": 41,
+      "market_rating": 7.9333,
+      "ppa_rank": 64,
+      "ppa_rating": 0.0309,
+      "rank": 40,
+      "record": "3-2",
+      "sor_rank": 32,
+      "sos_rank": 5,
+      "team": "Clemson"
     }
   ],
   "rankings": [
@@ -560,7 +534,7 @@
         "rank": 1,
         "raw_score": 3.8,
         "resume_rank": 2,
-        "score": -1.4148,
+        "score": -2.2252,
         "sor_rank": 2,
         "sos_rank": 23,
         "weights": {
@@ -571,12 +545,12 @@
       },
       "conference": "SEC",
       "cover": {
-        "adjustment": -3.9501,
+        "adjustment": -3.4623,
         "covers": 4,
         "games": 5,
         "mean_margin": 14.1,
-        "scored_margin": 7.8333,
-        "worst": "-4 vs Florida State"
+        "scored_margin": 7.6511,
+        "worst": "-6 vs Florida State"
       },
       "cycle": null,
       "flags": [],
@@ -594,54 +568,54 @@
         "losses_vs_pool": [],
         "wins_vs_pool": [
           {
-            "adj_margin": 30.4725,
-            "common_diff": 16.055,
+            "adj_margin": 30.4732,
+            "common_diff": 16.0535,
             "common_opponents": [
               "South Carolina"
             ],
             "components": {
-              "common_opponents": 0.402,
-              "margin": 0.8779,
-              "rating_gap": 0.2073,
+              "common_opponents": 0.4099,
+              "margin": 0.7779,
+              "rating_gap": 0.1755,
               "recency": 1.2
             },
-            "conviction": 2.6872,
+            "conviction": 2.5633,
             "loser": "Mississippi State",
-            "loser_rank": 14,
+            "loser_rank": 12,
             "margin": 33,
-            "rating_gap": 11.0486,
+            "rating_gap": 11.0509,
             "score": "56-23",
             "season_type": "regular",
             "site": "away",
             "status": "honored",
             "week": 5,
-            "weight": 5.6872,
+            "weight": 5.5633,
             "winner": "Alabama",
             "winner_rank": 1
           },
           {
-            "adj_margin": 30.4725,
-            "common_diff": 22.055,
+            "adj_margin": 30.4732,
+            "common_diff": 22.0535,
             "common_opponents": [
               "South Carolina"
             ],
             "components": {
-              "common_opponents": 0.5649,
-              "margin": 0.8779,
-              "rating_gap": 0.256,
+              "common_opponents": 0.5756,
+              "margin": 0.7779,
+              "rating_gap": 0.2223,
               "recency": 0.9665
             },
-            "conviction": 2.6652,
+            "conviction": 2.5423,
             "loser": "Kentucky",
             "loser_rank": 16,
             "margin": 28,
-            "rating_gap": 12.6404,
+            "rating_gap": 12.604,
             "score": "45-17",
             "season_type": "regular",
             "site": "away",
             "status": "honored",
             "week": 2,
-            "weight": 5.6652,
+            "weight": 5.5423,
             "winner": "Alabama",
             "winner_rank": 1
           }
@@ -650,7 +624,7 @@
       "market": {
         "games": 6,
         "rank": 8,
-        "rating": 21.2252
+        "rating": 21.2396
       },
       "movement": {
         "delta": null,
@@ -670,8 +644,8 @@
         "final_rank": 1,
         "reasons": [
           "Resume order #2 from 0.55 x SoR #2 + 0.3 x Mkt #8 + 0.15 x PPA #2 = 3.80.",
-          "Resume adjustment earned back 5.21 rank points, driven by cover.",
-          "Head-to-head held: beat #14 Mississippi State 56-23 on the road in week 5.",
+          "Resume adjustment earned back 6.03 rank points, driven by cover.",
+          "Head-to-head held: beat #12 Mississippi State 56-23 on the road in week 5.",
           "Head-to-head results left this placement unchanged."
         ]
       },
@@ -686,41 +660,41 @@
       "resume": {
         "actual_wins": 5,
         "espn_rank": 2,
-        "expected_wins": 3.3081,
-        "probability": 0.1114,
+        "expected_wins": 3.308,
+        "probability": 0.1113,
         "rank": 2,
         "schedule": [
           {
             "opponent": "East Carolina",
-            "reference_win_probability": 0.9439,
+            "reference_win_probability": 0.9441,
             "site": "home",
             "week": 1,
             "won": true
           },
           {
             "opponent": "Kentucky",
-            "reference_win_probability": 0.5439,
+            "reference_win_probability": 0.5429,
             "site": "away",
             "week": 2,
             "won": true
           },
           {
             "opponent": "Florida State",
-            "reference_win_probability": 0.6984,
+            "reference_win_probability": 0.6989,
             "site": "home",
             "week": 3,
             "won": true
           },
           {
             "opponent": "South Carolina",
-            "reference_win_probability": 0.6249,
+            "reference_win_probability": 0.625,
             "site": "home",
             "week": 4,
             "won": true
           },
           {
             "opponent": "Mississippi State",
-            "reference_win_probability": 0.4969,
+            "reference_win_probability": 0.4971,
             "site": "away",
             "week": 5,
             "won": true
@@ -729,8 +703,8 @@
       },
       "resume_adjustment": {
         "components": {
-          "best_win": -0.8661,
-          "cover": -3.9501,
+          "best_win": -2.1644,
+          "cover": -3.4623,
           "game_control": -0.3985,
           "loss_quality": 0.0
         },
@@ -742,10 +716,10 @@
           "losses_considered": 0,
           "mean_cover_margin": 14.1,
           "mean_loss_badness": null,
-          "shrunk_cover_margin": 7.8333,
-          "worst_cover": "-4 vs Florida State"
+          "shrunk_cover_margin": 7.6511,
+          "worst_cover": "-6 vs Florida State"
         },
-        "total": -5.2148
+        "total": -6.0252
       },
       "resume_ranks": {
         "average_win_probability": 14,
@@ -759,194 +733,15 @@
     },
     {
       "base": {
-        "espn_sor_rank": 8,
-        "formula": "0.55 x SoR #3 + 0.3 x Mkt #5 + 0.15 x PPA #8 = 4.35",
-        "market_rank": 5,
-        "missing": [],
-        "ppa_rank": 8,
-        "rank": 2,
-        "raw_score": 4.35,
-        "resume_rank": 3,
-        "score": 1.1915,
-        "sor_rank": 3,
-        "sos_rank": 97,
-        "weights": {
-          "Mkt": 0.3,
-          "PPA": 0.15,
-          "SoR": 0.55
-        }
-      },
-      "conference": "SEC",
-      "cover": {
-        "adjustment": -2.1139,
-        "covers": 4,
-        "games": 5,
-        "mean_margin": 7.85,
-        "scored_margin": 4.3611,
-        "worst": "-2 vs Vanderbilt"
-      },
-      "cycle": null,
-      "flags": [],
-      "fpi": {
-        "efficiencies": {
-          "defense": 83.619,
-          "offense": 90.657,
-          "overall": 93.128,
-          "special_teams": 72.423
-        },
-        "rank": 2,
-        "rating": 28.203
-      },
-      "h2h": {
-        "losses_vs_pool": [],
-        "wins_vs_pool": [
-          {
-            "adj_margin": 25.5275,
-            "common_diff": 0.0,
-            "common_opponents": [],
-            "components": {
-              "common_opponents": 0.0,
-              "margin": 0.6382,
-              "rating_gap": 0.0964,
-              "recency": 1.1153
-            },
-            "conviction": 1.8499,
-            "loser": "Oklahoma",
-            "loser_rank": 35,
-            "margin": 28,
-            "rating_gap": 7.4192,
-            "score": "41-13",
-            "season_type": "regular",
-            "site": "home",
-            "status": "honored",
-            "week": 4,
-            "weight": 4.8499,
-            "winner": "Georgia",
-            "winner_rank": 2
-          }
-        ]
-      },
-      "market": {
-        "games": 5,
-        "rank": 5,
-        "rating": 26.2437
-      },
-      "movement": {
-        "delta": null,
-        "has_previous": false,
-        "previous_rank": null,
-        "status": "new"
-      },
-      "performance": {
-        "games": 4,
-        "rank": 8,
-        "rating": 0.4293,
-        "unadjusted": 0.575
-      },
-      "placement": {
-        "base_rank": 2,
-        "drift": 0,
-        "final_rank": 2,
-        "reasons": [
-          "Resume order #3 from 0.55 x SoR #3 + 0.3 x Mkt #5 + 0.15 x PPA #8 = 4.35.",
-          "Resume adjustment earned back 3.16 rank points, driven by cover.",
-          "Head-to-head held: beat #35 Oklahoma 41-13 at home in week 4.",
-          "Head-to-head results left this placement unchanged."
-        ]
-      },
-      "rank": 2,
-      "record": {
-        "conference": "3-0",
-        "losses": 0,
-        "overall": "5-0",
-        "wins": 5
-      },
-      "regression": null,
-      "resume": {
-        "actual_wins": 5,
-        "espn_rank": 8,
-        "expected_wins": 3.8693,
-        "probability": 0.2142,
-        "rank": 3,
-        "schedule": [
-          {
-            "opponent": "Tennessee State",
-            "reference_win_probability": 1.0,
-            "site": "home",
-            "week": 1,
-            "won": true
-          },
-          {
-            "opponent": "Western Kentucky",
-            "reference_win_probability": 0.9819,
-            "site": "home",
-            "week": 2,
-            "won": true
-          },
-          {
-            "opponent": "Arkansas",
-            "reference_win_probability": 0.7256,
-            "site": "away",
-            "week": 3,
-            "won": true
-          },
-          {
-            "opponent": "Oklahoma",
-            "reference_win_probability": 0.389,
-            "site": "home",
-            "week": 4,
-            "won": true
-          },
-          {
-            "opponent": "Vanderbilt",
-            "reference_win_probability": 0.7729,
-            "site": "home",
-            "week": 5,
-            "won": true
-          }
-        ]
-      },
-      "resume_adjustment": {
-        "components": {
-          "best_win": -0.6272,
-          "cover": -2.1139,
-          "game_control": -0.4173,
-          "loss_quality": 0.0
-        },
-        "detail": {
-          "best_win_opponent_base_rank": 33,
-          "cover_games": 5,
-          "covers": 4,
-          "game_control_rank": 3,
-          "losses_considered": 0,
-          "mean_cover_margin": 7.85,
-          "mean_loss_badness": null,
-          "shrunk_cover_margin": 4.3611,
-          "worst_cover": "-2 vs Vanderbilt"
-        },
-        "total": -3.1585
-      },
-      "resume_ranks": {
-        "average_win_probability": 1,
-        "fpi": 2,
-        "game_control": 3,
-        "remaining_strength_of_schedule": 20,
-        "strength_of_record": 8,
-        "strength_of_schedule": 97
-      },
-      "team": "Georgia"
-    },
-    {
-      "base": {
         "espn_sor_rank": 3,
         "formula": "0.55 x SoR #4 + 0.3 x Mkt #2 + 0.15 x PPA #1 = 2.95",
         "market_rank": 2,
         "missing": [],
         "ppa_rank": 1,
-        "rank": 3,
+        "rank": 2,
         "raw_score": 2.95,
         "resume_rank": 1,
-        "score": 1.661,
+        "score": 0.3637,
         "sor_rank": 4,
         "sos_rank": 61,
         "weights": {
@@ -957,12 +752,12 @@
       },
       "conference": "FBS Independents",
       "cover": {
-        "adjustment": -0.0573,
+        "adjustment": -0.1246,
         "covers": 3,
         "games": 5,
         "mean_margin": 0.85,
         "scored_margin": 0.4722,
-        "worst": "-12 vs Michigan State"
+        "worst": "-13 vs Michigan State"
       },
       "cycle": null,
       "flags": [],
@@ -986,31 +781,31 @@
               "Michigan State"
             ],
             "components": {
-              "common_opponents": -0.3326,
-              "margin": 0.758,
-              "rating_gap": 0.5067,
+              "common_opponents": -0.337,
+              "margin": 0.6631,
+              "rating_gap": 0.4706,
               "recency": 0.9012
             },
-            "conviction": 1.8334,
+            "conviction": 1.6979,
             "loser": "Wisconsin",
             "loser_rank": 17,
             "margin": 28,
-            "rating_gap": 20.8466,
+            "rating_gap": 20.8422,
             "score": "41-13",
             "season_type": "regular",
             "site": "neutral",
             "status": "honored",
             "week": 1,
-            "weight": 4.8334,
+            "weight": 4.6979,
             "winner": "Notre Dame",
-            "winner_rank": 3
+            "winner_rank": 2
           }
         ]
       },
       "market": {
         "games": 6,
         "rank": 2,
-        "rating": 29.1097
+        "rating": 29.1022
       },
       "movement": {
         "delta": null,
@@ -1025,17 +820,17 @@
         "unadjusted": 0.578
       },
       "placement": {
-        "base_rank": 3,
+        "base_rank": 2,
         "drift": 0,
-        "final_rank": 3,
+        "final_rank": 2,
         "reasons": [
           "Resume order #1 from 0.55 x SoR #4 + 0.3 x Mkt #2 + 0.15 x PPA #1 = 2.95.",
-          "Resume adjustment earned back 1.29 rank points, driven by best win.",
+          "Resume adjustment earned back 2.59 rank points, driven by best win.",
           "Head-to-head held: beat #17 Wisconsin 41-13 at a neutral site in week 1.",
           "Head-to-head results left this placement unchanged."
         ]
       },
-      "rank": 3,
+      "rank": 2,
       "record": {
         "conference": "0-0",
         "losses": 0,
@@ -1046,13 +841,13 @@
       "resume": {
         "actual_wins": 5,
         "espn_rank": 3,
-        "expected_wins": 3.8653,
-        "probability": 0.258,
+        "expected_wins": 3.8681,
+        "probability": 0.2591,
         "rank": 4,
         "schedule": [
           {
             "opponent": "Wisconsin",
-            "reference_win_probability": 0.6245,
+            "reference_win_probability": 0.6251,
             "site": "neutral",
             "week": 1,
             "won": true
@@ -1066,21 +861,21 @@
           },
           {
             "opponent": "Michigan State",
-            "reference_win_probability": 0.8167,
+            "reference_win_probability": 0.8172,
             "site": "home",
             "week": 3,
             "won": true
           },
           {
             "opponent": "Purdue",
-            "reference_win_probability": 0.782,
+            "reference_win_probability": 0.7824,
             "site": "away",
             "week": 4,
             "won": true
           },
           {
             "opponent": "North Carolina",
-            "reference_win_probability": 0.6562,
+            "reference_win_probability": 0.6575,
             "site": "away",
             "week": 5,
             "won": true
@@ -1089,8 +884,8 @@
       },
       "resume_adjustment": {
         "components": {
-          "best_win": -0.8206,
-          "cover": -0.0573,
+          "best_win": -2.0506,
+          "cover": -0.1246,
           "game_control": -0.4111,
           "loss_quality": 0.0
         },
@@ -1103,9 +898,9 @@
           "mean_cover_margin": 0.85,
           "mean_loss_badness": null,
           "shrunk_cover_margin": 0.4722,
-          "worst_cover": "-12 vs Michigan State"
+          "worst_cover": "-13 vs Michigan State"
         },
-        "total": -1.289
+        "total": -2.5863
       },
       "resume_ranks": {
         "average_win_probability": 8,
@@ -1119,6 +914,185 @@
     },
     {
       "base": {
+        "espn_sor_rank": 8,
+        "formula": "0.55 x SoR #3 + 0.3 x Mkt #5 + 0.15 x PPA #8 = 4.35",
+        "market_rank": 5,
+        "missing": [],
+        "ppa_rank": 8,
+        "rank": 3,
+        "raw_score": 4.35,
+        "resume_rank": 3,
+        "score": 0.6869,
+        "sor_rank": 3,
+        "sos_rank": 97,
+        "weights": {
+          "Mkt": 0.3,
+          "PPA": 0.15,
+          "SoR": 0.55
+        }
+      },
+      "conference": "SEC",
+      "cover": {
+        "adjustment": -1.6785,
+        "covers": 4,
+        "games": 5,
+        "mean_margin": 7.85,
+        "scored_margin": 3.8145,
+        "worst": "-3 vs Vanderbilt"
+      },
+      "cycle": null,
+      "flags": [],
+      "fpi": {
+        "efficiencies": {
+          "defense": 83.619,
+          "offense": 90.657,
+          "overall": 93.128,
+          "special_teams": 72.423
+        },
+        "rank": 2,
+        "rating": 28.203
+      },
+      "h2h": {
+        "losses_vs_pool": [],
+        "wins_vs_pool": [
+          {
+            "adj_margin": 25.5268,
+            "common_diff": 0.0,
+            "common_opponents": [],
+            "components": {
+              "common_opponents": 0.0,
+              "margin": 0.5483,
+              "rating_gap": 0.0667,
+              "recency": 1.1153
+            },
+            "conviction": 1.7304,
+            "loser": "Oklahoma",
+            "loser_rank": 38,
+            "margin": 28,
+            "rating_gap": 7.4418,
+            "score": "41-13",
+            "season_type": "regular",
+            "site": "home",
+            "status": "honored",
+            "week": 4,
+            "weight": 4.7304,
+            "winner": "Georgia",
+            "winner_rank": 3
+          }
+        ]
+      },
+      "market": {
+        "games": 5,
+        "rank": 5,
+        "rating": 26.2506
+      },
+      "movement": {
+        "delta": null,
+        "has_previous": false,
+        "previous_rank": null,
+        "status": "new"
+      },
+      "performance": {
+        "games": 4,
+        "rank": 8,
+        "rating": 0.4293,
+        "unadjusted": 0.575
+      },
+      "placement": {
+        "base_rank": 3,
+        "drift": 0,
+        "final_rank": 3,
+        "reasons": [
+          "Resume order #3 from 0.55 x SoR #3 + 0.3 x Mkt #5 + 0.15 x PPA #8 = 4.35.",
+          "Resume adjustment earned back 3.66 rank points, driven by cover.",
+          "Head-to-head held: beat #38 Oklahoma 41-13 at home in week 4.",
+          "Head-to-head results left this placement unchanged."
+        ]
+      },
+      "rank": 3,
+      "record": {
+        "conference": "3-0",
+        "losses": 0,
+        "overall": "5-0",
+        "wins": 5
+      },
+      "regression": null,
+      "resume": {
+        "actual_wins": 5,
+        "espn_rank": 8,
+        "expected_wins": 3.8707,
+        "probability": 0.2148,
+        "rank": 3,
+        "schedule": [
+          {
+            "opponent": "Tennessee State",
+            "reference_win_probability": 1.0,
+            "site": "home",
+            "week": 1,
+            "won": true
+          },
+          {
+            "opponent": "Western Kentucky",
+            "reference_win_probability": 0.9819,
+            "site": "home",
+            "week": 2,
+            "won": true
+          },
+          {
+            "opponent": "Arkansas",
+            "reference_win_probability": 0.7255,
+            "site": "away",
+            "week": 3,
+            "won": true
+          },
+          {
+            "opponent": "Oklahoma",
+            "reference_win_probability": 0.39,
+            "site": "home",
+            "week": 4,
+            "won": true
+          },
+          {
+            "opponent": "Vanderbilt",
+            "reference_win_probability": 0.7734,
+            "site": "home",
+            "week": 5,
+            "won": true
+          }
+        ]
+      },
+      "resume_adjustment": {
+        "components": {
+          "best_win": -1.5673,
+          "cover": -1.6785,
+          "game_control": -0.4173,
+          "loss_quality": 0.0
+        },
+        "detail": {
+          "best_win_opponent_base_rank": 33,
+          "cover_games": 5,
+          "covers": 4,
+          "game_control_rank": 3,
+          "losses_considered": 0,
+          "mean_cover_margin": 7.85,
+          "mean_loss_badness": null,
+          "shrunk_cover_margin": 3.8145,
+          "worst_cover": "-3 vs Vanderbilt"
+        },
+        "total": -3.6631
+      },
+      "resume_ranks": {
+        "average_win_probability": 1,
+        "fpi": 2,
+        "game_control": 3,
+        "remaining_strength_of_schedule": 20,
+        "strength_of_record": 8,
+        "strength_of_schedule": 97
+      },
+      "team": "Georgia"
+    },
+    {
+      "base": {
         "espn_sor_rank": 1,
         "formula": "0.55 x SoR #1 + 0.3 x Mkt #4 + 0.15 x PPA #19 = 4.60",
         "market_rank": 4,
@@ -1127,7 +1101,7 @@
         "rank": 4,
         "raw_score": 4.6,
         "resume_rank": 4,
-        "score": 2.6064,
+        "score": 1.4029,
         "sor_rank": 1,
         "sos_rank": 2,
         "weights": {
@@ -1138,12 +1112,12 @@
       },
       "conference": "SEC",
       "cover": {
-        "adjustment": -0.6669,
+        "adjustment": -0.4699,
         "covers": 1,
         "games": 4,
         "mean_margin": 3.25,
-        "scored_margin": 1.625,
-        "worst": "-6 vs UTSA"
+        "scored_margin": 1.215,
+        "worst": "-7 vs UTSA"
       },
       "cycle": null,
       "flags": [],
@@ -1161,50 +1135,50 @@
         "losses_vs_pool": [],
         "wins_vs_pool": [
           {
-            "adj_margin": -1.4725,
+            "adj_margin": -1.4732,
             "common_diff": 0.0,
             "common_opponents": [],
             "components": {
               "common_opponents": 0.0,
-              "margin": -0.6705,
-              "rating_gap": -0.192,
+              "margin": -0.7047,
+              "rating_gap": -0.2186,
               "recency": 0.9012
             },
-            "conviction": 0.0387,
+            "conviction": -0.022,
             "loser": "Ohio State",
             "loser_rank": 6,
             "margin": 1,
-            "rating_gap": -2.0202,
+            "rating_gap": -2.0242,
             "score": "24-23",
             "season_type": "regular",
             "site": "home",
             "status": "honored",
             "week": 2,
-            "weight": 3.0387,
+            "weight": 2.978,
             "winner": "Texas",
             "winner_rank": 4
           },
           {
-            "adj_margin": 5.4725,
+            "adj_margin": 5.4732,
             "common_diff": 0.0,
             "common_opponents": [],
             "components": {
               "common_opponents": 0.0,
-              "margin": -0.3339,
-              "rating_gap": 0.1518,
-              "recency": 1.1153
+              "margin": -0.3823,
+              "rating_gap": 0.1204,
+              "recency": 1.0887
             },
-            "conviction": 0.9332,
+            "conviction": 0.8268,
             "loser": "Tennessee",
             "loser_rank": 18,
             "margin": 3,
-            "rating_gap": 9.2312,
+            "rating_gap": 9.2243,
             "score": "20-17",
             "season_type": "regular",
             "site": "away",
             "status": "honored",
             "week": 4,
-            "weight": 3.9332,
+            "weight": 3.8268,
             "winner": "Texas",
             "winner_rank": 4
           }
@@ -1213,7 +1187,7 @@
       "market": {
         "games": 5,
         "rank": 4,
-        "rating": 27.6694
+        "rating": 27.6639
       },
       "movement": {
         "delta": null,
@@ -1233,7 +1207,7 @@
         "final_rank": 4,
         "reasons": [
           "Resume order #4 from 0.55 x SoR #1 + 0.3 x Mkt #4 + 0.15 x PPA #19 = 4.60.",
-          "Resume adjustment earned back 1.99 rank points, driven by best win.",
+          "Resume adjustment earned back 3.20 rank points, driven by best win.",
           "Head-to-head held: beat #6 Ohio State 24-23 at home in week 2.",
           "Head-to-head results left this placement unchanged."
         ]
@@ -1249,34 +1223,34 @@
       "resume": {
         "actual_wins": 4,
         "espn_rank": 1,
-        "expected_wins": 2.11,
-        "probability": 0.0269,
+        "expected_wins": 2.1116,
+        "probability": 0.0271,
         "rank": 1,
         "schedule": [
           {
             "opponent": "Texas State",
-            "reference_win_probability": 0.8531,
+            "reference_win_probability": 0.8535,
             "site": "home",
             "week": 1,
             "won": true
           },
           {
             "opponent": "Ohio State",
-            "reference_win_probability": 0.1386,
+            "reference_win_probability": 0.1389,
             "site": "home",
             "week": 2,
             "won": true
           },
           {
             "opponent": "UTSA",
-            "reference_win_probability": 0.8506,
+            "reference_win_probability": 0.851,
             "site": "home",
             "week": 3,
             "won": true
           },
           {
             "opponent": "Tennessee",
-            "reference_win_probability": 0.2678,
+            "reference_win_probability": 0.2682,
             "site": "away",
             "week": 4,
             "won": true
@@ -1285,8 +1259,8 @@
       },
       "resume_adjustment": {
         "components": {
-          "best_win": -0.9344,
-          "cover": -0.6669,
+          "best_win": -2.335,
+          "cover": -0.4699,
           "game_control": -0.3922,
           "loss_quality": 0.0
         },
@@ -1298,10 +1272,10 @@
           "losses_considered": 0,
           "mean_cover_margin": 3.25,
           "mean_loss_badness": null,
-          "shrunk_cover_margin": 1.625,
-          "worst_cover": "-6 vs UTSA"
+          "shrunk_cover_margin": 1.215,
+          "worst_cover": "-7 vs UTSA"
         },
-        "total": -1.9936
+        "total": -3.1971
       },
       "resume_ranks": {
         "average_win_probability": 36,
@@ -1323,7 +1297,7 @@
         "rank": 5,
         "raw_score": 6.75,
         "resume_rank": 5,
-        "score": 3.5236,
+        "score": 2.5401,
         "sor_rank": 6,
         "sos_rank": 70,
         "weights": {
@@ -1334,12 +1308,12 @@
       },
       "conference": "ACC",
       "cover": {
-        "adjustment": -2.0845,
+        "adjustment": -1.9916,
         "covers": 4,
         "games": 5,
         "mean_margin": 7.75,
-        "scored_margin": 4.3056,
-        "worst": "-7 vs Wake Forest"
+        "scored_margin": 4.4878,
+        "worst": "-6 vs Wake Forest"
       },
       "cycle": null,
       "flags": [],
@@ -1357,28 +1331,52 @@
         "losses_vs_pool": [],
         "wins_vs_pool": [
           {
-            "adj_margin": 15.4725,
-            "common_diff": 4.945,
+            "adj_margin": 15.4732,
+            "common_diff": 4.9465,
             "common_opponents": [
               "Stanford"
             ],
             "components": {
-              "common_opponents": 0.1003,
-              "margin": 0.1508,
-              "rating_gap": 0.4726,
+              "common_opponents": 0.1032,
+              "margin": 0.0818,
+              "rating_gap": 0.4369,
               "recency": 1.0377
             },
-            "conviction": 1.7615,
+            "conviction": 1.6597,
             "loser": "Wake Forest",
             "loser_rank": 26,
             "margin": 13,
-            "rating_gap": 19.7315,
+            "rating_gap": 19.7266,
             "score": "33-20",
             "season_type": "regular",
             "site": "away",
             "status": "honored",
             "week": 3,
-            "weight": 4.7615,
+            "weight": 4.6597,
+            "winner": "Miami",
+            "winner_rank": 5
+          },
+          {
+            "adj_margin": 30.4732,
+            "common_diff": 0.0,
+            "common_opponents": [],
+            "components": {
+              "common_opponents": 0.0,
+              "margin": 0.7779,
+              "rating_gap": 0.366,
+              "recency": 1.2
+            },
+            "conviction": 2.3439,
+            "loser": "Clemson",
+            "loser_rank": 40,
+            "margin": 28,
+            "rating_gap": 17.3724,
+            "score": "41-13",
+            "season_type": "regular",
+            "site": "away",
+            "status": "honored",
+            "week": 5,
+            "weight": 5.3439,
             "winner": "Miami",
             "winner_rank": 5
           }
@@ -1387,7 +1385,7 @@
       "market": {
         "games": 4,
         "rank": 7,
-        "rating": 25.3141
+        "rating": 25.3057
       },
       "movement": {
         "delta": null,
@@ -1407,7 +1405,7 @@
         "final_rank": 5,
         "reasons": [
           "Resume order #5 from 0.55 x SoR #6 + 0.3 x Mkt #7 + 0.15 x PPA #9 = 6.75.",
-          "Resume adjustment earned back 3.23 rank points, driven by cover.",
+          "Resume adjustment earned back 4.21 rank points, driven by cover.",
           "Head-to-head held: beat #26 Wake Forest 33-20 on the road in week 3.",
           "Head-to-head results left this placement unchanged."
         ]
@@ -1423,13 +1421,13 @@
       "resume": {
         "actual_wins": 5,
         "espn_rank": 4,
-        "expected_wins": 4.0355,
-        "probability": 0.2996,
+        "expected_wins": 4.0377,
+        "probability": 0.3007,
         "rank": 6,
         "schedule": [
           {
             "opponent": "Stanford",
-            "reference_win_probability": 0.8604,
+            "reference_win_probability": 0.8608,
             "site": "away",
             "week": 1,
             "won": true
@@ -1443,21 +1441,21 @@
           },
           {
             "opponent": "Wake Forest",
-            "reference_win_probability": 0.6303,
+            "reference_win_probability": 0.6309,
             "site": "away",
             "week": 3,
             "won": true
           },
           {
             "opponent": "Central Michigan",
-            "reference_win_probability": 0.9825,
+            "reference_win_probability": 0.9826,
             "site": "home",
             "week": 4,
             "won": true
           },
           {
             "opponent": "Clemson",
-            "reference_win_probability": 0.5623,
+            "reference_win_probability": 0.5635,
             "site": "away",
             "week": 5,
             "won": true
@@ -1466,8 +1464,8 @@
       },
       "resume_adjustment": {
         "components": {
-          "best_win": -0.7182,
-          "cover": -2.0845,
+          "best_win": -1.7947,
+          "cover": -1.9916,
           "game_control": -0.4236,
           "loss_quality": 0.0
         },
@@ -1479,10 +1477,10 @@
           "losses_considered": 0,
           "mean_cover_margin": 7.75,
           "mean_loss_badness": null,
-          "shrunk_cover_margin": 4.3056,
-          "worst_cover": "-7 vs Wake Forest"
+          "shrunk_cover_margin": 4.4878,
+          "worst_cover": "-6 vs Wake Forest"
         },
-        "total": -3.2264
+        "total": -4.2099
       },
       "resume_ranks": {
         "average_win_probability": 3,
@@ -1504,7 +1502,7 @@
         "rank": 6,
         "raw_score": 6.85,
         "resume_rank": 6,
-        "score": 5.4195,
+        "score": 4.3323,
         "sor_rank": 10,
         "sos_rank": 17,
         "weights": {
@@ -1515,12 +1513,12 @@
       },
       "conference": "Big Ten",
       "cover": {
-        "adjustment": -0.2483,
+        "adjustment": -0.2078,
         "covers": 4,
         "games": 5,
         "mean_margin": 1.5,
-        "scored_margin": 0.8333,
-        "worst": "-2 vs Illinois"
+        "scored_margin": 0.6511,
+        "worst": "-4 vs Illinois"
       },
       "cycle": null,
       "flags": [],
@@ -1537,52 +1535,52 @@
       "h2h": {
         "losses_vs_pool": [
           {
-            "adj_margin": -1.4725,
+            "adj_margin": -1.4732,
             "common_diff": 0.0,
             "common_opponents": [],
             "components": {
               "common_opponents": 0.0,
-              "margin": -0.6705,
-              "rating_gap": -0.192,
+              "margin": -0.7047,
+              "rating_gap": -0.2186,
               "recency": 0.9012
             },
-            "conviction": 0.0387,
+            "conviction": -0.022,
             "loser": "Ohio State",
             "loser_rank": 6,
             "margin": 1,
-            "rating_gap": -2.0202,
+            "rating_gap": -2.0242,
             "score": "24-23",
             "season_type": "regular",
             "site": "home",
             "status": "honored",
             "week": 2,
-            "weight": 3.0387,
+            "weight": 2.978,
             "winner": "Texas",
             "winner_rank": 4
           }
         ],
         "wins_vs_pool": [
           {
-            "adj_margin": 19.4725,
+            "adj_margin": 19.4732,
             "common_diff": 0.0,
             "common_opponents": [],
             "components": {
               "common_opponents": 0.0,
-              "margin": 0.3447,
-              "rating_gap": 0.3903,
+              "margin": 0.2674,
+              "rating_gap": 0.3556,
               "recency": 1.2
             },
-            "conviction": 1.935,
+            "conviction": 1.823,
             "loser": "Iowa",
             "loser_rank": 24,
             "margin": 17,
-            "rating_gap": 17.0379,
+            "rating_gap": 17.0291,
             "score": "31-14",
             "season_type": "regular",
             "site": "away",
             "status": "honored",
             "week": 5,
-            "weight": 4.935,
+            "weight": 4.823,
             "winner": "Ohio State",
             "winner_rank": 6
           }
@@ -1591,7 +1589,7 @@
       "market": {
         "games": 6,
         "rank": 1,
-        "rating": 29.6896
+        "rating": 29.6881
       },
       "movement": {
         "delta": null,
@@ -1611,7 +1609,7 @@
         "final_rank": 6,
         "reasons": [
           "Resume order #6 from 0.55 x SoR #10 + 0.3 x Mkt #1 + 0.15 x PPA #7 = 6.85.",
-          "Resume adjustment earned back 1.43 rank points, driven by best win.",
+          "Resume adjustment earned back 2.52 rank points, driven by best win.",
           "Head-to-head held: beat #24 Iowa 31-14 on the road in week 5.",
           "Head-to-head results left this placement unchanged."
         ]
@@ -1627,8 +1625,8 @@
       "resume": {
         "actual_wins": 4,
         "espn_rank": 11,
-        "expected_wins": 3.2112,
-        "probability": 0.3449,
+        "expected_wins": 3.2124,
+        "probability": 0.3455,
         "rank": 10,
         "schedule": [
           {
@@ -1640,7 +1638,7 @@
           },
           {
             "opponent": "Texas",
-            "reference_win_probability": 0.0962,
+            "reference_win_probability": 0.0965,
             "site": "away",
             "week": 2,
             "won": false
@@ -1654,14 +1652,14 @@
           },
           {
             "opponent": "Illinois",
-            "reference_win_probability": 0.6985,
+            "reference_win_probability": 0.699,
             "site": "home",
             "week": 4,
             "won": true
           },
           {
             "opponent": "Iowa",
-            "reference_win_probability": 0.4243,
+            "reference_win_probability": 0.4246,
             "site": "away",
             "week": 5,
             "won": true
@@ -1670,8 +1668,8 @@
       },
       "resume_adjustment": {
         "components": {
-          "best_win": -0.7524,
-          "cover": -0.2483,
+          "best_win": -1.88,
+          "cover": -0.2078,
           "game_control": -0.4299,
           "loss_quality": 0.0
         },
@@ -1683,10 +1681,10 @@
           "losses_considered": 1,
           "mean_cover_margin": 1.5,
           "mean_loss_badness": -0.1703,
-          "shrunk_cover_margin": 0.8333,
-          "worst_cover": "-2 vs Illinois"
+          "shrunk_cover_margin": 0.6511,
+          "worst_cover": "-4 vs Illinois"
         },
-        "total": -1.4305
+        "total": -2.5177
       },
       "resume_ranks": {
         "average_win_probability": 6,
@@ -1708,7 +1706,7 @@
         "rank": 7,
         "raw_score": 14.15,
         "resume_rank": 11,
-        "score": 12.6105,
+        "score": 11.8269,
         "sor_rank": 20,
         "sos_rank": 43,
         "weights": {
@@ -1719,12 +1717,12 @@
       },
       "conference": "SEC",
       "cover": {
-        "adjustment": -1.732,
+        "adjustment": -1.3427,
         "covers": 2,
         "games": 5,
         "mean_margin": 6.55,
-        "scored_margin": 3.6389,
-        "worst": "-11 vs Ole Miss"
+        "scored_margin": 3.0922,
+        "worst": "-9 vs Ole Miss"
       },
       "cycle": null,
       "flags": [],
@@ -1741,52 +1739,76 @@
       "h2h": {
         "losses_vs_pool": [
           {
-            "adj_margin": 5.5275,
+            "adj_margin": 5.5268,
             "common_diff": 0.0,
             "common_opponents": [],
             "components": {
               "common_opponents": 0.0,
-              "margin": -0.3312,
-              "rating_gap": -0.2416,
+              "margin": -0.3799,
+              "rating_gap": -0.2662,
               "recency": 0.9896
             },
-            "conviction": 0.4168,
+            "conviction": 0.3436,
             "loser": "LSU",
             "loser_rank": 7,
             "margin": 8,
-            "rating_gap": -3.6421,
+            "rating_gap": -3.6042,
             "score": "32-24",
             "season_type": "regular",
             "site": "home",
             "status": "overridden",
             "week": 3,
-            "weight": 3.4168,
+            "weight": 3.3436,
             "winner": "Ole Miss",
-            "winner_rank": 15
+            "winner_rank": 13
           }
         ],
         "wins_vs_pool": [
           {
-            "adj_margin": 25.5275,
+            "adj_margin": 25.5268,
             "common_diff": 0.0,
             "common_opponents": [],
             "components": {
               "common_opponents": 0.0,
-              "margin": 0.6382,
-              "rating_gap": -0.0213,
+              "margin": 0.5483,
+              "rating_gap": -0.0518,
               "recency": 1.1153
             },
-            "conviction": 1.7322,
+            "conviction": 1.6119,
             "loser": "Texas A&M",
             "loser_rank": 32,
             "margin": 29,
-            "rating_gap": 3.566,
+            "rating_gap": 3.5095,
             "score": "35-6",
             "season_type": "regular",
             "site": "home",
             "status": "honored",
             "week": 4,
-            "weight": 4.7322,
+            "weight": 4.6119,
+            "winner": "LSU",
+            "winner_rank": 7
+          },
+          {
+            "adj_margin": 25.5268,
+            "common_diff": 0.0,
+            "common_opponents": [],
+            "components": {
+              "common_opponents": 0.0,
+              "margin": 0.5483,
+              "rating_gap": 0.2292,
+              "recency": 0.9012
+            },
+            "conviction": 1.6788,
+            "loser": "Clemson",
+            "loser_rank": 40,
+            "margin": 41,
+            "rating_gap": 12.8347,
+            "score": "51-10",
+            "season_type": "regular",
+            "site": "home",
+            "status": "honored",
+            "week": 1,
+            "weight": 4.6788,
             "winner": "LSU",
             "winner_rank": 7
           }
@@ -1795,7 +1817,7 @@
       "market": {
         "games": 5,
         "rank": 9,
-        "rating": 20.815
+        "rating": 20.7681
       },
       "movement": {
         "delta": null,
@@ -1815,9 +1837,9 @@
         "final_rank": 7,
         "reasons": [
           "Resume order #11 from 0.55 x SoR #20 + 0.3 x Mkt #9 + 0.15 x PPA #3 = 14.15.",
-          "Resume adjustment earned back 1.54 rank points, driven by cover.",
+          "Resume adjustment earned back 2.32 rank points, driven by best win.",
           "Head-to-head held: beat #32 Texas A&M 35-6 at home in week 4.",
-          "Ranked above #15 Ole Miss despite losing 24-32 on the road in week 3 -- +5.5 adjusted margin; the winner rates 3.6 points worse on the power ratings.",
+          "Ranked above #13 Ole Miss despite losing 24-32 on the road in week 3 -- +5.5 adjusted margin; the winner rates 3.6 points worse on the power ratings.",
           "Head-to-head results left this placement unchanged."
         ]
       },
@@ -1832,34 +1854,34 @@
       "resume": {
         "actual_wins": 4,
         "espn_rank": 24,
-        "expected_wins": 3.3953,
-        "probability": 0.4473,
+        "expected_wins": 3.3975,
+        "probability": 0.4484,
         "rank": 20,
         "schedule": [
           {
             "opponent": "Clemson",
-            "reference_win_probability": 0.6996,
+            "reference_win_probability": 0.7006,
             "site": "home",
             "week": 1,
             "won": true
           },
           {
             "opponent": "Louisiana Tech",
-            "reference_win_probability": 0.9619,
+            "reference_win_probability": 0.9621,
             "site": "home",
             "week": 2,
             "won": true
           },
           {
             "opponent": "Ole Miss",
-            "reference_win_probability": 0.2995,
+            "reference_win_probability": 0.3002,
             "site": "away",
             "week": 3,
             "won": false
           },
           {
             "opponent": "Texas A&M",
-            "reference_win_probability": 0.4344,
+            "reference_win_probability": 0.4347,
             "site": "home",
             "week": 4,
             "won": true
@@ -1875,10 +1897,10 @@
       },
       "resume_adjustment": {
         "components": {
-          "best_win": -0.65,
-          "cover": -1.732,
+          "best_win": -1.6241,
+          "cover": -1.3427,
           "game_control": -0.3546,
-          "loss_quality": 1.197
+          "loss_quality": 0.9983
         },
         "detail": {
           "best_win_opponent_base_rank": 31,
@@ -1888,10 +1910,10 @@
           "losses_considered": 1,
           "mean_cover_margin": 6.55,
           "mean_loss_badness": 4.0543,
-          "shrunk_cover_margin": 3.6389,
-          "worst_cover": "-11 vs Ole Miss"
+          "shrunk_cover_margin": 3.0922,
+          "worst_cover": "-9 vs Ole Miss"
         },
-        "total": -1.5395
+        "total": -2.3231
       },
       "resume_ranks": {
         "average_win_probability": 18,
@@ -1913,7 +1935,7 @@
         "rank": 8,
         "raw_score": 13.75,
         "resume_rank": 10,
-        "score": 13.9418,
+        "score": 12.7966,
         "sor_rank": 19,
         "sos_rank": 108,
         "weights": {
@@ -1924,12 +1946,12 @@
       },
       "conference": "Big Ten",
       "cover": {
-        "adjustment": 1.3529,
+        "adjustment": 1.3694,
         "covers": 1,
         "games": 5,
         "mean_margin": -3.95,
-        "scored_margin": -2.1944,
-        "worst": "-14 vs Northwestern"
+        "scored_margin": -2.7411,
+        "worst": "-16 vs Northwestern"
       },
       "cycle": null,
       "flags": [],
@@ -1947,26 +1969,26 @@
         "losses_vs_pool": [],
         "wins_vs_pool": [
           {
-            "adj_margin": 3.5275,
+            "adj_margin": 3.5268,
             "common_diff": 0.0,
             "common_opponents": [],
             "components": {
               "common_opponents": 0.0,
-              "margin": -0.4282,
-              "rating_gap": 0.4495,
+              "margin": -0.4727,
+              "rating_gap": 0.4144,
               "recency": 1.1153
             },
-            "conviction": 1.1366,
+            "conviction": 1.0571,
             "loser": "Northwestern",
-            "loser_rank": 12,
+            "loser_rank": 14,
             "margin": 6,
-            "rating_gap": 18.973,
+            "rating_gap": 18.98,
             "score": "29-23",
             "season_type": "regular",
             "site": "home",
             "status": "honored",
             "week": 4,
-            "weight": 4.1366,
+            "weight": 4.0571,
             "winner": "Indiana",
             "winner_rank": 8
           }
@@ -1975,7 +1997,7 @@
       "market": {
         "games": 5,
         "rank": 3,
-        "rating": 28.144
+        "rating": 28.15
       },
       "movement": {
         "delta": null,
@@ -1995,8 +2017,8 @@
         "final_rank": 8,
         "reasons": [
           "Resume order #10 from 0.55 x SoR #19 + 0.3 x Mkt #3 + 0.15 x PPA #16 = 13.75.",
-          "Resume adjustment cost 0.19 rank points, driven by cover.",
-          "Head-to-head held: beat #12 Northwestern 29-23 at home in week 4.",
+          "Resume adjustment earned back 0.95 rank points, driven by best win.",
+          "Head-to-head held: beat #14 Northwestern 29-23 at home in week 4.",
           "Head-to-head results left this placement unchanged."
         ]
       },
@@ -2011,13 +2033,13 @@
       "resume": {
         "actual_wins": 5,
         "espn_rank": 10,
-        "expected_wins": 4.309,
-        "probability": 0.447,
+        "expected_wins": 4.3101,
+        "probability": 0.4477,
         "rank": 19,
         "schedule": [
           {
             "opponent": "North Texas",
-            "reference_win_probability": 0.9104,
+            "reference_win_probability": 0.9105,
             "site": "home",
             "week": 1,
             "won": true
@@ -2038,14 +2060,14 @@
           },
           {
             "opponent": "Northwestern",
-            "reference_win_probability": 0.6675,
+            "reference_win_probability": 0.6681,
             "site": "home",
             "week": 4,
             "won": true
           },
           {
             "opponent": "Rutgers",
-            "reference_win_probability": 0.7492,
+            "reference_win_probability": 0.7496,
             "site": "away",
             "week": 5,
             "won": true
@@ -2054,8 +2076,8 @@
       },
       "resume_adjustment": {
         "components": {
-          "best_win": -0.7751,
-          "cover": 1.3529,
+          "best_win": -1.9369,
+          "cover": 1.3694,
           "game_control": -0.386,
           "loss_quality": 0.0
         },
@@ -2067,10 +2089,10 @@
           "losses_considered": 0,
           "mean_cover_margin": -3.95,
           "mean_loss_badness": null,
-          "shrunk_cover_margin": -2.1944,
-          "worst_cover": "-14 vs Northwestern"
+          "shrunk_cover_margin": -2.7411,
+          "worst_cover": "-16 vs Northwestern"
         },
-        "total": 0.1918
+        "total": -0.9534
       },
       "resume_ranks": {
         "average_win_probability": 7,
@@ -2092,7 +2114,7 @@
         "rank": 9,
         "raw_score": 13.55,
         "resume_rank": 8,
-        "score": 14.8216,
+        "score": 13.5628,
         "sor_rank": 11,
         "sos_rank": 88,
         "weights": {
@@ -2103,12 +2125,12 @@
       },
       "conference": "Big 12",
       "cover": {
-        "adjustment": 2.1609,
-        "covers": 2,
+        "adjustment": 1.9103,
+        "covers": 1,
         "games": 5,
         "mean_margin": -6.7,
-        "scored_margin": -3.7222,
-        "worst": "-22 vs Abilene Christian"
+        "scored_margin": -3.9044,
+        "worst": "-24 vs Abilene Christian"
       },
       "cycle": null,
       "flags": [],
@@ -2126,28 +2148,28 @@
         "losses_vs_pool": [],
         "wins_vs_pool": [
           {
-            "adj_margin": -0.4725,
-            "common_diff": 2.945,
+            "adj_margin": -0.4732,
+            "common_diff": 2.9465,
             "common_opponents": [
               "Oregon State"
             ],
             "components": {
-              "common_opponents": 0.046,
-              "margin": -0.622,
-              "rating_gap": 0.0715,
+              "common_opponents": 0.048,
+              "margin": -0.6583,
+              "rating_gap": 0.0426,
               "recency": 0.9896
             },
-            "conviction": 0.4851,
+            "conviction": 0.4219,
             "loser": "Houston",
-            "loser_rank": 30,
+            "loser_rank": 28,
             "margin": 2,
-            "rating_gap": 6.6046,
+            "rating_gap": 6.6427,
             "score": "28-26",
             "season_type": "regular",
             "site": "home",
             "status": "honored",
             "week": 3,
-            "weight": 3.4851,
+            "weight": 3.4219,
             "winner": "Texas Tech",
             "winner_rank": 9
           }
@@ -2156,7 +2178,7 @@
       "market": {
         "games": 4,
         "rank": 14,
-        "rating": 18.3348
+        "rating": 18.3407
       },
       "movement": {
         "delta": null,
@@ -2176,8 +2198,7 @@
         "final_rank": 9,
         "reasons": [
           "Resume order #8 from 0.55 x SoR #11 + 0.3 x Mkt #14 + 0.15 x PPA #22 = 13.55.",
-          "Resume adjustment cost 1.27 rank points, driven by cover.",
-          "Head-to-head held: beat #30 Houston 28-26 at home in week 3.",
+          "Head-to-head held: beat #28 Houston 28-26 at home in week 3.",
           "Head-to-head results left this placement unchanged."
         ]
       },
@@ -2192,8 +2213,8 @@
       "resume": {
         "actual_wins": 5,
         "espn_rank": 7,
-        "expected_wins": 4.1497,
-        "probability": 0.3576,
+        "expected_wins": 4.1522,
+        "probability": 0.359,
         "rank": 11,
         "schedule": [
           {
@@ -2205,14 +2226,14 @@
           },
           {
             "opponent": "Oregon State",
-            "reference_win_probability": 0.8479,
+            "reference_win_probability": 0.8486,
             "site": "away",
             "week": 2,
             "won": true
           },
           {
             "opponent": "Houston",
-            "reference_win_probability": 0.5962,
+            "reference_win_probability": 0.5977,
             "site": "home",
             "week": 3,
             "won": true
@@ -2226,7 +2247,7 @@
           },
           {
             "opponent": "Colorado",
-            "reference_win_probability": 0.712,
+            "reference_win_probability": 0.7124,
             "site": "away",
             "week": 5,
             "won": true
@@ -2235,23 +2256,23 @@
       },
       "resume_adjustment": {
         "components": {
-          "best_win": -0.6727,
-          "cover": 2.1609,
+          "best_win": -1.681,
+          "cover": 1.9103,
           "game_control": -0.2165,
           "loss_quality": 0.0
         },
         "detail": {
           "best_win_opponent_base_rank": 29,
           "cover_games": 5,
-          "covers": 2,
+          "covers": 1,
           "game_control_rank": 35,
           "losses_considered": 0,
           "mean_cover_margin": -6.7,
           "mean_loss_badness": null,
-          "shrunk_cover_margin": -3.7222,
-          "worst_cover": "-22 vs Abilene Christian"
+          "shrunk_cover_margin": -3.9044,
+          "worst_cover": "-24 vs Abilene Christian"
         },
-        "total": 1.2716
+        "total": 0.0128
       },
       "resume_ranks": {
         "average_win_probability": 25,
@@ -2273,7 +2294,7 @@
         "rank": 10,
         "raw_score": 16.45,
         "resume_rank": 14,
-        "score": 14.9078,
+        "score": 14.0173,
         "sor_rank": 13,
         "sos_rank": 93,
         "weights": {
@@ -2284,12 +2305,12 @@
       },
       "conference": "Big 12",
       "cover": {
-        "adjustment": -0.6008,
+        "adjustment": -0.6024,
         "covers": 4,
         "games": 4,
         "mean_margin": 3.0,
         "scored_margin": 1.5,
-        "worst": "+0 vs Colorado State"
+        "worst": "+2 vs Colorado State"
       },
       "cycle": null,
       "flags": [],
@@ -2307,26 +2328,26 @@
         "losses_vs_pool": [],
         "wins_vs_pool": [
           {
-            "adj_margin": 8.5275,
+            "adj_margin": 8.5268,
             "common_diff": 0.0,
             "common_opponents": [],
             "components": {
               "common_opponents": 0.0,
-              "margin": -0.1858,
-              "rating_gap": -0.0314,
+              "margin": -0.2406,
+              "rating_gap": -0.0617,
               "recency": 0.9012
             },
-            "conviction": 0.684,
+            "conviction": 0.599,
             "loser": "Arizona",
             "loser_rank": 34,
             "margin": 11,
-            "rating_gap": 3.2347,
+            "rating_gap": 3.1814,
             "score": "28-17",
             "season_type": "regular",
             "site": "home",
             "status": "honored",
             "week": 2,
-            "weight": 3.684,
+            "weight": 3.599,
             "winner": "BYU",
             "winner_rank": 10
           }
@@ -2335,7 +2356,7 @@
       "market": {
         "games": 4,
         "rank": 26,
-        "rating": 12.091
+        "rating": 12.0146
       },
       "movement": {
         "delta": null,
@@ -2355,7 +2376,7 @@
         "final_rank": 10,
         "reasons": [
           "Resume order #14 from 0.55 x SoR #13 + 0.3 x Mkt #26 + 0.15 x PPA #10 = 16.45.",
-          "Resume adjustment earned back 1.54 rank points, driven by cover.",
+          "Resume adjustment earned back 2.43 rank points, driven by best win.",
           "Head-to-head held: beat #34 Arizona 28-17 at home in week 2.",
           "Head-to-head results left this placement unchanged."
         ]
@@ -2371,8 +2392,8 @@
       "resume": {
         "actual_wins": 4,
         "espn_rank": 14,
-        "expected_wins": 3.1955,
-        "probability": 0.3679,
+        "expected_wins": 3.1991,
+        "probability": 0.37,
         "rank": 13,
         "schedule": [
           {
@@ -2384,21 +2405,21 @@
           },
           {
             "opponent": "Arizona",
-            "reference_win_probability": 0.676,
+            "reference_win_probability": 0.6771,
             "site": "home",
             "week": 2,
             "won": true
           },
           {
             "opponent": "Colorado State",
-            "reference_win_probability": 0.9414,
+            "reference_win_probability": 0.9418,
             "site": "away",
             "week": 3,
             "won": true
           },
           {
             "opponent": "TCU",
-            "reference_win_probability": 0.5782,
+            "reference_win_probability": 0.5803,
             "site": "away",
             "week": 5,
             "won": true
@@ -2407,8 +2428,8 @@
       },
       "resume_adjustment": {
         "components": {
-          "best_win": -0.5931,
-          "cover": -0.6008,
+          "best_win": -1.482,
+          "cover": -0.6024,
           "game_control": -0.3483,
           "loss_quality": 0.0
         },
@@ -2421,9 +2442,9 @@
           "mean_cover_margin": 3.0,
           "mean_loss_badness": null,
           "shrunk_cover_margin": 1.5,
-          "worst_cover": "+0 vs Colorado State"
+          "worst_cover": "+2 vs Colorado State"
         },
-        "total": -1.5422
+        "total": -2.4327
       },
       "resume_ranks": {
         "average_win_probability": 13,
@@ -2445,7 +2466,7 @@
         "rank": 11,
         "raw_score": 13.35,
         "resume_rank": 7,
-        "score": 16.6379,
+        "score": 14.5373,
         "sor_rank": 12,
         "sos_rank": 26,
         "weights": {
@@ -2456,12 +2477,12 @@
       },
       "conference": "SEC",
       "cover": {
-        "adjustment": -0.1014,
+        "adjustment": -0.0786,
         "covers": 3,
         "games": 5,
         "mean_margin": 1.0,
-        "scored_margin": 0.5556,
-        "worst": "-34 vs Missouri"
+        "scored_margin": 0.3733,
+        "worst": "-32 vs Missouri"
       },
       "cycle": null,
       "flags": [],
@@ -2478,76 +2499,76 @@
       "h2h": {
         "losses_vs_pool": [
           {
-            "adj_margin": 25.5275,
+            "adj_margin": 25.5268,
             "common_diff": 0.0,
             "common_opponents": [],
             "components": {
               "common_opponents": 0.0,
-              "margin": 0.6382,
-              "rating_gap": -0.3187,
+              "margin": 0.5483,
+              "rating_gap": -0.3431,
               "recency": 1.2
             },
-            "conviction": 1.5195,
+            "conviction": 1.4053,
             "loser": "Florida",
             "loser_rank": 11,
             "margin": 28,
-            "rating_gap": -6.1665,
+            "rating_gap": -6.156,
             "score": "45-17",
             "season_type": "regular",
             "site": "home",
             "status": "overridden",
             "week": 5,
-            "weight": 4.5195,
+            "weight": 4.4053,
             "winner": "Missouri",
-            "winner_rank": 21
+            "winner_rank": 20
           }
         ],
         "wins_vs_pool": [
           {
-            "adj_margin": 21.5275,
+            "adj_margin": 21.5268,
             "common_diff": 0.0,
             "common_opponents": [],
             "components": {
               "common_opponents": 0.0,
-              "margin": 0.4443,
-              "rating_gap": -0.0832,
+              "margin": 0.3627,
+              "rating_gap": -0.1106,
               "recency": 1.1153
             },
-            "conviction": 1.4764,
+            "conviction": 1.3674,
             "loser": "Ole Miss",
-            "loser_rank": 15,
+            "loser_rank": 13,
             "margin": 24,
-            "rating_gap": 1.5395,
+            "rating_gap": 1.5566,
             "score": "52-28",
             "season_type": "regular",
             "site": "home",
             "status": "honored",
             "week": 4,
-            "weight": 4.4764,
+            "weight": 4.3674,
             "winner": "Florida",
             "winner_rank": 11
           },
           {
-            "adj_margin": 7.4725,
+            "adj_margin": 7.4732,
             "common_diff": 0.0,
             "common_opponents": [],
             "components": {
               "common_opponents": 0.0,
-              "margin": -0.2369,
-              "rating_gap": 0.0214,
+              "margin": -0.2895,
+              "rating_gap": -0.0078,
               "recency": 0.9896
             },
-            "conviction": 0.774,
+            "conviction": 0.6922,
             "loser": "Auburn",
-            "loser_rank": 28,
+            "loser_rank": 29,
             "margin": 5,
-            "rating_gap": 4.9623,
+            "rating_gap": 4.9675,
             "score": "44-39",
             "season_type": "regular",
             "site": "away",
             "status": "honored",
             "week": 3,
-            "weight": 3.774,
+            "weight": 3.6922,
             "winner": "Florida",
             "winner_rank": 11
           }
@@ -2556,7 +2577,7 @@
       "market": {
         "games": 5,
         "rank": 12,
-        "rating": 18.7123
+        "rating": 18.7205
       },
       "movement": {
         "delta": null,
@@ -2576,9 +2597,9 @@
         "final_rank": 11,
         "reasons": [
           "Resume order #7 from 0.55 x SoR #12 + 0.3 x Mkt #12 + 0.15 x PPA #21 = 13.35.",
-          "Resume adjustment cost 3.29 rank points, driven by loss quality.",
-          "Head-to-head held: beat #15 Ole Miss 52-28 at home in week 4.",
-          "Ranked above #21 Missouri despite losing 17-45 on the road in week 5 -- +25.5 adjusted margin; the winner rates 6.2 points worse on the power ratings.",
+          "Resume adjustment cost 1.19 rank points, driven by loss quality.",
+          "Head-to-head held: beat #13 Ole Miss 52-28 at home in week 4.",
+          "Ranked above #20 Missouri despite losing 17-45 on the road in week 5 -- +25.5 adjusted margin; the winner rates 6.2 points worse on the power ratings.",
           "Head-to-head results left this placement unchanged."
         ]
       },
@@ -2593,8 +2614,8 @@
       "resume": {
         "actual_wins": 4,
         "espn_rank": 15,
-        "expected_wins": 3.2135,
-        "probability": 0.3661,
+        "expected_wins": 3.2148,
+        "probability": 0.3667,
         "rank": 12,
         "schedule": [
           {
@@ -2613,14 +2634,14 @@
           },
           {
             "opponent": "Auburn",
-            "reference_win_probability": 0.3927,
+            "reference_win_probability": 0.3931,
             "site": "away",
             "week": 3,
             "won": true
           },
           {
             "opponent": "Ole Miss",
-            "reference_win_probability": 0.4366,
+            "reference_win_probability": 0.4374,
             "site": "home",
             "week": 4,
             "won": true
@@ -2636,10 +2657,10 @@
       },
       "resume_adjustment": {
         "components": {
-          "best_win": -0.9003,
-          "cover": -0.1014,
+          "best_win": -2.2497,
+          "cover": -0.0786,
           "game_control": -0.3734,
-          "loss_quality": 4.6629
+          "loss_quality": 3.889
         },
         "detail": {
           "best_win_opponent_base_rank": 9,
@@ -2649,10 +2670,10 @@
           "losses_considered": 1,
           "mean_cover_margin": 1.0,
           "mean_loss_badness": 15.7935,
-          "shrunk_cover_margin": 0.5556,
-          "worst_cover": "-34 vs Missouri"
+          "shrunk_cover_margin": 0.3733,
+          "worst_cover": "-32 vs Missouri"
         },
-        "total": 3.2879
+        "total": 1.1873
       },
       "resume_ranks": {
         "average_win_probability": 21,
@@ -2666,332 +2687,15 @@
     },
     {
       "base": {
-        "espn_sor_rank": 19,
-        "formula": "0.55 x SoR #18 + 0.3 x Mkt #32 + 0.15 x PPA #11 = 21.15",
-        "market_rank": 32,
-        "missing": [],
-        "ppa_rank": 11,
-        "rank": 12,
-        "raw_score": 21.15,
-        "resume_rank": 20,
-        "score": 16.7419,
-        "sor_rank": 18,
-        "sos_rank": 13,
-        "weights": {
-          "Mkt": 0.3,
-          "PPA": 0.15,
-          "SoR": 0.55
-        }
-      },
-      "conference": "Big Ten",
-      "cover": {
-        "adjustment": -4.5175,
-        "covers": 4,
-        "games": 4,
-        "mean_margin": 17.8125,
-        "scored_margin": 8.9062,
-        "worst": "+3 vs South Dakota State"
-      },
-      "cycle": null,
-      "flags": [],
-      "fpi": {
-        "efficiencies": {
-          "defense": 72.593,
-          "offense": 84.287,
-          "overall": 84.516,
-          "special_teams": 61.618
-        },
-        "rank": 17,
-        "rating": 14.833
-      },
-      "h2h": {
-        "losses_vs_pool": [
-          {
-            "adj_margin": 3.5275,
-            "common_diff": 0.0,
-            "common_opponents": [],
-            "components": {
-              "common_opponents": 0.0,
-              "margin": -0.4282,
-              "rating_gap": 0.4495,
-              "recency": 1.1153
-            },
-            "conviction": 1.1366,
-            "loser": "Northwestern",
-            "loser_rank": 12,
-            "margin": 6,
-            "rating_gap": 18.973,
-            "score": "29-23",
-            "season_type": "regular",
-            "site": "home",
-            "status": "honored",
-            "week": 4,
-            "weight": 4.1366,
-            "winner": "Indiana",
-            "winner_rank": 8
-          }
-        ],
-        "wins_vs_pool": []
-      },
-      "market": {
-        "games": 4,
-        "rank": 32,
-        "rating": 9.1709
-      },
-      "movement": {
-        "delta": null,
-        "has_previous": false,
-        "previous_rank": null,
-        "status": "new"
-      },
-      "performance": {
-        "games": 3,
-        "rank": 11,
-        "rating": 0.4092,
-        "unadjusted": 0.1767
-      },
-      "placement": {
-        "base_rank": 12,
-        "drift": 0,
-        "final_rank": 12,
-        "reasons": [
-          "Resume order #20 from 0.55 x SoR #18 + 0.3 x Mkt #32 + 0.15 x PPA #11 = 21.15.",
-          "Resume adjustment earned back 4.41 rank points, driven by cover.",
-          "Head-to-head results left this placement unchanged."
-        ]
-      },
-      "rank": 12,
-      "record": {
-        "conference": "1-1",
-        "losses": 1,
-        "overall": "3-1",
-        "wins": 3
-      },
-      "regression": null,
-      "resume": {
-        "actual_wins": 3,
-        "espn_rank": 19,
-        "expected_wins": 2.395,
-        "probability": 0.4427,
-        "rank": 18,
-        "schedule": [
-          {
-            "opponent": "South Dakota State",
-            "reference_win_probability": 1.0,
-            "site": "home",
-            "week": 1,
-            "won": true
-          },
-          {
-            "opponent": "Colorado",
-            "reference_win_probability": 0.8227,
-            "site": "home",
-            "week": 3,
-            "won": true
-          },
-          {
-            "opponent": "Indiana",
-            "reference_win_probability": 0.0904,
-            "site": "away",
-            "week": 4,
-            "won": false
-          },
-          {
-            "opponent": "Penn State",
-            "reference_win_probability": 0.482,
-            "site": "home",
-            "week": 5,
-            "won": true
-          }
-        ]
-      },
-      "resume_adjustment": {
-        "components": {
-          "best_win": -0.468,
-          "cover": -4.5175,
-          "game_control": -0.3671,
-          "loss_quality": 0.9446
-        },
-        "detail": {
-          "best_win_opponent_base_rank": 47,
-          "cover_games": 4,
-          "covers": 4,
-          "game_control_rank": 11,
-          "losses_considered": 1,
-          "mean_cover_margin": 17.8125,
-          "mean_loss_badness": 3.1993,
-          "shrunk_cover_margin": 8.9062,
-          "worst_cover": "+3 vs South Dakota State"
-        },
-        "total": -4.4081
-      },
-      "resume_ranks": {
-        "average_win_probability": 35,
-        "fpi": 17,
-        "game_control": 11,
-        "remaining_strength_of_schedule": 37,
-        "strength_of_record": 19,
-        "strength_of_schedule": 13
-      },
-      "team": "Northwestern"
-    },
-    {
-      "base": {
-        "espn_sor_rank": 18,
-        "formula": "0.55 x SoR #26 + 0.3 x Mkt #19 + 0.15 x PPA #4 = 20.60",
-        "market_rank": 19,
-        "missing": [],
-        "ppa_rank": 4,
-        "rank": 13,
-        "raw_score": 20.6,
-        "resume_rank": 19,
-        "score": 16.8748,
-        "sor_rank": 26,
-        "sos_rank": 111,
-        "weights": {
-          "Mkt": 0.3,
-          "PPA": 0.15,
-          "SoR": 0.55
-        }
-      },
-      "conference": "Big 12",
-      "cover": {
-        "adjustment": -2.898,
-        "covers": 4,
-        "games": 4,
-        "mean_margin": 11.6875,
-        "scored_margin": 5.8438,
-        "worst": "+6 vs Iowa State"
-      },
-      "cycle": null,
-      "flags": [],
-      "fpi": {
-        "efficiencies": {
-          "defense": 81.184,
-          "offense": 81.465,
-          "overall": 87.851,
-          "special_teams": 66.903
-        },
-        "rank": 12,
-        "rating": 18.068
-      },
-      "h2h": {
-        "losses_vs_pool": [],
-        "wins_vs_pool": []
-      },
-      "market": {
-        "games": 4,
-        "rank": 19,
-        "rating": 13.9896
-      },
-      "movement": {
-        "delta": null,
-        "has_previous": false,
-        "previous_rank": null,
-        "status": "new"
-      },
-      "performance": {
-        "games": 3,
-        "rank": 4,
-        "rating": 0.5077,
-        "unadjusted": 0.4933
-      },
-      "placement": {
-        "base_rank": 13,
-        "drift": 0,
-        "final_rank": 13,
-        "reasons": [
-          "Resume order #19 from 0.55 x SoR #26 + 0.3 x Mkt #19 + 0.15 x PPA #4 = 20.60.",
-          "Resume adjustment earned back 3.73 rank points, driven by cover.",
-          "Head-to-head results left this placement unchanged."
-        ]
-      },
-      "rank": 13,
-      "record": {
-        "conference": "1-0",
-        "losses": 0,
-        "overall": "4-0",
-        "wins": 4
-      },
-      "regression": null,
-      "resume": {
-        "actual_wins": 4,
-        "espn_rank": 18,
-        "expected_wins": 3.4977,
-        "probability": 0.5629,
-        "rank": 26,
-        "schedule": [
-          {
-            "opponent": "Idaho",
-            "reference_win_probability": 1.0,
-            "site": "home",
-            "week": 1,
-            "won": true
-          },
-          {
-            "opponent": "Arkansas",
-            "reference_win_probability": 0.8329,
-            "site": "home",
-            "week": 2,
-            "won": true
-          },
-          {
-            "opponent": "Utah State",
-            "reference_win_probability": 0.9629,
-            "site": "home",
-            "week": 3,
-            "won": true
-          },
-          {
-            "opponent": "Iowa State",
-            "reference_win_probability": 0.7019,
-            "site": "away",
-            "week": 4,
-            "won": true
-          }
-        ]
-      },
-      "resume_adjustment": {
-        "components": {
-          "best_win": -0.4225,
-          "cover": -2.898,
-          "game_control": -0.4048,
-          "loss_quality": 0.0
-        },
-        "detail": {
-          "best_win_opponent_base_rank": 51,
-          "cover_games": 4,
-          "covers": 4,
-          "game_control_rank": 5,
-          "losses_considered": 0,
-          "mean_cover_margin": 11.6875,
-          "mean_loss_badness": null,
-          "shrunk_cover_margin": 5.8438,
-          "worst_cover": "+6 vs Iowa State"
-        },
-        "total": -3.7252
-      },
-      "resume_ranks": {
-        "average_win_probability": 2,
-        "fpi": 12,
-        "game_control": 5,
-        "remaining_strength_of_schedule": 59,
-        "strength_of_record": 18,
-        "strength_of_schedule": 111
-      },
-      "team": "Utah"
-    },
-    {
-      "base": {
         "espn_sor_rank": 6,
         "formula": "0.55 x SoR #8 + 0.3 x Mkt #31 + 0.15 x PPA #12 = 15.50",
         "market_rank": 31,
         "missing": [],
         "ppa_rank": 12,
-        "rank": 14,
+        "rank": 12,
         "raw_score": 15.5,
         "resume_rank": 12,
-        "score": 17.351,
+        "score": 15.6539,
         "sor_rank": 8,
         "sos_rank": 11,
         "weights": {
@@ -3002,12 +2706,12 @@
       },
       "conference": "SEC",
       "cover": {
-        "adjustment": -1.6438,
+        "adjustment": -1.4347,
         "covers": 4,
         "games": 5,
         "mean_margin": 6.25,
-        "scored_margin": 3.4722,
-        "worst": "-28 vs Alabama"
+        "scored_margin": 3.29,
+        "worst": "-29 vs Alabama"
       },
       "cycle": null,
       "flags": [],
@@ -3024,87 +2728,87 @@
       "h2h": {
         "losses_vs_pool": [
           {
-            "adj_margin": 30.4725,
-            "common_diff": 16.055,
+            "adj_margin": 30.4732,
+            "common_diff": 16.0535,
             "common_opponents": [
               "South Carolina"
             ],
             "components": {
-              "common_opponents": 0.402,
-              "margin": 0.8779,
-              "rating_gap": 0.2073,
+              "common_opponents": 0.4099,
+              "margin": 0.7779,
+              "rating_gap": 0.1755,
               "recency": 1.2
             },
-            "conviction": 2.6872,
+            "conviction": 2.5633,
             "loser": "Mississippi State",
-            "loser_rank": 14,
+            "loser_rank": 12,
             "margin": 33,
-            "rating_gap": 11.0486,
+            "rating_gap": 11.0509,
             "score": "56-23",
             "season_type": "regular",
             "site": "away",
             "status": "honored",
             "week": 5,
-            "weight": 5.6872,
+            "weight": 5.5633,
             "winner": "Alabama",
             "winner_rank": 1
           }
         ],
         "wins_vs_pool": [
           {
-            "adj_margin": 4.5275,
+            "adj_margin": 4.5268,
             "common_diff": 0.0,
             "common_opponents": [],
             "components": {
               "common_opponents": 0.0,
-              "margin": -0.3797,
-              "rating_gap": -0.2027,
+              "margin": -0.4263,
+              "rating_gap": -0.2291,
               "recency": 1.0887
             },
-            "conviction": 0.5064,
+            "conviction": 0.4333,
             "loser": "Missouri",
-            "loser_rank": 21,
+            "loser_rank": 20,
             "margin": 7,
-            "rating_gap": -2.3693,
+            "rating_gap": -2.3757,
             "score": "31-24",
             "season_type": "regular",
             "site": "home",
             "status": "honored",
             "week": 4,
-            "weight": 3.5064,
+            "weight": 3.4333,
             "winner": "Mississippi State",
-            "winner_rank": 14
+            "winner_rank": 12
           },
           {
-            "adj_margin": 27.4725,
+            "adj_margin": 27.4732,
             "common_diff": 0.0,
             "common_opponents": [],
             "components": {
               "common_opponents": 0.0,
-              "margin": 0.7324,
-              "rating_gap": 0.0373,
+              "margin": 0.6387,
+              "rating_gap": 0.0081,
               "recency": 0.9665
             },
-            "conviction": 1.7363,
+            "conviction": 1.6133,
             "loser": "Minnesota",
-            "loser_rank": 39,
+            "loser_rank": 36,
             "margin": 25,
-            "rating_gap": 5.4846,
+            "rating_gap": 5.4964,
             "score": "38-13",
             "season_type": "regular",
             "site": "away",
             "status": "honored",
             "week": 2,
-            "weight": 4.7363,
+            "weight": 4.6133,
             "winner": "Mississippi State",
-            "winner_rank": 14
+            "winner_rank": 12
           }
         ]
       },
       "market": {
         "games": 5,
         "rank": 31,
-        "rating": 10.1766
+        "rating": 10.1887
       },
       "movement": {
         "delta": null,
@@ -3119,17 +2823,17 @@
         "unadjusted": 0.222
       },
       "placement": {
-        "base_rank": 14,
+        "base_rank": 12,
         "drift": 0,
-        "final_rank": 14,
+        "final_rank": 12,
         "reasons": [
           "Resume order #12 from 0.55 x SoR #8 + 0.3 x Mkt #31 + 0.15 x PPA #12 = 15.50.",
-          "Resume adjustment cost 1.85 rank points, driven by loss quality.",
-          "Head-to-head held: beat #21 Missouri 31-24 at home in week 4.",
+          "Resume adjustment cost 0.15 rank points, driven by loss quality.",
+          "Head-to-head held: beat #20 Missouri 31-24 at home in week 4.",
           "Head-to-head results left this placement unchanged."
         ]
       },
-      "rank": 14,
+      "rank": 12,
       "record": {
         "conference": "2-1",
         "losses": 1,
@@ -3140,8 +2844,8 @@
       "resume": {
         "actual_wins": 4,
         "espn_rank": 6,
-        "expected_wins": 3.0261,
-        "probability": 0.316,
+        "expected_wins": 3.0268,
+        "probability": 0.3162,
         "rank": 8,
         "schedule": [
           {
@@ -3153,7 +2857,7 @@
           },
           {
             "opponent": "Minnesota",
-            "reference_win_probability": 0.6549,
+            "reference_win_probability": 0.6554,
             "site": "away",
             "week": 2,
             "won": true
@@ -3174,7 +2878,7 @@
           },
           {
             "opponent": "Alabama",
-            "reference_win_probability": 0.3228,
+            "reference_win_probability": 0.323,
             "site": "home",
             "week": 5,
             "won": false
@@ -3183,10 +2887,10 @@
       },
       "resume_adjustment": {
         "components": {
-          "best_win": -0.7637,
-          "cover": -1.6438,
+          "best_win": -1.9085,
+          "cover": -1.4347,
           "game_control": -0.3295,
-          "loss_quality": 4.588
+          "loss_quality": 3.8265
         },
         "detail": {
           "best_win_opponent_base_rank": 21,
@@ -3196,10 +2900,10 @@
           "losses_considered": 1,
           "mean_cover_margin": 6.25,
           "mean_loss_badness": 15.5399,
-          "shrunk_cover_margin": 3.4722,
-          "worst_cover": "-28 vs Alabama"
+          "shrunk_cover_margin": 3.29,
+          "worst_cover": "-29 vs Alabama"
         },
-        "total": 1.851
+        "total": 0.1539
       },
       "resume_ranks": {
         "average_win_probability": 46,
@@ -3218,10 +2922,10 @@
         "market_rank": 16,
         "missing": [],
         "ppa_rank": 34,
-        "rank": 15,
+        "rank": 13,
         "raw_score": 13.75,
         "resume_rank": 9,
-        "score": 17.8717,
+        "score": 15.7761,
         "sor_rank": 7,
         "sos_rank": 6,
         "weights": {
@@ -3232,12 +2936,12 @@
       },
       "conference": "SEC",
       "cover": {
-        "adjustment": 1.8616,
+        "adjustment": 1.6578,
         "covers": 1,
         "games": 4,
         "mean_margin": -6.3125,
-        "scored_margin": -3.1562,
-        "worst": "-20 vs Florida"
+        "scored_margin": -3.3612,
+        "worst": "-18 vs Florida"
       },
       "cycle": null,
       "flags": [],
@@ -3254,61 +2958,61 @@
       "h2h": {
         "losses_vs_pool": [
           {
-            "adj_margin": 21.5275,
+            "adj_margin": 21.5268,
             "common_diff": 0.0,
             "common_opponents": [],
             "components": {
               "common_opponents": 0.0,
-              "margin": 0.4443,
-              "rating_gap": -0.0832,
+              "margin": 0.3627,
+              "rating_gap": -0.1106,
               "recency": 1.1153
             },
-            "conviction": 1.4764,
+            "conviction": 1.3674,
             "loser": "Ole Miss",
-            "loser_rank": 15,
+            "loser_rank": 13,
             "margin": 24,
-            "rating_gap": 1.5395,
+            "rating_gap": 1.5566,
             "score": "52-28",
             "season_type": "regular",
             "site": "home",
             "status": "honored",
             "week": 4,
-            "weight": 4.4764,
+            "weight": 4.3674,
             "winner": "Florida",
             "winner_rank": 11
           }
         ],
         "wins_vs_pool": [
           {
-            "adj_margin": 5.5275,
+            "adj_margin": 5.5268,
             "common_diff": 0.0,
             "common_opponents": [],
             "components": {
               "common_opponents": 0.0,
-              "margin": -0.3312,
-              "rating_gap": -0.2416,
+              "margin": -0.3799,
+              "rating_gap": -0.2662,
               "recency": 0.9896
             },
-            "conviction": 0.4168,
+            "conviction": 0.3436,
             "loser": "LSU",
             "loser_rank": 7,
             "margin": 8,
-            "rating_gap": -3.6421,
+            "rating_gap": -3.6042,
             "score": "32-24",
             "season_type": "regular",
             "site": "home",
             "status": "overridden",
             "week": 3,
-            "weight": 3.4168,
+            "weight": 3.3436,
             "winner": "Ole Miss",
-            "winner_rank": 15
+            "winner_rank": 13
           }
         ]
       },
       "market": {
         "games": 5,
         "rank": 16,
-        "rating": 17.1728
+        "rating": 17.1639
       },
       "movement": {
         "delta": null,
@@ -3323,17 +3027,17 @@
         "unadjusted": 0.0425
       },
       "placement": {
-        "base_rank": 15,
+        "base_rank": 13,
         "drift": 0,
-        "final_rank": 15,
+        "final_rank": 13,
         "reasons": [
           "Resume order #9 from 0.55 x SoR #7 + 0.3 x Mkt #16 + 0.15 x PPA #34 = 13.75.",
-          "Resume adjustment cost 4.12 rank points, driven by loss quality.",
+          "Resume adjustment cost 2.03 rank points, driven by loss quality.",
           "Ranked below #7 LSU despite winning 32-24 at home in week 3 -- +5.5 adjusted margin; the winner rates 3.6 points worse on the power ratings.",
           "Head-to-head results left this placement unchanged."
         ]
       },
-      "rank": 15,
+      "rank": 13,
       "record": {
         "conference": "1-1",
         "losses": 1,
@@ -3344,13 +3048,13 @@
       "resume": {
         "actual_wins": 3,
         "espn_rank": 12,
-        "expected_wins": 2.1213,
-        "probability": 0.3088,
+        "expected_wins": 2.124,
+        "probability": 0.3102,
         "rank": 7,
         "schedule": [
           {
             "opponent": "Louisville",
-            "reference_win_probability": 0.5282,
+            "reference_win_probability": 0.5288,
             "site": "neutral",
             "week": 1,
             "won": true
@@ -3364,14 +3068,14 @@
           },
           {
             "opponent": "LSU",
-            "reference_win_probability": 0.3338,
+            "reference_win_probability": 0.3356,
             "site": "home",
             "week": 3,
             "won": true
           },
           {
             "opponent": "Florida",
-            "reference_win_probability": 0.2611,
+            "reference_win_probability": 0.2613,
             "site": "away",
             "week": 4,
             "won": false
@@ -3380,10 +3084,10 @@
       },
       "resume_adjustment": {
         "components": {
-          "best_win": -0.8775,
-          "cover": 1.8616,
+          "best_win": -2.1928,
+          "cover": 1.6578,
           "game_control": -0.3358,
-          "loss_quality": 3.4734
+          "loss_quality": 2.8969
         },
         "detail": {
           "best_win_opponent_base_rank": 11,
@@ -3393,10 +3097,10 @@
           "losses_considered": 1,
           "mean_cover_margin": -6.3125,
           "mean_loss_badness": 11.7645,
-          "shrunk_cover_margin": -3.1562,
-          "worst_cover": "-20 vs Florida"
+          "shrunk_cover_margin": -3.3612,
+          "worst_cover": "-18 vs Florida"
         },
-        "total": 4.1217
+        "total": 2.0261
       },
       "resume_ranks": {
         "average_win_probability": 47,
@@ -3410,6 +3114,323 @@
     },
     {
       "base": {
+        "espn_sor_rank": 19,
+        "formula": "0.55 x SoR #18 + 0.3 x Mkt #32 + 0.15 x PPA #11 = 21.15",
+        "market_rank": 32,
+        "missing": [],
+        "ppa_rank": 11,
+        "rank": 14,
+        "raw_score": 21.15,
+        "resume_rank": 20,
+        "score": 16.5177,
+        "sor_rank": 18,
+        "sos_rank": 13,
+        "weights": {
+          "Mkt": 0.3,
+          "PPA": 0.15,
+          "SoR": 0.55
+        }
+      },
+      "conference": "Big Ten",
+      "cover": {
+        "adjustment": -3.8553,
+        "covers": 4,
+        "games": 4,
+        "mean_margin": 17.8125,
+        "scored_margin": 8.4963,
+        "worst": "+1 vs South Dakota State"
+      },
+      "cycle": null,
+      "flags": [],
+      "fpi": {
+        "efficiencies": {
+          "defense": 72.593,
+          "offense": 84.287,
+          "overall": 84.516,
+          "special_teams": 61.618
+        },
+        "rank": 17,
+        "rating": 14.833
+      },
+      "h2h": {
+        "losses_vs_pool": [
+          {
+            "adj_margin": 3.5268,
+            "common_diff": 0.0,
+            "common_opponents": [],
+            "components": {
+              "common_opponents": 0.0,
+              "margin": -0.4727,
+              "rating_gap": 0.4144,
+              "recency": 1.1153
+            },
+            "conviction": 1.0571,
+            "loser": "Northwestern",
+            "loser_rank": 14,
+            "margin": 6,
+            "rating_gap": 18.98,
+            "score": "29-23",
+            "season_type": "regular",
+            "site": "home",
+            "status": "honored",
+            "week": 4,
+            "weight": 4.0571,
+            "winner": "Indiana",
+            "winner_rank": 8
+          }
+        ],
+        "wins_vs_pool": []
+      },
+      "market": {
+        "games": 4,
+        "rank": 32,
+        "rating": 9.17
+      },
+      "movement": {
+        "delta": null,
+        "has_previous": false,
+        "previous_rank": null,
+        "status": "new"
+      },
+      "performance": {
+        "games": 3,
+        "rank": 11,
+        "rating": 0.4092,
+        "unadjusted": 0.1767
+      },
+      "placement": {
+        "base_rank": 14,
+        "drift": 0,
+        "final_rank": 14,
+        "reasons": [
+          "Resume order #20 from 0.55 x SoR #18 + 0.3 x Mkt #32 + 0.15 x PPA #11 = 21.15.",
+          "Resume adjustment earned back 4.63 rank points, driven by cover.",
+          "Head-to-head results left this placement unchanged."
+        ]
+      },
+      "rank": 14,
+      "record": {
+        "conference": "1-1",
+        "losses": 1,
+        "overall": "3-1",
+        "wins": 3
+      },
+      "regression": null,
+      "resume": {
+        "actual_wins": 3,
+        "espn_rank": 19,
+        "expected_wins": 2.396,
+        "probability": 0.4434,
+        "rank": 18,
+        "schedule": [
+          {
+            "opponent": "South Dakota State",
+            "reference_win_probability": 1.0,
+            "site": "home",
+            "week": 1,
+            "won": true
+          },
+          {
+            "opponent": "Colorado",
+            "reference_win_probability": 0.823,
+            "site": "home",
+            "week": 3,
+            "won": true
+          },
+          {
+            "opponent": "Indiana",
+            "reference_win_probability": 0.0905,
+            "site": "away",
+            "week": 4,
+            "won": false
+          },
+          {
+            "opponent": "Penn State",
+            "reference_win_probability": 0.4826,
+            "site": "home",
+            "week": 5,
+            "won": true
+          }
+        ]
+      },
+      "resume_adjustment": {
+        "components": {
+          "best_win": -1.1977,
+          "cover": -3.8553,
+          "game_control": -0.3671,
+          "loss_quality": 0.7878
+        },
+        "detail": {
+          "best_win_opponent_base_rank": 46,
+          "cover_games": 4,
+          "covers": 4,
+          "game_control_rank": 11,
+          "losses_considered": 1,
+          "mean_cover_margin": 17.8125,
+          "mean_loss_badness": 3.1993,
+          "shrunk_cover_margin": 8.4963,
+          "worst_cover": "+1 vs South Dakota State"
+        },
+        "total": -4.6323
+      },
+      "resume_ranks": {
+        "average_win_probability": 35,
+        "fpi": 17,
+        "game_control": 11,
+        "remaining_strength_of_schedule": 37,
+        "strength_of_record": 19,
+        "strength_of_schedule": 13
+      },
+      "team": "Northwestern"
+    },
+    {
+      "base": {
+        "espn_sor_rank": 18,
+        "formula": "0.55 x SoR #26 + 0.3 x Mkt #19 + 0.15 x PPA #4 = 20.60",
+        "market_rank": 19,
+        "missing": [],
+        "ppa_rank": 4,
+        "rank": 15,
+        "raw_score": 20.6,
+        "resume_rank": 19,
+        "score": 16.7083,
+        "sor_rank": 26,
+        "sos_rank": 111,
+        "weights": {
+          "Mkt": 0.3,
+          "PPA": 0.15,
+          "SoR": 0.55
+        }
+      },
+      "conference": "Big 12",
+      "cover": {
+        "adjustment": -2.4314,
+        "covers": 4,
+        "games": 4,
+        "mean_margin": 11.6875,
+        "scored_margin": 5.4338,
+        "worst": "+5 vs Utah State"
+      },
+      "cycle": null,
+      "flags": [],
+      "fpi": {
+        "efficiencies": {
+          "defense": 81.184,
+          "offense": 81.465,
+          "overall": 87.851,
+          "special_teams": 66.903
+        },
+        "rank": 12,
+        "rating": 18.068
+      },
+      "h2h": {
+        "losses_vs_pool": [],
+        "wins_vs_pool": []
+      },
+      "market": {
+        "games": 4,
+        "rank": 19,
+        "rating": 14.0286
+      },
+      "movement": {
+        "delta": null,
+        "has_previous": false,
+        "previous_rank": null,
+        "status": "new"
+      },
+      "performance": {
+        "games": 3,
+        "rank": 4,
+        "rating": 0.5077,
+        "unadjusted": 0.4933
+      },
+      "placement": {
+        "base_rank": 15,
+        "drift": 0,
+        "final_rank": 15,
+        "reasons": [
+          "Resume order #19 from 0.55 x SoR #26 + 0.3 x Mkt #19 + 0.15 x PPA #4 = 20.60.",
+          "Resume adjustment earned back 3.89 rank points, driven by cover.",
+          "Head-to-head results left this placement unchanged."
+        ]
+      },
+      "rank": 15,
+      "record": {
+        "conference": "1-0",
+        "losses": 0,
+        "overall": "4-0",
+        "wins": 4
+      },
+      "regression": null,
+      "resume": {
+        "actual_wins": 4,
+        "espn_rank": 18,
+        "expected_wins": 3.4965,
+        "probability": 0.5621,
+        "rank": 26,
+        "schedule": [
+          {
+            "opponent": "Idaho",
+            "reference_win_probability": 1.0,
+            "site": "home",
+            "week": 1,
+            "won": true
+          },
+          {
+            "opponent": "Arkansas",
+            "reference_win_probability": 0.8329,
+            "site": "home",
+            "week": 2,
+            "won": true
+          },
+          {
+            "opponent": "Utah State",
+            "reference_win_probability": 0.9626,
+            "site": "home",
+            "week": 3,
+            "won": true
+          },
+          {
+            "opponent": "Iowa State",
+            "reference_win_probability": 0.7011,
+            "site": "away",
+            "week": 4,
+            "won": true
+          }
+        ]
+      },
+      "resume_adjustment": {
+        "components": {
+          "best_win": -1.0555,
+          "cover": -2.4314,
+          "game_control": -0.4048,
+          "loss_quality": 0.0
+        },
+        "detail": {
+          "best_win_opponent_base_rank": 51,
+          "cover_games": 4,
+          "covers": 4,
+          "game_control_rank": 5,
+          "losses_considered": 0,
+          "mean_cover_margin": 11.6875,
+          "mean_loss_badness": null,
+          "shrunk_cover_margin": 5.4338,
+          "worst_cover": "+5 vs Utah State"
+        },
+        "total": -3.8917
+      },
+      "resume_ranks": {
+        "average_win_probability": 2,
+        "fpi": 12,
+        "game_control": 5,
+        "remaining_strength_of_schedule": 59,
+        "strength_of_record": 18,
+        "strength_of_schedule": 111
+      },
+      "team": "Utah"
+    },
+    {
+      "base": {
         "espn_sor_rank": 5,
         "formula": "0.55 x SoR #5 + 0.3 x Mkt #36 + 0.15 x PPA #18 = 16.25",
         "market_rank": 36,
@@ -3418,7 +3439,7 @@
         "rank": 16,
         "raw_score": 16.25,
         "resume_rank": 13,
-        "score": 18.6282,
+        "score": 17.0502,
         "sor_rank": 5,
         "sos_rank": 8,
         "weights": {
@@ -3429,12 +3450,12 @@
       },
       "conference": "SEC",
       "cover": {
-        "adjustment": -1.2178,
+        "adjustment": -1.0601,
         "covers": 4,
         "games": 5,
         "mean_margin": 4.8,
-        "scored_margin": 2.6667,
-        "worst": "-19 vs Alabama"
+        "scored_margin": 2.4844,
+        "worst": "-21 vs Alabama"
       },
       "cycle": null,
       "flags": [],
@@ -3451,54 +3472,54 @@
       "h2h": {
         "losses_vs_pool": [
           {
-            "adj_margin": 30.4725,
-            "common_diff": 22.055,
+            "adj_margin": 30.4732,
+            "common_diff": 22.0535,
             "common_opponents": [
               "South Carolina"
             ],
             "components": {
-              "common_opponents": 0.5649,
-              "margin": 0.8779,
-              "rating_gap": 0.256,
+              "common_opponents": 0.5756,
+              "margin": 0.7779,
+              "rating_gap": 0.2223,
               "recency": 0.9665
             },
-            "conviction": 2.6652,
+            "conviction": 2.5423,
             "loser": "Kentucky",
             "loser_rank": 16,
             "margin": 28,
-            "rating_gap": 12.6404,
+            "rating_gap": 12.604,
             "score": "45-17",
             "season_type": "regular",
             "site": "away",
             "status": "honored",
             "week": 2,
-            "weight": 5.6652,
+            "weight": 5.5423,
             "winner": "Alabama",
             "winner_rank": 1
           }
         ],
         "wins_vs_pool": [
           {
-            "adj_margin": 12.4725,
+            "adj_margin": 12.4732,
             "common_diff": 0.0,
             "common_opponents": [],
             "components": {
               "common_opponents": 0.0,
-              "margin": 0.0054,
-              "rating_gap": -0.395,
+              "margin": -0.0575,
+              "rating_gap": -0.4174,
               "recency": 0.9896
             },
-            "conviction": 0.6,
+            "conviction": 0.5147,
             "loser": "Texas A&M",
             "loser_rank": 32,
             "margin": 10,
-            "rating_gap": -8.6642,
+            "rating_gap": -8.623,
             "score": "31-21",
             "season_type": "regular",
             "site": "away",
             "status": "honored",
             "week": 3,
-            "weight": 3.6,
+            "weight": 3.5147,
             "winner": "Kentucky",
             "winner_rank": 16
           }
@@ -3507,7 +3528,7 @@
       "market": {
         "games": 5,
         "rank": 36,
-        "rating": 8.5847
+        "rating": 8.6356
       },
       "movement": {
         "delta": null,
@@ -3527,7 +3548,7 @@
         "final_rank": 16,
         "reasons": [
           "Resume order #13 from 0.55 x SoR #5 + 0.3 x Mkt #36 + 0.15 x PPA #18 = 16.25.",
-          "Resume adjustment cost 2.38 rank points, driven by loss quality.",
+          "Resume adjustment cost 0.80 rank points, driven by loss quality.",
           "Head-to-head held: beat #32 Texas A&M 31-21 on the road in week 3.",
           "Head-to-head results left this placement unchanged."
         ]
@@ -3543,8 +3564,8 @@
       "resume": {
         "actual_wins": 4,
         "espn_rank": 5,
-        "expected_wins": 3.0628,
-        "probability": 0.2922,
+        "expected_wins": 3.0632,
+        "probability": 0.2923,
         "rank": 5,
         "schedule": [
           {
@@ -3556,14 +3577,14 @@
           },
           {
             "opponent": "Alabama",
-            "reference_win_probability": 0.3228,
+            "reference_win_probability": 0.323,
             "site": "home",
             "week": 2,
             "won": false
           },
           {
             "opponent": "Texas A&M",
-            "reference_win_probability": 0.2975,
+            "reference_win_probability": 0.2977,
             "site": "away",
             "week": 3,
             "won": true
@@ -3586,10 +3607,10 @@
       },
       "resume_adjustment": {
         "components": {
-          "best_win": -0.65,
-          "cover": -1.2178,
+          "best_win": -1.6241,
+          "cover": -1.0601,
           "game_control": -0.342,
-          "loss_quality": 4.588
+          "loss_quality": 3.8265
         },
         "detail": {
           "best_win_opponent_base_rank": 31,
@@ -3599,10 +3620,10 @@
           "losses_considered": 1,
           "mean_cover_margin": 4.8,
           "mean_loss_badness": 15.5399,
-          "shrunk_cover_margin": 2.6667,
-          "worst_cover": "-19 vs Alabama"
+          "shrunk_cover_margin": 2.4844,
+          "worst_cover": "-21 vs Alabama"
         },
-        "total": 2.3782
+        "total": 0.8002
       },
       "resume_ranks": {
         "average_win_probability": 50,
@@ -3624,7 +3645,7 @@
         "rank": 17,
         "raw_score": 17.25,
         "resume_rank": 16,
-        "score": 19.1776,
+        "score": 18.0398,
         "sor_rank": 9,
         "sos_rank": 19,
         "weights": {
@@ -3635,12 +3656,12 @@
       },
       "conference": "Big Ten",
       "cover": {
-        "adjustment": -1.5704,
+        "adjustment": -1.2854,
         "covers": 3,
         "games": 5,
         "mean_margin": 6.0,
-        "scored_margin": 3.3333,
-        "worst": "-16 vs Western Illinois"
+        "scored_margin": 2.9689,
+        "worst": "-18 vs Western Illinois"
       },
       "cycle": null,
       "flags": [],
@@ -3663,24 +3684,24 @@
               "Michigan State"
             ],
             "components": {
-              "common_opponents": -0.3326,
-              "margin": 0.758,
-              "rating_gap": 0.5067,
+              "common_opponents": -0.337,
+              "margin": 0.6631,
+              "rating_gap": 0.4706,
               "recency": 0.9012
             },
-            "conviction": 1.8334,
+            "conviction": 1.6979,
             "loser": "Wisconsin",
             "loser_rank": 17,
             "margin": 28,
-            "rating_gap": 20.8466,
+            "rating_gap": 20.8422,
             "score": "41-13",
             "season_type": "regular",
             "site": "neutral",
             "status": "honored",
             "week": 1,
-            "weight": 4.8334,
+            "weight": 4.6979,
             "winner": "Notre Dame",
-            "winner_rank": 3
+            "winner_rank": 2
           }
         ],
         "wins_vs_pool": []
@@ -3688,7 +3709,7 @@
       "market": {
         "games": 4,
         "rank": 38,
-        "rating": 8.2631
+        "rating": 8.26
       },
       "movement": {
         "delta": null,
@@ -3708,7 +3729,7 @@
         "final_rank": 17,
         "reasons": [
           "Resume order #16 from 0.55 x SoR #9 + 0.3 x Mkt #38 + 0.15 x PPA #6 = 17.25.",
-          "Resume adjustment cost 1.93 rank points, driven by loss quality.",
+          "Resume adjustment cost 0.79 rank points, driven by loss quality.",
           "Head-to-head results left this placement unchanged."
         ]
       },
@@ -3723,13 +3744,13 @@
       "resume": {
         "actual_wins": 4,
         "espn_rank": 13,
-        "expected_wins": 3.2505,
-        "probability": 0.3389,
+        "expected_wins": 3.2519,
+        "probability": 0.3396,
         "rank": 9,
         "schedule": [
           {
             "opponent": "Notre Dame",
-            "reference_win_probability": 0.1099,
+            "reference_win_probability": 0.1103,
             "site": "neutral",
             "week": 1,
             "won": false
@@ -3750,14 +3771,14 @@
           },
           {
             "opponent": "Penn State",
-            "reference_win_probability": 0.3404,
+            "reference_win_probability": 0.3408,
             "site": "away",
             "week": 4,
             "won": true
           },
           {
             "opponent": "Michigan State",
-            "reference_win_probability": 0.8167,
+            "reference_win_probability": 0.8172,
             "site": "home",
             "week": 5,
             "won": true
@@ -3766,23 +3787,23 @@
       },
       "resume_adjustment": {
         "components": {
-          "best_win": -0.468,
-          "cover": -1.5704,
+          "best_win": -1.1977,
+          "cover": -1.2854,
           "game_control": -0.2102,
-          "loss_quality": 4.1762
+          "loss_quality": 3.4831
         },
         "detail": {
-          "best_win_opponent_base_rank": 47,
+          "best_win_opponent_base_rank": 46,
           "cover_games": 5,
           "covers": 3,
           "game_control_rank": 36,
           "losses_considered": 1,
           "mean_cover_margin": 6.0,
           "mean_loss_badness": 14.1449,
-          "shrunk_cover_margin": 3.3333,
-          "worst_cover": "-16 vs Western Illinois"
+          "shrunk_cover_margin": 2.9689,
+          "worst_cover": "-18 vs Western Illinois"
         },
-        "total": 1.9276
+        "total": 0.7898
       },
       "resume_ranks": {
         "average_win_probability": 49,
@@ -3804,7 +3825,7 @@
         "rank": 18,
         "raw_score": 19.9,
         "resume_rank": 18,
-        "score": 19.4943,
+        "score": 18.5165,
         "sor_rank": 22,
         "sos_rank": 34,
         "weights": {
@@ -3815,12 +3836,12 @@
       },
       "conference": "SEC",
       "cover": {
-        "adjustment": -0.3952,
+        "adjustment": -0.1675,
         "covers": 3,
         "games": 5,
         "mean_margin": 2.0,
-        "scored_margin": 1.1111,
-        "worst": "-2 vs Kennesaw State"
+        "scored_margin": 0.5645,
+        "worst": "-4 vs Kennesaw State"
       },
       "cycle": null,
       "flags": [],
@@ -3837,52 +3858,52 @@
       "h2h": {
         "losses_vs_pool": [
           {
-            "adj_margin": 5.4725,
+            "adj_margin": 5.4732,
             "common_diff": 0.0,
             "common_opponents": [],
             "components": {
               "common_opponents": 0.0,
-              "margin": -0.3339,
-              "rating_gap": 0.1518,
-              "recency": 1.1153
+              "margin": -0.3823,
+              "rating_gap": 0.1204,
+              "recency": 1.0887
             },
-            "conviction": 0.9332,
+            "conviction": 0.8268,
             "loser": "Tennessee",
             "loser_rank": 18,
             "margin": 3,
-            "rating_gap": 9.2312,
+            "rating_gap": 9.2243,
             "score": "20-17",
             "season_type": "regular",
             "site": "away",
             "status": "honored",
             "week": 4,
-            "weight": 3.9332,
+            "weight": 3.8268,
             "winner": "Texas",
             "winner_rank": 4
           }
         ],
         "wins_vs_pool": [
           {
-            "adj_margin": 7.5275,
+            "adj_margin": 7.5268,
             "common_diff": 0.0,
             "common_opponents": [],
             "components": {
               "common_opponents": 0.0,
-              "margin": -0.2343,
-              "rating_gap": 0.013,
+              "margin": -0.287,
+              "rating_gap": -0.0163,
               "recency": 1.2
             },
-            "conviction": 0.9787,
+            "conviction": 0.8967,
             "loser": "Auburn",
-            "loser_rank": 28,
+            "loser_rank": 29,
             "margin": 10,
-            "rating_gap": 4.6882,
+            "rating_gap": 4.6866,
             "score": "24-14",
             "season_type": "regular",
             "site": "home",
             "status": "honored",
             "week": 5,
-            "weight": 3.9787,
+            "weight": 3.8967,
             "winner": "Tennessee",
             "winner_rank": 18
           }
@@ -3891,7 +3912,7 @@
       "market": {
         "games": 5,
         "rank": 13,
-        "rating": 18.4382
+        "rating": 18.4396
       },
       "movement": {
         "delta": null,
@@ -3911,8 +3932,8 @@
         "final_rank": 18,
         "reasons": [
           "Resume order #18 from 0.55 x SoR #22 + 0.3 x Mkt #13 + 0.15 x PPA #26 = 19.90.",
-          "Resume adjustment earned back 0.41 rank points, driven by loss quality.",
-          "Head-to-head held: beat #28 Auburn 24-14 at home in week 5.",
+          "Resume adjustment earned back 1.38 rank points, driven by best win.",
+          "Head-to-head held: beat #29 Auburn 24-14 at home in week 5.",
           "Head-to-head results left this placement unchanged."
         ]
       },
@@ -3927,8 +3948,8 @@
       "resume": {
         "actual_wins": 4,
         "espn_rank": 22,
-        "expected_wins": 3.4216,
-        "probability": 0.4682,
+        "expected_wins": 3.4231,
+        "probability": 0.469,
         "rank": 22,
         "schedule": [
           {
@@ -3940,28 +3961,28 @@
           },
           {
             "opponent": "Georgia Tech",
-            "reference_win_probability": 0.7295,
+            "reference_win_probability": 0.7299,
             "site": "away",
             "week": 2,
             "won": true
           },
           {
             "opponent": "Kennesaw State",
-            "reference_win_probability": 0.9804,
+            "reference_win_probability": 0.9805,
             "site": "home",
             "week": 3,
             "won": true
           },
           {
             "opponent": "Texas",
-            "reference_win_probability": 0.1743,
+            "reference_win_probability": 0.1748,
             "site": "home",
             "week": 4,
             "won": false
           },
           {
             "opponent": "Auburn",
-            "reference_win_probability": 0.5374,
+            "reference_win_probability": 0.5379,
             "site": "home",
             "week": 5,
             "won": true
@@ -3970,10 +3991,10 @@
       },
       "resume_adjustment": {
         "components": {
-          "best_win": -0.6955,
-          "cover": -0.3952,
+          "best_win": -1.7379,
+          "cover": -0.1675,
           "game_control": -0.2981,
-          "loss_quality": 0.9831
+          "loss_quality": 0.8199
         },
         "detail": {
           "best_win_opponent_base_rank": 27,
@@ -3983,10 +4004,10 @@
           "losses_considered": 1,
           "mean_cover_margin": 2.0,
           "mean_loss_badness": 3.3297,
-          "shrunk_cover_margin": 1.1111,
-          "worst_cover": "-2 vs Kennesaw State"
+          "shrunk_cover_margin": 0.5645,
+          "worst_cover": "-4 vs Kennesaw State"
         },
-        "total": -0.4057
+        "total": -1.3835
       },
       "resume_ranks": {
         "average_win_probability": 26,
@@ -4000,15 +4021,441 @@
     },
     {
       "base": {
+        "espn_sor_rank": 23,
+        "formula": "0.55 x SoR #28 + 0.3 x Mkt #6 + 0.15 x PPA #15 = 19.45",
+        "market_rank": 6,
+        "missing": [],
+        "ppa_rank": 15,
+        "rank": 19,
+        "raw_score": 19.45,
+        "resume_rank": 17,
+        "score": 19.8132,
+        "sor_rank": 28,
+        "sos_rank": 21,
+        "weights": {
+          "Mkt": 0.3,
+          "PPA": 0.15,
+          "SoR": 0.55
+        }
+      },
+      "conference": "Big Ten",
+      "cover": {
+        "adjustment": 0.9086,
+        "covers": 2,
+        "games": 4,
+        "mean_margin": -3.5,
+        "scored_margin": -1.75,
+        "worst": "-31 vs Oklahoma State"
+      },
+      "cycle": null,
+      "flags": [],
+      "fpi": {
+        "efficiencies": {
+          "defense": 77.03,
+          "offense": 74.981,
+          "overall": 83.733,
+          "special_teams": 71.973
+        },
+        "rank": 9,
+        "rating": 21.585
+      },
+      "h2h": {
+        "losses_vs_pool": [
+          {
+            "adj_margin": 5.5268,
+            "common_diff": 0.0,
+            "common_opponents": [],
+            "components": {
+              "common_opponents": 0.0,
+              "margin": -0.3799,
+              "rating_gap": -0.7658,
+              "recency": 0.9012
+            },
+            "conviction": -0.2444,
+            "loser": "Oregon",
+            "loser_rank": 19,
+            "margin": 8,
+            "rating_gap": -20.182,
+            "score": "39-31",
+            "season_type": "regular",
+            "site": "home",
+            "status": "overridden",
+            "week": 2,
+            "weight": 2.7556,
+            "winner": "Oklahoma State",
+            "winner_rank": 33
+          }
+        ],
+        "wins_vs_pool": [
+          {
+            "adj_margin": 16.4732,
+            "common_diff": 0.0,
+            "common_opponents": [],
+            "components": {
+              "common_opponents": 0.0,
+              "margin": 0.1282,
+              "rating_gap": 0.02,
+              "recency": 1.1153
+            },
+            "conviction": 1.2635,
+            "loser": "USC",
+            "loser_rank": 22,
+            "margin": 14,
+            "rating_gap": 5.8921,
+            "score": "41-27",
+            "season_type": "regular",
+            "site": "away",
+            "status": "honored",
+            "week": 4,
+            "weight": 4.2635,
+            "winner": "Oregon",
+            "winner_rank": 19
+          },
+          {
+            "adj_margin": 4.5268,
+            "common_diff": 0.0,
+            "common_opponents": [],
+            "components": {
+              "common_opponents": 0.0,
+              "margin": -0.4263,
+              "rating_gap": 0.4723,
+              "recency": 0.9012
+            },
+            "conviction": 0.9473,
+            "loser": "Boise State",
+            "loser_rank": 31,
+            "margin": 7,
+            "rating_gap": 20.9015,
+            "score": "34-27",
+            "season_type": "regular",
+            "site": "home",
+            "status": "honored",
+            "week": 1,
+            "weight": 3.9473,
+            "winner": "Oregon",
+            "winner_rank": 19
+          }
+        ]
+      },
+      "market": {
+        "games": 4,
+        "rank": 6,
+        "rating": 25.6636
+      },
+      "movement": {
+        "delta": null,
+        "has_previous": false,
+        "previous_rank": null,
+        "status": "new"
+      },
+      "performance": {
+        "games": 3,
+        "rank": 15,
+        "rating": 0.355,
+        "unadjusted": 0.0833
+      },
+      "placement": {
+        "base_rank": 19,
+        "drift": 0,
+        "final_rank": 19,
+        "reasons": [
+          "Resume order #17 from 0.55 x SoR #28 + 0.3 x Mkt #6 + 0.15 x PPA #15 = 19.45.",
+          "Resume adjustment cost 0.36 rank points, driven by best win.",
+          "Head-to-head held: beat #22 USC 41-27 on the road in week 4.",
+          "Ranked above #33 Oklahoma State despite losing 31-39 on the road in week 2 -- +5.5 adjusted margin; the winner rates 20.2 points worse on the power ratings.",
+          "Head-to-head results left this placement unchanged."
+        ]
+      },
+      "rank": 19,
+      "record": {
+        "conference": "1-0",
+        "losses": 1,
+        "overall": "3-1",
+        "wins": 3
+      },
+      "regression": null,
+      "resume": {
+        "actual_wins": 3,
+        "espn_rank": 23,
+        "expected_wins": 2.647,
+        "probability": 0.593,
+        "rank": 28,
+        "schedule": [
+          {
+            "opponent": "Boise State",
+            "reference_win_probability": 0.7767,
+            "site": "home",
+            "week": 1,
+            "won": true
+          },
+          {
+            "opponent": "Oklahoma State",
+            "reference_win_probability": 0.6336,
+            "site": "away",
+            "week": 2,
+            "won": false
+          },
+          {
+            "opponent": "Portland State",
+            "reference_win_probability": 1.0,
+            "site": "home",
+            "week": 3,
+            "won": true
+          },
+          {
+            "opponent": "USC",
+            "reference_win_probability": 0.2367,
+            "site": "away",
+            "week": 4,
+            "won": true
+          }
+        ]
+      },
+      "resume_adjustment": {
+        "components": {
+          "best_win": -2.0791,
+          "cover": 0.9086,
+          "game_control": -0.2855,
+          "loss_quality": 1.8191
+        },
+        "detail": {
+          "best_win_opponent_base_rank": 15,
+          "cover_games": 4,
+          "covers": 2,
+          "game_control_rank": 24,
+          "losses_considered": 1,
+          "mean_cover_margin": -3.5,
+          "mean_loss_badness": 7.3877,
+          "shrunk_cover_margin": -1.75,
+          "worst_cover": "-31 vs Oklahoma State"
+        },
+        "total": 0.3632
+      },
+      "resume_ranks": {
+        "average_win_probability": 51,
+        "fpi": 9,
+        "game_control": 24,
+        "remaining_strength_of_schedule": 27,
+        "strength_of_record": 23,
+        "strength_of_schedule": 21
+      },
+      "team": "Oregon"
+    },
+    {
+      "base": {
+        "espn_sor_rank": 25,
+        "formula": "0.55 x SoR #25 + 0.3 x Mkt #25 + 0.15 x PPA #5 = 22.00",
+        "market_rank": 25,
+        "missing": [],
+        "ppa_rank": 5,
+        "rank": 20,
+        "raw_score": 22.0,
+        "resume_rank": 21,
+        "score": 19.9895,
+        "sor_rank": 25,
+        "sos_rank": 47,
+        "weights": {
+          "Mkt": 0.3,
+          "PPA": 0.15,
+          "SoR": 0.55
+        }
+      },
+      "conference": "SEC",
+      "cover": {
+        "adjustment": -0.3756,
+        "covers": 2,
+        "games": 5,
+        "mean_margin": 2.15,
+        "scored_margin": 1.0122,
+        "worst": "-18 vs Troy"
+      },
+      "cycle": null,
+      "flags": [],
+      "fpi": {
+        "efficiencies": {
+          "defense": 76.767,
+          "offense": 60.98,
+          "overall": 74.874,
+          "special_teams": 61.501
+        },
+        "rank": 18,
+        "rating": 14.312
+      },
+      "h2h": {
+        "losses_vs_pool": [
+          {
+            "adj_margin": 4.5268,
+            "common_diff": 0.0,
+            "common_opponents": [],
+            "components": {
+              "common_opponents": 0.0,
+              "margin": -0.4263,
+              "rating_gap": -0.2291,
+              "recency": 1.0887
+            },
+            "conviction": 0.4333,
+            "loser": "Missouri",
+            "loser_rank": 20,
+            "margin": 7,
+            "rating_gap": -2.3757,
+            "score": "31-24",
+            "season_type": "regular",
+            "site": "home",
+            "status": "honored",
+            "week": 4,
+            "weight": 3.4333,
+            "winner": "Mississippi State",
+            "winner_rank": 12
+          }
+        ],
+        "wins_vs_pool": [
+          {
+            "adj_margin": 25.5268,
+            "common_diff": 0.0,
+            "common_opponents": [],
+            "components": {
+              "common_opponents": 0.0,
+              "margin": 0.5483,
+              "rating_gap": -0.3431,
+              "recency": 1.2
+            },
+            "conviction": 1.4053,
+            "loser": "Florida",
+            "loser_rank": 11,
+            "margin": 28,
+            "rating_gap": -6.156,
+            "score": "45-17",
+            "season_type": "regular",
+            "site": "home",
+            "status": "overridden",
+            "week": 5,
+            "weight": 4.4053,
+            "winner": "Missouri",
+            "winner_rank": 20
+          }
+        ]
+      },
+      "market": {
+        "games": 5,
+        "rank": 25,
+        "rating": 12.5645
+      },
+      "movement": {
+        "delta": null,
+        "has_previous": false,
+        "previous_rank": null,
+        "status": "new"
+      },
+      "performance": {
+        "games": 4,
+        "rank": 5,
+        "rating": 0.4993,
+        "unadjusted": 0.23
+      },
+      "placement": {
+        "base_rank": 20,
+        "drift": 0,
+        "final_rank": 20,
+        "reasons": [
+          "Resume order #21 from 0.55 x SoR #25 + 0.3 x Mkt #25 + 0.15 x PPA #5 = 22.00.",
+          "Resume adjustment earned back 2.01 rank points, driven by best win.",
+          "Ranked below #11 Florida despite winning 45-17 at home in week 5 -- +25.5 adjusted margin; the winner rates 6.2 points worse on the power ratings.",
+          "Head-to-head results left this placement unchanged."
+        ]
+      },
+      "rank": 20,
+      "record": {
+        "conference": "1-1",
+        "losses": 1,
+        "overall": "4-1",
+        "wins": 4
+      },
+      "regression": null,
+      "resume": {
+        "actual_wins": 4,
+        "espn_rank": 25,
+        "expected_wins": 3.5559,
+        "probability": 0.5312,
+        "rank": 25,
+        "schedule": [
+          {
+            "opponent": "Arkansas-Pine Bluff",
+            "reference_win_probability": 1.0,
+            "site": "home",
+            "week": 1,
+            "won": true
+          },
+          {
+            "opponent": "Kansas",
+            "reference_win_probability": 0.7039,
+            "site": "away",
+            "week": 2,
+            "won": true
+          },
+          {
+            "opponent": "Troy",
+            "reference_win_probability": 0.9624,
+            "site": "home",
+            "week": 3,
+            "won": true
+          },
+          {
+            "opponent": "Mississippi State",
+            "reference_win_probability": 0.4971,
+            "site": "away",
+            "week": 4,
+            "won": false
+          },
+          {
+            "opponent": "Florida",
+            "reference_win_probability": 0.3925,
+            "site": "home",
+            "week": 5,
+            "won": true
+          }
+        ]
+      },
+      "resume_adjustment": {
+        "components": {
+          "best_win": -2.3065,
+          "cover": -0.3756,
+          "game_control": -0.3106,
+          "loss_quality": 0.9823
+        },
+        "detail": {
+          "best_win_opponent_base_rank": 7,
+          "cover_games": 5,
+          "covers": 2,
+          "game_control_rank": 20,
+          "losses_considered": 1,
+          "mean_cover_margin": 2.15,
+          "mean_loss_badness": 3.9891,
+          "shrunk_cover_margin": 1.0122,
+          "worst_cover": "-18 vs Troy"
+        },
+        "total": -2.0105
+      },
+      "resume_ranks": {
+        "average_win_probability": 30,
+        "fpi": 18,
+        "game_control": 20,
+        "remaining_strength_of_schedule": 5,
+        "strength_of_record": 25,
+        "strength_of_schedule": 47
+      },
+      "team": "Missouri"
+    },
+    {
+      "base": {
         "espn_sor_rank": 20,
         "formula": "0.55 x SoR #21 + 0.3 x Mkt #35 + 0.15 x PPA #23 = 25.50",
         "market_rank": 35,
         "missing": [],
         "ppa_rank": 23,
-        "rank": 19,
+        "rank": 21,
         "raw_score": 25.5,
         "resume_rank": 24,
-        "score": 20.3057,
+        "score": 20.2526,
         "sor_rank": 21,
         "sos_rank": 113,
         "weights": {
@@ -4019,12 +4466,12 @@
       },
       "conference": "Big Ten",
       "cover": {
-        "adjustment": -4.5671,
-        "covers": 4,
+        "adjustment": -4.0895,
+        "covers": 3,
         "games": 4,
         "mean_margin": 18.0,
         "scored_margin": 9.0,
-        "worst": "+0 vs Purdue"
+        "worst": "-1 vs Purdue"
       },
       "cycle": null,
       "flags": [],
@@ -4045,7 +4492,7 @@
       "market": {
         "games": 5,
         "rank": 35,
-        "rating": 8.635
+        "rating": 8.6392
       },
       "movement": {
         "delta": null,
@@ -4060,16 +4507,16 @@
         "unadjusted": 0.3525
       },
       "placement": {
-        "base_rank": 19,
+        "base_rank": 21,
         "drift": 0,
-        "final_rank": 19,
+        "final_rank": 21,
         "reasons": [
           "Resume order #24 from 0.55 x SoR #21 + 0.3 x Mkt #35 + 0.15 x PPA #23 = 25.50.",
-          "Resume adjustment earned back 5.19 rank points, driven by cover.",
+          "Resume adjustment earned back 5.25 rank points, driven by cover.",
           "Head-to-head results left this placement unchanged."
         ]
       },
-      "rank": 19,
+      "rank": 21,
       "record": {
         "conference": "2-0",
         "losses": 0,
@@ -4080,34 +4527,34 @@
       "resume": {
         "actual_wins": 4,
         "espn_rank": 20,
-        "expected_wins": 3.321,
-        "probability": 0.4652,
+        "expected_wins": 3.3226,
+        "probability": 0.4661,
         "rank": 21,
         "schedule": [
           {
             "opponent": "California",
-            "reference_win_probability": 0.7694,
+            "reference_win_probability": 0.7699,
             "site": "away",
             "week": 1,
             "won": true
           },
           {
             "opponent": "San Diego State",
-            "reference_win_probability": 0.9479,
+            "reference_win_probability": 0.9481,
             "site": "home",
             "week": 2,
             "won": true
           },
           {
             "opponent": "Purdue",
-            "reference_win_probability": 0.8739,
+            "reference_win_probability": 0.8742,
             "site": "home",
             "week": 3,
             "won": true
           },
           {
             "opponent": "Maryland",
-            "reference_win_probability": 0.7299,
+            "reference_win_probability": 0.7304,
             "site": "away",
             "week": 4,
             "won": true
@@ -4116,23 +4563,23 @@
       },
       "resume_adjustment": {
         "components": {
-          "best_win": -0.3542,
-          "cover": -4.5671,
+          "best_win": -0.8849,
+          "cover": -4.0895,
           "game_control": -0.273,
           "loss_quality": 0.0
         },
         "detail": {
           "best_win_opponent_base_rank": 57,
           "cover_games": 4,
-          "covers": 4,
+          "covers": 3,
           "game_control_rank": 26,
           "losses_considered": 0,
           "mean_cover_margin": 18.0,
           "mean_loss_badness": null,
           "shrunk_cover_margin": 9.0,
-          "worst_cover": "+0 vs Purdue"
+          "worst_cover": "-1 vs Purdue"
         },
-        "total": -5.1943
+        "total": -5.2474
       },
       "resume_ranks": {
         "average_win_probability": 19,
@@ -4146,15 +4593,200 @@
     },
     {
       "base": {
+        "espn_sor_rank": 27,
+        "formula": "0.55 x SoR #16 + 0.3 x Mkt #10 + 0.15 x PPA #32 = 16.60",
+        "market_rank": 10,
+        "missing": [],
+        "ppa_rank": 32,
+        "rank": 22,
+        "raw_score": 16.6,
+        "resume_rank": 15,
+        "score": 20.4973,
+        "sor_rank": 16,
+        "sos_rank": 66,
+        "weights": {
+          "Mkt": 0.3,
+          "PPA": 0.15,
+          "SoR": 0.55
+        }
+      },
+      "conference": "Big Ten",
+      "cover": {
+        "adjustment": 2.4806,
+        "covers": 1,
+        "games": 6,
+        "mean_margin": -7.4583,
+        "scored_margin": -5.131,
+        "worst": "-23 vs San José State"
+      },
+      "cycle": null,
+      "flags": [],
+      "fpi": {
+        "efficiencies": {
+          "defense": 44.0,
+          "offense": 81.959,
+          "overall": 71.913,
+          "special_teams": 61.736
+        },
+        "rank": 19,
+        "rating": 14.216
+      },
+      "h2h": {
+        "losses_vs_pool": [
+          {
+            "adj_margin": 16.4732,
+            "common_diff": 0.0,
+            "common_opponents": [],
+            "components": {
+              "common_opponents": 0.0,
+              "margin": 0.1282,
+              "rating_gap": 0.02,
+              "recency": 1.1153
+            },
+            "conviction": 1.2635,
+            "loser": "USC",
+            "loser_rank": 22,
+            "margin": 14,
+            "rating_gap": 5.8921,
+            "score": "41-27",
+            "season_type": "regular",
+            "site": "away",
+            "status": "honored",
+            "week": 4,
+            "weight": 4.2635,
+            "winner": "Oregon",
+            "winner_rank": 19
+          }
+        ],
+        "wins_vs_pool": []
+      },
+      "market": {
+        "games": 7,
+        "rank": 10,
+        "rating": 19.7715
+      },
+      "movement": {
+        "delta": null,
+        "has_previous": false,
+        "previous_rank": null,
+        "status": "new"
+      },
+      "performance": {
+        "games": 6,
+        "rank": 32,
+        "rating": 0.1956,
+        "unadjusted": 0.2183
+      },
+      "placement": {
+        "base_rank": 22,
+        "drift": 0,
+        "final_rank": 22,
+        "reasons": [
+          "Resume order #15 from 0.55 x SoR #16 + 0.3 x Mkt #10 + 0.15 x PPA #32 = 16.60.",
+          "Resume adjustment cost 3.90 rank points, driven by loss quality.",
+          "Head-to-head results left this placement unchanged."
+        ]
+      },
+      "rank": 22,
+      "record": {
+        "conference": "2-1",
+        "losses": 1,
+        "overall": "5-1",
+        "wins": 5
+      },
+      "regression": null,
+      "resume": {
+        "actual_wins": 5,
+        "espn_rank": 27,
+        "expected_wins": 4.3418,
+        "probability": 0.4364,
+        "rank": 16,
+        "schedule": [
+          {
+            "opponent": "Fresno State",
+            "reference_win_probability": 0.927,
+            "site": "home",
+            "week": 1,
+            "won": true
+          },
+          {
+            "opponent": "San José State",
+            "reference_win_probability": 0.975,
+            "site": "home",
+            "week": 1,
+            "won": true
+          },
+          {
+            "opponent": "Louisiana",
+            "reference_win_probability": 0.965,
+            "site": "home",
+            "week": 2,
+            "won": true
+          },
+          {
+            "opponent": "Rutgers",
+            "reference_win_probability": 0.7496,
+            "site": "away",
+            "week": 3,
+            "won": true
+          },
+          {
+            "opponent": "Oregon",
+            "reference_win_probability": 0.2156,
+            "site": "home",
+            "week": 4,
+            "won": false
+          },
+          {
+            "opponent": "Washington",
+            "reference_win_probability": 0.5096,
+            "site": "home",
+            "week": 5,
+            "won": true
+          }
+        ]
+      },
+      "resume_adjustment": {
+        "components": {
+          "best_win": -0.9986,
+          "cover": 2.4806,
+          "game_control": -0.2228,
+          "loss_quality": 2.6382
+        },
+        "detail": {
+          "best_win_opponent_base_rank": 53,
+          "cover_games": 6,
+          "covers": 1,
+          "game_control_rank": 34,
+          "losses_considered": 1,
+          "mean_cover_margin": -7.4583,
+          "mean_loss_badness": 10.7138,
+          "shrunk_cover_margin": -5.131,
+          "worst_cover": "-23 vs San José State"
+        },
+        "total": 3.8973
+      },
+      "resume_ranks": {
+        "average_win_probability": 23,
+        "fpi": 19,
+        "game_control": 34,
+        "remaining_strength_of_schedule": 1,
+        "strength_of_record": 27,
+        "strength_of_schedule": 66
+      },
+      "team": "USC"
+    },
+    {
+      "base": {
         "espn_sor_rank": 26,
         "formula": "0.55 x SoR #27 + 0.3 x Mkt #24 + 0.15 x PPA #14 = 24.15",
         "market_rank": 24,
         "missing": [],
         "ppa_rank": 14,
-        "rank": 20,
+        "rank": 23,
         "raw_score": 24.15,
         "resume_rank": 23,
-        "score": 21.2981,
+        "score": 21.4049,
         "sor_rank": 27,
         "sos_rank": 126,
         "weights": {
@@ -4165,12 +4797,12 @@
       },
       "conference": "Big Ten",
       "cover": {
-        "adjustment": -2.4224,
+        "adjustment": -1.9497,
         "covers": 4,
         "games": 5,
         "mean_margin": 8.9,
-        "scored_margin": 4.9444,
-        "worst": "-0 vs North Dakota"
+        "scored_margin": 4.3978,
+        "worst": "-2 vs North Dakota"
       },
       "cycle": null,
       "flags": [],
@@ -4191,7 +4823,7 @@
       "market": {
         "games": 5,
         "rank": 24,
-        "rating": 12.6412
+        "rating": 12.6433
       },
       "movement": {
         "delta": null,
@@ -4206,16 +4838,16 @@
         "unadjusted": 0.5325
       },
       "placement": {
-        "base_rank": 20,
+        "base_rank": 23,
         "drift": 0,
-        "final_rank": 20,
+        "final_rank": 23,
         "reasons": [
           "Resume order #23 from 0.55 x SoR #27 + 0.3 x Mkt #24 + 0.15 x PPA #14 = 24.15.",
-          "Resume adjustment earned back 2.85 rank points, driven by cover.",
+          "Resume adjustment earned back 2.75 rank points, driven by cover.",
           "Head-to-head results left this placement unchanged."
         ]
       },
-      "rank": 20,
+      "rank": 23,
       "record": {
         "conference": "2-0",
         "losses": 0,
@@ -4226,13 +4858,13 @@
       "resume": {
         "actual_wins": 5,
         "espn_rank": 26,
-        "expected_wins": 4.5093,
-        "probability": 0.5707,
+        "expected_wins": 4.5103,
+        "probability": 0.5714,
         "rank": 27,
         "schedule": [
           {
             "opponent": "Ohio",
-            "reference_win_probability": 0.9758,
+            "reference_win_probability": 0.9759,
             "site": "home",
             "week": 1,
             "won": true
@@ -4253,14 +4885,14 @@
           },
           {
             "opponent": "Michigan State",
-            "reference_win_probability": 0.7042,
+            "reference_win_probability": 0.7048,
             "site": "away",
             "week": 4,
             "won": true
           },
           {
             "opponent": "Maryland",
-            "reference_win_probability": 0.8362,
+            "reference_win_probability": 0.8365,
             "site": "home",
             "week": 5,
             "won": true
@@ -4269,23 +4901,23 @@
       },
       "resume_adjustment": {
         "components": {
-          "best_win": -0.2632,
-          "cover": -2.4224,
+          "best_win": -0.629,
+          "cover": -1.9497,
           "game_control": -0.1663,
           "loss_quality": 0.0
         },
         "detail": {
-          "best_win_opponent_base_rank": 65,
+          "best_win_opponent_base_rank": 66,
           "cover_games": 5,
           "covers": 4,
           "game_control_rank": 43,
           "losses_considered": 0,
           "mean_cover_margin": 8.9,
           "mean_loss_badness": null,
-          "shrunk_cover_margin": 4.9444,
-          "worst_cover": "-0 vs North Dakota"
+          "shrunk_cover_margin": 4.3978,
+          "worst_cover": "-2 vs North Dakota"
         },
-        "total": -2.8519
+        "total": -2.7451
       },
       "resume_ranks": {
         "average_win_probability": 11,
@@ -4299,617 +4931,6 @@
     },
     {
       "base": {
-        "espn_sor_rank": 25,
-        "formula": "0.55 x SoR #25 + 0.3 x Mkt #25 + 0.15 x PPA #5 = 22.00",
-        "market_rank": 25,
-        "missing": [],
-        "ppa_rank": 5,
-        "rank": 21,
-        "raw_score": 22.0,
-        "resume_rank": 21,
-        "score": 21.5049,
-        "sor_rank": 25,
-        "sos_rank": 47,
-        "weights": {
-          "Mkt": 0.3,
-          "PPA": 0.15,
-          "SoR": 0.55
-        }
-      },
-      "conference": "SEC",
-      "cover": {
-        "adjustment": -0.4392,
-        "covers": 2,
-        "games": 5,
-        "mean_margin": 2.15,
-        "scored_margin": 1.1944,
-        "worst": "-17 vs Troy"
-      },
-      "cycle": null,
-      "flags": [],
-      "fpi": {
-        "efficiencies": {
-          "defense": 76.767,
-          "offense": 60.98,
-          "overall": 74.874,
-          "special_teams": 61.501
-        },
-        "rank": 18,
-        "rating": 14.312
-      },
-      "h2h": {
-        "losses_vs_pool": [
-          {
-            "adj_margin": 4.5275,
-            "common_diff": 0.0,
-            "common_opponents": [],
-            "components": {
-              "common_opponents": 0.0,
-              "margin": -0.3797,
-              "rating_gap": -0.2027,
-              "recency": 1.0887
-            },
-            "conviction": 0.5064,
-            "loser": "Missouri",
-            "loser_rank": 21,
-            "margin": 7,
-            "rating_gap": -2.3693,
-            "score": "31-24",
-            "season_type": "regular",
-            "site": "home",
-            "status": "honored",
-            "week": 4,
-            "weight": 3.5064,
-            "winner": "Mississippi State",
-            "winner_rank": 14
-          }
-        ],
-        "wins_vs_pool": [
-          {
-            "adj_margin": 25.5275,
-            "common_diff": 0.0,
-            "common_opponents": [],
-            "components": {
-              "common_opponents": 0.0,
-              "margin": 0.6382,
-              "rating_gap": -0.3187,
-              "recency": 1.2
-            },
-            "conviction": 1.5195,
-            "loser": "Florida",
-            "loser_rank": 11,
-            "margin": 28,
-            "rating_gap": -6.1665,
-            "score": "45-17",
-            "season_type": "regular",
-            "site": "home",
-            "status": "overridden",
-            "week": 5,
-            "weight": 4.5195,
-            "winner": "Missouri",
-            "winner_rank": 21
-          }
-        ]
-      },
-      "market": {
-        "games": 5,
-        "rank": 25,
-        "rating": 12.5458
-      },
-      "movement": {
-        "delta": null,
-        "has_previous": false,
-        "previous_rank": null,
-        "status": "new"
-      },
-      "performance": {
-        "games": 4,
-        "rank": 5,
-        "rating": 0.4993,
-        "unadjusted": 0.23
-      },
-      "placement": {
-        "base_rank": 21,
-        "drift": 0,
-        "final_rank": 21,
-        "reasons": [
-          "Resume order #21 from 0.55 x SoR #25 + 0.3 x Mkt #25 + 0.15 x PPA #5 = 22.00.",
-          "Resume adjustment earned back 0.50 rank points, driven by loss quality.",
-          "Ranked below #11 Florida despite winning 45-17 at home in week 5 -- +25.5 adjusted margin; the winner rates 6.2 points worse on the power ratings.",
-          "Head-to-head results left this placement unchanged."
-        ]
-      },
-      "rank": 21,
-      "record": {
-        "conference": "1-1",
-        "losses": 1,
-        "overall": "4-1",
-        "wins": 4
-      },
-      "regression": null,
-      "resume": {
-        "actual_wins": 4,
-        "espn_rank": 25,
-        "expected_wins": 3.5556,
-        "probability": 0.5311,
-        "rank": 25,
-        "schedule": [
-          {
-            "opponent": "Arkansas-Pine Bluff",
-            "reference_win_probability": 1.0,
-            "site": "home",
-            "week": 1,
-            "won": true
-          },
-          {
-            "opponent": "Kansas",
-            "reference_win_probability": 0.704,
-            "site": "away",
-            "week": 2,
-            "won": true
-          },
-          {
-            "opponent": "Troy",
-            "reference_win_probability": 0.9625,
-            "site": "home",
-            "week": 3,
-            "won": true
-          },
-          {
-            "opponent": "Mississippi State",
-            "reference_win_probability": 0.4969,
-            "site": "away",
-            "week": 4,
-            "won": false
-          },
-          {
-            "opponent": "Florida",
-            "reference_win_probability": 0.3922,
-            "site": "home",
-            "week": 5,
-            "won": true
-          }
-        ]
-      },
-      "resume_adjustment": {
-        "components": {
-          "best_win": -0.923,
-          "cover": -0.4392,
-          "game_control": -0.3106,
-          "loss_quality": 1.1778
-        },
-        "detail": {
-          "best_win_opponent_base_rank": 7,
-          "cover_games": 5,
-          "covers": 2,
-          "game_control_rank": 20,
-          "losses_considered": 1,
-          "mean_cover_margin": 2.15,
-          "mean_loss_badness": 3.9891,
-          "shrunk_cover_margin": 1.1944,
-          "worst_cover": "-17 vs Troy"
-        },
-        "total": -0.4951
-      },
-      "resume_ranks": {
-        "average_win_probability": 30,
-        "fpi": 18,
-        "game_control": 20,
-        "remaining_strength_of_schedule": 5,
-        "strength_of_record": 25,
-        "strength_of_schedule": 47
-      },
-      "team": "Missouri"
-    },
-    {
-      "base": {
-        "espn_sor_rank": 23,
-        "formula": "0.55 x SoR #28 + 0.3 x Mkt #6 + 0.15 x PPA #15 = 19.45",
-        "market_rank": 6,
-        "missing": [],
-        "ppa_rank": 15,
-        "rank": 22,
-        "raw_score": 19.45,
-        "resume_rank": 17,
-        "score": 21.6315,
-        "sor_rank": 28,
-        "sos_rank": 21,
-        "weights": {
-          "Mkt": 0.3,
-          "PPA": 0.15,
-          "SoR": 0.55
-        }
-      },
-      "conference": "Big Ten",
-      "cover": {
-        "adjustment": 1.1179,
-        "covers": 2,
-        "games": 4,
-        "mean_margin": -3.5,
-        "scored_margin": -1.75,
-        "worst": "-32 vs Oklahoma State"
-      },
-      "cycle": null,
-      "flags": [],
-      "fpi": {
-        "efficiencies": {
-          "defense": 77.03,
-          "offense": 74.981,
-          "overall": 83.733,
-          "special_teams": 71.973
-        },
-        "rank": 9,
-        "rating": 21.585
-      },
-      "h2h": {
-        "losses_vs_pool": [
-          {
-            "adj_margin": 5.5275,
-            "common_diff": 0.0,
-            "common_opponents": [],
-            "components": {
-              "common_opponents": 0.0,
-              "margin": -0.3312,
-              "rating_gap": -0.7497,
-              "recency": 0.9012
-            },
-            "conviction": -0.1797,
-            "loser": "Oregon",
-            "loser_rank": 22,
-            "margin": 8,
-            "rating_gap": -20.2715,
-            "score": "39-31",
-            "season_type": "regular",
-            "site": "home",
-            "status": "overridden",
-            "week": 2,
-            "weight": 2.8203,
-            "winner": "Oklahoma State",
-            "winner_rank": 33
-          }
-        ],
-        "wins_vs_pool": [
-          {
-            "adj_margin": 16.4725,
-            "common_diff": 0.0,
-            "common_opponents": [],
-            "components": {
-              "common_opponents": 0.0,
-              "margin": 0.1993,
-              "rating_gap": 0.0487,
-              "recency": 1.1153
-            },
-            "conviction": 1.3633,
-            "loser": "USC",
-            "loser_rank": 23,
-            "margin": 14,
-            "rating_gap": 5.8573,
-            "score": "41-27",
-            "season_type": "regular",
-            "site": "away",
-            "status": "honored",
-            "week": 4,
-            "weight": 4.3633,
-            "winner": "Oregon",
-            "winner_rank": 22
-          },
-          {
-            "adj_margin": 4.5275,
-            "common_diff": 0.0,
-            "common_opponents": [],
-            "components": {
-              "common_opponents": 0.0,
-              "margin": -0.3797,
-              "rating_gap": 0.5078,
-              "recency": 0.9012
-            },
-            "conviction": 1.0294,
-            "loser": "Boise State",
-            "loser_rank": 31,
-            "margin": 7,
-            "rating_gap": 20.8825,
-            "score": "34-27",
-            "season_type": "regular",
-            "site": "home",
-            "status": "honored",
-            "week": 1,
-            "weight": 4.0294,
-            "winner": "Oregon",
-            "winner_rank": 22
-          }
-        ]
-      },
-      "market": {
-        "games": 4,
-        "rank": 6,
-        "rating": 25.6237
-      },
-      "movement": {
-        "delta": null,
-        "has_previous": false,
-        "previous_rank": null,
-        "status": "new"
-      },
-      "performance": {
-        "games": 3,
-        "rank": 15,
-        "rating": 0.355,
-        "unadjusted": 0.0833
-      },
-      "placement": {
-        "base_rank": 22,
-        "drift": 0,
-        "final_rank": 22,
-        "reasons": [
-          "Resume order #17 from 0.55 x SoR #28 + 0.3 x Mkt #6 + 0.15 x PPA #15 = 19.45.",
-          "Resume adjustment cost 2.18 rank points, driven by loss quality.",
-          "Head-to-head held: beat #23 USC 41-27 on the road in week 4.",
-          "Ranked above #33 Oklahoma State despite losing 31-39 on the road in week 2 -- +5.5 adjusted margin; the winner rates 20.3 points worse on the power ratings.",
-          "Head-to-head results left this placement unchanged."
-        ]
-      },
-      "rank": 22,
-      "record": {
-        "conference": "1-0",
-        "losses": 1,
-        "overall": "3-1",
-        "wins": 3
-      },
-      "regression": null,
-      "resume": {
-        "actual_wins": 3,
-        "espn_rank": 23,
-        "expected_wins": 2.6498,
-        "probability": 0.5949,
-        "rank": 28,
-        "schedule": [
-          {
-            "opponent": "Boise State",
-            "reference_win_probability": 0.7768,
-            "site": "home",
-            "week": 1,
-            "won": true
-          },
-          {
-            "opponent": "Oklahoma State",
-            "reference_win_probability": 0.6367,
-            "site": "away",
-            "week": 2,
-            "won": false
-          },
-          {
-            "opponent": "Portland State",
-            "reference_win_probability": 1.0,
-            "site": "home",
-            "week": 3,
-            "won": true
-          },
-          {
-            "opponent": "USC",
-            "reference_win_probability": 0.2364,
-            "site": "away",
-            "week": 4,
-            "won": true
-          }
-        ]
-      },
-      "resume_adjustment": {
-        "components": {
-          "best_win": -0.832,
-          "cover": 1.1179,
-          "game_control": -0.2855,
-          "loss_quality": 2.1812
-        },
-        "detail": {
-          "best_win_opponent_base_rank": 15,
-          "cover_games": 4,
-          "covers": 2,
-          "game_control_rank": 24,
-          "losses_considered": 1,
-          "mean_cover_margin": -3.5,
-          "mean_loss_badness": 7.3877,
-          "shrunk_cover_margin": -1.75,
-          "worst_cover": "-32 vs Oklahoma State"
-        },
-        "total": 2.1815
-      },
-      "resume_ranks": {
-        "average_win_probability": 51,
-        "fpi": 9,
-        "game_control": 24,
-        "remaining_strength_of_schedule": 27,
-        "strength_of_record": 23,
-        "strength_of_schedule": 21
-      },
-      "team": "Oregon"
-    },
-    {
-      "base": {
-        "espn_sor_rank": 27,
-        "formula": "0.55 x SoR #16 + 0.3 x Mkt #10 + 0.15 x PPA #32 = 16.60",
-        "market_rank": 10,
-        "missing": [],
-        "ppa_rank": 32,
-        "rank": 23,
-        "raw_score": 16.6,
-        "resume_rank": 15,
-        "score": 21.6996,
-        "sor_rank": 16,
-        "sos_rank": 66,
-        "weights": {
-          "Mkt": 0.3,
-          "PPA": 0.15,
-          "SoR": 0.55
-        }
-      },
-      "conference": "Big Ten",
-      "cover": {
-        "adjustment": 2.559,
-        "covers": 1,
-        "games": 6,
-        "mean_margin": -7.4583,
-        "scored_margin": -4.475,
-        "worst": "-21 vs San José State"
-      },
-      "cycle": null,
-      "flags": [],
-      "fpi": {
-        "efficiencies": {
-          "defense": 44.0,
-          "offense": 81.959,
-          "overall": 71.913,
-          "special_teams": 61.736
-        },
-        "rank": 19,
-        "rating": 14.216
-      },
-      "h2h": {
-        "losses_vs_pool": [
-          {
-            "adj_margin": 16.4725,
-            "common_diff": 0.0,
-            "common_opponents": [],
-            "components": {
-              "common_opponents": 0.0,
-              "margin": 0.1993,
-              "rating_gap": 0.0487,
-              "recency": 1.1153
-            },
-            "conviction": 1.3633,
-            "loser": "USC",
-            "loser_rank": 23,
-            "margin": 14,
-            "rating_gap": 5.8573,
-            "score": "41-27",
-            "season_type": "regular",
-            "site": "away",
-            "status": "honored",
-            "week": 4,
-            "weight": 4.3633,
-            "winner": "Oregon",
-            "winner_rank": 22
-          }
-        ],
-        "wins_vs_pool": []
-      },
-      "market": {
-        "games": 7,
-        "rank": 10,
-        "rating": 19.7665
-      },
-      "movement": {
-        "delta": null,
-        "has_previous": false,
-        "previous_rank": null,
-        "status": "new"
-      },
-      "performance": {
-        "games": 6,
-        "rank": 32,
-        "rating": 0.1956,
-        "unadjusted": 0.2183
-      },
-      "placement": {
-        "base_rank": 23,
-        "drift": 0,
-        "final_rank": 23,
-        "reasons": [
-          "Resume order #15 from 0.55 x SoR #16 + 0.3 x Mkt #10 + 0.15 x PPA #32 = 16.60.",
-          "Resume adjustment cost 5.10 rank points, driven by loss quality.",
-          "Head-to-head results left this placement unchanged."
-        ]
-      },
-      "rank": 23,
-      "record": {
-        "conference": "2-1",
-        "losses": 1,
-        "overall": "5-1",
-        "wins": 5
-      },
-      "regression": null,
-      "resume": {
-        "actual_wins": 5,
-        "espn_rank": 27,
-        "expected_wins": 4.341,
-        "probability": 0.436,
-        "rank": 16,
-        "schedule": [
-          {
-            "opponent": "Fresno State",
-            "reference_win_probability": 0.9268,
-            "site": "home",
-            "week": 1,
-            "won": true
-          },
-          {
-            "opponent": "San José State",
-            "reference_win_probability": 0.9749,
-            "site": "home",
-            "week": 1,
-            "won": true
-          },
-          {
-            "opponent": "Louisiana",
-            "reference_win_probability": 0.9649,
-            "site": "home",
-            "week": 2,
-            "won": true
-          },
-          {
-            "opponent": "Rutgers",
-            "reference_win_probability": 0.7492,
-            "site": "away",
-            "week": 3,
-            "won": true
-          },
-          {
-            "opponent": "Oregon",
-            "reference_win_probability": 0.2161,
-            "site": "home",
-            "week": 4,
-            "won": false
-          },
-          {
-            "opponent": "Washington",
-            "reference_win_probability": 0.5091,
-            "site": "home",
-            "week": 5,
-            "won": true
-          }
-        ]
-      },
-      "resume_adjustment": {
-        "components": {
-          "best_win": -0.3997,
-          "cover": 2.559,
-          "game_control": -0.2228,
-          "loss_quality": 3.1632
-        },
-        "detail": {
-          "best_win_opponent_base_rank": 53,
-          "cover_games": 6,
-          "covers": 1,
-          "game_control_rank": 34,
-          "losses_considered": 1,
-          "mean_cover_margin": -7.4583,
-          "mean_loss_badness": 10.7138,
-          "shrunk_cover_margin": -4.475,
-          "worst_cover": "-21 vs San José State"
-        },
-        "total": 5.0996
-      },
-      "resume_ranks": {
-        "average_win_probability": 23,
-        "fpi": 19,
-        "game_control": 34,
-        "remaining_strength_of_schedule": 1,
-        "strength_of_record": 27,
-        "strength_of_schedule": 66
-      },
-      "team": "USC"
-    },
-    {
-      "base": {
         "espn_sor_rank": 16,
         "formula": "0.55 x SoR #15 + 0.3 x Mkt #23 + 0.15 x PPA #56 = 23.55",
         "market_rank": 23,
@@ -4918,7 +4939,7 @@
         "rank": 24,
         "raw_score": 23.55,
         "resume_rank": 22,
-        "score": 25.1609,
+        "score": 24.0685,
         "sor_rank": 15,
         "sos_rank": 25,
         "weights": {
@@ -4929,12 +4950,12 @@
       },
       "conference": "Big Ten",
       "cover": {
-        "adjustment": -0.8506,
+        "adjustment": -0.5678,
         "covers": 3,
         "games": 5,
         "mean_margin": 3.55,
-        "scored_margin": 1.9722,
-        "worst": "-11 vs Iowa State"
+        "scored_margin": 1.4256,
+        "worst": "-13 vs Iowa State"
       },
       "cycle": null,
       "flags": [],
@@ -4951,52 +4972,52 @@
       "h2h": {
         "losses_vs_pool": [
           {
-            "adj_margin": 19.4725,
+            "adj_margin": 19.4732,
             "common_diff": 0.0,
             "common_opponents": [],
             "components": {
               "common_opponents": 0.0,
-              "margin": 0.3447,
-              "rating_gap": 0.3903,
+              "margin": 0.2674,
+              "rating_gap": 0.3556,
               "recency": 1.2
             },
-            "conviction": 1.935,
+            "conviction": 1.823,
             "loser": "Iowa",
             "loser_rank": 24,
             "margin": 17,
-            "rating_gap": 17.0379,
+            "rating_gap": 17.0291,
             "score": "31-14",
             "season_type": "regular",
             "site": "away",
             "status": "honored",
             "week": 5,
-            "weight": 4.935,
+            "weight": 4.823,
             "winner": "Ohio State",
             "winner_rank": 6
           }
         ],
         "wins_vs_pool": [
           {
-            "adj_margin": 3.4725,
+            "adj_margin": 3.4732,
             "common_diff": 0.0,
             "common_opponents": [],
             "components": {
               "common_opponents": 0.0,
-              "margin": -0.4308,
-              "rating_gap": -0.167,
+              "margin": -0.4752,
+              "rating_gap": -0.1931,
               "recency": 1.0887
             },
-            "conviction": 0.4909,
+            "conviction": 0.4204,
             "loser": "Michigan",
-            "loser_rank": 40,
+            "loser_rank": 37,
             "margin": 1,
-            "rating_gap": -1.2003,
+            "rating_gap": -1.1813,
             "score": "20-19",
             "season_type": "regular",
             "site": "away",
             "status": "honored",
             "week": 4,
-            "weight": 3.4909,
+            "weight": 3.4204,
             "winner": "Iowa",
             "winner_rank": 24
           }
@@ -5005,7 +5026,7 @@
       "market": {
         "games": 5,
         "rank": 23,
-        "rating": 12.6518
+        "rating": 12.659
       },
       "movement": {
         "delta": null,
@@ -5025,8 +5046,8 @@
         "final_rank": 24,
         "reasons": [
           "Resume order #22 from 0.55 x SoR #15 + 0.3 x Mkt #23 + 0.15 x PPA #56 = 23.55.",
-          "Resume adjustment cost 1.61 rank points, driven by loss quality.",
-          "Head-to-head held: beat #40 Michigan 20-19 on the road in week 4.",
+          "Resume adjustment cost 0.52 rank points, driven by loss quality.",
+          "Head-to-head held: beat #37 Michigan 20-19 on the road in week 4.",
           "Head-to-head results left this placement unchanged."
         ]
       },
@@ -5041,20 +5062,20 @@
       "resume": {
         "actual_wins": 4,
         "espn_rank": 16,
-        "expected_wins": 3.337,
-        "probability": 0.3943,
+        "expected_wins": 3.3376,
+        "probability": 0.3949,
         "rank": 15,
         "schedule": [
           {
             "opponent": "Northern Illinois",
-            "reference_win_probability": 0.9937,
+            "reference_win_probability": 0.9938,
             "site": "home",
             "week": 1,
             "won": true
           },
           {
             "opponent": "Iowa State",
-            "reference_win_probability": 0.8149,
+            "reference_win_probability": 0.8143,
             "site": "home",
             "week": 2,
             "won": true
@@ -5068,14 +5089,14 @@
           },
           {
             "opponent": "Michigan",
-            "reference_win_probability": 0.3898,
+            "reference_win_probability": 0.3906,
             "site": "away",
             "week": 4,
             "won": true
           },
           {
             "opponent": "Ohio State",
-            "reference_win_probability": 0.1386,
+            "reference_win_probability": 0.1389,
             "site": "home",
             "week": 5,
             "won": false
@@ -5084,10 +5105,10 @@
       },
       "resume_adjustment": {
         "components": {
-          "best_win": -0.5704,
-          "cover": -0.8506,
+          "best_win": -1.4251,
+          "cover": -0.5678,
           "game_control": -0.1035,
-          "loss_quality": 3.1354
+          "loss_quality": 2.615
         },
         "detail": {
           "best_win_opponent_base_rank": 38,
@@ -5097,10 +5118,10 @@
           "losses_considered": 1,
           "mean_cover_margin": 3.55,
           "mean_loss_badness": 10.6196,
-          "shrunk_cover_margin": 1.9722,
-          "worst_cover": "-11 vs Iowa State"
+          "shrunk_cover_margin": 1.4256,
+          "worst_cover": "-13 vs Iowa State"
         },
-        "total": 1.6109
+        "total": 0.5185
       },
       "resume_ranks": {
         "average_win_probability": 66,
@@ -5122,7 +5143,7 @@
         "rank": 25,
         "raw_score": 28.1,
         "resume_rank": 26,
-        "score": 25.2097,
+        "score": 24.8138,
         "sor_rank": 14,
         "sos_rank": 100,
         "weights": {
@@ -5133,12 +5154,12 @@
       },
       "conference": "ACC",
       "cover": {
-        "adjustment": -2.0258,
+        "adjustment": -1.601,
         "covers": 4,
         "games": 5,
         "mean_margin": 7.55,
-        "scored_margin": 4.1944,
-        "worst": "-2 vs UCF"
+        "scored_margin": 3.6478,
+        "worst": "-4 vs UCF"
       },
       "cycle": null,
       "flags": [],
@@ -5154,37 +5175,12 @@
       },
       "h2h": {
         "losses_vs_pool": [],
-        "wins_vs_pool": [
-          {
-            "adj_margin": 4.4725,
-            "common_diff": 0.0,
-            "common_opponents": [],
-            "components": {
-              "common_opponents": 0.0,
-              "margin": -0.3824,
-              "rating_gap": -0.1862,
-              "recency": 1.2
-            },
-            "conviction": 0.6314,
-            "loser": "Virginia Tech",
-            "loser_rank": 38,
-            "margin": 2,
-            "rating_gap": -1.8304,
-            "score": "35-33",
-            "season_type": "regular",
-            "site": "away",
-            "status": "honored",
-            "week": 5,
-            "weight": 3.6314,
-            "winner": "Pittsburgh",
-            "winner_rank": 25
-          }
-        ]
+        "wins_vs_pool": []
       },
       "market": {
         "games": 5,
         "rank": 45,
-        "rating": 6.8803
+        "rating": 6.8464
       },
       "movement": {
         "delta": null,
@@ -5204,8 +5200,7 @@
         "final_rank": 25,
         "reasons": [
           "Resume order #26 from 0.55 x SoR #14 + 0.3 x Mkt #45 + 0.15 x PPA #46 = 28.10.",
-          "Resume adjustment earned back 2.89 rank points, driven by cover.",
-          "Head-to-head held: beat #38 Virginia Tech 35-33 on the road in week 5.",
+          "Resume adjustment earned back 3.29 rank points, driven by cover.",
           "Head-to-head results left this placement unchanged."
         ]
       },
@@ -5220,27 +5215,27 @@
       "resume": {
         "actual_wins": 5,
         "espn_rank": 9,
-        "expected_wins": 4.2162,
-        "probability": 0.3815,
+        "expected_wins": 4.22,
+        "probability": 0.3834,
         "rank": 14,
         "schedule": [
           {
             "opponent": "Miami (OH)",
-            "reference_win_probability": 0.9648,
+            "reference_win_probability": 0.9649,
             "site": "home",
             "week": 1,
             "won": true
           },
           {
             "opponent": "UCF",
-            "reference_win_probability": 0.8465,
+            "reference_win_probability": 0.8487,
             "site": "home",
             "week": 2,
             "won": true
           },
           {
             "opponent": "Syracuse",
-            "reference_win_probability": 0.8648,
+            "reference_win_probability": 0.8652,
             "site": "home",
             "week": 3,
             "won": true
@@ -5254,7 +5249,7 @@
           },
           {
             "opponent": "Virginia Tech",
-            "reference_win_probability": 0.5402,
+            "reference_win_probability": 0.5411,
             "site": "away",
             "week": 5,
             "won": true
@@ -5263,8 +5258,8 @@
       },
       "resume_adjustment": {
         "components": {
-          "best_win": -0.5476,
-          "cover": -2.0258,
+          "best_win": -1.3683,
+          "cover": -1.601,
           "game_control": -0.3169,
           "loss_quality": 0.0
         },
@@ -5276,10 +5271,10 @@
           "losses_considered": 0,
           "mean_cover_margin": 7.55,
           "mean_loss_badness": null,
-          "shrunk_cover_margin": 4.1944,
-          "worst_cover": "-2 vs UCF"
+          "shrunk_cover_margin": 3.6478,
+          "worst_cover": "-4 vs UCF"
         },
-        "total": -2.8903
+        "total": -3.2862
       },
       "resume_ranks": {
         "average_win_probability": 10,

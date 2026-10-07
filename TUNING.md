@@ -129,14 +129,59 @@ Rank points, applied after the base order. **Positive = worse.**
 
 | knob | now | what it means | turn it up to… |
 | --- | --- | --- | --- |
-| `w_cover` | **4.0** | Performance against the posted line — did you look like you meant it | punish teams that don't beat the number |
-| `w_loss_quality` | 3.0 | How bad your losses look: margin, venue, and who beat you. **Positive only** — see below | punish ugly losses |
-| `w_best_win` | 1.0 | Credit for the best team you beat | reward one big scalp |
+| `w_cover` | **3.5** | Performance against the posted line — did you look like you meant it | punish teams that don't beat the number |
+| `w_loss_quality` | **2.5** | How bad your losses look: margin, venue, and who beat you. **Positive only** — see below | punish ugly losses |
+| `w_best_win` | **2.5** | Credit for the best team you beat | reward one big scalp |
 | `w_game_control` | 0.5 | Did you lead comfortably or survive | reward wire-to-wire wins |
+| `cover_game_cap` | 0.0 | How far one game may move your cover average. **Off** — measured and switched off, see below |  |
+| `fit_cover_venue` | true | Measure the market's home-field bias and centre each game on it | *leave on* |
 
-`w_cover` is currently the most consequential of the four. Above ~6 it starts
-floating 3-1 teams with soft schedules into the top ten, because it measures
-*exceeding expectations* rather than *being good*.
+`w_cover` and `w_best_win` are the two that carry the stage now. Above ~6,
+`w_cover` starts floating 3-1 teams with soft schedules into the top ten, because
+it measures *exceeding expectations* rather than *being good*.
+
+### The posted line under-prices home field
+
+A natural assumption about this term is that it is venue-neutral: the line
+already contains home field, so beating the number on the road should be the same
+achievement as beating it at home. **It is not.** Measured on completed
+non-neutral games with a line:
+
+| | games | home teams beat the number by | home covered | road covered |
+| --- | --- | --- | --- | --- |
+| 2025 | 870 | **+1.045** (SE 0.511) | 50.9% | 47.1% |
+| 2026 | 384 | **+1.640** (SE 0.762) | 54.7% | 44.0% |
+
+Same direction in both seasons at about two standard errors each. Left alone that
+is a standing penalty on a road-heavy schedule which says nothing about the team,
+so `fit_cover_venue` measures it from the season's own lines each week and
+centres every game on its venue's mean — the same approach as
+`market.fit_home_field`, and for the same reason. Each team's panel shows both
+numbers: what happened, and what was scored.
+
+### Why `cover_game_cap` is off
+
+Capping how much one game can move the average sounds obviously right — Ole Miss
+lost at Florida by 20 against the number and that one game took their average
+from −1.73 to −6.31. **But a cap moves nobody**, because this term is z-scored:
+clipping compresses the whole board, so every team's absolute number improves and
+its standing among 138 teams survives. Ole Miss came out 15th at every cap from 10
+to none.
+
+The cost, on the other hand, is real. The per-game margin has a standard deviation
+of **14.97 points**, so a cap bites far more often than it looks:
+
+| cap | games clipped | spread of team means |
+| --- | --- | --- |
+| 10 | 48.7% | 5.83 |
+| 14 | 34.9% | 7.39 |
+| 21 | 14.4% | 9.13 |
+| **0 (off)** | — | **10.36** |
+
+A cap at 14 throws away 29% of the spread of a term built to discriminate, and
+buys nothing. The one real effect is incidental: it clips Northwestern's outsized
+*credit* and drops them a couple of places, which is the small-sample flattery
+problem from another angle. If that's ever worth chasing, this is the knob.
 
 ### A loss can cost you, never pay you
 

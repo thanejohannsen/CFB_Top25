@@ -156,7 +156,13 @@ def rank(dataset: Dataset, cfg: Config) -> RankingResult:
         all_results,
         s2,
         ev_cfg,
-        cover.cover_margins(dataset.lines, dataset.games, cutoff),
+        cover.cover_margins(
+            dataset.lines,
+            dataset.games,
+            cutoff,
+            cap=float(s2.get("cover_game_cap", cover.GAME_CAP)),
+            fit_venue=bool(s2.get("fit_cover_venue", True)),
+        ),
         scale=float(s1.get("w_adjust", 1.0)),
     )
 
