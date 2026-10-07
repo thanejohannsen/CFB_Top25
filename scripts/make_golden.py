@@ -45,6 +45,7 @@ FROZEN = [
     "stage1.w_sor=0.55",
     "stage1.w_market=0.30",
     "stage1.w_perf=0.15",
+    "stage1.w_adjust=1.0",
     "stage1.w_fpi=0.0",
     "stage1.w_sos=0.0",
     "stage2.w_cover=4.0",

@@ -59,6 +59,24 @@
             same way. This is the eye test, counted: it does not care whether the ball
             bounced your way at the end.</li>
         </ul>
+        <h3>Does an easy schedule inflate the market rating?</h3>
+        <p class="lede">
+          No, and the protection is structural. The ratings are <em>solved as a system</em>
+          rather than averaged: the model is
+          <b>expected margin = rating(you) &minus; rating(opponent) + home field</b>, so the
+          opponent's rating is <em>subtracted</em>. Being favoured by 25 over a team rated
+          &minus;20 implies you are <b>+5</b>, not +25. Schedule strength divides out by
+          construction.
+        </p>
+        <p class="lede">
+          Measured on 2026 week 5, the correlation between a team's market rating and the
+          mean rating of its opponents is <b>+0.43</b> &mdash; teams with <em>harder</em>
+          schedules rate <em>higher</em>, the opposite of inflation. The easiest schedules
+          in the country belong to North Dakota State (64th), Liberty (89th) and UMass
+          (125th). The real limit is precision rather than bias: a team that plays only
+          weak opponents has its rating pinned by games with 40-point spreads, and those
+          are less precise estimates than 3-point ones.
+        </p>
         <h3>Why these two quality signals and not one</h3>
         <p class="lede">
           Because they know different things, and the pair beats either alone. Taking the
@@ -136,7 +154,9 @@
           Strength of Record knows who you played but not <em>how</em> you lost. A
           three-point road loss to the eventual best team in the country and a 24-point
           home loss to a middling one can produce the same SoR. They are not the same
-          result, so four adjustments move the base score:
+          result, so four adjustments move the base score &mdash; all of them scaled by a
+          single dial, currently a half, so the stage speaks at a measured volume rather
+          than overwhelming the three numbers:
         </p>
         <ul class="reasons">
           <li><b>Loss quality</b> &mdash; for each defeat, half the margin once venue is
@@ -379,6 +399,7 @@
 
       var rows = [
         ["Strength of Record weight", s1.w_sor],
+        ["Resume-adjustment scale", s1.w_adjust],
         ["Market weight", s1.w_market],
         ["Play-by-play weight", s1.w_perf],
         ["FPI weight", s1.w_fpi + " (tiebreaks only; see above)"],

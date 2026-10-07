@@ -30,6 +30,7 @@ The headline weights. **They should sum to 1.0.**
 | `w_sor` | **0.55** | The résumé — who you beat and how hard that was | reward what teams have achieved |
 | `w_market` | **0.30** | Vegas's power ranking — how good the money thinks you are | trust the market's read |
 | `w_perf` | **0.15** | The game tape — how well you actually played per snap | reward teams that look good on film |
+| `w_adjust` | **0.5** | How loudly the résumé adjustment below speaks, as a multiplier on the whole of `[stage2]` | let losses, best wins and covering matter more |
 | `w_fpi` | 0.0 | ESPN's FPI | *leave at 0 — see below* |
 | `w_sos` | 0.0 | ESPN's Strength of Schedule | *leave at 0 — see below* |
 
@@ -52,7 +53,47 @@ reordering; `output_size` (25) is how many get published.
 
 ---
 
+### `w_adjust` — one dial for the whole adjustment
+
+`[stage2]` has four weights. `w_adjust` multiplies all of them at once, so they
+keep their proportions to each other without being edited in step.
+
+| `w_adjust` | adjustment range (2026 wk 5) |
+| --- | --- |
+| 1.0 | −16.62 … +2.54 |
+| **0.5** ← now | −8.31 … +2.07 |
+| 0.0 | off; teams sit where the three numbers put them |
+
+**What it does not do:** scaling the stage scales it for everyone, so a team that
+leads the field on this stage still leads it. Northwestern — whose cover credit on
+four games is what prompted this dial — moved exactly one place when it went to
+0.5. Use `w_adjust` for "this whole stage is too loud"; it is not a fix for one
+team being flattered.
+
 ## Vegas's rating (`[market]`)
+
+### Does an easy schedule inflate the Mkt rating?
+
+No, and it is worth knowing why, because the answer is not obvious from outside.
+The ratings are **solved as a system**, not averaged:
+
+```
+expected margin = rating[you] − rating[opponent] + home field
+```
+
+The opponent's rating is *subtracted*. Being favoured by 25 over a team rated −20
+implies you are **+5**, not +25 — schedule strength divides out by construction.
+
+Measured on 2026 week 5, the correlation between a team's Mkt rating and the mean
+rating of its opponents is **+0.43**: teams with *harder* schedules rate *higher*,
+the opposite of inflation. The easiest schedules in the country belong to North
+Dakota State (#64), Liberty (#89) and UMass (#125).
+
+The real limit is precision, not bias: a team that plays only weak opponents has
+its rating pinned by games with 40-point spreads, which are less precise estimates
+than 3-point ones. `min_games` guards the worst of it.
+
+
 
 | knob | now | what it means |
 | --- | --- | --- |

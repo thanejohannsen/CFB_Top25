@@ -56,8 +56,16 @@ def apply_resume_adjustment(
     cfg: Mapping[str, object],
     evidence_cfg: Mapping[str, object],
     covers: Mapping[str, CoverRecord] | None = None,
+    scale: float = 1.0,
 ) -> None:
-    """Mutates each TeamBase's resume_adj, then re-ranks. Idempotent per call."""
+    """Mutates each TeamBase's resume_adj, then re-ranks. Idempotent per call.
+
+    `scale` is `stage1.w_adjust`: one dial for how loudly this whole stage speaks,
+    rather than four weights that have to be kept in proportion by hand. It is
+    applied to each COMPONENT, not just the total, because the components are
+    published and rendered in the site's panel -- halving the total while leaving
+    the parts alone would make that panel stop adding up.
+    """
     w_loss = float(cfg.get("w_loss_quality", 3.0))  # type: ignore[arg-type]
     w_best = float(cfg.get("w_best_win", 1.0))  # type: ignore[arg-type]
     w_gc = float(cfg.get("w_game_control", 0.5))  # type: ignore[arg-type]
@@ -108,6 +116,7 @@ def apply_resume_adjustment(
             # either way rather than being treated as average.
             "cover": -w_cover * z_cover(cover_raw[tb.team]) if tb.team in cover_raw else 0.0,
         }
+        components = {k: scale * v for k, v in components.items()}
         tb.resume_components = components
         tb.resume_adj = sum(components.values())
         rec = covers.get(tb.team)

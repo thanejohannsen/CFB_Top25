@@ -29,7 +29,7 @@ and replace the single line in `config/ranking.toml`.
 
 ```
 base  = 0.55 x SoR_rank + 0.30 x Market_rank + 0.15 x PPA_rank
-score = base + resume adjustment (incl. cover) + upset regression
+score = base + w_adjust x resume adjustment (incl. cover) + upset regression
 ```
 
 In the owner's words: **SoR is the resume** (who you beat and how hard that was),
@@ -121,6 +121,30 @@ Two things the tool cannot settle, so do not claim it did:
   on 1,997 games). What the data does say clearly: both terms beat either alone
   (pure PPA 64.3%), so neither may go to zero. The split itself is the owner's
   call and has moved (50/50, then 25/15); do not "restore" a previous ratio.
+
+### `stage1.w_adjust` scales the COMPONENTS, not just the total
+
+One dial for the whole stage-2 resume adjustment, shipped at 0.5. It lives in
+`[stage1]` for discoverability -- the question it answers is "how much should the
+adjustment matter next to the three numbers?" -- but it scales stage 2, so it is
+deliberately excluded from the base-weight sum check in `validate()` and from
+`tests/test_pipeline.py`'s weights assertion.
+
+`apply_resume_adjustment()` applies it to each component before summing, not to
+the total afterwards. `tb.resume_components` is published and rendered in the
+site's panel, so halving the total while leaving the parts alone would make that
+panel stop adding up. `tests/test_stages.py` pins it.
+
+It is pinned at 1.0 in `make_golden.FROZEN`, so retuning it does not move the
+regression net.
+
+**Know what it does not do.** Scaling the stage scales it for everybody, so a
+team leading the field on this stage still leads it: Northwestern, whose
+four-game cover credit prompted the dial, moved one place at 0.5. The
+"Northwestern is flattered by a small sample" problem is still open -- the
+candidates are a cap on the cover component, or scoring cover on an absolute
+scale so sample size actually counts (shrinkage is currently inert because the
+z-scoring normalises it straight back out).
 
 ### Against the number (`stage2.w_cover`, `engine/cover.py`)
 

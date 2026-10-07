@@ -1,5 +1,5 @@
 {
-  "current": "2026-regular-05",
+  "current": "2026-regular-06",
   "schema_version": 1,
   "seasons": [
     {
@@ -14,6 +14,17 @@
           "top1": "Alabama",
           "week": 5,
           "year": 2026
+        },
+        {
+          "content_hash": "sha256:800445f0078d42360d709a2726af91fc0a1c473b55dcf75fadb3d0ef98b37d09",
+          "generated_at": "2026-10-07T14:57:27Z",
+          "id": "2026-regular-06",
+          "label": "Week 6",
+          "path": "weeks/2026-regular-06.json",
+          "season_type": "regular",
+          "top1": "Alabama",
+          "week": 6,
+          "year": 2026
         }
       ],
       "year": 2026
@@ -21,8 +32,8 @@
     {
       "snapshots": [
         {
-          "content_hash": "sha256:8faee64ec81415c27fbb71dad08055bfc45d5d52d97b2115d43311c5ea3ed588",
-          "generated_at": "2026-10-06T23:43:41Z",
+          "content_hash": "sha256:5fe72c5eca1b727a648e5c2ba8f6b710659b638af1a1473fc6573342dbab6c45",
+          "generated_at": "2026-10-07T14:57:15Z",
           "id": "2025-postseason-01",
           "label": "Postseason week 1",
           "path": "weeks/2025-postseason-01.json",
@@ -35,5 +46,5 @@
       "year": 2025
     }
   ],
-  "updated_at": "2026-10-06T23:43:44Z"
+  "updated_at": "2026-10-07T14:57:27Z"
 }

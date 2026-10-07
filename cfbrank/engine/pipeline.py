@@ -147,7 +147,14 @@ def rank(dataset: Dataset, cfg: Config) -> RankingResult:
     by_team = {tb.team: tb for tb in teams}
 
     # -- stage 2 ----------------------------------------------------------
-    apply_resume_adjustment(teams, all_results, s2, ev_cfg, cover.cover_margins(dataset.lines, dataset.games, cutoff))
+    apply_resume_adjustment(
+        teams,
+        all_results,
+        s2,
+        ev_cfg,
+        cover.cover_margins(dataset.lines, dataset.games, cutoff),
+        scale=float(s1.get("w_adjust", 1.0)),
+    )
 
     # -- stage 3 (measured on the provisional pool) ------------------------
     pool_size = int(s1["pool_size"])

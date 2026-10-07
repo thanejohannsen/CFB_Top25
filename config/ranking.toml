@@ -56,6 +56,26 @@ fixture_year           = "2025"
 w_sor    = 0.55   # the resume: who you beat and how hard that was
 w_market = 0.30   # Vegas's power ranking: how good the money thinks you are
 w_perf   = 0.15   # the game tape, counted: how well you actually played per snap
+
+# How loudly the resume adjustment speaks, relative to the three numbers above.
+# One dial for the whole of [stage2] -- loss quality, best win, game control and
+# cover -- so they keep their proportions to each other without four numbers
+# having to be edited in step. It lives here rather than in [stage2] because the
+# question it answers belongs on this screen: how much should the ADJUSTMENT
+# matter next to the three numbers?
+#
+#   1.0  the adjustment as stage 2 computes it
+#   0.5  halved          <- shipped
+#   0.0  off entirely; teams sit where the three numbers put them
+#
+# It was 1.0, and at 1.0 the adjustment swung teams by up to 16.6 rank points --
+# larger than most of the base itself. On 2026 week 5, halving it moved the
+# adjustment range from -16.62..+2.54 down to -8.31..+2.07.
+#
+# NOTE what this does NOT fix: scaling the stage scales it for everybody, so a
+# team that leads the field on this stage still leads it. Northwestern, whose
+# cover credit on four games prompted this, moved exactly one place.
+w_adjust = 0.5
 #
 # Market and PPA split the quality half evenly because that is what measured
 # best. Taking the 2025 season, ranking only on what was knowable at the time

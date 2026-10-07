@@ -261,8 +261,12 @@ class TestBaseWeightsArePublished(unittest.TestCase):
         The weights in its row are then NOT the configured ones, which is the
         point: the row has to explain the score that row actually got.
         """
+        # w_adjust lives in [stage1] for discoverability but scales stage 2, so it
+        # is not part of the base total these weights must sum to.
         shipped = {
-            k: v for k, v in self.payload["meta"]["config"]["stage1"].items() if k.startswith("w_")
+            k: v
+            for k, v in self.payload["meta"]["config"]["stage1"].items()
+            if k.startswith("w_") and k != "w_adjust"
         }
         nominal = sum(shipped.values())
         for row in self.payload["rankings"] + self.payload["pool_tail"][:0]:

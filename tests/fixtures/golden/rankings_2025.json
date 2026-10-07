@@ -2089,6 +2089,7 @@
         "output_size": 25,
         "pool_size": 40,
         "require_fpi": true,
+        "w_adjust": 1.0,
         "w_fpi": 0.0,
         "w_market": 0.3,
         "w_perf": 0.15,
@@ -2128,7 +2129,7 @@
         "strength": 14.0
       }
     },
-    "content_hash": "sha256:25fbd031106d846170c982f1734541254fdf051ddccd1671d2ee5dcb7f99365d",
+    "content_hash": "sha256:de3c805eaed8bd2e7d0c7a47bd7857b7d6a184023a21e21108fc5bf5a2a860ef",
     "cost": {
       "drift": 279.658,
       "overrides": 320.8703,

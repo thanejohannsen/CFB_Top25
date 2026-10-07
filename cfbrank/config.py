@@ -34,6 +34,7 @@ DEFAULTS: dict[str, Any] = {
         "w_sor": 0.60,
         "w_market": 0.25,
         "w_perf": 0.15,
+        "w_adjust": 0.5,
         "w_fpi": 0.0,
         "w_sos": 0.0,
         "pool_size": 40,
@@ -187,6 +188,9 @@ def validate(data: Mapping[str, Any]) -> None:
         raise ConfigError("stage1.pool_size must be a positive integer")
     if not isinstance(out, int) or not 0 < out <= pool:
         raise ConfigError("stage1.output_size must satisfy 0 < output_size <= pool_size")
+    # w_adjust lives in [stage1] for discoverability but scales stage 2, so it is
+    # deliberately absent from this list -- a board of all-zero base weights is
+    # still invalid however large the adjustment dial is.
     base_weights = ("stage1.w_sor", "stage1.w_market", "stage1.w_perf", "stage1.w_sos", "stage1.w_fpi")
     for key in base_weights:
         if cfg[key] < 0:
@@ -194,6 +198,8 @@ def validate(data: Mapping[str, Any]) -> None:
     if sum(cfg[key] for key in base_weights) <= 0:
         raise ConfigError("at least one stage1 weight must be > 0")
 
+    if cfg["stage1.w_adjust"] < 0:
+        raise ConfigError("stage1.w_adjust must be >= 0 (0 turns the resume adjustment off)")
     if cfg["stage2.w_cover"] < 0:
         raise ConfigError("stage2.w_cover must be >= 0 (0 turns the cover modifier off)")
     if cfg["resume.margin_sigma"] <= 0:

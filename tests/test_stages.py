@@ -297,3 +297,56 @@ class TestUpsetRegression(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestAdjustmentScale(unittest.TestCase):
+    """`stage1.w_adjust` is one dial for the whole resume adjustment."""
+
+    def teams_and_covers(self):
+        from cfbrank.engine.cover import CoverGame, CoverRecord
+
+        teams, _ = teams_for([("A", 1, 1, 20.0), ("B", 2, 2, 10.0), ("C", 3, 3, 5.0)])
+        covers = {
+            t: CoverRecord(
+                tuple(
+                    CoverGame(opponent="X", week=i + 1, season_type="regular",
+                              expected=0.0, actual=m)
+                    for i, m in enumerate(ms)
+                )
+            )
+            for t, ms in (("A", (14, 18, 21)), ("B", (0, 1, -1)), ("C", (-12, -9, -14)))
+        }
+        return teams, covers
+
+    def adjustments(self, scale):
+        teams, covers = self.teams_and_covers()
+        apply_resume_adjustment(teams, [result("A", "B")], S2, EV, covers, scale=scale)
+        return {t.team: (t.resume_adj, dict(t.resume_components)) for t in teams}
+
+    def test_zero_turns_the_whole_stage_off(self):
+        for total, comps in self.adjustments(0.0).values():
+            self.assertEqual(total, 0.0)
+            self.assertTrue(all(v == 0.0 for v in comps.values()), comps)
+
+    def test_one_is_the_unscaled_adjustment(self):
+        full = self.adjustments(1.0)
+        self.assertTrue(any(abs(t) > 0.1 for t, _ in full.values()))
+
+    def test_a_half_halves_every_component_and_the_total(self):
+        """The components are published and rendered, so they must scale too --
+        halving only the total would make the site's panel stop adding up."""
+        full, half = self.adjustments(1.0), self.adjustments(0.5)
+        for team in full:
+            self.assertAlmostEqual(half[team][0], full[team][0] / 2, places=9, msg=team)
+            for k, v in full[team][1].items():
+                self.assertAlmostEqual(half[team][1][k], v / 2, places=9, msg=f"{team}.{k}")
+
+    def test_components_still_sum_to_the_total(self):
+        for total, comps in self.adjustments(0.5).values():
+            self.assertAlmostEqual(sum(comps.values()), total, places=9)
+
+    def test_scaling_does_not_reorder_this_stage(self):
+        """It is a volume knob, not a re-weighting: the order within the stage
+        is identical, which is exactly why it cannot single out one team."""
+        order = lambda m: sorted(m, key=lambda t: m[t][0])
+        self.assertEqual(order(self.adjustments(1.0)), order(self.adjustments(0.25)))
