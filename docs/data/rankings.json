@@ -90,7 +90,7 @@
         "strength": 4.0
       }
     },
-    "content_hash": "sha256:800445f0078d42360d709a2726af91fc0a1c473b55dcf75fadb3d0ef98b37d09",
+    "content_hash": "sha256:fd3442b279795931fdfa058ca16aa3dfe0ae9e7f4c1e826345bf17306b54895d",
     "cost": {
       "drift": 31.4169,
       "overrides": 28.543,
@@ -115,7 +115,7 @@
       "resume_rated": 138,
       "series_split": 0
     },
-    "generated_at": "2026-10-07T14:57:27Z",
+    "generated_at": "2026-10-07T14:58:51Z",
     "previous_snapshot_id": "2026-regular-05",
     "ratings": {
       "market": {
@@ -148,8 +148,8 @@
       "attribution": "Data: CollegeFootballData.com -- betting lines, play-by-play PPA, and Strength of Record, Strength of Schedule and FPI via ESPN",
       "endpoints": [
         {
-          "cache": "hit",
-          "fetched_at": "2026-10-07T14:56:52Z",
+          "cache": "miss",
+          "fetched_at": "2026-10-07T14:58:48Z",
           "params": {
             "year": "2026"
           },
@@ -158,8 +158,8 @@
           "sha256": "sha256:96dd66ad3f64115150445c468959a7e47496948cf81b2ea364d1bf46da4dd473"
         },
         {
-          "cache": "hit",
-          "fetched_at": "2026-10-07T14:56:52Z",
+          "cache": "miss",
+          "fetched_at": "2026-10-07T14:58:49Z",
           "params": {
             "classification": "fbs",
             "seasonType": "both",
@@ -167,11 +167,11 @@
           },
           "path": "/games",
           "records": 888,
-          "sha256": "sha256:d02e358291b901c5a9b65ffa87572e0c7924a21f57c74166a44dad5a354e141f"
+          "sha256": "sha256:eae0b82effe430f21e078509fceacc64f73ecfdd152feb86371441b0c141020f"
         },
         {
-          "cache": "hit",
-          "fetched_at": "2026-10-07T14:56:53Z",
+          "cache": "miss",
+          "fetched_at": "2026-10-07T14:58:49Z",
           "params": {
             "year": "2026"
           },
@@ -180,8 +180,8 @@
           "sha256": "sha256:ff0fb9b68da6cef41ae87f28562a79e0e490ac54d10765110e24f9a39c194c15"
         },
         {
-          "cache": "hit",
-          "fetched_at": "2026-10-07T14:56:55Z",
+          "cache": "miss",
+          "fetched_at": "2026-10-07T14:58:49Z",
           "params": {
             "year": "2026"
           },
@@ -190,8 +190,8 @@
           "sha256": "sha256:eeaefe00636eb207b4c6499e3886b1c28578f8a5d706d11e0d63840609bac4e6"
         },
         {
-          "cache": "hit",
-          "fetched_at": "2026-10-07T14:56:56Z",
+          "cache": "miss",
+          "fetched_at": "2026-10-07T14:58:50Z",
           "params": {
             "seasonType": "both",
             "year": "2026"
@@ -201,8 +201,8 @@
           "sha256": "sha256:17d5c1a72ddbbf4573a002a5ca2b5ba57ac2d4722ae2340cdf126c2ce7acd9f6"
         },
         {
-          "cache": "hit",
-          "fetched_at": "2026-10-07T14:56:58Z",
+          "cache": "miss",
+          "fetched_at": "2026-10-07T14:58:51Z",
           "params": {
             "excludeGarbageTime": "true",
             "seasonType": "both",

@@ -16,8 +16,8 @@
           "year": 2026
         },
         {
-          "content_hash": "sha256:800445f0078d42360d709a2726af91fc0a1c473b55dcf75fadb3d0ef98b37d09",
-          "generated_at": "2026-10-07T14:57:27Z",
+          "content_hash": "sha256:fd3442b279795931fdfa058ca16aa3dfe0ae9e7f4c1e826345bf17306b54895d",
+          "generated_at": "2026-10-07T14:58:51Z",
           "id": "2026-regular-06",
           "label": "Week 6",
           "path": "weeks/2026-regular-06.json",
@@ -46,5 +46,5 @@
       "year": 2025
     }
   ],
-  "updated_at": "2026-10-07T14:57:27Z"
+  "updated_at": "2026-10-07T14:58:51Z"
 }
