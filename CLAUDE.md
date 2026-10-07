@@ -254,13 +254,17 @@ rating inside that set, floored at zero.
   qualifying win, and 0 must be the FLOOR of a credit. Centring would hand a
   PENALTY to whichever team's best scalp happened to be the weakest qualifying
   one — worse than beating nobody good.
-- **A FIXED divisor, not `penalty_scaler`.** This is the trap and it is the
-  opposite of the usual one: only 18 of 138 teams have a qualifying win, so the
-  board spread is set by the 120 zeros and collapses to 2.31. That inflated
-  Texas's single win to **−9.27 rank points**, larger than the rest of the
-  adjustment put together, while the #1 team scored nothing. Dividing by
-  `max(rating) - bar` instead bounds the credit at exactly `w_best_win` and makes
-  it independent of how many teams happen to qualify this week.
+- **Scale per standard deviation over THE QUALIFIERS, not the whole board.** Two
+  wrong answers were tried first. `penalty_scaler` over all 138 is wrong: only 11
+  qualify, so the spread is set by the 127 zeros, collapses to 2.31, and inflated
+  Texas's single win to **−9.27 rank points** — more than the rest of the
+  adjustment put together — while the #1 team scored nothing. Normalising to a
+  0–1 range fixed the blow-up but silently changed the UNIT to "rank points,
+  maximum, ever", so a weight of 2.5 delivered 1.25 here against 3.89 for the same
+  number on `loss_quality`. **The owner caught that too** — "what happened to the
+  2.5 weight?" Scoping the spread to the qualifiers restores "rank points per
+  standard deviation" and is stable: max credit measures 4.55 / 4.86 / 5.04 /
+  4.56 / 4.96 across five weeks of two seasons while the qualifier count triples.
 - **The bar means 15 of the published top 25 score 0**, Georgia included: they
   beat Oklahoma, rated +18.8 but 33rd on the base order, so it does not qualify.
   That is the owner's explicit choice — "0 pts if they have no best win" — but the

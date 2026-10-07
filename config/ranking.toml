@@ -156,6 +156,11 @@ fit_home_edge  = true
 # -- Stage 2: resume adjustment ("how do your losses look") ------------------
 [stage2]
 w_loss_quality = 2.5   # rank points per standard deviation
+# Rank points per standard deviation, same unit as the other three. The spread is
+# taken over the teams that HAVE a qualifying win, not the whole board: over all
+# 138 it is set by the 127 zeros, collapses, and inflated a single Texas win to
+# -9.27 rank points. Scoped to the qualifiers the maximum credit measures 4.55 /
+# 4.86 / 5.04 / 4.56 / 4.96 across five weeks of two seasons.
 w_best_win     = 2.5
 
 # What counts as a "best win" at all: the opponent must be inside the top this

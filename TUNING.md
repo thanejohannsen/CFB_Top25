@@ -162,15 +162,24 @@ market rating (a different set), and not the AP poll (which this ranking never
 reads). The Base order rather than the published one because the published order
 is circular: head-to-head reorders using these very credits.
 
-**How much is it worth?** **Market rating points**, on a scale running from the
-weakest team inside the bar up to the strongest. So beating the best team in the
-country is worth exactly `w_best_win`; beating the 25th-best is worth ~0, which
-means there is no cliff at the bar; and beating nobody inside it is 0 — the worst
+**How much is it worth?** **Market rating points past the weakest team inside the
+bar**, then scaled per standard deviation like the other three — so `w_best_win`
+means the same thing here as `w_cover` does. Beating the 25th-best team is worth
+~0, so there is no cliff at the bar, and beating nobody inside it is 0: the worst
 outcome on this term, not an average one.
 
-On 2026 week 5: Texas over Ohio State **−1.25** (the maximum), Ole Miss over LSU
-**−0.79**, Florida over Ole Miss **−0.60**, Alabama over Mississippi State
-**−0.24**, Notre Dame over Wisconsin **−0.14**.
+On 2026 week 5: Texas over Ohio State **−4.55**, Ole Miss over LSU **−2.87**,
+Oregon over USC **−2.68**, Missouri over Florida **−2.48**, Florida over Ole Miss
+**−2.19**, Alabama over Mississippi State **−0.87**, Notre Dame over Wisconsin
+**−0.51**.
+
+The spread is taken over **the teams that have a qualifying win**, not the whole
+board, and that choice is load-bearing. Over all 138 the spread is set by the 127
+zeros, collapses, and inflated Texas's single win to **−9.27** — more than the
+rest of the adjustment put together. Scoping it to the qualifiers is also stable:
+the maximum credit measures 4.55 / 4.86 / 5.04 / 4.56 / 4.96 rank points across
+five different weeks of two seasons, while the qualifier count triples from 11 to
+31.
 
 Worth knowing before you turn the weight up: **15 of the published top 25 score 0
 here**, including Georgia — they beat Oklahoma, who are rated +18.8 but sit 33rd

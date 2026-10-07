@@ -36,7 +36,7 @@ from typing import Mapping, Sequence
 from cfbrank.engine.base_score import TeamBase, rerank
 from cfbrank.engine.cover import CoverRecord
 from cfbrank.engine.evidence import location_adjusted_margin
-from cfbrank.engine.stats import mean, penalty_scaler, zscorer
+from cfbrank.engine.stats import mean, penalty_scaler, pstdev, zscorer
 from cfbrank.models import GameResult
 
 # An unrated or FCS opponent is treated as worse than every ranked team, by
@@ -158,21 +158,30 @@ def apply_resume_adjustment(
         tb.team: max(0.0, best_quality.get(tb.team, (float("-inf"), ""))[0] - top_floor)
         for tb in teams
     }
-    # A FIXED scale, not the board's spread. `penalty_scaler` is wrong here: only
-    # 18 of 138 teams have a qualifying win, so the spread is set by the 120
-    # zeros and collapses to 2.31, which inflated Texas's one win over Ohio State
-    # to -9.27 rank points -- larger than the whole rest of the adjustment, while
-    # the #1 team got nothing.
+    # Per standard deviation, over THE TEAMS THAT HAVE A QUALIFYING WIN -- so
+    # `w_best_win` means the same thing here as it does for the other three terms:
+    # rank points per standard deviation.
     #
-    # The natural scale is the bar itself: from the top-25 rating up to the best
-    # rating on the board. The credit then runs 0 (beat exactly the 25th team) to
-    # 1 (beat the best team in the country), so the most this term can ever be
-    # worth is w_best_win, and it does not move with how many teams happen to
-    # qualify this week.
-    best_span = top_ceiling - top_floor
-    scale_best = (
-        (lambda x: x / best_span) if best_span > 1e-9 else (lambda _x: 0.0)
-    )
+    # The population matters and both wrong answers were tried. `penalty_scaler`
+    # over all 138 teams is wrong: only 11 of them qualify, so the spread is set
+    # by the 127 zeros, collapses to 2.31, and inflated Texas's single win to
+    # -9.27 rank points -- more than the rest of the adjustment put together.
+    # Normalising to a 0-1 range instead fixed the blow-up but silently changed
+    # the UNIT to "rank points, maximum, ever", which made a weight of 2.5 deliver
+    # 1.25 here against 3.89 for the same number on loss_quality.
+    #
+    # Scoping the spread to the qualifiers is both correct and stable. Measured:
+    # the maximum credit lands at 4.55 (2026 wk5, 11 qualifiers), 4.86 (2025 wk5,
+    # 11), 5.04 (2025 wk9, 23), 4.56 (2025 wk13, 29) and 4.96 (2025 postseason,
+    # 31) rank points -- in line with cover's 6.57 range and loss quality's 3.89,
+    # and barely moving as the qualifier count triples.
+    #
+    # Anchored at zero rather than centred, for the same reason as `loss_quality`:
+    # no qualifying win scores 0 and 0 has to be the FLOOR of a credit. `sorted`
+    # pins the float summation order inside `pstdev`.
+    qualifying = sorted(v for v in best_raw.values() if v > 1e-9)
+    best_sd = pstdev(qualifying)
+    scale_best = (lambda x: x / best_sd) if best_sd > 1e-9 else (lambda _x: 0.0)
     gc_raw = {tb.team: float(tb.game_control_rank or worst) for tb in teams}
     z_gc = zscorer([gc_raw[tb.team] for tb in teams])
 
