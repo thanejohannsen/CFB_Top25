@@ -197,13 +197,52 @@ class TestResumeAdjustment(unittest.TestCase):
                            by["C"].resume_components["loss_quality"],
                            "a 38-point home loss should cost more than a 3-point road loss")
 
-    def test_a_single_team_with_losses_has_no_relative_penalty(self):
-        # One sample has no variance, so the z-score is 0 by construction
-        # rather than a division by zero.
+    def test_a_lone_loser_has_no_spread_to_be_scaled_against(self):
+        # One sample has no spread, so the scaler returns 0 by construction
+        # rather than dividing by zero. Degenerate: a real board has a hundred
+        # or more teams with a loss, so nothing is being let off here.
         teams, _ = teams_for([("A", 1, 1, 20.0), ("B", 2, 2, 10.0)])
         apply_resume_adjustment(teams, [result("A", "B")], S2, EV)
         by = {t.team: t for t in teams}
         self.assertAlmostEqual(by["B"].resume_components["loss_quality"], 0.0)
+
+    def test_a_loss_can_never_beat_having_no_loss(self):
+        """The rule: the best a loss can do is not hurt you.
+
+        Loss quality used to be z-scored against the teams that HAD lost, so
+        the yardstick was the average loss -- and since the average loss is ugly,
+        a tidy one scored negative, i.e. a credit. An undefeated team's flat 0.0
+        was then the worst score on the component: a 16-0 Indiana finished last
+        in the 2025 top 25 on it, and Ohio State banked almost four rank points
+        for losing well. The scale is one-sided now.
+        """
+        teams, _ = teams_for(
+            [("A", 1, 1, 20.0), ("B", 2, 2, 10.0), ("C", 3, 3, 5.0), ("D", 4, 4, 1.0)]
+        )
+        apply_resume_adjustment(
+            teams,
+            [
+                # B is thumped at home by the best team; C loses narrowly on the
+                # road to it; D loses at home to the worst team on the board.
+                result("A", "B", 52, 7, site="away"),
+                result("A", "C", 24, 23, site="home"),
+                result("C", "D", 21, 20, site="away"),
+            ],
+            S2,
+            EV,
+        )
+        by = {t.team: t.resume_components["loss_quality"] for t in teams}
+
+        self.assertAlmostEqual(by["A"], 0.0, msg="unbeaten: nothing to answer for")
+        for team, v in by.items():
+            self.assertGreaterEqual(
+                v, 0.0, f"{team} was PAID for a loss; this component may only ever cost"
+            )
+            self.assertGreaterEqual(
+                v, by["A"] - 1e-12, f"{team} scored better than an unbeaten team"
+            )
+        self.assertGreater(by["B"], 0.0, "a 45-point home loss has to cost something")
+        self.assertGreater(by["B"], by["C"], "and more than a one-point road loss")
 
     def test_components_are_recorded_for_the_site(self):
         teams, _ = teams_for([("A", 1, 1, 20.0), ("B", 2, 2, 10.0)])

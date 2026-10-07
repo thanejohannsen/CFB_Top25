@@ -165,6 +165,64 @@ leaderboard. It is a live lever on exactly the small-sample problem, which is
 why "scoring cover on an absolute scale so sample size counts" is no longer
 listed above as a thing still to build -- it is already partly built.
 
+### `loss_quality` is ONE-SIDED, and must stay that way
+
+**A loss may cost rank points. It may never earn them.** `engine/resume.py` scores
+it through `stats.penalty_scaler`, not `zscorer`: divide by the board's spread,
+do **not** subtract the mean, floor at zero.
+
+It was centred, and that was a real bug the owner caught. The z-score population
+is *the teams that have lost*, whose mean badness is ~13.3 because it is dominated
+by genuinely ugly losses. So a ranked team's tidy loss landed two standard
+deviations below that mean and came out **negative — a credit** — while an
+undefeated team's flat `0.0` was the worst score on the component. The evidence:
+
+- 2026 week 5: **60 of 123 teams with a loss were paid for it.** Ohio State's
+  one-point road loss was worth **−3.99**, nearly four rank points *in their
+  favour* against a team that had not lost at all.
+- The published 2025 board: **24 of 25 rows negative**, and the one `0.00` was
+  16-0 Indiana — finishing LAST in the top 25 on "loss quality". Notre Dame
+  banked −7.22 for losing well.
+
+The fix needed no new weight, because **badness is already anchored at zero**:
+across the 123 teams with a loss it runs −0.170 … 28.902 and only one is below
+zero, by 0.17. Zero badness already means the best loss available, a one-point
+road defeat to the best team in the country. Dropping the centring shifts every
+losing team by the same `mean/sd x w` and leaves the spread identical, so
+`w_loss_quality` stays 3.0 and only the anchor moves: no loss **0**, a perfect
+loss **~0**, an average loss **+3.95**, the worst on the board **+8.55**.
+
+Two things checked before shipping it, both worth not redoing:
+
+- **The divisor is stable enough to carry the absolute level**, which it now does
+  rather than only ordering losses. 2025: `pstdev` 5.87 (wk 3) -> 5.01 (wk 15),
+  so an average loss costs 3.57 -> 4.16 across a whole season. No case for
+  hard-coding a scale.
+- **It reordered nothing on the completed 2025 season** — published order and
+  every count byte-identical. The shift is near-uniform among teams with losses,
+  so it changes what the component *means* without churning a finished board.
+
+**What it cost to predict, measured both ways.** This is a values fix, so a cost
+would have been acceptable; it is near zero on the sample big enough to read.
+
+| | before | after |
+| --- | --- | --- |
+| all FBS, `--weeks 4,6,8,10,12` (1,997 games) | 67.8% | **67.4%** |
+| all FBS, default weeks (1,726 games) | 68.1% | **68.0%** |
+| AP-vs-AP, `--weeks 4,6,8,10,12` (179) | 65.4% | **62.0%** |
+| AP-vs-AP, default weeks (161) | 63.4% | **63.4%** |
+
+Read the all-FBS rows: −0.4 and −0.1 points on ~1,700-2,000 games. The AP-vs-AP
+rows disagree with each other (−3.4 and 0.0) on 161-179 games, which is what a
+sample that small does. Do not quote the −3.4 as the cost of this change.
+
+**The general rule this is an instance of:** a component with a hard `0.0` for
+"this team has no value here" must not sit on a centred scale, because `z = 0` is
+"average", not "nothing". `best_win` and `game_control` avoid it by giving a
+team with nothing the `worst = n + 20` sentinel instead, which is a genuine
+continuum. `cover` has the same `0.0` branch but it is dead code (every rateable
+team has a line) and `cover` is two-sided on purpose — covering is meant to pay.
+
 ### Against the number (`stage2.w_cover`, `engine/cover.py`)
 
 A resume says who you beat; it cannot say whether you looked like you meant it.

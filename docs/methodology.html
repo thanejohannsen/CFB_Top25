@@ -160,7 +160,8 @@
         </p>
         <ul class="reasons">
           <li><b>Loss quality</b> &mdash; for each defeat, half the margin once venue is
-            accounted for, half the weakness of whoever beat you.</li>
+            accounted for, half the weakness of whoever beat you. This one can only ever
+            cost a team points: the best a loss can do is not hurt you.</li>
           <li><b>Best win</b> &mdash; how good the best team you beat was.</li>
           <li><b>Game control</b> &mdash; the feed's average in-game win probability rank:
             did you lead comfortably, or survive?</li>
@@ -211,9 +212,24 @@
           current dial of a half, those are <b>against the number 2.0</b>, <b>loss quality
           1.5</b>, <b>best win 0.5</b>, <b>game control 0.25</b>. Opponent strength is
           measured on the stage&nbsp;1 order, frozen, so the stage cannot feed on its own
-          output. Two details worth knowing: an undefeated team takes a flat zero on loss
-          quality rather than the credit a z-score would hand it, and loss quality is
-          scored only against <em>other teams that have lost</em>.
+          output.
+        </p>
+        <p class="lede">
+          <b>Loss quality is the one term that can only ever cost.</b> The best a loss can
+          do is not hurt you: an unbeaten team scores <b>0</b>, and on this scale 0 is the
+          best available. A near-perfect loss &mdash; a point on the road to the best team
+          in the country &mdash; also comes out at about 0; an average loss costs about
+          <b>+4</b>, and the ugliest loss in the country about <b>+8.5</b>.
+        </p>
+        <p class="lede">
+          It did not always work that way, and the old behaviour is worth stating because
+          it was wrong in an instructive direction. Loss quality used to be graded on a
+          curve against <em>the teams that had lost</em>. The average loss is ugly, so a
+          tidy loss scored below that average and came out <em>negative</em> &mdash; a
+          credit. An unbeaten team's 0 was then the <em>worst</em> score on the component:
+          on the finished 2025 board a 16-0 Indiana placed last in the top 25 on loss
+          quality, while Notre Dame banked 7.2 rank points for having lost well. Being
+          unbeaten now ranks first on this term, which is the only defensible answer.
         </p>
         <p class="lede">
           Worked, for Northwestern in week 5 of 2026 &mdash; four covers from four, by an
@@ -224,17 +240,24 @@
                     -4.0 &times; 2.26 &times; 0.5                            = -4.52
 loss quality        lost at Indiana by 6; venue-adjusted 6 - 2.5 = 3.5
                     0.5 &times; 3.5 + 0.5 &times; (10/138 &times; 40)            = 3.20
-                    board mean 13.31, sd 5.07  &rarr;  z = -1.99
-                    3.0 &times; -1.99 &times; 0.5                            = -2.99
+                    board spread 5.07, NOT centred  &rarr;  3.20 / 5.07 = 0.63
+                    3.0 &times; 0.63 &times; 0.5                             = +0.94
 best win            beat Colorado, 47th on the stage-1 order
                     board mean 88.16, sd 43.94  &rarr;  z = -0.94
                     1.0 &times; -0.94 &times; 0.5                            = -0.47
 game control        11th; board mean 69.5, sd 39.84  &rarr;  z = -1.47
                     0.5 &times; -1.47 &times; 0.5                            = -0.37
-                                                               total = -8.35</pre>
+                                                               total = -4.41</pre>
         <p class="lede">
           Their base is <code>0.55 &times; 18 + 0.30 &times; 32 + 0.15 &times; 11 =
-          21.15</code>, and 21.15 &minus; 8.35 = <b>12.80</b>, which lands them ninth.
+          21.15</code>, and 21.15 &minus; 4.41 = <b>16.74</b>, which lands them twelfth.
+        </p>
+        <p class="lede">
+          Notice that loss quality is the only one of the four without a board mean
+          subtracted from it. Their 3.5-point road loss to a top-ten team is about as
+          forgivable as a loss gets &mdash; so it costs them almost nothing, <b>+0.94</b>
+          &mdash; but it is still a loss, and it cannot be turned into a credit against
+          the eleven unbeaten teams on the board.
         </p>
         <h3>Why "scored as" is smaller than the raw average</h3>
         <p class="lede">

@@ -8,10 +8,19 @@ not the same result.
 Four adjustments, all in base-score rank points, positive meaning worse:
 
   loss_quality  per loss: half the location-adjusted losing margin, half the
-                weakness of who beat you
+                weakness of who beat you. ONE-SIDED -- see below
   best_win      how good the best team you beat was
   game_control  the feed's average in-game win probability rank
   cover         how the team played against the number the market set
+
+`loss_quality` is the only one on a one-sided scale, and it has to be. The other
+three are two-sided because every team has a value for them: beat nobody and you
+take the floor on `best_win`, so being below average is a genuine credit. A team
+with no losses has no value at all, which is a different thing, and scoring the
+rest against the mean of the teams that DID lose made that mean the yardstick --
+so a tidy loss beat no loss. A 16-0 Indiana finished last in the 2025 top 25 on
+this component. `penalty_scaler` fixes it: zero badness is the best score
+available, and no loss scores zero.
 
 `cover` is the one that reads a team's performance rather than its results. A
 resume says who you beat; it cannot say whether you looked like you meant it.
@@ -27,7 +36,7 @@ from typing import Mapping, Sequence
 from cfbrank.engine.base_score import TeamBase, rerank
 from cfbrank.engine.cover import CoverRecord
 from cfbrank.engine.evidence import location_adjusted_margin
-from cfbrank.engine.stats import mean, zscorer
+from cfbrank.engine.stats import mean, penalty_scaler, zscorer
 from cfbrank.models import GameResult
 
 # An unrated or FCS opponent is treated as worse than every ranked team, by
@@ -94,7 +103,12 @@ def apply_resume_adjustment(
                 best_win[r.winner] = opp_rank
 
     loss_raw = {t: mean([b for _, b in v]) for t, v in losses.items() if v}
-    z_loss = zscorer(sorted(loss_raw.values()))
+    # NOT z-scored: this is a penalty, and badness is already anchored at zero.
+    # Zero badness is the best loss available -- a one-point road defeat to the
+    # best team in the country -- so the scale needs a divisor, not a centre.
+    # `sorted` is load-bearing for byte-stability: it pins the float summation
+    # order inside `pstdev`.
+    scale_loss = penalty_scaler(sorted(loss_raw.values()))
     best_raw = {tb.team: float(best_win.get(tb.team, worst)) for tb in teams}
     z_best = zscorer([best_raw[tb.team] for tb in teams])
     gc_raw = {tb.team: float(tb.game_control_rank or worst) for tb in teams}
@@ -107,13 +121,18 @@ def apply_resume_adjustment(
 
     for tb in teams:
         components = {
-            # An undefeated team has no losses to judge, so it takes no penalty.
-            "loss_quality": w_loss * z_loss(loss_raw[tb.team]) if tb.team in loss_raw else 0.0,
+            # Zero for an undefeated team, and on this scale zero is the BEST
+            # score available rather than a middling one. A good loss costs
+            # nearly nothing; it can never pay.
+            "loss_quality": w_loss * scale_loss(loss_raw[tb.team]) if tb.team in loss_raw else 0.0,
             "best_win": w_best * z_best(best_raw[tb.team]),
             "game_control": w_gc * z_gc(gc_raw[tb.team]),
             # Negative is a credit: beating the number lowers the base score,
-            # which is better. A team with no lined games takes no adjustment
-            # either way rather than being treated as average.
+            # which is better. Two-sided on purpose -- covering is meant to pay.
+            # A team with no lined games gets 0.0, which on a centred scale means
+            # "treated as board-average", not "no adjustment"; dead code today
+            # because every rateable team has a line, but do not mistake it for
+            # the `loss_quality` fix.
             "cover": -w_cover * z_cover(cover_raw[tb.team]) if tb.team in cover_raw else 0.0,
         }
         components = {k: scale * v for k, v in components.items()}

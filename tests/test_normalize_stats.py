@@ -4,7 +4,15 @@ from __future__ import annotations
 
 import unittest
 
-from cfbrank.engine.stats import clamp, mean, pstdev, rank_desc, round_floats, zscorer
+from cfbrank.engine.stats import (
+    clamp,
+    mean,
+    penalty_scaler,
+    pstdev,
+    rank_desc,
+    round_floats,
+    zscorer,
+)
 from cfbrank.normalize import ALIASES, canonical, is_probably_fcs, join_report, sort_key
 
 
@@ -68,6 +76,29 @@ class TestStats(unittest.TestCase):
         z = zscorer([1.0, 2.0, 3.0])
         self.assertAlmostEqual(z(2.0), 0.0)
         self.assertGreater(z(3.0), 0)
+
+    def test_penalty_scaler_is_not_centred_and_never_negative(self):
+        """The whole point: a below-average value is not a credit.
+
+        `zscorer` would hand 1.0 a negative score here because it is under the
+        mean. For a penalty that is wrong -- it pays a team for a small amount of
+        the bad thing rather than none of it.
+        """
+        xs = [1.0, 2.0, 3.0]
+        p, z = penalty_scaler(xs), zscorer(xs)
+        self.assertLess(z(1.0), 0.0)
+        self.assertGreater(p(1.0), 0.0)
+        self.assertAlmostEqual(p(0.0), 0.0, msg="zero is the floor, and the best score")
+        self.assertAlmostEqual(p(-5.0), 0.0, msg="and it clamps below zero")
+        # Same divisor as the z-score, so a weight still reads as rank points
+        # per standard deviation.
+        self.assertAlmostEqual(p(3.0), 3.0 / pstdev(xs))
+        self.assertGreater(p(3.0), p(2.0))
+
+    def test_penalty_scaler_on_a_degenerate_sample(self):
+        p = penalty_scaler([3.0, 3.0, 3.0])
+        self.assertEqual(p(3.0), 0.0)
+        self.assertEqual(p(99.0), 0.0)
 
     def test_rank_desc_ties_share_the_minimum_rank(self):
         self.assertEqual(rank_desc({"a": 3.0, "b": 5.0, "c": 3.0}), {"b": 1, "a": 2, "c": 2})

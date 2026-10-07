@@ -130,13 +130,35 @@ Rank points, applied after the base order. **Positive = worse.**
 | knob | now | what it means | turn it up to… |
 | --- | --- | --- | --- |
 | `w_cover` | **4.0** | Performance against the posted line — did you look like you meant it | punish teams that don't beat the number |
-| `w_loss_quality` | 3.0 | How bad your losses look: margin, venue, and who beat you | punish ugly losses |
+| `w_loss_quality` | 3.0 | How bad your losses look: margin, venue, and who beat you. **Positive only** — see below | punish ugly losses |
 | `w_best_win` | 1.0 | Credit for the best team you beat | reward one big scalp |
 | `w_game_control` | 0.5 | Did you lead comfortably or survive | reward wire-to-wire wins |
 
 `w_cover` is currently the most consequential of the four. Above ~6 it starts
 floating 3-1 teams with soft schedules into the top ten, because it measures
 *exceeding expectations* rather than *being good*.
+
+### A loss can cost you, never pay you
+
+`w_loss_quality` is the one term on a **one-sided** scale, and that is deliberate.
+**The best a loss can do is not hurt you.**
+
+| what happened | loss quality |
+| --- | --- |
+| no losses | **0** — and 0 is the best score available |
+| a near-perfect loss (a point on the road to the best team in the country) | **~0** |
+| an average loss | **+3.95** |
+| the ugliest loss on the board | **+8.55** |
+
+It used to be graded on a curve against *the teams that had lost*, and because
+the average loss is ugly, a tidy one scored below that average and came out
+negative — a credit. An unbeaten team's 0 was then the **worst** score on the
+component: on the finished 2025 board, a 16-0 Indiana placed last in the top 25
+on loss quality while Notre Dame banked 7.22 rank points for losing well.
+
+Turning `w_loss_quality` up now makes losses cost more, full stop. It cannot make
+a loss profitable, whatever you set it to — and 0 switches the term off rather
+than flattening it into a reward.
 
 ---
 

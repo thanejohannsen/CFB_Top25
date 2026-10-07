@@ -32,6 +32,29 @@ def zscorer(xs: Sequence[float]) -> Callable[[float], float]:
     return lambda x: (x - mu) / sigma
 
 
+def penalty_scaler(xs: Sequence[float]) -> Callable[[float], float]:
+    """Scale by the sample's spread WITHOUT centring it, floored at zero.
+
+    For a ONE-SIDED quantity: one where zero already means "nothing to answer
+    for", so the only question is how far past zero you are.
+
+    `zscorer` centres on the sample mean, which turns any below-average value
+    into a negative — a credit. That is right for a two-sided measure and wrong
+    for a penalty, because it pays a team for having a *tidy* example of the
+    thing rather than none of it. Loss quality is the case in point: the mean of
+    teams that have lost is dominated by ugly losses, so a good loss scored
+    below it and an undefeated team's flat 0.0 came out *worse* than losing well.
+
+    Keeping the spread as the divisor means the caller's weight still reads as
+    "rank points per standard deviation", exactly as for `zscorer`. Same
+    degenerate-sample guard, for the same reason.
+    """
+    sigma = pstdev(xs)
+    if sigma <= SIGMA_FLOOR:
+        return lambda _x: 0.0
+    return lambda x: max(0.0, x) / sigma
+
+
 def rank_desc(values: Mapping[str, float]) -> dict[str, int]:
     """1 = highest value. Ties share the minimum rank. Platform-stable order."""
     ordered = sorted(values.items(), key=lambda kv: (-kv[1], sort_key(kv[0])))

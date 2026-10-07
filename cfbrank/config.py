@@ -200,8 +200,13 @@ def validate(data: Mapping[str, Any]) -> None:
 
     if cfg["stage1.w_adjust"] < 0:
         raise ConfigError("stage1.w_adjust must be >= 0 (0 turns the resume adjustment off)")
-    if cfg["stage2.w_cover"] < 0:
-        raise ConfigError("stage2.w_cover must be >= 0 (0 turns the cover modifier off)")
+    # Every stage-2 weight scales a quantity whose sign already carries the
+    # meaning, so a negative weight inverts the term rather than softening it.
+    # It matters most for w_loss_quality, which is one-sided: negative would turn
+    # the loss penalty into an unbounded reward for losing badly.
+    for key in ("w_cover", "w_loss_quality", "w_best_win", "w_game_control"):
+        if cfg[f"stage2.{key}"] < 0:
+            raise ConfigError(f"stage2.{key} must be >= 0 (0 turns that term off)")
     if cfg["resume.margin_sigma"] <= 0:
         raise ConfigError("resume.margin_sigma must be > 0")
     place = cfg["resume.reference_place"]
