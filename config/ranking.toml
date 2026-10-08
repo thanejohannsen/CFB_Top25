@@ -155,7 +155,7 @@ fit_home_edge  = true
 
 # -- Stage 2: resume adjustment ("how do your losses look") ------------------
 [stage2]
-w_loss_quality = 2.5   # rank points per standard deviation
+w_loss_quality = 2.75   # rank points per standard deviation
 # Rank points per standard deviation, same unit as the other three. The spread is
 # taken over the teams that HAVE a qualifying win, not the whole board: over all
 # 138 it is set by the 127 zeros, collapses, and inflated a single Texas win to
@@ -339,8 +339,7 @@ w_recency          = 1.20
 w_common_opponents = 0.15
 home_field_points  = 2.5    # fallback; the market's own figure is used when fitted
 fit_home_field     = true   # take home field from [market] rather than the line above
-margin_cap         = 28
-
+margin_cap         = 24
 # How cheap is the least convincing result on the board to ignore?
 #
 # Conviction is a blend of z-scores, so it sits near zero and runs about
