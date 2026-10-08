@@ -107,7 +107,10 @@ h1 { margin: 0 0 4px; font-size: 1.75rem; letter-spacing: -0.015em; }
 .controls label { color: var(--ink-2); font-size: 0.875rem; }
 /* Keeps the label with its control when the row wraps on a narrow screen,
    rather than stranding the word "Week" at the end of the line above. */
-.control-group { display: inline-flex; align-items: center; gap: 8px; }
+.control-group { display: inline-flex; align-items: center; gap: 8px; min-width: 0; }
+/* The option text is long ("2026 · Week 5 — Alabama"), so the select has to be
+   allowed to shrink or it pushes a 360px viewport sideways. */
+#week-select { max-width: 100%; min-width: 0; }
 select, .btn {
   font: inherit; font-size: 0.9rem; color: var(--ink);
   background: var(--surface); border: 1px solid var(--rule-strong);
@@ -241,9 +244,56 @@ tbody tr.row[aria-expanded="true"] { background: var(--accent-wash); }
 tr.detail > td { background: var(--surface-2); padding: 0; border-bottom: 1px solid var(--rule-strong); }
 /* Also restated inside the phone block, where an ID selector outranks this. */
 tr.detail[hidden] { display: none; }
-.detail-inner { padding: 16px 16px 0; display: grid; gap: 18px 28px; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); }
-.detail-wide { padding: 4px 16px 16px; }
+.detail-wide { padding: 12px 16px 16px; }
 .detail-wide .lede { font-size: 0.8125rem; margin-bottom: 10px; }
+
+/* ---------- the four stages ----------
+   One block per stage of the ranking, in the order it runs, so the panel reads
+   the way the ranking works instead of splitting the same facts across a prose
+   column and a table of pairs. */
+.stages {
+  display: grid; gap: 12px; margin: 0 0 22px;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  /* Each stage block is as tall as its own content. Stretching stage 1's two
+     lines to match stage 2's component table just makes the short ones hollow. */
+  align-items: start;
+}
+.stage {
+  border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--surface); padding: 12px 14px;
+}
+.stage h4 {
+  margin: 0 0 6px; display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline;
+  font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em;
+}
+.stage-n { color: var(--accent); font-weight: 700; }
+.stage-title { color: var(--ink-muted); font-weight: 600; }
+.stage-result {
+  margin: 0; font-size: 1.0625rem; font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.stage-formula, .stage-note {
+  margin: 6px 0 0; font-size: 0.8125rem; color: var(--ink-2); line-height: 1.5;
+}
+.stage-formula { font-variant-numeric: tabular-nums; }
+
+/* The adjustment, as category / number / sentence. As flat label-value pairs it
+   was impossible to tell which number belonged to which component. */
+.adj-table { margin: 10px 0 0; font-size: 0.8125rem; }
+.adj-table td { padding: 5px 0; border-bottom: 1px solid var(--rule); }
+.adj-what { color: var(--ink); font-weight: 600; white-space: nowrap; }
+.adj-pts {
+  font-variant-numeric: tabular-nums; font-weight: 600;
+  padding-left: 12px !important; padding-right: 12px !important;
+  white-space: nowrap;
+}
+.adj-note { color: var(--ink-2); width: 99%; }
+.adj-table tr.adj-total td {
+  border-bottom: 0; border-top: 1px solid var(--rule-strong);
+  padding-top: 7px;
+}
+.adj-table tr.adj-total .adj-note { color: var(--ink-muted); font-weight: 400; }
+.adj-table tr:last-child td { border-bottom: 0; }
 .reasons { margin: 0; padding-left: 18px; }
 .reasons li { margin-bottom: 6px; font-size: 0.9375rem; }
 .kv { display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; font-size: 0.875rem; margin: 0; }
@@ -291,9 +341,6 @@ footer.site p { margin: 4px 0; }
   overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
 }
 
-@media (max-width: 860px) {
-  .detail-inner { grid-template-columns: 1fr; }
-}
 /* ---------- phone: the table becomes a card list ----------
    A six-column grid is unreadable at 390px, and hiding four columns (what this
    used to do) throws away most of the comparison the table exists for. Below
@@ -304,17 +351,20 @@ footer.site p { margin: 4px 0; }
   body { font-size: 15px; }
   .wrap { padding: 0 14px 56px; }
 
+  /* Two things here are load-bearing, and both were bugs first. `:not([hidden])`
+     and not a bare `tr`: an ID selector outranks the plain
+     `tr.detail[hidden] { display: none }` further up the file, so laying out every
+     row as a block FORCED ALL 25 EXPANDED PANELS OPEN -- the page went from
+     3,700px tall to 65,000px. And DIRECT CHILDREN only: as a descendant selector
+     it also reached the tables nested inside an expanded panel and stacked their
+     cells, separating every number from its own row. Scoped to the table's own
+     rows, a hidden row gets no author `display` at all and a nested table is
+     governed by its own rules -- neither has to out-specify an id. */
   #rankings-table,
-  #rankings-table tbody,
-  #rankings-table tr,
-  #rankings-table td { display: block; width: auto; }
-  /* ...but `hidden` still has to mean hidden. The rule above is an ID selector,
-     so it outranks the plain `tr.detail[hidden] { display: none }` further up and
-     FORCED EVERY EXPANDED PANEL OPEN on a phone -- all 25 of them, which took the
-     page from 3,700px tall to 65,000px and made the list unusable. Any rule that
-     sets `display` on these rows needs this one after it. */
-  #rankings-table tr[hidden] { display: none; }
-  #rankings-table thead { display: none; }          /* labels live on the cells */
+  #rankings-table > tbody,
+  #rankings-table > tbody > tr:not([hidden]),
+  #rankings-table > tbody > tr > td { display: block; width: auto; }
+  #rankings-table > thead { display: none; }         /* labels live on the cells */
   #rankings-table caption {
     display: block; width: 100%;
     padding: 0 0 12px; text-align: left;
@@ -406,7 +456,6 @@ footer.site p { margin: 4px 0; }
 
   /* The expanded panel sits inside the card list, full width. */
   tr.detail > td { border-bottom: 0; }
-  .detail-inner { padding: 12px 2px 0; }
   .detail-wide { padding: 4px 2px 12px; }
 
   /* Head-to-head: stack each opponent rather than scrolling sideways. */
@@ -425,24 +474,44 @@ footer.site p { margin: 4px 0; }
   .detail-wide .h2h .h-verb,
   .detail-wide .h2h .h-opp,
   .detail-wide .h2h .h-score { display: inline; }
+  .detail-wide .h2h .h-verb { margin-right: 4px; }   /* "beat" + "#21 USC" */
   .detail-wide .h-verb { color: var(--ink-2); }
   .detail-wide .h-score { margin-left: 6px; font-variant-numeric: tabular-nums; }
-  .detail-wide .h2h .h-at,
-  .detail-wide .h2h .h-adj,
-  .detail-wide .h2h .h-gap {
+  /* Any cell that carries its own label renders inline with it. Keyed on the
+     attribute rather than a list of classes so the resume table's At / Wk / win
+     probability are labelled too, instead of showing bare numbers. */
+  .detail-wide .h2h td[data-label] {
     display: inline-block; margin-right: 12px;
     font-size: 0.8125rem; text-align: left !important;
   }
-  .detail-wide .h-at::before,
-  .detail-wide .h-adj::before,
-  .detail-wide .h-gap::before {
+  .detail-wide .h2h td[data-label]::before {
     content: attr(data-label) " ";
     color: var(--ink-muted); font-weight: 600;
   }
+  /* The rule that permitted an override is a sentence, so it takes its own line
+     rather than sitting inline with the short numeric cells. */
+  .detail-wide .h2h .h-why { display: block; margin-top: 2px; color: var(--ink-2); }
+  .detail-wide .h2h .h-why:empty { display: none; }
   .detail-wide .h-state { margin-top: 4px; }
 
   /* Every other wide table keeps its own horizontal scroll box. */
   .table-scroll > table { min-width: 30rem; }
+
+  /* The adjustment stays readable at 390px as a two-column grid: label and
+     number on one line, the sentence full width beneath. */
+  .adj-table, .adj-table tbody { display: block; width: auto; }
+  .adj-table tr {
+    display: grid; grid-template-columns: 1fr auto; gap: 0 10px;
+    padding: 7px 0; border-bottom: 1px solid var(--rule);
+  }
+  .adj-table td { display: block; border: 0; padding: 0; }
+  .adj-table .adj-pts { grid-column: 2; text-align: right; padding: 0 !important; }
+  .adj-table .adj-note { grid-column: 1 / -1; margin-top: 2px; }
+  .adj-table .adj-note:empty { display: none; }
+  /* In grid layout a border on each cell draws two separate segments, so the
+     total's rule goes on the row. */
+  .adj-table tr.adj-total { border-top: 1px solid var(--rule-strong); }
+  .adj-table tr.adj-total td { padding-top: 0; border-top: 0; }
 
   /* A floating card at 390px wastes the screen it is trying to use, so the
      dialog becomes a full-height sheet. */

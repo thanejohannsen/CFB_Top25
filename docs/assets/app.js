@@ -48,6 +48,13 @@
     var s = Number(v).toFixed(digits === undefined ? 1 : digits);
     return Number(v) > 0 ? "+" + s : s;
   }
+  function ordinal(n) {
+    var tens = n % 100, ones = n % 10;
+    var suffix = tens >= 11 && tens <= 13 ? "th"
+      : ones === 1 ? "st" : ones === 2 ? "nd" : ones === 3 ? "rd" : "th";
+    return n + suffix;
+  }
+
   function driftText(d) {
     if (!d) return "no change from its resume position";
     return (d > 0 ? "up " : "down ") + Math.abs(d) + " from its resume position";
@@ -160,6 +167,26 @@
     return frag;
   }
 
+  // The page-level table names both teams in its first column, so the short
+  // winner/loser labels read fine there. Inside a team's own panel the row says
+  // "lost to X", so "loser has beaten better since" is ambiguous -- name them.
+  var RULE_SENTENCE = {
+    1: function (e) { return e.winner + " has more losses"; },
+    2: function (e) { return e.winner + " has lost since"; },
+    3: function (e) { return e.winner + " has lost more since"; },
+    4: function (e) { return e.loser + " has beaten better teams since"; }
+  };
+
+  function ruleText(e) {
+    var g = e.grounds;
+    if (!g || !g.rules || !g.rules.length) return "";
+    // Rule 2 is the N=1 case of rule 3, so only the sharper one is worth saying.
+    return g.rules
+      .filter(function (r) { return !(r === 3 && g.rules.indexOf(2) >= 0); })
+      .map(function (r) { return RULE_SENTENCE[r] ? RULE_SENTENCE[r](e) : "rule " + r; })
+      .join("; ");
+  }
+
   function h2hTable(row) {
     var rows = [];
     (row.h2h.wins_vs_pool || []).forEach(function (e) { rows.push(["beat", e.loser, e.loser_rank, e, true]); });
@@ -183,8 +210,15 @@
         el("td", { class: "num h-gap", "data-label": "Rating gap", text: signed(e.rating_gap, 1) }),
         el("td", { class: "h-state" }, [el("span", {
           class: "state " + e.status,
-          text: e.status === "overridden" ? "✕ overridden" : "✓ honoured"
-        })])
+          // An ENFORCED result was honoured because it had to be, which is a
+          // different fact from the ranking agreeing with it anyway.
+          text: e.status === "overridden" ? "✕ overridden"
+            : (e.grounds && e.grounds.enforced ? "✓ required" : "✓ honoured")
+        })]),
+        el("td", {
+          class: "h-why", "data-label": "Permitted by",
+          text: e.status === "overridden" ? ruleText(e) : ""
+        })
       ]);
     }));
 
@@ -196,7 +230,8 @@
         el("th", { scope: "col", text: "At" }),
         el("th", { scope: "col", class: "num", text: "Adj" }),
         el("th", { scope: "col", class: "num", text: "Rating gap" }),
-        el("th", { scope: "col", text: "Status" })
+        el("th", { scope: "col", text: "Status" }),
+        el("th", { scope: "col", text: "Permitted by" })
       ])]),
       body
     ]);
@@ -231,114 +266,147 @@
     ]);
   }
 
+  // The four stage-2 components, in a deliberate order with a sentence each.
+  // Driven by a table rather than Object.keys(components) so a component without
+  // a note still renders and the order never depends on key order.
+  var ADJUSTMENTS = [
+    {
+      key: "best_win", label: "Best win",
+      note: function (d) {
+        // A NAMED opponent with a credit near zero is a marginal qualifier, not
+        // a non-qualifier: the scale starts at the weakest team inside the 25,
+        // so beating them is worth almost nothing. That is what stops a cliff
+        // at the bar, and it is why the opponent is named either way.
+        if (!d.best_win_opponent) return "no win over a top-25 team";
+        return "beat " + d.best_win_opponent + ", rated " +
+          signed(d.best_win_opponent_rating, 1);
+      }
+    },
+    {
+      key: "cover", label: "Against the number",
+      note: function (d) {
+        if (d.cover_games === null || d.cover_games === undefined) return "";
+        var txt = signed(d.mean_cover_margin, 1) + " per game, covered " +
+          d.covers + " of " + d.cover_games;
+        // The adjustment is scored off the SHRUNK figure, so the raw mean alone
+        // cannot explain the number beside it.
+        if (d.shrunk_cover_margin !== null && d.shrunk_cover_margin !== undefined &&
+            Math.abs(d.shrunk_cover_margin - d.mean_cover_margin) > 0.05) {
+          txt += "; scored as " + signed(d.shrunk_cover_margin, 1) +
+            " once shrunk for resting on " + d.cover_games + " lined games";
+        }
+        if (d.worst_cover) txt += " (worst " + d.worst_cover + ")";
+        return txt;
+      }
+    },
+    {
+      key: "game_control", label: "Game control",
+      note: function (d) {
+        return d.game_control_rank ? "#" + d.game_control_rank + " nationally" : "";
+      }
+    },
+    {
+      key: "loss_quality", label: "Loss quality",
+      note: function (d) {
+        if (!d.losses_considered) return "unbeaten \u2014 the best score on this term";
+        return d.losses_considered + " loss" + (d.losses_considered === 1 ? "" : "es") +
+          ", badness " + num(d.mean_loss_badness, 1) +
+          (d.losses_considered === 1 ? "" : " on average") + "; 0 is a perfect loss";
+      }
+    }
+  ];
+
+  function adjustmentTable(ra) {
+    var comp = ra.components || {}, det = ra.detail || {};
+    var body = el("tbody", null, ADJUSTMENTS.filter(function (a) {
+      return comp[a.key] !== null && comp[a.key] !== undefined;
+    }).map(function (a) {
+      return el("tr", null, [
+        el("td", { class: "adj-what", text: a.label }),
+        el("td", { class: "num adj-pts", text: signed(comp[a.key], 2) }),
+        el("td", { class: "adj-note", text: a.note(det) })
+      ]);
+    }));
+    body.appendChild(el("tr", { class: "adj-total" }, [
+      el("td", { class: "adj-what", text: "Total" }),
+      el("td", { class: "num adj-pts", text: signed(ra.total, 2) }),
+      el("td", { class: "adj-note", text: "" })
+    ]));
+    return el("table", { class: "adj-table" }, [body]);
+  }
+
+  function stage(n, title, result, kids) {
+    return el("div", { class: "stage" }, [
+      el("h4", null, [
+        el("span", { class: "stage-n", text: "Stage " + n }),
+        el("span", { class: "stage-title", text: title })
+      ]),
+      el("p", { class: "stage-result", text: result })
+    ].concat(kids || []));
+  }
+
   function detailPanel(row) {
     var base = row.base || {};
     var ra = row.resume_adjustment || {};
-    var comp = ra.components || {};
-    var kv = el("dl", { class: "kv" });
-    function pair(k, v) { kv.appendChild(el("dt", { text: k })); kv.appendChild(el("dd", { text: v })); }
-    // Three positions, each AFTER a further stage. These used to be labelled in a
-    // way that implied base.rank came BEFORE the resume adjustment -- it does not,
-    // it is sorted on base_score which already contains it. A team could show the
-    // same number twice next to a large adjustment and look as though nothing had
-    // happened: Northwestern read "starting #8, final #8" beside -16.62, when the
-    // -16.62 is exactly what moved them from #20 to #8.
-    pair("1. On the three numbers", "#" + base.resume_rank + "  \u2014  Base " + num(base.raw_score, 2));
-    pair("     the arithmetic", base.formula || "\u2013");
-    pair("2. After the resume adjustment", "#" + base.rank + "  \u2014  Final " + num(base.score, 2));
-    pair("     adjustment", signed(ra.total, 2) + " rank points");
-    var det = ra.detail || {};
-    Object.keys(comp).sort().forEach(function (k) {
-      pair("       " + k.replace(/_/g, " "), signed(comp[k], 2));
-      // Name the scalp, because "best win -0.22" on its own does not say whose.
-      // Only a top-25 opponent is ever named here, so a named opponent with a
-      // credit near zero means a marginal qualifier rather than a non-qualifier:
-      // the scale starts at the weakest team inside the 25, so beating them is
-      // worth almost nothing. That is deliberate -- it is what stops a cliff at
-      // the bar.
-      if (k === "best_win") {
-        pair(
-          "         over",
-          det.best_win_opponent
-            ? det.best_win_opponent + " (rated " +
-                signed(det.best_win_opponent_rating, 1) + ")"
-            : "nobody in the top 25"
-        );
-      }
-    });
-    if (row.regression) pair("     upset regression", signed(row.regression.adjustment, 2) + " rank points");
-    pair("3. After head-to-head", "#" + row.rank + "  \u2014  " + driftText(row.placement.drift));
+    var res = row.resume || {};
 
-    var res = row.resume || {}, cov = row.cover || {};
-    if (res.probability !== null && res.probability !== undefined) {
-      pair(
-        "Resume",
-        "#" + res.rank + " \u2014 a top-25 team matches this record " +
-          (100 * res.probability).toFixed(1) + "% of the time"
-      );
-      pair("  record vs expected", res.actual_wins + " wins; such a team would average " +
-        num(res.expected_wins, 2));
-    }
-    if (cov.mean_margin !== null && cov.mean_margin !== undefined) {
-      pair(
-        "Against the number",
-        signed(cov.mean_margin, 1) + " per game, covered " + cov.covers + " of " + cov.games +
-          (cov.worst ? " (worst " + cov.worst + ")" : "")
-      );
-      // The adjustment is scored off the shrunk figure, not the raw mean, so
-      // the raw mean alone left the panel unable to explain its own number.
-      if (cov.scored_margin !== null && cov.scored_margin !== undefined) {
-        pair(
-          "  scored as",
-          signed(cov.scored_margin, 1) + " per game — centred on each game's venue, " +
-            "then pulled toward zero because it rests on " + cov.games +
-            " lined game" + (cov.games === 1 ? "" : "s")
-        );
-      }
-    }
+    // Three positions, each AFTER a further stage. `base.rank` is the position
+    // after stages 1, 2 AND 3 -- it is sorted on base_score, which already
+    // contains both adjustments. Labelling it as "before" the resume adjustment
+    // would let a team show the same number twice next to a large adjustment and
+    // look as though nothing had happened.
+    var stages = el("div", { class: "stages" }, [
+      stage(1, "the three numbers",
+        "#" + base.resume_rank + "  \u2014  Base " + num(base.raw_score, 2),
+        [el("p", { class: "stage-formula", text: base.formula || "\u2013" })].concat(
+          (base.missing || []).map(function (label) {
+            return el("p", {
+              class: "stage-note",
+              text: "No " + label + " this week \u2014 the other terms were rescaled to carry it"
+            });
+          })
+        )),
+      stage(2, "r\u00e9sum\u00e9 adjustment",
+        signed(ra.total, 2) + " rank points",
+        [adjustmentTable(ra)]),
+      stage(3, "upset regression",
+        row.regression
+          ? signed(row.regression.adjustment, 2) + " rank points"
+          : "none this week",
+        (row.regression
+          ? (row.regression.notes || []).map(function (n) {
+              return el("p", { class: "stage-note", text: n + "." });
+            })
+          : [el("p", {
+              class: "stage-note",
+              text: "No result this week spanned a wide enough gap to pull both teams together."
+            })])),
+      stage(4, "head-to-head",
+        "#" + row.rank + "  \u2014  " + driftText(row.placement.drift),
+        [el("p", {
+          class: "stage-note",
+          text: "Went in at #" + base.rank + " on " + num(base.score, 2) +
+            " after stages 1 to 3."
+        })])
+    ]);
 
-    var mkt = row.market || {}, perf = row.performance || {};
-    if (mkt.rating !== null && mkt.rating !== undefined) {
-      pair(
-        "Market rating",
-        signed(mkt.rating, 1) + " points on a neutral field (#" + mkt.rank +
-          ", from " + mkt.games + " lined games)"
-      );
-    } else {
-      pair("Market rating", "none \u2014 too few lined games");
-    }
-    if (perf.rating !== null && perf.rating !== undefined) {
-      pair(
-        "Play-by-play",
-        signed(perf.rating, 3) + " net PPA per play (#" + perf.rank +
-          (perf.unadjusted !== null && perf.unadjusted !== undefined
-            ? ", " + signed(perf.unadjusted, 3) + " before adjusting for opponents"
-            : "") + ")"
-      );
-    } else {
-      pair("Play-by-play", "none \u2014 too few games with play data");
-    }
-    (base.missing || []).forEach(function (label) {
-      pair("Missing input", label + " \u2014 the other terms were rescaled to carry it");
-    });
-    // FPI no longer drives the ranking. It is kept here because it still breaks
-    // ties and still helps weigh which head-to-head result to set aside.
-    pair("FPI (tiebreaks only)", num(row.fpi.rating, 1) + " (#" + row.fpi.rank + ")");
-
-    var reasons = el("ol", { class: "reasons" }, (row.placement.reasons || []).map(function (r) {
-      return el("li", { text: r });
-    }));
+    var resumeLine = res.probability === null || res.probability === undefined
+      ? ""
+      : "#" + res.rank + " \u2014 a top-25 team matches this record " +
+        (100 * res.probability).toFixed(1) + "% of the time \u00b7 " +
+        res.actual_wins + " wins against " + num(res.expected_wins, 2) + " expected";
 
     return el("tr", { class: "detail" }, [
       el("td", { colspan: "11" }, [
-        el("div", { class: "detail-inner" }, [
-          el("div", null, [el("h3", { text: "Why " + row.team + " is #" + row.rank }), reasons]),
-          el("div", null, [el("h3", { text: "The numbers behind it" }), kv])
-        ]),
         el("div", { class: "detail-wide" }, [
-          el("h3", { text: "The resume, game by game" }),
-          el("p", { class: "lede", text: "How often a top-25 team would win each of these, and what the market expected. Winning games you were supposed to win does not move the resume; the schedule is what makes a record hard to earn." }),
+          el("h3", { text: "Why " + row.team + " is ranked " + ordinal(row.rank) }),
+          stages,
+
+          el("h3", { text: "The r\u00e9sum\u00e9, game by game" }),
+          resumeLine ? el("p", { class: "stage-result", text: resumeLine }) : el("span"),
+          el("p", { class: "lede", text: "How often a top-25 team would win each of these, and what the market expected. Winning games you were supposed to win does not move the r\u00e9sum\u00e9; the schedule is what makes a record hard to earn." }),
           scrollable(resumeTable(row)),
+
           el("h3", { text: "Head-to-head inside the pool" }),
           el("p", { class: "lede", text: "\u201cAdj\u201d is the margin once venue is accounted for \u2014 a one-point home win is negative. \u201cRating gap\u201d is how many points apart the market puts the two teams." }),
           scrollable(h2hTable(row))
