@@ -312,6 +312,79 @@ class TestResumeAdjustment(unittest.TestCase):
             c.resume_detail["shrunk_cover_margin"] / c.resume_detail["mean_cover_margin"],
         )
 
+    def test_the_venue_step_between_the_two_is_published_too(self):
+        """Raw -> venue-corrected -> shrunk. All three, because TWO things move.
+
+        The assertion above holds only because its fixture has no venue bias,
+        and that is exactly the relationship the site got wrong: it printed
+        Texas's +3.25 and +1.215 as though shrinkage alone connected them, which
+        gives +1.625. The venue correction in between was worth -0.82 and went
+        unmentioned, so the sentence could not be reconciled with its own number.
+        """
+        from cfbrank.engine.cover import SHRINKAGE_GAMES, CoverGame, CoverRecord
+
+        BIAS = 2.0
+
+        def rec(*games):
+            """(margin, site) per game, all carrying the same measured bias."""
+            return CoverRecord(
+                tuple(
+                    CoverGame(opponent="X", week=i + 1, season_type="regular",
+                              expected=0.0, actual=m, site=site, bias=BIAS)
+                    for i, (m, site) in enumerate(games)
+                )
+            )
+
+        teams, _ = teams_for([("A", 1, 1, 20.0), ("B", 2, 2, 10.0), ("C", 3, 3, 5.0)])
+        # Home-heavy, so the correction actually bites: three at home, one away.
+        covers = {
+            "A": rec((10, +1), (10, +1), (10, +1), (10, -1)),
+            "B": rec((0, +1), (0, -1)),
+            "C": rec((-10, +1), (-10, -1), (-10, +1)),
+        }
+        apply_resume_adjustment(teams, [result("A", "B")], S2, EV, covers)
+
+        a = next(t for t in teams if t.team == "A")
+        raw = a.resume_detail["mean_cover_margin"]
+        corrected = a.resume_detail["corrected_cover_margin"]
+        scored = a.resume_detail["shrunk_cover_margin"]
+        n = a.resume_detail["cover_games"]
+
+        self.assertAlmostEqual(raw, 10.0)
+        # Three home games give the bias back, one away game is credited it.
+        self.assertAlmostEqual(corrected, 10.0 - BIAS * (3 - 1) / 4)
+        self.assertAlmostEqual(scored, corrected * n / (n + SHRINKAGE_GAMES), places=9)
+        self.assertNotAlmostEqual(
+            scored, raw * n / (n + SHRINKAGE_GAMES),
+            msg="shrinkage alone must NOT reproduce the scored margin here",
+        )
+
+    def test_the_worst_game_is_published_on_the_raw_scale(self):
+        """It sits beside the RAW mean in one sentence, so it must share its scale.
+
+        It shipped venue-corrected: Texas beat UTSA by 24 against a 29.75 line,
+        which is 5.75 short, and the panel printed `-7 vs UTSA` -- the same game
+        after the home correction. Read as the posted spread, which is what it
+        looks like.
+        """
+        from cfbrank.engine.cover import CoverGame, CoverRecord
+
+        # Away by 6 is the worst RAW game; home by 5 is the worst once a +4 home
+        # bias is given back. The two disagree on purpose.
+        covers = {
+            "A": CoverRecord((
+                CoverGame(opponent="Raw", week=1, season_type="regular",
+                          expected=0.0, actual=-6.0, site=-1, bias=4.0),
+                CoverGame(opponent="Corrected", week=2, season_type="regular",
+                          expected=0.0, actual=-5.0, site=+1, bias=4.0),
+            )),
+        }
+        teams, _ = teams_for([("A", 1, 1, 20.0), ("B", 2, 2, 10.0)])
+        apply_resume_adjustment(teams, [result("A", "B")], S2, EV, covers)
+
+        a = next(t for t in teams if t.team == "A")
+        self.assertEqual(a.resume_detail["worst_cover"], "-6 vs Raw")
+
     def test_adjustment_changes_the_order(self):
         # TWO losers, so loss_quality has a spread to scale against. With only
         # one the sample is degenerate and the term is 0 for everybody -- this

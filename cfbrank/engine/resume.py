@@ -225,14 +225,27 @@ def apply_resume_adjustment(
             "game_control_rank": tb.game_control_rank,
             "cover_games": rec.played if rec else 0,
             "covers": rec.covers if rec else None,
-            # What happened, uncorrected -- the legible one the site shows.
+            # THREE numbers, one chain, and all three are published because the
+            # panel has to be able to explain its own adjustment. Publishing
+            # only the first and last made it irreconcilable twice over:
+            # Northwestern showed +17.81 beside an adjustment scored off +8.91,
+            # and then Texas's +3.25 and +1.215 looked like shrinkage alone
+            # (which gives 1.625) because the venue step in between was missing.
+            #
+            #   raw -> venue-corrected -> shrunk for sample size
+            #
+            # What happened, uncorrected -- the legible one the site leads with.
             "mean_cover_margin": rec.raw_mean_margin if rec else None,
-            # The number the adjustment is actually computed from. Publishing
-            # only the raw mean made the panel irreconcilable: Northwestern
-            # showed +17.81 beside an adjustment scored off +8.91.
+            # The middle step: each game centred on the points the market
+            # under-prices home field by, measured from this season's own lines.
+            "corrected_cover_margin": rec.mean_margin if rec else None,
+            # The number the adjustment is actually computed from.
             "shrunk_cover_margin": rec.shrunk_margin if rec else None,
+            # RAW, so it sits on the same scale as `mean_cover_margin` and can
+            # be checked against a box score and a posted line. See
+            # `CoverRecord.worst`.
             "worst_cover": (
-                f"{rec.worst.margin:+.0f} vs {rec.worst.opponent}"
+                f"{rec.worst.raw_margin:+.0f} vs {rec.worst.opponent}"
                 if rec and rec.worst
                 else None
             ),

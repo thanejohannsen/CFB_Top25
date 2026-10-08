@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Methodology &mdash; CFB Top 25</title>
 <meta name="description" content="How the CFB Top 25 is computed: Strength of Record and Strength of Schedule, resume adjustment, upset regression, and weighted head-to-head ordering.">
-<link rel="stylesheet" href="assets/style.css?v=bb4f52e8">
+<link rel="stylesheet" href="assets/style.css?v=34bf185c">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%8F%88%3C/text%3E%3C/svg%3E">
 </head>
 <body>
@@ -383,18 +383,20 @@ game control        11th of 138
           <b>If a team beat you, it is ranked above you</b> &mdash; unless:
         </p>
         <ul class="reasons">
-          <li><b>It has more losses than you.</b> Any gap: the r&eacute;sum&eacute; decides.</li>
-          <li><b>It has lost since beating you, and you have not.</b> Any gap.</li>
-          <li><b>It has lost more often since than you have.</b> Any gap.</li>
-          <li><b>You have been beating better teams than it has</b> &mdash; and at least a
-            fortnight has passed. This one is <em>capped</em>, see below.</li>
+          <li><b>Rule 1 &mdash; it has more losses than you.</b> Any gap: the
+            r&eacute;sum&eacute; decides.</li>
+          <li><b>Rule 2 &mdash; it has lost since beating you, and you have not.</b> Any gap.</li>
+          <li><b>Rule 3 &mdash; it has lost more often since than you have.</b> Any gap.</li>
+          <li><b>Rule 4 &mdash; you have been beating better teams than it has</b> &mdash; and
+            at least a fortnight has passed. This one is <em>capped</em>, see below.</li>
         </ul>
         <p class="lede">
-          Nothing else counts. The first three are about the team that beat you slipping; the
-          fourth is about you overtaking it, which takes time to establish &mdash; one good
-          win the week after proves little however good it was.
+          Nothing else counts. Rules 1 to 3 are about the team that beat you slipping; rule 4
+          is about you overtaking it, which takes time to establish &mdash; one good
+          win the week after proves little however good it was. Where the ranking does go
+          against a result, the team&rsquo;s own card names the rule by number.
         </p>
-        <h3>The fourth exception is capped, and the cap grows</h3>
+        <h3>Rule 4 is capped, and the cap grows</h3>
         <p class="lede">
           Being overtaken earns a bounded number of places, not a free hand. The cap is how
           much better your wins have been, in rating points, times a rate that widens the
@@ -572,7 +574,7 @@ game control        11th of 138
         ["  conviction floor", ev.conviction_floor],
         ["Head-to-head requirement", gr.enabled ? "on" : "off"],
         ["  impressive-win bar", gr.impressive_bar + " rating points"],
-        ["  weeks before the 4th exception applies", gr.min_weeks],
+        ["  weeks before rule 4 applies", gr.min_weeks],
         ["  places per rating point, at that age", gr.band_start],
         ["  added per further week", gr.band_step],
         ["  ceiling", gr.band_max],

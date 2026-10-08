@@ -177,14 +177,21 @@
     4: function (e) { return e.loser + " has beaten better teams since"; }
   };
 
+  // Rule 2 is the N=1 case of rule 3, so only the sharper one is worth saying.
+  function rulesShown(g) {
+    return (g.rules || []).filter(function (r) {
+      return !(r === 3 && g.rules.indexOf(2) >= 0);
+    });
+  }
+
   function ruleText(e) {
     var g = e.grounds;
     if (!g || !g.rules || !g.rules.length) return "";
-    // Rule 2 is the N=1 case of rule 3, so only the sharper one is worth saying.
-    return g.rules
-      .filter(function (r) { return !(r === 3 && g.rules.indexOf(2) >= 0); })
-      .map(function (r) { return RULE_SENTENCE[r] ? RULE_SENTENCE[r](e) : "rule " + r; })
-      .join("; ");
+    // The NUMBER as well as the sentence, so the reader can tie this back to
+    // the numbered list in "How the ranking works".
+    return rulesShown(g).map(function (r) {
+      return (RULE_SENTENCE[r] ? RULE_SENTENCE[r](e) : "an exception") + " (Rule " + r + ")";
+    }).join("; ");
   }
 
   function h2hTable(row) {
@@ -266,6 +273,22 @@
     ]);
   }
 
+  // "worst -7 vs UTSA" read as the posted spread, which is exactly what it
+  // looks like: the published string is a cover margin, and for a while it was
+  // a VENUE-CORRECTED one sitting beside a raw mean. It is raw now, but a
+  // published week is frozen and the selector still serves the older ones, so
+  // the label follows whichever scale that snapshot's number is actually on.
+  // `corrected_cover_margin` is the discriminator -- it arrived in the same
+  // change that put `worst_cover` on the raw scale.
+  function worstText(worst, raw) {
+    var parts = /^([+-][\d.]+)\s+vs\s+([\s\S]+)$/.exec(worst);
+    if (!parts) return "worst: " + worst;
+    if (!raw) return "worst: " + parts[1] + " vs " + parts[2] + " after the venue correction";
+    var points = Math.abs(parseFloat(parts[1]));
+    return "worst: " + points + (parts[1].charAt(0) === "-" ? " short of" : " past") +
+      " the number vs " + parts[2];
+  }
+
   // The four stage-2 components, in a deliberate order with a sentence each.
   // Driven by a table rather than Object.keys(components) so a component without
   // a note still renders and the order never depends on key order.
@@ -290,18 +313,34 @@
     },
     {
       key: "cover", label: "Against the number",
+      // THREE numbers on one chain -- raw, venue-corrected, shrunk -- and the
+      // sentence has to name every step it takes. It shipped naming only the
+      // shrink, which does not reproduce: Texas's +3.3 shrunk on four games is
+      // +1.6, not the +1.2 beside it. The missing step was the venue
+      // correction, worth -0.8 to a team that had played three at home.
       note: function (d) {
         if (d.cover_games === null || d.cover_games === undefined) return "";
+        var moved = function (a, b) {
+          return a !== null && a !== undefined && Math.abs(a - b) > 0.05;
+        };
         var txt = signed(d.mean_cover_margin, 1) + " per game, covered " +
           d.covers + " of " + d.cover_games;
-        // The adjustment is scored off the SHRUNK figure, so the raw mean alone
-        // cannot explain the number beside it.
-        if (d.shrunk_cover_margin !== null && d.shrunk_cover_margin !== undefined &&
-            Math.abs(d.shrunk_cover_margin - d.mean_cover_margin) > 0.05) {
+        // Absent on every week published before the field existed, and those
+        // weeks are frozen -- the selector still serves them. Test for the KEY,
+        // not for truthiness: a board with no venue bias measures 0.
+        var hasCorrected = "corrected_cover_margin" in d;
+        var scale = hasCorrected ? d.corrected_cover_margin : d.mean_cover_margin;
+        if (hasCorrected && moved(d.corrected_cover_margin, d.mean_cover_margin)) {
+          txt += "; venue-corrected to " + signed(d.corrected_cover_margin, 1);
+          if (moved(d.shrunk_cover_margin, scale)) {
+            txt += ", then scored as " + signed(d.shrunk_cover_margin, 1) +
+              " for resting on " + d.cover_games + " lined games";
+          }
+        } else if (moved(d.shrunk_cover_margin, scale)) {
           txt += "; scored as " + signed(d.shrunk_cover_margin, 1) +
             " once shrunk for resting on " + d.cover_games + " lined games";
         }
-        if (d.worst_cover) txt += " (worst " + d.worst_cover + ")";
+        if (d.worst_cover) txt += " (" + worstText(d.worst_cover, hasCorrected) + ")";
         return txt;
       }
     },
@@ -768,11 +807,13 @@
     if (!g.rules || !g.rules.length) {
       return [el("span", { class: "state rule-none", text: "no exception" })];
     }
-    // Rule 2 is the N=1 case of rule 3, so only the sharper label is shown.
-    var shown = g.rules.filter(function (r) { return !(r === 3 && g.rules.indexOf(2) >= 0); });
+    var shown = rulesShown(g);
     return [el("span", {
       class: "state rule-" + shown[shown.length - 1],
-      text: shown.map(function (r) { return RULE_LABEL[r] || ("rule " + r); }).join(", ")
+      // Numbered the same way as a team's own panel, so the two tables agree.
+      text: shown.map(function (r) {
+        return (RULE_LABEL[r] || "an exception") + " (Rule " + r + ")";
+      }).join(", ")
     })];
   }
 

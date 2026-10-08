@@ -3177,7 +3177,7 @@
         "strength": 14.0
       }
     },
-    "content_hash": "sha256:57344f88122d7f3213f2c6106f9b533376ca6f3d8bbef1a410e17a1038fdbf2d",
+    "content_hash": "sha256:2a093aab35e0f5f585420a46c40e77e94d186483c9cc187039d2a7ad29fe722e",
     "cost": {
       "drift": 297.7933,
       "overrides": 378.9033,
@@ -4028,11 +4028,12 @@
       "conference": "Big Ten",
       "cover": {
         "adjustment": -11.9561,
+        "corrected_margin": 12.5724,
         "covers": 10,
         "games": 16,
         "mean_margin": 12.7031,
         "scored_margin": 10.058,
-        "worst": "-12 vs Old Dominion"
+        "worst": "-11 vs Penn State"
       },
       "cycle": null,
       "flags": [],
@@ -4524,6 +4525,7 @@
           "best_win_opponent_base_rank": 2,
           "best_win_opponent_rating": 27.4329,
           "best_win_over_bar": 15.8006,
+          "corrected_cover_margin": 12.5724,
           "cover_games": 16,
           "covers": 10,
           "game_control_rank": 1,
@@ -4531,7 +4533,7 @@
           "mean_cover_margin": 12.7031,
           "mean_loss_badness": null,
           "shrunk_cover_margin": 10.058,
-          "worst_cover": "-12 vs Old Dominion"
+          "worst_cover": "-11 vs Penn State"
         },
         "total": -16.8003
       },
@@ -4567,11 +4569,12 @@
       "conference": "ACC",
       "cover": {
         "adjustment": -4.2547,
+        "corrected_margin": 4.4915,
         "covers": 12,
         "games": 16,
         "mean_margin": 4.6875,
         "scored_margin": 3.5932,
-        "worst": "-15 vs Louisville"
+        "worst": "-14 vs SMU"
       },
       "cycle": "C1",
       "flags": [
@@ -5218,6 +5221,7 @@
           "best_win_opponent_base_rank": 4,
           "best_win_opponent_rating": 27.4329,
           "best_win_over_bar": 15.8006,
+          "corrected_cover_margin": 4.4915,
           "cover_games": 16,
           "covers": 12,
           "game_control_rank": 4,
@@ -5225,7 +5229,7 @@
           "mean_cover_margin": 4.6875,
           "mean_loss_badness": 5.1471,
           "shrunk_cover_margin": 3.5932,
-          "worst_cover": "-15 vs Louisville"
+          "worst_cover": "-14 vs SMU"
         },
         "total": -5.9848
       },
@@ -5261,6 +5265,7 @@
       "conference": "Big Ten",
       "cover": {
         "adjustment": -3.2938,
+        "corrected_margin": 3.5828,
         "covers": 10,
         "games": 14,
         "mean_margin": 3.7321,
@@ -5757,6 +5762,7 @@
           "best_win_opponent_base_rank": 11,
           "best_win_opponent_rating": 20.5328,
           "best_win_over_bar": 8.9005,
+          "corrected_cover_margin": 3.5828,
           "cover_games": 14,
           "covers": 10,
           "game_control_rank": 3,
@@ -5800,11 +5806,12 @@
       "conference": "SEC",
       "cover": {
         "adjustment": -3.8943,
+        "corrected_margin": 4.1682,
         "covers": 11,
         "games": 15,
         "mean_margin": 4.5167,
         "scored_margin": 3.2907,
-        "worst": "-31 vs Washington State"
+        "worst": "-30 vs Washington State"
       },
       "cycle": "C1",
       "flags": [
@@ -6161,6 +6168,7 @@
           "best_win_opponent_base_rank": 3,
           "best_win_opponent_rating": 22.6268,
           "best_win_over_bar": 10.9945,
+          "corrected_cover_margin": 4.1682,
           "cover_games": 15,
           "covers": 11,
           "game_control_rank": 8,
@@ -6168,7 +6176,7 @@
           "mean_cover_margin": 4.5167,
           "mean_loss_badness": 2.9632,
           "shrunk_cover_margin": 3.2907,
-          "worst_cover": "-31 vs Washington State"
+          "worst_cover": "-30 vs Washington State"
         },
         "total": -5.6689
       },
@@ -6204,6 +6212,7 @@
       "conference": "Big Ten",
       "cover": {
         "adjustment": -3.0379,
+        "corrected_margin": 3.2576,
         "covers": 8,
         "games": 15,
         "mean_margin": 3.4667,
@@ -6691,6 +6700,7 @@
           "best_win_opponent_base_rank": 10,
           "best_win_opponent_rating": 21.2996,
           "best_win_over_bar": 9.6673,
+          "corrected_cover_margin": 3.2576,
           "cover_games": 15,
           "covers": 8,
           "game_control_rank": 2,
@@ -6734,11 +6744,12 @@
       "conference": "SEC",
       "cover": {
         "adjustment": 0.7162,
+        "corrected_margin": -0.7451,
         "covers": 6,
         "games": 14,
         "mean_margin": -0.4464,
         "scored_margin": -0.5795,
-        "worst": "-26 vs Austin Peay"
+        "worst": "-25 vs Austin Peay"
       },
       "cycle": "C1",
       "flags": [
@@ -7174,6 +7185,7 @@
           "best_win_opponent_base_rank": 7,
           "best_win_opponent_rating": 21.6975,
           "best_win_over_bar": 10.0652,
+          "corrected_cover_margin": -0.7451,
           "cover_games": 14,
           "covers": 6,
           "game_control_rank": 7,
@@ -7181,7 +7193,7 @@
           "mean_cover_margin": -0.4464,
           "mean_loss_badness": 3.8015,
           "shrunk_cover_margin": -0.5795,
-          "worst_cover": "-26 vs Austin Peay"
+          "worst_cover": "-25 vs Austin Peay"
         },
         "total": -0.337
       },
@@ -7217,11 +7229,12 @@
       "conference": "SEC",
       "cover": {
         "adjustment": 1.5882,
+        "corrected_margin": -1.715,
         "covers": 5,
         "games": 13,
         "mean_margin": -1.6346,
         "scored_margin": -1.3115,
-        "worst": "-24 vs UTEP"
+        "worst": "-22 vs UTEP"
       },
       "cycle": "C1",
       "flags": [
@@ -7649,6 +7662,7 @@
           "best_win_opponent_base_rank": 6,
           "best_win_opponent_rating": 21.4338,
           "best_win_over_bar": 9.8015,
+          "corrected_cover_margin": -1.715,
           "cover_games": 13,
           "covers": 5,
           "game_control_rank": 16,
@@ -7656,7 +7670,7 @@
           "mean_cover_margin": -1.6346,
           "mean_loss_badness": 7.7696,
           "shrunk_cover_margin": -1.3115,
-          "worst_cover": "-24 vs UTEP"
+          "worst_cover": "-22 vs UTEP"
         },
         "total": 3.0893
       },
@@ -7692,11 +7706,12 @@
       "conference": "SEC",
       "cover": {
         "adjustment": 0.8763,
+        "corrected_margin": -0.9336,
         "covers": 5,
         "games": 13,
         "mean_margin": -0.6923,
         "scored_margin": -0.7139,
-        "worst": "-17 vs South Carolina"
+        "worst": "-16 vs South Carolina"
       },
       "cycle": "C1",
       "flags": [
@@ -8133,6 +8148,7 @@
           "best_win_opponent_base_rank": 8,
           "best_win_opponent_rating": 25.7605,
           "best_win_over_bar": 14.1282,
+          "corrected_cover_margin": -0.9336,
           "cover_games": 13,
           "covers": 5,
           "game_control_rank": 9,
@@ -8140,7 +8156,7 @@
           "mean_cover_margin": -0.6923,
           "mean_loss_badness": 5.4265,
           "shrunk_cover_margin": -0.7139,
-          "worst_cover": "-17 vs South Carolina"
+          "worst_cover": "-16 vs South Carolina"
         },
         "total": -0.2013
       },
@@ -8176,11 +8192,12 @@
       "conference": "FBS Independents",
       "cover": {
         "adjustment": -3.9508,
+        "corrected_margin": 4.4508,
         "covers": 6,
         "games": 12,
         "mean_margin": 4.625,
         "scored_margin": 3.3381,
-        "worst": "-15 vs Boston College"
+        "worst": "-16 vs Boston College"
       },
       "cycle": "C1",
       "flags": [
@@ -8526,6 +8543,7 @@
           "best_win_opponent_base_rank": 15,
           "best_win_opponent_rating": 17.5716,
           "best_win_over_bar": 5.9393,
+          "corrected_cover_margin": 4.4508,
           "cover_games": 12,
           "covers": 6,
           "game_control_rank": 6,
@@ -8533,7 +8551,7 @@
           "mean_cover_margin": 4.625,
           "mean_loss_badness": 1.8088,
           "shrunk_cover_margin": 3.3381,
-          "worst_cover": "-15 vs Boston College"
+          "worst_cover": "-16 vs Boston College"
         },
         "total": -5.1704
       },
@@ -8569,6 +8587,7 @@
       "conference": "Big 12",
       "cover": {
         "adjustment": -7.0001,
+        "corrected_margin": 7.5828,
         "covers": 11,
         "games": 14,
         "mean_margin": 7.7321,
@@ -8987,6 +9006,7 @@
           "best_win_opponent_base_rank": 13,
           "best_win_opponent_rating": 17.9352,
           "best_win_over_bar": 6.3029,
+          "corrected_cover_margin": 7.5828,
           "cover_games": 14,
           "covers": 11,
           "game_control_rank": 5,
@@ -9030,6 +9050,7 @@
       "conference": "Big 12",
       "cover": {
         "adjustment": -5.1695,
+        "corrected_margin": 5.6071,
         "covers": 10,
         "games": 14,
         "mean_margin": 5.6071,
@@ -9484,6 +9505,7 @@
           "best_win_opponent_base_rank": 13,
           "best_win_opponent_rating": 17.9352,
           "best_win_over_bar": 6.3029,
+          "corrected_cover_margin": 5.6071,
           "cover_games": 14,
           "covers": 10,
           "game_control_rank": 17,
@@ -9527,11 +9549,12 @@
       "conference": "Big 12",
       "cover": {
         "adjustment": -7.7701,
+        "corrected_margin": 8.5577,
         "covers": 10,
         "games": 13,
         "mean_margin": 8.5577,
         "scored_margin": 6.5441,
-        "worst": "-29 vs Texas Tech"
+        "worst": "-28 vs Texas Tech"
       },
       "cycle": "C2",
       "flags": [
@@ -9841,6 +9864,7 @@
           "best_win_opponent_base_rank": 36,
           "best_win_opponent_rating": null,
           "best_win_over_bar": 0.0,
+          "corrected_cover_margin": 8.5577,
           "cover_games": 13,
           "covers": 10,
           "game_control_rank": 12,
@@ -9848,7 +9872,7 @@
           "mean_cover_margin": 8.5577,
           "mean_loss_badness": 8.6618,
           "shrunk_cover_margin": 6.5441,
-          "worst_cover": "-29 vs Texas Tech"
+          "worst_cover": "-28 vs Texas Tech"
         },
         "total": -3.3245
       },
@@ -9884,11 +9908,12 @@
       "conference": "Big Ten",
       "cover": {
         "adjustment": -5.6089,
+        "corrected_margin": 6.1853,
         "covers": 10,
         "games": 13,
         "mean_margin": 6.3462,
         "scored_margin": 4.73,
-        "worst": "-16 vs Michigan State"
+        "worst": "-14 vs Michigan State"
       },
       "cycle": "C1",
       "flags": [
@@ -10334,6 +10359,7 @@
           "best_win_opponent_base_rank": 14,
           "best_win_opponent_rating": 17.6386,
           "best_win_over_bar": 6.0063,
+          "corrected_cover_margin": 6.1853,
           "cover_games": 13,
           "covers": 10,
           "game_control_rank": 13,
@@ -10341,7 +10367,7 @@
           "mean_cover_margin": 6.3462,
           "mean_loss_badness": 3.6765,
           "shrunk_cover_margin": 4.73,
-          "worst_cover": "-16 vs Michigan State"
+          "worst_cover": "-14 vs Michigan State"
         },
         "total": -5.6383
       },
@@ -10377,11 +10403,12 @@
       "conference": "SEC",
       "cover": {
         "adjustment": 0.6087,
+        "corrected_margin": -0.6197,
         "covers": 9,
         "games": 15,
         "mean_margin": -0.55,
         "scored_margin": -0.4892,
-        "worst": "-28 vs Indiana"
+        "worst": "-28 vs Florida State"
       },
       "cycle": "C1",
       "flags": [
@@ -10977,6 +11004,7 @@
           "best_win_opponent_base_rank": 3,
           "best_win_opponent_rating": 22.6268,
           "best_win_over_bar": 10.9945,
+          "corrected_cover_margin": -0.6197,
           "cover_games": 15,
           "covers": 9,
           "game_control_rank": 11,
@@ -10984,7 +11012,7 @@
           "mean_cover_margin": -0.55,
           "mean_loss_badness": 10.3676,
           "shrunk_cover_margin": -0.4892,
-          "worst_cover": "-28 vs Indiana"
+          "worst_cover": "-28 vs Florida State"
         },
         "total": 3.2968
       },
@@ -11020,6 +11048,7 @@
       "conference": "SEC",
       "cover": {
         "adjustment": -8.0966,
+        "corrected_margin": 8.9161,
         "covers": 9,
         "games": 13,
         "mean_margin": 9.0769,
@@ -11496,6 +11525,7 @@
           "best_win_opponent_base_rank": 19,
           "best_win_opponent_rating": 16.9608,
           "best_win_over_bar": 5.3285,
+          "corrected_cover_margin": 8.9161,
           "cover_games": 13,
           "covers": 9,
           "game_control_rank": 18,
@@ -11539,11 +11569,12 @@
       "conference": "SEC",
       "cover": {
         "adjustment": -0.0315,
+        "corrected_margin": 0.063,
         "covers": 6,
         "games": 13,
         "mean_margin": 0.3846,
         "scored_margin": 0.0481,
-        "worst": "-15 vs Ole Miss"
+        "worst": "-14 vs Texas"
       },
       "cycle": "C1",
       "flags": [
@@ -12055,6 +12086,7 @@
           "best_win_opponent_base_rank": 7,
           "best_win_opponent_rating": 21.6975,
           "best_win_over_bar": 10.0652,
+          "corrected_cover_margin": 0.063,
           "cover_games": 13,
           "covers": 6,
           "game_control_rank": 10,
@@ -12062,7 +12094,7 @@
           "mean_cover_margin": 0.3846,
           "mean_loss_badness": 7.9902,
           "shrunk_cover_margin": 0.0481,
-          "worst_cover": "-15 vs Ole Miss"
+          "worst_cover": "-14 vs Texas"
         },
         "total": 1.4569
       },
@@ -12098,11 +12130,12 @@
       "conference": "Big Ten",
       "cover": {
         "adjustment": 2.1313,
+        "corrected_margin": -2.3112,
         "covers": 4,
         "games": 13,
         "mean_margin": -2.2308,
         "scored_margin": -1.7674,
-        "worst": "-19 vs New Mexico"
+        "worst": "-18 vs New Mexico"
       },
       "cycle": "C1",
       "flags": [
@@ -12494,6 +12527,7 @@
           "best_win_opponent_base_rank": 21,
           "best_win_opponent_rating": 13.0032,
           "best_win_over_bar": 1.3709,
+          "corrected_cover_margin": -2.3112,
           "cover_games": 13,
           "covers": 4,
           "game_control_rank": 15,
@@ -12501,7 +12535,7 @@
           "mean_cover_margin": -2.2308,
           "mean_loss_badness": 8.8566,
           "shrunk_cover_margin": -1.7674,
-          "worst_cover": "-19 vs New Mexico"
+          "worst_cover": "-18 vs New Mexico"
         },
         "total": 6.3879
       },
@@ -12537,11 +12571,12 @@
       "conference": "Big Ten",
       "cover": {
         "adjustment": -5.714,
+        "corrected_margin": 6.3007,
         "covers": 7,
         "games": 13,
         "mean_margin": 6.4615,
         "scored_margin": 4.8182,
-        "worst": "-12 vs Wisconsin"
+        "worst": "-14 vs Wisconsin"
       },
       "cycle": "C1",
       "flags": [
@@ -12894,6 +12929,7 @@
           "best_win_opponent_base_rank": 22,
           "best_win_opponent_rating": 12.3282,
           "best_win_over_bar": 0.6959,
+          "corrected_cover_margin": 6.3007,
           "cover_games": 13,
           "covers": 7,
           "game_control_rank": 25,
@@ -12901,7 +12937,7 @@
           "mean_cover_margin": 6.4615,
           "mean_loss_badness": 9.3015,
           "shrunk_cover_margin": 4.8182,
-          "worst_cover": "-12 vs Wisconsin"
+          "worst_cover": "-14 vs Wisconsin"
         },
         "total": -0.8916
       },
@@ -12937,11 +12973,12 @@
       "conference": "ACC",
       "cover": {
         "adjustment": -4.3858,
+        "corrected_margin": 4.7614,
         "covers": 9,
         "games": 14,
         "mean_margin": 4.9107,
         "scored_margin": 3.7033,
-        "worst": "-16 vs Washington State"
+        "worst": "-14 vs Washington State"
       },
       "cycle": null,
       "flags": [
@@ -13243,6 +13280,7 @@
           "best_win_opponent_base_rank": 20,
           "best_win_opponent_rating": 14.6796,
           "best_win_over_bar": 3.0473,
+          "corrected_cover_margin": 4.7614,
           "cover_games": 14,
           "covers": 9,
           "game_control_rank": 32,
@@ -13250,7 +13288,7 @@
           "mean_cover_margin": 4.9107,
           "mean_loss_badness": 9.4706,
           "shrunk_cover_margin": 3.7033,
-          "worst_cover": "-16 vs Washington State"
+          "worst_cover": "-14 vs Washington State"
         },
         "total": 0.0379
       },
@@ -13286,11 +13324,12 @@
       "conference": "SEC",
       "cover": {
         "adjustment": -1.0476,
+        "corrected_margin": 1.1783,
         "covers": 6,
         "games": 13,
         "mean_margin": 1.5,
         "scored_margin": 0.9011,
-        "worst": "-15 vs Texas A&M"
+        "worst": "-14 vs Texas A&M"
       },
       "cycle": null,
       "flags": [
@@ -13722,6 +13761,7 @@
           "best_win_opponent_base_rank": 35,
           "best_win_opponent_rating": null,
           "best_win_over_bar": 0.0,
+          "corrected_cover_margin": 1.1783,
           "cover_games": 13,
           "covers": 6,
           "game_control_rank": 35,
@@ -13729,7 +13769,7 @@
           "mean_cover_margin": 1.5,
           "mean_loss_badness": 6.8,
           "shrunk_cover_margin": 0.9011,
-          "worst_cover": "-15 vs Texas A&M"
+          "worst_cover": "-14 vs Texas A&M"
         },
         "total": 2.5858
       },
@@ -13765,11 +13805,12 @@
       "conference": "Big 12",
       "cover": {
         "adjustment": -1.7949,
+        "corrected_margin": 2.0379,
         "covers": 5,
         "games": 12,
         "mean_margin": 2.125,
         "scored_margin": 1.5284,
-        "worst": "-18 vs BYU"
+        "worst": "-16 vs BYU"
       },
       "cycle": "C2",
       "flags": [
@@ -14175,6 +14216,7 @@
           "best_win_opponent_base_rank": 18,
           "best_win_opponent_rating": 12.206,
           "best_win_over_bar": 0.5737,
+          "corrected_cover_margin": 2.0379,
           "cover_games": 12,
           "covers": 5,
           "game_control_rank": 41,
@@ -14182,7 +14224,7 @@
           "mean_cover_margin": 2.125,
           "mean_loss_badness": 11.0882,
           "shrunk_cover_margin": 1.5284,
-          "worst_cover": "-18 vs BYU"
+          "worst_cover": "-16 vs BYU"
         },
         "total": 4.3344
       },
@@ -14218,11 +14260,12 @@
       "conference": "Big 12",
       "cover": {
         "adjustment": 1.4274,
+        "corrected_margin": -1.5385,
         "covers": 7,
         "games": 13,
         "mean_margin": -1.5385,
         "scored_margin": -1.1765,
-        "worst": "-27 vs BYU"
+        "worst": "-28 vs BYU"
       },
       "cycle": "C2",
       "flags": [
@@ -14665,6 +14708,7 @@
           "best_win_opponent_base_rank": 15,
           "best_win_opponent_rating": 17.5716,
           "best_win_over_bar": 5.9393,
+          "corrected_cover_margin": -1.5385,
           "cover_games": 13,
           "covers": 7,
           "game_control_rank": 24,
@@ -14672,7 +14716,7 @@
           "mean_cover_margin": -1.5385,
           "mean_loss_badness": 9.9926,
           "shrunk_cover_margin": -1.1765,
-          "worst_cover": "-27 vs BYU"
+          "worst_cover": "-28 vs BYU"
         },
         "total": 5.3317
       },
@@ -14708,11 +14752,12 @@
       "conference": "ACC",
       "cover": {
         "adjustment": -1.0603,
+        "corrected_margin": 1.1923,
         "covers": 6,
         "games": 13,
         "mean_margin": 1.1923,
         "scored_margin": 0.9118,
-        "worst": "-23 vs East Texas A&M"
+        "worst": "-22 vs East Texas A&M"
       },
       "cycle": "C2",
       "flags": [
@@ -15111,6 +15156,7 @@
           "best_win_opponent_base_rank": 5,
           "best_win_opponent_rating": 20.3001,
           "best_win_over_bar": 8.6678,
+          "corrected_cover_margin": 1.1923,
           "cover_games": 13,
           "covers": 6,
           "game_control_rank": 20,
@@ -15118,7 +15164,7 @@
           "mean_cover_margin": 1.1923,
           "mean_loss_badness": 8.5368,
           "shrunk_cover_margin": 0.9118,
-          "worst_cover": "-23 vs East Texas A&M"
+          "worst_cover": "-22 vs East Texas A&M"
         },
         "total": 1.2362
       },
@@ -15154,11 +15200,12 @@
       "conference": "ACC",
       "cover": {
         "adjustment": 2.0708,
+        "corrected_margin": -2.2447,
         "covers": 4,
         "games": 13,
         "mean_margin": -1.9231,
         "scored_margin": -1.7166,
-        "worst": "-27 vs SMU"
+        "worst": "-28 vs SMU"
       },
       "cycle": "C1",
       "flags": [
@@ -15607,6 +15654,7 @@
           "best_win_opponent_base_rank": 5,
           "best_win_opponent_rating": 20.3001,
           "best_win_over_bar": 8.6678,
+          "corrected_cover_margin": -2.2447,
           "cover_games": 13,
           "covers": 4,
           "game_control_rank": 30,
@@ -15614,7 +15662,7 @@
           "mean_cover_margin": -1.9231,
           "mean_loss_badness": 10.5882,
           "shrunk_cover_margin": -1.7166,
-          "worst_cover": "-27 vs SMU"
+          "worst_cover": "-28 vs SMU"
         },
         "total": 5.7234
       },
@@ -15650,11 +15698,12 @@
       "conference": "Big Ten",
       "cover": {
         "adjustment": 1.6264,
+        "corrected_margin": -1.757,
         "covers": 7,
         "games": 13,
         "mean_margin": -1.5962,
         "scored_margin": -1.3436,
-        "worst": "-45 vs Indiana"
+        "worst": "-46 vs Indiana"
       },
       "cycle": "C1",
       "flags": [
@@ -16045,6 +16094,7 @@
           "best_win_opponent_base_rank": 15,
           "best_win_opponent_rating": 17.5716,
           "best_win_over_bar": 5.9393,
+          "corrected_cover_margin": -1.757,
           "cover_games": 13,
           "covers": 7,
           "game_control_rank": 22,
@@ -16052,7 +16102,7 @@
           "mean_cover_margin": -1.5962,
           "mean_loss_badness": 12.5368,
           "shrunk_cover_margin": -1.3436,
-          "worst_cover": "-45 vs Indiana"
+          "worst_cover": "-46 vs Indiana"
         },
         "total": 7.0246
       },

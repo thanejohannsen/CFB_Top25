@@ -327,6 +327,25 @@ A resume says who you beat; it cannot say whether you looked like you meant it.
 `cover margin = actual margin - the posted line`, per game, z-scored across the
 board and converted to rank points in stage 2.
 
+**Three numbers on one chain, and the panel must name every step.** The scored
+figure is the raw mean **venue-corrected AND THEN shrunk**, so publishing only
+the ends makes it irreconcilable -- which has now happened twice. Northwestern
+showed `+17.81` beside an adjustment computed from `+8.91`, fixed by publishing
+`shrunk_cover_margin`. Then Texas showed `+3.25` and `+1.215` with the panel
+saying "once shrunk", which does not reproduce: shrinkage alone gives `1.625`,
+and the missing venue step was worth `-0.82` to a team that had played three at
+home. `corrected_cover_margin` is published for that reason.
+
+**`worst_cover` is the RAW margin**, i.e. on `mean_cover_margin`'s scale, not
+the scored one. It shipped venue-corrected beside a raw mean, which put two
+scales in one sentence with nothing saying so: Texas beat UTSA by 24 against a
+29.75 line -- 5.75 short -- and the card printed `-7 vs UTSA`. The owner read it
+as the posted spread, which is exactly what it looks like. A callout a reader
+cannot check against a box score and a line is worse than no callout.
+`corrected_cover_margin`'s presence is also how the site tells which scale an
+older snapshot's `worst` is on, since a published week is frozen and the
+selector still serves the ones written before this.
+
 It is what separates two unbeaten teams: in 2026 week 5 Alabama were +14.1 per
 game against the number and Notre Dame +0.8, and that is why Notre Dame is not
 first. The asymmetry the owner asked for falls out of the arithmetic -- the

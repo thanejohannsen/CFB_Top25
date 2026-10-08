@@ -209,7 +209,18 @@ class CoverRecord:
 
     @property
     def worst(self) -> CoverGame | None:
-        return min(self.games, key=lambda g: g.margin) if self.games else None
+        """The game furthest short of the posted line, on the RAW scale.
+
+        Raw rather than venue-corrected because this is the callout the site
+        prints beside `raw_mean_margin`, and a reader can only check a number
+        that is "actual margin minus the posted line". It shipped on `.margin`
+        beside a raw mean, which put two scales in one sentence with nothing
+        saying so: Texas beat UTSA by 24 against a 29.75 line, which is 5.75
+        short, and the panel printed `-7` -- the same game after the +1.64 home
+        correction. The owner read it as the spread, which is exactly what it
+        looks like.
+        """
+        return min(self.games, key=lambda g: g.raw_margin) if self.games else None
 
 
 def cover_margins(

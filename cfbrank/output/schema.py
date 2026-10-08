@@ -169,13 +169,19 @@ def _team_entry(
         "cover": {
             "games": tb.resume_detail.get("cover_games"),
             "covers": tb.resume_detail.get("covers"),
+            # Three steps, all published, so a reader can reproduce the
+            # adjustment from the card: `mean_margin` is what happened against
+            # the posted line, `corrected_margin` centres each game on the
+            # points the market under-prices home field by, and `scored_margin`
+            # is what the adjustment is computed from -- that mean pulled toward
+            # zero by games/(games+4), so four loud afternoons cannot read as a
+            # season-defining trait. `corrected_margin` arrived later than the
+            # other two, so the site uses its presence to tell which scale an
+            # older snapshot's `worst` is on.
             "mean_margin": tb.resume_detail.get("mean_cover_margin"),
-            # `scored_margin` is what the adjustment is computed from: the mean
-            # pulled toward zero by games/(games+4), so four loud afternoons
-            # cannot read as a season-defining trait. Both are published because
-            # the raw mean is the human-legible one and the shrunk one is the
-            # one the arithmetic uses.
+            "corrected_margin": tb.resume_detail.get("corrected_cover_margin"),
             "scored_margin": tb.resume_detail.get("shrunk_cover_margin"),
+            # Raw, i.e. on `mean_margin`'s scale, not `scored_margin`'s.
             "worst": tb.resume_detail.get("worst_cover"),
             "adjustment": tb.resume_components.get("cover"),
         },

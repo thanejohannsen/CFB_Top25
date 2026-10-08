@@ -210,12 +210,20 @@ def print_explain(result: RankingResult, team: str, out=None) -> int:
             )
     cov = tb.resume_detail.get("mean_cover_margin")
     if cov is not None:
+        worst = tb.resume_detail.get("worst_cover")
         print(
             f"      against the number: {cov:+.1f} per game,"
             f" covered {tb.resume_detail.get('covers')} of {tb.resume_detail.get('cover_games')}"
-            + (f" (worst {tb.resume_detail['worst_cover']})" if tb.resume_detail.get("worst_cover") else ""),
+            # Raw, so it is on the same scale as the mean above it.
+            + (f" (worst: {worst} on the posted line)" if worst else ""),
             file=out,
         )
+        # Name BOTH steps. Printing only the shrink made the drop look like
+        # sample size alone, which does not reproduce: Texas went +3.25 -> +2.43
+        # on venue before +1.215 on a four-game sample.
+        corrected = tb.resume_detail.get("corrected_cover_margin")
+        if corrected is not None and abs(corrected - cov) > 0.05:
+            print(f"        venue-corrected to {corrected:+.1f} per game", file=out)
         scored = tb.resume_detail.get("shrunk_cover_margin")
         if scored is not None:
             print(
