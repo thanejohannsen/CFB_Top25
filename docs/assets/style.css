@@ -105,6 +105,9 @@ h1 { margin: 0 0 4px; font-size: 1.75rem; letter-spacing: -0.015em; }
 
 .controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
 .controls label { color: var(--ink-2); font-size: 0.875rem; }
+/* Keeps the label with its control when the row wraps on a narrow screen,
+   rather than stranding the word "Week" at the end of the line above. */
+.control-group { display: inline-flex; align-items: center; gap: 8px; }
 select, .btn {
   font: inherit; font-size: 0.9rem; color: var(--ink);
   background: var(--surface); border: 1px solid var(--rule-strong);
@@ -114,6 +117,52 @@ select:focus-visible, .btn:focus-visible, [role="button"]:focus-visible, tr:focu
   outline: 2px solid var(--accent); outline-offset: 2px;
 }
 .stamp { color: var(--ink-muted); font-size: 0.8125rem; font-variant-numeric: tabular-nums; }
+
+/* The primary call to action, because on a first visit it is the only thing on
+   the page that explains any of this. */
+.btn.primary {
+  background: var(--accent); border-color: var(--accent);
+  color: #ffffff; font-weight: 600;
+}
+
+/* ---------- "How the ranking works" ----------
+   Everything explanatory lives in here rather than above the table, so the page
+   opens on the ranking itself. A native <dialog> gets Escape-to-close, focus
+   trapping and inert background for free; it needs Safari 15.4+, and the button
+   that opens it is simply inert on anything older rather than broken. */
+dialog#how-it-works {
+  width: min(64ch, calc(100vw - 32px));
+  max-height: min(84vh, 900px);
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: 0 12px 40px rgba(11, 11, 11, 0.22);
+  overflow: hidden;                      /* the body scrolls, not the shell */
+}
+dialog#how-it-works::backdrop { background: rgba(11, 11, 11, 0.55); }
+
+.dialog-head {
+  position: sticky; top: 0; z-index: 1;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 16px 20px; background: var(--surface);
+  border-bottom: 1px solid var(--rule);
+}
+.dialog-head h2 { margin: 0; font-size: 1.125rem; }
+.dialog-body {
+  padding: 4px 20px 20px;
+  overflow-y: auto;
+  max-height: calc(min(84vh, 900px) - 58px);
+  -webkit-overflow-scrolling: touch;
+}
+.dialog-body h3 {
+  margin: 22px 0 6px; font-size: 1rem;
+  padding-top: 14px; border-top: 1px solid var(--rule);
+}
+.dialog-body h3:first-of-type { border-top: 0; padding-top: 0; margin-top: 8px; }
+.dialog-body .lede { max-width: none; }
+.dialog-body .inputs { margin: 10px 0 14px; }
 
 .banner {
   margin: 16px 0 0; padding: 10px 14px; border-radius: var(--radius);
@@ -394,6 +443,15 @@ footer.site p { margin: 4px 0; }
 
   /* Every other wide table keeps its own horizontal scroll box. */
   .table-scroll > table { min-width: 30rem; }
+
+  /* A floating card at 390px wastes the screen it is trying to use, so the
+     dialog becomes a full-height sheet. */
+  dialog#how-it-works {
+    width: 100vw; max-width: 100vw;
+    height: 100dvh; max-height: 100dvh;
+    margin: 0; border: 0; border-radius: 0;
+  }
+  .dialog-body { max-height: calc(100dvh - 58px); }
 }
 
 /* Tablets: keep the table, drop only the secondary columns. */

@@ -18,41 +18,14 @@
       head-to-head results as possible. Every placement opens to show its arithmetic.
     </p>
 
-    <ul class="inputs">
-      <li>
-        <b>SoR</b> &mdash; <i>the r&eacute;sum&eacute;.</i>
-        Who you beat and how hard that was. We walk a top-25 team through your exact
-        schedule and ask how often it would finish with your record. Rarely means a
-        better r&eacute;sum&eacute;.
-      </li>
-      <li>
-        <b>Mkt</b> &mdash; <i>Vegas's power ranking.</i>
-        How good the money thinks you <em>are</em>, in points on a neutral field. Solved
-        from betting lines, so +20 beats +15 by five on a neutral site.
-      </li>
-      <li>
-        <b>PPA</b> &mdash; <i>the game tape, counted.</i>
-        How well you actually <em>played</em>, snap by snap: points gained per play on
-        offence less points allowed on defence, adjusted for who you played.
-      </li>
-    </ul>
-
-    <p class="lede">
-      Mkt is an opinion formed before games; PPA measures what happened during them.
-      That is why both are here. The r&eacute;sum&eacute; carries the most weight, because
-      what a team has achieved should outrank how good it looks.
-    </p>
-    <p class="lede">
-      <b>Base</b> is those three combined, and <b>lower is better</b> &mdash; every input
-      is a rank. It is only the starting point: the r&eacute;sum&eacute; adjustment moves
-      it next (how your losses look, your best win, how comfortably you win, and how you
-      played against the number), and head-to-head reorders after that. Open any row to
-      see all three steps for that team.
-    </p>
-
     <div class="controls">
-      <label for="week-select">Week</label>
-      <select id="week-select"></select>
+      <button type="button" class="btn primary" id="how-open" aria-haspopup="dialog">
+        How the ranking works
+      </button>
+      <span class="control-group">
+        <label for="week-select">Week</label>
+        <select id="week-select"></select>
+      </span>
       <button type="button" class="btn" id="theme-toggle" aria-pressed="false">Dark mode</button>
       <span class="stamp" id="stamp"></span>
     </div>
@@ -60,6 +33,88 @@
     <p class="banner info" id="banner-sample" hidden></p>
     <p class="banner warn" id="banner-error" hidden></p>
   </header>
+
+  <!-- Everything explanatory lives here rather than above the table, so the page
+       opens on the ranking itself. The long version is methodology.html. -->
+  <dialog id="how-it-works" aria-labelledby="how-title">
+    <div class="dialog-head">
+      <h2 id="how-title">How the ranking works</h2>
+      <button type="button" class="btn" id="how-close">Close</button>
+    </div>
+    <div class="dialog-body">
+
+      <p class="lede">
+        Four stages. The first three produce a score; the fourth reorders it so the
+        ranking contradicts as few head-to-head results as possible.
+      </p>
+
+      <h3>Stage 1 &mdash; the three numbers</h3>
+      <p class="lede">
+        Every team gets three national ranks, and <b>lower is better</b>:
+      </p>
+      <ul class="inputs">
+        <li>
+          <b>SoR</b> &mdash; <i>the r&eacute;sum&eacute;.</i>
+          Who you beat and how hard that was. We walk a top-25 team through your exact
+          schedule and ask how often it would finish with your record. Rarely means a
+          better r&eacute;sum&eacute;.
+        </li>
+        <li>
+          <b>Mkt</b> &mdash; <i>Vegas's power ranking.</i>
+          How good the money thinks you <em>are</em>, in points on a neutral field. Solved
+          from betting lines, so +20 beats +15 by five on a neutral site.
+        </li>
+        <li>
+          <b>PPA</b> &mdash; <i>the game tape, counted.</i>
+          How well you actually <em>played</em>, snap by snap: points gained per play on
+          offence less points allowed on defence, adjusted for who you played.
+        </li>
+      </ul>
+      <p class="lede">
+        Mkt is an opinion formed before games; PPA measures what happened during them.
+        That is why both are here. The r&eacute;sum&eacute; carries the most weight, because
+        what a team has achieved should outrank how good it looks. Combined they give the
+        <b>Base</b> column.
+      </p>
+
+      <h3>Stage 2 &mdash; the r&eacute;sum&eacute; adjustment</h3>
+      <p class="lede">
+        A record alone does not say how you got it, so four things move the Base score:
+        <b>how your losses look</b> (a one-point defeat on the road is not a blowout at
+        home), <b>your best win</b>, <b>how comfortably you win</b>, and <b>how you played
+        against the number</b> &mdash; beating a bad team by 17 when you were favoured by
+        28 is a miss, and beating a good one by 1 when you were favoured by 3 is par.
+      </p>
+
+      <h3>Stage 3 &mdash; upset regression</h3>
+      <p class="lede">
+        When a result spans a wide gap &mdash; the 38th-best r&eacute;sum&eacute; beats the
+        5th &mdash; it says <em>both</em> teams were mis-rated, not just one. So both are
+        pulled toward their midpoint. The winner is not teleported to the top and the
+        loser does not get to pretend the game never happened.
+      </p>
+
+      <h3>Stage 4 &mdash; head-to-head</h3>
+      <p class="lede">
+        <b>If a team beat you, it is ranked above you.</b> That is a requirement, not a
+        preference, and there are exactly four exceptions &mdash; it has more losses than
+        you, or it has lost since while you have not, or it has lost more often since than
+        you have, or you have been beating better teams than it has for at least a
+        fortnight. The first three let the r&eacute;sum&eacute; decide how far apart you
+        finish; the fourth caps it. When the requirement forces a change, both teams move
+        toward each other rather than one being dragged to the other.
+      </p>
+      <p class="lede">
+        Results it still contradicts are listed on the page, with the reason, because
+        &ldquo;my team beat them and is ranked below them&rdquo; deserves a real answer.
+      </p>
+
+      <p class="lede">
+        <a href="methodology.html">The full methodology</a> has the arithmetic behind each
+        stage, the reasoning for every choice, and the live weights this week is built on.
+      </p>
+    </div>
+  </dialog>
 
   <main>
     <section id="top25">
@@ -90,42 +145,22 @@
 
     <section id="contradictions">
       <h2>Contradictions</h2>
-      <p class="lede">
-        When A beats B, B beats C and C beats A, no ordering can satisfy all three.
-        These are the loops in this week's results and which result was set aside in each.
-      </p>
+      <p class="lede">Loops where no ordering can satisfy every result at once.</p>
       <div id="cycles"></div>
     </section>
 
     <section id="overridden">
       <h2>Results the ranking goes against</h2>
       <p class="lede">
-        Every head-to-head result this ranking contradicts, least convincing first.
-        A win counts for less when it was narrow, at home, or against the power ratings &mdash;
-        and moving a team far from its resume position costs more than moving it a little.
-        Overriding any result costs something real: the cheapest one on the board still
-        prices at a full unit of conviction, so a result is only set aside when the rest
-        of the evidence genuinely outweighs it.
-      </p>
-      <p class="lede">
-        <b>And a result can only be contradicted for a reason.</b> If a team beat you, it is
-        ranked above you &mdash; unless it has more losses than you, or has lost since while
-        you have not, or has lost more often since than you have, or you have been beating
-        better teams than it has for at least a fortnight. Those four are the whole list.
-        The first three let the r&eacute;sum&eacute; decide how far apart you finish; the
-        fourth caps it, by how much better your wins have been and how long that has been
-        true. The <b>Places / allowed</b> column is how far apart they finished against how
-        far the exception allows.
+        Every head-to-head result this ranking contradicts, and which of the four
+        exceptions permits it.
       </p>
       <div class="card"><div id="overridden-list"></div></div>
     </section>
 
     <section id="regressions">
       <h2>Upset regressions</h2>
-      <p class="lede">
-        When a result spans a wide gap, both teams are pulled toward their midpoint:
-        the upset says the winner was underrated and the loser overrated.
-      </p>
+      <p class="lede">Wide-gap results that pulled both teams toward their midpoint.</p>
       <div class="card"><div id="regression-list"></div></div>
     </section>
 

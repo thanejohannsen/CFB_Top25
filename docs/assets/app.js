@@ -547,6 +547,30 @@
     });
   }
 
+  // ---------- "How the ranking works" ----------
+  function wireDialog() {
+    var dialog = byId("how-it-works");
+    var open = byId("how-open");
+    var close = byId("how-close");
+    if (!dialog || !open) return;
+    // Safari only learned showModal() in 15.4. Without it the button would do
+    // nothing at all, so send those visitors to the long version instead.
+    if (typeof dialog.showModal !== "function") {
+      open.addEventListener("click", function () { location.href = "methodology.html"; });
+      return;
+    }
+    open.addEventListener("click", function () {
+      dialog.showModal();
+      dialog.querySelector(".dialog-body").scrollTop = 0;
+    });
+    if (close) close.addEventListener("click", function () { dialog.close(); });
+    // A click that lands on the dialog element itself is a click on the
+    // backdrop -- anything inside it targets a child.
+    dialog.addEventListener("click", function (e) {
+      if (e.target === dialog) dialog.close();
+    });
+  }
+
   // ---------- the four rules ----------
   // A result stands unless one of four things has happened since the game. Which
   // ones apply, and how far apart the two may then sit, are published per result
@@ -708,6 +732,7 @@
 
   function boot() {
     initTheme();
+    wireDialog();
     var wanted = new URLSearchParams(window.location.search).get("week");
 
     // The Pages CDN caches aggressively: bust the catalogue by time so a new

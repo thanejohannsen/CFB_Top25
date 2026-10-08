@@ -108,19 +108,18 @@
           It also means the number is <em>inspectable</em>. The curve from a point spread to
           a win probability is a normal distribution with a standard deviation of 13.5
           points &mdash; a 14-point favourite wins about 85% of the time, a 30-point
-          favourite about 99%. Getting that curve wrong is quiet and expensive: an earlier
-          draft used a logistic at the same scale, priced a 30-point favourite at 90%, and
-          made every resume in the country look harder to earn than it was.
+          favourite about 99%. The shape matters more than it looks: a logistic curve at
+          the same scale prices that 30-point favourite at 90%, which quietly makes every
+          r&eacute;sum&eacute; in the country look harder to earn than it was.
         </p>
-        <h3>Why FPI is no longer in the formula</h3>
+        <h3>Why FPI is not a quality term here</h3>
         <p class="lede">
-          It used to be the quality term, and two things pushed it out. The market and the
-          play-by-play simply do its job better. And FPI cannot be honestly checked: the
-          feed serves <em>one</em> snapshot with no week dimension, so grading a ranking
-          built from it against a finished season is reading the answer key. An earlier
-          version of this project quoted 75.5% accuracy from exactly that mistake. Betting
-          lines and per-game play-by-play are both stamped per game, so a cutoff is a real
-          cutoff.
+          Two reasons. The market and the play-by-play do the job better. And FPI cannot be
+          honestly checked: the feed serves <em>one</em> snapshot with no week dimension, so
+          grading a ranking built from it against a finished season is reading the answer
+          key &mdash; it is the single easiest way to manufacture an impressive accuracy
+          figure that means nothing. Betting lines and per-game play-by-play are stamped per
+          game, so a cutoff is a real cutoff.
         </p>
         <p class="lede">
           FPI is still here, in the two places where one number has to settle something: as
@@ -129,22 +128,22 @@
         </p>
         <h3>Why Strength of Schedule is not in the formula</h3>
         <p class="lede">
-          It used to be, at a quarter of the weight, and it was the single biggest source of
-          nonsense. Strength of Record <em>already</em> accounts for the schedule &mdash; it
-          means "how good is your record <em>given who you played</em>". Adding schedule
-          strength again counts it twice, and worse, rewards playing hard games whether or
-          not you win them.
+          Strength of Record <em>already</em> accounts for the schedule &mdash; it means
+          "how good is your record <em>given who you played</em>". Adding schedule strength
+          on top counts it twice, and worse, rewards playing hard games whether or not you
+          win them.
         </p>
         <p class="lede">
-          The damage was not subtle. A <b>3&ndash;2</b> Clemson sat at 16th on the strength of
-          its schedule alone, while a <b>5&ndash;0</b> Georgia with the country's second-best
-          rating sat at 23rd for having played an easy one. Measured against the AP poll across
-          two seasons, dropping the term moved rank correlation from &tau; +0.33 to +0.52 on the
-          current season and +0.62 to +0.77 on the last completed one.
+          Weighted at a quarter, that is not subtle: a <b>3&ndash;2</b> Clemson sits 16th on
+          the strength of its schedule alone while a <b>5&ndash;0</b> Georgia with the
+          country's second-best rating sits 23rd for having played an easy one. Against the
+          AP poll across two seasons, carrying no schedule term is worth &tau; +0.52 rather
+          than +0.33 on the current season, and +0.77 rather than +0.62 on the last
+          completed one.
         </p>
         <p class="lede">
-          Schedule strength is still shown for every team, and the weight is still a knob in
-          the config for anyone who wants it. It just no longer moves the ranking.
+          Schedule strength is still shown for every team, and the weight is a knob in the
+          config for anyone who wants it. It simply does not move the ranking.
         </p>
       </div></div>
 
@@ -243,14 +242,12 @@
           <b>+4</b>, and the ugliest loss in the country about <b>+8.5</b>.
         </p>
         <p class="lede">
-          It did not always work that way, and the old behaviour is worth stating because
-          it was wrong in an instructive direction. Loss quality used to be graded on a
-          curve against <em>the teams that had lost</em>. The average loss is ugly, so a
-          tidy loss scored below that average and came out <em>negative</em> &mdash; a
-          credit. An unbeaten team's 0 was then the <em>worst</em> score on the component:
-          on the finished 2025 board a 16-0 Indiana placed last in the top 25 on loss
-          quality, while Notre Dame banked 7.2 rank points for having lost well. Being
-          unbeaten now ranks first on this term, which is the only defensible answer.
+          The scale is <em>anchored</em> at zero rather than graded on a curve, and that is
+          the whole point of it. Grade losses against the average of <em>the teams that
+          lost</em> and the average loss is ugly, so a tidy loss scores below it and comes
+          out negative &mdash; a credit for losing. An unbeaten team's flat 0 would then be
+          the <em>worst</em> score on the component, which is indefensible: being unbeaten
+          has to rank first on a term about how your losses look.
         </p>
         <p class="lede">
           Worked, for Northwestern in week 5 of 2026 &mdash; four covers from four, by an
@@ -361,15 +358,12 @@ game control        11th of 138
         </p>
         <h3>What it costs to override a result</h3>
         <p class="lede">
-          Every result carries a real price, and that is a deliberate correction. Conviction
-          is a blend of z-scores, so it sits near zero and has to be shifted upward before
-          it can serve as a cost. That shift used to be measured from the weakest result on
-          the board, which meant whichever game happened to be least convincing was always
-          pinned at a token value &mdash; about a seventeenth of a typical result &mdash;
-          however real that game was. It is why a 2025 Oklahoma State win over Oregon was
-          set aside essentially for free. The floor is now an absolute level of conviction:
-          a weak result costs a full unit because it genuinely is weak, and a convincing one
-          costs roughly three times that rather than seventeen.
+          Conviction is a blend of z-scores, so it sits near zero and has to be shifted
+          upward before it can serve as a cost. That shift is measured from an <em>absolute</em>
+          level of conviction, not from the weakest result on this week's board. Measuring it
+          relatively would pin whichever game happened to be least convincing at a token
+          price however real that game was, so a weak result costs a full unit because it
+          genuinely is weak, and a convincing one costs roughly three times that.
         </p>
         <p class="lede">
           The <b>drift exponent</b> is what keeps a lone result from carrying a team across
@@ -381,13 +375,11 @@ game control        11th of 138
         <h3>When may a result be contradicted at all?</h3>
         <p class="lede">
           Everything above is about the <em>game</em>, and the game never changes once it is
-          played. Whether the ranking may go against it is a separate question, and it used
-          to go unasked: every result was a price, so one could always be outbid. That
-          published a 45&ndash;17 Missouri win over Florida with <b>Florida ranked above
-          them</b>, on the Saturday it happened, with nothing in between.
+          played. Whether the ranking may go against it is a separate question, and the
+          answer is a requirement rather than a price &mdash; a price can always be outbid,
+          and "my team beat them" is not the kind of claim that should have a price on it.
         </p>
         <p class="lede">
-          So the rule is now a requirement with a closed list of exceptions.
           <b>If a team beat you, it is ranked above you</b> &mdash; unless:
         </p>
         <ul class="reasons">
