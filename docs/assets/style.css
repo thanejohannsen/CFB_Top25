@@ -190,6 +190,7 @@ tbody tr.row[aria-expanded="true"] { background: var(--accent-wash); }
 
 /* ---------- detail panel ---------- */
 tr.detail > td { background: var(--surface-2); padding: 0; border-bottom: 1px solid var(--rule-strong); }
+/* Also restated inside the phone block, where an ID selector outranks this. */
 tr.detail[hidden] { display: none; }
 .detail-inner { padding: 16px 16px 0; display: grid; gap: 18px 28px; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); }
 .detail-wide { padding: 4px 16px 16px; }
@@ -258,6 +259,12 @@ footer.site p { margin: 4px 0; }
   #rankings-table tbody,
   #rankings-table tr,
   #rankings-table td { display: block; width: auto; }
+  /* ...but `hidden` still has to mean hidden. The rule above is an ID selector,
+     so it outranks the plain `tr.detail[hidden] { display: none }` further up and
+     FORCED EVERY EXPANDED PANEL OPEN on a phone -- all 25 of them, which took the
+     page from 3,700px tall to 65,000px and made the list unusable. Any rule that
+     sets `display` on these rows needs this one after it. */
+  #rankings-table tr[hidden] { display: none; }
   #rankings-table thead { display: none; }          /* labels live on the cells */
   #rankings-table caption {
     display: block; width: 100%;
