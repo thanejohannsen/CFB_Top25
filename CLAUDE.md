@@ -564,6 +564,13 @@ without rescaling would hand it a better score for having less data.
   moved past this game" is a fact about the data. `material_teams` is read by
   the CLI from the last snapshot and passed in as input, so `rank()` stays pure
   and the test cannot be circular. Empty means wait for every game.
+- **Asset links in `docs/*.html` carry `?v=<sha256[:8]>` of the file.** Pages
+  serves `docs/assets/` with `max-age=600` and no revalidation, and Safari holds
+  subresources longer still, so an unstamped push leaves a browser running last
+  week's JavaScript against this week's payload. That has twice looked like a
+  failed deploy. Edit an asset, then run `python3 scripts/stamp_assets.py`;
+  `tests/test_site.py` recomputes the hashes and reddens CI if you forget. No
+  build step is involved -- a static host ignores the query and serves the file.
 - **`output/history.update_index` drops catalogue entries whose snapshot file is
   gone.** The index drives the site's week selector, so a stale entry is a 404,
   and snapshots do get withdrawn legitimately.
