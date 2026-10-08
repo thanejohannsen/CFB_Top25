@@ -29,8 +29,10 @@ import sys
 DOCS = pathlib.Path(__file__).resolve().parent.parent / "docs"
 
 # href="assets/style.css" or src="assets/app.js", with or without an existing
-# ?v=... on the end.
-LINK = re.compile(r'((?:href|src)="(assets/[^"?]+)")(?:\?v=[0-9a-f]+)?')
+# ?v=... on the end. The closing quote comes AFTER the optional stamp -- an
+# earlier version put it before, so the pattern matched only unstamped links and
+# every stamp after the first silently did nothing. tests/test_site.py caught it.
+LINK = re.compile(r'((?:href|src)=")(assets/[^"?]+)(?:\?v=[0-9a-f]+)?(")')
 
 
 def digest(path: pathlib.Path) -> str:
@@ -44,7 +46,7 @@ def stamp(html: pathlib.Path) -> bool:
         target = DOCS / m.group(2)
         if not target.exists():
             raise SystemExit(f"{html.name}: no such asset {m.group(2)}")
-        return m.group(1)[:-1] + "?v=" + digest(target) + '"'
+        return m.group(1) + m.group(2) + "?v=" + digest(target) + m.group(3)
 
     new = LINK.sub(sub, text)
     if new == text:

@@ -400,20 +400,24 @@
     });
   }
 
-  function adjustmentTable(ra, base) {
+  // No total row: the components are in the same unit as the total, so a
+  // trailing "Total -0.74" only repeats the headline above it. Stage 1 keeps
+  // its Base row because its components are RANKS -- that row is the only place
+  // #20, #9 and #3 are tied to 14.15.
+  function adjustmentTable(ra) {
     var comp = ra.components || {}, det = ra.detail || {};
-    var rows = ADJUSTMENTS.filter(function (a) {
+    return termTable(ADJUSTMENTS.filter(function (a) {
       return comp[a.key] !== null && comp[a.key] !== undefined;
     }).map(function (a) {
       return { label: a.label, value: signed(comp[a.key], 2), note: a.note(det) };
-    });
-    // Where the score stands once the adjustment is applied. Stage 3 takes it
-    // from here, so the panel can be read straight down without arithmetic.
-    var after = base.raw_score + ra.total;
-    return termTable(rows, {
-      label: "Total", value: signed(ra.total, 2),
-      note: "Base " + num(base.raw_score, 2) + " \u2192 " + num(after, 2)
-    });
+    }), null);
+  }
+
+  // The headline carries where the score lands as well as what moved it, so the
+  // card can be read from its first line and stage 3 picks up the right number.
+  function adjustmentResult(ra, base) {
+    return signed(ra.total, 2) + " rank points: Base " + num(base.raw_score, 2) +
+      " \u2192 " + num(base.raw_score + ra.total, 2);
   }
 
   function listJoin(names) {
@@ -472,8 +476,8 @@
           })
         )),
       stage(2, "r\u00e9sum\u00e9 adjustment",
-        signed(ra.total, 2) + " rank points",
-        [adjustmentTable(ra, base)]),
+        adjustmentResult(ra, base),
+        [adjustmentTable(ra)]),
       stage(3, "upset regression",
         row.regression
           ? signed(row.regression.adjustment, 2) + " rank points"
