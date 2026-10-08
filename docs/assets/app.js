@@ -352,9 +352,12 @@
     },
     {
       key: "loss_quality", label: "Loss quality",
-      note: function (d) {
+      // The only note that reads the second argument. It needs the whole row
+      // because an older snapshot's losses are named by resume.schedule rather
+      // than by the detail block.
+      note: function (d, row) {
         if (!d.losses_considered) return "unbeaten \u2014 the best score on this term";
-        return lossText(d.losses, d.losses_considered, d.mean_loss_badness) +
+        return lossText(lossesOf(row), d.losses_considered, d.mean_loss_badness) +
           (d.losses_considered === 1 ? "" : " on average") + "; 0 is a perfect loss";
       }
     }
@@ -442,12 +445,12 @@
   // trailing "Total -0.74" only repeats the headline above it. Stage 1 keeps
   // its Base row because its components are RANKS -- that row is the only place
   // #20, #9 and #3 are tied to 14.15.
-  function adjustmentTable(ra) {
+  function adjustmentTable(ra, row) {
     var comp = ra.components || {}, det = ra.detail || {};
     return termTable(ADJUSTMENTS.filter(function (a) {
       return comp[a.key] !== null && comp[a.key] !== undefined;
     }).map(function (a) {
-      return { label: a.label, value: signed(comp[a.key], 2), note: a.note(det) };
+      return { label: a.label, value: signed(comp[a.key], 2), note: a.note(det, row) };
     }), null);
   }
 
@@ -515,7 +518,7 @@
         )),
       stage(2, "r\u00e9sum\u00e9 adjustment",
         adjustmentResult(ra, base),
-        [adjustmentTable(ra)]),
+        [adjustmentTable(ra, row)]),
       stage(3, "upset regression",
         row.regression
           ? signed(row.regression.adjustment, 2) + " rank points"
@@ -1019,19 +1022,45 @@
   // The components already decide every placement; they were just invisible
   // except one team at a time inside an expanded card.
 
-  // Named opponents arrived after some published weeks, and the selector still
-  // serves those. Fall back to the bare count rather than saying "lost to
-  // undefined" -- test for the KEY, since an empty array is a real answer.
+  // A published week is frozen, so the weeks written before `resume_detail`
+  // carried its losses have no names in it -- but `resume.schedule` has listed
+  // every game with a `won` flag all along. Checked across both published
+  // weeks, all 50 rows: the count of losses there equals `losses_considered`
+  // every time. So the names never needed a republish.
+  function lossesOf(row) {
+    var d = (row.resume_adjustment || {}).detail || {};
+    // The engine's own list wins where it exists: it is ordered worst badness
+    // first, which the schedule can only give chronologically.
+    if (d.losses) return d.losses;
+    return ((row.resume || {}).schedule || [])
+      .filter(function (g) { return !g.won; })
+      .map(function (g) { return { opponent: g.opponent }; });
+  }
+
+  var TIMES = { 2: "twice", 3: "three times", 4: "four times" };
+
   function lossText(losses, count, badness) {
     var tail = badness === null || badness === undefined
       ? "" : ", badness " + num(badness, 1);
     if (!losses || !losses.length) {
       return count + " loss" + (count === 1 ? "" : "es") + tail;
     }
-    var names = losses.map(function (l) { return l.opponent; });
-    var shown = names.slice(0, 3), rest = names.length - shown.length;
-    return "lost to " + listJoin(shown) +
-      (rest ? " and " + rest + " more" : "") + tail;
+    // Two losses to the same team is a real line on a completed season -- BYU
+    // lost to Texas Tech in the regular season and again in the title game --
+    // and "lost to Texas Tech and Texas Tech" reads like a bug.
+    var names = [], counts = {}, done = {};
+    losses.forEach(function (l) { counts[l.opponent] = (counts[l.opponent] || 0) + 1; });
+    losses.forEach(function (l) {
+      if (done[l.opponent]) return;
+      done[l.opponent] = true;
+      var n = counts[l.opponent];
+      names.push(n > 1 ? l.opponent + " " + (TIMES[n] || n + " times") : l.opponent);
+    });
+    if (names.length <= 3) return "lost to " + listJoin(names) + tail;
+    // listJoin already ends in "and X", so appending "and N more" to it would
+    // give "A, B and C and 1 more". Plain commas up to the overflow instead.
+    return "lost to " + names.slice(0, 3).join(", ") +
+      " and " + (names.length - 3) + " more" + tail;
   }
 
   var BOARDS = [
@@ -1079,7 +1108,7 @@
         var ra = r.resume_adjustment || {}, d = ra.detail || {};
         var c = ra.components || {};
         var out = { rank: r.rank, team: r.team, points: c[key] || 0 };
-        extra(out, d);
+        extra(out, d, r);
         return out;
       });
     }
@@ -1098,10 +1127,10 @@
       game_control: entries("game_control", function (o, d) {
         o.national_rank = d.game_control_rank;
       }).sort(by("points", 1)),
-      loss_quality: entries("loss_quality", function (o, d) {
+      loss_quality: entries("loss_quality", function (o, d, r) {
         o.badness = d.mean_loss_badness;
         o.losses_considered = d.losses_considered;
-        if ("losses" in d) o.losses = d.losses;
+        o.losses = lossesOf(r);
       }).filter(function (o) { return o.losses_considered; }).sort(by("points", -1))
     };
   }
