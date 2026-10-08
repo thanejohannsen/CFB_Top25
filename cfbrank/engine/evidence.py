@@ -22,13 +22,20 @@ State win over Oregon was overridden at exactly that floor. Now the floor is an
 absolute conviction level (`conviction_floor`), so a weak result costs
 `weight_floor` because it is genuinely weak, not because something had to be last,
 and a convincing result costs maybe three times that rather than seventeen.
+
+**This file is only half the question.** Conviction is about the game itself and
+never changes once it is played. What has happened to the two teams SINCE is a
+separate matter, and it lives in `engine/grounds.py`: it forgives a share of this
+price and -- the part that used to be missing entirely -- sets how far apart the
+two may sit once the result is set aside.
 """
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from typing import Mapping, Sequence
 
+from cfbrank.engine.grounds import Grounds
 from cfbrank.engine.stats import clamp, half_life_weight, zscorer
 from cfbrank.models import GameResult, week_index
 from cfbrank.normalize import sort_key
@@ -53,10 +60,25 @@ class EdgeFact:
     conviction: float
     weight: float
     components: Mapping[str, float] = field(default_factory=dict)
+    # What has happened SINCE the game -- see engine/grounds.py. None when the
+    # grounds stage is switched off, in which case stage 4 reverts to pricing the
+    # override once and letting the distance be free.
+    grounds: Grounds | None = None
 
     @property
     def pair(self) -> tuple[str, str]:
         return (self.winner, self.loser)
+
+    @property
+    def price(self) -> float:
+        """What going against this result actually costs stage 4.
+
+        `weight` is the price the game itself earned; the grounds for setting it
+        aside forgive a share of that, because a win the winner has since
+        undercut is a weaker thing to rank against than the same win from a team
+        still playing well.
+        """
+        return self.weight * (1.0 - (self.grounds.relief if self.grounds else 0.0))
 
     @property
     def score(self) -> str:
@@ -133,6 +155,7 @@ def score_edges(
     opponent_results: Mapping[str, Mapping[str, GameResult]],
     cfg: Mapping[str, float],
     home_field_points: float | None = None,
+    grounds: Mapping[tuple[str, str], Grounds] | None = None,
 ) -> dict[tuple[str, str], EdgeFact]:
     """Score every result. z-scores are taken over the whole result set, so
     conviction is comparable across cycles and stable week to week.
@@ -142,7 +165,9 @@ def score_edges(
     so the units do not matter as long as higher is better.
 
     `home_field_points` overrides the configured fallback with a value measured
-    from this season's lines.
+    from this season's lines. `grounds` carries what has happened since each game
+    (engine/grounds.py); it is attached here so every consumer -- stage 4, the
+    cycle reports, the published payload -- reads one object per result.
     """
     if not results:
         return {}
@@ -216,6 +241,7 @@ def score_edges(
             conviction=sum(components.values()),
             weight=0.0,  # filled in below, once the range is known
             components=components,
+            grounds=(grounds or {}).get((r.winner, r.loser)),
         )
 
     # Turn conviction into a price. `conviction_floor` is an absolute z level,
@@ -225,19 +251,6 @@ def score_edges(
     w_floor = float(cfg.get("weight_floor", 1.0))
     z_floor = float(cfg.get("conviction_floor", -2.0))
     return {
-        key: EdgeFact(
-            **{**_as_dict(f), "weight": w_floor + max(0.0, f.conviction - z_floor)}
-        )
+        key: replace(f, weight=w_floor + max(0.0, f.conviction - z_floor))
         for key, f in facts.items()
-    }
-
-
-def _as_dict(f: EdgeFact) -> dict:
-    return {
-        "winner": f.winner, "loser": f.loser, "week": f.week, "season_type": f.season_type,
-        "winner_points": f.winner_points, "loser_points": f.loser_points, "margin": f.margin,
-        "adj_margin": f.adj_margin, "site": f.site, "neutral_site": f.neutral_site,
-        "rating_gap": f.rating_gap, "common_opponents": f.common_opponents, "common_diff": f.common_diff,
-        "recency": f.recency, "conviction": f.conviction, "weight": f.weight,
-        "components": f.components,
     }

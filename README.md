@@ -44,8 +44,9 @@ exactly why it is there**.
 4. **Weighted head-to-head** — the published order is the one minimising
 
    ```
-   cost = strength × Σ conviction(each overridden result)
+   cost = strength     × Σ conviction(each overridden result)
         + drift_weight × Σ |position − resume position| ^ drift_exponent
+        + gap_weight   × Σ (places past what the grounds licence) ^ gap_exponent
    ```
 
    so the results it contradicts are, by construction, the least convincing ones.
@@ -142,6 +143,21 @@ single tangle of **22 mutually entangled teams**, where resolving each loop
 separately is not computable. A weighted objective has neither problem, and a
 team nobody in the pool played simply stays where its resume put it.
 
+### Setting a result aside does not make the distance free
+
+Contradicting a result used to be binary: pay for the decision once and the two
+teams could finish anywhere. That published a 45–17 Missouri win over Florida with
+**Florida eleven places higher**, on the Saturday it happened, with nothing in
+between to justify it.
+
+So each result carries a **licence** measured in places, earned by what has
+happened *since* the game — the winner losing, the loser going on to beat better
+teams (which counts for more the longer it has been going on), and age on its own.
+With none of that, the two may swap but they stay neighbours. Every place past the
+licence is charged, so the usual outcome is both teams moving part of the way
+toward each other rather than one being dragged across the board. See
+[`TUNING.md`](TUNING.md#grounds-for-setting-a-result-aside-stage4grounds).
+
 ## Quick start
 
 ```bash
@@ -211,6 +227,8 @@ actually change the character of the list:
 | `stage3.strength` | 0.5 | How far a wide-gap upset pulls both teams together. **Do not set 1.0** — the stage then fights stage 4, which drags the winner straight back, and the list swings week to week. |
 | `stage4.strength` | 14.0 | Positions of resume drift that one unit of head-to-head conviction buys. |
 | `stage4.drift_exponent` | 1.5 | Above 1, long moves cost disproportionately more, so how far a result can move a team scales with how convincing it was. At 1.0 a single marginal win can carry a team across the board. |
+| `stage4.grounds.base_places` | 2.0 | How far apart two teams may sit when nothing has happened since the game to justify it. |
+| `stage4.grounds.gap_weight` | 1.5 | What a place past the licence costs. Measurably inside the noise on accuracy, so it is a judgement about what the board should look like. |
 | `stage1.pool_size` | 40 | How many teams are eligible to be reordered. |
 
 Try a change without committing it:

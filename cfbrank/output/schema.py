@@ -15,6 +15,7 @@ from cfbrank.config import Config
 from cfbrank.engine.stats import round_floats
 from cfbrank.engine.base_score import TeamBase
 from cfbrank.engine.evidence import EdgeFact
+from cfbrank.engine.order import OrderResult
 from cfbrank.engine.pipeline import RankingResult
 from cfbrank.models import Dataset
 
@@ -25,7 +26,42 @@ ATTRIBUTION = (
 )
 
 
-def _edge(fact: EdgeFact, rank_of: Mapping[str, int], overridden: bool) -> dict[str, Any]:
+def _grounds(fact: EdgeFact) -> dict[str, Any] | None:
+    """What has happened since the game, and how far apart that lets the two sit.
+
+    Published per result so the page can say *why* a contradiction is allowed to
+    be as wide as it is, without knowing any ranking rules. None when the grounds
+    stage is switched off.
+    """
+    g = fact.grounds
+    if g is None:
+        return None
+    return {
+        "category": g.category,
+        "severity": g.severity,
+        "weeks_since": g.weeks_since,
+        "winner_losses_since": g.winner_losses,
+        "loser_losses_since": g.loser_losses,
+        "slide": g.slide,
+        "winner_win_quality": g.winner_credit,
+        "loser_win_quality": g.loser_credit,
+        "ascent": g.ascent,
+        "ramp": g.ramp,
+        "allowance": g.allowance,
+        "relief": g.relief,
+    }
+
+
+def _edge(
+    fact: EdgeFact,
+    rank_of: Mapping[str, int],
+    overridden: bool,
+    ordering: OrderResult | None = None,
+) -> dict[str, Any]:
+    gap = excess = None
+    if ordering is not None:
+        gap = ordering.gaps.get((fact.winner, fact.loser))
+        excess = ordering.excess.get((fact.winner, fact.loser))
     return {
         "winner": fact.winner,
         "loser": fact.loser,
@@ -42,8 +78,16 @@ def _edge(fact: EdgeFact, rank_of: Mapping[str, int], overridden: bool) -> dict[
         "common_diff": fact.common_diff,
         "conviction": fact.conviction,
         "weight": fact.weight,
+        # What stage 4 actually paid, after the relief the grounds earn. Equal to
+        # `weight` when there are no grounds, or when the grounds stage is off.
+        "price": fact.price,
         "components": dict(fact.components),
         "status": "overridden" if overridden else "honored",
+        "grounds": _grounds(fact),
+        # Places the loser finished above the winner (negative = the result was
+        # honoured), and how many of those were past what the grounds licensed.
+        "gap": gap,
+        "excess": excess,
     }
 
 
@@ -174,11 +218,11 @@ def _team_entry(
         },
         "h2h": {
             "wins_vs_pool": [
-                _edge(f, rank_of, (f.winner, f.loser) in overridden)
+                _edge(f, rank_of, (f.winner, f.loser) in overridden, result.ordering)
                 for f in sorted(wins, key=lambda f: rank_of.get(f.loser, 10**6))
             ],
             "losses_vs_pool": [
-                _edge(f, rank_of, (f.winner, f.loser) in overridden)
+                _edge(f, rank_of, (f.winner, f.loser) in overridden, result.ordering)
                 for f in sorted(losses, key=lambda f: rank_of.get(f.winner, 10**6))
             ],
         },
@@ -290,7 +334,7 @@ def build_payload(
             "size": c.size,
             "explanation": c.explanation,
             "edges": [
-                _edge(f, rank_of, (f.winner, f.loser) in overridden) for f in c.edges
+                _edge(f, rank_of, (f.winner, f.loser) in overridden, result.ordering) for f in c.edges
             ],
             "overridden": [f"{f.winner} over {f.loser}" for f in c.overridden],
         }
@@ -299,7 +343,7 @@ def build_payload(
 
     overridden_results = [
         dict(
-            _edge(result.edge_facts[k], rank_of, True),
+            _edge(result.edge_facts[k], rank_of, True, result.ordering),
             cycle=result.team_cycle.get(k[0]),
             reason=_override_reason(result.edge_facts[k]),
         )
@@ -359,6 +403,7 @@ def build_payload(
             "cost": {
                 "total": result.ordering.cost,
                 "overrides": result.ordering.violation_cost,
+                "gaps": result.ordering.gap_cost,
                 "drift": result.ordering.drift_cost,
                 "passes": result.ordering.passes,
             },

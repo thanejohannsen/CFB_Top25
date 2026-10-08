@@ -43,6 +43,58 @@ def describe_loss(fact: EdgeFact, opponent_rank: int | None = None) -> str:
     )
 
 
+# How a set of grounds reads in a sentence. Keyed on `Grounds.category`, so a new
+# category cannot be added without deciding what it says.
+GROUNDS_PHRASE = {
+    "none": "nothing has happened since to undermine it",  # the game is this week
+    "age": "nothing has happened since beyond the weeks going by",
+    "form": "the winner has slipped since",
+    "resume": "the loser has beaten better teams since",
+    "both": "the winner has slipped since and the loser has beaten better teams",
+}
+
+
+def grounds_reason(fact: EdgeFact) -> str:
+    """What has happened since the game, and how far apart that lets the two sit.
+
+    This is the second half of the answer to "my team beat them and is ranked
+    below them": the first half is how weak the game was (`override_reason`), and
+    this is what the weeks since have done to it.
+    """
+    g = fact.grounds
+    if g is None:
+        return ""
+    bits: list[str] = []
+    if g.slide > 0:
+        if not g.loser_losses:
+            bits.append(f"{fact.winner} has lost {g.winner_losses} since and {fact.loser} none")
+        elif g.winner_losses > g.loser_losses:
+            bits.append(
+                f"{fact.winner} has lost {g.winner_losses} since"
+                f" against {fact.loser}'s {g.loser_losses}"
+            )
+        else:
+            # Having lost at all is grounds in its own right, so this fires even
+            # when the loser has slipped further. It is worth little: see
+            # `loss_offset` in engine/grounds.py.
+            bits.append(
+                f"both have lost since -- {fact.winner} {g.winner_losses},"
+                f" {fact.loser} {g.loser_losses}"
+            )
+    if g.ascent > 0:
+        bits.append(
+            f"{fact.loser}'s wins since average {g.ascent:.1f} rating points better"
+            f" than {fact.winner}'s"
+            + (f", at {g.ramp * 100:.0f}% force {g.weeks_since:.0f} weeks on" if g.ramp < 1 else "")
+        )
+    if not bits:
+        bits.append(GROUNDS_PHRASE.get(g.category, g.category))
+    places = round(g.allowance)
+    worth = f"worth {places} place{'' if places == 1 else 's'} of separation"
+    verdict = "no grounds at all" if g.severity == "none" else f"{g.severity} grounds"
+    return f"{'; '.join(bits)} -- {verdict}, {worth}"
+
+
 def override_reason(fact: EdgeFact) -> str:
     """Why ranking against this result was the cheaper option."""
     bits: list[str] = []
@@ -58,8 +110,14 @@ def override_reason(fact: EdgeFact) -> str:
             f"the winner rates {abs(fact.rating_gap):.1f} points worse on the power ratings"
         )
     if fact.common_opponents and fact.common_diff < 0:
-        bits.append(f"the loser fared better against {len(fact.common_opponents)} shared opponents")
-    return "; ".join(bits)
+        shared = len(fact.common_opponents)
+        bits.append(
+            f"the loser fared better against {shared} shared"
+            f" opponent{'' if shared == 1 else 's'}"
+        )
+    reason = "; ".join(bits)
+    since = grounds_reason(fact)
+    return f"{reason}. Since then: {since}" if since else reason
 
 
 def team_reasons(

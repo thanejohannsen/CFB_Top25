@@ -5,6 +5,7 @@ from __future__ import annotations
 from typing import Iterable, Sequence
 
 from cfbrank.engine.evidence import EdgeFact
+from cfbrank.engine.grounds import Grounds
 from cfbrank.engine.graph import Digraph
 from cfbrank.models import Game, GameLine, GameResult, Record, TeamGamePPA, TeamRating
 
@@ -144,7 +145,29 @@ def ppa(
     )
 
 
-def fact(winner: str, loser: str, weight: float) -> EdgeFact:
+def grounds(allowance: float, **kw) -> Grounds:
+    """A minimal Grounds when only the licensed gap matters."""
+    fields = dict(
+        category="form",
+        severity="clear",
+        weeks_since=4.0,
+        winner_losses=1,
+        loser_losses=0,
+        slide=1.0,
+        winner_credit=0.0,
+        loser_credit=0.0,
+        ascent=0.0,
+        ramp=1.0,
+        allowance=float(allowance),
+        relief=0.0,
+    )
+    fields.update(kw)
+    return Grounds(**fields)
+
+
+def fact(
+    winner: str, loser: str, weight: float, grounds: Grounds | None = None
+) -> EdgeFact:
     """A minimal EdgeFact when only the conviction weight matters."""
     return EdgeFact(
         winner=winner,
@@ -164,8 +187,13 @@ def fact(winner: str, loser: str, weight: float) -> EdgeFact:
         conviction=weight,
         weight=weight,
         components={},
+        grounds=grounds,
     )
 
 
 def weights(pairs: Sequence[tuple[str, str, float]]) -> dict[tuple[str, str], EdgeFact]:
-    return {(w, l): fact(w, l, wt) for (w, l, wt) in pairs}
+    """(winner, loser, weight) triples, or (winner, loser, weight, licence)."""
+    return {
+        (p[0], p[1]): fact(p[0], p[1], p[2], grounds(p[3]) if len(p) > 3 else None)
+        for p in pairs
+    }

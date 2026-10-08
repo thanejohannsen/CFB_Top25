@@ -9,7 +9,7 @@ from dataclasses import dataclass, field
 from typing import Mapping, Sequence
 
 from cfbrank.config import Config
-from cfbrank.engine import h2h, market, performance, resume_strength
+from cfbrank.engine import grounds, h2h, market, performance, resume_strength
 from cfbrank.engine.base_score import TeamBase, compute_base, pool, priority, rerank
 from cfbrank.engine.evidence import EdgeFact, score_edges
 from cfbrank.engine.graph import Digraph, nontrivial_sccs
@@ -190,12 +190,19 @@ def rank(dataset: Dataset, cfg: Config) -> RankingResult:
         tb.team: (tb.market_rating if tb.market_rating is not None else tb.fpi)
         for tb in final_pool
     }
+    # The grounds read the WHOLE board's ratings, not just the pool's: a team's
+    # subsequent win over a good unranked side is real evidence, and a loss to
+    # anybody at all is still a loss. Market ratings only -- FPI has no week
+    # dimension, so folding it in here would read a season-end snapshot into a
+    # question about what has happened since a particular Saturday.
+    edge_grounds = grounds.compute(results, all_results, mkt.ratings, s4.get("grounds", {}))
     edge_facts = score_edges(
         results,
         quality,
         h2h.opponents(all_results),
         ev_cfg,
         home_field_points=mkt.home_field_points if mkt else None,
+        grounds=edge_grounds,
     )
     base_rank = {tb.team: tb.base_rank for tb in final_pool}
     # Pool ranks are 1..N so the drift term is measured inside the pool.
@@ -284,6 +291,10 @@ def rank(dataset: Dataset, cfg: Config) -> RankingResult:
         "resume_rated": len(res.probability),
         "market_rated": len(mkt.ratings),
         "ppa_rated": len(perf.ratings),
+        "h2h_licensed": sum(
+            1 for f in edge_facts.values() if f.grounds is not None and f.grounds.licensed
+        ),
+        "h2h_over_licence": sum(1 for v in ordering.excess.values() if v > 0),
         "max_rise": -min(ordering.drift.values(), default=0),
         "max_drop": max(ordering.drift.values(), default=0),
         "local_search_passes": ordering.passes,

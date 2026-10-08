@@ -547,6 +547,39 @@
     });
   }
 
+  // ---------- the licensed gap ----------
+  // A result can be set aside, but how far apart the two may then sit is earned:
+  // the winner having slipped since, or the loser having beaten better teams
+  // since. Published per result as `grounds`, so this needs no ranking rules.
+  var GROUNDS_LABEL = {
+    none: "nothing since",
+    age: "age only",
+    form: "winner has slipped",
+    resume: "loser has beaten better",
+    both: "both"
+  };
+
+  function groundsBadge(e) {
+    var g = e.grounds;
+    if (!g) return [el("span", { class: "muted", text: "\u2014" })];
+    var label = GROUNDS_LABEL[g.category] || g.category;
+    var kids = [el("span", { class: "state grounds-" + g.category, text: label })];
+    if (g.severity && g.severity !== "none") {
+      kids.push(el("span", { class: "muted", text: " " + g.severity }));
+    }
+    return kids;
+  }
+
+  function gapLabel(e) {
+    var g = e.grounds;
+    if (!g || e.gap === null || e.gap === undefined) return "\u2014";
+    var places = Math.abs(e.gap) + " / " + num(g.allowance, 0);
+    if (e.excess > 0) {
+      return places + " (+" + num(e.excess, 0) + ")";
+    }
+    return places;
+  }
+
   // ---------- overridden, regressions, tail ----------
   function renderOverridden(data) {
     var host = byId("overridden-list");
@@ -562,6 +595,8 @@
         el("th", { scope: "col", class: "num", text: "Score" }),
         el("th", { scope: "col", text: "At" }),
         el("th", { scope: "col", class: "num", text: "Weight" }),
+        el("th", { scope: "col", text: "Grounds" }),
+        el("th", { scope: "col", class: "num", text: "Gap / allowed" }),
         el("th", { scope: "col", text: "Why it was set aside" })
       ])]),
       el("tbody", null, rows.map(function (e) {
@@ -574,6 +609,8 @@
           el("td", { class: "num", text: e.score }),
           el("td", { text: e.site }),
           el("td", { class: "num", text: num(e.weight, 2) }),
+          el("td", null, groundsBadge(e)),
+          el("td", { class: "num", text: gapLabel(e) }),
           el("td", { text: e.reason || "" })
         ]);
       }))

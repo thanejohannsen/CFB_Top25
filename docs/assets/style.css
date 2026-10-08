@@ -177,6 +177,16 @@ tbody tr.row[aria-expanded="true"] { background: var(--accent-wash); }
 .state.honored    { color: var(--good-ink); }
 .state.overridden { color: var(--critical-ink); }
 
+/* Grounds for setting a result aside. The label already says which grounds and
+   how strong, so colour only picks out the one worth noticing: a contradiction
+   that nothing since the game justifies. */
+.muted { color: var(--ink-muted); font-weight: 400; }
+.state.grounds-none { color: var(--critical-ink); }
+.state.grounds-age  { color: var(--ink-muted); }
+.state.grounds-form,
+.state.grounds-resume,
+.state.grounds-both { color: var(--ink); font-weight: 600; }
+
 /* ---------- detail panel ---------- */
 tr.detail > td { background: var(--surface-2); padding: 0; border-bottom: 1px solid var(--rule-strong); }
 tr.detail[hidden] { display: none; }

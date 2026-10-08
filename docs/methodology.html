@@ -314,7 +314,7 @@ game control        11th of 138
     <section>
       <h2>Stage 4 &mdash; Weighted head-to-head</h2>
       <div class="card"><div class="card-body">
-        <p class="formula">cost(order) = strength &times; &Sigma; weight(overridden result) + drift_weight &times; &Sigma; |position &minus; base position|<sup>drift_exponent</sup></p>
+        <p class="formula">cost(order) = strength &times; &Sigma; price(overridden result) + drift_weight &times; &Sigma; |position &minus; base position|<sup>drift_exponent</sup> + gap_weight &times; &Sigma; (places past the licence)<sup>gap_exponent</sup></p>
         <p class="lede">
           Head-to-head is a preference, not an absolute rule. The ranking is the ordering
           that minimises the cost above, so the results it ends up contradicting are by
@@ -376,6 +376,57 @@ game control        11th of 138
           the board: because long moves cost disproportionately more, how far a result can
           move a team scales with how convincing that result was. A marginal win buys a few
           places; an emphatic one buys many.
+        </p>
+
+        <h3>How far apart two teams may sit &mdash; the grounds</h3>
+        <p class="lede">
+          Everything above is about the <em>game</em>, and the game never changes once it is
+          played. What has happened to the two teams <em>since</em> is a separate question,
+          and it used to go unasked: the ranking priced the decision to go against a result
+          and then let the distance be free. That published a 45&ndash;17 Missouri win over
+          Florida with Florida <b>eleven places higher</b>, on the Saturday it happened, with
+          nothing in between to justify it.
+        </p>
+        <p class="lede">
+          So each result now carries a <b>licence</b>, measured in places, and every place
+          past it is charged. Two things earn it, and they are the two things anybody
+          actually argues about:
+        </p>
+        <ul class="reasons">
+          <li><b>The winner has slipped</b> &mdash; it has lost since, and lost more often
+            than the team it beat. &ldquo;I beat you in September&rdquo; is a thinner argument
+            from a team that has dropped two games since.</li>
+          <li><b>The loser has beaten better teams since</b> &mdash; measured as the average
+            quality of the wins each has picked up, in rating points. This one
+            <em>strengthens with time</em> on purpose: one good win the week after proves
+            little, six weeks of them is a different team.</li>
+          <li><b>Age on its own</b> &mdash; a week-2 result constrains a January board less
+            tightly than it constrains a week-3 one, whatever else happened in between.</li>
+        </ul>
+        <p class="lede">
+          With none of that &mdash; a game played the same week it is being ranked &mdash; the
+          licence is two places. The two teams may still swap, because the base order is
+          allowed to disagree about near-neighbours, but they stay near-neighbours. At the
+          other end the licence caps at half the pool, which is the right answer for a
+          result the season has thoroughly overtaken: Florida beat Texas in week 6 of 2025
+          and then lost five more games than Texas did.
+        </p>
+        <p class="lede">
+          The grounds are also published as a <b>category</b> and a <b>severity</b>, and both
+          are derived from the licence rather than the other way round. Bands that set the
+          licence would make it a step function of the evidence, and this stage is a search
+          over a cost surface &mdash; a step is a cliff two teams can straddle, where one more
+          rating point jumps the licence several places and the whole board rearranges.
+          Continuous in, labels out.
+        </p>
+        <p class="lede">
+          Because the gap term pulls rather than forbids, the usual outcome is both teams
+          moving part of the way toward each other rather than one being dragged across the
+          board. On the 2026 week-5 board it took the widest contradiction from fifteen
+          places to seven. It does not measurably change what the ranking
+          <em>predicts</em> &mdash; swept across a twelvefold range of settings on 1,997 games
+          it moves by three &mdash; so the setting is a judgement about what a ranking owes
+          the result, not an accuracy tweak.
         </p>
       </div></div>
     </section>
@@ -465,6 +516,7 @@ game control        11th of 138
       var meta = data.meta || {}, cfg = meta.config || {};
       var s1 = cfg.stage1 || {}, s2 = cfg.stage2 || {}, s3 = cfg.stage3 || {}, s4 = cfg.stage4 || {};
       var ev = s4.evidence || {};
+      var gr = s4.grounds || {};
       var mk = cfg.market || {}, pf = cfg.performance || {}, rsm = cfg.resume || {};
       document.getElementById("attribution").textContent = (meta.source || {}).attribution || "";
 
@@ -519,6 +571,17 @@ game control        11th of 138
         ["  margin cap", ev.margin_cap],
         ["  weight floor (cheapest override)", ev.weight_floor],
         ["  conviction floor", ev.conviction_floor],
+        ["Grounds for setting a result aside", gr.enabled ? "on" : "off"],
+        ["  places allowed with no grounds", gr.base_places],
+        ["  places per net loss since", gr.per_net_loss],
+        ["  of the loser's own losses forgiven", gr.loss_offset],
+        ["  places per rating point of win quality", gr.per_rating_point],
+        ["  weeks for that to reach full force", gr.ramp_weeks],
+        ["  places per week of age", gr.per_week],
+        ["  cap on the licence", gr.max_places + " places"],
+        ["  share of the price grounds forgive", gr.relief],
+        ["  cost per place past the licence", gr.gap_weight],
+        ["  gap exponent", gr.gap_exponent],
         ["Market: minimum lined games", mk.min_games],
         ["Market: weeks of lines ahead", mk.horizon_weeks],
         ["Market: home field fitted", mk.fit_home_field ? "yes" : "no"],

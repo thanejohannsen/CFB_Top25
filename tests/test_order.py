@@ -5,8 +5,10 @@ from __future__ import annotations
 import random
 import unittest
 
+from dataclasses import replace
+
 from cfbrank.engine.order import _Model, _new_index, minimum_violations_order
-from tests.helpers import weights
+from tests.helpers import grounds, weights
 
 CFG = {"strength": 14.0, "drift_weight": 1.0, "drift_exponent": 1.5, "max_passes": 400}
 
@@ -20,13 +22,14 @@ class TestCostModel(unittest.TestCase):
         teams = ["A", "B"]
         m = _Model(teams, {("B", "A"): 2.0}, base(teams), 10.0, 1.0, 1.0)
         # A first: B's win over A runs backward, so it is violated.
-        total, viol, drift = m.cost({"A": 0, "B": 1})
-        self.assertAlmostEqual(viol, 20.0)
-        self.assertAlmostEqual(drift, 0.0)
+        costs = m.cost({"A": 0, "B": 1})
+        self.assertAlmostEqual(costs.violation, 20.0)
+        self.assertAlmostEqual(costs.drift, 0.0)
+        self.assertAlmostEqual(costs.gap, 0.0)
         # B first: the result is honoured but both teams are one off their base.
-        total, viol, drift = m.cost({"B": 0, "A": 1})
-        self.assertAlmostEqual(viol, 0.0)
-        self.assertAlmostEqual(drift, 2.0)
+        costs = m.cost({"B": 0, "A": 1})
+        self.assertAlmostEqual(costs.violation, 0.0)
+        self.assertAlmostEqual(costs.drift, 2.0)
 
     def test_drift_exponent_makes_long_moves_dearer(self):
         teams = [f"T{i}" for i in range(10)]
@@ -35,8 +38,8 @@ class TestCostModel(unittest.TestCase):
         idx = {t: i for i, t in enumerate(teams)}
         far = dict(idx)
         far["T0"], far["T9"] = 9, 0
-        self.assertAlmostEqual(linear.cost(far)[2], 18.0)
-        self.assertAlmostEqual(superlinear.cost(far)[2], 162.0)
+        self.assertAlmostEqual(linear.cost(far).drift, 18.0)
+        self.assertAlmostEqual(superlinear.cost(far).drift, 162.0)
 
     def test_move_delta_matches_full_recompute(self):
         for seed in range(200):
@@ -48,12 +51,21 @@ class TestCostModel(unittest.TestCase):
                 for b in range(n):
                     if a != b and r.random() < 0.3 and (f"T{b}", f"T{a}") not in edges:
                         edges[(f"T{a}", f"T{b}")] = round(r.uniform(0.1, 2.0), 3)
+            # Licence a random subset, so the gap term is exercised too. It is
+            # NOT incident-local -- moving a third team can shift one endpoint of
+            # a pair and not the other -- so this is the test that catches a
+            # delta that forgot to look past the moved team's own edges.
+            allowance = {
+                key: float(r.randint(0, n)) for key in edges if r.random() < 0.6
+            }
             m = _Model(teams, edges, base(teams), r.uniform(1, 20), r.uniform(0.1, 3),
-                       r.choice([1.0, 1.5, 2.0]))
+                       r.choice([1.0, 1.5, 2.0]), allowance=allowance,
+                       gap_weight=r.choice([0.0, 0.5, 2.0]),
+                       gap_exponent=r.choice([1.0, 1.5]))
             seq = teams[:]
             r.shuffle(seq)
             idx = {t: k for k, t in enumerate(seq)}
-            c0 = m.cost(idx)[0]
+            c0 = m.cost(idx).total
             for i in range(n):
                 for j in range(n):
                     s2 = seq[:]
@@ -61,7 +73,7 @@ class TestCostModel(unittest.TestCase):
                     s2.insert(j, seq[i])
                     i2 = {x: k for k, x in enumerate(s2)}
                     self.assertAlmostEqual(
-                        m.cost(i2)[0] - c0, m.move_delta(idx, seq[i], i, j), places=6,
+                        m.cost(i2).total - c0, m.move_delta(idx, seq[i], i, j), places=6,
                         msg=f"seed {seed} move {i}->{j}",
                     )
 
@@ -70,6 +82,111 @@ class TestCostModel(unittest.TestCase):
         self.assertEqual(_new_index(2, 0, 3), 1)     # shifted down
         self.assertEqual(_new_index(4, 0, 3), 4)     # untouched
         self.assertEqual(_new_index(1, 3, 0), 2)     # shifted up
+
+
+GAP_CFG = dict(CFG, grounds={"gap_weight": 1.5, "gap_exponent": 1.5})
+
+
+class TestLicensedGap(unittest.TestCase):
+    """Overriding a result is no longer binary: the gap it buys is licensed.
+
+    The regression this guards is the published one -- Missouri beat Florida
+    45-17 on the Saturday being ranked and the board put Florida eleven places
+    higher, because the old cost model charged for the decision and gave the
+    distance away.
+    """
+
+    def test_an_unlicensed_override_is_pulled_together(self):
+        teams = [f"T{i}" for i in range(40)]
+        # T20 beat T2 and nothing has happened since: 2 places of licence.
+        spec = [("T20", "T2", 0.4, 2.0)]
+        loose = minimum_violations_order(teams, weights(spec), base(teams), CFG)
+        tight = minimum_violations_order(teams, weights(spec), base(teams), GAP_CFG)
+        self.assertEqual(loose.violated, [("T20", "T2")])
+        loose_gap = loose.order.index("T20") - loose.order.index("T2")
+        tight_gap = tight.order.index("T20") - tight.order.index("T2")
+        self.assertLess(tight_gap, loose_gap)
+
+    def test_a_wide_licence_leaves_the_gap_alone(self):
+        teams = [f"T{i}" for i in range(40)]
+        spec = [("T20", "T2", 0.4, 30.0)]
+        loose = minimum_violations_order(teams, weights(spec), base(teams), CFG)
+        tight = minimum_violations_order(teams, weights(spec), base(teams), GAP_CFG)
+        self.assertEqual(loose.order, tight.order)
+        self.assertEqual(tight.excess[("T20", "T2")], 0.0)
+
+    def test_a_wider_licence_permits_a_wider_gap(self):
+        teams = [f"T{i}" for i in range(40)]
+        gaps = []
+        for licence in (2.0, 6.0, 12.0):
+            out = minimum_violations_order(
+                teams, weights([("T20", "T2", 0.4, licence)]), base(teams), GAP_CFG
+            )
+            gaps.append(out.order.index("T20") - out.order.index("T2"))
+        self.assertEqual(gaps, sorted(gaps), f"licence should widen the gap: {gaps}")
+        self.assertLess(gaps[0], gaps[-1])
+
+    def test_an_honoured_result_never_pays_the_gap_term(self):
+        """The licence limits contradicting a result, not agreeing with it."""
+        teams = [f"T{i}" for i in range(20)]
+        out = minimum_violations_order(
+            teams, weights([("T2", "T19", 3.0, 1.0)]), base(teams), GAP_CFG
+        )
+        self.assertEqual(out.violated, [])
+        self.assertEqual(out.gap_cost, 0.0)
+        self.assertEqual(out.excess[("T2", "T19")], 0.0)
+        self.assertEqual(out.order, teams, "a result the base order agrees with moves nobody")
+
+    def test_an_unlicensed_edge_is_unconstrained(self):
+        """No grounds object at all means the stage behaves as it did before."""
+        teams = [f"T{i}" for i in range(40)]
+        spec = [("T20", "T2", 0.4)]
+        with_gap = minimum_violations_order(teams, weights(spec), base(teams), GAP_CFG)
+        without = minimum_violations_order(teams, weights(spec), base(teams), CFG)
+        self.assertEqual(with_gap.order, without.order)
+        self.assertEqual(with_gap.gap_cost, 0.0)
+        self.assertEqual(with_gap.excess, {})
+
+    def test_relief_makes_a_result_cheaper_to_override(self):
+        teams = ["A", "B"]
+        full = weights([("B", "A", 2.0)])
+        relieved = {
+            ("B", "A"): replace(
+                full[("B", "A")], grounds=grounds(2.0, relief=0.5)
+            )
+        }
+        self.assertAlmostEqual(full[("B", "A")].price, 2.0)
+        self.assertAlmostEqual(relieved[("B", "A")].price, 1.0)
+
+    def test_gap_cost_is_reported_separately_from_the_other_terms(self):
+        teams = [f"T{i}" for i in range(40)]
+        out = minimum_violations_order(
+            teams, weights([("T20", "T2", 0.4, 2.0)]), base(teams), GAP_CFG
+        )
+        self.assertGreater(out.gap_cost, 0.0)
+        self.assertAlmostEqual(
+            out.cost, out.violation_cost + out.drift_cost + out.gap_cost, places=6
+        )
+
+    def test_a_zero_charge_still_reports_the_overspill(self):
+        """`gap_weight = 0` is the "publish it, do not act on it" setting."""
+        teams = [f"T{i}" for i in range(40)]
+        spec = [("T20", "T2", 0.4, 2.0)]
+        cfg = dict(CFG, grounds={"gap_weight": 0.0, "gap_exponent": 1.5})
+        free = minimum_violations_order(teams, weights(spec), base(teams), cfg)
+        charged = minimum_violations_order(teams, weights(spec), base(teams), GAP_CFG)
+        self.assertEqual(free.gap_cost, 0.0)
+        self.assertGreater(free.excess[("T20", "T2")], 0.0, "measured even when free")
+        self.assertLess(charged.excess[("T20", "T2")], free.excess[("T20", "T2")])
+
+    def test_gaps_are_reported_for_every_edge(self):
+        teams = [f"T{i}" for i in range(10)]
+        out = minimum_violations_order(
+            teams, weights([("T8", "T1", 0.4, 2.0), ("T2", "T5", 2.0)]), base(teams), GAP_CFG
+        )
+        self.assertEqual(set(out.gaps), {("T8", "T1"), ("T2", "T5")})
+        self.assertGreater(out.gaps[("T8", "T1")], 0, "an overridden result has a positive gap")
+        self.assertLess(out.gaps[("T2", "T5")], 0, "an honoured one has a negative gap")
 
 
 class TestOrdering(unittest.TestCase):
@@ -115,7 +232,7 @@ class TestOrdering(unittest.TestCase):
         teams = [f"T{i}" for i in range(14)]
         edges = weights([("T9", "T2", 2.5), ("T11", "T4", 1.8), ("T3", "T1", 0.4), ("T13", "T0", 0.2)])
         start = _Model(teams, {k: f.weight for k, f in edges.items()}, base(teams), 14.0, 1.0, 1.5)
-        begin = start.cost({t: i for i, t in enumerate(teams)})[0]
+        begin = start.cost({t: i for i, t in enumerate(teams)}).total
         out = minimum_violations_order(teams, edges, base(teams), CFG)
         self.assertLessEqual(out.cost, begin + 1e-9)
 

@@ -30,6 +30,9 @@ and replace the single line in `config/ranking.toml`.
 ```
 base  = 0.55 x SoR_rank + 0.30 x Market_rank + 0.15 x PPA_rank
 score = base + w_adjust x resume adjustment (incl. cover) + upset regression
+order = argmin  strength x (results contradicted)
+               + drift   x (places moved) ^ drift_exponent
+               + gap     x (places past what the grounds licence) ^ gap_exponent
 ```
 
 In the owner's words: **SoR is the resume** (who you beat and how hard that was),
@@ -365,12 +368,101 @@ ranked below them" a real answer. At 0 that section lists 58 contradictions the
 ranking does nothing about.
 
 The visible cost of 4, which the owner accepted: Ole Miss beating LSU goes back
-to being overridden (Ole Miss #15, LSU #7), because the forcer no longer drags
-LSU down to meet it. Honouring that one result was what the extra constraint
-bought.
+to being overridden, because the forcer no longer drags LSU down to meet it.
+Honouring that one result was what the extra constraint bought. **The grounds
+stage has since narrowed it rather than restored it** -- Ole Miss #12, LSU #7
+where it was #15 and #7 -- and for a reason that reads correctly: Ole Miss have
+lost since (at Florida) and LSU have not, so the override is licensed to 8 places
+and they finish 5 apart. That is the gap limit doing its job, not `strength`
+quietly going back up.
 
 Do not add a signature-win bonus to the resume to compensate. That was built,
 measured and removed once already for the same double-counting reason.
+
+### Overriding a result is NOT binary -- the gap it buys is licensed
+
+`engine/grounds.py`, `[stage4.grounds]`. The owner's words: "right now its binary
+-> you over rule and then the teams can be like 10 spots apart."
+
+That was exactly right, and the published board proved it. Stage 4 priced the
+DECISION to rank against a result (`strength x weight`) and then let the DISTANCE
+be free. On **2026 week 5 the board published Missouri's 45-17 win over Florida
+with Florida at #9 and Missouri at #20** -- eleven places, over a 28-point result,
+on the Saturday it happened, with nothing in between. Oklahoma State's week-2 win
+over Oregon came out fifteen places apart on the same board.
+
+**`evidence.py` and `grounds.py` answer two different questions and must stay
+apart.** Conviction is about the game -- margin, venue, rating gap, common
+opponents -- and it never changes once the game is played. The grounds are about
+what the two teams have DONE since, which is what anybody actually argues about:
+
+- **Form.** The winner has lost since, and lost more often than the team it beat.
+  `slide = winner_losses - loss_offset x loser_losses`, floored at zero. The
+  offset is 0.5, not 1.0, because the owner's rule has two clauses joined by
+  "or": having lost at all is grounds, having lost MORE is stronger grounds. At
+  1.0 the first clause disappears.
+- **Resume.** The loser has since beaten better teams. **Strengthens with time**,
+  by an explicit `ramp_weeks` dial, because that is what the owner asked for and
+  because one good win the week after a game proves little.
+
+What they buy is a **licence in places** -- `allowance` -- and stage 4 charges
+`gap_weight x (places past it) ^ gap_exponent`. With no grounds the licence is
+`base_places = 2`: the two may swap, because the base order is allowed to
+disagree about near-neighbours, but they stay near-neighbours.
+
+Six things about it that were measured and should not be re-derived:
+
+- **The resume ground is the MEAN quality of the wins since, not the sum.** The
+  sum was built first and it saturates: on the completed 2025 season it reached
+  73 rating points for a week-8 result, blew past `max_places` on its own, and
+  pinned 15 of 111 results at the cap, so every old result looked equally
+  undermined and the term stopped discriminating exactly where the
+  contradictions are. A mean is also the plainer reading of "big wins while the
+  other has mediocre wins". Growth with time belongs to `ramp`, where it is one
+  dial instead of an accident of volume.
+- **`gap_weight` does not move predictive accuracy.** Swept 0.5 / 1.0 / 1.5 /
+  3.0 / 6.0 on 1,997 all-FBS games of 2025 (`--weeks 4,6,8,10,12`): 67.4 / 67.3
+  / 67.2 / 67.3 / 67.4%. A three-game spread across a twelvefold range. It is a
+  judgement about what a ranking owes a result, like `w_sor`. It ships at 1.5
+  because that takes the widest contradiction on 2026 week 5 from 15 places to 7
+  without churning the board; at 3 and above the last place or two is paid for
+  in real drift (biggest move 4 -> 6).
+- **The whole stage costs about nothing on the big sample and ~2 points on the
+  small one.** All-FBS 67.5% -> 67.2% (1,997 games) and 68.4% -> 68.3% (1,726,
+  default weeks). AP-vs-AP 64.8% -> 62.6% (179) and 66.5% -> 64.6% (161). Read
+  the all-FBS rows; the AP rows agree in direction this time, unlike the
+  `loss_quality` change, but 160-180 games carries about +-3.7 points of standard
+  error. This is a values fix and a small cost was acceptable.
+- **`relief` does almost nothing on its own.** With `gap_weight = 0` the 2025
+  backtest reproduces the no-grounds numbers EXACTLY. `stage4.strength` is 4, so
+  the override price rarely decides anything by itself. Carried for shape, not
+  effect -- do not go looking for its accuracy contribution again.
+- **`enabled = false` reproduces the old board exactly**, and that is pinned:
+  with it off the 2025 golden's published order and its list of overridden
+  results are both identical to the pre-grounds version, as is 2026 week 5.
+- **The gap term is NOT incident-local.** Relocating a third team can shift one
+  endpoint of a pair and not the other, which changes that pair's gap by one, so
+  `move_delta` checks every licensed edge rather than just the moved team's.
+  `tests/test_order.py::test_move_delta_matches_full_recompute` licences a random
+  subset precisely to catch a delta that forgot this.
+
+**The categories are labels, derived from the licence, never the reverse.** The
+owner asked for "categories of severeness" and they are published
+(`category`, `severity`) and rendered. But bands that SET the licence would make
+it a step function of the evidence, and stage 4 is a local search over a cost
+surface: a step is a cliff two teams can straddle, where one more rating point of
+subsequent resume jumps the licence four places and the whole board rearranges.
+Continuous in, labels out.
+
+**`_credit` sorts before taking the mean**, for the same reason `at_least()` and
+`engine/cover.py` sort: summing floats in input order makes the last bits a
+function of how the games arrived. `tests/test_grounds.py::TestDeterminism`
+shuffles the result list directly.
+
+The two grounds are counted over **every** game, not just pool games, and from
+market ratings only. A loss to a team nobody ranks is still a loss; FPI has no
+week dimension, so folding it in here would read a season-end snapshot into a
+question about what has happened since one particular Saturday.
 
 ### Head-to-head has to cost something
 

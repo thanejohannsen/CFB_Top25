@@ -269,7 +269,8 @@ upset says the winner was underrated *and* the loser overrated.
 ## Head-to-head (`[stage4]`)
 
 The published order is the one that minimises
-`strength × (results it contradicts) + drift × (how far teams move)`.
+`strength × (results it contradicts) + drift × (how far teams move)
++ gap × (how much further apart two teams sit than the grounds allow)`.
 
 ### How much should beating someone matter?
 
@@ -319,6 +320,69 @@ just stops reordering to fix them.
 | `weight_floor` | 1.0 | The cheapest possible override still costs this much |
 | `conviction_floor` | −2.0 | An absolute floor, so the weakest result isn't free to ignore |
 
+### Grounds for setting a result aside (`[stage4.grounds]`)
+
+`[stage4.evidence]` above is about the **game**, and the game never changes once
+it's played. This is about what's happened **since**, which used to go unasked —
+and that was a real hole. The ranking priced the *decision* to go against a
+result and then let the *distance* be free, so on 2026 week 5 it published
+Missouri's 45–17 win over Florida with **Florida eleven places higher**, on the
+Saturday it happened, with nothing in between to justify it.
+
+Now each result carries a **licence**, measured in places, and every place past it
+is charged. Three things earn it:
+
+| ground | what it is | the dial |
+| --- | --- | --- |
+| **Form** | The winner has lost since — and lost more often than the team it beat | `per_net_loss`, `loss_offset` |
+| **Résumé** | The loser has since been beating better teams. *Strengthens with time* | `per_rating_point`, `ramp_weeks` |
+| **Age** | A week-2 result constrains a January board less tightly, whatever else happened | `per_week` |
+
+With none of it — a game played the same week it's being ranked — the licence is
+`base_places`. The two may still swap, because the base order is allowed to
+disagree about near-neighbours, but they stay near-neighbours. That alone pulled
+Missouri and Florida from eleven places apart to five.
+
+**The three settings worth knowing before you turn anything:**
+
+- **`base_places` is the one that fixes the published bug.** Raise it and a
+  contradiction nothing justifies is allowed to get wider again.
+- **`gap_weight` does not change what the ranking predicts.** Swept from 0.5 to
+  6.0 on 1,997 games of 2025, all-FBS accuracy runs 67.4 / 67.3 / 67.2 / 67.3 /
+  67.4% — a three-game spread, i.e. noise. It changes what the board *looks*
+  like, and on 2026 week 5 that is the widest contradiction going from 15 places
+  to 7. Pick it on that, not on the accuracy number.
+- **`relief` barely does anything on its own,** and it's carried for shape rather
+  than effect. With `gap_weight = 0` the backtest reproduces the no-grounds
+  numbers exactly. `stage4.strength` is only 4, so the override price rarely
+  decides anything by itself.
+
+| knob | now | what it means |
+| --- | --- | --- |
+| `enabled` | true | `false` restores the old behaviour exactly — verified against both seasons |
+| `base_places` | 2.0 | Places allowed with no grounds at all. The fix for the Missouri/Florida bug |
+| `per_net_loss` | 4.0 | Places per net subsequent loss by the winner |
+| `loss_offset` | 0.5 | Share of the loser's *own* subsequent losses that forgives the winner's. At 1.0 only the net counts |
+| `per_rating_point` | 0.30 | Places per rating point by which the loser's wins since beat the winner's. The **mean** quality of those wins, not the total |
+| `ramp_weeks` | 6.0 | Weeks for the résumé ground to reach full force. This is "it increases with time", as a dial |
+| `per_week` | 0.40 | Places per week of age on its own |
+| `max_places` | 20.0 | Cap on the licence. Half the pool = "anywhere in the published 25" |
+| `relief` | 0.40 | Share of the override *price* that full grounds forgive |
+| `gap_weight` | 1.5 | Cost per place past the licence. Inside the noise on accuracy — see above |
+| `gap_exponent` | 1.5 | Matches `drift_exponent`, so the two terms are commensurate |
+
+Two escape hatches, both pinned by tests: `enabled = false` turns the whole thing
+off, and `gap_weight = 0` keeps the grounds published on the site while charging
+nothing for the distance.
+
+**Why the licence is a number and the "severity" is only a label.** The site shows
+a category (*nothing since* / *age only* / *winner has slipped* / *loser has beaten
+better* / *both*) and a severity (*slight* / *clear* / *decisive*), and both are
+derived **from** the licence rather than setting it. Bands that set the licence
+would make it a step function of the evidence, and this stage is a search over a
+cost surface — a step is a cliff two teams can straddle, where one more rating
+point jumps the licence several places and the whole board rearranges.
+
 ---
 
 ## Which numbers are known, and which are opinion
@@ -330,7 +394,9 @@ Worth keeping straight before you turn anything.
 
 **Judgement, and no test can settle it** — `w_sor` above all. Predicting games
 isn't what a résumé is *for*. Same for `reference_place`, the stage-2 weights,
-`gap`, `strength` and `drift_exponent`.
+`gap`, `strength`, `drift_exponent`, and everything in `[stage4.grounds]`: the
+licence is a statement about what a ranking owes a result, and `gap_weight` is
+measurably inside the noise either way.
 
 ## Checking a change
 
