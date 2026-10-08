@@ -366,6 +366,33 @@ games, accuracy runs 61.5% at `w_cover=0`, 67.0% at 4, 69.3% at 6, 70.4% at 10,
 *future ATS*, but margin against a per-game market line is a well opponent-adjusted
 measure of *team strength*, which is a different thing.
 
+### The stage-2 leaderboards are scoped to the POOL, and two lead with credits
+
+`output/schema.py::_leaderboards` publishes the 40-team candidate pool ranked by
+`best_win`, `game_control` and `loss_quality`, 30 rows each. Three things about
+them are decisions rather than defaults:
+
+- **The pool, not the whole board.** The components exist for all 138 rated
+  teams -- `apply_resume_adjustment` runs on every one -- but a leaderboard of
+  teams nobody is ranking answers a question this page does not ask. Every name
+  on a list also appears in the Top 25 or in "Just missed".
+- **`loss_quality` is DESCENDING, the other two ascending.** Most damaging loss
+  first, which is the question a Top 25 argument turns on; biggest credit first
+  on the other two. Undefeated teams are off the loss list **by construction** --
+  they have no `losses_considered` -- not by a special case that could drift.
+  `best_win` drops teams whose component is exactly `0.0` for the same kind of
+  reason: a 0 there means "no win over a base top-25 team", and listing it would
+  read as "a win worth nothing".
+- **`LEADERBOARD_SIZE = 30` is a module constant, NOT a config knob.** A push
+  touching `config/ranking.toml` triggers the Rank workflow with `--force`,
+  which refetches `/lines` and republishes the week with moved ranks and no new
+  games. A display cap is not worth a board reshuffle.
+
+`resume_detail["losses"]` names who each loss was to, worst first. "1 loss,
+badness 16.9" says nothing a reader can argue with; "lost to Tulsa" is the whole
+row. The names and the mean beside them must describe the same games --
+`tests/test_stages.py` pins that.
+
 ### `stage4.strength = 4.0` is deliberate; do not "restore" it to 14
 
 It was 14. Three findings moved it, and without them 14 looks considered and 4
@@ -583,6 +610,13 @@ without rescaling would hand it a better score for having less data.
   moved past this game" is a fact about the data. `material_teams` is read by
   the CLI from the last snapshot and passed in as input, so `rank()` stays pure
   and the test cannot be circular. Empty means wait for every game.
+- **A direct-child selector raises specificity, and that broke the phone cards
+  once.** Hardening the card-list rule to
+  `#rankings-table > tbody > tr:not([hidden])` took it to (1,1,3), which beat
+  `#rankings-body tr.row` at (1,1,2) -- so the card grid lost and every row fell
+  back to stacked blocks with the three base numbers running together. The grid
+  rule now matches that shape. When tightening a selector to scope it, check
+  what else was relying on out-specifying the loose version.
 - **Asset links in `docs/*.html` carry `?v=<sha256[:8]>` of the file.** Pages
   serves `docs/assets/` with `max-age=600` and no revalidation, and Safari holds
   subresources longer still, so an unstamped push leaves a browser running last

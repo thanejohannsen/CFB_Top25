@@ -7,6 +7,7 @@ import unittest
 from cfbrank.engine.base_score import compute_base, pool, priority, rerank
 from cfbrank.engine.regression import apply_upset_regression
 from cfbrank.engine.resume import _loss_badness, apply_resume_adjustment
+from cfbrank.engine.stats import mean
 from dataclasses import replace
 from tests.helpers import rating, record, result
 
@@ -358,6 +359,36 @@ class TestResumeAdjustment(unittest.TestCase):
             scored, raw * n / (n + SHRINKAGE_GAMES),
             msg="shrinkage alone must NOT reproduce the scored margin here",
         )
+
+    def test_every_published_loss_names_its_opponent_and_matches_the_mean(self):
+        """The names and the badness beside them must describe the same games.
+
+        The leaderboard prints "lost to Tulsa, badness 16.9" off these two
+        fields, so a list that disagreed with its own mean would be a sentence
+        nobody could check.
+        """
+        teams, results = teams_for([
+            ("A", 1, 1, 20.0), ("B", 2, 2, 10.0), ("C", 3, 3, 5.0), ("D", 4, 4, 1.0),
+        ])
+        played = [result("A", "C"), result("B", "C"), result("A", "D")]
+        apply_resume_adjustment(teams, played, S2, EV, {})
+
+        c = next(t for t in teams if t.team == "C")
+        self.assertEqual(c.resume_detail["losses_considered"], 2)
+        self.assertEqual(
+            sorted(l["opponent"] for l in c.resume_detail["losses"]), ["A", "B"]
+        )
+        self.assertAlmostEqual(
+            mean([l["badness"] for l in c.resume_detail["losses"]]),
+            c.resume_detail["mean_loss_badness"],
+        )
+        # Worst first, so a leaderboard naming only the first names the one that
+        # actually hurt.
+        badness = [l["badness"] for l in c.resume_detail["losses"]]
+        self.assertEqual(badness, sorted(badness, reverse=True))
+
+        a = next(t for t in teams if t.team == "A")
+        self.assertEqual(a.resume_detail["losses"], [], "unbeaten teams list nothing")
 
     def test_the_worst_game_is_published_on_the_raw_scale(self):
         """It sits beside the RAW mean in one sentence, so it must share its scale.

@@ -38,6 +38,7 @@ from cfbrank.engine.cover import CoverRecord
 from cfbrank.engine.evidence import location_adjusted_margin
 from cfbrank.engine.stats import mean, penalty_scaler, pstdev, zscorer
 from cfbrank.models import GameResult
+from cfbrank.normalize import sort_key
 
 # An unrated or FCS opponent is treated as worse than every ranked team, by
 # this many positions past the bottom of the board.
@@ -216,6 +217,17 @@ def apply_resume_adjustment(
         tb.resume_detail = {
             "losses_considered": len(losses[tb.team]),
             "mean_loss_badness": loss_raw.get(tb.team),
+            # WHO the losses were to. "1 loss, badness 16.9" says nothing a
+            # reader can argue with; "lost to Tulsa" is the whole point of the
+            # row. Worst first, and the tie-break ends in sort_key so two
+            # equally bad losses cannot swap between runs.
+            "losses": [
+                {"opponent": r.winner, "badness": b}
+                for b, _k, r in sorted(
+                    ((b, sort_key(r.winner), r) for r, b in losses[tb.team]),
+                    key=lambda x: (-x[0], x[1]),
+                )
+            ],
             "best_win_opponent_base_rank": best_win.get(tb.team),
             # What the credit is actually computed from: the strongest top-25
             # team beaten, and how far past the bar they were.

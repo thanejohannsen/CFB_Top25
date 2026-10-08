@@ -18,8 +18,17 @@ from cfbrank.engine.evidence import EdgeFact
 from cfbrank.engine.order import OrderResult
 from cfbrank.engine.pipeline import RankingResult
 from cfbrank.models import Dataset
+from cfbrank.normalize import sort_key
 
 SCHEMA_VERSION = 1
+# How many rows each stage-2 leaderboard publishes.
+#
+# A MODULE CONSTANT, not a config knob, and deliberately. A push that touches
+# `config/ranking.toml` triggers the Rank workflow with `--force`, which
+# refetches `/lines` and republishes the week with moved ranks and no new games
+# -- the churn that rule exists to prevent. A display cap is not worth a board
+# reshuffle.
+LEADERBOARD_SIZE = 30
 ATTRIBUTION = (
     "Data: CollegeFootballData.com -- betting lines, play-by-play PPA, and "
     "Strength of Record, Strength of Schedule and FPI via ESPN"
@@ -252,6 +261,68 @@ def _team_entry(
 
 
 #: Config paths blanked before the config is echoed into published JSON.
+def _leaderboards(result: RankingResult) -> dict[str, Any]:
+    """The pool ranked by each stage-2 component it has something to say about.
+
+    Scoped to `result.order`, the candidate pool, so every team named also
+    appears on the page in the Top 25 or in "Just missed". The components exist
+    for all 138 rated teams -- `apply_resume_adjustment` runs on the whole board
+    -- but a leaderboard of teams nobody is ranking answers a question this page
+    does not ask.
+
+    Each list ends its sort key in `sort_key(team)`, which is load-bearing
+    rather than decorative: ties are real here (two teams sharing +3.83 on loss
+    quality is a normal week), and an unbroken tie would reorder between runs
+    and churn `content_hash` with no change in the ranking.
+    """
+    rank_of = {team: i + 1 for i, team in enumerate(result.order)}
+    pool = [result.teams[t] for t in result.order]
+
+    def points(tb: TeamBase, key: str) -> float:
+        return float(tb.resume_components.get(key, 0.0) or 0.0)
+
+    def row(tb: TeamBase, key: str, **extra: Any) -> dict[str, Any]:
+        return {"rank": rank_of[tb.team], "team": tb.team,
+                "points": points(tb, key), **extra}
+
+    # Only teams with a qualifying win. The term is SILENT about more than half
+    # the board by design -- eligibility is the base top 25 -- so a zero here
+    # means "no qualifying win", not "a win worth nothing", and listing it would
+    # read as the latter.
+    best_win = [
+        row(tb, "best_win",
+            opponent=tb.resume_detail.get("best_win_opponent"),
+            opponent_rating=tb.resume_detail.get("best_win_opponent_rating"),
+            opponent_base_rank=tb.resume_detail.get("best_win_opponent_base_rank"))
+        for tb in sorted(pool, key=lambda t: (points(t, "best_win"), sort_key(t.team)))
+        if abs(points(tb, "best_win")) > 1e-9
+    ]
+
+    game_control = [
+        row(tb, "game_control", national_rank=tb.resume_detail.get("game_control_rank"))
+        for tb in sorted(pool, key=lambda t: (points(t, "game_control"), sort_key(t.team)))
+    ]
+
+    # DESCENDING: most damaging first, which is the question a Top 25 argument
+    # turns on. Undefeated teams are absent by construction rather than by a
+    # special case -- they have no losses to consider.
+    loss_quality = [
+        row(tb, "loss_quality",
+            badness=tb.resume_detail.get("mean_loss_badness"),
+            losses=list(tb.resume_detail.get("losses") or ()))
+        for tb in sorted(pool, key=lambda t: (-points(t, "loss_quality"), sort_key(t.team)))
+        if tb.resume_detail.get("losses_considered")
+    ]
+
+    return {
+        "size": LEADERBOARD_SIZE,
+        "scope": "pool",
+        "best_win": best_win[:LEADERBOARD_SIZE],
+        "game_control": game_control[:LEADERBOARD_SIZE],
+        "loss_quality": loss_quality[:LEADERBOARD_SIZE],
+    }
+
+
 REDACTED_CONFIG_PATHS = (("source", "api_key"),)
 
 
@@ -329,6 +400,8 @@ def build_payload(
                     "fpi": tb.fpi,
                 }
             )
+
+    leaderboards = _leaderboards(result)
 
     cycles = [
         {
@@ -417,6 +490,7 @@ def build_payload(
         },
         "rankings": rankings,
         "pool_tail": pool_tail,
+        "leaderboards": leaderboards,
         "cycles": cycles,
         "overridden_results": overridden_results,
         "regressions": [

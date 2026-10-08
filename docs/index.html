@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CFB Top 25</title>
 <meta name="description" content="A college football Top 25 built from Strength of Record, the betting market's neutral-field ratings, opponent-adjusted play-by-play and head-to-head results, with every placement explained.">
-<link rel="stylesheet" href="assets/style.css?v=34bf185c">
+<link rel="stylesheet" href="assets/style.css?v=32567454">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%8F%88%3C/text%3E%3C/svg%3E">
 </head>
 <body>
@@ -130,18 +130,22 @@
       <ul class="pill-row" id="summary"></ul>
       <div class="card cards-on-phone">
         <table id="rankings-table">
-          <caption id="rankings-caption">Select any row to see how that placement was reached.</caption>
+          <caption id="rankings-caption">Select any row to see how that placement was reached. Select a column heading to sort by it.</caption>
           <thead>
+            <!-- The six sortable headings are buttons: click to sort by that
+                 column, click again to reverse. Below 640px the table becomes a
+                 card list and these are laid out as a chip strip above it,
+                 because a card list has no header row to click. -->
             <tr>
-              <th scope="col" class="num">#</th>
+              <th scope="col" class="num sortable" data-sort="rank" aria-sort="ascending"><button type="button">#<span class="caret"></span></button></th>
               <th scope="col">Move</th>
               <th scope="col">Team</th>
               <th scope="col" class="col-opt">Conf</th>
-              <th scope="col">Rec</th>
-              <th scope="col" class="num" title="Strength of Record: how impressive the record is, given who it was played against">SoR</th>
-              <th scope="col" class="num" title="Points the betting market implies this team is worth on a neutral field">Mkt</th>
-              <th scope="col" class="num" title="National rank in opponent-adjusted points added per play">PPA</th>
-              <th scope="col" class="num" title="The three numbers combined: SoR, Mkt and PPA at their weights. Lower is better. Open a row to see what the adjustments and head-to-head did to it.">Base</th>
+              <th scope="col" class="sortable" data-sort="rec" aria-sort="none"><button type="button">Rec<span class="caret"></span></button></th>
+              <th scope="col" class="num sortable" data-sort="sor" aria-sort="none" title="Strength of Record: how impressive the record is, given who it was played against"><button type="button">SoR<span class="caret"></span></button></th>
+              <th scope="col" class="num sortable" data-sort="mkt" aria-sort="none" title="Points the betting market implies this team is worth on a neutral field"><button type="button">Mkt<span class="caret"></span></button></th>
+              <th scope="col" class="num sortable" data-sort="ppa" aria-sort="none" title="National rank in opponent-adjusted points added per play"><button type="button">PPA<span class="caret"></span></button></th>
+              <th scope="col" class="num sortable" data-sort="base" aria-sort="none" title="The three numbers combined: SoR, Mkt and PPA at their weights. Lower is better. Open a row to see what the adjustments and head-to-head did to it."><button type="button">Base<span class="caret"></span></button></th>
               <th scope="col">Notes</th>
               <th scope="col" class="col-chev"><span class="sr-only">Expand</span></th>
             </tr>
@@ -177,6 +181,12 @@
       <p class="lede">The rest of the candidate pool, in order.</p>
       <div class="card"><div id="tail-list"></div></div>
     </section>
+
+    <section id="leaderboards">
+      <h2>Stage 2, across the pool</h2>
+      <p class="lede" id="leaderboards-lede"></p>
+      <div class="boards" id="boards"></div>
+    </section>
   </main>
 
   <footer class="site">
@@ -190,6 +200,6 @@
   </footer>
 
 </div>
-<script src="assets/app.js?v=f9cb8b66"></script>
+<script src="assets/app.js?v=61404200"></script>
 </body>
 </html>

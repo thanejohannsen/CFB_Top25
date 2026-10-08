@@ -354,8 +354,7 @@
       key: "loss_quality", label: "Loss quality",
       note: function (d) {
         if (!d.losses_considered) return "unbeaten \u2014 the best score on this term";
-        return d.losses_considered + " loss" + (d.losses_considered === 1 ? "" : "es") +
-          ", badness " + num(d.mean_loss_badness, 1) +
+        return lossText(d.losses, d.losses_considered, d.mean_loss_badness) +
           (d.losses_considered === 1 ? "" : " on average") + "; 0 is a perfect loss";
       }
     }
@@ -566,9 +565,81 @@
     ]);
   }
 
+  // ---------- sorting the board ----------
+  // Click a heading to sort by that column, click it again to reverse. That is
+  // the whole interaction -- no menu, no second control.
+  //
+  // Every comparator ends in the published rank and then the team name, which
+  // mirrors the engine's "every sort key ends in sort_key(team)" rule. Two
+  // teams on the same Base must not swap places between one render and the
+  // next.
+  var SORTS = {
+    rank: { label: "#", key: function (r) { return r.rank; } },
+    rec: {
+      label: "Rec",
+      // Best record first: more wins, then fewer losses.
+      key: function (r) { return -((r.record && r.record.wins) || 0); },
+      then: function (r) { return (r.record && r.record.losses) || 0; }
+    },
+    sor: { label: "SoR", key: function (r) { return nullLast(r.base.sor_rank); } },
+    // The column prints the RATING, but the sort is on the rank so a team with
+    // too few lined games ("\u2014") lands at the bottom instead of reading as
+    // zero. For every team that has both, the two orders are identical.
+    mkt: { label: "Mkt", key: function (r) { return nullLast(r.market && r.market.rank); } },
+    ppa: { label: "PPA", key: function (r) { return nullLast(r.performance && r.performance.rank); } },
+    base: { label: "Base", key: function (r) { return r.base.raw_score; } }
+  };
+
+  function nullLast(v) {
+    return v === null || v === undefined ? Infinity : v;
+  }
+
+  var sortBy = "rank", sortDesc = false;
+
+  function compareRows(a, b) {
+    var s = SORTS[sortBy] || SORTS.rank;
+    var d = s.key(a) - s.key(b);
+    if (!d && s.then) d = s.then(a) - s.then(b);
+    if (sortDesc) d = -d;
+    return d || (a.rank - b.rank) || (a.team < b.team ? -1 : a.team > b.team ? 1 : 0);
+  }
+
+  // Each team is a tr.row followed by its own tr.detail. Reorder the PAIR
+  // rather than re-rendering, so an expanded card survives a sort.
+  function applySort() {
+    var body = byId("rankings-body");
+    if (!body || !body.__pairs) return;
+    body.__pairs.slice().sort(function (p, q) {
+      return compareRows(p.row, q.row);
+    }).forEach(function (pair) {
+      body.appendChild(pair.tr);
+      body.appendChild(pair.detail);
+    });
+    document.querySelectorAll("#rankings-table th[data-sort]").forEach(function (th) {
+      var on = th.getAttribute("data-sort") === sortBy;
+      th.setAttribute("aria-sort", on ? (sortDesc ? "descending" : "ascending") : "none");
+      var caret = th.querySelector(".caret");
+      if (caret) caret.textContent = on ? (sortDesc ? "\u25be" : "\u25b4") : "";
+    });
+  }
+
+  function wireSorting() {
+    document.querySelectorAll("#rankings-table th[data-sort]").forEach(function (th) {
+      var key = th.getAttribute("data-sort");
+      var btn = th.querySelector("button");
+      if (!btn) return;
+      btn.addEventListener("click", function () {
+        if (sortBy === key) sortDesc = !sortDesc;
+        else { sortBy = key; sortDesc = false; }
+        applySort();
+      });
+    });
+  }
+
   function renderTable(data) {
     var body = byId("rankings-body");
     clear(body);
+    body.__pairs = [];
     (data.rankings || []).forEach(function (row) {
       var detail = detailPanel(row);
       detail.hidden = true;
@@ -607,9 +678,12 @@
         if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); toggle(); }
       });
 
+      body.__pairs.push({ row: row, tr: tr, detail: detail });
       body.appendChild(tr);
       body.appendChild(detail);
     });
+    // The chosen column outlives a week change.
+    applySort();
   }
 
   // ---------- cycle diagram ----------
@@ -941,6 +1015,131 @@
     b.hidden = false;
   }
 
+  // ---------- stage-2 leaderboards ----------
+  // The components already decide every placement; they were just invisible
+  // except one team at a time inside an expanded card.
+
+  // Named opponents arrived after some published weeks, and the selector still
+  // serves those. Fall back to the bare count rather than saying "lost to
+  // undefined" -- test for the KEY, since an empty array is a real answer.
+  function lossText(losses, count, badness) {
+    var tail = badness === null || badness === undefined
+      ? "" : ", badness " + num(badness, 1);
+    if (!losses || !losses.length) {
+      return count + " loss" + (count === 1 ? "" : "es") + tail;
+    }
+    var names = losses.map(function (l) { return l.opponent; });
+    var shown = names.slice(0, 3), rest = names.length - shown.length;
+    return "lost to " + listJoin(shown) +
+      (rest ? " and " + rest + " more" : "") + tail;
+  }
+
+  var BOARDS = [
+    {
+      key: "best_win", title: "Best wins",
+      empty: "No team in the pool has beaten anyone inside the base top 25.",
+      note: function (e) {
+        // Weeks published before the opponent was named still carry its place
+        // on the base order, which is enough to say who it was.
+        if (!e.opponent) {
+          return e.opponent_base_rank
+            ? "beat the #" + e.opponent_base_rank + " team on the base order" : "";
+        }
+        return "beat " + e.opponent +
+          (e.opponent_rating === null || e.opponent_rating === undefined
+            ? "" : ", rated " + signed(e.opponent_rating, 1));
+      }
+    },
+    {
+      key: "game_control", title: "Game control",
+      empty: "No game-control ranks this week.",
+      note: function (e) {
+        return e.national_rank ? "#" + e.national_rank + " nationally" : "";
+      }
+    },
+    {
+      key: "loss_quality", title: "Loss quality",
+      empty: "Nobody in the pool has lost yet.",
+      note: function (e) {
+        return lossText(e.losses, e.losses_considered !== undefined
+          ? e.losses_considered : (e.losses || []).length, e.badness);
+      }
+    }
+  ];
+
+  function leaderboards(data) {
+    if (data.leaderboards) return data.leaderboards;
+    // A published week is frozen, so the archive has no leaderboards block and
+    // the live board will not until the next run. Derive the same three lists
+    // from the published rows -- the 25 rather than the 40, which the section
+    // says plainly rather than rendering nothing.
+    var rows = data.rankings || [];
+    function entries(key, extra) {
+      return rows.map(function (r) {
+        var ra = r.resume_adjustment || {}, d = ra.detail || {};
+        var c = ra.components || {};
+        var out = { rank: r.rank, team: r.team, points: c[key] || 0 };
+        extra(out, d);
+        return out;
+      });
+    }
+    function by(field, sign) {
+      return function (a, b) {
+        return sign * (a[field] - b[field]) || a.rank - b.rank;
+      };
+    }
+    return {
+      scope: "published",
+      best_win: entries("best_win", function (o, d) {
+        o.opponent = d.best_win_opponent;
+        o.opponent_rating = d.best_win_opponent_rating;
+        o.opponent_base_rank = d.best_win_opponent_base_rank;
+      }).filter(function (o) { return Math.abs(o.points) > 1e-9; }).sort(by("points", 1)),
+      game_control: entries("game_control", function (o, d) {
+        o.national_rank = d.game_control_rank;
+      }).sort(by("points", 1)),
+      loss_quality: entries("loss_quality", function (o, d) {
+        o.badness = d.mean_loss_badness;
+        o.losses_considered = d.losses_considered;
+        if ("losses" in d) o.losses = d.losses;
+      }).filter(function (o) { return o.losses_considered; }).sort(by("points", -1))
+    };
+  }
+
+  function renderLeaderboards(data) {
+    var host = byId("leaderboards");
+    if (!host) return;
+    var boards = leaderboards(data);
+    var lede = byId("leaderboards-lede");
+    if (lede) {
+      lede.textContent = boards.scope === "pool"
+        ? "What each part of the r\u00e9sum\u00e9 adjustment did, across the "
+          + "40-team candidate pool. Negative is a credit."
+        : "What each part of the r\u00e9sum\u00e9 adjustment did, across the "
+          + "published 25. Negative is a credit.";
+    }
+    var grid = byId("boards");
+    clear(grid);
+    BOARDS.forEach(function (b) {
+      var rows = boards[b.key] || [];
+      grid.appendChild(el("div", { class: "board" }, [
+        el("h3", { text: b.title }),
+        rows.length
+          ? el("table", { class: "adj-table board-table" }, [
+              el("tbody", null, rows.map(function (e) {
+                return el("tr", null, [
+                  el("td", { class: "num board-rank", text: "#" + e.rank }),
+                  el("td", { class: "adj-what board-team", text: e.team }),
+                  el("td", { class: "num adj-pts", text: signed(e.points, 2) }),
+                  el("td", { class: "adj-note", text: b.note(e) })
+                ]);
+              }))
+            ])
+          : el("p", { class: "empty", text: b.empty })
+      ]));
+    });
+  }
+
   // ---------- boot ----------
   function render(data) {
     renderMeta(data);
@@ -949,11 +1148,13 @@
     renderOverridden(data);
     renderRegressions(data);
     renderTail(data);
+    renderLeaderboards(data);
   }
 
   function boot() {
     initTheme();
     wireDialog();
+    wireSorting();
     var wanted = new URLSearchParams(window.location.search).get("week");
 
     // The Pages CDN caches aggressively: bust the catalogue by time so a new

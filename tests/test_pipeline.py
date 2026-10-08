@@ -251,6 +251,77 @@ class TestDeterminism(unittest.TestCase):
         self.assertEqual(rank(ds, cfg).order, rank(ds, cfg).order)
 
 
+class TestLeaderboards(unittest.TestCase):
+    """The pool ranked by each stage-2 component it has something to say about.
+
+    Byte-stability needs no test of its own here: TestDeterminism compares the
+    whole serialized payload across shuffled inputs, and these lists are in it.
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        cls.ds, cls.cfg = dataset(2026), config(2026)
+        cls.result = rank(cls.ds, cls.cfg)
+        cls.payload = build_payload(cls.result, cls.ds, cls.cfg, GENERATED_AT)
+        cls.boards = cls.payload["leaderboards"]
+        cls.pool = set(cls.result.order)
+
+    def test_every_list_is_capped_and_inside_the_pool(self):
+        for key in ("best_win", "game_control", "loss_quality"):
+            rows = self.boards[key]
+            with self.subTest(board=key):
+                self.assertLessEqual(len(rows), self.boards["size"])
+                self.assertTrue(rows, "an empty board says nothing")
+                for r in rows:
+                    self.assertIn(r["team"], self.pool)
+                    self.assertEqual(
+                        r["rank"], self.result.order.index(r["team"]) + 1,
+                        "the rank must be the team's place in the pool",
+                    )
+
+    def test_credits_lead_and_penalties_lead(self):
+        """Best first on the two credits; MOST DAMAGING first on the penalty."""
+        for key in ("best_win", "game_control"):
+            pts = [r["points"] for r in self.boards[key]]
+            with self.subTest(board=key):
+                self.assertEqual(pts, sorted(pts), "a credit list leads with the biggest")
+        pts = [r["points"] for r in self.boards["loss_quality"]]
+        self.assertEqual(pts, sorted(pts, reverse=True))
+        self.assertGreater(pts[0], 0.0, "the worst loss on the board costs points")
+
+    def test_best_win_lists_only_qualifying_wins(self):
+        """A 0 means "no win over a base top-25 team", not "a win worth nothing".
+
+        More than half the published board scores nothing here, by design, so
+        listing those rows would read as the second thing.
+        """
+        for r in self.boards["best_win"]:
+            self.assertNotEqual(r["points"], 0.0)
+            self.assertTrue(r["opponent"], "a qualifying win has a named opponent")
+
+    def test_loss_quality_excludes_the_undefeated(self):
+        """By construction: they have no losses, not by a special case."""
+        unbeaten = {
+            t for t in self.result.order
+            if not self.result.teams[t].resume_detail.get("losses_considered")
+        }
+        self.assertTrue(unbeaten, "2026 week 5 has unbeaten teams, or this proves nothing")
+        listed = {r["team"] for r in self.boards["loss_quality"]}
+        self.assertFalse(listed & unbeaten)
+        for r in self.boards["loss_quality"]:
+            self.assertTrue(r["losses"], "every row names the losses it is scoring")
+
+    def test_each_loss_names_who_it_was_to(self):
+        """"1 loss, badness 16.9" says nothing a reader can argue with."""
+        top = self.boards["loss_quality"][0]
+        opponents = [l["opponent"] for l in top["losses"]]
+        self.assertTrue(all(opponents))
+        beat_them = {
+            r.winner for r in self.result.all_results if r.loser == top["team"]
+        }
+        self.assertEqual(set(opponents), beat_them)
+
+
 class TestPayload(unittest.TestCase):
     @classmethod
     def setUpClass(cls):

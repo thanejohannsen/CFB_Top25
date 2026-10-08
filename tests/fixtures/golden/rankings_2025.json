@@ -3075,6 +3075,1132 @@
       "size": 9
     }
   ],
+  "leaderboards": {
+    "best_win": [
+      {
+        "opponent": "Ohio State",
+        "opponent_base_rank": 2,
+        "opponent_rating": 27.4329,
+        "points": -3.9716,
+        "rank": 1,
+        "team": "Indiana"
+      },
+      {
+        "opponent": "Ohio State",
+        "opponent_base_rank": 4,
+        "opponent_rating": 27.4329,
+        "points": -3.9716,
+        "rank": 2,
+        "team": "Miami"
+      },
+      {
+        "opponent": "Notre Dame",
+        "opponent_base_rank": 8,
+        "opponent_rating": 25.7605,
+        "points": -3.5512,
+        "rank": 8,
+        "team": "Texas A&M"
+      },
+      {
+        "opponent": "Georgia",
+        "opponent_base_rank": 3,
+        "opponent_rating": 22.6268,
+        "points": -2.7636,
+        "rank": 14,
+        "team": "Alabama"
+      },
+      {
+        "opponent": "Georgia",
+        "opponent_base_rank": 3,
+        "opponent_rating": 22.6268,
+        "points": -2.7636,
+        "rank": 4,
+        "team": "Ole Miss"
+      },
+      {
+        "opponent": "Alabama",
+        "opponent_base_rank": 7,
+        "opponent_rating": 21.6975,
+        "points": -2.53,
+        "rank": 39,
+        "team": "Florida State"
+      },
+      {
+        "opponent": "Alabama",
+        "opponent_base_rank": 7,
+        "opponent_rating": 21.6975,
+        "points": -2.53,
+        "rank": 6,
+        "team": "Georgia"
+      },
+      {
+        "opponent": "Alabama",
+        "opponent_base_rank": 7,
+        "opponent_rating": 21.6975,
+        "points": -2.53,
+        "rank": 16,
+        "team": "Oklahoma"
+      },
+      {
+        "opponent": "Texas A&M",
+        "opponent_base_rank": 6,
+        "opponent_rating": 21.4338,
+        "points": -2.4637,
+        "rank": 7,
+        "team": "Texas"
+      },
+      {
+        "opponent": "Texas Tech",
+        "opponent_base_rank": 10,
+        "opponent_rating": 21.2996,
+        "points": -2.4299,
+        "rank": 31,
+        "team": "Arizona State"
+      },
+      {
+        "opponent": "Texas Tech",
+        "opponent_base_rank": 10,
+        "opponent_rating": 21.2996,
+        "points": -2.4299,
+        "rank": 5,
+        "team": "Oregon"
+      },
+      {
+        "opponent": "Texas",
+        "opponent_base_rank": 11,
+        "opponent_rating": 20.5328,
+        "points": -2.2372,
+        "rank": 3,
+        "team": "Ohio State"
+      },
+      {
+        "opponent": "Miami",
+        "opponent_base_rank": 5,
+        "opponent_rating": 20.3001,
+        "points": -2.1787,
+        "rank": 24,
+        "team": "Louisville"
+      },
+      {
+        "opponent": "Miami",
+        "opponent_base_rank": 5,
+        "opponent_rating": 20.3001,
+        "points": -2.1787,
+        "rank": 23,
+        "team": "SMU"
+      },
+      {
+        "opponent": "Utah",
+        "opponent_base_rank": 13,
+        "opponent_rating": 17.9352,
+        "points": -1.5843,
+        "rank": 11,
+        "team": "BYU"
+      },
+      {
+        "opponent": "Utah",
+        "opponent_base_rank": 13,
+        "opponent_rating": 17.9352,
+        "points": -1.5843,
+        "rank": 10,
+        "team": "Texas Tech"
+      },
+      {
+        "opponent": "Penn State",
+        "opponent_base_rank": 14,
+        "opponent_rating": 17.6386,
+        "points": -1.5097,
+        "rank": 13,
+        "team": "Iowa"
+      },
+      {
+        "opponent": "USC",
+        "opponent_base_rank": 15,
+        "opponent_rating": 17.5716,
+        "points": -1.4929,
+        "rank": 25,
+        "team": "Illinois"
+      },
+      {
+        "opponent": "USC",
+        "opponent_base_rank": 15,
+        "opponent_rating": 17.5716,
+        "points": -1.4929,
+        "rank": 9,
+        "team": "Notre Dame"
+      },
+      {
+        "opponent": "USC",
+        "opponent_base_rank": 15,
+        "opponent_rating": 17.5716,
+        "points": -1.4929,
+        "rank": 22,
+        "team": "TCU"
+      },
+      {
+        "opponent": "Tennessee",
+        "opponent_base_rank": 19,
+        "opponent_rating": 16.9608,
+        "points": -1.3394,
+        "rank": 15,
+        "team": "Vanderbilt"
+      },
+      {
+        "opponent": "Michigan",
+        "opponent_base_rank": 17,
+        "opponent_rating": 16.2587,
+        "points": -1.1629,
+        "rank": 26,
+        "team": "USC"
+      },
+      {
+        "opponent": "Missouri",
+        "opponent_base_rank": 20,
+        "opponent_rating": 14.6796,
+        "points": -0.766,
+        "rank": 19,
+        "team": "Virginia"
+      },
+      {
+        "opponent": "LSU",
+        "opponent_base_rank": 24,
+        "opponent_rating": 14.1804,
+        "points": -0.6405,
+        "rank": 29,
+        "team": "Houston"
+      },
+      {
+        "opponent": "Washington",
+        "opponent_base_rank": 21,
+        "opponent_rating": 13.0032,
+        "points": -0.3446,
+        "rank": 17,
+        "team": "Michigan"
+      },
+      {
+        "opponent": "Illinois",
+        "opponent_base_rank": 22,
+        "opponent_rating": 12.3282,
+        "points": -0.1749,
+        "rank": 18,
+        "team": "Washington"
+      },
+      {
+        "opponent": "Iowa",
+        "opponent_base_rank": 18,
+        "opponent_rating": 12.206,
+        "points": -0.1442,
+        "rank": 21,
+        "team": "Iowa State"
+      }
+    ],
+    "game_control": [
+      {
+        "national_rank": 1,
+        "points": -0.8726,
+        "rank": 1,
+        "team": "Indiana"
+      },
+      {
+        "national_rank": 2,
+        "points": -0.8595,
+        "rank": 5,
+        "team": "Oregon"
+      },
+      {
+        "national_rank": 3,
+        "points": -0.8465,
+        "rank": 3,
+        "team": "Ohio State"
+      },
+      {
+        "national_rank": 4,
+        "points": -0.8335,
+        "rank": 2,
+        "team": "Miami"
+      },
+      {
+        "national_rank": 5,
+        "points": -0.8204,
+        "rank": 10,
+        "team": "Texas Tech"
+      },
+      {
+        "national_rank": 6,
+        "points": -0.8074,
+        "rank": 9,
+        "team": "Notre Dame"
+      },
+      {
+        "national_rank": 7,
+        "points": -0.7943,
+        "rank": 6,
+        "team": "Georgia"
+      },
+      {
+        "national_rank": 8,
+        "points": -0.7813,
+        "rank": 4,
+        "team": "Ole Miss"
+      },
+      {
+        "national_rank": 9,
+        "points": -0.7682,
+        "rank": 8,
+        "team": "Texas A&M"
+      },
+      {
+        "national_rank": 10,
+        "points": -0.7552,
+        "rank": 16,
+        "team": "Oklahoma"
+      },
+      {
+        "national_rank": 11,
+        "points": -0.7422,
+        "rank": 14,
+        "team": "Alabama"
+      },
+      {
+        "national_rank": 12,
+        "points": -0.7291,
+        "rank": 12,
+        "team": "Utah"
+      },
+      {
+        "national_rank": 13,
+        "points": -0.7161,
+        "rank": 13,
+        "team": "Iowa"
+      },
+      {
+        "national_rank": 14,
+        "points": -0.703,
+        "rank": 27,
+        "team": "Tennessee"
+      },
+      {
+        "national_rank": 15,
+        "points": -0.69,
+        "rank": 17,
+        "team": "Michigan"
+      },
+      {
+        "national_rank": 16,
+        "points": -0.6769,
+        "rank": 7,
+        "team": "Texas"
+      },
+      {
+        "national_rank": 17,
+        "points": -0.6639,
+        "rank": 11,
+        "team": "BYU"
+      },
+      {
+        "national_rank": 18,
+        "points": -0.6508,
+        "rank": 15,
+        "team": "Vanderbilt"
+      },
+      {
+        "national_rank": 19,
+        "points": -0.6378,
+        "rank": 33,
+        "team": "Penn State"
+      },
+      {
+        "national_rank": 20,
+        "points": -0.6248,
+        "rank": 23,
+        "team": "SMU"
+      },
+      {
+        "national_rank": 21,
+        "points": -0.6117,
+        "rank": 26,
+        "team": "USC"
+      },
+      {
+        "national_rank": 22,
+        "points": -0.5987,
+        "rank": 25,
+        "team": "Illinois"
+      },
+      {
+        "national_rank": 23,
+        "points": -0.5856,
+        "rank": 34,
+        "team": "Pittsburgh"
+      },
+      {
+        "national_rank": 24,
+        "points": -0.5726,
+        "rank": 22,
+        "team": "TCU"
+      },
+      {
+        "national_rank": 25,
+        "points": -0.5595,
+        "rank": 18,
+        "team": "Washington"
+      },
+      {
+        "national_rank": 27,
+        "points": -0.5335,
+        "rank": 36,
+        "team": "Auburn"
+      },
+      {
+        "national_rank": 29,
+        "points": -0.5074,
+        "rank": 37,
+        "team": "South Florida"
+      },
+      {
+        "national_rank": 30,
+        "points": -0.4943,
+        "rank": 24,
+        "team": "Louisville"
+      },
+      {
+        "national_rank": 32,
+        "points": -0.4682,
+        "rank": 19,
+        "team": "Virginia"
+      },
+      {
+        "national_rank": 35,
+        "points": -0.4291,
+        "rank": 20,
+        "team": "Missouri"
+      }
+    ],
+    "loss_quality": [
+      {
+        "badness": 16.0294,
+        "losses": [
+          {
+            "badness": 21.2206,
+            "opponent": "South Florida"
+          },
+          {
+            "badness": 10.8382,
+            "opponent": "Tulane"
+          }
+        ],
+        "points": 9.5763,
+        "rank": 40,
+        "team": "North Texas"
+      },
+      {
+        "badness": 13.0956,
+        "losses": [
+          {
+            "badness": 14.9706,
+            "opponent": "Texas Tech"
+          },
+          {
+            "badness": 11.2206,
+            "opponent": "Texas Tech"
+          }
+        ],
+        "points": 7.8236,
+        "rank": 11,
+        "team": "BYU"
+      },
+      {
+        "badness": 12.5368,
+        "losses": [
+          {
+            "badness": 16.0735,
+            "opponent": "Wisconsin"
+          },
+          {
+            "badness": 12.8971,
+            "opponent": "Indiana"
+          },
+          {
+            "badness": 10.8382,
+            "opponent": "Ohio State"
+          },
+          {
+            "badness": 10.3382,
+            "opponent": "Washington"
+          }
+        ],
+        "points": 7.4897,
+        "rank": 25,
+        "team": "Illinois"
+      },
+      {
+        "badness": 12.4167,
+        "losses": [
+          {
+            "badness": 16.3971,
+            "opponent": "West Virginia"
+          },
+          {
+            "badness": 14.7206,
+            "opponent": "Texas Tech"
+          },
+          {
+            "badness": 6.1324,
+            "opponent": "TCU"
+          }
+        ],
+        "points": 7.418,
+        "rank": 29,
+        "team": "Houston"
+      },
+      {
+        "badness": 12.4118,
+        "losses": [
+          {
+            "badness": 15.9853,
+            "opponent": "Miami"
+          },
+          {
+            "badness": 13.4265,
+            "opponent": "Notre Dame"
+          },
+          {
+            "badness": 12.3971,
+            "opponent": "West Virginia"
+          },
+          {
+            "badness": 11.5294,
+            "opponent": "East Carolina"
+          },
+          {
+            "badness": 8.7206,
+            "opponent": "Louisville"
+          }
+        ],
+        "points": 7.415,
+        "rank": 34,
+        "team": "Pittsburgh"
+      },
+      {
+        "badness": 11.0882,
+        "losses": [
+          {
+            "badness": 14.3088,
+            "opponent": "Colorado"
+          },
+          {
+            "badness": 10.6029,
+            "opponent": "BYU"
+          },
+          {
+            "badness": 10.3971,
+            "opponent": "Cincinnati"
+          },
+          {
+            "badness": 9.0441,
+            "opponent": "Arizona State"
+          }
+        ],
+        "points": 6.6243,
+        "rank": 21,
+        "team": "Iowa State"
+      },
+      {
+        "badness": 10.9,
+        "losses": [
+          {
+            "badness": 14.6618,
+            "opponent": "Utah"
+          },
+          {
+            "badness": 13.3676,
+            "opponent": "Arizona"
+          },
+          {
+            "badness": 9.9559,
+            "opponent": "Houston"
+          },
+          {
+            "badness": 8.6912,
+            "opponent": "Mississippi State"
+          },
+          {
+            "badness": 7.8235,
+            "opponent": "Duke"
+          }
+        ],
+        "points": 6.5119,
+        "rank": 31,
+        "team": "Arizona State"
+      },
+      {
+        "badness": 10.8713,
+        "losses": [
+          {
+            "badness": 13.9118,
+            "opponent": "Old Dominion"
+          },
+          {
+            "badness": 13.4853,
+            "opponent": "Miami"
+          },
+          {
+            "badness": 10.1029,
+            "opponent": "Memphis"
+          },
+          {
+            "badness": 5.9853,
+            "opponent": "Navy"
+          }
+        ],
+        "points": 6.4948,
+        "rank": 37,
+        "team": "South Florida"
+      },
+      {
+        "badness": 10.5882,
+        "losses": [
+          {
+            "badness": 16.5735,
+            "opponent": "SMU"
+          },
+          {
+            "badness": 12.0147,
+            "opponent": "California"
+          },
+          {
+            "badness": 7.0147,
+            "opponent": "Virginia"
+          },
+          {
+            "badness": 6.75,
+            "opponent": "Clemson"
+          }
+        ],
+        "points": 6.3256,
+        "rank": 24,
+        "team": "Louisville"
+      },
+      {
+        "badness": 10.3676,
+        "losses": [
+          {
+            "badness": 14.1471,
+            "opponent": "Indiana"
+          },
+          {
+            "badness": 12.3676,
+            "opponent": "Florida State"
+          },
+          {
+            "badness": 10.9412,
+            "opponent": "Georgia"
+          },
+          {
+            "badness": 4.0147,
+            "opponent": "Oklahoma"
+          }
+        ],
+        "points": 6.1939,
+        "rank": 14,
+        "team": "Alabama"
+      },
+      {
+        "badness": 10.3015,
+        "losses": [
+          {
+            "badness": 20.5441,
+            "opponent": "Syracuse"
+          },
+          {
+            "badness": 10.5735,
+            "opponent": "SMU"
+          },
+          {
+            "badness": 9.6765,
+            "opponent": "Penn State"
+          },
+          {
+            "badness": 8.2794,
+            "opponent": "LSU"
+          },
+          {
+            "badness": 8.0735,
+            "opponent": "Duke"
+          },
+          {
+            "badness": 4.6618,
+            "opponent": "Georgia Tech"
+          }
+        ],
+        "points": 6.1543,
+        "rank": 38,
+        "team": "Clemson"
+      },
+      {
+        "badness": 10.2721,
+        "losses": [
+          {
+            "badness": 14.1471,
+            "opponent": "Indiana"
+          },
+          {
+            "badness": 6.3971,
+            "opponent": "Indiana"
+          }
+        ],
+        "points": 6.1367,
+        "rank": 5,
+        "team": "Oregon"
+      },
+      {
+        "badness": 9.9926,
+        "losses": [
+          {
+            "badness": 15.1029,
+            "opponent": "BYU"
+          },
+          {
+            "badness": 12.0147,
+            "opponent": "Kansas State"
+          },
+          {
+            "badness": 7.3088,
+            "opponent": "Iowa State"
+          },
+          {
+            "badness": 5.5441,
+            "opponent": "Arizona State"
+          }
+        ],
+        "points": 5.9698,
+        "rank": 22,
+        "team": "TCU"
+      },
+      {
+        "badness": 9.8382,
+        "losses": [
+          {
+            "badness": 14.2794,
+            "opponent": "Florida"
+          },
+          {
+            "badness": 14.0147,
+            "opponent": "Stanford"
+          },
+          {
+            "badness": 10.75,
+            "opponent": "Clemson"
+          },
+          {
+            "badness": 9.6324,
+            "opponent": "NC State"
+          },
+          {
+            "badness": 8.1912,
+            "opponent": "Pittsburgh"
+          },
+          {
+            "badness": 7.0147,
+            "opponent": "Virginia"
+          },
+          {
+            "badness": 4.9853,
+            "opponent": "Miami"
+          }
+        ],
+        "points": 5.8776,
+        "rank": 39,
+        "team": "Florida State"
+      },
+      {
+        "badness": 9.4706,
+        "losses": [
+          {
+            "badness": 11.9559,
+            "opponent": "Wake Forest"
+          },
+          {
+            "badness": 9.8235,
+            "opponent": "Duke"
+          },
+          {
+            "badness": 6.6324,
+            "opponent": "NC State"
+          }
+        ],
+        "points": 5.6579,
+        "rank": 19,
+        "team": "Virginia"
+      },
+      {
+        "badness": 9.3015,
+        "losses": [
+          {
+            "badness": 10.8382,
+            "opponent": "Ohio State"
+          },
+          {
+            "badness": 9.75,
+            "opponent": "Michigan"
+          },
+          {
+            "badness": 9.0735,
+            "opponent": "Wisconsin"
+          },
+          {
+            "badness": 7.5441,
+            "opponent": "Oregon"
+          }
+        ],
+        "points": 5.5569,
+        "rank": 18,
+        "team": "Washington"
+      },
+      {
+        "badness": 8.9191,
+        "losses": [
+          {
+            "badness": 11.7941,
+            "opponent": "Oregon"
+          },
+          {
+            "badness": 6.0441,
+            "opponent": "Arizona State"
+          }
+        ],
+        "points": 5.3285,
+        "rank": 10,
+        "team": "Texas Tech"
+      },
+      {
+        "badness": 8.8566,
+        "losses": [
+          {
+            "badness": 10.8382,
+            "opponent": "Ohio State"
+          },
+          {
+            "badness": 9.9559,
+            "opponent": "USC"
+          },
+          {
+            "badness": 8.6176,
+            "opponent": "Texas"
+          },
+          {
+            "badness": 6.0147,
+            "opponent": "Oklahoma"
+          }
+        ],
+        "points": 5.2911,
+        "rank": 17,
+        "team": "Michigan"
+      },
+      {
+        "badness": 8.6618,
+        "losses": [
+          {
+            "badness": 14.7206,
+            "opponent": "Texas Tech"
+          },
+          {
+            "badness": 2.6029,
+            "opponent": "BYU"
+          }
+        ],
+        "points": 5.1747,
+        "rank": 12,
+        "team": "Utah"
+      },
+      {
+        "badness": 8.6324,
+        "losses": [
+          {
+            "badness": 9.7206,
+            "opponent": "Louisville"
+          },
+          {
+            "badness": 7.5441,
+            "opponent": "Oregon"
+          }
+        ],
+        "points": 5.1571,
+        "rank": 28,
+        "team": "James Madison"
+      },
+      {
+        "badness": 8.5368,
+        "losses": [
+          {
+            "badness": 10.5441,
+            "opponent": "Baylor"
+          },
+          {
+            "badness": 9.5147,
+            "opponent": "California"
+          },
+          {
+            "badness": 7.6324,
+            "opponent": "TCU"
+          },
+          {
+            "badness": 6.4559,
+            "opponent": "Wake Forest"
+          }
+        ],
+        "points": 5.1,
+        "rank": 23,
+        "team": "SMU"
+      },
+      {
+        "badness": 8.4228,
+        "losses": [
+          {
+            "badness": 15.8088,
+            "opponent": "Iowa State"
+          },
+          {
+            "badness": 6.6029,
+            "opponent": "BYU"
+          },
+          {
+            "badness": 6.3235,
+            "opponent": "SMU"
+          },
+          {
+            "badness": 4.9559,
+            "opponent": "Houston"
+          }
+        ],
+        "points": 5.032,
+        "rank": 30,
+        "team": "Arizona"
+      },
+      {
+        "badness": 8.1544,
+        "losses": [
+          {
+            "badness": 13.6912,
+            "opponent": "Pittsburgh"
+          },
+          {
+            "badness": 10.6324,
+            "opponent": "NC State"
+          },
+          {
+            "badness": 4.3529,
+            "opponent": "BYU"
+          },
+          {
+            "badness": 3.9412,
+            "opponent": "Georgia"
+          }
+        ],
+        "points": 4.8716,
+        "rank": 35,
+        "team": "Georgia Tech"
+      },
+      {
+        "badness": 7.9902,
+        "losses": [
+          {
+            "badness": 10.1176,
+            "opponent": "Texas"
+          },
+          {
+            "badness": 7.2794,
+            "opponent": "Alabama"
+          },
+          {
+            "badness": 6.5735,
+            "opponent": "Ole Miss"
+          }
+        ],
+        "points": 4.7735,
+        "rank": 16,
+        "team": "Oklahoma"
+      },
+      {
+        "badness": 7.7696,
+        "losses": [
+          {
+            "badness": 11.6912,
+            "opponent": "Georgia"
+          },
+          {
+            "badness": 8.7794,
+            "opponent": "Florida"
+          },
+          {
+            "badness": 2.8382,
+            "opponent": "Ohio State"
+          }
+        ],
+        "points": 4.6417,
+        "rank": 7,
+        "team": "Texas"
+      },
+      {
+        "badness": 7.1059,
+        "losses": [
+          {
+            "badness": 13.8088,
+            "opponent": "Vanderbilt"
+          },
+          {
+            "badness": 8.2794,
+            "opponent": "Alabama"
+          },
+          {
+            "badness": 6.0147,
+            "opponent": "Oklahoma"
+          },
+          {
+            "badness": 4.2353,
+            "opponent": "Illinois"
+          },
+          {
+            "badness": 3.1912,
+            "opponent": "Georgia"
+          }
+        ],
+        "points": 4.2452,
+        "rank": 27,
+        "team": "Tennessee"
+      },
+      {
+        "badness": 7.0343,
+        "losses": [
+          {
+            "badness": 11.5441,
+            "opponent": "UCLA"
+          },
+          {
+            "badness": 11.3382,
+            "opponent": "Ohio State"
+          },
+          {
+            "badness": 9.9853,
+            "opponent": "Northwestern"
+          },
+          {
+            "badness": 4.5441,
+            "opponent": "Oregon"
+          },
+          {
+            "badness": 2.8971,
+            "opponent": "Indiana"
+          },
+          {
+            "badness": 1.8971,
+            "opponent": "Iowa"
+          }
+        ],
+        "points": 4.2024,
+        "rank": 33,
+        "team": "Penn State"
+      },
+      {
+        "badness": 6.8,
+        "losses": [
+          {
+            "badness": 12.6324,
+            "opponent": "Texas A&M"
+          },
+          {
+            "badness": 7.2647,
+            "opponent": "Virginia"
+          },
+          {
+            "badness": 6.0147,
+            "opponent": "Oklahoma"
+          },
+          {
+            "badness": 4.3088,
+            "opponent": "Vanderbilt"
+          },
+          {
+            "badness": 3.7794,
+            "opponent": "Alabama"
+          }
+        ],
+        "points": 4.0625,
+        "rank": 20,
+        "team": "Missouri"
+      },
+      {
+        "badness": 6.0609,
+        "losses": [
+          {
+            "badness": 11.8088,
+            "opponent": "Kentucky"
+          },
+          {
+            "badness": 7.1912,
+            "opponent": "Missouri"
+          },
+          {
+            "badness": 6.6912,
+            "opponent": "Georgia"
+          },
+          {
+            "badness": 5.7794,
+            "opponent": "Alabama"
+          },
+          {
+            "badness": 4.3088,
+            "opponent": "Vanderbilt"
+          },
+          {
+            "badness": 4.0147,
+            "opponent": "Oklahoma"
+          },
+          {
+            "badness": 2.6324,
+            "opponent": "Texas A&M"
+          }
+        ],
+        "points": 3.6209,
+        "rank": 36,
+        "team": "Auburn"
+      },
+      {
+        "badness": 5.8358,
+        "losses": [
+          {
+            "badness": 14.1324,
+            "opponent": "Texas A&M"
+          },
+          {
+            "badness": 6.2059,
+            "opponent": "Houston"
+          },
+          {
+            "badness": 5.2794,
+            "opponent": "Alabama"
+          },
+          {
+            "badness": 4.3088,
+            "opponent": "Vanderbilt"
+          },
+          {
+            "badness": 2.5735,
+            "opponent": "Ole Miss"
+          },
+          {
+            "badness": 2.5147,
+            "opponent": "Oklahoma"
+          }
+        ],
+        "points": 3.4864,
+        "rank": 32,
+        "team": "LSU"
+      }
+    ],
+    "scope": "pool",
+    "size": 30
+  },
   "meta": {
     "config": {
       "market": {
@@ -3177,7 +4303,7 @@
         "strength": 14.0
       }
     },
-    "content_hash": "sha256:2a093aab35e0f5f585420a46c40e77e94d186483c9cc187039d2a7ad29fe722e",
+    "content_hash": "sha256:5715a7e696b52a831aba582ca4ef451e6c50814eab2a370f994be3125fc9cd2f",
     "cost": {
       "drift": 297.7933,
       "overrides": 378.9033,
@@ -4529,6 +5655,7 @@
           "cover_games": 16,
           "covers": 10,
           "game_control_rank": 1,
+          "losses": [],
           "losses_considered": 0,
           "mean_cover_margin": 12.7031,
           "mean_loss_badness": null,
@@ -5225,6 +6352,20 @@
           "cover_games": 16,
           "covers": 12,
           "game_control_rank": 4,
+          "losses": [
+            {
+              "badness": 6.7206,
+              "opponent": "Louisville"
+            },
+            {
+              "badness": 5.5735,
+              "opponent": "SMU"
+            },
+            {
+              "badness": 3.1471,
+              "opponent": "Indiana"
+            }
+          ],
           "losses_considered": 3,
           "mean_cover_margin": 4.6875,
           "mean_loss_badness": 5.1471,
@@ -5766,6 +6907,16 @@
           "cover_games": 14,
           "covers": 10,
           "game_control_rank": 3,
+          "losses": [
+            {
+              "badness": 5.7353,
+              "opponent": "Miami"
+            },
+            {
+              "badness": 1.6471,
+              "opponent": "Indiana"
+            }
+          ],
           "losses_considered": 2,
           "mean_cover_margin": 3.7321,
           "mean_loss_badness": 3.6912,
@@ -6172,6 +7323,16 @@
           "cover_games": 15,
           "covers": 11,
           "game_control_rank": 8,
+          "losses": [
+            {
+              "badness": 3.1912,
+              "opponent": "Georgia"
+            },
+            {
+              "badness": 2.7353,
+              "opponent": "Miami"
+            }
+          ],
           "losses_considered": 2,
           "mean_cover_margin": 4.5167,
           "mean_loss_badness": 2.9632,
@@ -6704,6 +7865,16 @@
           "cover_games": 15,
           "covers": 8,
           "game_control_rank": 2,
+          "losses": [
+            {
+              "badness": 14.1471,
+              "opponent": "Indiana"
+            },
+            {
+              "badness": 6.3971,
+              "opponent": "Indiana"
+            }
+          ],
           "losses_considered": 2,
           "mean_cover_margin": 3.4667,
           "mean_loss_badness": 10.2721,
@@ -7189,6 +8360,16 @@
           "cover_games": 14,
           "covers": 6,
           "game_control_rank": 7,
+          "losses": [
+            {
+              "badness": 3.8235,
+              "opponent": "Ole Miss"
+            },
+            {
+              "badness": 3.7794,
+              "opponent": "Alabama"
+            }
+          ],
           "losses_considered": 2,
           "mean_cover_margin": -0.4464,
           "mean_loss_badness": 3.8015,
@@ -7666,6 +8847,20 @@
           "cover_games": 13,
           "covers": 5,
           "game_control_rank": 16,
+          "losses": [
+            {
+              "badness": 11.6912,
+              "opponent": "Georgia"
+            },
+            {
+              "badness": 8.7794,
+              "opponent": "Florida"
+            },
+            {
+              "badness": 2.8382,
+              "opponent": "Ohio State"
+            }
+          ],
           "losses_considered": 3,
           "mean_cover_margin": -1.6346,
           "mean_loss_badness": 7.7696,
@@ -8152,6 +9347,16 @@
           "cover_games": 13,
           "covers": 5,
           "game_control_rank": 9,
+          "losses": [
+            {
+              "badness": 5.4853,
+              "opponent": "Miami"
+            },
+            {
+              "badness": 5.3676,
+              "opponent": "Texas"
+            }
+          ],
           "losses_considered": 2,
           "mean_cover_margin": -0.6923,
           "mean_loss_badness": 5.4265,
@@ -8547,6 +9752,16 @@
           "cover_games": 12,
           "covers": 6,
           "game_control_rank": 6,
+          "losses": [
+            {
+              "badness": 2.6324,
+              "opponent": "Texas A&M"
+            },
+            {
+              "badness": 0.9853,
+              "opponent": "Miami"
+            }
+          ],
           "losses_considered": 2,
           "mean_cover_margin": 4.625,
           "mean_loss_badness": 1.8088,
@@ -9010,6 +10225,16 @@
           "cover_games": 14,
           "covers": 11,
           "game_control_rank": 5,
+          "losses": [
+            {
+              "badness": 11.7941,
+              "opponent": "Oregon"
+            },
+            {
+              "badness": 6.0441,
+              "opponent": "Arizona State"
+            }
+          ],
           "losses_considered": 2,
           "mean_cover_margin": 7.7321,
           "mean_loss_badness": 8.9191,
@@ -9509,6 +10734,16 @@
           "cover_games": 14,
           "covers": 10,
           "game_control_rank": 17,
+          "losses": [
+            {
+              "badness": 14.9706,
+              "opponent": "Texas Tech"
+            },
+            {
+              "badness": 11.2206,
+              "opponent": "Texas Tech"
+            }
+          ],
           "losses_considered": 2,
           "mean_cover_margin": 5.6071,
           "mean_loss_badness": 13.0956,
@@ -9868,6 +11103,16 @@
           "cover_games": 13,
           "covers": 10,
           "game_control_rank": 12,
+          "losses": [
+            {
+              "badness": 14.7206,
+              "opponent": "Texas Tech"
+            },
+            {
+              "badness": 2.6029,
+              "opponent": "BYU"
+            }
+          ],
           "losses_considered": 2,
           "mean_cover_margin": 8.5577,
           "mean_loss_badness": 8.6618,
@@ -10363,6 +11608,24 @@
           "cover_games": 13,
           "covers": 10,
           "game_control_rank": 13,
+          "losses": [
+            {
+              "badness": 4.8088,
+              "opponent": "Iowa State"
+            },
+            {
+              "badness": 3.8971,
+              "opponent": "Indiana"
+            },
+            {
+              "badness": 3.4559,
+              "opponent": "USC"
+            },
+            {
+              "badness": 2.5441,
+              "opponent": "Oregon"
+            }
+          ],
           "losses_considered": 4,
           "mean_cover_margin": 6.3462,
           "mean_loss_badness": 3.6765,
@@ -11008,6 +12271,24 @@
           "cover_games": 15,
           "covers": 9,
           "game_control_rank": 11,
+          "losses": [
+            {
+              "badness": 14.1471,
+              "opponent": "Indiana"
+            },
+            {
+              "badness": 12.3676,
+              "opponent": "Florida State"
+            },
+            {
+              "badness": 10.9412,
+              "opponent": "Georgia"
+            },
+            {
+              "badness": 4.0147,
+              "opponent": "Oklahoma"
+            }
+          ],
           "losses_considered": 4,
           "mean_cover_margin": -0.55,
           "mean_loss_badness": 10.3676,
@@ -11529,6 +12810,20 @@
           "cover_games": 13,
           "covers": 9,
           "game_control_rank": 18,
+          "losses": [
+            {
+              "badness": 7.7794,
+              "opponent": "Alabama"
+            },
+            {
+              "badness": 6.1471,
+              "opponent": "Iowa"
+            },
+            {
+              "badness": 1.8676,
+              "opponent": "Texas"
+            }
+          ],
           "losses_considered": 3,
           "mean_cover_margin": 9.0769,
           "mean_loss_badness": 5.2647,
@@ -12090,6 +13385,20 @@
           "cover_games": 13,
           "covers": 6,
           "game_control_rank": 10,
+          "losses": [
+            {
+              "badness": 10.1176,
+              "opponent": "Texas"
+            },
+            {
+              "badness": 7.2794,
+              "opponent": "Alabama"
+            },
+            {
+              "badness": 6.5735,
+              "opponent": "Ole Miss"
+            }
+          ],
           "losses_considered": 3,
           "mean_cover_margin": 0.3846,
           "mean_loss_badness": 7.9902,
@@ -12531,6 +13840,24 @@
           "cover_games": 13,
           "covers": 4,
           "game_control_rank": 15,
+          "losses": [
+            {
+              "badness": 10.8382,
+              "opponent": "Ohio State"
+            },
+            {
+              "badness": 9.9559,
+              "opponent": "USC"
+            },
+            {
+              "badness": 8.6176,
+              "opponent": "Texas"
+            },
+            {
+              "badness": 6.0147,
+              "opponent": "Oklahoma"
+            }
+          ],
           "losses_considered": 4,
           "mean_cover_margin": -2.2308,
           "mean_loss_badness": 8.8566,
@@ -12933,6 +14260,24 @@
           "cover_games": 13,
           "covers": 7,
           "game_control_rank": 25,
+          "losses": [
+            {
+              "badness": 10.8382,
+              "opponent": "Ohio State"
+            },
+            {
+              "badness": 9.75,
+              "opponent": "Michigan"
+            },
+            {
+              "badness": 9.0735,
+              "opponent": "Wisconsin"
+            },
+            {
+              "badness": 7.5441,
+              "opponent": "Oregon"
+            }
+          ],
           "losses_considered": 4,
           "mean_cover_margin": 6.4615,
           "mean_loss_badness": 9.3015,
@@ -13284,6 +14629,20 @@
           "cover_games": 14,
           "covers": 9,
           "game_control_rank": 32,
+          "losses": [
+            {
+              "badness": 11.9559,
+              "opponent": "Wake Forest"
+            },
+            {
+              "badness": 9.8235,
+              "opponent": "Duke"
+            },
+            {
+              "badness": 6.6324,
+              "opponent": "NC State"
+            }
+          ],
           "losses_considered": 3,
           "mean_cover_margin": 4.9107,
           "mean_loss_badness": 9.4706,
@@ -13765,6 +15124,28 @@
           "cover_games": 13,
           "covers": 6,
           "game_control_rank": 35,
+          "losses": [
+            {
+              "badness": 12.6324,
+              "opponent": "Texas A&M"
+            },
+            {
+              "badness": 7.2647,
+              "opponent": "Virginia"
+            },
+            {
+              "badness": 6.0147,
+              "opponent": "Oklahoma"
+            },
+            {
+              "badness": 4.3088,
+              "opponent": "Vanderbilt"
+            },
+            {
+              "badness": 3.7794,
+              "opponent": "Alabama"
+            }
+          ],
           "losses_considered": 5,
           "mean_cover_margin": 1.5,
           "mean_loss_badness": 6.8,
@@ -14220,6 +15601,24 @@
           "cover_games": 12,
           "covers": 5,
           "game_control_rank": 41,
+          "losses": [
+            {
+              "badness": 14.3088,
+              "opponent": "Colorado"
+            },
+            {
+              "badness": 10.6029,
+              "opponent": "BYU"
+            },
+            {
+              "badness": 10.3971,
+              "opponent": "Cincinnati"
+            },
+            {
+              "badness": 9.0441,
+              "opponent": "Arizona State"
+            }
+          ],
           "losses_considered": 4,
           "mean_cover_margin": 2.125,
           "mean_loss_badness": 11.0882,
@@ -14712,6 +16111,24 @@
           "cover_games": 13,
           "covers": 7,
           "game_control_rank": 24,
+          "losses": [
+            {
+              "badness": 15.1029,
+              "opponent": "BYU"
+            },
+            {
+              "badness": 12.0147,
+              "opponent": "Kansas State"
+            },
+            {
+              "badness": 7.3088,
+              "opponent": "Iowa State"
+            },
+            {
+              "badness": 5.5441,
+              "opponent": "Arizona State"
+            }
+          ],
           "losses_considered": 4,
           "mean_cover_margin": -1.5385,
           "mean_loss_badness": 9.9926,
@@ -15160,6 +16577,24 @@
           "cover_games": 13,
           "covers": 6,
           "game_control_rank": 20,
+          "losses": [
+            {
+              "badness": 10.5441,
+              "opponent": "Baylor"
+            },
+            {
+              "badness": 9.5147,
+              "opponent": "California"
+            },
+            {
+              "badness": 7.6324,
+              "opponent": "TCU"
+            },
+            {
+              "badness": 6.4559,
+              "opponent": "Wake Forest"
+            }
+          ],
           "losses_considered": 4,
           "mean_cover_margin": 1.1923,
           "mean_loss_badness": 8.5368,
@@ -15658,6 +17093,24 @@
           "cover_games": 13,
           "covers": 4,
           "game_control_rank": 30,
+          "losses": [
+            {
+              "badness": 16.5735,
+              "opponent": "SMU"
+            },
+            {
+              "badness": 12.0147,
+              "opponent": "California"
+            },
+            {
+              "badness": 7.0147,
+              "opponent": "Virginia"
+            },
+            {
+              "badness": 6.75,
+              "opponent": "Clemson"
+            }
+          ],
           "losses_considered": 4,
           "mean_cover_margin": -1.9231,
           "mean_loss_badness": 10.5882,
@@ -16098,6 +17551,24 @@
           "cover_games": 13,
           "covers": 7,
           "game_control_rank": 22,
+          "losses": [
+            {
+              "badness": 16.0735,
+              "opponent": "Wisconsin"
+            },
+            {
+              "badness": 12.8971,
+              "opponent": "Indiana"
+            },
+            {
+              "badness": 10.8382,
+              "opponent": "Ohio State"
+            },
+            {
+              "badness": 10.3382,
+              "opponent": "Washington"
+            }
+          ],
           "losses_considered": 4,
           "mean_cover_margin": -1.5962,
           "mean_loss_badness": 12.5368,
