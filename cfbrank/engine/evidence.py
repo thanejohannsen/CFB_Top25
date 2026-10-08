@@ -24,10 +24,10 @@ absolute conviction level (`conviction_floor`), so a weak result costs
 and a convincing result costs maybe three times that rather than seventeen.
 
 **This file is only half the question.** Conviction is about the game itself and
-never changes once it is played. What has happened to the two teams SINCE is a
-separate matter, and it lives in `engine/grounds.py`: it forgives a share of this
-price and -- the part that used to be missing entirely -- sets how far apart the
-two may sit once the result is set aside.
+never changes once it is played. Whether the result may be ranked against AT ALL
+is a separate matter, and it lives in `engine/grounds.py`: a result stands unless
+one of four named things has happened since the game. This weight prices the
+results that an exception has unlocked; it has no say over the ones it has not.
 """
 
 from __future__ import annotations
@@ -68,17 +68,6 @@ class EdgeFact:
     @property
     def pair(self) -> tuple[str, str]:
         return (self.winner, self.loser)
-
-    @property
-    def price(self) -> float:
-        """What going against this result actually costs stage 4.
-
-        `weight` is the price the game itself earned; the grounds for setting it
-        aside forgive a share of that, because a win the winner has since
-        undercut is a weaker thing to rank against than the same win from a team
-        still playing well.
-        """
-        return self.weight * (1.0 - (self.grounds.relief if self.grounds else 0.0))
 
     @property
     def score(self) -> str:

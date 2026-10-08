@@ -136,17 +136,14 @@ class TestValidation(unittest.TestCase):
         self._bad("stage4.evidence.margin_cap=0")
         self._bad("stage4.evidence.recency_floor=2")
         self._bad("stage4.evidence.home_field_points=-1")
-        self._bad("stage4.grounds.base_places=-1")
-        self._bad("stage4.grounds.per_net_loss=-1")
-        self._bad("stage4.grounds.per_rating_point=-0.1")
-        self._bad("stage4.grounds.per_week=-0.1")
-        self._bad("stage4.grounds.ramp_weeks=-1")
-        self._bad("stage4.grounds.gap_weight=-1")
-        self._bad("stage4.grounds.gap_exponent=0.5")
-        self._bad("stage4.grounds.gap_exponent=4")
-        self._bad("stage4.grounds.loss_offset=-0.1")
-        self._bad("stage4.grounds.loss_offset=1.5")
+        self._bad("stage4.grounds.impressive_bar=-1")
+        self._bad("stage4.grounds.band_start=-0.1")
+        self._bad("stage4.grounds.band_step=-0.1")
+        self._bad("stage4.grounds.min_weeks=-1")
+        self._bad("stage4.grounds.min_weeks=1.5")
         self._bad("stage4.grounds.enabled=yes")
+        self._bad("stage4.max_block=1")
+        self._bad("stage4.max_block=99")
         self._bad("season.week=0")
         self._bad("season.week=99")
         self._bad("season.season_type=sometime")
@@ -172,27 +169,19 @@ class TestValidation(unittest.TestCase):
         with self.assertRaises(ConfigError):
             load(SHIPPED, ["stage4.evidence.weight_floor=0"])
 
-    def test_grounds_may_make_an_override_cheaper_but_never_free(self):
-        """`relief` is a share of the price, so 1.0 would hand one away."""
-        self._bad("stage4.grounds.relief=1.0")
-        self._bad("stage4.grounds.relief=1.5")
-        self._bad("stage4.grounds.relief=-0.1")
-        load(SHIPPED, ["stage4.grounds.relief=0.0"])
-        load(SHIPPED, ["stage4.grounds.relief=0.99"])
+    def test_the_band_cannot_shrink_with_time(self):
+        """It widens as the evidence accumulates, so the ceiling is above the start."""
+        self._bad("stage4.grounds.band_max=0.4")
+        load(SHIPPED, ["stage4.grounds.band_max=0.5"])
 
-    def test_the_licence_cap_cannot_sit_below_the_unearned_licence(self):
-        self._bad("stage4.grounds.max_places=1.0")
-        load(SHIPPED, ["stage4.grounds.max_places=2.0"])
-
-    def test_the_gap_limit_can_be_switched_off_two_ways(self):
-        """Both are documented escape hatches, so both must stay valid."""
+    def test_the_hard_requirement_can_be_switched_off(self):
+        """The documented escape hatch, so it must stay valid."""
         load(SHIPPED, ["stage4.grounds.enabled=false"])
-        load(SHIPPED, ["stage4.grounds.gap_weight=0"])
 
     def test_accepts_the_documented_edges(self):
-        load(SHIPPED, ["stage4.grounds.gap_exponent=1.0", "stage4.grounds.gap_exponent=3.0"])
-        load(SHIPPED, ["stage4.grounds.loss_offset=0.0", "stage4.grounds.loss_offset=1.0"])
-        load(SHIPPED, ["stage4.grounds.ramp_weeks=0"])
+        load(SHIPPED, ["stage4.grounds.min_weeks=0"])
+        load(SHIPPED, ["stage4.grounds.impressive_bar=0"])
+        load(SHIPPED, ["stage4.max_block=2", "stage4.max_block=40"])
         load(SHIPPED, ["stage3.strength=0", "stage3.strength=1.0"])
         load(SHIPPED, ["stage4.drift_exponent=1.0"])
         load(SHIPPED, ["season.week=1"])

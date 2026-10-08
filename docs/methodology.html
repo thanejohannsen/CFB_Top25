@@ -314,7 +314,7 @@ game control        11th of 138
     <section>
       <h2>Stage 4 &mdash; Weighted head-to-head</h2>
       <div class="card"><div class="card-body">
-        <p class="formula">cost(order) = strength &times; &Sigma; price(overridden result) + drift_weight &times; &Sigma; |position &minus; base position|<sup>drift_exponent</sup> + gap_weight &times; &Sigma; (places past the licence)<sup>gap_exponent</sup></p>
+        <p class="formula">cost(order) = strength &times; &Sigma; weight(overridden result) + drift_weight &times; &Sigma; |position &minus; base position|<sup>drift_exponent</sup><br>subject to&nbsp; position(winner) &minus; position(loser) &le; max_lead</p>
         <p class="lede">
           Head-to-head is a preference, not an absolute rule. The ranking is the ordering
           that minimises the cost above, so the results it ends up contradicting are by
@@ -378,55 +378,62 @@ game control        11th of 138
           places; an emphatic one buys many.
         </p>
 
-        <h3>How far apart two teams may sit &mdash; the grounds</h3>
+        <h3>When may a result be contradicted at all?</h3>
         <p class="lede">
           Everything above is about the <em>game</em>, and the game never changes once it is
-          played. What has happened to the two teams <em>since</em> is a separate question,
-          and it used to go unasked: the ranking priced the decision to go against a result
-          and then let the distance be free. That published a 45&ndash;17 Missouri win over
-          Florida with Florida <b>eleven places higher</b>, on the Saturday it happened, with
-          nothing in between to justify it.
+          played. Whether the ranking may go against it is a separate question, and it used
+          to go unasked: every result was a price, so one could always be outbid. That
+          published a 45&ndash;17 Missouri win over Florida with <b>Florida ranked above
+          them</b>, on the Saturday it happened, with nothing in between.
         </p>
         <p class="lede">
-          So each result now carries a <b>licence</b>, measured in places, and every place
-          past it is charged. Two things earn it, and they are the two things anybody
-          actually argues about:
+          So the rule is now a requirement with a closed list of exceptions.
+          <b>If a team beat you, it is ranked above you</b> &mdash; unless:
         </p>
         <ul class="reasons">
-          <li><b>The winner has slipped</b> &mdash; it has lost since, and lost more often
-            than the team it beat. &ldquo;I beat you in September&rdquo; is a thinner argument
-            from a team that has dropped two games since.</li>
-          <li><b>The loser has beaten better teams since</b> &mdash; measured as the average
-            quality of the wins each has picked up, in rating points. This one
-            <em>strengthens with time</em> on purpose: one good win the week after proves
-            little, six weeks of them is a different team.</li>
-          <li><b>Age on its own</b> &mdash; a week-2 result constrains a January board less
-            tightly than it constrains a week-3 one, whatever else happened in between.</li>
+          <li><b>It has more losses than you.</b> Any gap: the r&eacute;sum&eacute; decides.</li>
+          <li><b>It has lost since beating you, and you have not.</b> Any gap.</li>
+          <li><b>It has lost more often since than you have.</b> Any gap.</li>
+          <li><b>You have been beating better teams than it has</b> &mdash; and at least a
+            fortnight has passed. This one is <em>capped</em>, see below.</li>
         </ul>
         <p class="lede">
-          With none of that &mdash; a game played the same week it is being ranked &mdash; the
-          licence is two places. The two teams may still swap, because the base order is
-          allowed to disagree about near-neighbours, but they stay near-neighbours. At the
-          other end the licence caps at half the pool, which is the right answer for a
-          result the season has thoroughly overtaken: Florida beat Texas in week 6 of 2025
-          and then lost five more games than Texas did.
+          Nothing else counts. The first three are about the team that beat you slipping; the
+          fourth is about you overtaking it, which takes time to establish &mdash; one good
+          win the week after proves little however good it was.
         </p>
+        <h3>The fourth exception is capped, and the cap grows</h3>
         <p class="lede">
-          The grounds are also published as a <b>category</b> and a <b>severity</b>, and both
-          are derived from the licence rather than the other way round. Bands that set the
-          licence would make it a step function of the evidence, and this stage is a search
-          over a cost surface &mdash; a step is a cliff two teams can straddle, where one more
-          rating point jumps the licence several places and the whole board rearranges.
-          Continuous in, labels out.
+          Being overtaken earns a bounded number of places, not a free hand. The cap is how
+          much better your wins have been, in rating points, times a rate that widens the
+          longer it has been true:
         </p>
+        <p class="formula">weeks since the game&nbsp; 2 &rarr; 0.50&nbsp;&nbsp; 3 &rarr; 0.75&nbsp;&nbsp; 4 &rarr; 1.00&nbsp;&nbsp; 5 &rarr; 1.25&nbsp;&nbsp; 6+ &rarr; 1.50&nbsp; places per point</p>
         <p class="lede">
-          Because the gap term pulls rather than forbids, the usual outcome is both teams
-          moving part of the way toward each other rather than one being dragged across the
-          board. On the 2026 week-5 board it took the widest contradiction from fifteen
-          places to seven. It does not measurably change what the ranking
-          <em>predicts</em> &mdash; swept across a twelvefold range of settings on 1,997 games
-          it moves by three &mdash; so the setting is a judgement about what a ranking owes
-          the result, not an accuracy tweak.
+          So on the 2026 week-5 board, Oklahoma State beat Oregon in week 2 and Oregon has
+          since beaten better teams by 8.7 rating points on average. Three weeks on that is
+          0.75 &times; 8.7 = <b>6 places</b>, and Oregon finishes exactly six above them.
+          Win quality is the <em>average</em> of the wins since, not the total: summing
+          counts volume as quality, and on a completed season it pinned most old results at
+          the ceiling and stopped telling them apart.
+        </p>
+        <h3>When a result has to be enforced, both teams move</h3>
+        <p class="lede">
+          If the r&eacute;sum&eacute; put the loser nine places up and the winner nineteenth,
+          the ranking does not simply park the winner above the loser and leave it there.
+          Because long moves cost disproportionately more, the cheapest way to satisfy the
+          requirement is for both to move about half the distance &mdash; which is what
+          happens: Missouri and Florida come from 20th and 11th on r&eacute;sum&eacute; to
+          15th and 16th. That needs the two to be relocated <em>together</em>, since neither
+          can take the first step alone without breaking the requirement again.
+        </p>
+        <h3>What happens when the results contradict each other</h3>
+        <p class="lede">
+          Three teams who each beat the next cannot all be honoured, so one requirement has
+          to be surrendered &mdash; and it is the least convincing of them, the same rule
+          that decides every other contradiction. Which one was given up is published. On
+          both checked-in seasons this never happens: there is no such loop among the
+          enforced results, which is what makes the requirement real rather than aspirational.
         </p>
       </div></div>
     </section>
@@ -571,17 +578,13 @@ game control        11th of 138
         ["  margin cap", ev.margin_cap],
         ["  weight floor (cheapest override)", ev.weight_floor],
         ["  conviction floor", ev.conviction_floor],
-        ["Grounds for setting a result aside", gr.enabled ? "on" : "off"],
-        ["  places allowed with no grounds", gr.base_places],
-        ["  places per net loss since", gr.per_net_loss],
-        ["  of the loser's own losses forgiven", gr.loss_offset],
-        ["  places per rating point of win quality", gr.per_rating_point],
-        ["  weeks for that to reach full force", gr.ramp_weeks],
-        ["  places per week of age", gr.per_week],
-        ["  cap on the licence", gr.max_places + " places"],
-        ["  share of the price grounds forgive", gr.relief],
-        ["  cost per place past the licence", gr.gap_weight],
-        ["  gap exponent", gr.gap_exponent],
+        ["Head-to-head requirement", gr.enabled ? "on" : "off"],
+        ["  impressive-win bar", gr.impressive_bar + " rating points"],
+        ["  weeks before the 4th exception applies", gr.min_weeks],
+        ["  places per rating point, at that age", gr.band_start],
+        ["  added per further week", gr.band_step],
+        ["  ceiling", gr.band_max],
+        ["Teams movable as a block", s4.max_block],
         ["Market: minimum lined games", mk.min_games],
         ["Market: weeks of lines ahead", mk.horizon_weeks],
         ["Market: home field fitted", mk.fit_home_field ? "yes" : "no"],

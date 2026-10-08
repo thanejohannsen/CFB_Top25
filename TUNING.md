@@ -269,8 +269,9 @@ upset says the winner was underrated *and* the loser overrated.
 ## Head-to-head (`[stage4]`)
 
 The published order is the one that minimises
-`strength × (results it contradicts) + drift × (how far teams move)
-+ gap × (how much further apart two teams sit than the grounds allow)`.
+`strength × (results it contradicts) + drift × (how far teams move)`,
+**subject to a hard rule: if a team beat you, it is ranked above you unless one of
+four named things has happened.** See below.
 
 ### How much should beating someone matter?
 
@@ -320,68 +321,78 @@ just stops reordering to fix them.
 | `weight_floor` | 1.0 | The cheapest possible override still costs this much |
 | `conviction_floor` | −2.0 | An absolute floor, so the weakest result isn't free to ignore |
 
-### Grounds for setting a result aside (`[stage4.grounds]`)
+### When a result may be contradicted at all (`[stage4.grounds]`)
 
 `[stage4.evidence]` above is about the **game**, and the game never changes once
-it's played. This is about what's happened **since**, which used to go unasked —
-and that was a real hole. The ranking priced the *decision* to go against a
-result and then let the *distance* be free, so on 2026 week 5 it published
-Missouri's 45–17 win over Florida with **Florida eleven places higher**, on the
-Saturday it happened, with nothing in between to justify it.
+it's played. This is the rule about whether the ranking may go against it, and it
+is not a matter of degree:
 
-Now each result carries a **licence**, measured in places, and every place past it
-is charged. Three things earn it:
+> Team A beat Team B. **A has to be ranked above B** unless
+> 1. A has more losses than B — *any gap*
+> 2. A has lost since the game and B has not — *any gap*
+> 3. A has lost more times since than B has — *any gap*
+> 4. B has impressive wins and A has mediocre wins, **and** at least
+>    `min_weeks` have passed — *banded gap*
 
-| ground | what it is | the dial |
+Nothing else counts. Rules 1–3 are about the team that beat you slipping; rule 4
+is about you overtaking it, which takes time to establish.
+
+**Why this replaced a price.** Everything in stage 4 used to be a price, so a
+result could always be outbid. That published a 45–17 Missouri win over Florida
+with **Florida ranked above them**, on the Saturday it happened. A priced
+"licence" on the distance was built, measured and shipped first; it narrowed that
+from eleven places to five and was still the wrong shape. The hard version also
+measured better, so there's no trade-off to revisit:
+
+| | priced licence | **hard rules** |
 | --- | --- | --- |
-| **Form** | The winner has lost since — and lost more often than the team it beat | `per_net_loss`, `loss_offset` |
-| **Résumé** | The loser has since been beating better teams. *Strengthens with time* | `per_rating_point`, `ramp_weeks` |
-| **Age** | A week-2 result constrains a January board less tightly, whatever else happened | `per_week` |
+| all FBS, `--weeks 4,6,8,10,12` (1,997) | 67.2% | **67.4%** |
+| all FBS, default weeks (1,726) | 68.3% | **68.2%** |
+| AP-vs-AP, `--weeks 4,6,8,10,12` (179) | 62.6% | **63.7%** |
+| AP-vs-AP, default weeks (161) | 64.6% | **65.2%** |
+| head-to-head results kept | 84.1% | **86.1%** |
 
-With none of it — a game played the same week it's being ranked — the licence is
-`base_places`. The two may still swap, because the base order is allowed to
-disagree about near-neighbours, but they stay near-neighbours. That alone pulled
-Missouri and Florida from eleven places apart to five.
+(No-rules baselines: 67.5 / 68.4 / 64.8 / 66.5 / 84.1.)
 
-**The three settings worth knowing before you turn anything:**
+**Two things worth knowing before you turn anything:**
 
-- **`base_places` is the one that fixes the published bug.** Raise it and a
-  contradiction nothing justifies is allowed to get wider again.
-- **`gap_weight` does not change what the ranking predicts.** Swept from 0.5 to
-  6.0 on 1,997 games of 2025, all-FBS accuracy runs 67.4 / 67.3 / 67.2 / 67.3 /
-  67.4% — a three-game spread, i.e. noise. It changes what the board *looks*
-  like, and on 2026 week 5 that is the widest contradiction going from 15 places
-  to 7. Pick it on that, not on the accuracy number.
-- **`relief` barely does anything on its own,** and it's carried for shape rather
-  than effect. With `gap_weight = 0` the backtest reproduces the no-grounds
-  numbers exactly. `stage4.strength` is only 4, so the override price rarely
-  decides anything by itself.
+- **Rule 1 counts B's loss to A.** B lost to A, so B's total is at least 1, and A
+  needs to be *two* losses up before rule 1 fires on a one-loss opponent.
+- **`impressive_bar` is one bar, not two.** B's mean win quality must clear it and
+  A's must not, so two teams who have *both* been beating good sides don't unlock
+  rule 4 at all. It's insensitive — the enforced count moves by 1–3 results
+  across bars from 3.0 to 8.0.
 
 | knob | now | what it means |
 | --- | --- | --- |
-| `enabled` | true | `false` restores the old behaviour exactly — verified against both seasons |
-| `base_places` | 2.0 | Places allowed with no grounds at all. The fix for the Missouri/Florida bug |
-| `per_net_loss` | 4.0 | Places per net subsequent loss by the winner |
-| `loss_offset` | 0.5 | Share of the loser's *own* subsequent losses that forgives the winner's. At 1.0 only the net counts |
-| `per_rating_point` | 0.30 | Places per rating point by which the loser's wins since beat the winner's. The **mean** quality of those wins, not the total |
-| `ramp_weeks` | 6.0 | Weeks for the résumé ground to reach full force. This is "it increases with time", as a dial |
-| `per_week` | 0.40 | Places per week of age on its own |
-| `max_places` | 20.0 | Cap on the licence. Half the pool = "anywhere in the published 25" |
-| `relief` | 0.40 | Share of the override *price* that full grounds forgive |
-| `gap_weight` | 1.5 | Cost per place past the licence. Inside the noise on accuracy — see above |
-| `gap_exponent` | 1.5 | Matches `drift_exponent`, so the two terms are commensurate |
+| `enabled` | true | `false` removes the requirement entirely and leaves the pure cost model |
+| `impressive_bar` | 6.0 | Rating points past the board mean. The **average** quality of the wins since, not the total — summing counts volume as quality and pinned most old results at the ceiling |
+| `min_weeks` | 2 | Weeks before rule 4 can apply. Rules 1–3 have no such gate |
+| `band_start` | 0.5 | Rule 4's places of gap per rating point of win-quality difference, at `min_weeks` |
+| `band_step` | 0.25 | Added per further week: 0.50 at 2 weeks, 0.75 at 3, 1.00 at 4, 1.25 at 5 |
+| `band_max` | 1.5 | Ceiling, reached at 6 weeks. On a completed season nearly every rule-4 result sits here, so the ramp is an early-season instrument |
 
-Two escape hatches, both pinned by tests: `enabled = false` turns the whole thing
-off, and `gap_weight = 0` keeps the grounds published on the site while charging
-nothing for the distance.
+### Making two teams meet in the middle (`stage4.max_block`)
 
-**Why the licence is a number and the "severity" is only a label.** The site shows
-a category (*nothing since* / *age only* / *winner has slipped* / *loser has beaten
-better* / *both*) and a severity (*slight* / *clear* / *decisive*), and both are
-derived **from** the licence rather than setting it. Bands that set the licence
-would make it a step function of the evidence, and this stage is a search over a
-cost surface — a step is a cliff two teams can straddle, where one more rating
-point jumps the licence several places and the whole board rearranges.
+A hard rule has no gradient, so moving one team at a time gets **stuck**. With the
+loser 9th on résumé and the winner 19th, parking the winner just above the loser
+costs 32.6 of drift while both meeting at 13th/14th costs 25.9 — and no single
+move gets from the first to the second, because moving the winner down breaks the
+rule again and moving the loser down alone strands the winner.
+
+So teams can also be relocated **as a block**, keeping their order. 4 covers every
+chain in the real data. The midpoint itself needs no dial: it falls out of
+`drift_exponent`, since minimising `d^1.5 + e^1.5` over a fixed `d + e` gives
+`d = e`. Missouri and Florida come from 20th and 11th to 15th and 16th.
+
+There is a second move for *banded* gaps, where the pair sit several places apart
+on purpose and no small block holds both: the two ends shift together and the
+teams between them close up. Without it Oklahoma State finished 8 places above its
+résumé position and inside the top 25; with it they meet Oregon in the middle.
+
+| knob | now | what it means |
+| --- | --- | --- |
+| `max_block` | 4 | Teams movable as one block. 2 would cover pairs only; past 4 the search slows for a case the data says is rare |
 
 ---
 
@@ -394,9 +405,10 @@ Worth keeping straight before you turn anything.
 
 **Judgement, and no test can settle it** — `w_sor` above all. Predicting games
 isn't what a résumé is *for*. Same for `reference_place`, the stage-2 weights,
-`gap`, `strength`, `drift_exponent`, and everything in `[stage4.grounds]`: the
-licence is a statement about what a ranking owes a result, and `gap_weight` is
-measurably inside the noise either way.
+`gap`, `strength` and `drift_exponent`. `[stage4.grounds]` is a different kind of
+thing again — it is not a weight at all but a statement of what the ranking owes a
+result, so the only question a backtest can answer about it is what it costs
+(almost nothing) rather than whether it is right.
 
 ## Checking a change
 

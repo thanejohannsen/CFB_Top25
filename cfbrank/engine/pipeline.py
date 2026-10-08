@@ -207,7 +207,17 @@ def rank(dataset: Dataset, cfg: Config) -> RankingResult:
     base_rank = {tb.team: tb.base_rank for tb in final_pool}
     # Pool ranks are 1..N so the drift term is measured inside the pool.
     pool_base_rank = {t: i + 1 for i, t in enumerate(pool_names)}
-    ordering = minimum_violations_order(pool_names, edge_facts, pool_base_rank, s4)
+    # The caps the four rules impose. An edge left out is unconstrained, so an
+    # empty mapping is the engine as it behaved before any of this existed.
+    ordering = minimum_violations_order(
+        pool_names,
+        edge_facts,
+        pool_base_rank,
+        s4,
+        max_lead={
+            k: f.grounds.max_lead for k, f in edge_facts.items() if f.grounds is not None
+        },
+    )
     final_order = ordering.order
     final_rank = {t: i + 1 for i, t in enumerate(final_order)}
 
@@ -291,10 +301,14 @@ def rank(dataset: Dataset, cfg: Config) -> RankingResult:
         "resume_rated": len(res.probability),
         "market_rated": len(mkt.ratings),
         "ppa_rated": len(perf.ratings),
-        "h2h_licensed": sum(
-            1 for f in edge_facts.values() if f.grounds is not None and f.grounds.licensed
+        "h2h_enforced": sum(
+            1 for f in edge_facts.values() if f.grounds is not None and f.grounds.enforced
         ),
-        "h2h_over_licence": sum(1 for v in ordering.excess.values() if v > 0),
+        "h2h_banded": sum(
+            1 for f in edge_facts.values() if f.grounds is not None and f.grounds.banded
+        ),
+        "h2h_binding": len(ordering.binding),
+        "h2h_relaxed": len(ordering.relaxed),
         "max_rise": -min(ordering.drift.values(), default=0),
         "max_drop": max(ordering.drift.values(), default=0),
         "local_search_passes": ordering.passes,

@@ -312,6 +312,21 @@ drift_exponent = 1.5         # >1 makes long moves disproportionately costly,
 split_series = "most_recent" # "most_recent" | "drop" | "aggregate_margin"
 max_passes   = 400
 
+# How many teams may be relocated AS A BLOCK, keeping their order.
+#
+# This is what makes two teams meet in the middle instead of one being dragged to
+# the other. A hard constraint has no gradient: with B at base #9, A at base #19
+# and A required above B, lifting A to just above B costs 31.6 + 1.0 = 32.6 drift
+# while meeting at #13/#14 costs 14.7 + 11.2 = 25.9 -- but no SINGLE team can move
+# from the first to the second, because moving A down puts it back below B and
+# moving B down alone strands A. Relocating the pair together reaches it in one
+# step, and the midpoint falls out of drift_exponent rather than needing a dial.
+#
+# 4 covers every chain measured on real data (4 teams on 2026 week 5, 6 on the
+# completed 2025 season with most links already satisfied). 2 would cover pairs
+# only; past 4 the search slows for a case the data says is rare.
+max_block    = 4
+
 [stage4.evidence]
 w_margin           = 0.50
 w_rating_gap       = 0.30   # agreement with the power ratings (market, FPI if none)
@@ -366,147 +381,88 @@ recency_half_life_good = 8.0
 recency_half_life_bad  = 6.0
 recency_floor      = 0.15
 
-# -- Stage 4b: the GROUNDS for setting a result aside, and how far it lets them sit
+# -- Stage 4b: WHEN may a head-to-head result be ranked against? ---------------
 #
-# [stage4.evidence] above asks how convincing the GAME was. This asks what has
-# happened to the two teams SINCE, which is a different question and used to go
-# unasked. Full reasoning in cfbrank/engine/grounds.py.
+# [stage4.evidence] above asks how convincing the GAME was. This asks something
+# different and not a matter of degree:
 #
-# TWO GROUNDS, both of which answer "my team beat them and is ranked below them":
+#   Team A beat Team B. A HAS TO BE RANKED ABOVE B unless
 #
-#   FORM    the winner has lost since -- and lost more often than the team it
-#           beat. "I beat you in September" is a thinner argument from a team
-#           that has dropped two games since.
-#   RESUME  the loser has since been beating better teams than the winner has.
-#           This one STRENGTHENS WITH TIME on purpose: one good win the week
-#           after proves little, six weeks of them is a different team.
+#     1. A has more losses than B                                   (any gap)
+#     2. A has lost since the game and B has not                    (any gap)
+#     3. A has lost more times since the game than B has            (any gap)
+#     4. B has impressive wins and A has mediocre wins, AND at least
+#        min_weeks have passed since the game                    (BANDED gap)
 #
-# WHAT THEY BUY IS A LICENCE, MEASURED IN PLACES. This is the part that was
-# missing. The old stage 4 priced the DECISION to rank against a result and then
-# let the DISTANCE be free: pay for the override once and the two teams could
-# finish anywhere. On 2026 week 5 that published Missouri's 45-17 win over
-# Florida with Florida ELEVEN PLACES HIGHER, on the Saturday it happened, with
-# nothing in between to justify it. Oklahoma State's week-2 win over Oregon came
-# out fifteen places apart on the same board.
+# Rules 1-3 are about slipping, rule 4 is about being overtaken, and nothing else
+# counts. Full reasoning in cfbrank/engine/grounds.py.
 #
-#   allowance = base_places
-#             + per_net_loss     x slide           (form)
-#             + per_rating_point x ascent x ramp    (resume, ramped by age)
-#             + per_week         x weeks_since      (age on its own)
-#   capped at max_places; every place PAST it costs gap_weight x excess^gap_exponent
+# WHY THIS IS A CAP AND NOT A PRICE. Everything in stage 4 used to be a price, so
+# once a game became an edge the optimiser could rank against it whenever the
+# arithmetic was cheaper. On 2026 week 5 that published Missouri's 45-17 win over
+# Florida with FLORIDA FIVE PLACES HIGHER, on the Saturday it happened, with
+# nothing in between. A priced "licence" on the distance was built and measured
+# first and it did narrow that -- it was still the wrong shape, because a price
+# can always be outbid and the rule above is a requirement. So each result
+# carries max_lead, the most places the LOSER may finish above the WINNER, and
+# stage 4 treats it as a hard constraint:
+#
+#     no exception   max_lead = 0      the winner must finish above the loser
+#     rule 1, 2, 3   max_lead = inf    stages 1-3 decide, i.e. "any gap"
+#     rule 4 alone   max_lead = floor(band_rate(weeks_since) x quality_diff)
+#
+# Measured on the two checked-in seasons: 21 of 28 pool results are enforced on
+# 2026 week 5 and 59 of 111 on the completed 2025 season, the board violates only
+# 1 and 3 of those respectively, and there are NO cycles among them -- so the
+# requirement is satisfiable rather than aspirational.
 #
 [stage4.grounds]
-# false restores the old behaviour exactly -- verified, not assumed: with this
-# off, the 2025 golden fixture's published order and its list of overridden
-# results both come out identical to the version before any of this existed, and
-# so does the 2026 week-5 board. Useful for isolating what this stage is doing.
+# false removes the hard requirement entirely and leaves stage 4 the pure
+# cost model it was before any of this: every result priced, none required.
 enabled = true
 
-# How far two teams may sit apart on NO grounds whatsoever -- a game played the
-# same week it is being ranked, with nothing after it. They may still swap,
-# because the base order is allowed to disagree about near-neighbours, but they
-# stay near-neighbours. This is the number that pulled Missouri and Florida from
-# eleven places apart to five.
-base_places = 2.0
+# What counts as "impressive". Rating points past the board's mean, measured on
+# the MEAN quality of the wins a team has picked up SINCE the game. B's mean must
+# clear this bar and A's must not -- one bar, not two dials, which is the owner's
+# sentence read literally. Two teams who have BOTH been beating good sides since
+# do not unlock rule 4 at all.
+#
+# The mean and not the sum, and that was measured: summing conflates quality with
+# volume, and volume grows every week. On the completed 2025 season the sum
+# reached 73 rating points for a week-8 result, which would have maxed any band on
+# its own and pinned 15 of 111 results at the ceiling -- every old result looking
+# equally undermined is the measure failing exactly where the contradictions are.
+#
+# The bar is insensitive, which is worth knowing before tuning it: the enforced
+# count moves by only 1-3 edges across bars from 3.0 to 8.0.
+impressive_bar = 6.0
 
-# Places per net subsequent loss by the winner. 1 loss to none buys 4 places;
-# a team that has dropped three more than its victim buys 12.
-per_net_loss = 4.0
+# Weeks that must have passed before rule 4 can apply at all. Rules 1-3 have no
+# such gate -- a loss counts the moment it happens -- but being overtaken takes
+# time to establish, and one good win the week after a game proves little whatever
+# it was worth.
+min_weeks = 2
 
-# How much of the loser's OWN subsequent losses forgives the winner's, as a
-# share: slide = winner_losses - loss_offset x loser_losses, floored at zero.
+# Rule 4's band: places of licence per rating point of win-quality difference,
+# ramping with time because the evidence does.
 #
-#   1.0  only the net counts -- one loss each is no grounds at all
-#   0.5  one loss each still leaves half a loss of grounds   <- shipped
-#   0.0  the loser's losses are irrelevant
+#     weeks since the game    2     3     4     5     6+
+#     places per point       0.50  0.75  1.00  1.25  1.50
 #
-# 0.5 rather than 1.0 because the owner's rule has TWO clauses joined by "or":
-# the winner having lost at all is grounds, and having lost MORE is stronger
-# grounds. At 1.0 the first clause disappears. The corner this creates is real
-# and small: a winner who has lost 4 while the loser lost 7 still registers 0.5,
-# the same as one loss each. In the region that actually occurs -- nought to two
-# losses each -- it behaves the way the sentence reads.
-loss_offset = 0.5
+# So a loser whose wins since average 8.7 rating points better, three weeks on,
+# may finish floor(0.75 x 8.7) = 6 places above the team that beat them.
+#
+# Note what this is NOT: a minimum. A small quality edge floors to zero places,
+# which is the right answer -- the exception applies and buys nothing, so the
+# result still stands.
+#
+# On a completed season nearly every rule-4 edge is 6+ weeks old and sits at the
+# ceiling, so the ramp is an early-season instrument rather than something that
+# shapes a finished board.
+band_start = 0.5
+band_step  = 0.25
+band_max   = 1.5
 
-# Places per rating point by which the loser's wins since beat the winner's.
-#
-# The quantity is the MEAN quality of the wins picked up since, not the total,
-# and that was measured. Summing conflates quality with volume, and volume grows
-# every week: on the completed 2025 season the sum reached 73 rating points for
-# a week-8 result, which blew past max_places on its own and pinned 15 of 111
-# results at the cap. Every old result then looked equally undermined and the
-# term stopped discriminating exactly where the contradictions are. A per-win
-# mean is also the plainer reading of "big wins while the other has mediocre
-# wins" -- it is about what the wins were worth, not how many there were.
-#
-# Quality is the market's neutral-field rating measured past the board's mean, so
-# beating an average team is worth 0, the same as beating nobody. That is the
-# intent: "mediocre wins" and "no wins" are the same argument. An opponent the
-# market has no rating for counts as exactly average, so an FCS cupcake earns 0.
-per_rating_point = 0.30
-
-# How long the RESUME ground takes to come into full force, in weeks. It ramps
-# linearly: at 3 weeks of a 6-week ramp it counts half. This is the owner's "it
-# increases in strength with time" as an explicit dial rather than something the
-# arithmetic does by accident -- one good win the week after a game proves
-# little however good it was. 0 turns the ramp off and the ground lands at once.
-ramp_weeks = 6.0
-
-# Places per week of age, regardless of what happened in them -- "this gap can
-# increase with time" taken on its own. A week-2 result constrains a January
-# board by about 8 places on age alone; a week-4 result constrains a week-6 board
-# by under 1.
-#
-# This DOES overlap with evidence.recency, which already makes an old result
-# cheaper to override, and the overlap is deliberate rather than overlooked.
-# Recency sets the PRICE of going against a result; this sets the DISTANCE
-# allowed once you have. A ranking can reasonably make an old result cheap to set
-# aside while still refusing to put the two teams on opposite ends of the board.
-per_week = 0.40
-
-# The hard cap on the licence. 20 of a 40-team pool means "anywhere in the
-# published 25", which is the intended reading of a thoroughly undermined result:
-# Florida beat Texas in week 6 of 2025 and then lost five more games than Texas
-# did, and Texas finishing 21 places above them is the right answer rather than a
-# failure of the constraint.
-max_places = 20.0
-
-# What the grounds forgive of the override PRICE, as a share, scaled by how much
-# of the available licence they earned: full grounds forgive this much, half the
-# licence forgives half of it. A win the winner has since undercut is a weaker
-# thing to rank against than the same win from a team still playing well.
-#
-# Measured separately from the gap term, and the honest finding is that it does
-# almost nothing on its own: with gap_weight = 0 the 2025 backtest reproduces the
-# no-grounds numbers EXACTLY (67.5% all-FBS, 64.8% AP-vs-AP). stage4.strength is
-# only 4, so the override price rarely decides anything by itself. It is carried
-# because it is the right shape, not because it moves the board.
-relief = 0.40
-
-# The price of sitting further apart than the licence allows: gap_weight x
-# (places past the licence) ^ gap_exponent. gap_exponent matches drift_exponent
-# so the two terms are commensurate -- the ordering settles where pulling the
-# pair together stops being cheaper than holding them apart, which is usually
-# both teams moving part of the way rather than one being dragged across the
-# board.
-#
-# IT DOES NOT MOVE PREDICTIVE ACCURACY. Swept on 2025, weeks 4,6,8,10,12,
-# 1,997 all-FBS games: 67.4% at 0.5, 67.3% at 1.0, 67.2% at 1.5, 67.3% at 3.0,
-# 67.4% at 6.0. That is a three-game spread -- the dial is inside the noise and
-# the value is a judgement about what the board should LOOK like. On 2026 week 5:
-#
-#   gap_weight   overridden   past licence   widest gap   biggest move
-#      off            2             0            15            4
-#      0.5            4             2            14            2
-#      1.0            4             2             8            4
-#      1.5            4             2             7            4   <- shipped
-#      3.0            3             1             6            6
-#      6.0            3             1             6            6
-#
-# 1.5 halves the worst contradiction on the live board without churning it; 3 and
-# above start paying for the last place or two with real drift.
-gap_weight   = 1.5
-gap_exponent = 1.5
 
 [output]
 rankings_path     = "docs/data/rankings.json"

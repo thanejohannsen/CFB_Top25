@@ -46,7 +46,9 @@ exactly why it is there**.
    ```
    cost = strength     × Σ conviction(each overridden result)
         + drift_weight × Σ |position − resume position| ^ drift_exponent
-        + gap_weight   × Σ (places past what the grounds licence) ^ gap_exponent
+
+   subject to: if a team beat you, it is ranked above you unless one of four
+               named things has happened since
    ```
 
    so the results it contradicts are, by construction, the least convincing ones.
@@ -143,20 +145,23 @@ single tangle of **22 mutually entangled teams**, where resolving each loop
 separately is not computable. A weighted objective has neither problem, and a
 team nobody in the pool played simply stays where its resume put it.
 
-### Setting a result aside does not make the distance free
+### A result can only be contradicted for a reason
 
-Contradicting a result used to be binary: pay for the decision once and the two
-teams could finish anywhere. That published a 45–17 Missouri win over Florida with
-**Florida eleven places higher**, on the Saturday it happened, with nothing in
-between to justify it.
+Contradicting a result used to be a matter of price: pay once and the two teams
+could finish anywhere. That published a 45–17 Missouri win over Florida with
+**Florida ranked above them**, on the Saturday it happened.
 
-So each result carries a **licence** measured in places, earned by what has
-happened *since* the game — the winner losing, the loser going on to beat better
-teams (which counts for more the longer it has been going on), and age on its own.
-With none of that, the two may swap but they stay neighbours. Every place past the
-licence is charged, so the usual outcome is both teams moving part of the way
-toward each other rather than one being dragged across the board. See
-[`TUNING.md`](TUNING.md#grounds-for-setting-a-result-aside-stage4grounds).
+**If a team beat you, it is ranked above you** — unless it has more losses than
+you, or has lost since while you have not, or has lost more often since than you
+have, or you have been beating better teams than it has for at least a fortnight.
+Those four are the whole list. The first three let the résumé decide how far apart
+you finish; the fourth caps it, by how much better your wins have been and how
+long that has been true.
+
+When the rule forces a change, **both teams move toward each other** rather than
+one being dragged to the other — Missouri and Florida come from 20th and 11th on
+résumé to 15th and 16th. See
+[`TUNING.md`](TUNING.md#when-a-result-may-be-contradicted-at-all-stage4grounds).
 
 ## Quick start
 
@@ -227,8 +232,9 @@ actually change the character of the list:
 | `stage3.strength` | 0.5 | How far a wide-gap upset pulls both teams together. **Do not set 1.0** — the stage then fights stage 4, which drags the winner straight back, and the list swings week to week. |
 | `stage4.strength` | 14.0 | Positions of resume drift that one unit of head-to-head conviction buys. |
 | `stage4.drift_exponent` | 1.5 | Above 1, long moves cost disproportionately more, so how far a result can move a team scales with how convincing it was. At 1.0 a single marginal win can carry a team across the board. |
-| `stage4.grounds.base_places` | 2.0 | How far apart two teams may sit when nothing has happened since the game to justify it. |
-| `stage4.grounds.gap_weight` | 1.5 | What a place past the licence costs. Measurably inside the noise on accuracy, so it is a judgement about what the board should look like. |
+| `stage4.grounds.enabled` | true | The four-exception requirement. `false` removes it and leaves the pure cost model. |
+| `stage4.grounds.impressive_bar` | 6.0 | Rating points past the board mean that a team's wins since must average to count as having overtaken the team that beat it. |
+| `stage4.max_block` | 4 | Teams movable as one block, which is what lets two teams meet in the middle instead of one being dragged to the other. |
 | `stage1.pool_size` | 40 | How many teams are eligible to be reordered. |
 
 Try a change without committing it:

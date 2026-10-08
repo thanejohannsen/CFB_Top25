@@ -8,6 +8,7 @@ import unittest
 from dataclasses import replace
 
 from cfbrank.config import load
+from cfbrank.engine.graph import Digraph, nontrivial_sccs
 from cfbrank.engine.pipeline import rank
 from cfbrank.models import Dataset
 from pathlib import Path
@@ -107,11 +108,11 @@ class TestCompletedSeason(unittest.TestCase):
             self.assertTrue(any("Resume order" in r for r in self.result.reasons[team]), team)
 
 
-class TestLicensedGaps(unittest.TestCase):
-    """Overriding a result no longer hands out the distance for free.
+class TestHardCaps(unittest.TestCase):
+    """The four rules, on real data.
 
     The bug this stage exists for was published: on 2026 week 5 Missouri beat
-    Florida 45-17 on the Saturday being ranked, and the board put Florida ELEVEN
+    Florida 45-17 on the Saturday being ranked, and the board put Florida FIVE
     places above them -- nothing had happened in between, because there was no in
     between. See cfbrank/engine/grounds.py.
     """
@@ -125,56 +126,98 @@ class TestLicensedGaps(unittest.TestCase):
     def test_every_pool_result_is_judged(self):
         for key, fact in self.on.edge_facts.items():
             self.assertIsNotNone(fact.grounds, key)
-            self.assertGreaterEqual(fact.grounds.allowance, 2.0, key)
+            self.assertGreaterEqual(fact.grounds.max_lead, 0.0, key)
 
-    def test_the_published_eleven_place_contradiction_is_pulled_in(self):
+    def test_a_result_with_no_exception_is_honoured(self):
+        """Missouri beat Florida the week being ranked, so nothing excuses it."""
         pair = ("Missouri", "Florida")
-        self.assertIn(pair, self.off.ordering.violated)
-        self.assertIn(pair, self.on.ordering.violated)
-        self.assertEqual(self.on.edge_facts[pair].grounds.category, "none")
-        self.assertLess(
-            self.on.ordering.gaps[pair],
-            self.off.ordering.gaps[pair],
-            "a result with nothing after it should not be contradicted by 11 places",
+        self.assertEqual(self.on.edge_facts[pair].grounds.rules, ())
+        self.assertTrue(self.on.edge_facts[pair].grounds.enforced)
+        self.assertIn(pair, self.off.ordering.violated, "unconstrained, it was dropped")
+        self.assertNotIn(pair, self.on.ordering.violated)
+        rank_of = {t: i for i, t in enumerate(self.on.order)}
+        self.assertLess(rank_of["Missouri"], rank_of["Florida"])
+
+    def test_the_pair_met_in_the_middle_rather_than_one_being_dragged(self):
+        """Base 20 and 11; parking Missouri just above Florida would be cheaper
+        to find but dearer to hold."""
+        rank_of = {t: i + 1 for i, t in enumerate(self.on.order)}
+        missouri, florida = rank_of["Missouri"], rank_of["Florida"]
+        self.assertEqual(self.on.teams["Missouri"].base_rank, 20)
+        self.assertEqual(self.on.teams["Florida"].base_rank, 11)
+        self.assertLess(missouri, florida)
+        self.assertGreater(missouri, 12, f"Missouri was dragged to Florida: {missouri}")
+        self.assertLess(florida, 19, f"Florida barely moved: {florida}")
+
+    def test_slipping_since_leaves_the_resume_order_alone(self):
+        """Ole Miss beat LSU and has since lost; LSU has not. Any gap is allowed."""
+        pair = ("Ole Miss", "LSU")
+        g = self.on.edge_facts[pair].grounds
+        self.assertIn(2, g.rules)
+        self.assertIn(3, g.rules)
+        self.assertEqual(g.max_lead, float("inf"))
+        self.assertEqual((g.winner_losses_since, g.loser_losses_since), (1, 0))
+
+    def test_a_banded_exception_binds_at_its_cap(self):
+        """Oklahoma State beat Oregon in week 2; Oregon has beaten better since."""
+        pair = ("Oklahoma State", "Oregon")
+        g = self.on.edge_facts[pair].grounds
+        self.assertEqual(g.rules, (4,))
+        self.assertEqual(g.weeks_since, 3.0)
+        self.assertEqual(g.band_rate, 0.75)
+        self.assertEqual(g.max_lead, 6.0)
+        self.assertLessEqual(self.on.ordering.leads[pair], 6)
+
+    def test_no_cap_is_broken_and_nothing_had_to_be_relaxed(self):
+        for pair, cap in self.on.ordering.max_lead.items():
+            self.assertLessEqual(self.on.ordering.leads[pair], cap, pair)
+        self.assertEqual(self.on.ordering.relaxed, [])
+
+    def test_every_enforced_result_is_honoured(self):
+        """The headline property: no exception, no override.
+
+        Note the COUNT need not rise. On 2026 week 5 it is 26 either way and only
+        the membership changes -- Missouri/Florida moves from overridden to
+        honoured and a different pair takes its place. On the completed 2025
+        season the rules do honour four more, 93 to 97.
+        """
+        honored = set(self.on.ordering.honored)
+        self.assertLessEqual(set(self.on.ordering.enforced), honored)
+        self.assertNotEqual(
+            honored, set(self.off.ordering.honored), "the rules changed something"
         )
 
-    def test_the_widest_contradiction_narrows(self):
-        def widest(res):
-            return max(res.ordering.gaps[k] for k in res.ordering.violated)
+    def test_the_enforced_chains_stay_short(self):
+        """What keeps this from being the topological-sort pathology.
 
-        self.assertLess(widest(self.on), widest(self.off))
+        If a config change ever pushes these up, order.py's docstring stops being
+        true and the measurement needs redoing.
+        """
+        graph = Digraph(sorted({t for e in self.on.ordering.enforced for t in e}))
+        for winner, loser in self.on.ordering.enforced:
+            graph.add_edge(winner, loser)
+        self.assertEqual(nontrivial_sccs(graph), [], "a cycle would be unsatisfiable")
+        depth = {}
+        for team in reversed([t for t in self.on.order if t in set(graph.nodes)]):
+            depth[team] = 1 + max(
+                (depth.get(s, 0) for s in graph.successors(team)), default=0
+            )
+        self.assertLessEqual(max(depth.values(), default=0), 6)
 
     def test_switching_it_off_restores_the_old_ordering(self):
         """The escape hatch has to be a real one, so it is pinned."""
-        plain = rank(
-            self.ds, config(2026, "stage4.grounds.enabled=false", "stage4.grounds.relief=0")
-        )
-        self.assertEqual(plain.order, self.off.order)
-        self.assertEqual(plain.ordering.gap_cost, 0.0)
-        self.assertEqual(plain.ordering.excess, {})
+        self.assertEqual(self.off.ordering.enforced, [])
+        self.assertEqual(self.off.ordering.capped, [])
+        self.assertEqual(self.off.ordering.relaxed, [])
+        self.assertEqual(self.off.ordering.start, "base")
 
-    def test_a_result_with_grounds_keeps_its_distance(self):
-        """Ole Miss beat LSU and has since lost; LSU has not. LSU may lead."""
-        pair = ("Ole Miss", "LSU")
-        g = self.on.edge_facts[pair].grounds
-        self.assertEqual(g.category, "both")
-        self.assertEqual((g.winner_losses, g.loser_losses), (1, 0))
-        self.assertGreater(g.ascent, 0.0)
-        self.assertLessEqual(self.on.ordering.excess[pair], 0.0)
-
-    def test_the_cost_terms_add_up(self):
+    def test_the_cost_is_two_terms_again(self):
         o = self.on.ordering
-        self.assertGreater(o.gap_cost, 0.0)
-        self.assertAlmostEqual(
-            o.cost, o.violation_cost + o.drift_cost + o.gap_cost, places=6
-        )
+        self.assertAlmostEqual(o.cost, o.violation_cost + o.drift_cost, places=6)
 
     def test_drift_does_not_grow_to_pay_for_the_constraint(self):
-        """Pulling a pair together must not fling anybody across the board."""
-        self.assertLessEqual(
-            max(abs(d) for d in self.on.ordering.drift.values()),
-            max(abs(d) for d in self.off.ordering.drift.values()),
-        )
+        worst = max(abs(d) for d in self.on.ordering.drift.values())
+        self.assertLess(worst, len(self.on.order) // 2)
 
 
 class TestLiveSeason(unittest.TestCase):
@@ -239,33 +282,40 @@ class TestPayload(unittest.TestCase):
             for e in row["h2h"]["wins_vs_pool"] + row["h2h"]["losses_vs_pool"]:
                 self.assertIn(e["status"], ("honored", "overridden"))
 
-    def test_every_published_result_carries_its_licence(self):
-        """The page explains how wide a contradiction may be without any rules."""
+    def test_every_published_result_carries_its_rules(self):
+        """The page explains why a contradiction is permitted, with no rules of its own."""
         seen = 0
         for row in self.payload["rankings"]:
             for e in row["h2h"]["wins_vs_pool"] + row["h2h"]["losses_vs_pool"]:
                 g = e["grounds"]
                 self.assertIsNotNone(g, (e["winner"], e["loser"]))
-                self.assertIn(g["category"], ("none", "age", "form", "resume", "both"))
-                self.assertIn(g["severity"], ("none", "slight", "clear", "decisive"))
-                self.assertGreaterEqual(g["allowance"], 0.0)
-                self.assertGreaterEqual(e["excess"], 0.0)
-                # An honoured result sits above its victim, so a negative gap,
-                # and it is never charged for the distance.
+                self.assertTrue(set(g["rules"]) <= {1, 2, 3, 4}, g["rules"])
+                self.assertEqual(g["enforced"], not g["rules"])
+                # An unbounded cap publishes as null. A float infinity would be
+                # rejected by validate_payload's NaN/Infinity scan, and
+                # round_floats passes one straight through.
+                if g["max_lead"] is not None:
+                    self.assertGreaterEqual(g["max_lead"], 0)
+                if g["enforced"]:
+                    self.assertEqual(g["max_lead"], 0)
+                    self.assertEqual(e["status"], "honored", (e["winner"], e["loser"]))
                 if e["status"] == "honored":
-                    self.assertLess(e["gap"], 0)
-                    self.assertEqual(e["excess"], 0.0)
+                    self.assertLess(e["lead"], 0)
                 else:
-                    self.assertGreater(e["gap"], 0)
-                self.assertLessEqual(e["price"], e["weight"] + 1e-9)
+                    self.assertGreater(e["lead"], 0)
                 seen += 1
         self.assertGreater(seen, 0)
 
-    def test_the_gap_term_is_reported_in_the_cost_breakdown(self):
+    def test_no_infinity_reaches_the_payload(self):
+        blob = dumps_stable(self.payload, 4)
+        for token in ("Infinity", "-Infinity", "NaN"):
+            self.assertNotIn(token, blob)
+
+    def test_the_cost_breakdown_is_two_terms(self):
         cost = self.payload["meta"]["cost"]
-        self.assertIn("gaps", cost)
+        self.assertNotIn("gaps", cost, "the priced gap term was removed")
         self.assertAlmostEqual(
-            cost["total"], cost["overrides"] + cost["drift"] + cost["gaps"], places=3
+            cost["total"], cost["overrides"] + cost["drift"], places=3
         )
 
     def test_content_hash_ignores_timestamps(self):

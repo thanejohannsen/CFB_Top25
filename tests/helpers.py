@@ -145,21 +145,24 @@ def ppa(
     )
 
 
-def grounds(allowance: float, **kw) -> Grounds:
-    """A minimal Grounds when only the licensed gap matters."""
+def grounds(max_lead: float, rules=(1,), **kw) -> Grounds:
+    """A minimal Grounds when only the cap matters.
+
+    Defaults to rule 1 so the cap is one an exception granted; pass `rules=()`
+    for an ENFORCED result, where `max_lead` should be 0.
+    """
     fields = dict(
-        category="form",
-        severity="clear",
+        rules=tuple(rules),
+        max_lead=float(max_lead),
         weeks_since=4.0,
-        winner_losses=1,
-        loser_losses=0,
-        slide=1.0,
-        winner_credit=0.0,
-        loser_credit=0.0,
-        ascent=0.0,
-        ramp=1.0,
-        allowance=float(allowance),
-        relief=0.0,
+        winner_losses=2,
+        loser_losses=1,
+        winner_losses_since=1,
+        loser_losses_since=0,
+        winner_quality=0.0,
+        loser_quality=0.0,
+        quality_diff=0.0,
+        band_rate=0.0,
     )
     fields.update(kw)
     return Grounds(**fields)
@@ -191,9 +194,24 @@ def fact(
     )
 
 
-def weights(pairs: Sequence[tuple[str, str, float]]) -> dict[tuple[str, str], EdgeFact]:
-    """(winner, loser, weight) triples, or (winner, loser, weight, licence)."""
+def weights(pairs: Sequence[tuple]) -> dict[tuple[str, str], EdgeFact]:
+    """(winner, loser, weight) triples; a 4th element is the cap on the loser's lead.
+
+    No 4th element means NO grounds object at all, which stage 4 reads as
+    unconstrained -- so every test written before the caps existed still describes
+    the pure cost model.
+    """
     return {
-        (p[0], p[1]): fact(p[0], p[1], p[2], grounds(p[3]) if len(p) > 3 else None)
+        (p[0], p[1]): fact(p[0], p[1], p[2], _cap_grounds(p[3]) if len(p) > 3 else None)
         for p in pairs
     }
+
+
+def _cap_grounds(max_lead: float) -> Grounds:
+    """An enforced result for a cap of 0, otherwise one an exception unlocked."""
+    return grounds(max_lead, rules=() if max_lead == 0 else (1,))
+
+
+def caps(pairs: Sequence[tuple]) -> dict[tuple[str, str], float]:
+    """The `max_lead` mapping for the same (winner, loser, weight, cap) tuples."""
+    return {(p[0], p[1]): float(p[3]) for p in pairs if len(p) > 3}

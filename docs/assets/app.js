@@ -547,37 +547,36 @@
     });
   }
 
-  // ---------- the licensed gap ----------
-  // A result can be set aside, but how far apart the two may then sit is earned:
-  // the winner having slipped since, or the loser having beaten better teams
-  // since. Published per result as `grounds`, so this needs no ranking rules.
-  var GROUNDS_LABEL = {
-    none: "nothing since",
-    age: "age only",
-    form: "winner has slipped",
-    resume: "loser has beaten better",
-    both: "both"
+  // ---------- the four rules ----------
+  // A result stands unless one of four things has happened since the game. Which
+  // ones apply, and how far apart the two may then sit, are published per result
+  // as `grounds`, so this needs no ranking rules of its own.
+  var RULE_LABEL = {
+    1: "winner has more losses",
+    2: "winner has lost since",
+    3: "winner has lost more since",
+    4: "loser has beaten better since"
   };
 
-  function groundsBadge(e) {
+  function rulesBadge(e) {
     var g = e.grounds;
     if (!g) return [el("span", { class: "muted", text: "\u2014" })];
-    var label = GROUNDS_LABEL[g.category] || g.category;
-    var kids = [el("span", { class: "state grounds-" + g.category, text: label })];
-    if (g.severity && g.severity !== "none") {
-      kids.push(el("span", { class: "muted", text: " " + g.severity }));
+    if (!g.rules || !g.rules.length) {
+      return [el("span", { class: "state rule-none", text: "no exception" })];
     }
-    return kids;
+    // Rule 2 is the N=1 case of rule 3, so only the sharper label is shown.
+    var shown = g.rules.filter(function (r) { return !(r === 3 && g.rules.indexOf(2) >= 0); });
+    return [el("span", {
+      class: "state rule-" + shown[shown.length - 1],
+      text: shown.map(function (r) { return RULE_LABEL[r] || ("rule " + r); }).join(", ")
+    })];
   }
 
-  function gapLabel(e) {
+  function leadLabel(e) {
     var g = e.grounds;
-    if (!g || e.gap === null || e.gap === undefined) return "\u2014";
-    var places = Math.abs(e.gap) + " / " + num(g.allowance, 0);
-    if (e.excess > 0) {
-      return places + " (+" + num(e.excess, 0) + ")";
-    }
-    return places;
+    if (!g || e.lead === null || e.lead === undefined) return "\u2014";
+    // max_lead is null when the exception allows any gap at all.
+    return Math.abs(e.lead) + " / " + (g.max_lead === null ? "any" : num(g.max_lead, 0));
   }
 
   // ---------- overridden, regressions, tail ----------
@@ -595,8 +594,8 @@
         el("th", { scope: "col", class: "num", text: "Score" }),
         el("th", { scope: "col", text: "At" }),
         el("th", { scope: "col", class: "num", text: "Weight" }),
-        el("th", { scope: "col", text: "Grounds" }),
-        el("th", { scope: "col", class: "num", text: "Gap / allowed" }),
+        el("th", { scope: "col", text: "What permits it" }),
+        el("th", { scope: "col", class: "num", text: "Places / allowed" }),
         el("th", { scope: "col", text: "Why it was set aside" })
       ])]),
       el("tbody", null, rows.map(function (e) {
@@ -609,8 +608,8 @@
           el("td", { class: "num", text: e.score }),
           el("td", { text: e.site }),
           el("td", { class: "num", text: num(e.weight, 2) }),
-          el("td", null, groundsBadge(e)),
-          el("td", { class: "num", text: gapLabel(e) }),
+          el("td", null, rulesBadge(e)),
+          el("td", { class: "num", text: leadLabel(e) }),
           el("td", { text: e.reason || "" })
         ]);
       }))

@@ -27,28 +27,33 @@ ATTRIBUTION = (
 
 
 def _grounds(fact: EdgeFact) -> dict[str, Any] | None:
-    """What has happened since the game, and how far apart that lets the two sit.
+    """Which of the four exceptions let this result be ranked against, and how far.
 
-    Published per result so the page can say *why* a contradiction is allowed to
-    be as wide as it is, without knowing any ranking rules. None when the grounds
-    stage is switched off.
+    Published per result so the page can say why a contradiction is permitted at
+    all, and how wide it is allowed to be, without knowing any ranking rules.
+    None when the stage is switched off.
     """
     g = fact.grounds
     if g is None:
         return None
     return {
-        "category": g.category,
-        "severity": g.severity,
+        # Which of the four exceptions apply. Empty means the result is ENFORCED:
+        # nothing since the game lets the ranking go against it.
+        "rules": list(g.rules),
+        # Places the loser may finish above the winner. **null, never Infinity** --
+        # validate_payload's NaN/Infinity scan would reject the payload, and
+        # round_floats passes a float infinity straight through.
+        "max_lead": None if g.max_lead == float("inf") else g.max_lead,
+        "enforced": g.enforced,
         "weeks_since": g.weeks_since,
-        "winner_losses_since": g.winner_losses,
-        "loser_losses_since": g.loser_losses,
-        "slide": g.slide,
-        "winner_win_quality": g.winner_credit,
-        "loser_win_quality": g.loser_credit,
-        "ascent": g.ascent,
-        "ramp": g.ramp,
-        "allowance": g.allowance,
-        "relief": g.relief,
+        "winner_losses": g.winner_losses,
+        "loser_losses": g.loser_losses,
+        "winner_losses_since": g.winner_losses_since,
+        "loser_losses_since": g.loser_losses_since,
+        "winner_win_quality": g.winner_quality,
+        "loser_win_quality": g.loser_quality,
+        "quality_diff": g.quality_diff,
+        "band_rate": g.band_rate,
     }
 
 
@@ -58,10 +63,7 @@ def _edge(
     overridden: bool,
     ordering: OrderResult | None = None,
 ) -> dict[str, Any]:
-    gap = excess = None
-    if ordering is not None:
-        gap = ordering.gaps.get((fact.winner, fact.loser))
-        excess = ordering.excess.get((fact.winner, fact.loser))
+    lead = None if ordering is None else ordering.leads.get((fact.winner, fact.loser))
     return {
         "winner": fact.winner,
         "loser": fact.loser,
@@ -78,16 +80,12 @@ def _edge(
         "common_diff": fact.common_diff,
         "conviction": fact.conviction,
         "weight": fact.weight,
-        # What stage 4 actually paid, after the relief the grounds earn. Equal to
-        # `weight` when there are no grounds, or when the grounds stage is off.
-        "price": fact.price,
         "components": dict(fact.components),
         "status": "overridden" if overridden else "honored",
         "grounds": _grounds(fact),
-        # Places the loser finished above the winner (negative = the result was
-        # honoured), and how many of those were past what the grounds licensed.
-        "gap": gap,
-        "excess": excess,
+        # Places the loser finished above the winner; negative means the result
+        # was honoured.
+        "lead": lead,
     }
 
 
@@ -403,7 +401,6 @@ def build_payload(
             "cost": {
                 "total": result.ordering.cost,
                 "overrides": result.ordering.violation_cost,
-                "gaps": result.ordering.gap_cost,
                 "drift": result.ordering.drift_cost,
                 "passes": result.ordering.passes,
             },

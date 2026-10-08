@@ -67,6 +67,7 @@ DEFAULTS: dict[str, Any] = {
         "drift_exponent": 1.5,
         "split_series": "most_recent",
         "max_passes": 400,
+        "max_block": 4,
         "evidence": {
             "w_margin": 0.50,
             "w_rating_gap": 0.30,
@@ -83,16 +84,11 @@ DEFAULTS: dict[str, Any] = {
         },
         "grounds": {
             "enabled": True,
-            "base_places": 2.0,
-            "per_net_loss": 4.0,
-            "loss_offset": 0.5,
-            "per_rating_point": 0.30,
-            "ramp_weeks": 6.0,
-            "per_week": 0.40,
-            "max_places": 20.0,
-            "relief": 0.40,
-            "gap_weight": 1.5,
-            "gap_exponent": 1.5,
+            "impressive_bar": 6.0,
+            "min_weeks": 2,
+            "band_start": 0.5,
+            "band_step": 0.25,
+            "band_max": 1.5,
         },
     },
     "output": {
@@ -279,32 +275,27 @@ def validate(data: Mapping[str, Any]) -> None:
             "stage4.evidence.weight_floor must be > 0 -- overriding a result has to cost something"
         )
 
+    block = cfg["stage4.max_block"]
+    if not isinstance(block, int) or not 2 <= block <= pool:
+        raise ConfigError(
+            "stage4.max_block must be an integer in 2..pool_size -- blocks of one are "
+            "the ordinary move, and a block cannot be larger than the board"
+        )
+
     gr = cfg.section("stage4.grounds")
     if not isinstance(gr.get("enabled"), bool):
         raise ConfigError("stage4.grounds.enabled must be true or false")
-    for key in (
-        "base_places", "per_net_loss", "per_rating_point", "per_week",
-        "max_places", "gap_weight", "ramp_weeks",
-    ):
+    for key in ("impressive_bar", "band_start", "band_step"):
         if gr[key] < 0:
             raise ConfigError(f"stage4.grounds.{key} must be >= 0")
-    if not 0.0 <= gr["loss_offset"] <= 1.0:
+    weeks = gr["min_weeks"]
+    if not isinstance(weeks, int) or weeks < 0:
+        raise ConfigError("stage4.grounds.min_weeks must be an integer >= 0")
+    if gr["band_max"] < gr["band_start"]:
         raise ConfigError(
-            "stage4.grounds.loss_offset must be in 0.0..1.0 -- it is the SHARE of the "
-            "loser's own subsequent losses that forgives the winner's"
+            "stage4.grounds.band_max must be >= band_start -- the band widens with time, "
+            "so its ceiling cannot sit below where it starts"
         )
-    if not 0.0 <= gr["relief"] < 1.0:
-        raise ConfigError(
-            "stage4.grounds.relief must be in 0.0..1.0 (exclusive) -- grounds may make "
-            "overriding a result cheaper, never free"
-        )
-    if gr["max_places"] < gr["base_places"]:
-        raise ConfigError(
-            "stage4.grounds.max_places must be >= base_places -- the cap on the licence "
-            "cannot sit below the licence granted with no grounds at all"
-        )
-    if not 1.0 <= gr["gap_exponent"] <= 3.0:
-        raise ConfigError("stage4.grounds.gap_exponent must be in 1.0..3.0")
 
     prec = cfg["output.float_precision"]
     if not isinstance(prec, int) or not 0 <= prec <= 12:

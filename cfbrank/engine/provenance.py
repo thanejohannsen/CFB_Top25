@@ -43,56 +43,51 @@ def describe_loss(fact: EdgeFact, opponent_rank: int | None = None) -> str:
     )
 
 
-# How a set of grounds reads in a sentence. Keyed on `Grounds.category`, so a new
-# category cannot be added without deciding what it says.
-GROUNDS_PHRASE = {
-    "none": "nothing has happened since to undermine it",  # the game is this week
-    "age": "nothing has happened since beyond the weeks going by",
-    "form": "the winner has slipped since",
-    "resume": "the loser has beaten better teams since",
-    "both": "the winner has slipped since and the loser has beaten better teams",
+# One clause per exception, in the owner's own terms. Keyed on the rule number, so
+# a new rule cannot be added without deciding what it says.
+RULE_PHRASE = {
+    1: "{winner} has more losses, {wl} to {ll}",
+    2: "{winner} has lost {ws} since and {loser} none",
+    3: "{winner} has lost {ws} since against {loser}'s {ls}",
+    4: "{loser}'s wins since average {diff:.1f} rating points better",
 }
+
+ENFORCED_PHRASE = "nothing since the game lets this result be ranked against"
 
 
 def grounds_reason(fact: EdgeFact) -> str:
-    """What has happened since the game, and how far apart that lets the two sit.
+    """Which of the four exceptions unlocked this override, and how far it goes.
 
-    This is the second half of the answer to "my team beat them and is ranked
-    below them": the first half is how weak the game was (`override_reason`), and
-    this is what the weeks since have done to it.
+    The second half of the answer to "my team beat them and is ranked below
+    them": the first half is how weak the game was (`override_reason`), and this
+    is what has happened since that permits going against it at all.
     """
     g = fact.grounds
     if g is None:
         return ""
-    bits: list[str] = []
-    if g.slide > 0:
-        if not g.loser_losses:
-            bits.append(f"{fact.winner} has lost {g.winner_losses} since and {fact.loser} none")
-        elif g.winner_losses > g.loser_losses:
-            bits.append(
-                f"{fact.winner} has lost {g.winner_losses} since"
-                f" against {fact.loser}'s {g.loser_losses}"
-            )
-        else:
-            # Having lost at all is grounds in its own right, so this fires even
-            # when the loser has slipped further. It is worth little: see
-            # `loss_offset` in engine/grounds.py.
-            bits.append(
-                f"both have lost since -- {fact.winner} {g.winner_losses},"
-                f" {fact.loser} {g.loser_losses}"
-            )
-    if g.ascent > 0:
+    if g.enforced:
+        return ENFORCED_PHRASE
+
+    fields = {
+        "winner": fact.winner, "loser": fact.loser,
+        "wl": g.winner_losses, "ll": g.loser_losses,
+        "ws": g.winner_losses_since, "ls": g.loser_losses_since,
+        "diff": g.quality_diff,
+    }
+    # Rule 2 is the N=1 case of rule 3, so when both hold only the sharper
+    # sentence is worth printing.
+    spoken = [r for r in g.rules if not (r == 3 and 2 in g.rules)]
+    bits = [RULE_PHRASE[r].format(**fields) for r in spoken]
+
+    if g.banded:
+        places = int(g.max_lead)
         bits.append(
-            f"{fact.loser}'s wins since average {g.ascent:.1f} rating points better"
-            f" than {fact.winner}'s"
-            + (f", at {g.ramp * 100:.0f}% force {g.weeks_since:.0f} weeks on" if g.ramp < 1 else "")
+            f"{g.weeks_since:.0f} weeks on, so they may lead by"
+            f" {places} place{'' if places == 1 else 's'}"
         )
-    if not bits:
-        bits.append(GROUNDS_PHRASE.get(g.category, g.category))
-    places = round(g.allowance)
-    worth = f"worth {places} place{'' if places == 1 else 's'} of separation"
-    verdict = "no grounds at all" if g.severity == "none" else f"{g.severity} grounds"
-    return f"{'; '.join(bits)} -- {verdict}, {worth}"
+    else:
+        bits.append("so the resume order decides how far apart they sit")
+    return "; ".join(bits)
 
 
 def override_reason(fact: EdgeFact) -> str:

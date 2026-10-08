@@ -154,18 +154,15 @@ def print_table(result: RankingResult, n: int, out=None) -> None:
         rank_of = {t: i + 1 for i, t in enumerate(result.order)}
         for w, l in result.ordering.violated:
             f = result.edge_facts[(w, l)]
-            # The licensed gap, where there is one: how far apart they finished
-            # against how far what happened since the game allows them to.
-            gap = result.ordering.gaps.get((w, l))
-            excess = result.ordering.excess.get((w, l))
+            # How far apart they finished, and which of the four exceptions let
+            # the result be ranked against at all.
+            lead = result.ordering.leads.get((w, l))
             licence = ""
-            if f.grounds is not None and gap is not None:
-                licence = (
-                    f", gap {gap}/{f.grounds.allowance:.0f}"
-                    f" ({f.grounds.category}"
-                    + (f", +{excess:.0f} over" if excess else "")
-                    + ")"
-                )
+            if f.grounds is not None and lead is not None:
+                cap = f.grounds.max_lead
+                allowed = "any" if cap == float("inf") else f"{cap:.0f}"
+                rules = ",".join(str(n) for n in f.grounds.rules) or "none"
+                licence = f", lead {lead}/{allowed} (rule {rules})"
             print(
                 f"    {w} (#{rank_of[w]}) beat {l} (#{rank_of[l]}) {f.score} {f.site}"
                 f"  adj {f.adj_margin:+.1f}, rating gap {f.rating_gap:+.1f},"

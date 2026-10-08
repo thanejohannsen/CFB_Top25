@@ -1,12 +1,16 @@
-"""The grounds for setting a head-to-head result aside -- engine/grounds.py.
+"""The four rules that decide whether a result may be ranked against.
 
-Two grounds, both of which answer "my team beat them and is ranked below them":
-the winner has slipped since, or the loser has beaten better teams since. What
-they buy is a licence measured in places, which is what stage 4 charges against.
+    Team A beat Team B. A HAS to be ranked above B unless
+      1. A has more losses than B                            (any gap)
+      2. A has lost since the game and B has not             (any gap)
+      3. A has lost more times since than B has              (any gap)
+      4. B has impressive wins and A has mediocre wins, and
+         at least min_weeks have passed                   (BANDED gap)
 """
 
 from __future__ import annotations
 
+import math
 import random
 import unittest
 
@@ -15,244 +19,250 @@ from tests.helpers import result
 
 CFG = {
     "enabled": True,
-    "base_places": 2.0,
-    "per_net_loss": 4.0,
-    "loss_offset": 0.5,
-    "per_rating_point": 0.30,
-    "ramp_weeks": 6.0,
-    "per_week": 0.40,
-    "max_places": 20.0,
-    "relief": 0.40,
+    "impressive_bar": 6.0,
+    "min_weeks": 2,
+    "band_start": 0.5,
+    "band_step": 0.25,
+    "band_max": 1.5,
 }
 
-# A board whose mean rating is exactly 0, so credit past the bar is just the
-# rating itself. GREAT is a top-ten side, MEH is average, BAD is a doormat.
-QUALITY = {"GREAT": 20.0, "GOOD": 10.0, "MEH": 0.0, "BAD": -20.0, "W": 0.0, "L": 0.0}
-
-
-def compute(edges, after, cfg=None, quality=None):
-    return grounds.compute(edges, list(edges) + list(after), quality or QUALITY, cfg or CFG)
-
-
-def one(edges, after, cfg=None, quality=None):
-    out = compute(edges, after, cfg, quality)
-    return next(iter(out.values()))
-
+# These sum to ZERO, so the board mean is 0 and quality past the bar is just the
+# rating. GREAT and GOOD clear the impressive bar of 6.0 comfortably, FINE clears
+# it by a hair, OKAY misses by a hair, MEH is dead average.
+QUALITY = {
+    "GREAT": 20.0, "GOOD": 10.0, "FINE": 6.1, "OKAY": 5.9,
+    "MEH": 0.0, "BAD": -20.0, "W": -11.0, "L": -11.0,
+}
+assert sum(QUALITY.values()) == 0.0, "the tests read the bar as zero"
 
 # The result being judged: W beat L in week 2. Everything else happens after it.
 GAME = result("W", "L", week=2)
 
 
-class TestNoGrounds(unittest.TestCase):
-    def test_nothing_since_licenses_exactly_the_base(self):
-        """The published bug: a 28-point win and the loser eleven places higher.
+def one(after, cfg=None, quality=None, edges=(GAME,)):
+    out = grounds.compute(
+        list(edges), list(edges) + list(after), quality or QUALITY, cfg or CFG
+    )
+    return out[(edges[0].winner, edges[0].loser)]
 
-        Missouri beat Florida 45-17 on the Saturday being ranked. Nothing had
-        happened since, because there was no since -- so the two may swap, but
-        they stay neighbours.
+
+class TestEnforcedByDefault(unittest.TestCase):
+    """With none of the four rules met, the result simply stands."""
+
+    def test_nothing_since_enforces_the_result(self):
+        """The published bug: Missouri beat Florida 45-17 and Florida ranked above.
+
+        Nothing had happened since, because there was no since -- the game was the
+        week being ranked. Under these rules that cannot be overridden at all.
         """
-        g = one([GAME], [])
-        self.assertEqual(g.category, "none")
-        self.assertEqual(g.severity, "none")
-        self.assertAlmostEqual(g.allowance, CFG["base_places"])
-        self.assertAlmostEqual(g.relief, 0.0)
+        g = one([])
+        self.assertEqual(g.rules, ())
+        self.assertTrue(g.enforced)
+        self.assertFalse(g.banded)
+        self.assertEqual(g.max_lead, 0.0)
 
-    def test_a_disabled_stage_grants_no_licence_at_all(self):
-        self.assertEqual(compute([GAME], [], dict(CFG, enabled=False)), {})
+    def test_a_disabled_stage_imposes_nothing(self):
+        self.assertEqual(grounds.compute([GAME], [GAME], QUALITY, dict(CFG, enabled=False)), {})
 
-    def test_the_winner_still_playing_well_earns_nothing(self):
-        """Both unbeaten since, winner's wins the better ones: no grounds."""
-        g = one([GAME], [result("W", "GREAT", week=3), result("L", "MEH", week=3)])
-        self.assertEqual(g.category, "age")
-        self.assertAlmostEqual(g.ascent, 0.0)
-        self.assertAlmostEqual(g.slide, 0.0)
+    def test_a_winner_still_playing_well_is_still_enforced(self):
+        """Neither has lost, and the winner's wins since are the better ones."""
+        g = one([result("W", "GREAT", week=3), result("L", "MEH", week=3)])
+        self.assertEqual(g.rules, ())
+        self.assertEqual(g.max_lead, 0.0)
+
+    def test_age_alone_is_not_an_exception(self):
+        """Time passing is not one of the four rules, however much of it passes."""
+        g = one([result("MEH", "BAD", week=15)])
+        self.assertEqual(g.rules, ())
+        self.assertEqual(g.max_lead, 0.0)
+        self.assertGreater(g.weeks_since, 10)
 
 
-class TestFormGround(unittest.TestCase):
-    """The winner has lost since -- and lost more often than the team it beat."""
+class TestRuleOneMoreLosses(unittest.TestCase):
+    """A has more losses than B. Total losses, not losses since."""
 
-    def test_a_subsequent_loss_widens_the_licence(self):
-        g = one([GAME], [result("GREAT", "W", week=4)])
-        self.assertEqual(g.category, "form")
-        self.assertEqual(g.winner_losses, 1)
-        self.assertEqual(g.loser_losses, 0)
-        self.assertAlmostEqual(g.slide, 1.0)
-        self.assertGreater(g.allowance, CFG["base_places"])
+    # The loser's defeat to the WINNER counts in its own total, so the winner
+    # needs to be two losses up before rule 1 fires on a one-loss opponent.
+    def test_more_total_losses_unlocks_any_gap(self):
+        g = one([result("GREAT", "W", week=1), result("GOOD", "W", week=1)])
+        self.assertEqual(g.rules, (1,), "both losses came BEFORE the game")
+        self.assertEqual(g.max_lead, math.inf)
+        self.assertEqual((g.winner_losses, g.loser_losses), (2, 1))
 
-    def test_losing_more_is_stronger_grounds_than_losing_once(self):
-        one_loss = one([GAME], [result("GREAT", "W", week=4)])
-        two_losses = one([GAME], [result("GREAT", "W", week=4), result("GOOD", "W", week=5)])
-        self.assertGreater(two_losses.slide, one_loss.slide)
-        self.assertGreater(two_losses.allowance, one_loss.allowance)
+    def test_equal_total_losses_is_not_an_exception(self):
+        g = one([result("GREAT", "W", week=1)])
+        self.assertNotIn(1, g.rules)
+        self.assertEqual((g.winner_losses, g.loser_losses), (1, 1))
+        self.assertEqual(g.max_lead, 0.0)
 
-    def test_the_loser_slipping_too_forgives_part_of_it(self):
-        alone = one([GAME], [result("GREAT", "W", week=4)])
-        both = one([GAME], [result("GREAT", "W", week=4), result("GREAT", "L", week=4)])
-        self.assertLess(both.slide, alone.slide)
-        self.assertGreater(both.slide, 0.0, "having lost at all is still grounds")
+    def test_fewer_total_losses_is_not_an_exception(self):
+        g = one([result("GREAT", "L", week=1), result("GOOD", "L", week=3)])
+        self.assertEqual(g.rules, ())
+        self.assertEqual(g.max_lead, 0.0)
 
-    def test_loss_offset_one_leaves_only_the_net(self):
-        cfg = dict(CFG, loss_offset=1.0)
-        both = one([GAME], [result("GREAT", "W", week=4), result("GREAT", "L", week=4)], cfg)
-        self.assertAlmostEqual(both.slide, 0.0)
-        self.assertEqual(both.category, "age")
 
-    def test_the_losers_losses_alone_are_no_grounds(self):
+class TestRulesTwoAndThreeLostSince(unittest.TestCase):
+    """Rule 2 is the N=1 case of rule 3, so both are reported when both hold."""
+
+    def test_losing_since_while_the_other_has_not(self):
+        g = one([result("GREAT", "W", week=4)])
+        self.assertEqual(g.rules, (2, 3))
+        self.assertEqual(g.max_lead, math.inf)
+        self.assertEqual((g.winner_losses_since, g.loser_losses_since), (1, 0))
+
+    def test_strictly_more_losses_since_counts_even_when_both_have_lost(self):
+        g = one([
+            result("GREAT", "W", week=4), result("GOOD", "W", week=5),
+            result("GREAT", "L", week=4),
+        ])
+        self.assertIn(3, g.rules)
+        self.assertNotIn(2, g.rules, "rule 2 needs the loser to be unbeaten since")
+        self.assertEqual(g.max_lead, math.inf)
+
+    def test_equal_losses_since_is_not_rule_three(self):
+        g = one([result("GREAT", "W", week=4), result("GREAT", "L", week=4)])
+        self.assertNotIn(2, g.rules)
+        self.assertNotIn(3, g.rules)
+
+    def test_the_loser_slipping_more_is_no_exception_at_all(self):
         """The result gets STRONGER when the team that lost it keeps losing."""
-        g = one([GAME], [result("GREAT", "L", week=4), result("GOOD", "L", week=5)])
-        self.assertAlmostEqual(g.slide, 0.0)
-        self.assertEqual(g.loser_losses, 2)
+        g = one([result("GREAT", "L", week=4), result("GOOD", "L", week=5)])
+        self.assertEqual(g.rules, ())
+        self.assertEqual(g.max_lead, 0.0)
+        self.assertEqual(g.loser_losses_since, 2)
 
-    def test_losses_before_the_game_do_not_count(self):
-        g = one([GAME], [result("GREAT", "W", week=1)])
-        self.assertEqual(g.winner_losses, 0)
-        self.assertAlmostEqual(g.slide, 0.0)
+    def test_losses_before_the_game_are_not_losses_since(self):
+        g = one([result("GREAT", "W", week=1)])
+        self.assertEqual(g.winner_losses_since, 0)
+        self.assertNotIn(2, g.rules)
+        self.assertNotIn(3, g.rules)
 
 
-class TestResumeGround(unittest.TestCase):
-    """The loser has since been beating better teams than the winner has."""
+class TestRuleFourWinQuality(unittest.TestCase):
+    """B has impressive wins since, A has mediocre ones, and time has passed."""
 
-    def test_the_loser_beating_better_teams_widens_the_licence(self):
-        g = one([GAME], [result("L", "GREAT", week=4), result("W", "BAD", week=4)])
-        self.assertEqual(g.category, "resume")
-        self.assertGreater(g.ascent, 0.0)
-        self.assertGreater(g.allowance, CFG["base_places"])
+    def fires(self, after, cfg=None):
+        return one(after, cfg)
 
-    def test_it_strengthens_with_time(self):
-        """The owner's rule: a few weeks of good wins means more than one week.
+    def test_the_loser_beating_better_teams_unlocks_a_banded_gap(self):
+        g = self.fires([result("L", "GREAT", week=4), result("W", "MEH", week=4)])
+        self.assertEqual(g.rules, (4,))
+        self.assertTrue(g.banded)
+        self.assertFalse(g.enforced)
+        self.assertLess(g.max_lead, math.inf)
+        self.assertGreater(g.max_lead, 0)
 
-        Same evidence, read at increasing distance from the game. The ramp is the
-        dial that does it, so this is the test that would fail if it were dropped.
-        """
-        seen = []
-        for week in (3, 5, 8):
-            after = [result("L", "GREAT", week=3), result("W", "BAD", week=3)]
-            after.append(result("MEH", "BAD", week=week))  # moves the latest week on
-            g = one([GAME], after)
-            seen.append((g.ramp, g.allowance))
-        ramps = [r for r, _ in seen]
-        allowances = [a for _, a in seen]
-        self.assertEqual(ramps, sorted(ramps))
-        self.assertLess(ramps[0], ramps[-1])
-        self.assertLess(allowances[0], allowances[-1])
+    def test_it_needs_min_weeks_to_have_passed(self):
+        """One good win the week after proves nothing, however good it was."""
+        g = self.fires([result("L", "GREAT", week=3)])
+        self.assertEqual(g.weeks_since, 1.0)
+        self.assertEqual(g.rules, ())
+        self.assertEqual(g.max_lead, 0.0)
 
-    def test_a_ramp_of_zero_lands_the_ground_at_once(self):
-        after = [result("L", "GREAT", week=3), result("W", "BAD", week=3)]
-        g = one([GAME], after, dict(CFG, ramp_weeks=0.0))
-        self.assertAlmostEqual(g.ramp, 1.0)
+    def test_both_teams_beating_good_sides_is_not_an_exception(self):
+        """"B impressive AND A mediocre" is one bar, so this fails the A half."""
+        g = self.fires([result("L", "GREAT", week=4), result("W", "GREAT", week=4)])
+        self.assertNotIn(4, g.rules)
+        self.assertGreaterEqual(g.winner_quality, CFG["impressive_bar"])
 
-    def test_quality_is_the_MEAN_of_the_wins_not_the_sum(self):
+    def test_the_band_widens_with_time(self):
+        rates, leads = [], []
+        for week in (4, 5, 6, 7, 8):
+            after = [result("L", "GREAT", week=3), result("W", "MEH", week=3),
+                     result("MEH", "BAD", week=week)]
+            g = self.fires(after)
+            rates.append(g.band_rate)
+            leads.append(g.max_lead)
+        self.assertEqual(rates, [0.5, 0.75, 1.0, 1.25, 1.5], "the owner's ramp")
+        self.assertEqual(leads, sorted(leads))
+        self.assertLess(leads[0], leads[-1])
+
+    def test_the_band_stops_at_its_ceiling(self):
+        after = [result("L", "GREAT", week=3), result("W", "MEH", week=3),
+                 result("MEH", "BAD", week=20)]
+        self.assertEqual(self.fires(after).band_rate, CFG["band_max"])
+
+    def test_the_cap_is_the_floor_of_rate_times_quality_difference(self):
+        after = [result("L", "GREAT", week=3), result("W", "MEH", week=3),
+                 result("MEH", "BAD", week=5)]
+        g = self.fires(after)
+        self.assertEqual(g.band_rate, 0.75)
+        self.assertAlmostEqual(g.quality_diff, 20.0)
+        self.assertEqual(g.max_lead, 15.0)
+        self.assertEqual(g.max_lead, float(math.floor(g.band_rate * g.quality_diff)))
+
+    def test_a_tiny_quality_edge_buys_no_places(self):
+        """The exception applies and is worth nothing, so the result still stands."""
+        after = [result("L", "FINE", week=3), result("W", "OKAY", week=3),
+                 result("MEH", "BAD", week=4)]
+        g = one(after)
+        self.assertEqual(g.rules, (4,))
+        self.assertAlmostEqual(g.quality_diff, 0.2)
+        self.assertEqual(g.band_rate, 0.5)
+        self.assertEqual(g.max_lead, 0.0, "floor(0.5 x 0.2) is zero places")
+
+    def test_quality_is_the_MEAN_of_the_wins_since_not_the_sum(self):
         """Volume must not stand in for quality.
 
-        Summing let a long run of ordinary wins out-score a genuine scalp, and on
-        the completed 2025 season it pinned 15 of 111 results at max_places.
+        Summing let a run of ordinary wins out-score a genuine scalp, and on the
+        completed 2025 season it pinned 15 of 111 results at the ceiling.
         """
-        one_good = one([GAME], [result("L", "GREAT", week=4)])
-        padded = one(
-            [GAME],
-            [
-                result("L", "GREAT", week=4),
-                result("L", "MEH", week=5),
-                result("L", "MEH", week=6),
-            ],
-        )
-        self.assertLess(padded.loser_credit, one_good.loser_credit)
+        after = [result("MEH", "BAD", week=6)]
+        lone = one([result("L", "GREAT", week=4), *after])
+        padded = one([
+            result("L", "GREAT", week=4), result("L", "MEH", week=5),
+            result("L", "MEH", week=5), *after,
+        ])
+        self.assertLess(padded.loser_quality, lone.loser_quality)
 
     def test_beating_an_average_team_scores_the_same_as_beating_nobody(self):
-        mediocre = one([GAME], [result("L", "MEH", week=4)])
-        self.assertAlmostEqual(mediocre.loser_credit, 0.0)
-        self.assertAlmostEqual(mediocre.ascent, 0.0)
+        g = one([result("L", "MEH", week=4), result("MEH", "BAD", week=6)])
+        self.assertAlmostEqual(g.loser_quality, 0.0)
+        self.assertNotIn(4, g.rules)
 
     def test_an_unrated_opponent_earns_no_credit(self):
-        g = one([GAME], [result("L", "Some FCS School", week=4)])
-        self.assertAlmostEqual(g.loser_credit, 0.0)
+        g = one([result("L", "Some FCS School", week=4), result("MEH", "BAD", week=6)])
+        self.assertAlmostEqual(g.loser_quality, 0.0)
 
     def test_wins_before_the_game_do_not_count(self):
-        g = one([GAME], [result("L", "GREAT", week=1)])
-        self.assertAlmostEqual(g.loser_credit, 0.0)
-
-    def test_the_winner_beating_better_teams_cancels_it(self):
-        g = one([GAME], [result("L", "GOOD", week=4), result("W", "GREAT", week=4)])
-        self.assertAlmostEqual(g.ascent, 0.0, msg="the ground is one-sided")
-        self.assertGreater(g.winner_credit, g.loser_credit)
+        g = one([result("L", "GREAT", week=1), result("MEH", "BAD", week=6)])
+        self.assertAlmostEqual(g.loser_quality, 0.0)
 
 
-class TestAgeAndCategories(unittest.TestCase):
-    def test_age_alone_widens_the_licence(self):
-        near = one([GAME], [result("MEH", "BAD", week=3)])
-        far = one([GAME], [result("MEH", "BAD", week=12)])
-        self.assertEqual(near.category, "age")
-        self.assertEqual(far.category, "age")
-        self.assertGreater(far.allowance, near.allowance)
+class TestRulePrecedence(unittest.TestCase):
+    def test_slipping_outranks_the_band(self):
+        """Any of rules 1-3 means "any gap", even when rule 4 also applies."""
+        g = one([
+            result("GREAT", "W", week=4),       # rules 1, 2, 3
+            result("L", "GREAT", week=5),       # rule 4
+            result("MEH", "BAD", week=6),
+        ])
+        self.assertEqual(set(g.rules), {2, 3, 4})
+        self.assertEqual(g.max_lead, math.inf)
+        self.assertFalse(g.banded, "unbounded, so the band does not apply")
 
-    def test_both_grounds_together_report_as_both(self):
-        g = one(
-            [GAME],
-            [result("GREAT", "W", week=4), result("L", "GREAT", week=5)],
-        )
-        self.assertEqual(g.category, "both")
-        self.assertGreater(g.slide, 0.0)
-        self.assertGreater(g.ascent, 0.0)
-        self.assertTrue(g.licensed)
-
-    def test_none_and_age_do_not_count_as_licensed(self):
-        self.assertFalse(one([GAME], []).licensed)
-        self.assertFalse(one([GAME], [result("MEH", "BAD", week=9)]).licensed)
-
-    def test_severity_rises_with_the_licence(self):
-        seen = []
-        for extra in ([], [result("GREAT", "W", week=4)],
-                      [result("GREAT", "W", week=4), result("GOOD", "W", week=5),
-                       result("MEH", "W", week=6)]):
-            seen.append(one([GAME], extra).severity)
-        self.assertEqual(seen[0], "none")
-        self.assertIn(seen[1], ("slight", "clear"))
-        self.assertIn(seen[2], ("clear", "decisive"))
-        self.assertNotEqual(seen[1], seen[2])
-
-
-class TestCapAndRelief(unittest.TestCase):
-    def test_the_licence_is_capped(self):
-        after = [result("GREAT", "W", week=w) for w in range(3, 14)]
-        after.append(result("L", "GREAT", week=13))
-        g = one([GAME], after)
-        self.assertAlmostEqual(g.allowance, CFG["max_places"])
-        self.assertEqual(g.severity, "decisive")
-
-    def test_relief_is_zero_without_grounds_and_capped_with_them(self):
-        self.assertAlmostEqual(one([GAME], []).relief, 0.0)
-        after = [result("GREAT", "W", week=w) for w in range(3, 14)]
-        self.assertAlmostEqual(one([GAME], after).relief, CFG["relief"])
-
-    def test_relief_scales_with_the_licence_earned(self):
-        small = one([GAME], [result("GREAT", "W", week=3)])
-        big = one([GAME], [result("GREAT", "W", week=3), result("GOOD", "W", week=4),
-                           result("MEH", "W", week=5)])
-        self.assertLess(small.relief, big.relief)
-        self.assertLessEqual(big.relief, CFG["relief"])
-
-    def test_a_degenerate_cap_grants_no_relief_rather_than_dividing_by_zero(self):
-        cfg = dict(CFG, max_places=CFG["base_places"])
-        g = one([GAME], [result("GREAT", "W", week=4)])
-        g2 = one([GAME], [result("GREAT", "W", week=4)], cfg)
-        self.assertGreater(g.relief, 0.0)
-        self.assertAlmostEqual(g2.relief, 0.0)
-        self.assertAlmostEqual(g2.allowance, CFG["base_places"])
+    def test_band_rate_is_still_reported_when_outranked(self):
+        g = one([
+            result("GREAT", "W", week=4), result("L", "GREAT", week=5),
+            result("MEH", "BAD", week=6),
+        ])
+        self.assertGreater(g.band_rate, 0.0)
+        self.assertGreater(g.quality_diff, 0.0)
 
 
 class TestDeterminism(unittest.TestCase):
     def test_shuffling_the_results_changes_nothing(self):
-        """Credit is a mean over floats, so the accumulation order is sorted."""
+        """Win quality is a mean over floats, so the accumulation order is sorted."""
         after = [
             result("L", "GREAT", week=4), result("L", "GOOD", week=5),
             result("L", "MEH", week=6), result("GREAT", "W", week=4),
             result("W", "BAD", week=5), result("W", "MEH", week=7),
         ]
-        reference = one([GAME], after)
+        reference = one(after)
         for seed in range(20):
             shuffled = list(after)
             random.Random(seed).shuffle(shuffled)
-            self.assertEqual(one([GAME], shuffled), reference, f"seed {seed}")
+            self.assertEqual(one(shuffled), reference, f"seed {seed}")
 
 
 if __name__ == "__main__":
