@@ -272,12 +272,11 @@ tr.detail[hidden] { display: none; }
   margin: 0; font-size: 1.0625rem; font-weight: 600;
   font-variant-numeric: tabular-nums;
 }
-.stage-formula, .stage-note {
+.stage-note {
   margin: 6px 0 0; font-size: 0.8125rem; color: var(--ink-2); line-height: 1.5;
 }
-.stage-formula { font-variant-numeric: tabular-nums; }
 
-/* The adjustment, as category / number / sentence. As flat label-value pairs it
+/* Stages 1 and 2, as category / number / sentence. As flat label-value pairs it
    was impossible to tell which number belonged to which component. */
 .adj-table { margin: 10px 0 0; font-size: 0.8125rem; }
 .adj-table td { padding: 5px 0; border-bottom: 1px solid var(--rule); }

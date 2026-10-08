@@ -277,6 +277,12 @@
         // a non-qualifier: the scale starts at the weakest team inside the 25,
         // so beating them is worth almost nothing. That is what stops a cliff
         // at the bar, and it is why the opponent is named either way.
+        // The named opponent arrived after some published weeks, and the site
+        // still serves those from the week selector. An ABSENT key means the
+        // snapshot predates it; a null one means there is genuinely no
+        // qualifying win. Saying "no win over a top-25 team" for the first is
+        // simply wrong -- that Miami board shows -0.71 for beating Notre Dame.
+        if (!("best_win_opponent" in d)) return "";
         if (!d.best_win_opponent) return "no win over a top-25 team";
         return "beat " + d.best_win_opponent + ", rated " +
           signed(d.best_win_opponent_rating, 1);
@@ -316,23 +322,122 @@
     }
   ];
 
-  function adjustmentTable(ra) {
-    var comp = ra.components || {}, det = ra.detail || {};
-    var body = el("tbody", null, ADJUSTMENTS.filter(function (a) {
-      return comp[a.key] !== null && comp[a.key] !== undefined;
-    }).map(function (a) {
+  // The three base inputs, in weight order with a sentence each. Same shape as
+  // ADJUSTMENTS so stages 1 and 2 render through one table builder.
+  var BASE_TERMS = [
+    {
+      key: "SoR", label: "R\u00e9sum\u00e9 (SoR)",
+      rank: function (b) { return b.sor_rank; },
+      // A pointer rather than a second measurement: the r\u00e9sum\u00e9 section
+      // below leads with the probability and then lists every game, so quoting
+      // the number here as well would say the same thing twice a few inches
+      // apart.
+      note: function () {
+        return "who this team beat and how hard that was \u2014 the r\u00e9sum\u00e9 below, game by game";
+      }
+    },
+    {
+      key: "Mkt", label: "Market (Mkt)",
+      rank: function (b) { return b.market_rank; },
+      note: function (row) {
+        var m = row.market || {};
+        if (m.rating === null || m.rating === undefined) return "what the betting market makes this team on a neutral field";
+        return signed(m.rating, 1) + " on a neutral field, solved from " +
+          m.games + " lined game" + (m.games === 1 ? "" : "s");
+      }
+    },
+    {
+      key: "PPA", label: "Play-by-play (PPA)",
+      rank: function (b) { return b.ppa_rank; },
+      note: function (row) {
+        var p = row.performance || {};
+        if (p.rating === null || p.rating === undefined) return "points added per play, opponent-adjusted";
+        return signed(p.rating, 2) + " points added per play, opponent-adjusted, over " +
+          p.games + " game" + (p.games === 1 ? "" : "s");
+      }
+    }
+  ];
+
+  // Category / number / sentence, shared by stages 1 and 2. The sentence is the
+  // point of it: the flat label-and-value pairs this replaced left a reader
+  // guessing which number belonged to which component.
+  function termTable(rows, total) {
+    var body = el("tbody", null, rows.map(function (r) {
       return el("tr", null, [
-        el("td", { class: "adj-what", text: a.label }),
-        el("td", { class: "num adj-pts", text: signed(comp[a.key], 2) }),
-        el("td", { class: "adj-note", text: a.note(det) })
+        el("td", { class: "adj-what", text: r.label }),
+        el("td", { class: "num adj-pts", text: r.value }),
+        el("td", { class: "adj-note", text: r.note || "" })
       ]);
     }));
-    body.appendChild(el("tr", { class: "adj-total" }, [
-      el("td", { class: "adj-what", text: "Total" }),
-      el("td", { class: "num adj-pts", text: signed(ra.total, 2) }),
-      el("td", { class: "adj-note", text: "" })
-    ]));
+    if (total) {
+      body.appendChild(el("tr", { class: "adj-total" }, [
+        el("td", { class: "adj-what", text: total.label }),
+        el("td", { class: "num adj-pts", text: total.value }),
+        el("td", { class: "adj-note", text: total.note || "" })
+      ]));
+    }
     return el("table", { class: "adj-table" }, [body]);
+  }
+
+  function baseTable(row) {
+    var b = row.base || {}, weights = b.weights || {};
+    // Driven by base.weights, which carries the weights ACTUALLY applied to
+    // this team -- a team missing an input is scored on the terms it has, with
+    // the rest rescaled, so a hard-coded 0.55/0.30/0.15 would not add up.
+    var rows = BASE_TERMS.filter(function (t) {
+      return weights[t.key] !== null && weights[t.key] !== undefined &&
+        t.rank(b) !== null && t.rank(b) !== undefined;
+    }).map(function (t) {
+      return {
+        label: t.label,
+        value: "#" + t.rank(b),
+        note: num(weights[t.key], 2) + " of the base \u00b7 " + t.note(row)
+      };
+    });
+    return termTable(rows, {
+      label: "Base", value: num(b.raw_score, 2),
+      note: "the ranks above at the weights beside them"
+    });
+  }
+
+  function adjustmentTable(ra, base) {
+    var comp = ra.components || {}, det = ra.detail || {};
+    var rows = ADJUSTMENTS.filter(function (a) {
+      return comp[a.key] !== null && comp[a.key] !== undefined;
+    }).map(function (a) {
+      return { label: a.label, value: signed(comp[a.key], 2), note: a.note(det) };
+    });
+    // Where the score stands once the adjustment is applied. Stage 3 takes it
+    // from here, so the panel can be read straight down without arithmetic.
+    var after = base.raw_score + ra.total;
+    return termTable(rows, {
+      label: "Total", value: signed(ra.total, 2),
+      note: "Base " + num(base.raw_score, 2) + " \u2192 " + num(after, 2)
+    });
+  }
+
+  function listJoin(names) {
+    if (names.length <= 1) return names.join("");
+    return names.slice(0, -1).join(", ") + " and " + names[names.length - 1];
+  }
+
+  // Stage 4 only ever argues about results against other teams in the candidate
+  // pool, so name them here rather than leaving the reader to infer which rows
+  // of the table below this stage was actually looking at.
+  function poolText(row) {
+    var h = row.h2h || {};
+    var beat = (h.wins_vs_pool || []).map(function (e) { return e.loser; });
+    var lost = (h.losses_vs_pool || []).map(function (e) { return e.winner; });
+    if (!beat.length && !lost.length) {
+      return "Played nobody else in the candidate pool, so this stage had nothing to apply.";
+    }
+    var parts = [];
+    if (beat.length) parts.push("beat " + listJoin(beat));
+    if (lost.length) parts.push("lost to " + listJoin(lost));
+    var head = "Inside the pool: " + parts.join("; ") + ".";
+    return head + (row.placement.drift === 0
+      ? " None of it changed this placement \u2014 the table below has each result."
+      : " The table below says which results were honoured and which were ranked against.");
   }
 
   function stage(n, title, result, kids) {
@@ -358,7 +463,7 @@
     var stages = el("div", { class: "stages" }, [
       stage(1, "the three numbers",
         "#" + base.resume_rank + "  \u2014  Base " + num(base.raw_score, 2),
-        [el("p", { class: "stage-formula", text: base.formula || "\u2013" })].concat(
+        [baseTable(row)].concat(
           (base.missing || []).map(function (label) {
             return el("p", {
               class: "stage-note",
@@ -368,7 +473,7 @@
         )),
       stage(2, "r\u00e9sum\u00e9 adjustment",
         signed(ra.total, 2) + " rank points",
-        [adjustmentTable(ra)]),
+        [adjustmentTable(ra, base)]),
       stage(3, "upset regression",
         row.regression
           ? signed(row.regression.adjustment, 2) + " rank points"
@@ -383,11 +488,14 @@
             })])),
       stage(4, "head-to-head",
         "#" + row.rank + "  \u2014  " + driftText(row.placement.drift),
-        [el("p", {
-          class: "stage-note",
-          text: "Went in at #" + base.rank + " on " + num(base.score, 2) +
-            " after stages 1 to 3."
-        })])
+        [
+          el("p", {
+            class: "stage-note",
+            text: "Went in at #" + base.rank + " on " + num(base.score, 2) +
+              " after stages 1 to 3."
+          }),
+          el("p", { class: "stage-note", text: poolText(row) })
+        ])
     ]);
 
     var resumeLine = res.probability === null || res.probability === undefined
