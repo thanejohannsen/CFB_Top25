@@ -1,5 +1,5 @@
 {
-  "current": "2026-regular-05",
+  "current": "2026-regular-06",
   "schema_version": 1,
   "seasons": [
     {
@@ -13,6 +13,17 @@
           "season_type": "regular",
           "top1": "Alabama",
           "week": 5,
+          "year": 2026
+        },
+        {
+          "content_hash": "sha256:94e6b04b4118d91eaf331a4115bb538380f0106c810cdadba8245aa7456fa28a",
+          "generated_at": "2026-10-11T17:49:18Z",
+          "id": "2026-regular-06",
+          "label": "Week 6",
+          "path": "weeks/2026-regular-06.json",
+          "season_type": "regular",
+          "top1": "Georgia",
+          "week": 6,
           "year": 2026
         }
       ],
@@ -35,5 +46,5 @@
       "year": 2025
     }
   ],
-  "updated_at": "2026-10-08T20:12:15Z"
+  "updated_at": "2026-10-11T17:49:18Z"
 }
