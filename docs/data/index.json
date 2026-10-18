@@ -1,5 +1,5 @@
 {
-  "current": "2026-regular-06",
+  "current": "2026-regular-07",
   "schema_version": 1,
   "seasons": [
     {
@@ -25,6 +25,17 @@
           "top1": "Georgia",
           "week": 6,
           "year": 2026
+        },
+        {
+          "content_hash": "sha256:7d18f7ab3d614a9407505c5fa70dd1fbdb558498099626ab6f117524a4c7187e",
+          "generated_at": "2026-10-18T16:10:50Z",
+          "id": "2026-regular-07",
+          "label": "Week 7",
+          "path": "weeks/2026-regular-07.json",
+          "season_type": "regular",
+          "top1": "Ohio State",
+          "week": 7,
+          "year": 2026
         }
       ],
       "year": 2026
@@ -46,5 +57,5 @@
       "year": 2025
     }
   ],
-  "updated_at": "2026-10-12T13:38:40Z"
+  "updated_at": "2026-10-18T16:10:50Z"
 }
