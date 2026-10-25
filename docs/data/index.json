@@ -1,5 +1,5 @@
 {
-  "current": "2026-regular-07",
+  "current": "2026-regular-08",
   "schema_version": 1,
   "seasons": [
     {
@@ -36,6 +36,17 @@
           "top1": "Ohio State",
           "week": 7,
           "year": 2026
+        },
+        {
+          "content_hash": "sha256:af54ae659117603d1aa4b88c8ae83f7afaf5f001d52cc0a9bee331b976063b8d",
+          "generated_at": "2026-10-25T16:52:36Z",
+          "id": "2026-regular-08",
+          "label": "Week 8",
+          "path": "weeks/2026-regular-08.json",
+          "season_type": "regular",
+          "top1": "Ohio State",
+          "week": 8,
+          "year": 2026
         }
       ],
       "year": 2026
@@ -57,5 +68,5 @@
       "year": 2025
     }
   ],
-  "updated_at": "2026-10-18T16:10:50Z"
+  "updated_at": "2026-10-25T16:52:36Z"
 }
