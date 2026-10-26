@@ -74,6 +74,34 @@ FROZEN = [
     "market.recency_half_life=0.0",
     "resume.reference_place=25",
     "resume.margin_sigma=13.5",
+    # EVERYTHING ELSE THE ENGINE READS, pinned for the same reason -- the list
+    # has to be exhaustive or it does not do its job. `stage4.evidence.margin_cap`
+    # was missing, so when the owner moved it from 28 to 21 from the web UI the
+    # golden tracked the live config and CI went red on main: exactly the
+    # failure this file exists to prevent. A knob the engine reads and this list
+    # omits is a trap, not a default.
+    "stage1.pool_size=40",
+    "stage1.output_size=25",
+    "stage1.require_fpi=true",
+    "stage1.fbs_only=true",
+    "market.min_games=3",
+    "market.fit_home_field=true",
+    "market.home_field_points=2.5",
+    "performance.min_games=3",
+    "performance.fit_home_edge=true",
+    "stage2.best_win_place=25",
+    "stage2.cover_game_cap=0.0",
+    "stage2.fit_cover_venue=true",
+    "resume.min_games=3",
+    "stage3.enabled=true",
+    "stage4.split_series=most_recent",
+    "stage4.max_passes=400",
+    "stage4.evidence.home_field_points=2.5",
+    "stage4.evidence.fit_home_field=true",
+    "stage4.evidence.margin_cap=28",
+    "stage4.evidence.weight_floor=1.0",
+    "stage4.evidence.conviction_floor=-2.0",
+    "stage4.evidence.recency_floor=0.15",
 ]
 
 

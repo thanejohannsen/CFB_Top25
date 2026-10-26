@@ -6,10 +6,32 @@ logic of its own. Templates rather than free text keeps them testable.
 
 from __future__ import annotations
 
-from typing import Mapping, Sequence
+from typing import Mapping, NamedTuple, Sequence
 
 from cfbrank.engine.base_score import TeamBase
 from cfbrank.engine.evidence import EdgeFact
+
+
+class Holding(NamedTuple):
+    """Why the loser of a set-aside result still finishes above its winner.
+
+    An exception only says the ranking MAY go against a result. What actually
+    puts the two teams in that order is often a chain of other results the
+    ranking is honouring, and saying "the resume order decides" when the resume
+    said the opposite is simply wrong. On 2026 week 8 the resume had Ole Miss
+    fourteen places above Missouri; Missouri beat Florida and Florida beat Ole
+    Miss, and that pair is what held the published order.
+
+    `path` runs loser -> ... -> winner, each hop a result the ranking honours.
+    `enforced` is True only when every hop is one no exception could unlock, so
+    the chain is unbreakable rather than merely preferred. `resume_gap` is how
+    many places the resume order had the WINNER above the loser, positive only
+    when the published order contradicts it.
+    """
+
+    path: tuple[str, ...] = ()
+    enforced: bool = False
+    resume_gap: int = 0
 
 # `site` is recorded from the winner's point of view, so the loser's venue is
 # the mirror of it.
@@ -55,7 +77,30 @@ RULE_PHRASE = {
 ENFORCED_PHRASE = "nothing since the game lets this result be ranked against"
 
 
-def grounds_reason(fact: EdgeFact) -> str:
+def chain_phrase(path: Sequence[str]) -> str:
+    """`(A, B, C)` -> "A beat B, B beat C"."""
+    return ", ".join(f"{a} beat {b}" for a, b in zip(path, path[1:]))
+
+
+def holding_reason(fact: EdgeFact, holding: Holding | None) -> str:
+    """The sentence that names what actually produced the published gap."""
+    if not holding or not holding.path:
+        return ""
+    bits = []
+    if holding.resume_gap > 0:
+        places = holding.resume_gap
+        bits.append(
+            f"The resume put {fact.winner} {places}"
+            f" place{'' if places == 1 else 's'} higher"
+        )
+    kind = "an enforced chain" if holding.enforced else "results the ranking honours"
+    bits.append(f"{fact.loser} is held above by {kind}: {chain_phrase(holding.path)}")
+    # No trailing stop: every caller closes the sentence itself, the way the
+    # clause before this one does.
+    return ". " + "; ".join(bits)
+
+
+def grounds_reason(fact: EdgeFact, holding: Holding | None = None) -> str:
     """Which of the four exceptions unlocked this override, and how far it goes.
 
     The second half of the answer to "my team beat them and is ranked below
@@ -85,12 +130,15 @@ def grounds_reason(fact: EdgeFact) -> str:
             f"{g.weeks_since:.0f} weeks on, so they may lead by"
             f" {places} place{'' if places == 1 else 's'}"
         )
+    elif holding and holding.path:
+        # The resume did NOT decide this one, so do not say it did.
+        bits.append("so this result was free to set aside")
     else:
         bits.append("so the resume order decides how far apart they sit")
     return "; ".join(bits)
 
 
-def override_reason(fact: EdgeFact) -> str:
+def override_reason(fact: EdgeFact, holding: Holding | None = None) -> str:
     """Why ranking against this result was the cheaper option."""
     bits: list[str] = []
     if fact.adj_margin < 2.0:
@@ -111,8 +159,9 @@ def override_reason(fact: EdgeFact) -> str:
             f" opponent{'' if shared == 1 else 's'}"
         )
     reason = "; ".join(bits)
-    since = grounds_reason(fact)
-    return f"{reason}. Since then: {since}" if since else reason
+    since = grounds_reason(fact, holding)
+    out = f"{reason}. Since then: {since}" if since else reason
+    return out + holding_reason(fact, holding)
 
 
 def team_reasons(
@@ -123,6 +172,7 @@ def team_reasons(
     overridden_wins: Sequence[tuple[EdgeFact, int]],
     cycle_id: str | None,
     cycle_size: int,
+    holdings: Mapping[tuple[str, str], Holding] | None = None,
 ) -> list[str]:
     out: list[str] = [
         f"Resume order #{tb.raw_rank} from {tb.formula()}."
@@ -150,17 +200,20 @@ def team_reasons(
         top = honored_wins[0]
         out.append(f"Head-to-head held: {describe_result(top[0], top[1])}.")
 
+    held = holdings or {}
     for fact, rank in overridden_losses[:2]:
         out.append(
             f"Ranked above {opponent_label(fact.winner, rank)} despite losing"
             f" {fact.loser_points}-{fact.winner_points} {site_phrase(fact, tb.team)}"
-            f" in week {fact.week} -- {override_reason(fact)}."
+            f" in week {fact.week} -- "
+            f"{override_reason(fact, held.get((fact.winner, fact.loser)))}."
         )
     for fact, rank in overridden_wins[:2]:
         out.append(
             f"Ranked below {opponent_label(fact.loser, rank)} despite winning"
             f" {fact.winner_points}-{fact.loser_points} {site_phrase(fact, tb.team)}"
-            f" in week {fact.week} -- {override_reason(fact)}."
+            f" in week {fact.week} -- "
+            f"{override_reason(fact, held.get((fact.winner, fact.loser)))}."
         )
 
     if cycle_id:

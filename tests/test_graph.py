@@ -10,6 +10,7 @@ from cfbrank.engine.graph import (
     condensation,
     find_cycle,
     is_acyclic,
+    shortest_path,
     nontrivial_sccs,
     strongly_connected_components,
 )
@@ -97,6 +98,40 @@ class TestCondensation(unittest.TestCase):
         self.assertTrue(is_acyclic(cg))
         self.assertEqual(group_of["B"], group_of["C"])
         self.assertEqual(members[group_of["A"]], ["A", "B", "C"])
+
+
+class TestShortestPath(unittest.TestCase):
+    """Used to name the chain that holds a set-aside result's loser on top."""
+
+    TRIANGLE = {"Missouri": {"Florida"}, "Florida": {"Ole Miss"}, "Ole Miss": {"Missouri"}}
+
+    def test_finds_the_chain(self):
+        self.assertEqual(
+            shortest_path(self.TRIANGLE, "Missouri", "Ole Miss"),
+            ("Missouri", "Florida", "Ole Miss"),
+        )
+
+    def test_prefers_the_shorter_chain(self):
+        succ = {"A": {"B", "Z"}, "B": {"C"}, "C": {"D"}, "Z": {"D"}}
+        self.assertEqual(shortest_path(succ, "A", "D"), ("A", "Z", "D"))
+
+    def test_no_route_is_empty_not_an_error(self):
+        self.assertEqual(shortest_path({"A": {"B"}}, "B", "A"), ())
+        self.assertEqual(shortest_path({}, "A", "B"), ())
+
+    def test_a_node_does_not_reach_itself(self):
+        """The caller asks "does the loser reach the winner"; A -> A is no chain."""
+        self.assertEqual(shortest_path(self.TRIANGLE, "Missouri", "Missouri"), ())
+
+    def test_ties_break_on_sort_key_not_insertion(self):
+        """This feeds a published sentence, so an unstable path would churn
+        content_hash with no change in the ranking."""
+        succ = {"A": {"zeta", "Alpha"}, "zeta": {"D"}, "Alpha": {"D"}}
+        reference = shortest_path(succ, "A", "D")
+        self.assertEqual(reference, ("A", "Alpha", "D"))
+        for seed in range(10):
+            shuffled = {k: set(random.sample(sorted(v), len(v))) for k, v in succ.items()}
+            self.assertEqual(shortest_path(shuffled, "A", "D"), reference)
 
 
 class TestDigraph(unittest.TestCase):

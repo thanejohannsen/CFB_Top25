@@ -18,6 +18,32 @@ from cfbrank.normalize import sort_key
 Node = str
 
 
+def shortest_path(succ, src: Node, dst: Node) -> tuple[Node, ...]:
+    """The fewest-hops path `src -> ... -> dst`, or `()` when there is none.
+
+    `succ` maps a node to its successors. Breadth-first with the frontier taken
+    in `sort_key` order, so two paths of equal length resolve the same way every
+    run -- this feeds a published sentence, and an unstable one would churn
+    `content_hash` with no change in the ranking.
+    """
+    if src == dst:
+        return ()
+    seen = {src}
+    frontier: list[tuple[Node, ...]] = [(src,)]
+    while frontier:
+        nxt: list[tuple[Node, ...]] = []
+        for path in frontier:
+            for node in sorted(succ.get(path[-1], ()), key=sort_key):
+                if node == dst:
+                    return path + (node,)
+                if node in seen:
+                    continue
+                seen.add(node)
+                nxt.append(path + (node,))
+        frontier = nxt
+    return ()
+
+
 class Digraph:
     """A tiny directed graph. All accessors return sorted sequences."""
 

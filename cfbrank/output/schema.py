@@ -59,6 +59,10 @@ def _grounds(fact: EdgeFact) -> dict[str, Any] | None:
         "loser_losses": g.loser_losses,
         "winner_losses_since": g.winner_losses_since,
         "loser_losses_since": g.loser_losses_since,
+        # Games the loser has PLAYED since. Rules 2 and 3 need at least one: a
+        # bye is not survival, and counting it as such published Missouri above
+        # Ole Miss a week after Ole Miss beat them 31-3.
+        "loser_games_since": g.loser_games_since,
         "winner_win_quality": g.winner_quality,
         "loser_win_quality": g.loser_quality,
         "quality_diff": g.quality_diff,
@@ -422,7 +426,7 @@ def build_payload(
         dict(
             _edge(result.edge_facts[k], rank_of, True, result.ordering),
             cycle=result.team_cycle.get(k[0]),
-            reason=_override_reason(result.edge_facts[k]),
+            reason=_override_reason(result.edge_facts[k], result.holdings.get(k)),
         )
         for k in result.ordering.violated
     ]
@@ -571,10 +575,10 @@ def build_payload(
     return payload
 
 
-def _override_reason(fact: EdgeFact) -> str:
+def _override_reason(fact: EdgeFact, holding=None) -> str:
     from cfbrank.engine.provenance import override_reason
 
-    return override_reason(fact)
+    return override_reason(fact, holding)
 
 
 def _week_label(week: int, season_type: str) -> str:

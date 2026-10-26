@@ -102,13 +102,74 @@ class TestRuleOneMoreLosses(unittest.TestCase):
 
 
 class TestRulesTwoAndThreeLostSince(unittest.TestCase):
-    """Rule 2 is the N=1 case of rule 3, so both are reported when both hold."""
+    """Rule 2 is the N=1 case of rule 3, so both are reported when both hold.
+
+    Both also require the LOSER to have played since. See TestAByeIsNotSurvival.
+    """
 
     def test_losing_since_while_the_other_has_not(self):
-        g = one([result("GREAT", "W", week=4)])
+        g = one([result("GREAT", "W", week=4), result("L", "MEH", week=4)])
         self.assertEqual(g.rules, (2, 3))
         self.assertEqual(g.max_lead, math.inf)
         self.assertEqual((g.winner_losses_since, g.loser_losses_since), (1, 0))
+        self.assertEqual(g.loser_games_since, 1)
+
+
+class TestAByeIsNotSurvival(unittest.TestCase):
+    """Rules 2 and 3 need the LOSER to have taken the field.
+
+    "B has not lost since" is trivially true of a team that did not play, and
+    both clauses are about B still going while A slipped. On 2026 week 8 the
+    board published Missouri above Ole Miss a week after Ole Miss beat them
+    31-3: Ole Miss lost at Texas, Missouri had a bye, and the exception that
+    bought let an enforced chain through Florida drag Missouri twelve places up.
+    """
+
+    def test_a_bye_does_not_unlock_rule_two(self):
+        # The winner lost since; the loser has played nothing at all.
+        g = one([result("GREAT", "W", week=4)])
+        self.assertEqual(g.winner_losses_since, 1)
+        self.assertEqual(g.loser_losses_since, 0)
+        self.assertEqual(g.loser_games_since, 0, "the loser sat the week out")
+        self.assertEqual(g.rules, (), "a week off is not surviving")
+        self.assertEqual(g.max_lead, 0.0)
+        self.assertTrue(g.enforced)
+
+    def test_a_bye_does_not_unlock_rule_three_either(self):
+        # The loser needs a loss of its own BEFORE the game, or the winner
+        # dropping two since would put it ahead on rule 1 and prove nothing.
+        g = one([
+            result("GREAT", "L", week=1),
+            result("GREAT", "W", week=4), result("GOOD", "W", week=5),
+        ])
+        self.assertEqual((g.winner_losses, g.loser_losses), (2, 2), "rule 1 is off")
+        self.assertEqual(g.winner_losses_since, 2)
+        self.assertEqual(g.loser_games_since, 0)
+        self.assertNotIn(3, g.rules)
+        self.assertTrue(g.enforced)
+
+    def test_playing_and_winning_unlocks_it(self):
+        """The same board, with the loser having turned up once."""
+        g = one([result("GREAT", "W", week=4), result("L", "MEH", week=5)])
+        self.assertEqual(g.loser_games_since, 1)
+        self.assertEqual(g.rules, (2, 3))
+        self.assertEqual(g.max_lead, math.inf)
+
+    def test_playing_and_losing_still_counts_as_playing(self):
+        """Rule 3 wants B to have lost FEWER, not none -- B just has to show up."""
+        g = one([
+            result("GREAT", "W", week=4), result("GOOD", "W", week=5),
+            result("GREAT", "L", week=4),
+        ])
+        self.assertEqual(g.loser_games_since, 1)
+        self.assertIn(3, g.rules)
+
+    def test_rule_one_is_untouched_by_a_bye(self):
+        """It is about the whole record, not about what happened since."""
+        g = one([result("GREAT", "W", week=1), result("GOOD", "W", week=1)])
+        self.assertEqual(g.loser_games_since, 0)
+        self.assertEqual(g.rules, (1,))
+        self.assertEqual(g.max_lead, math.inf)
 
     def test_strictly_more_losses_since_counts_even_when_both_have_lost(self):
         g = one([

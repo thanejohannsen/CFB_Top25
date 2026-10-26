@@ -24,6 +24,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": true,
+            "loser_games_since": 1,
             "loser_losses": 5,
             "loser_losses_since": 1,
             "loser_win_quality": 0.0,
@@ -69,6 +70,7 @@
           "grounds": {
             "band_rate": 1.5,
             "enforced": false,
+            "loser_games_since": 3,
             "loser_losses": 5,
             "loser_losses_since": 2,
             "loser_win_quality": 10.8025,
@@ -116,6 +118,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": true,
+            "loser_games_since": 6,
             "loser_losses": 4,
             "loser_losses_since": 2,
             "loser_win_quality": 5.4193,
@@ -160,6 +163,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": false,
+            "loser_games_since": 1,
             "loser_losses": 4,
             "loser_losses_since": 1,
             "loser_win_quality": 0.0,
@@ -205,6 +209,7 @@
           "grounds": {
             "band_rate": 1.5,
             "enforced": false,
+            "loser_games_since": 5,
             "loser_losses": 6,
             "loser_losses_since": 1,
             "loser_win_quality": 7.1154,
@@ -250,6 +255,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": true,
+            "loser_games_since": 0,
             "loser_losses": 4,
             "loser_losses_since": 0,
             "loser_win_quality": 0.0,
@@ -296,6 +302,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": true,
+            "loser_games_since": 9,
             "loser_losses": 4,
             "loser_losses_since": 3,
             "loser_win_quality": 3.2957,
@@ -339,6 +346,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": true,
+            "loser_games_since": 5,
             "loser_losses": 6,
             "loser_losses_since": 3,
             "loser_win_quality": 6.2173,
@@ -382,6 +390,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": false,
+            "loser_games_since": 3,
             "loser_losses": 3,
             "loser_losses_since": 0,
             "loser_win_quality": 16.7091,
@@ -424,6 +433,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": true,
+            "loser_games_since": 0,
             "loser_losses": 6,
             "loser_losses_since": 0,
             "loser_win_quality": 0.0,
@@ -469,6 +479,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": false,
+            "loser_games_since": 0,
             "loser_losses": 3,
             "loser_losses_since": 0,
             "loser_win_quality": 0.0,
@@ -513,6 +524,7 @@
           "grounds": {
             "band_rate": 1.5,
             "enforced": false,
+            "loser_games_since": 2,
             "loser_losses": 4,
             "loser_losses_since": 1,
             "loser_win_quality": 18.264,
@@ -554,6 +566,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": true,
+            "loser_games_since": 1,
             "loser_losses": 4,
             "loser_losses_since": 1,
             "loser_win_quality": 0.0,
@@ -597,6 +610,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": false,
+            "loser_games_since": 2,
             "loser_losses": 4,
             "loser_losses_since": 2,
             "loser_win_quality": 0.0,
@@ -640,6 +654,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": false,
+            "loser_games_since": 0,
             "loser_losses": 2,
             "loser_losses_since": 0,
             "loser_win_quality": 0.0,
@@ -684,6 +699,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": false,
+            "loser_games_since": 0,
             "loser_losses": 2,
             "loser_losses_since": 0,
             "loser_win_quality": 0.0,
@@ -727,6 +743,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": true,
+            "loser_games_since": 7,
             "loser_losses": 3,
             "loser_losses_since": 2,
             "loser_win_quality": 15.3787,
@@ -770,6 +787,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": false,
+            "loser_games_since": 4,
             "loser_losses": 6,
             "loser_losses_since": 2,
             "loser_win_quality": 6.2173,
@@ -817,6 +835,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": false,
+            "loser_games_since": 7,
             "loser_losses": 3,
             "loser_losses_since": 2,
             "loser_win_quality": 13.4643,
@@ -865,6 +884,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": true,
+            "loser_games_since": 7,
             "loser_losses": 7,
             "loser_losses_since": 5,
             "loser_win_quality": 1.9413,
@@ -904,6 +924,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": false,
+            "loser_games_since": 0,
             "loser_losses": 3,
             "loser_losses_since": 0,
             "loser_win_quality": 0.0,
@@ -950,6 +971,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": false,
+            "loser_games_since": 7,
             "loser_losses": 4,
             "loser_losses_since": 2,
             "loser_win_quality": 3.4261,
@@ -996,6 +1018,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": true,
+            "loser_games_since": 6,
             "loser_losses": 4,
             "loser_losses_since": 2,
             "loser_win_quality": 4.24,
@@ -1041,6 +1064,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": false,
+            "loser_games_since": 5,
             "loser_losses": 4,
             "loser_losses_since": 1,
             "loser_win_quality": 5.4193,
@@ -1084,6 +1108,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": true,
+            "loser_games_since": 6,
             "loser_losses": 4,
             "loser_losses_since": 2,
             "loser_win_quality": 5.9967,
@@ -1125,6 +1150,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": false,
+            "loser_games_since": 0,
             "loser_losses": 2,
             "loser_losses_since": 0,
             "loser_win_quality": 0.0,
@@ -1169,6 +1195,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": false,
+            "loser_games_since": 9,
             "loser_losses": 5,
             "loser_losses_since": 3,
             "loser_win_quality": 5.2659,
@@ -1210,6 +1237,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": true,
+            "loser_games_since": 3,
             "loser_losses": 7,
             "loser_losses_since": 2,
             "loser_win_quality": 2.5178,
@@ -1253,6 +1281,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": true,
+            "loser_games_since": 0,
             "loser_losses": 2,
             "loser_losses_since": 0,
             "loser_win_quality": 0.0,
@@ -1295,6 +1324,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": false,
+            "loser_games_since": 3,
             "loser_losses": 4,
             "loser_losses_since": 1,
             "loser_win_quality": 3.7625,
@@ -1338,6 +1368,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": true,
+            "loser_games_since": 12,
             "loser_losses": 3,
             "loser_losses_since": 2,
             "loser_win_quality": 9.6054,
@@ -1380,6 +1411,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": true,
+            "loser_games_since": 5,
             "loser_losses": 3,
             "loser_losses_since": 1,
             "loser_win_quality": 16.8795,
@@ -1423,6 +1455,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": true,
+            "loser_games_since": 1,
             "loser_losses": 6,
             "loser_losses_since": 1,
             "loser_win_quality": 0.0,
@@ -1466,6 +1499,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": false,
+            "loser_games_since": 1,
             "loser_losses": 2,
             "loser_losses_since": 1,
             "loser_win_quality": 0.0,
@@ -1511,6 +1545,7 @@
           "grounds": {
             "band_rate": 1.5,
             "enforced": false,
+            "loser_games_since": 3,
             "loser_losses": 4,
             "loser_losses_since": 0,
             "loser_win_quality": 8.0669,
@@ -1556,6 +1591,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": true,
+            "loser_games_since": 11,
             "loser_losses": 4,
             "loser_losses_since": 3,
             "loser_win_quality": 3.6721,
@@ -1600,6 +1636,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": true,
+            "loser_games_since": 8,
             "loser_losses": 6,
             "loser_losses_since": 5,
             "loser_win_quality": 7.2701,
@@ -1642,6 +1679,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": true,
+            "loser_games_since": 6,
             "loser_losses": 6,
             "loser_losses_since": 4,
             "loser_win_quality": 6.2173,
@@ -1683,6 +1721,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": false,
+            "loser_games_since": 12,
             "loser_losses": 6,
             "loser_losses_since": 5,
             "loser_win_quality": 5.186,
@@ -1724,6 +1763,7 @@
           "grounds": {
             "band_rate": 1.5,
             "enforced": false,
+            "loser_games_since": 14,
             "loser_losses": 4,
             "loser_losses_since": 3,
             "loser_win_quality": 11.4456,
@@ -1769,6 +1809,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": true,
+            "loser_games_since": 4,
             "loser_losses": 3,
             "loser_losses_since": 1,
             "loser_win_quality": 12.8205,
@@ -1812,6 +1853,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": true,
+            "loser_games_since": 6,
             "loser_losses": 7,
             "loser_losses_since": 4,
             "loser_win_quality": 1.9413,
@@ -1855,6 +1897,7 @@
           "grounds": {
             "band_rate": 1.5,
             "enforced": false,
+            "loser_games_since": 10,
             "loser_losses": 6,
             "loser_losses_since": 4,
             "loser_win_quality": 6.0503,
@@ -1900,6 +1943,7 @@
           "grounds": {
             "band_rate": 1.5,
             "enforced": false,
+            "loser_games_since": 10,
             "loser_losses": 3,
             "loser_losses_since": 2,
             "loser_win_quality": 10.4246,
@@ -1949,6 +1993,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": false,
+            "loser_games_since": 11,
             "loser_losses": 2,
             "loser_losses_since": 1,
             "loser_win_quality": 4.9467,
@@ -1994,6 +2039,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": false,
+            "loser_games_since": 10,
             "loser_losses": 2,
             "loser_losses_since": 0,
             "loser_win_quality": 4.9467,
@@ -2042,6 +2088,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": true,
+            "loser_games_since": 6,
             "loser_losses": 6,
             "loser_losses_since": 2,
             "loser_win_quality": 7.1154,
@@ -2084,6 +2131,7 @@
           "grounds": {
             "band_rate": 1.5,
             "enforced": false,
+            "loser_games_since": 8,
             "loser_losses": 4,
             "loser_losses_since": 3,
             "loser_win_quality": 8.0491,
@@ -2191,6 +2239,7 @@
           "grounds": {
             "band_rate": 1.5,
             "enforced": false,
+            "loser_games_since": 1,
             "loser_losses": 2,
             "loser_losses_since": 0,
             "loser_win_quality": 10.8025,
@@ -2240,6 +2289,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": true,
+            "loser_games_since": 8,
             "loser_losses": 3,
             "loser_losses_since": 2,
             "loser_win_quality": 7.1101,
@@ -2284,6 +2334,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": true,
+            "loser_games_since": 7,
             "loser_losses": 5,
             "loser_losses_since": 3,
             "loser_win_quality": 8.1442,
@@ -2329,6 +2380,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": false,
+            "loser_games_since": 9,
             "loser_losses": 2,
             "loser_losses_since": 1,
             "loser_win_quality": 6.7791,
@@ -2375,6 +2427,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": false,
+            "loser_games_since": 3,
             "loser_losses": 4,
             "loser_losses_since": 0,
             "loser_win_quality": 10.4683,
@@ -2422,6 +2475,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": true,
+            "loser_games_since": 1,
             "loser_losses": 5,
             "loser_losses_since": 1,
             "loser_win_quality": 0.0,
@@ -2466,6 +2520,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": false,
+            "loser_games_since": 4,
             "loser_losses": 4,
             "loser_losses_since": 1,
             "loser_win_quality": 6.7416,
@@ -2515,6 +2570,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": false,
+            "loser_games_since": 9,
             "loser_losses": 4,
             "loser_losses_since": 3,
             "loser_win_quality": 5.9691,
@@ -2558,6 +2614,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": true,
+            "loser_games_since": 0,
             "loser_losses": 4,
             "loser_losses_since": 0,
             "loser_win_quality": 0.0,
@@ -2602,6 +2659,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": false,
+            "loser_games_since": 2,
             "loser_losses": 3,
             "loser_losses_since": 0,
             "loser_win_quality": 11.2761,
@@ -2647,6 +2705,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": true,
+            "loser_games_since": 7,
             "loser_losses": 4,
             "loser_losses_since": 2,
             "loser_win_quality": 7.1629,
@@ -2688,6 +2747,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": false,
+            "loser_games_since": 9,
             "loser_losses": 4,
             "loser_losses_since": 2,
             "loser_win_quality": 7.9651,
@@ -2733,6 +2793,7 @@
           "grounds": {
             "band_rate": 1.5,
             "enforced": false,
+            "loser_games_since": 3,
             "loser_losses": 4,
             "loser_losses_since": 0,
             "loser_win_quality": 6.7416,
@@ -2784,6 +2845,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": true,
+            "loser_games_since": 5,
             "loser_losses": 5,
             "loser_losses_since": 2,
             "loser_win_quality": 3.759,
@@ -2829,6 +2891,7 @@
           "grounds": {
             "band_rate": 1.5,
             "enforced": false,
+            "loser_games_since": 4,
             "loser_losses": 4,
             "loser_losses_since": 1,
             "loser_win_quality": 10.4683,
@@ -2876,6 +2939,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": false,
+            "loser_games_since": 9,
             "loser_losses": 4,
             "loser_losses_since": 3,
             "loser_win_quality": 6.9394,
@@ -2923,6 +2987,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": false,
+            "loser_games_since": 6,
             "loser_losses": 4,
             "loser_losses_since": 1,
             "loser_win_quality": 7.1629,
@@ -2969,6 +3034,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": false,
+            "loser_games_since": 6,
             "loser_losses": 2,
             "loser_losses_since": 0,
             "loser_win_quality": 7.4924,
@@ -3015,6 +3081,7 @@
           "grounds": {
             "band_rate": 0.0,
             "enforced": false,
+            "loser_games_since": 7,
             "loser_losses": 2,
             "loser_losses_since": 1,
             "loser_win_quality": 5.8798,
@@ -4303,7 +4370,7 @@
         "strength": 14.0
       }
     },
-    "content_hash": "sha256:5715a7e696b52a831aba582ca4ef451e6c50814eab2a370f994be3125fc9cd2f",
+    "content_hash": "sha256:1a1e2d47bddc91cfabf9649c62f1d408ac84d62799ea9ae40a05f941790cd103",
     "cost": {
       "drift": 297.7933,
       "overrides": 378.9033,
@@ -4315,7 +4382,7 @@
       "games_considered": 934,
       "h2h_banded": 7,
       "h2h_binding": 0,
-      "h2h_enforced": 59,
+      "h2h_enforced": 60,
       "h2h_honored": 98,
       "h2h_overridden": 10,
       "h2h_relaxed": 0,
@@ -4461,6 +4528,7 @@
       "grounds": {
         "band_rate": 0.0,
         "enforced": false,
+        "loser_games_since": 7,
         "loser_losses": 2,
         "loser_losses_since": 1,
         "loser_win_quality": 5.8798,
@@ -4480,7 +4548,7 @@
       "loser_rank": 10,
       "margin": 4,
       "rating_gap": -12.0216,
-      "reason": "a 4-point win at home is worth +1.6 once venue is accounted for; the winner rates 12.0 points worse on the power ratings; the loser fared better against 3 shared opponents. Since then: Arizona State has more losses, 5 to 2; Arizona State has lost 3 since against Texas Tech's 1; so the resume order decides how far apart they sit",
+      "reason": "a 4-point win at home is worth +1.6 once venue is accounted for; the winner rates 12.0 points worse on the power ratings; the loser fared better against 3 shared opponents. Since then: Arizona State has more losses, 5 to 2; Arizona State has lost 3 since against Texas Tech's 1; so this result was free to set aside. Texas Tech is held above by an enforced chain: Texas Tech beat Houston, Houston beat Arizona State",
       "score": "26-22",
       "season_type": "regular",
       "site": "home",
@@ -4509,6 +4577,7 @@
       "grounds": {
         "band_rate": 1.5,
         "enforced": false,
+        "loser_games_since": 10,
         "loser_losses": 3,
         "loser_losses_since": 2,
         "loser_win_quality": 10.4246,
@@ -4554,6 +4623,7 @@
       "grounds": {
         "band_rate": 1.5,
         "enforced": false,
+        "loser_games_since": 11,
         "loser_losses": 4,
         "loser_losses_since": 3,
         "loser_win_quality": 6.2078,
@@ -4604,6 +4674,7 @@
       "grounds": {
         "band_rate": 0.0,
         "enforced": false,
+        "loser_games_since": 9,
         "loser_losses": 4,
         "loser_losses_since": 3,
         "loser_win_quality": 6.9394,
@@ -4623,7 +4694,7 @@
       "loser_rank": 22,
       "margin": 3,
       "rating_gap": -2.3543,
-      "reason": "a 3-point win at home is worth +0.6 once venue is accounted for; the winner rates 2.4 points worse on the power ratings. Since then: Arizona State has more losses, 5 to 4; Arizona State has lost 4 since against TCU's 3; so the resume order decides how far apart they sit",
+      "reason": "a 3-point win at home is worth +0.6 once venue is accounted for; the winner rates 2.4 points worse on the power ratings. Since then: Arizona State has more losses, 5 to 4; Arizona State has lost 4 since against TCU's 3; so this result was free to set aside. TCU is held above by results the ranking honours: TCU beat Houston, Houston beat Arizona State",
       "score": "27-24",
       "season_type": "regular",
       "site": "home",
@@ -4652,6 +4723,7 @@
       "grounds": {
         "band_rate": 0.0,
         "enforced": false,
+        "loser_games_since": 8,
         "loser_losses": 3,
         "loser_losses_since": 1,
         "loser_win_quality": 11.9138,
@@ -4695,6 +4767,7 @@
       "grounds": {
         "band_rate": 1.5,
         "enforced": false,
+        "loser_games_since": 14,
         "loser_losses": 4,
         "loser_losses_since": 3,
         "loser_win_quality": 11.4456,
@@ -4715,7 +4788,7 @@
       "loser_rank": 14,
       "margin": 14,
       "rating_gap": -7.554,
-      "reason": "+11.6 adjusted margin; the winner rates 7.6 points worse on the power ratings. Since then: Florida State has more losses, 7 to 4; Florida State has lost 7 since against Alabama's 3; Alabama's wins since average 10.5 rating points better; so the resume order decides how far apart they sit",
+      "reason": "+11.6 adjusted margin; the winner rates 7.6 points worse on the power ratings. Since then: Florida State has more losses, 7 to 4; Florida State has lost 7 since against Alabama's 3; Alabama's wins since average 10.5 rating points better; so this result was free to set aside. Alabama is held above by results the ranking honours: Alabama beat LSU, LSU beat Clemson, Clemson beat Florida State",
       "score": "31-17",
       "season_type": "regular",
       "site": "home",
@@ -4744,6 +4817,7 @@
       "grounds": {
         "band_rate": 1.5,
         "enforced": false,
+        "loser_games_since": 3,
         "loser_losses": 4,
         "loser_losses_since": 0,
         "loser_win_quality": 6.7416,
@@ -4765,7 +4839,7 @@
       "loser_rank": 21,
       "margin": 5,
       "rating_gap": -0.1393,
-      "reason": "+7.4 adjusted margin; the loser fared better against 3 shared opponents. Since then: Arizona State has more losses, 5 to 4; Arizona State has lost 2 since and Iowa State none; Iowa State's wins since average 5.8 rating points better; so the resume order decides how far apart they sit",
+      "reason": "+7.4 adjusted margin; the loser fared better against 3 shared opponents. Since then: Arizona State has more losses, 5 to 4; Arizona State has lost 2 since and Iowa State none; Iowa State's wins since average 5.8 rating points better; so this result was free to set aside. Iowa State is held above by results the ranking honours: Iowa State beat Arizona, Arizona beat Arizona State",
       "score": "24-19",
       "season_type": "regular",
       "site": "away",
@@ -4794,6 +4868,7 @@
       "grounds": {
         "band_rate": 1.5,
         "enforced": false,
+        "loser_games_since": 3,
         "loser_losses": 4,
         "loser_losses_since": 0,
         "loser_win_quality": 8.0669,
@@ -4842,6 +4917,7 @@
       "grounds": {
         "band_rate": 0.0,
         "enforced": false,
+        "loser_games_since": 3,
         "loser_losses": 4,
         "loser_losses_since": 1,
         "loser_win_quality": 3.7625,
@@ -4860,7 +4936,7 @@
       "loser_rank": 24,
       "margin": 1,
       "rating_gap": 1.4484,
-      "reason": "+3.4 adjusted margin. Since then: Clemson has more losses, 6 to 4; so the resume order decides how far apart they sit",
+      "reason": "+3.4 adjusted margin. Since then: Clemson has more losses, 6 to 4; so this result was free to set aside. Louisville is held above by results the ranking honours: Louisville beat Pittsburgh, Pittsburgh beat Georgia Tech, Georgia Tech beat Clemson",
       "score": "20-19",
       "season_type": "regular",
       "site": "away",
@@ -4890,6 +4966,7 @@
       "grounds": {
         "band_rate": 0.0,
         "enforced": false,
+        "loser_games_since": 7,
         "loser_losses": 4,
         "loser_losses_since": 2,
         "loser_win_quality": 3.4261,
@@ -4908,7 +4985,7 @@
       "loser_rank": 17,
       "margin": 18,
       "rating_gap": 1.3129,
-      "reason": "+15.6 adjusted margin. Since then: USC has lost 3 since against Michigan's 2; so the resume order decides how far apart they sit",
+      "reason": "+15.6 adjusted margin. Since then: USC has lost 3 since against Michigan's 2; so this result was free to set aside. Michigan is held above by results the ranking honours: Michigan beat Washington, Washington beat Illinois, Illinois beat USC",
       "score": "31-13",
       "season_type": "regular",
       "site": "home",
@@ -5192,6 +5269,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 0,
               "loser_losses": 3,
               "loser_losses_since": 0,
               "loser_win_quality": 0.0,
@@ -5238,6 +5316,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 1,
               "loser_losses": 2,
               "loser_losses_since": 1,
               "loser_win_quality": 0.0,
@@ -5281,6 +5360,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 0,
               "loser_losses": 2,
               "loser_losses_since": 0,
               "loser_win_quality": 0.0,
@@ -5325,6 +5405,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 8,
               "loser_losses": 4,
               "loser_losses_since": 2,
               "loser_win_quality": 7.808,
@@ -5366,6 +5447,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 0,
               "loser_losses": 4,
               "loser_losses_since": 0,
               "loser_win_quality": 0.0,
@@ -5410,6 +5492,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 9,
               "loser_losses": 4,
               "loser_losses_since": 3,
               "loser_win_quality": 6.5415,
@@ -5455,6 +5538,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 4,
               "loser_losses": 6,
               "loser_losses_since": 0,
               "loser_win_quality": 7.1154,
@@ -5737,6 +5821,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 0,
               "loser_losses": 3,
               "loser_losses_since": 0,
               "loser_win_quality": 0.0,
@@ -5780,6 +5865,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 8,
               "loser_losses": 3,
               "loser_losses_since": 1,
               "loser_win_quality": 11.9138,
@@ -5825,6 +5911,7 @@
             "grounds": {
               "band_rate": 1.5,
               "enforced": false,
+              "loser_games_since": 10,
               "loser_losses": 3,
               "loser_losses_since": 2,
               "loser_win_quality": 10.4246,
@@ -5872,6 +5959,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 0,
               "loser_losses": 2,
               "loser_losses_since": 0,
               "loser_win_quality": 0.0,
@@ -5915,6 +6003,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 0,
               "loser_losses": 2,
               "loser_losses_since": 0,
               "loser_win_quality": 0.0,
@@ -5959,6 +6048,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 0,
               "loser_losses": 2,
               "loser_losses_since": 0,
               "loser_win_quality": 0.0,
@@ -6006,6 +6096,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 11,
               "loser_losses": 2,
               "loser_losses_since": 1,
               "loser_win_quality": 4.9467,
@@ -6055,6 +6146,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 1,
               "loser_losses": 5,
               "loser_losses_since": 1,
               "loser_win_quality": 0.0,
@@ -6096,6 +6188,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 10,
               "loser_losses": 4,
               "loser_losses_since": 3,
               "loser_win_quality": 0.4702,
@@ -6141,6 +6234,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 7,
               "loser_losses": 7,
               "loser_losses_since": 5,
               "loser_win_quality": 1.9413,
@@ -6451,6 +6545,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 1,
               "loser_losses": 2,
               "loser_losses_since": 1,
               "loser_win_quality": 0.0,
@@ -6492,6 +6587,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 0,
               "loser_losses": 2,
               "loser_losses_since": 0,
               "loser_win_quality": 0.0,
@@ -6537,6 +6633,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 12,
               "loser_losses": 3,
               "loser_losses_since": 2,
               "loser_win_quality": 9.6054,
@@ -6581,6 +6678,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 1,
               "loser_losses": 4,
               "loser_losses_since": 1,
               "loser_win_quality": 0.0,
@@ -6629,6 +6727,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 9,
               "loser_losses": 4,
               "loser_losses_since": 3,
               "loser_win_quality": 3.2957,
@@ -6674,6 +6773,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 6,
               "loser_losses": 4,
               "loser_losses_since": 2,
               "loser_win_quality": 5.4193,
@@ -6717,6 +6817,7 @@
             "grounds": {
               "band_rate": 1.5,
               "enforced": false,
+              "loser_games_since": 5,
               "loser_losses": 6,
               "loser_losses_since": 1,
               "loser_win_quality": 7.1154,
@@ -6996,6 +7097,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 0,
               "loser_losses": 2,
               "loser_losses_since": 0,
               "loser_win_quality": 0.0,
@@ -7043,6 +7145,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 0,
               "loser_losses": 2,
               "loser_losses_since": 0,
               "loser_win_quality": 0.0,
@@ -7085,6 +7188,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 5,
               "loser_losses": 3,
               "loser_losses_since": 1,
               "loser_win_quality": 16.8795,
@@ -7129,6 +7233,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 8,
               "loser_losses": 6,
               "loser_losses_since": 5,
               "loser_win_quality": 7.2701,
@@ -7412,6 +7517,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 0,
               "loser_losses": 2,
               "loser_losses_since": 0,
               "loser_win_quality": 0.0,
@@ -7456,6 +7562,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 0,
               "loser_losses": 2,
               "loser_losses_since": 0,
               "loser_win_quality": 0.0,
@@ -7502,6 +7609,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 4,
               "loser_losses": 4,
               "loser_losses_since": 1,
               "loser_win_quality": 8.0669,
@@ -7544,6 +7652,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 1,
               "loser_losses": 4,
               "loser_losses_since": 0,
               "loser_win_quality": 3.945,
@@ -7589,6 +7698,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 2,
               "loser_losses": 4,
               "loser_losses_since": 1,
               "loser_win_quality": 0.687,
@@ -7628,6 +7738,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 0,
               "loser_losses": 2,
               "loser_losses_since": 0,
               "loser_win_quality": 0.0,
@@ -7672,6 +7783,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 9,
               "loser_losses": 6,
               "loser_losses_since": 5,
               "loser_win_quality": 7.1154,
@@ -7956,6 +8068,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 0,
               "loser_losses": 2,
               "loser_losses_since": 0,
               "loser_win_quality": 0.0,
@@ -8001,6 +8114,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 3,
               "loser_losses": 3,
               "loser_losses_since": 0,
               "loser_win_quality": 16.7091,
@@ -8046,6 +8160,7 @@
             "grounds": {
               "band_rate": 1.5,
               "enforced": false,
+              "loser_games_since": 2,
               "loser_losses": 4,
               "loser_losses_since": 1,
               "loser_win_quality": 18.264,
@@ -8092,6 +8207,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 10,
               "loser_losses": 5,
               "loser_losses_since": 4,
               "loser_win_quality": 6.8643,
@@ -8131,6 +8247,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 1,
               "loser_losses": 4,
               "loser_losses_since": 1,
               "loser_win_quality": 0.0,
@@ -8173,6 +8290,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 6,
               "loser_losses": 7,
               "loser_losses_since": 4,
               "loser_win_quality": 6.2173,
@@ -8450,6 +8568,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 12,
               "loser_losses": 3,
               "loser_losses_since": 2,
               "loser_win_quality": 9.6054,
@@ -8493,6 +8612,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 3,
               "loser_losses": 3,
               "loser_losses_since": 0,
               "loser_win_quality": 16.7091,
@@ -8541,6 +8661,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 1,
               "loser_losses": 2,
               "loser_losses_since": 1,
               "loser_win_quality": 0.0,
@@ -8584,6 +8705,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 4,
               "loser_losses": 3,
               "loser_losses_since": 1,
               "loser_win_quality": 12.8205,
@@ -8625,6 +8747,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 7,
               "loser_losses": 3,
               "loser_losses_since": 2,
               "loser_win_quality": 15.3787,
@@ -8667,6 +8790,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 0,
               "loser_losses": 4,
               "loser_losses_since": 0,
               "loser_win_quality": 0.0,
@@ -8942,6 +9066,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 0,
               "loser_losses": 2,
               "loser_losses_since": 0,
               "loser_win_quality": 0.0,
@@ -8987,6 +9112,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 1,
               "loser_losses": 2,
               "loser_losses_since": 1,
               "loser_win_quality": 0.0,
@@ -9033,6 +9159,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 10,
               "loser_losses": 2,
               "loser_losses_since": 0,
               "loser_win_quality": 4.9467,
@@ -9080,6 +9207,7 @@
             "grounds": {
               "band_rate": 1.5,
               "enforced": false,
+              "loser_games_since": 4,
               "loser_losses": 5,
               "loser_losses_since": 2,
               "loser_win_quality": 9.8937,
@@ -9125,6 +9253,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 5,
               "loser_losses": 6,
               "loser_losses_since": 3,
               "loser_win_quality": 6.2173,
@@ -9167,6 +9296,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 7,
               "loser_losses": 7,
               "loser_losses_since": 5,
               "loser_win_quality": 6.2173,
@@ -9441,6 +9571,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 11,
               "loser_losses": 2,
               "loser_losses_since": 1,
               "loser_win_quality": 4.9467,
@@ -9486,6 +9617,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 10,
               "loser_losses": 2,
               "loser_losses_since": 0,
               "loser_win_quality": 4.9467,
@@ -9532,6 +9664,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 6,
               "loser_losses": 4,
               "loser_losses_since": 2,
               "loser_win_quality": 5.9967,
@@ -9577,6 +9710,7 @@
             "grounds": {
               "band_rate": 1.5,
               "enforced": false,
+              "loser_games_since": 3,
               "loser_losses": 5,
               "loser_losses_since": 2,
               "loser_win_quality": 10.8025,
@@ -9844,6 +9978,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 0,
               "loser_losses": 2,
               "loser_losses_since": 0,
               "loser_win_quality": 0.0,
@@ -9887,6 +10022,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 7,
               "loser_losses": 2,
               "loser_losses_since": 1,
               "loser_win_quality": 5.8798,
@@ -9935,6 +10071,7 @@
             "grounds": {
               "band_rate": 1.5,
               "enforced": false,
+              "loser_games_since": 1,
               "loser_losses": 2,
               "loser_losses_since": 0,
               "loser_win_quality": 10.8025,
@@ -9984,6 +10121,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 9,
               "loser_losses": 2,
               "loser_losses_since": 1,
               "loser_win_quality": 6.7791,
@@ -10031,6 +10169,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 8,
               "loser_losses": 3,
               "loser_losses_since": 2,
               "loser_win_quality": 7.1101,
@@ -10084,7 +10223,7 @@
           "Resume adjustment earned back 4.08 rank points, driven by cover.",
           "Arizona State beat Texas Tech 26-22 from 29 places lower on the resume board (#37 over #8), so both were pulled toward the midpoint.",
           "Head-to-head held: beat #11 BYU 34-7 at a neutral site in week 15.",
-          "Ranked above #31 Arizona State despite losing 22-26 on the road in week 8 -- a 4-point win at home is worth +1.6 once venue is accounted for; the winner rates 12.0 points worse on the power ratings; the loser fared better against 3 shared opponents. Since then: Arizona State has more losses, 5 to 2; Arizona State has lost 3 since against Texas Tech's 1; so the resume order decides how far apart they sit.",
+          "Ranked above #31 Arizona State despite losing 22-26 on the road in week 8 -- a 4-point win at home is worth +1.6 once venue is accounted for; the winner rates 12.0 points worse on the power ratings; the loser fared better against 3 shared opponents. Since then: Arizona State has more losses, 5 to 2; Arizona State has lost 3 since against Texas Tech's 1; so this result was free to set aside. Texas Tech is held above by an enforced chain: Texas Tech beat Houston, Houston beat Arizona State.",
           "Part of contradiction loop C2, a 9-team tangle of results that no ordering can fully satisfy.",
           "Moved up 2 from its base position of #12."
         ]
@@ -10317,6 +10456,7 @@
             "grounds": {
               "band_rate": 1.5,
               "enforced": false,
+              "loser_games_since": 1,
               "loser_losses": 2,
               "loser_losses_since": 0,
               "loser_win_quality": 10.8025,
@@ -10367,6 +10507,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 6,
               "loser_losses": 2,
               "loser_losses_since": 0,
               "loser_win_quality": 7.4924,
@@ -10414,6 +10555,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 4,
               "loser_losses": 4,
               "loser_losses_since": 1,
               "loser_win_quality": 6.7416,
@@ -10460,6 +10602,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 3,
               "loser_losses": 4,
               "loser_losses_since": 0,
               "loser_win_quality": 10.4683,
@@ -10506,6 +10649,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 7,
               "loser_losses": 4,
               "loser_losses_since": 2,
               "loser_win_quality": 7.1629,
@@ -10547,6 +10691,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 0,
               "loser_losses": 4,
               "loser_losses_since": 0,
               "loser_win_quality": 0.0,
@@ -10828,6 +10973,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 9,
               "loser_losses": 2,
               "loser_losses_since": 1,
               "loser_win_quality": 6.7791,
@@ -10874,6 +11020,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 6,
               "loser_losses": 2,
               "loser_losses_since": 0,
               "loser_win_quality": 7.4924,
@@ -10923,6 +11070,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 7,
               "loser_losses": 5,
               "loser_losses_since": 3,
               "loser_win_quality": 8.1442,
@@ -11197,6 +11345,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 8,
               "loser_losses": 4,
               "loser_losses_since": 2,
               "loser_win_quality": 7.808,
@@ -11243,6 +11392,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 4,
               "loser_losses": 4,
               "loser_losses_since": 1,
               "loser_win_quality": 8.0669,
@@ -11282,6 +11432,7 @@
             "grounds": {
               "band_rate": 1.5,
               "enforced": false,
+              "loser_games_since": 11,
               "loser_losses": 4,
               "loser_losses_since": 3,
               "loser_win_quality": 6.2078,
@@ -11328,6 +11479,7 @@
             "grounds": {
               "band_rate": 1.5,
               "enforced": false,
+              "loser_games_since": 3,
               "loser_losses": 4,
               "loser_losses_since": 0,
               "loser_win_quality": 8.0669,
@@ -11373,6 +11525,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 0,
               "loser_losses": 3,
               "loser_losses_since": 0,
               "loser_win_quality": 0.0,
@@ -11420,6 +11573,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 6,
               "loser_losses": 6,
               "loser_losses_since": 2,
               "loser_win_quality": 7.1154,
@@ -11707,6 +11861,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 0,
               "loser_losses": 4,
               "loser_losses_since": 0,
               "loser_win_quality": 0.0,
@@ -11749,6 +11904,7 @@
             "grounds": {
               "band_rate": 1.5,
               "enforced": false,
+              "loser_games_since": 2,
               "loser_losses": 4,
               "loser_losses_since": 1,
               "loser_win_quality": 18.264,
@@ -11790,6 +11946,7 @@
             "grounds": {
               "band_rate": 1.5,
               "enforced": false,
+              "loser_games_since": 14,
               "loser_losses": 4,
               "loser_losses_since": 3,
               "loser_win_quality": 11.4456,
@@ -11841,6 +11998,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 7,
               "loser_losses": 3,
               "loser_losses_since": 2,
               "loser_win_quality": 13.4643,
@@ -11889,6 +12047,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 0,
               "loser_losses": 3,
               "loser_losses_since": 0,
               "loser_win_quality": 0.0,
@@ -11935,6 +12094,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 7,
               "loser_losses": 5,
               "loser_losses_since": 4,
               "loser_win_quality": 11.2544,
@@ -11978,6 +12138,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 6,
               "loser_losses": 5,
               "loser_losses_since": 3,
               "loser_win_quality": 7.1328,
@@ -12021,6 +12182,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 4,
               "loser_losses": 6,
               "loser_losses_since": 2,
               "loser_win_quality": 6.2173,
@@ -12066,16 +12228,14 @@
             "conviction": 0.9791,
             "grounds": {
               "band_rate": 0.0,
-              "enforced": false,
+              "enforced": true,
+              "loser_games_since": 0,
               "loser_losses": 7,
               "loser_losses_since": 0,
               "loser_win_quality": 0.0,
-              "max_lead": null,
+              "max_lead": 0.0,
               "quality_diff": 0.0,
-              "rules": [
-                2,
-                3
-              ],
+              "rules": [],
               "weeks_since": 7.0,
               "winner_losses": 4,
               "winner_losses_since": 2,
@@ -12123,7 +12283,7 @@
           "Resume adjustment cost 3.30 rank points, driven by loss quality.",
           "Florida State beat Alabama 31-17 from 28 places lower on the resume board (#40 over #12), so both were pulled toward the midpoint.",
           "Head-to-head held: beat #15 Vanderbilt 30-14 at home in week 6.",
-          "Ranked above #39 Florida State despite losing 17-31 on the road in week 1 -- +11.6 adjusted margin; the winner rates 7.6 points worse on the power ratings. Since then: Florida State has more losses, 7 to 4; Florida State has lost 7 since against Alabama's 3; Alabama's wins since average 10.5 rating points better; so the resume order decides how far apart they sit.",
+          "Ranked above #39 Florida State despite losing 17-31 on the road in week 1 -- +11.6 adjusted margin; the winner rates 7.6 points worse on the power ratings. Since then: Florida State has more losses, 7 to 4; Florida State has lost 7 since against Alabama's 3; Alabama's wins since average 10.5 rating points better; so this result was free to set aside. Alabama is held above by results the ranking honours: Alabama beat LSU, LSU beat Clemson, Clemson beat Florida State.",
           "Part of contradiction loop C1, a 22-team tangle of results that no ordering can fully satisfy.",
           "Moved up 3 from its base position of #17."
         ]
@@ -12369,6 +12529,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 4,
               "loser_losses": 3,
               "loser_losses_since": 1,
               "loser_win_quality": 12.8205,
@@ -12408,6 +12569,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 0,
               "loser_losses": 3,
               "loser_losses_since": 0,
               "loser_win_quality": 0.0,
@@ -12455,6 +12617,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 7,
               "loser_losses": 3,
               "loser_losses_since": 2,
               "loser_win_quality": 13.4643,
@@ -12503,6 +12666,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 5,
               "loser_losses": 5,
               "loser_losses_since": 3,
               "loser_win_quality": 9.8937,
@@ -12545,6 +12709,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 1,
               "loser_losses": 5,
               "loser_losses_since": 1,
               "loser_win_quality": 0.0,
@@ -12587,6 +12752,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 6,
               "loser_losses": 6,
               "loser_losses_since": 4,
               "loser_win_quality": 6.2173,
@@ -12630,6 +12796,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 2,
               "loser_losses": 7,
               "loser_losses_since": 1,
               "loser_win_quality": 0.0,
@@ -12905,6 +13072,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 5,
               "loser_losses": 3,
               "loser_losses_since": 1,
               "loser_win_quality": 16.8795,
@@ -12946,6 +13114,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 7,
               "loser_losses": 3,
               "loser_losses_since": 2,
               "loser_win_quality": 15.3787,
@@ -12991,6 +13160,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 0,
               "loser_losses": 3,
               "loser_losses_since": 0,
               "loser_win_quality": 0.0,
@@ -13036,6 +13206,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 11,
               "loser_losses": 4,
               "loser_losses_since": 3,
               "loser_win_quality": 3.6721,
@@ -13079,6 +13250,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 2,
               "loser_losses": 5,
               "loser_losses_since": 1,
               "loser_win_quality": 12.4347,
@@ -13120,6 +13292,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 4,
               "loser_losses": 5,
               "loser_losses_since": 2,
               "loser_win_quality": 6.9367,
@@ -13163,6 +13336,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 1,
               "loser_losses": 6,
               "loser_losses_since": 1,
               "loser_win_quality": 0.0,
@@ -13205,6 +13379,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 8,
               "loser_losses": 7,
               "loser_losses_since": 6,
               "loser_win_quality": 6.2173,
@@ -13482,6 +13657,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 1,
               "loser_losses": 4,
               "loser_losses_since": 1,
               "loser_win_quality": 0.0,
@@ -13526,6 +13702,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 0,
               "loser_losses": 4,
               "loser_losses_since": 0,
               "loser_win_quality": 0.0,
@@ -13567,6 +13744,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 11,
               "loser_losses": 4,
               "loser_losses_since": 3,
               "loser_win_quality": 3.6721,
@@ -13611,6 +13789,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 7,
               "loser_losses": 4,
               "loser_losses_since": 2,
               "loser_win_quality": 3.4261,
@@ -13659,6 +13838,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 6,
               "loser_losses": 4,
               "loser_losses_since": 2,
               "loser_win_quality": 4.24,
@@ -13711,7 +13891,7 @@
           "Resume order #17 from 0.55 x SoR #17 + 0.3 x Mkt #17 + 0.15 x PPA #28 = 18.65.",
           "Resume adjustment cost 6.39 rank points, driven by loss quality.",
           "Head-to-head held: beat #18 Washington 24-7 at home in week 8.",
-          "Ranked above #26 USC despite losing 13-31 on the road in week 7 -- +15.6 adjusted margin. Since then: USC has lost 3 since against Michigan's 2; so the resume order decides how far apart they sit.",
+          "Ranked above #26 USC despite losing 13-31 on the road in week 7 -- +15.6 adjusted margin. Since then: USC has lost 3 since against Michigan's 2; so this result was free to set aside. Michigan is held above by results the ranking honours: Michigan beat Washington, Washington beat Illinois, Illinois beat USC.",
           "Part of contradiction loop C1, a 22-team tangle of results that no ordering can fully satisfy.",
           "Moved up 3 from its base position of #20."
         ]
@@ -13942,6 +14122,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 9,
               "loser_losses": 4,
               "loser_losses_since": 3,
               "loser_win_quality": 3.2957,
@@ -13984,6 +14165,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 1,
               "loser_losses": 4,
               "loser_losses_since": 0,
               "loser_win_quality": 3.945,
@@ -14031,6 +14213,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 6,
               "loser_losses": 4,
               "loser_losses_since": 2,
               "loser_win_quality": 4.24,
@@ -14078,6 +14261,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 5,
               "loser_losses": 4,
               "loser_losses_since": 1,
               "loser_win_quality": 5.4193,
@@ -14356,6 +14540,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 0,
               "loser_losses": 5,
               "loser_losses_since": 0,
               "loser_win_quality": 0.0,
@@ -14398,6 +14583,7 @@
             "grounds": {
               "band_rate": 1.5,
               "enforced": false,
+              "loser_games_since": 8,
               "loser_losses": 4,
               "loser_losses_since": 3,
               "loser_win_quality": 6.0686,
@@ -14444,6 +14630,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 8,
               "loser_losses": 7,
               "loser_losses_since": 6,
               "loser_win_quality": 1.9413,
@@ -14725,6 +14912,7 @@
             "grounds": {
               "band_rate": 1.5,
               "enforced": false,
+              "loser_games_since": 4,
               "loser_losses": 5,
               "loser_losses_since": 2,
               "loser_win_quality": 9.8937,
@@ -14771,6 +14959,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 7,
               "loser_losses": 5,
               "loser_losses_since": 4,
               "loser_win_quality": 11.2544,
@@ -14814,6 +15003,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 5,
               "loser_losses": 5,
               "loser_losses_since": 3,
               "loser_win_quality": 9.8937,
@@ -14857,6 +15047,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 2,
               "loser_losses": 5,
               "loser_losses_since": 1,
               "loser_win_quality": 12.4347,
@@ -14896,6 +15087,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 0,
               "loser_losses": 5,
               "loser_losses_since": 0,
               "loser_win_quality": 0.0,
@@ -14943,6 +15135,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 5,
               "loser_losses": 7,
               "loser_losses_since": 3,
               "loser_win_quality": 6.2173,
@@ -15230,6 +15423,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 4,
               "loser_losses": 4,
               "loser_losses_since": 1,
               "loser_win_quality": 6.7416,
@@ -15275,6 +15469,7 @@
             "grounds": {
               "band_rate": 1.5,
               "enforced": false,
+              "loser_games_since": 3,
               "loser_losses": 4,
               "loser_losses_since": 0,
               "loser_win_quality": 6.7416,
@@ -15321,6 +15516,7 @@
             "grounds": {
               "band_rate": 1.5,
               "enforced": false,
+              "loser_games_since": 11,
               "loser_losses": 4,
               "loser_losses_since": 3,
               "loser_win_quality": 6.2078,
@@ -15369,6 +15565,7 @@
             "grounds": {
               "band_rate": 1.5,
               "enforced": false,
+              "loser_games_since": 4,
               "loser_losses": 4,
               "loser_losses_since": 1,
               "loser_win_quality": 10.4683,
@@ -15418,6 +15615,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 9,
               "loser_losses": 4,
               "loser_losses_since": 3,
               "loser_win_quality": 5.9691,
@@ -15473,7 +15671,7 @@
           "Resume adjustment cost 4.33 rank points, driven by loss quality.",
           "Iowa State beat Iowa 16-13 from 16 places lower on the resume board (#31 over #15), so both were pulled toward the midpoint.",
           "Head-to-head held: beat #22 TCU 20-17 on the road in week 11.",
-          "Ranked above #31 Arizona State despite losing 19-24 at home in week 10 -- +7.4 adjusted margin; the loser fared better against 3 shared opponents. Since then: Arizona State has more losses, 5 to 4; Arizona State has lost 2 since and Iowa State none; Iowa State's wins since average 5.8 rating points better; so the resume order decides how far apart they sit.",
+          "Ranked above #31 Arizona State despite losing 19-24 at home in week 10 -- +7.4 adjusted margin; the loser fared better against 3 shared opponents. Since then: Arizona State has more losses, 5 to 4; Arizona State has lost 2 since and Iowa State none; Iowa State's wins since average 5.8 rating points better; so this result was free to set aside. Iowa State is held above by results the ranking honours: Iowa State beat Arizona, Arizona beat Arizona State.",
           "Ranked below #13 Iowa despite winning 16-13 at home in week 2 -- a 3-point win at home is worth +0.6 once venue is accounted for; the winner rates 2.8 points worse on the power ratings. Since then: Iowa State has lost 4 since against Iowa's 3; Iowa's wins since average 0.5 rating points better; so the resume order decides how far apart they sit.",
           "Part of contradiction loop C2, a 9-team tangle of results that no ordering can fully satisfy.",
           "Moved up 7 from its base position of #28."
@@ -15702,6 +15900,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 3,
               "loser_losses": 4,
               "loser_losses_since": 0,
               "loser_win_quality": 10.4683,
@@ -15750,6 +15949,7 @@
             "grounds": {
               "band_rate": 1.5,
               "enforced": false,
+              "loser_games_since": 4,
               "loser_losses": 4,
               "loser_losses_since": 1,
               "loser_win_quality": 10.4683,
@@ -15797,6 +15997,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 9,
               "loser_losses": 4,
               "loser_losses_since": 3,
               "loser_win_quality": 6.9394,
@@ -15843,6 +16044,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 9,
               "loser_losses": 4,
               "loser_losses_since": 2,
               "loser_win_quality": 7.9651,
@@ -15884,6 +16086,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 0,
               "loser_losses": 4,
               "loser_losses_since": 0,
               "loser_win_quality": 0.0,
@@ -15928,6 +16131,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 2,
               "loser_losses": 3,
               "loser_losses_since": 0,
               "loser_win_quality": 11.2761,
@@ -15982,7 +16186,7 @@
           "Resume order #23 from 0.55 x SoR #22 + 0.3 x Mkt #31 + 0.15 x PPA #35 = 26.65.",
           "Resume adjustment cost 5.33 rank points, driven by loss quality.",
           "Head-to-head held: beat #23 SMU 35-24 at home in week 4.",
-          "Ranked above #31 Arizona State despite losing 24-27 on the road in week 5 -- a 3-point win at home is worth +0.6 once venue is accounted for; the winner rates 2.4 points worse on the power ratings. Since then: Arizona State has more losses, 5 to 4; Arizona State has lost 4 since against TCU's 3; so the resume order decides how far apart they sit.",
+          "Ranked above #31 Arizona State despite losing 24-27 on the road in week 5 -- a 3-point win at home is worth +0.6 once venue is accounted for; the winner rates 2.4 points worse on the power ratings. Since then: Arizona State has more losses, 5 to 4; Arizona State has lost 4 since against TCU's 3; so this result was free to set aside. TCU is held above by results the ranking honours: TCU beat Houston, Houston beat Arizona State.",
           "Part of contradiction loop C2, a 9-team tangle of results that no ordering can fully satisfy.",
           "Moved up 5 from its base position of #27."
         ]
@@ -16210,6 +16414,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 9,
               "loser_losses": 4,
               "loser_losses_since": 2,
               "loser_win_quality": 7.9651,
@@ -16257,6 +16462,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 8,
               "loser_losses": 3,
               "loser_losses_since": 1,
               "loser_win_quality": 11.9138,
@@ -16303,6 +16509,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 2,
               "loser_losses": 4,
               "loser_losses_since": 0,
               "loser_win_quality": 3.7625,
@@ -16347,6 +16554,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 0,
               "loser_losses": 4,
               "loser_losses_since": 0,
               "loser_win_quality": 0.0,
@@ -16390,6 +16598,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 6,
               "loser_losses": 6,
               "loser_losses_since": 2,
               "loser_win_quality": 9.0755,
@@ -16677,6 +16886,7 @@
             "grounds": {
               "band_rate": 1.5,
               "enforced": false,
+              "loser_games_since": 8,
               "loser_losses": 4,
               "loser_losses_since": 3,
               "loser_win_quality": 6.0686,
@@ -16723,6 +16933,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 2,
               "loser_losses": 4,
               "loser_losses_since": 0,
               "loser_win_quality": 3.7625,
@@ -16768,6 +16979,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 3,
               "loser_losses": 4,
               "loser_losses_since": 1,
               "loser_win_quality": 3.7625,
@@ -16815,6 +17027,7 @@
             "grounds": {
               "band_rate": 1.5,
               "enforced": false,
+              "loser_games_since": 10,
               "loser_losses": 3,
               "loser_losses_since": 2,
               "loser_win_quality": 10.4246,
@@ -16858,6 +17071,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 12,
               "loser_losses": 2,
               "loser_losses_since": 1,
               "loser_win_quality": 0.2578,
@@ -16903,6 +17117,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 9,
               "loser_losses": 5,
               "loser_losses_since": 3,
               "loser_win_quality": 5.2659,
@@ -16958,7 +17173,7 @@
           "Resume adjustment cost 5.72 rank points, driven by loss quality.",
           "Louisville beat Miami 24-21 from 27 places lower on the resume board (#29 over #2), so both were pulled toward the midpoint.",
           "Head-to-head held: beat #28 James Madison 28-14 at home in week 2.",
-          "Ranked above #38 Clemson despite losing 19-20 at home in week 12 -- +3.4 adjusted margin. Since then: Clemson has more losses, 6 to 4; so the resume order decides how far apart they sit.",
+          "Ranked above #38 Clemson despite losing 19-20 at home in week 12 -- +3.4 adjusted margin. Since then: Clemson has more losses, 6 to 4; so this result was free to set aside. Louisville is held above by results the ranking honours: Louisville beat Pittsburgh, Pittsburgh beat Georgia Tech, Georgia Tech beat Clemson.",
           "Ranked below #2 Miami despite winning 24-21 on the road in week 8 -- +5.4 adjusted margin; the winner rates 7.5 points worse on the power ratings; the loser fared better against 3 shared opponents. Since then: Louisville has more losses, 4 to 3; Louisville has lost 3 since against Miami's 2; Miami's wins since average 7.9 rating points better; so the resume order decides how far apart they sit.",
           "Part of contradiction loop C1, a 22-team tangle of results that no ordering can fully satisfy.",
           "Moved down 2 from its base position of #22."
@@ -17194,6 +17409,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 9,
               "loser_losses": 4,
               "loser_losses_since": 3,
               "loser_win_quality": 6.5415,
@@ -17239,6 +17455,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 6,
               "loser_losses": 4,
               "loser_losses_since": 2,
               "loser_win_quality": 5.4193,
@@ -17284,6 +17501,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": false,
+              "loser_games_since": 5,
               "loser_losses": 4,
               "loser_losses_since": 1,
               "loser_win_quality": 5.4193,
@@ -17330,6 +17548,7 @@
             "grounds": {
               "band_rate": 1.5,
               "enforced": false,
+              "loser_games_since": 8,
               "loser_losses": 4,
               "loser_losses_since": 3,
               "loser_win_quality": 8.0491,
@@ -17371,6 +17590,7 @@
             "grounds": {
               "band_rate": 0.0,
               "enforced": true,
+              "loser_games_since": 0,
               "loser_losses": 5,
               "loser_losses_since": 0,
               "loser_win_quality": 0.0,

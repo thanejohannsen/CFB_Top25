@@ -331,6 +331,7 @@ tr.detail[hidden] { display: none; }
 .adj-table tr:last-child td { border-bottom: 0; }
 .reasons { margin: 0; padding-left: 18px; }
 .reasons li { margin-bottom: 6px; font-size: 0.9375rem; }
+.reasons li.rule-note { list-style: none; margin-left: -18px; color: var(--ink-2); }
 .kv { display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; font-size: 0.875rem; margin: 0; }
 .kv dt { color: var(--ink-2); }
 .kv dd { margin: 0; font-variant-numeric: tabular-nums; }

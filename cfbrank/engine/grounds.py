@@ -10,13 +10,18 @@ This module answers the second, and it is not a matter of degree:
     Team A beat Team B. **A HAS to be ranked above B** unless
 
       1. A has more losses than B                                   (any gap)
-      2. A has lost since the game and B has not                    (any gap)
-      3. A has lost more times since the game than B has            (any gap)
+      2. A has lost since the game and B has not, AND B has PLAYED  (any gap)
+      3. A has lost more times since than B has, AND B has PLAYED   (any gap)
       4. B has impressive wins and A has mediocre wins, AND at
          least `min_weeks` have passed since the game            (BANDED gap)
 
 Rules 1-3 are about slipping; rule 4 is about being overtaken. Nothing else
 counts. If none of them applies the result stands, full stop.
+
+Rules 2 and 3 carry one condition the owner's sentence leaves implicit: B has
+to have taken the field. "B has not lost since" is trivially true of a team on
+a bye, and rewarding a week off is not what "A slipped while B did not" means.
+See `compute` for the week the board got that wrong.
 
 ## Why this is a cap and not a price
 
@@ -103,6 +108,7 @@ class Grounds:
     loser_losses: int
     winner_losses_since: int     # losses after this game, for rules 2 and 3
     loser_losses_since: int
+    loser_games_since: int       # games B has PLAYED since; a bye is not survival
     winner_quality: float        # mean rating points past the board mean, wins SINCE
     loser_quality: float
     quality_diff: float          # how far the loser's subsequent wins lead, >= 0
@@ -199,9 +205,19 @@ def compute(
         wins_by[r.winner].append(r)
         losses_by[r.loser].append(r)
 
+    games_by: dict[str, list[GameResult]] = defaultdict(list)
+    for r in all_results:
+        games_by[r.winner].append(r)
+        games_by[r.loser].append(r)
+
     def losses_after(team: str, after: float) -> int:
         return sum(
             1 for r in losses_by[team] if week_index(r.season_type, r.week) > after
+        )
+
+    def games_after(team: str, after: float) -> int:
+        return sum(
+            1 for r in games_by[team] if week_index(r.season_type, r.week) > after
         )
 
     out: dict[Edge, Grounds] = {}
@@ -212,6 +228,7 @@ def compute(
         w_total, l_total = len(losses_by[r.winner]), len(losses_by[r.loser])
         w_since = losses_after(r.winner, played)
         l_since = losses_after(r.loser, played)
+        l_games = games_after(r.loser, played)
         w_quality = _win_quality(wins_by[r.winner], played, quality, bar)
         l_quality = _win_quality(wins_by[r.loser], played, quality, bar)
         diff = max(0.0, l_quality - w_quality)
@@ -219,12 +236,20 @@ def compute(
         rules: list[int] = []
         if w_total > l_total:
             rules.append(1)
+        # A BYE IS NOT SURVIVAL. Both clauses are about B still going while A
+        # slipped, and "B has not lost" is trivially true of a team that did not
+        # play. On 2026 week 8 that published Missouri above Ole Miss a week
+        # after Ole Miss beat them 31-3: Ole Miss lost at Texas, Missouri sat
+        # out, and the exception it bought was what let an enforced chain
+        # through Florida drag Missouri twelve places up. So B has to have
+        # taken the field.
+        #
         # Rule 2 is the N=1 case of rule 3, so both are reported when both hold:
         # "has lost since while the other has not" is the owner's own first
         # clause and reads differently from "has lost more since".
-        if w_since >= 1 and l_since == 0:
+        if w_since >= 1 and l_since == 0 and l_games >= 1:
             rules.append(2)
-        if w_since > l_since:
+        if w_since > l_since and l_games >= 1:
             rules.append(3)
         rate = 0.0
         if l_quality >= bar_q and w_quality < bar_q and age >= min_weeks:
@@ -252,6 +277,7 @@ def compute(
             loser_losses=l_total,
             winner_losses_since=w_since,
             loser_losses_since=l_since,
+            loser_games_since=l_games,
             winner_quality=w_quality,
             loser_quality=l_quality,
             quality_diff=diff,

@@ -16,6 +16,7 @@ from cfbrank.output.schema import build_payload, content_hash, validate_payload
 from cfbrank.output.writer import dumps_stable
 from cfbrank.sources.fixtures import FixtureSource
 from cfbrank.sources.loader import build_dataset
+from scripts.make_golden import FROZEN
 
 GENERATED_AT = "2026-01-01T00:00:00Z"
 
@@ -25,7 +26,21 @@ def dataset(year):
 
 
 def config(year, *overrides):
+    """The LIVE config -- for tests about what is actually shipped."""
     return load("config/ranking.toml", [f"season.year={year}", *overrides])
+
+
+def pinned(year, *overrides):
+    """The frozen config the golden is built from.
+
+    Every assertion about a real board uses this. The weights in
+    config/ranking.toml are the owner's dials, meant to be retuned from the
+    GitHub web UI, and a test that reads them turns each retune into a red CI
+    run -- which is what happened when `margin_cap` moved from 28 to 21 and the
+    Missouri/Florida base ranks shifted under this file. One source of truth,
+    shared with scripts/make_golden.py, so the two cannot drift apart.
+    """
+    return load("config/ranking.toml", [f"season.year={year}", *FROZEN, *overrides])
 
 
 class TestCompletedSeason(unittest.TestCase):
@@ -34,7 +49,7 @@ class TestCompletedSeason(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.ds = dataset(2025)
-        cls.cfg = config(2025)
+        cls.cfg = pinned(2025)
         cls.result = rank(cls.ds, cls.cfg)
 
     def test_snapshot_identity(self):
@@ -120,8 +135,8 @@ class TestHardCaps(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.ds = dataset(2026)
-        cls.on = rank(cls.ds, config(2026))
-        cls.off = rank(cls.ds, config(2026, "stage4.grounds.enabled=false"))
+        cls.on = rank(cls.ds, pinned(2026))
+        cls.off = rank(cls.ds, pinned(2026, "stage4.grounds.enabled=false"))
 
     def test_every_pool_result_is_judged(self):
         for key, fact in self.on.edge_facts.items():
@@ -129,25 +144,49 @@ class TestHardCaps(unittest.TestCase):
             self.assertGreaterEqual(fact.grounds.max_lead, 0.0, key)
 
     def test_a_result_with_no_exception_is_honoured(self):
-        """Missouri beat Florida the week being ranked, so nothing excuses it."""
+        """Missouri beat Florida the week being ranked, so nothing excuses it.
+
+        The constraint is genuinely binding here rather than agreed with: the
+        base order has Florida ABOVE Missouri, and the published board does not.
+
+        It makes no claim about the grounds-off run. Under the frozen weights
+        the cost model reaches the same answer unaided, so "off" would prove
+        nothing about this pair -- `test_every_enforced_result_is_honoured` and
+        test_order's `test_an_enforced_result_is_never_crossed` are what carry
+        the structural guarantee.
+        """
         pair = ("Missouri", "Florida")
-        self.assertEqual(self.on.edge_facts[pair].grounds.rules, ())
-        self.assertTrue(self.on.edge_facts[pair].grounds.enforced)
-        self.assertIn(pair, self.off.ordering.violated, "unconstrained, it was dropped")
+        g = self.on.edge_facts[pair].grounds
+        self.assertEqual(g.rules, ())
+        self.assertTrue(g.enforced)
+        self.assertEqual(g.max_lead, 0.0)
+        base = self.on.teams
+        self.assertGreater(
+            base["Missouri"].base_rank, base["Florida"].base_rank,
+            "the resume disagrees, so stage 4 is doing the work",
+        )
         self.assertNotIn(pair, self.on.ordering.violated)
         rank_of = {t: i for i, t in enumerate(self.on.order)}
         self.assertLess(rank_of["Missouri"], rank_of["Florida"])
 
     def test_the_pair_met_in_the_middle_rather_than_one_being_dragged(self):
-        """Base 20 and 11; parking Missouri just above Florida would be cheaper
-        to find but dearer to hold."""
+        """Base 19 and 16, published 17 and 18: each moved two places.
+
+        Lifting Missouri to just above Florida would cost 3 places of drift to
+        Florida's 1; meeting at 17/18 costs 2 and 2, which is cheaper under
+        `drift_exponent` and is what the block moves exist to find.
+        """
         rank_of = {t: i + 1 for i, t in enumerate(self.on.order)}
         missouri, florida = rank_of["Missouri"], rank_of["Florida"]
-        self.assertEqual(self.on.teams["Missouri"].base_rank, 20)
-        self.assertEqual(self.on.teams["Florida"].base_rank, 11)
-        self.assertLess(missouri, florida)
-        self.assertGreater(missouri, 12, f"Missouri was dragged to Florida: {missouri}")
-        self.assertLess(florida, 19, f"Florida barely moved: {florida}")
+        m_base = self.on.teams["Missouri"].base_rank
+        f_base = self.on.teams["Florida"].base_rank
+        self.assertEqual((m_base, f_base), (19, 16))
+        self.assertLess(missouri, florida, "the result is honoured")
+        self.assertEqual(
+            m_base - missouri, florida - f_base,
+            f"one end was dragged: Missouri {m_base}->{missouri}, Florida {f_base}->{florida}",
+        )
+        self.assertGreater(missouri, f_base, "Missouri was parked on Florida's spot")
 
     def test_slipping_since_leaves_the_resume_order_alone(self):
         """Ole Miss beat LSU and has since lost; LSU has not. Any gap is allowed."""
@@ -231,7 +270,7 @@ class TestLiveSeason(unittest.TestCase):
 class TestDeterminism(unittest.TestCase):
     def test_identical_bytes_across_shuffled_inputs(self):
         ds = dataset(2025)
-        cfg = config(2025)
+        cfg = pinned(2025)
         reference = None
         for seed in range(8):
             r = random.Random(seed)
@@ -247,7 +286,7 @@ class TestDeterminism(unittest.TestCase):
             self.assertEqual(text, reference, f"seed {seed} produced different bytes")
 
     def test_repeated_runs_agree(self):
-        ds, cfg = dataset(2026), config(2026)
+        ds, cfg = dataset(2026), pinned(2026)
         self.assertEqual(rank(ds, cfg).order, rank(ds, cfg).order)
 
 
@@ -260,7 +299,7 @@ class TestLeaderboards(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.ds, cls.cfg = dataset(2026), config(2026)
+        cls.ds, cls.cfg = dataset(2026), pinned(2026)
         cls.result = rank(cls.ds, cls.cfg)
         cls.payload = build_payload(cls.result, cls.ds, cls.cfg, GENERATED_AT)
         cls.boards = cls.payload["leaderboards"]
@@ -326,7 +365,7 @@ class TestPayload(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.ds = dataset(2025)
-        cls.cfg = config(2025)
+        cls.cfg = pinned(2025)
         cls.payload = build_payload(rank(cls.ds, cls.cfg), cls.ds, cls.cfg, GENERATED_AT)
 
     def test_validates(self):
@@ -539,7 +578,7 @@ class TestCredentialsNeverReachOutput(unittest.TestCase):
 
 class TestValidatorCatchesBreakage(unittest.TestCase):
     def setUp(self):
-        ds, cfg = dataset(2026), config(2026)
+        ds, cfg = dataset(2026), pinned(2026)
         self.payload = build_payload(rank(ds, cfg), ds, cfg, GENERATED_AT)
 
     def test_detects_a_rank_gap(self):

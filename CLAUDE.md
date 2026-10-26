@@ -484,9 +484,39 @@ What was measured, and should not be re-derived:
   +0.25 a week, ceiling 1.5) because being overtaken takes time to establish. On a
   completed season nearly every rule-4 edge is 6+ weeks old and sits at the
   ceiling, so the ramp is an early-season instrument.
+- **A BYE IS NOT SURVIVAL, and rules 2 and 3 now say so.** Both clauses are
+  about B still going while A slipped, and "B has not lost since" is trivially
+  true of a team that did not play. On **2026 week 8 that published Missouri
+  above Ole Miss seven days after Ole Miss beat them 31-3**: Ole Miss lost at
+  Texas, Missouri was idle, and `rules = (2, 3)` made the result free to set
+  aside. The cost was not the one place it looks like -- the resume had Ole Miss
+  #5 and Missouri #19, and the exemption let an enforced chain (Missouri beat
+  Florida, Florida beat Ole Miss) carry Missouri **twelve places up**. So both
+  rules now also require `loser_games_since >= 1`. Rule 1 is untouched: it is
+  about the whole record, not about what has happened since. Rule 4 needs no
+  guard -- a team with no wins since scores 0 on win quality and cannot clear
+  the bar.
 - **Age alone is NOT an exception.** An earlier draft made it one, on the strength
   of the owner's "this gap can increase with time" -- which was about the *gap*,
   not about a new reason. Time only widens rule 4's band.
+
+### Say what actually holds the pair apart, not what you wish had
+
+An exception only says the ranking MAY go against a result. What usually *does*
+put the loser above the winner is a chain of other results the ranking is
+honouring, so `provenance.grounds_reason` used to end "so the resume order
+decides how far apart they sit" in cases where the resume said the **opposite**.
+On 2026 week 8 it claimed that about a pair the resume had fourteen places the
+other way.
+
+`pipeline` now walks the honoured results from loser back to winner
+(`graph.shortest_path`, BFS in `sort_key` order so the published sentence cannot
+churn `content_hash`) and publishes a `Holding`: the path, whether every hop is
+enforced, and how many places the resume had the winner higher. The sentence
+becomes "Alabama is held above by results the ranking honours: Alabama beat LSU,
+LSU beat Clemson, Clemson beat Florida State", or "by an enforced chain" when no
+hop can be unlocked at all. Only when there is no such path does the old
+"the resume order decides" clause stand, because only then is it true.
 
 ### Both teams meet in the middle, and that needs block moves
 
@@ -569,6 +599,17 @@ without rescaling would hand it a better score for having less data.
   owner can retune weights from the GitHub web UI without reddening CI. Changing
   FROZEN means the engine moved; changing the config does not. Do not "simplify"
   it back to reading the live config.
+- **FROZEN has to be EXHAUSTIVE, and it was not.** Any engine knob the list
+  omits falls through to the live config, so the golden tracks it and the owner
+  retuning it reddens CI -- precisely what FROZEN exists to prevent.
+  `stage4.evidence.margin_cap` was missing; the owner moved it 28 -> 21 from the
+  web UI and `TestGolden` went red on main, with `TestHardCaps` following when
+  the same edit shifted Missouri's and Florida's base ranks. Every value the
+  engine reads is pinned now. **`tests/test_pipeline.py` imports the same list**
+  for every assertion about a real board, so the two cannot drift apart; only
+  `tests/test_config.py` and the few tests that are *about* the shipped config
+  read `config/ranking.toml` live. Adding a knob means adding it to FROZEN in
+  the same commit.
 - **A PUBLISHED WEEK IS FROZEN.** `cli.run` refuses to rewrite a week whose
   snapshot file already exists unless `--force` is passed. This is the fix for
   the churn, and the churn was real: week 5 of 2026 was republished five times

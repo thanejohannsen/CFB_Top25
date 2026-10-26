@@ -12,9 +12,9 @@ from cfbrank.config import Config
 from cfbrank.engine import grounds, h2h, market, performance, resume_strength
 from cfbrank.engine.base_score import TeamBase, compute_base, pool, priority, rerank
 from cfbrank.engine.evidence import EdgeFact, score_edges
-from cfbrank.engine.graph import Digraph, nontrivial_sccs
+from cfbrank.engine.graph import Digraph, nontrivial_sccs, shortest_path
 from cfbrank.engine.order import Edge, OrderResult, minimum_violations_order
-from cfbrank.engine.provenance import cycle_explanation, team_reasons
+from cfbrank.engine.provenance import Holding, cycle_explanation, team_reasons
 from cfbrank.engine.regression import RegressionEvent, apply_upset_regression
 from cfbrank.engine import cover
 from cfbrank.engine.resume import apply_resume_adjustment
@@ -62,6 +62,8 @@ class RankingResult:
         default_factory=performance.PerformanceRatings
     )
     reasons: dict[str, list[str]] = field(default_factory=dict)
+    # Why each set-aside result's loser still finishes above its winner.
+    holdings: dict[Edge, Holding] = field(default_factory=dict)
     counts: dict[str, int] = field(default_factory=dict)
 
     def final_rank(self, team: str) -> int:
@@ -251,6 +253,35 @@ def rank(dataset: Dataset, cfg: Config) -> RankingResult:
             )
         )
 
+    # -- what actually holds each set-aside result down --------------------
+    # An exception only says the ranking MAY go against a result. The thing that
+    # usually DOES put the loser above the winner is a chain of other results
+    # the ranking is honouring, and the page used to claim the resume decided it
+    # even when the resume said the opposite -- on 2026 week 8 it had Ole Miss
+    # fourteen places above the Missouri it was published below.
+    honoured_succ: dict[str, set[str]] = {}
+    for (w, l) in edge_facts:
+        if (w, l) not in overridden_set:
+            honoured_succ.setdefault(w, set()).add(l)
+    holdings: dict[Edge, Holding] = {}
+    for (w, l) in sorted(overridden_set):
+        path = shortest_path(honoured_succ, l, w)
+        if not path:
+            continue
+        hops = list(zip(path, path[1:]))
+        enforced = all(
+            (g := edge_facts[hop].grounds) is not None and g.enforced for hop in hops
+        )
+        gap = (final_rank.get(l, 0) - final_rank.get(w, 0))
+        resume_gap = (by_team[l].base_rank or 0) - (by_team[w].base_rank or 0)
+        holdings[(w, l)] = Holding(
+            path=path,
+            enforced=enforced,
+            # Only worth saying when the published order actually contradicts
+            # the resume; a positive gap means the resume had the WINNER above.
+            resume_gap=resume_gap if gap > 0 and resume_gap > 0 else 0,
+        )
+
     # -- justifications ----------------------------------------------------
     reasons: dict[str, list[str]] = {}
     for team in final_order:
@@ -285,6 +316,7 @@ def rank(dataset: Dataset, cfg: Config) -> RankingResult:
         size = next((c.size for c in cycles if c.cycle_id == cid), 0)
         reasons[team] = team_reasons(
             tb, final_rank[team], honored, over_losses, over_wins, cid, size,
+            holdings,
         )
 
     counts = {
@@ -335,5 +367,6 @@ def rank(dataset: Dataset, cfg: Config) -> RankingResult:
         market=mkt,
         performance=perf,
         reasons=reasons,
+        holdings=holdings,
         counts=counts,
     )
