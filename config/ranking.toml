@@ -273,7 +273,7 @@ reference_place = 25    # "could a top-25 team have done this?"
 [stage3]
 enabled  = true
 gap      = 15    # base-position gap that triggers regression
-strength = 0.5   # 0.5 = halfway to the midpoint. Do NOT set 1.0 (unstable).
+strength = 0.35   # 0.5 = halfway to the midpoint. Do NOT set 1.0 (unstable).
 
 # -- Stage 4: weighted head-to-head ordering --------------------------------
 [stage4]
