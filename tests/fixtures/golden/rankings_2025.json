@@ -4434,7 +4434,7 @@
         "strength": 14.0
       }
     },
-    "content_hash": "sha256:5d102df5143177d14f218ba04659113bd74600bd32dcdc70e6ac3f2407419786",
+    "content_hash": "sha256:4feb8096a35c0567724c3570f677590d0f7abc3bff7aecf45425af6c05b75884",
     "cost": {
       "drift": 297.7933,
       "overrides": 378.9033,
@@ -5073,6 +5073,8 @@
   "pool_tail": [
     {
       "base_rank": 13,
+      "base_raw_score": 16.0,
+      "base_score": 15.7269,
       "conference": "Big Ten",
       "fpi": 17.962,
       "market_rank": 14,
@@ -5087,6 +5089,8 @@
     },
     {
       "base_rank": 23,
+      "base_raw_score": 21.4,
+      "base_score": 26.3616,
       "conference": "SEC",
       "fpi": 14.31,
       "market_rank": 16,
@@ -5101,6 +5105,8 @@
     },
     {
       "base_rank": 29,
+      "base_raw_score": 35.95,
+      "base_score": 34.0541,
       "conference": "Sun Belt",
       "fpi": 10.294,
       "market_rank": 50,
@@ -5115,6 +5121,8 @@
     },
     {
       "base_rank": 35,
+      "base_raw_score": 35.75,
+      "base_score": 40.4886,
       "conference": "Big 12",
       "fpi": 4.408,
       "market_rank": 49,
@@ -5129,6 +5137,8 @@
     },
     {
       "base_rank": 24,
+      "base_raw_score": 30.6,
+      "base_score": 29.3349,
       "conference": "Big 12",
       "fpi": 10.097,
       "market_rank": 40,
@@ -5143,6 +5153,8 @@
     },
     {
       "base_rank": 30,
+      "base_raw_score": 37.9,
+      "base_score": 34.4528,
       "conference": "Big 12",
       "fpi": 6.294,
       "market_rank": 36,
@@ -5157,6 +5169,8 @@
     },
     {
       "base_rank": 31,
+      "base_raw_score": 27.9,
+      "base_score": 34.9619,
       "conference": "SEC",
       "fpi": 10.712,
       "market_rank": 20,
@@ -5171,6 +5185,8 @@
     },
     {
       "base_rank": 32,
+      "base_raw_score": 28.85,
+      "base_score": 35.1623,
       "conference": "Big Ten",
       "fpi": 15.929,
       "market_rank": 13,
@@ -5185,6 +5201,8 @@
     },
     {
       "base_rank": 38,
+      "base_raw_score": 38.1,
+      "base_score": 42.3688,
       "conference": "ACC",
       "fpi": 7.657,
       "market_rank": 42,
@@ -5199,6 +5217,8 @@
     },
     {
       "base_rank": 34,
+      "base_raw_score": 32.9,
+      "base_score": 38.6444,
       "conference": "ACC",
       "fpi": 7.622,
       "market_rank": 33,
@@ -5213,6 +5233,8 @@
     },
     {
       "base_rank": 36,
+      "base_raw_score": 37.7,
+      "base_score": 41.0248,
       "conference": "SEC",
       "fpi": 11.083,
       "market_rank": 22,
@@ -5227,6 +5249,8 @@
     },
     {
       "base_rank": 37,
+      "base_raw_score": 43.35,
+      "base_score": 42.2155,
       "conference": "American Athletic",
       "fpi": 11.054,
       "market_rank": 51,
@@ -5241,6 +5265,8 @@
     },
     {
       "base_rank": 40,
+      "base_raw_score": 37.4,
+      "base_score": 46.8002,
       "conference": "ACC",
       "fpi": 9.454,
       "market_rank": 19,
@@ -5255,6 +5281,8 @@
     },
     {
       "base_rank": 33,
+      "base_raw_score": 43.65,
+      "base_score": 38.5,
       "conference": "ACC",
       "fpi": 9.396,
       "market_rank": 21,
@@ -5269,6 +5297,8 @@
     },
     {
       "base_rank": 39,
+      "base_raw_score": 42.1,
+      "base_score": 44.9817,
       "conference": "American Athletic",
       "fpi": 7.014,
       "market_rank": 54,

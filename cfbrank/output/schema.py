@@ -399,6 +399,14 @@ def build_payload(
                     "conference": tb.conference,
                     "record": tb.record.overall if tb.record else None,
                     "base_rank": tb.base_rank,
+                    # The two numbers behind that rank. Without them the page
+                    # cannot answer "why is a 6-1 team out and a 4-3 team in":
+                    # on 2026 week 8 Houston sat 23rd on the base order and 30th
+                    # published, and Texas Tech was 20th in the country on the
+                    # raw base and finished 29th. `base_raw_score` is the same
+                    # value the top 25 renders as its Base column.
+                    "base_score": tb.base_score,
+                    "base_raw_score": tb.base_raw,
                     "sor_rank": tb.sor_rank,
                     "sos_rank": tb.sos_rank,
                     "market_rank": tb.market_rank,

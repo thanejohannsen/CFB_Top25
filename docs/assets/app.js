@@ -867,77 +867,7 @@
     });
   }
 
-  // ---------- the four rules ----------
-  // A result stands unless one of four things has happened since the game. Which
-  // ones apply, and how far apart the two may then sit, are published per result
-  // as `grounds`, so this needs no ranking rules of its own.
-  var RULE_LABEL = {
-    1: "winner has more losses",
-    2: "winner has lost since",
-    3: "winner has lost more since",
-    4: "loser has beaten better since"
-  };
-
-  function rulesBadge(e) {
-    var g = e.grounds;
-    if (!g) return [el("span", { class: "muted", text: "\u2014" })];
-    if (!g.rules || !g.rules.length) {
-      return [el("span", { class: "state rule-none", text: "no exception" })];
-    }
-    var shown = rulesShown(g);
-    return [el("span", {
-      class: "state rule-" + shown[shown.length - 1],
-      // Numbered the same way as a team's own panel, so the two tables agree.
-      text: shown.map(function (r) {
-        return (RULE_LABEL[r] || "an exception") + " (Rule " + r + ")";
-      }).join(", ")
-    })];
-  }
-
-  function leadLabel(e) {
-    var g = e.grounds;
-    if (!g || e.lead === null || e.lead === undefined) return "\u2014";
-    // max_lead is null when the exception allows any gap at all.
-    return Math.abs(e.lead) + " / " + (g.max_lead === null ? "any" : num(g.max_lead, 0));
-  }
-
-  // ---------- overridden, regressions, tail ----------
-  function renderOverridden(data) {
-    var host = byId("overridden-list");
-    clear(host);
-    var rows = data.overridden_results || [];
-    if (!rows.length) {
-      host.appendChild(el("p", { class: "empty", text: "None — the ranking honours every head-to-head result in the pool." }));
-      return;
-    }
-    host.appendChild(scrollable(el("table", { class: "h2h" }, [
-      el("thead", null, [el("tr", null, [
-        el("th", { scope: "col", text: "Result" }),
-        el("th", { scope: "col", class: "num", text: "Score" }),
-        el("th", { scope: "col", text: "At" }),
-        el("th", { scope: "col", class: "num", text: "Weight" }),
-        el("th", { scope: "col", text: "What permits it" }),
-        el("th", { scope: "col", class: "num", text: "Places / allowed" }),
-        el("th", { scope: "col", text: "Why it was set aside" })
-      ])]),
-      el("tbody", null, rows.map(function (e) {
-        return el("tr", null, [
-          el("td", null, [
-            el("strong", { text: (e.winner_rank ? "#" + e.winner_rank + " " : "") + e.winner }),
-            " beat ",
-            el("strong", { text: (e.loser_rank ? "#" + e.loser_rank + " " : "") + e.loser })
-          ]),
-          el("td", { class: "num", text: e.score }),
-          el("td", { text: e.site }),
-          el("td", { class: "num", text: num(e.weight, 2) }),
-          el("td", null, rulesBadge(e)),
-          el("td", { class: "num", text: leadLabel(e) }),
-          el("td", { text: e.reason || "" })
-        ]);
-      }))
-    ])));
-  }
-
+  // ---------- regressions, tail ----------
   function renderRegressions(data) {
     var host = byId("regression-list");
     clear(host);
@@ -967,7 +897,9 @@
         el("th", { scope: "col", text: "Rec" }),
         el("th", { scope: "col", class: "num", text: "SoR" }),
         el("th", { scope: "col", class: "num", text: "Mkt" }),
-        el("th", { scope: "col", class: "num", text: "PPA" })
+        el("th", { scope: "col", class: "num", text: "PPA" }),
+        el("th", { scope: "col", class: "num", title: "The three numbers combined, on the same scale as the board above. Lower is better.", text: "Base" }),
+        el("th", { scope: "col", class: "num", title: "Where stages 1 to 3 put this team, before head-to-head. The gap between this and the # column is what stage 4 did.", text: "Base #" })
       ])]),
       el("tbody", null, rows.map(function (r) {
         return el("tr", null, [
@@ -977,7 +909,14 @@
           el("td", { text: r.record || "–" }),
           el("td", { class: "num", text: num(r.sor_rank) }),
           el("td", { class: "num", text: marketText({ rating: r.market_rating }) }),
-          el("td", { class: "num", text: rankText({ rank: r.ppa_rank }) })
+          el("td", { class: "num", text: rankText({ rank: r.ppa_rank }) }),
+          // A published week is frozen, so snapshots written before these two
+          // existed have neither. Test for the KEY -- a derived
+          // 0.55 x SoR + 0.25 x Mkt + 0.20 x PPA would be WRONG for a team
+          // missing an input, which is scored on renormalised weights, and
+          // those are exactly the teams most likely to be down here.
+          el("td", { class: "num", text: "base_raw_score" in r ? num(r.base_raw_score, 2) : "\u2014" }),
+          el("td", { class: "num", text: num(r.base_rank) })
         ]);
       }))
     ])));
@@ -1174,7 +1113,6 @@
     renderMeta(data);
     renderTable(data);
     renderCycles(data);
-    renderOverridden(data);
     renderRegressions(data);
     renderTail(data);
     renderLeaderboards(data);

@@ -297,6 +297,51 @@ class TestDeterminism(unittest.TestCase):
         self.assertEqual(rank(ds, cfg).order, rank(ds, cfg).order)
 
 
+class TestPoolTail(unittest.TestCase):
+    """"Just missed" carries the numbers behind its own order.
+
+    Ranks alone could not answer the question the section exists to raise. On
+    2026 week 8 Houston sat 23rd on the base order and 30th published, and Texas
+    Tech was 20th in the country on the raw base and finished 29th -- both
+    invisible on a table of ranks.
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        cls.ds, cls.cfg = dataset(2026), pinned(2026)
+        cls.result = rank(cls.ds, cls.cfg)
+        cls.payload = build_payload(cls.result, cls.ds, cls.cfg, GENERATED_AT)
+
+    # The payload is rounded to output.float_precision, so these compare at
+    # that precision rather than on the raw float.
+    PLACES = 4
+
+    def test_every_entry_carries_its_base_numbers(self):
+        rows = self.payload["pool_tail"]
+        self.assertTrue(rows, "an empty tail proves nothing")
+        for r in rows:
+            tb = self.result.teams[r["team"]]
+            with self.subTest(team=r["team"]):
+                self.assertAlmostEqual(r["base_raw_score"], tb.base_raw, places=self.PLACES)
+                self.assertAlmostEqual(r["base_score"], tb.base_score, places=self.PLACES)
+                self.assertEqual(r["base_rank"], tb.base_rank)
+
+    def test_the_base_column_matches_the_board_above_it(self):
+        """The site renders both from the same field, so they cannot disagree."""
+        top = {r["team"]: r["base"]["raw_score"] for r in self.payload["rankings"]}
+        tail = {r["team"]: r["base_raw_score"] for r in self.payload["pool_tail"]}
+        self.assertFalse(set(top) & set(tail), "a team is in both lists")
+        for team, raw in dict(top, **tail).items():
+            self.assertAlmostEqual(
+                raw, self.result.teams[team].base_raw, places=self.PLACES, msg=team
+            )
+
+    def test_base_rank_orders_by_base_score(self):
+        rows = sorted(self.payload["pool_tail"], key=lambda r: r["base_rank"])
+        scores = [r["base_score"] for r in rows]
+        self.assertEqual(scores, sorted(scores), "base_rank must follow base_score")
+
+
 class TestLeaderboards(unittest.TestCase):
     """The pool ranked by each stage-2 component it has something to say about.
 

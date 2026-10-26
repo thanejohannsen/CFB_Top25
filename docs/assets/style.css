@@ -250,11 +250,6 @@ tbody tr.row[aria-expanded="true"] { background: var(--accent-wash); }
    should never appear beside an overridden result at all, so if it ever does, it
    is a bug and it is meant to look like one. */
 .muted { color: var(--ink-muted); font-weight: 400; }
-.state.rule-none { color: var(--critical-ink); }
-.state.rule-1,
-.state.rule-2,
-.state.rule-3,
-.state.rule-4 { color: var(--ink); font-weight: 600; }
 
 /* ---------- detail panel ---------- */
 tr.detail > td { background: var(--surface-2); padding: 0; border-bottom: 1px solid var(--rule-strong); }
