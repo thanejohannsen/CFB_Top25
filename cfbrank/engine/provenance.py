@@ -126,9 +126,11 @@ def grounds_reason(fact: EdgeFact, holding: Holding | None = None) -> str:
 
     if g.banded:
         places = int(g.max_lead)
+        # Games, not weeks: the band ramps on what A has played since, so
+        # naming the calendar here would not reproduce the number beside it.
         bits.append(
-            f"{g.weeks_since:.0f} weeks on, so they may lead by"
-            f" {places} place{'' if places == 1 else 's'}"
+            f"{g.winner_games_since} game{'' if g.winner_games_since == 1 else 's'}"
+            f" on, so they may lead by {places} place{'' if places == 1 else 's'}"
         )
     elif holding and holding.path:
         # The resume did NOT decide this one, so do not say it did.

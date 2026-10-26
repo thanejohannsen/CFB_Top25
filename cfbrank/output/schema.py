@@ -63,6 +63,10 @@ def _grounds(fact: EdgeFact) -> dict[str, Any] | None:
         # bye is not survival, and counting it as such published Missouri above
         # Ole Miss a week after Ole Miss beat them 31-3.
         "loser_games_since": g.loser_games_since,
+        # Games the WINNER has played since -- rule 4's clock and the input to
+        # its band. Calendar weeks used to drive both, so a bye widened the
+        # licence against a team that had not been given a chance to answer.
+        "winner_games_since": g.winner_games_since,
         "winner_win_quality": g.winner_quality,
         "loser_win_quality": g.loser_quality,
         "quality_diff": g.quality_diff,

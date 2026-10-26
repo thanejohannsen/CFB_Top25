@@ -408,14 +408,22 @@ game control        11th of 138
         <h3>Rule 4 is capped, and the cap grows</h3>
         <p class="lede">
           Being overtaken earns a bounded number of places, not a free hand. The cap is how
-          much better your wins have been, in rating points, times a rate that widens the
-          longer it has been true:
+          much better your wins have been, in rating points, times a rate that widens as
+          the team you beat keeps taking the field:
         </p>
-        <p class="formula">weeks since the game&nbsp; 2 &rarr; 0.50&nbsp;&nbsp; 3 &rarr; 0.75&nbsp;&nbsp; 4 &rarr; 1.00&nbsp;&nbsp; 5 &rarr; 1.25&nbsp;&nbsp; 6+ &rarr; 1.50&nbsp; places per point</p>
+        <p class="formula">games they have played&nbsp; 2 &rarr; 0.50&nbsp;&nbsp; 3 &rarr; 0.75&nbsp;&nbsp; 4 &rarr; 1.00&nbsp;&nbsp; 5 &rarr; 1.25&nbsp;&nbsp; 6+ &rarr; 1.50&nbsp; places per point</p>
+        <p class="lede">
+          <b>Games, not weeks.</b> A bye is not a chance missed, it is a chance never
+          offered, and counting it widened the band against a team that had not been asked
+          the question. In week 8 of 2026 that put Alabama eight places above the Georgia
+          side that had beaten them 20&ndash;17 in Tuscaloosa: Georgia lost to Auburn and
+          then sat out, so against Alabama's two games since they had played one.
+        </p>
         <p class="lede">
           So on the 2026 week-5 board, Oklahoma State beat Oregon in week 2 and Oregon has
-          since beaten better teams by 8.7 rating points on average. Three weeks on that is
-          0.75 &times; 8.7 = <b>6 places</b>, and Oregon finishes exactly six above them.
+          since beaten better teams by 8.7 rating points on average. Oklahoma State have
+          played twice since &mdash; three weeks, one of them idle &mdash; so the rate is
+          the floor of the ramp: 0.50 &times; 8.7 = <b>4 places</b>.
           Win quality is the <em>average</em> of the wins since, not the total: summing
           counts volume as quality, and on a completed season it pinned most old results at
           the ceiling and stopped telling them apart.
@@ -583,7 +591,7 @@ game control        11th of 138
         ["  conviction floor", ev.conviction_floor],
         ["Head-to-head requirement", gr.enabled ? "on" : "off"],
         ["  impressive-win bar", gr.impressive_bar + " rating points"],
-        ["  weeks before rule 4 applies", gr.min_weeks],
+        ["  games before rule 4 applies", gr.min_games],
         ["  places per rating point, at that age", gr.band_start],
         ["  added per further week", gr.band_step],
         ["  ceiling", gr.band_max],

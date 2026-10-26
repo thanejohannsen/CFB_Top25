@@ -5,7 +5,7 @@
       2. A has lost since the game and B has not             (any gap)
       3. A has lost more times since than B has              (any gap)
       4. B has impressive wins and A has mediocre wins, and
-         at least min_weeks have passed                   (BANDED gap)
+         A has PLAYED at least min_games since            (BANDED gap)
 """
 
 from __future__ import annotations
@@ -20,7 +20,7 @@ from tests.helpers import result
 CFG = {
     "enabled": True,
     "impressive_bar": 6.0,
-    "min_weeks": 2,
+    "min_games": 2,
     "band_start": 0.5,
     "band_step": 0.25,
     "band_max": 1.5,
@@ -205,33 +205,70 @@ class TestRuleFourWinQuality(unittest.TestCase):
     def fires(self, after, cfg=None):
         return one(after, cfg)
 
+    @staticmethod
+    def a_plays(n, beating="MEH", first=3):
+        """`n` games A has played since, all of them wins.
+
+        WINS, because a loss since would hand rule 2 or 3 the exception and
+        prove nothing about rule 4. Over MEH, because beating an average side
+        leaves A's win quality at 0 -- mediocre, which is the half of rule 4
+        these fixtures need satisfied.
+        """
+        return [result("W", beating, week=first + i) for i in range(n)]
+
     def test_the_loser_beating_better_teams_unlocks_a_banded_gap(self):
-        g = self.fires([result("L", "GREAT", week=4), result("W", "MEH", week=4)])
+        g = self.fires([result("L", "GREAT", week=4)] + self.a_plays(2))
         self.assertEqual(g.rules, (4,))
         self.assertTrue(g.banded)
         self.assertFalse(g.enforced)
         self.assertLess(g.max_lead, math.inf)
         self.assertGreater(g.max_lead, 0)
 
-    def test_it_needs_min_weeks_to_have_passed(self):
-        """One good win the week after proves nothing, however good it was."""
-        g = self.fires([result("L", "GREAT", week=3)])
-        self.assertEqual(g.weeks_since, 1.0)
+    def test_it_needs_min_games_to_have_been_PLAYED(self):
+        """The calendar is not the clock any more.
+
+        Eight weeks have passed and A has played once. Under the old rule that
+        was rule 4 at its ceiling; it now cannot fire at all, because A has not
+        been asked the question twice.
+        """
+        g = self.fires([result("L", "GREAT", week=3)] + self.a_plays(1, first=10))
+        self.assertEqual(g.weeks_since, 8.0, "the calendar would have allowed it")
+        self.assertEqual(g.winner_games_since, 1)
         self.assertEqual(g.rules, ())
         self.assertEqual(g.max_lead, 0.0)
+        self.assertTrue(g.enforced)
+
+    def test_a_bye_neither_opens_rule_four_nor_widens_its_band(self):
+        """Georgia beat Alabama, lost to Auburn, then sat out.
+
+        The published board had Alabama EIGHT places above them, because two
+        calendar weeks had run while Georgia had played once. Games are the
+        clock now, so the weeks A spent idle buy B nothing.
+        """
+        idle = [result("L", "GREAT", week=3)] + self.a_plays(1)
+        # Run the calendar a long way forward without A playing again.
+        g = self.fires(idle + [result("MEH", "BAD", week=12)])
+        self.assertEqual(g.weeks_since, 10.0)
+        self.assertEqual(g.winner_games_since, 1)
+        self.assertEqual(g.rules, (), "a week off is not a chance missed")
+
+        # One more game for A and the exception opens -- at the FLOOR of the
+        # ramp, not at the ceiling the ten idle weeks would once have bought.
+        g2 = self.fires(idle + self.a_plays(1, first=12) + [result("MEH", "BAD", week=12)])
+        self.assertEqual(g2.winner_games_since, 2)
+        self.assertEqual(g2.rules, (4,))
+        self.assertEqual(g2.band_rate, CFG["band_start"])
 
     def test_both_teams_beating_good_sides_is_not_an_exception(self):
         """"B impressive AND A mediocre" is one bar, so this fails the A half."""
-        g = self.fires([result("L", "GREAT", week=4), result("W", "GREAT", week=4)])
+        g = self.fires([result("L", "GREAT", week=4)] + self.a_plays(2, beating="GREAT"))
         self.assertNotIn(4, g.rules)
         self.assertGreaterEqual(g.winner_quality, CFG["impressive_bar"])
 
-    def test_the_band_widens_with_time(self):
+    def test_the_band_widens_as_A_keeps_playing(self):
         rates, leads = [], []
-        for week in (4, 5, 6, 7, 8):
-            after = [result("L", "GREAT", week=3), result("W", "MEH", week=3),
-                     result("MEH", "BAD", week=week)]
-            g = self.fires(after)
+        for games in (2, 3, 4, 5, 6):
+            g = self.fires([result("L", "GREAT", week=3)] + self.a_plays(games))
             rates.append(g.band_rate)
             leads.append(g.max_lead)
         self.assertEqual(rates, [0.5, 0.75, 1.0, 1.25, 1.5], "the owner's ramp")
@@ -239,14 +276,11 @@ class TestRuleFourWinQuality(unittest.TestCase):
         self.assertLess(leads[0], leads[-1])
 
     def test_the_band_stops_at_its_ceiling(self):
-        after = [result("L", "GREAT", week=3), result("W", "MEH", week=3),
-                 result("MEH", "BAD", week=20)]
+        after = [result("L", "GREAT", week=3)] + self.a_plays(12)
         self.assertEqual(self.fires(after).band_rate, CFG["band_max"])
 
     def test_the_cap_is_the_floor_of_rate_times_quality_difference(self):
-        after = [result("L", "GREAT", week=3), result("W", "MEH", week=3),
-                 result("MEH", "BAD", week=5)]
-        g = self.fires(after)
+        g = self.fires([result("L", "GREAT", week=3)] + self.a_plays(3))
         self.assertEqual(g.band_rate, 0.75)
         self.assertAlmostEqual(g.quality_diff, 20.0)
         self.assertEqual(g.max_lead, 15.0)
@@ -254,9 +288,7 @@ class TestRuleFourWinQuality(unittest.TestCase):
 
     def test_a_tiny_quality_edge_buys_no_places(self):
         """The exception applies and is worth nothing, so the result still stands."""
-        after = [result("L", "FINE", week=3), result("W", "OKAY", week=3),
-                 result("MEH", "BAD", week=4)]
-        g = one(after)
+        g = one([result("L", "FINE", week=3)] + self.a_plays(2, beating="OKAY"))
         self.assertEqual(g.rules, (4,))
         self.assertAlmostEqual(g.quality_diff, 0.2)
         self.assertEqual(g.band_rate, 0.5)
@@ -291,22 +323,25 @@ class TestRuleFourWinQuality(unittest.TestCase):
 
 
 class TestRulePrecedence(unittest.TestCase):
+    # A has played twice since -- a loss and a win over an average side -- so
+    # rule 4's clock has run while A's win quality stays at 0, i.e. mediocre.
+    BOTH = [
+        result("GREAT", "W", week=4),       # rules 2 and 3: A has slipped
+        result("W", "MEH", week=5),         # A's second game, worth nothing
+        result("L", "GREAT", week=5),       # rule 4: B has beaten better
+        result("MEH", "BAD", week=6),
+    ]
+
     def test_slipping_outranks_the_band(self):
         """Any of rules 1-3 means "any gap", even when rule 4 also applies."""
-        g = one([
-            result("GREAT", "W", week=4),       # rules 1, 2, 3
-            result("L", "GREAT", week=5),       # rule 4
-            result("MEH", "BAD", week=6),
-        ])
+        g = one(self.BOTH)
         self.assertEqual(set(g.rules), {2, 3, 4})
+        self.assertEqual(g.winner_games_since, 2)
         self.assertEqual(g.max_lead, math.inf)
         self.assertFalse(g.banded, "unbounded, so the band does not apply")
 
     def test_band_rate_is_still_reported_when_outranked(self):
-        g = one([
-            result("GREAT", "W", week=4), result("L", "GREAT", week=5),
-            result("MEH", "BAD", week=6),
-        ])
+        g = one(self.BOTH)
         self.assertGreater(g.band_rate, 0.0)
         self.assertGreater(g.quality_diff, 0.0)
 

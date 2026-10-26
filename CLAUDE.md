@@ -435,6 +435,11 @@ measured and removed once already for the same double-counting reason.
 >   4. B has impressive wins and A has mediocre wins, AND at least two weeks
 >      have passed since the game                       (BANDED gap)
 
+Two conditions the owner's sentence leaves implicit, both about byes, both added
+after the board got them wrong: rules 2 and 3 need B to have PLAYED since, and
+rule 4's clock counts A's GAMES rather than calendar weeks. See the bullets
+below.
+
 Nothing else counts. Stage 4 used to have **no rule that forbade an override** --
 everything from conviction onward was a price, and `weight_floor > 0` only meant
 the price was not zero. So on **2026 week 5 the board published Missouri's 45-17
@@ -480,10 +485,27 @@ What was measured, and should not be re-derived:
   `impressive_bar` and A's must not, so two teams who have *both* been beating
   good sides do not unlock rule 4 at all. The bar is insensitive: the enforced
   count moves by 1-3 edges across bars from 3.0 to 8.0.
-- **Rule 4's band grows with time** (0.5 places per rating point at two weeks,
-  +0.25 a week, ceiling 1.5) because being overtaken takes time to establish. On a
-  completed season nearly every rule-4 edge is 6+ weeks old and sits at the
-  ceiling, so the ramp is an early-season instrument.
+- **Rule 4's band grows with the GAMES A HAS PLAYED** (0.5 places per rating
+  point at two games, +0.25 a game, ceiling 1.5), not with the calendar. Being
+  overtaken takes time to establish, but a team that has not played has not been
+  asked the question -- and the calendar version let a bye tick the clock toward
+  `min_games` and widen the band anyway. On **2026 week 8 that published Alabama
+  EIGHT places above the Georgia side that beat them 20-17 in Tuscaloosa**:
+  Georgia lost to Auburn and then sat out, so against Alabama's two games since
+  they had one, and rule 4 was the only exception in play. The dial is
+  `stage4.grounds.min_games`; it was `min_weeks`, and a knob that counts games
+  under a name that says weeks is the trap this file exists to prevent.
+  On a completed season nearly every rule-4 edge sits at the ceiling either way,
+  so the ramp stays an early-season instrument.
+- **`mean([]) = 0` still reads "A has no wins since" as "A has mediocre wins",
+  and that is a KNOWN edge rather than an oversight.** `_win_quality` returns 0
+  for a team with nothing to show, and 0 is below `impressive_bar`, so having no
+  wins trivially satisfies rule 4's "A is mediocre" half -- while on B's side the
+  same 0 can never clear the bar. The games clock delays this (Georgia cannot be
+  judged on one game) but does not settle it: once A has played twice and won
+  neither, rule 4 fires again on a 0.00 that means *nothing happened*. Requiring
+  A to have banked a win was offered to the owner alongside the games clock and
+  not taken. Do not "fix" it without asking; do not forget it is there.
 - **A BYE IS NOT SURVIVAL, and rules 2 and 3 now say so.** Both clauses are
   about B still going while A slipped, and "B has not lost since" is trivially
   true of a team that did not play. On **2026 week 8 that published Missouri

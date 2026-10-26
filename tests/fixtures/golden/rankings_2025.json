@@ -32,6 +32,7 @@
             "quality_diff": 0.0,
             "rules": [],
             "weeks_since": 7.0,
+            "winner_games_since": 4,
             "winner_losses": 3,
             "winner_losses_since": 1,
             "winner_win_quality": 22.0551
@@ -68,18 +69,19 @@
           },
           "conviction": 2.2481,
           "grounds": {
-            "band_rate": 1.5,
+            "band_rate": 0.5,
             "enforced": false,
             "loser_games_since": 3,
             "loser_losses": 5,
             "loser_losses_since": 2,
             "loser_win_quality": 10.8025,
-            "max_lead": 16.0,
+            "max_lead": 5.0,
             "quality_diff": 10.8025,
             "rules": [
               4
             ],
             "weeks_since": 9.0,
+            "winner_games_since": 2,
             "winner_losses": 2,
             "winner_losses_since": 0,
             "winner_win_quality": 0.0
@@ -126,6 +128,7 @@
             "quality_diff": 0.0,
             "rules": [],
             "weeks_since": 14.0,
+            "winner_games_since": 8,
             "winner_losses": 2,
             "winner_losses_since": 2,
             "winner_win_quality": 6.7422
@@ -173,6 +176,7 @@
               3
             ],
             "weeks_since": 7.0,
+            "winner_games_since": 2,
             "winner_losses": 2,
             "winner_losses_since": 2,
             "winner_win_quality": 0.0
@@ -220,6 +224,7 @@
               4
             ],
             "weeks_since": 11.0,
+            "winner_games_since": 6,
             "winner_losses": 2,
             "winner_losses_since": 2,
             "winner_win_quality": 4.9399
@@ -263,6 +268,7 @@
             "quality_diff": 0.0,
             "rules": [],
             "weeks_since": 0.0,
+            "winner_games_since": 0,
             "winner_losses": 3,
             "winner_losses_since": 0,
             "winner_win_quality": 0.0
@@ -310,6 +316,7 @@
             "quality_diff": 0.0,
             "rules": [],
             "weeks_since": 16.0,
+            "winner_games_since": 10,
             "winner_losses": 2,
             "winner_losses_since": 2,
             "winner_win_quality": 6.8419
@@ -354,6 +361,7 @@
             "quality_diff": 0.0,
             "rules": [],
             "weeks_since": 12.0,
+            "winner_games_since": 5,
             "winner_losses": 2,
             "winner_losses_since": 2,
             "winner_win_quality": 8.0184
@@ -401,6 +409,7 @@
               3
             ],
             "weeks_since": 9.0,
+            "winner_games_since": 4,
             "winner_losses": 2,
             "winner_losses_since": 1,
             "winner_win_quality": 10.8333
@@ -441,6 +450,7 @@
             "quality_diff": 0.0,
             "rules": [],
             "weeks_since": 0.0,
+            "winner_games_since": 0,
             "winner_losses": 6,
             "winner_losses_since": 0,
             "winner_win_quality": 0.0
@@ -489,6 +499,7 @@
               1
             ],
             "weeks_since": 0.0,
+            "winner_games_since": 0,
             "winner_losses": 4,
             "winner_losses_since": 0,
             "winner_win_quality": 0.0
@@ -522,18 +533,17 @@
           },
           "conviction": 1.2029,
           "grounds": {
-            "band_rate": 1.5,
-            "enforced": false,
+            "band_rate": 0.0,
+            "enforced": true,
             "loser_games_since": 2,
             "loser_losses": 4,
             "loser_losses_since": 1,
             "loser_win_quality": 18.264,
-            "max_lead": 27.0,
+            "max_lead": 0.0,
             "quality_diff": 18.264,
-            "rules": [
-              4
-            ],
+            "rules": [],
             "weeks_since": 6.0,
+            "winner_games_since": 1,
             "winner_losses": 2,
             "winner_losses_since": 1,
             "winner_win_quality": 0.0
@@ -574,6 +584,7 @@
             "quality_diff": 0.0,
             "rules": [],
             "weeks_since": 7.0,
+            "winner_games_since": 2,
             "winner_losses": 2,
             "winner_losses_since": 1,
             "winner_win_quality": 21.6975
@@ -620,6 +631,7 @@
               1
             ],
             "weeks_since": 8.0,
+            "winner_games_since": 2,
             "winner_losses": 5,
             "winner_losses_since": 2,
             "winner_win_quality": 0.0
@@ -664,6 +676,7 @@
               1
             ],
             "weeks_since": 0.0,
+            "winner_games_since": 0,
             "winner_losses": 3,
             "winner_losses_since": 0,
             "winner_win_quality": 0.0
@@ -709,6 +722,7 @@
               1
             ],
             "weeks_since": 0.0,
+            "winner_games_since": 0,
             "winner_losses": 3,
             "winner_losses_since": 0,
             "winner_win_quality": 0.0
@@ -751,6 +765,7 @@
             "quality_diff": 2.4138,
             "rules": [],
             "weeks_since": 14.0,
+            "winner_games_since": 7,
             "winner_losses": 3,
             "winner_losses_since": 1,
             "winner_win_quality": 12.9649
@@ -797,6 +812,7 @@
               3
             ],
             "weeks_since": 10.0,
+            "winner_games_since": 6,
             "winner_losses": 4,
             "winner_losses_since": 3,
             "winner_win_quality": 10.7465
@@ -846,6 +862,7 @@
               3
             ],
             "weeks_since": 15.0,
+            "winner_games_since": 10,
             "winner_losses": 4,
             "winner_losses_since": 3,
             "winner_win_quality": 12.4908
@@ -892,6 +909,7 @@
             "quality_diff": 0.0,
             "rules": [],
             "weeks_since": 15.0,
+            "winner_games_since": 11,
             "winner_losses": 3,
             "winner_losses_since": 3,
             "winner_win_quality": 10.4246
@@ -934,6 +952,7 @@
               1
             ],
             "weeks_since": 0.0,
+            "winner_games_since": 0,
             "winner_losses": 4,
             "winner_losses_since": 0,
             "winner_win_quality": 0.0
@@ -981,6 +1000,7 @@
               3
             ],
             "weeks_since": 14.0,
+            "winner_games_since": 7,
             "winner_losses": 4,
             "winner_losses_since": 3,
             "winner_win_quality": 5.9967
@@ -1026,6 +1046,7 @@
             "quality_diff": 3.2082,
             "rules": [],
             "weeks_since": 13.0,
+            "winner_games_since": 6,
             "winner_losses": 4,
             "winner_losses_since": 2,
             "winner_win_quality": 1.0318
@@ -1074,6 +1095,7 @@
               3
             ],
             "weeks_since": 12.0,
+            "winner_games_since": 5,
             "winner_losses": 4,
             "winner_losses_since": 2,
             "winner_win_quality": 1.544
@@ -1116,6 +1138,7 @@
             "quality_diff": 4.2236,
             "rules": [],
             "weeks_since": 13.0,
+            "winner_games_since": 5,
             "winner_losses": 2,
             "winner_losses_since": 0,
             "winner_win_quality": 1.7732
@@ -1160,6 +1183,7 @@
               1
             ],
             "weeks_since": 0.0,
+            "winner_games_since": 0,
             "winner_losses": 3,
             "winner_losses_since": 0,
             "winner_win_quality": 0.0
@@ -1205,6 +1229,7 @@
               3
             ],
             "weeks_since": 16.0,
+            "winner_games_since": 9,
             "winner_losses": 4,
             "winner_losses_since": 4,
             "winner_win_quality": 6.0686
@@ -1245,6 +1270,7 @@
             "quality_diff": 0.0,
             "rules": [],
             "weeks_since": 10.0,
+            "winner_games_since": 4,
             "winner_losses": 6,
             "winner_losses_since": 1,
             "winner_win_quality": 7.3862
@@ -1289,6 +1315,7 @@
             "quality_diff": 0.0,
             "rules": [],
             "weeks_since": 0.0,
+            "winner_games_since": 0,
             "winner_losses": 2,
             "winner_losses_since": 0,
             "winner_win_quality": 0.0
@@ -1334,6 +1361,7 @@
               1
             ],
             "weeks_since": 9.0,
+            "winner_games_since": 3,
             "winner_losses": 6,
             "winner_losses_since": 1,
             "winner_win_quality": 4.6878
@@ -1376,6 +1404,7 @@
             "quality_diff": 3.4473,
             "rules": [],
             "weeks_since": 20.0,
+            "winner_games_since": 13,
             "winner_losses": 2,
             "winner_losses_since": 2,
             "winner_win_quality": 6.158
@@ -1419,6 +1448,7 @@
             "quality_diff": 7.3993,
             "rules": [],
             "weeks_since": 12.0,
+            "winner_games_since": 7,
             "winner_losses": 2,
             "winner_losses_since": 1,
             "winner_win_quality": 9.4802
@@ -1463,6 +1493,7 @@
             "quality_diff": 0.0,
             "rules": [],
             "weeks_since": 7.0,
+            "winner_games_since": 1,
             "winner_losses": 3,
             "winner_losses_since": 1,
             "winner_win_quality": 0.0
@@ -1509,6 +1540,7 @@
               1
             ],
             "weeks_since": 7.0,
+            "winner_games_since": 1,
             "winner_losses": 3,
             "winner_losses_since": 0,
             "winner_win_quality": 16.2587
@@ -1543,7 +1575,7 @@
           },
           "conviction": 0.0415,
           "grounds": {
-            "band_rate": 1.5,
+            "band_rate": 0.75,
             "enforced": false,
             "loser_games_since": 3,
             "loser_losses": 4,
@@ -1557,6 +1589,7 @@
               4
             ],
             "weeks_since": 9.0,
+            "winner_games_since": 3,
             "winner_losses": 4,
             "winner_losses_since": 2,
             "winner_win_quality": 0.687
@@ -1599,6 +1632,7 @@
             "quality_diff": 0.0,
             "rules": [],
             "weeks_since": 19.0,
+            "winner_games_since": 11,
             "winner_losses": 3,
             "winner_losses_since": 3,
             "winner_win_quality": 11.3587
@@ -1644,6 +1678,7 @@
             "quality_diff": 0.0,
             "rules": [],
             "weeks_since": 16.0,
+            "winner_games_since": 10,
             "winner_losses": 2,
             "winner_losses_since": 2,
             "winner_win_quality": 9.3932
@@ -1687,6 +1722,7 @@
             "quality_diff": 0.0,
             "rules": [],
             "weeks_since": 13.0,
+            "winner_games_since": 6,
             "winner_losses": 3,
             "winner_losses_since": 2,
             "winner_win_quality": 13.2853
@@ -1731,6 +1767,7 @@
               3
             ],
             "weeks_since": 20.0,
+            "winner_games_since": 12,
             "winner_losses": 6,
             "winner_losses_since": 6,
             "winner_win_quality": 5.9473
@@ -1775,6 +1812,7 @@
               4
             ],
             "weeks_since": 20.0,
+            "winner_games_since": 11,
             "winner_losses": 7,
             "winner_losses_since": 7,
             "winner_win_quality": 0.9706
@@ -1817,6 +1855,7 @@
             "quality_diff": 0.0,
             "rules": [],
             "weeks_since": 11.0,
+            "winner_games_since": 4,
             "winner_losses": 3,
             "winner_losses_since": 1,
             "winner_win_quality": 16.7091
@@ -1861,6 +1900,7 @@
             "quality_diff": 0.0,
             "rules": [],
             "weeks_since": 14.0,
+            "winner_games_since": 7,
             "winner_losses": 5,
             "winner_losses_since": 3,
             "winner_win_quality": 4.363
@@ -1907,6 +1947,7 @@
               4
             ],
             "weeks_since": 18.0,
+            "winner_games_since": 10,
             "winner_losses": 4,
             "winner_losses_since": 4,
             "winner_win_quality": 1.8128
@@ -1955,6 +1996,7 @@
               4
             ],
             "weeks_since": 13.0,
+            "winner_games_since": 7,
             "winner_losses": 4,
             "winner_losses_since": 3,
             "winner_win_quality": 2.5107
@@ -2004,6 +2046,7 @@
               3
             ],
             "weeks_since": 20.0,
+            "winner_games_since": 15,
             "winner_losses": 3,
             "winner_losses_since": 3,
             "winner_win_quality": 9.7222
@@ -2050,6 +2093,7 @@
               3
             ],
             "weeks_since": 18.0,
+            "winner_games_since": 10,
             "winner_losses": 2,
             "winner_losses_since": 2,
             "winner_win_quality": 10.734
@@ -2096,6 +2140,7 @@
             "quality_diff": 0.5767,
             "rules": [],
             "weeks_since": 13.0,
+            "winner_games_since": 6,
             "winner_losses": 4,
             "winner_losses_since": 2,
             "winner_win_quality": 6.5387
@@ -2141,6 +2186,7 @@
               4
             ],
             "weeks_since": 16.0,
+            "winner_games_since": 8,
             "winner_losses": 4,
             "winner_losses_since": 3,
             "winner_win_quality": 4.3355
@@ -2237,7 +2283,7 @@
           },
           "conviction": 2.2633,
           "grounds": {
-            "band_rate": 1.5,
+            "band_rate": 0.0,
             "enforced": false,
             "loser_games_since": 1,
             "loser_losses": 2,
@@ -2247,10 +2293,10 @@
             "quality_diff": 10.8025,
             "rules": [
               2,
-              3,
-              4
+              3
             ],
             "weeks_since": 6.0,
+            "winner_games_since": 1,
             "winner_losses": 2,
             "winner_losses_since": 1,
             "winner_win_quality": 0.0
@@ -2297,6 +2343,7 @@
             "quality_diff": 0.8427,
             "rules": [],
             "weeks_since": 15.0,
+            "winner_games_since": 9,
             "winner_losses": 2,
             "winner_losses_since": 2,
             "winner_win_quality": 6.2674
@@ -2342,6 +2389,7 @@
             "quality_diff": 0.6518,
             "rules": [],
             "weeks_since": 14.0,
+            "winner_games_since": 7,
             "winner_losses": 2,
             "winner_losses_since": 1,
             "winner_win_quality": 7.4924
@@ -2390,6 +2438,7 @@
               3
             ],
             "weeks_since": 17.0,
+            "winner_games_since": 10,
             "winner_losses": 2,
             "winner_losses_since": 2,
             "winner_win_quality": 6.2491
@@ -2438,6 +2487,7 @@
               3
             ],
             "weeks_since": 9.0,
+            "winner_games_since": 4,
             "winner_losses": 2,
             "winner_losses_since": 1,
             "winner_win_quality": 6.968
@@ -2483,6 +2533,7 @@
             "quality_diff": 0.0,
             "rules": [],
             "weeks_since": 7.0,
+            "winner_games_since": 1,
             "winner_losses": 4,
             "winner_losses_since": 1,
             "winner_win_quality": 0.0
@@ -2530,6 +2581,7 @@
               3
             ],
             "weeks_since": 12.0,
+            "winner_games_since": 6,
             "winner_losses": 2,
             "winner_losses_since": 2,
             "winner_win_quality": 8.1341
@@ -2580,6 +2632,7 @@
               3
             ],
             "weeks_since": 16.0,
+            "winner_games_since": 7,
             "winner_losses": 4,
             "winner_losses_since": 4,
             "winner_win_quality": 6.7416
@@ -2622,6 +2675,7 @@
             "quality_diff": 0.0,
             "rules": [],
             "weeks_since": 0.0,
+            "winner_games_since": 0,
             "winner_losses": 4,
             "winner_losses_since": 0,
             "winner_win_quality": 0.0
@@ -2669,6 +2723,7 @@
               1
             ],
             "weeks_since": 8.0,
+            "winner_games_since": 2,
             "winner_losses": 4,
             "winner_losses_since": 0,
             "winner_win_quality": 12.6419
@@ -2713,6 +2768,7 @@
             "quality_diff": 0.0,
             "rules": [],
             "weeks_since": 14.0,
+            "winner_games_since": 8,
             "winner_losses": 2,
             "winner_losses_since": 2,
             "winner_win_quality": 9.9814
@@ -2757,6 +2813,7 @@
               3
             ],
             "weeks_since": 17.0,
+            "winner_games_since": 10,
             "winner_losses": 4,
             "winner_losses_since": 4,
             "winner_win_quality": 6.9394
@@ -2791,7 +2848,7 @@
           },
           "conviction": 0.0045,
           "grounds": {
-            "band_rate": 1.5,
+            "band_rate": 1.0,
             "enforced": false,
             "loser_games_since": 3,
             "loser_losses": 4,
@@ -2806,6 +2863,7 @@
               4
             ],
             "weeks_since": 11.0,
+            "winner_games_since": 4,
             "winner_losses": 5,
             "winner_losses_since": 2,
             "winner_win_quality": 0.9299
@@ -2853,6 +2911,7 @@
             "quality_diff": 0.0,
             "rules": [],
             "weeks_since": 12.0,
+            "winner_games_since": 5,
             "winner_losses": 3,
             "winner_losses_since": 2,
             "winner_win_quality": 8.3138
@@ -2889,18 +2948,19 @@
           },
           "conviction": -0.1842,
           "grounds": {
-            "band_rate": 1.5,
+            "band_rate": 0.5,
             "enforced": false,
             "loser_games_since": 4,
             "loser_losses": 4,
             "loser_losses_since": 1,
             "loser_win_quality": 10.4683,
-            "max_lead": 9.0,
+            "max_lead": 3.0,
             "quality_diff": 6.1721,
             "rules": [
               4
             ],
             "weeks_since": 10.0,
+            "winner_games_since": 2,
             "winner_losses": 4,
             "winner_losses_since": 0,
             "winner_win_quality": 4.2963
@@ -2950,6 +3010,7 @@
               3
             ],
             "weeks_since": 16.0,
+            "winner_games_since": 8,
             "winner_losses": 5,
             "winner_losses_since": 4,
             "winner_win_quality": 8.1442
@@ -2997,6 +3058,7 @@
               3
             ],
             "weeks_since": 13.0,
+            "winner_games_since": 6,
             "winner_losses": 3,
             "winner_losses_since": 2,
             "winner_win_quality": 8.5549
@@ -3045,6 +3107,7 @@
               3
             ],
             "weeks_since": 13.0,
+            "winner_games_since": 7,
             "winner_losses": 2,
             "winner_losses_since": 2,
             "winner_win_quality": 8.3907
@@ -3092,6 +3155,7 @@
               3
             ],
             "weeks_since": 13.0,
+            "winner_games_since": 6,
             "winner_losses": 5,
             "winner_losses_since": 3,
             "winner_win_quality": 3.759
@@ -4362,7 +4426,7 @@
           "band_step": 0.25,
           "enabled": true,
           "impressive_bar": 6.0,
-          "min_weeks": 2
+          "min_games": 2
         },
         "max_block": 4,
         "max_passes": 400,
@@ -4370,7 +4434,7 @@
         "strength": 14.0
       }
     },
-    "content_hash": "sha256:1a1e2d47bddc91cfabf9649c62f1d408ac84d62799ea9ae40a05f941790cd103",
+    "content_hash": "sha256:5d102df5143177d14f218ba04659113bd74600bd32dcdc70e6ac3f2407419786",
     "cost": {
       "drift": 297.7933,
       "overrides": 378.9033,
@@ -4380,9 +4444,9 @@
     "counts": {
       "cycles": 2,
       "games_considered": 934,
-      "h2h_banded": 7,
+      "h2h_banded": 6,
       "h2h_binding": 0,
-      "h2h_enforced": 60,
+      "h2h_enforced": 61,
       "h2h_honored": 98,
       "h2h_overridden": 10,
       "h2h_relaxed": 0,
@@ -4539,6 +4603,7 @@
           3
         ],
         "weeks_since": 13.0,
+        "winner_games_since": 6,
         "winner_losses": 5,
         "winner_losses_since": 3,
         "winner_win_quality": 3.759
@@ -4589,6 +4654,7 @@
           4
         ],
         "weeks_since": 13.0,
+        "winner_games_since": 7,
         "winner_losses": 4,
         "winner_losses_since": 3,
         "winner_win_quality": 2.5107
@@ -4634,6 +4700,7 @@
           4
         ],
         "weeks_since": 19.0,
+        "winner_games_since": 9,
         "winner_losses": 4,
         "winner_losses_since": 4,
         "winner_win_quality": 5.7332
@@ -4685,6 +4752,7 @@
           3
         ],
         "weeks_since": 16.0,
+        "winner_games_since": 8,
         "winner_losses": 5,
         "winner_losses_since": 4,
         "winner_win_quality": 8.1442
@@ -4733,6 +4801,7 @@
           1
         ],
         "weeks_since": 11.0,
+        "winner_games_since": 4,
         "winner_losses": 4,
         "winner_losses_since": 1,
         "winner_win_quality": 7.0747
@@ -4779,6 +4848,7 @@
           4
         ],
         "weeks_since": 20.0,
+        "winner_games_since": 11,
         "winner_losses": 7,
         "winner_losses_since": 7,
         "winner_win_quality": 0.9706
@@ -4815,7 +4885,7 @@
       "conviction": 0.0045,
       "cycle": "C2",
       "grounds": {
-        "band_rate": 1.5,
+        "band_rate": 1.0,
         "enforced": false,
         "loser_games_since": 3,
         "loser_losses": 4,
@@ -4830,6 +4900,7 @@
           4
         ],
         "weeks_since": 11.0,
+        "winner_games_since": 4,
         "winner_losses": 5,
         "winner_losses_since": 2,
         "winner_win_quality": 0.9299
@@ -4866,7 +4937,7 @@
       "conviction": 0.0415,
       "cycle": "C1",
       "grounds": {
-        "band_rate": 1.5,
+        "band_rate": 0.75,
         "enforced": false,
         "loser_games_since": 3,
         "loser_losses": 4,
@@ -4880,6 +4951,7 @@
           4
         ],
         "weeks_since": 9.0,
+        "winner_games_since": 3,
         "winner_losses": 4,
         "winner_losses_since": 2,
         "winner_win_quality": 0.687
@@ -4927,6 +4999,7 @@
           1
         ],
         "weeks_since": 9.0,
+        "winner_games_since": 3,
         "winner_losses": 6,
         "winner_losses_since": 1,
         "winner_win_quality": 4.6878
@@ -4976,6 +5049,7 @@
           3
         ],
         "weeks_since": 14.0,
+        "winner_games_since": 7,
         "winner_losses": 4,
         "winner_losses_since": 3,
         "winner_win_quality": 5.9967
@@ -5277,6 +5351,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 0,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -5324,6 +5399,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 6.0,
+              "winner_games_since": 3,
               "winner_losses": 0,
               "winner_losses_since": 0,
               "winner_win_quality": 21.8566
@@ -5368,6 +5444,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 0,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -5413,6 +5490,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 16.0,
+              "winner_games_since": 11,
               "winner_losses": 0,
               "winner_losses_since": 0,
               "winner_win_quality": 12.7436
@@ -5455,6 +5533,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 0,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -5500,6 +5579,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 17.0,
+              "winner_games_since": 12,
               "winner_losses": 0,
               "winner_losses_since": 0,
               "winner_win_quality": 12.6988
@@ -5546,6 +5626,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 10.0,
+              "winner_games_since": 6,
               "winner_losses": 0,
               "winner_losses_since": 0,
               "winner_win_quality": 16.0096
@@ -5829,6 +5910,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 0,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -5875,6 +5957,7 @@
                 1
               ],
               "weeks_since": 11.0,
+              "winner_games_since": 4,
               "winner_losses": 4,
               "winner_losses_since": 1,
               "winner_win_quality": 7.0747
@@ -5923,6 +6006,7 @@
                 4
               ],
               "weeks_since": 13.0,
+              "winner_games_since": 7,
               "winner_losses": 4,
               "winner_losses_since": 3,
               "winner_win_quality": 2.5107
@@ -5969,6 +6053,7 @@
                 1
               ],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 3,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -6013,6 +6098,7 @@
                 1
               ],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 3,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -6058,6 +6144,7 @@
                 1
               ],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 3,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -6107,6 +6194,7 @@
                 3
               ],
               "weeks_since": 20.0,
+              "winner_games_since": 15,
               "winner_losses": 3,
               "winner_losses_since": 3,
               "winner_win_quality": 9.7222
@@ -6154,6 +6242,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 7.0,
+              "winner_games_since": 4,
               "winner_losses": 3,
               "winner_losses_since": 1,
               "winner_win_quality": 22.0551
@@ -6196,6 +6285,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 18.0,
+              "winner_games_since": 13,
               "winner_losses": 3,
               "winner_losses_since": 3,
               "winner_win_quality": 11.1413
@@ -6242,6 +6332,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 15.0,
+              "winner_games_since": 11,
               "winner_losses": 3,
               "winner_losses_since": 3,
               "winner_win_quality": 10.4246
@@ -6553,6 +6644,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 6.0,
+              "winner_games_since": 3,
               "winner_losses": 0,
               "winner_losses_since": 0,
               "winner_win_quality": 21.8566
@@ -6597,6 +6689,7 @@
                 1
               ],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 3,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -6641,6 +6734,7 @@
               "quality_diff": 3.4473,
               "rules": [],
               "weeks_since": 20.0,
+              "winner_games_since": 13,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 6.158
@@ -6688,6 +6782,7 @@
                 3
               ],
               "weeks_since": 7.0,
+              "winner_games_since": 2,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 0.0
@@ -6735,6 +6830,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 16.0,
+              "winner_games_since": 10,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 6.8419
@@ -6781,6 +6877,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 14.0,
+              "winner_games_since": 8,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 6.7422
@@ -6828,6 +6925,7 @@
                 4
               ],
               "weeks_since": 11.0,
+              "winner_games_since": 6,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 4.9399
@@ -7107,6 +7205,7 @@
                 1
               ],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 3,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -7153,6 +7252,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 2,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -7196,6 +7296,7 @@
               "quality_diff": 7.3993,
               "rules": [],
               "weeks_since": 12.0,
+              "winner_games_since": 7,
               "winner_losses": 2,
               "winner_losses_since": 1,
               "winner_win_quality": 9.4802
@@ -7241,6 +7342,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 16.0,
+              "winner_games_since": 10,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 9.3932
@@ -7525,6 +7627,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 0,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -7570,6 +7673,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 2,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -7617,6 +7721,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 10.0,
+              "winner_games_since": 6,
               "winner_losses": 2,
               "winner_losses_since": 1,
               "winner_win_quality": 11.8815
@@ -7663,6 +7768,7 @@
                 3
               ],
               "weeks_since": 7.0,
+              "winner_games_since": 3,
               "winner_losses": 2,
               "winner_losses_since": 1,
               "winner_win_quality": 13.4395
@@ -7706,6 +7812,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 8.0,
+              "winner_games_since": 4,
               "winner_losses": 2,
               "winner_losses_since": 1,
               "winner_win_quality": 13.294
@@ -7746,6 +7853,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 2,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -7791,6 +7899,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 16.0,
+              "winner_games_since": 10,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 9.6853
@@ -8076,6 +8185,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 2,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -8125,6 +8235,7 @@
                 3
               ],
               "weeks_since": 9.0,
+              "winner_games_since": 4,
               "winner_losses": 2,
               "winner_losses_since": 1,
               "winner_win_quality": 10.8333
@@ -8158,18 +8269,17 @@
             },
             "conviction": 1.2029,
             "grounds": {
-              "band_rate": 1.5,
-              "enforced": false,
+              "band_rate": 0.0,
+              "enforced": true,
               "loser_games_since": 2,
               "loser_losses": 4,
               "loser_losses_since": 1,
               "loser_win_quality": 18.264,
-              "max_lead": 27.0,
+              "max_lead": 0.0,
               "quality_diff": 18.264,
-              "rules": [
-                4
-              ],
+              "rules": [],
               "weeks_since": 6.0,
+              "winner_games_since": 1,
               "winner_losses": 2,
               "winner_losses_since": 1,
               "winner_win_quality": 0.0
@@ -8215,6 +8325,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 18.0,
+              "winner_games_since": 11,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 12.562
@@ -8255,6 +8366,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 7.0,
+              "winner_games_since": 2,
               "winner_losses": 2,
               "winner_losses_since": 1,
               "winner_win_quality": 21.6975
@@ -8298,6 +8410,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 14.0,
+              "winner_games_since": 8,
               "winner_losses": 2,
               "winner_losses_since": 1,
               "winner_win_quality": 13.0797
@@ -8576,6 +8689,7 @@
               "quality_diff": 3.4473,
               "rules": [],
               "weeks_since": 20.0,
+              "winner_games_since": 13,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 6.158
@@ -8623,6 +8737,7 @@
                 3
               ],
               "weeks_since": 9.0,
+              "winner_games_since": 4,
               "winner_losses": 2,
               "winner_losses_since": 1,
               "winner_win_quality": 10.8333
@@ -8671,6 +8786,7 @@
                 1
               ],
               "weeks_since": 7.0,
+              "winner_games_since": 1,
               "winner_losses": 3,
               "winner_losses_since": 0,
               "winner_win_quality": 16.2587
@@ -8713,6 +8829,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 11.0,
+              "winner_games_since": 4,
               "winner_losses": 3,
               "winner_losses_since": 1,
               "winner_win_quality": 16.7091
@@ -8755,6 +8872,7 @@
               "quality_diff": 2.4138,
               "rules": [],
               "weeks_since": 14.0,
+              "winner_games_since": 7,
               "winner_losses": 3,
               "winner_losses_since": 1,
               "winner_win_quality": 12.9649
@@ -8798,6 +8916,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 3,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -9076,6 +9195,7 @@
                 1
               ],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 3,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -9122,6 +9242,7 @@
                 1
               ],
               "weeks_since": 7.0,
+              "winner_games_since": 1,
               "winner_losses": 3,
               "winner_losses_since": 0,
               "winner_win_quality": 16.2587
@@ -9170,6 +9291,7 @@
                 3
               ],
               "weeks_since": 18.0,
+              "winner_games_since": 10,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 10.734
@@ -9205,18 +9327,19 @@
             },
             "conviction": 1.4002,
             "grounds": {
-              "band_rate": 1.5,
+              "band_rate": 1.0,
               "enforced": false,
               "loser_games_since": 4,
               "loser_losses": 5,
               "loser_losses_since": 2,
               "loser_win_quality": 9.8937,
-              "max_lead": 7.0,
+              "max_lead": 5.0,
               "quality_diff": 5.206,
               "rules": [
                 4
               ],
               "weeks_since": 10.0,
+              "winner_games_since": 4,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 4.6878
@@ -9261,6 +9384,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 12.0,
+              "winner_games_since": 5,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 8.0184
@@ -9304,6 +9428,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 16.0,
+              "winner_games_since": 9,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 10.2709
@@ -9582,6 +9707,7 @@
                 3
               ],
               "weeks_since": 20.0,
+              "winner_games_since": 15,
               "winner_losses": 3,
               "winner_losses_since": 3,
               "winner_win_quality": 9.7222
@@ -9628,6 +9754,7 @@
                 3
               ],
               "weeks_since": 18.0,
+              "winner_games_since": 10,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 10.734
@@ -9672,6 +9799,7 @@
               "quality_diff": 4.2236,
               "rules": [],
               "weeks_since": 13.0,
+              "winner_games_since": 5,
               "winner_losses": 2,
               "winner_losses_since": 0,
               "winner_win_quality": 1.7732
@@ -9708,18 +9836,19 @@
             },
             "conviction": 2.2481,
             "grounds": {
-              "band_rate": 1.5,
+              "band_rate": 0.5,
               "enforced": false,
               "loser_games_since": 3,
               "loser_losses": 5,
               "loser_losses_since": 2,
               "loser_win_quality": 10.8025,
-              "max_lead": 16.0,
+              "max_lead": 5.0,
               "quality_diff": 10.8025,
               "rules": [
                 4
               ],
               "weeks_since": 9.0,
+              "winner_games_since": 2,
               "winner_losses": 2,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -9986,6 +10115,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 2,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -10033,6 +10163,7 @@
                 3
               ],
               "weeks_since": 13.0,
+              "winner_games_since": 6,
               "winner_losses": 5,
               "winner_losses_since": 3,
               "winner_win_quality": 3.759
@@ -10069,7 +10200,7 @@
             },
             "conviction": 2.2633,
             "grounds": {
-              "band_rate": 1.5,
+              "band_rate": 0.0,
               "enforced": false,
               "loser_games_since": 1,
               "loser_losses": 2,
@@ -10079,10 +10210,10 @@
               "quality_diff": 10.8025,
               "rules": [
                 2,
-                3,
-                4
+                3
               ],
               "weeks_since": 6.0,
+              "winner_games_since": 1,
               "winner_losses": 2,
               "winner_losses_since": 1,
               "winner_win_quality": 0.0
@@ -10131,6 +10262,7 @@
                 3
               ],
               "weeks_since": 17.0,
+              "winner_games_since": 10,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 6.2491
@@ -10177,6 +10309,7 @@
               "quality_diff": 0.8427,
               "rules": [],
               "weeks_since": 15.0,
+              "winner_games_since": 9,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 6.2674
@@ -10454,7 +10587,7 @@
             },
             "conviction": 2.2633,
             "grounds": {
-              "band_rate": 1.5,
+              "band_rate": 0.0,
               "enforced": false,
               "loser_games_since": 1,
               "loser_losses": 2,
@@ -10464,10 +10597,10 @@
               "quality_diff": 10.8025,
               "rules": [
                 2,
-                3,
-                4
+                3
               ],
               "weeks_since": 6.0,
+              "winner_games_since": 1,
               "winner_losses": 2,
               "winner_losses_since": 1,
               "winner_win_quality": 0.0
@@ -10518,6 +10651,7 @@
                 3
               ],
               "weeks_since": 13.0,
+              "winner_games_since": 7,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 8.3907
@@ -10565,6 +10699,7 @@
                 3
               ],
               "weeks_since": 12.0,
+              "winner_games_since": 6,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 8.1341
@@ -10613,6 +10748,7 @@
                 3
               ],
               "weeks_since": 9.0,
+              "winner_games_since": 4,
               "winner_losses": 2,
               "winner_losses_since": 1,
               "winner_win_quality": 6.968
@@ -10657,6 +10793,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 14.0,
+              "winner_games_since": 8,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 9.9814
@@ -10699,6 +10836,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 2,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -10983,6 +11121,7 @@
                 3
               ],
               "weeks_since": 17.0,
+              "winner_games_since": 10,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 6.2491
@@ -11031,6 +11170,7 @@
                 3
               ],
               "weeks_since": 13.0,
+              "winner_games_since": 7,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 8.3907
@@ -11078,6 +11218,7 @@
               "quality_diff": 0.6518,
               "rules": [],
               "weeks_since": 14.0,
+              "winner_games_since": 7,
               "winner_losses": 2,
               "winner_losses_since": 1,
               "winner_win_quality": 7.4924
@@ -11353,6 +11494,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 16.0,
+              "winner_games_since": 11,
               "winner_losses": 0,
               "winner_losses_since": 0,
               "winner_win_quality": 12.7436
@@ -11400,6 +11542,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 10.0,
+              "winner_games_since": 6,
               "winner_losses": 2,
               "winner_losses_since": 1,
               "winner_win_quality": 11.8815
@@ -11443,6 +11586,7 @@
                 4
               ],
               "weeks_since": 19.0,
+              "winner_games_since": 9,
               "winner_losses": 4,
               "winner_losses_since": 4,
               "winner_win_quality": 5.7332
@@ -11477,7 +11621,7 @@
             },
             "conviction": 0.0415,
             "grounds": {
-              "band_rate": 1.5,
+              "band_rate": 0.75,
               "enforced": false,
               "loser_games_since": 3,
               "loser_losses": 4,
@@ -11491,6 +11635,7 @@
                 4
               ],
               "weeks_since": 9.0,
+              "winner_games_since": 3,
               "winner_losses": 4,
               "winner_losses_since": 2,
               "winner_win_quality": 0.687
@@ -11535,6 +11680,7 @@
                 1
               ],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 4,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -11581,6 +11727,7 @@
               "quality_diff": 0.5767,
               "rules": [],
               "weeks_since": 13.0,
+              "winner_games_since": 6,
               "winner_losses": 4,
               "winner_losses_since": 2,
               "winner_win_quality": 6.5387
@@ -11869,6 +12016,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 0,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -11902,18 +12050,17 @@
             },
             "conviction": 1.2029,
             "grounds": {
-              "band_rate": 1.5,
-              "enforced": false,
+              "band_rate": 0.0,
+              "enforced": true,
               "loser_games_since": 2,
               "loser_losses": 4,
               "loser_losses_since": 1,
               "loser_win_quality": 18.264,
-              "max_lead": 27.0,
+              "max_lead": 0.0,
               "quality_diff": 18.264,
-              "rules": [
-                4
-              ],
+              "rules": [],
               "weeks_since": 6.0,
+              "winner_games_since": 1,
               "winner_losses": 2,
               "winner_losses_since": 1,
               "winner_win_quality": 0.0
@@ -11958,6 +12105,7 @@
                 4
               ],
               "weeks_since": 20.0,
+              "winner_games_since": 11,
               "winner_losses": 7,
               "winner_losses_since": 7,
               "winner_win_quality": 0.9706
@@ -12009,6 +12157,7 @@
                 3
               ],
               "weeks_since": 15.0,
+              "winner_games_since": 10,
               "winner_losses": 4,
               "winner_losses_since": 3,
               "winner_win_quality": 12.4908
@@ -12057,6 +12206,7 @@
                 1
               ],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 4,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -12102,6 +12252,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 14.0,
+              "winner_games_since": 9,
               "winner_losses": 4,
               "winner_losses_since": 3,
               "winner_win_quality": 12.126
@@ -12146,6 +12297,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 13.0,
+              "winner_games_since": 8,
               "winner_losses": 4,
               "winner_losses_since": 3,
               "winner_win_quality": 11.1591
@@ -12192,6 +12344,7 @@
                 3
               ],
               "weeks_since": 10.0,
+              "winner_games_since": 6,
               "winner_losses": 4,
               "winner_losses_since": 3,
               "winner_win_quality": 10.7465
@@ -12237,6 +12390,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 7.0,
+              "winner_games_since": 3,
               "winner_losses": 4,
               "winner_losses_since": 2,
               "winner_win_quality": 18.264
@@ -12537,6 +12691,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 11.0,
+              "winner_games_since": 4,
               "winner_losses": 3,
               "winner_losses_since": 1,
               "winner_win_quality": 16.7091
@@ -12579,6 +12734,7 @@
                 1
               ],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 4,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -12628,6 +12784,7 @@
                 3
               ],
               "weeks_since": 15.0,
+              "winner_games_since": 10,
               "winner_losses": 4,
               "winner_losses_since": 3,
               "winner_win_quality": 12.4908
@@ -12674,6 +12831,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 12.0,
+              "winner_games_since": 5,
               "winner_losses": 3,
               "winner_losses_since": 2,
               "winner_win_quality": 12.8205
@@ -12717,6 +12875,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 7.0,
+              "winner_games_since": 1,
               "winner_losses": 3,
               "winner_losses_since": 1,
               "winner_win_quality": 0.0
@@ -12760,6 +12919,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 13.0,
+              "winner_games_since": 6,
               "winner_losses": 3,
               "winner_losses_since": 2,
               "winner_win_quality": 13.2853
@@ -12804,6 +12964,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 10.0,
+              "winner_games_since": 3,
               "winner_losses": 3,
               "winner_losses_since": 1,
               "winner_win_quality": 12.2429
@@ -13080,6 +13241,7 @@
               "quality_diff": 7.3993,
               "rules": [],
               "weeks_since": 12.0,
+              "winner_games_since": 7,
               "winner_losses": 2,
               "winner_losses_since": 1,
               "winner_win_quality": 9.4802
@@ -13122,6 +13284,7 @@
               "quality_diff": 2.4138,
               "rules": [],
               "weeks_since": 14.0,
+              "winner_games_since": 7,
               "winner_losses": 3,
               "winner_losses_since": 1,
               "winner_win_quality": 12.9649
@@ -13170,6 +13333,7 @@
                 1
               ],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 4,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -13214,6 +13378,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 19.0,
+              "winner_games_since": 11,
               "winner_losses": 3,
               "winner_losses_since": 3,
               "winner_win_quality": 11.3587
@@ -13258,6 +13423,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 8.0,
+              "winner_games_since": 2,
               "winner_losses": 3,
               "winner_losses_since": 1,
               "winner_win_quality": 14.1804
@@ -13300,6 +13466,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 11.0,
+              "winner_games_since": 4,
               "winner_losses": 3,
               "winner_losses_since": 1,
               "winner_win_quality": 16.8525
@@ -13344,6 +13511,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 7.0,
+              "winner_games_since": 1,
               "winner_losses": 3,
               "winner_losses_since": 1,
               "winner_win_quality": 0.0
@@ -13387,6 +13555,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 17.0,
+              "winner_games_since": 9,
               "winner_losses": 3,
               "winner_losses_since": 3,
               "winner_win_quality": 12.8156
@@ -13667,6 +13836,7 @@
                 3
               ],
               "weeks_since": 7.0,
+              "winner_games_since": 2,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 0.0
@@ -13710,6 +13880,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 3,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -13752,6 +13923,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 19.0,
+              "winner_games_since": 11,
               "winner_losses": 3,
               "winner_losses_since": 3,
               "winner_win_quality": 11.3587
@@ -13799,6 +13971,7 @@
                 3
               ],
               "weeks_since": 14.0,
+              "winner_games_since": 7,
               "winner_losses": 4,
               "winner_losses_since": 3,
               "winner_win_quality": 5.9967
@@ -13846,6 +14019,7 @@
               "quality_diff": 3.2082,
               "rules": [],
               "weeks_since": 13.0,
+              "winner_games_since": 6,
               "winner_losses": 4,
               "winner_losses_since": 2,
               "winner_win_quality": 1.0318
@@ -14130,6 +14304,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 16.0,
+              "winner_games_since": 10,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 6.8419
@@ -14176,6 +14351,7 @@
                 3
               ],
               "weeks_since": 7.0,
+              "winner_games_since": 3,
               "winner_losses": 2,
               "winner_losses_since": 1,
               "winner_win_quality": 13.4395
@@ -14221,6 +14397,7 @@
               "quality_diff": 3.2082,
               "rules": [],
               "weeks_since": 13.0,
+              "winner_games_since": 6,
               "winner_losses": 4,
               "winner_losses_since": 2,
               "winner_win_quality": 1.0318
@@ -14271,6 +14448,7 @@
                 3
               ],
               "weeks_since": 12.0,
+              "winner_games_since": 5,
               "winner_losses": 4,
               "winner_losses_since": 2,
               "winner_win_quality": 1.544
@@ -14548,6 +14726,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 3,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -14593,6 +14772,7 @@
                 4
               ],
               "weeks_since": 15.0,
+              "winner_games_since": 8,
               "winner_losses": 3,
               "winner_losses_since": 2,
               "winner_win_quality": 4.032
@@ -14638,6 +14818,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 16.0,
+              "winner_games_since": 9,
               "winner_losses": 3,
               "winner_losses_since": 2,
               "winner_win_quality": 5.2821
@@ -14910,18 +15091,19 @@
             },
             "conviction": 1.4002,
             "grounds": {
-              "band_rate": 1.5,
+              "band_rate": 1.0,
               "enforced": false,
               "loser_games_since": 4,
               "loser_losses": 5,
               "loser_losses_since": 2,
               "loser_win_quality": 9.8937,
-              "max_lead": 7.0,
+              "max_lead": 5.0,
               "quality_diff": 5.206,
               "rules": [
                 4
               ],
               "weeks_since": 10.0,
+              "winner_games_since": 4,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 4.6878
@@ -14967,6 +15149,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 14.0,
+              "winner_games_since": 9,
               "winner_losses": 4,
               "winner_losses_since": 3,
               "winner_win_quality": 12.126
@@ -15011,6 +15194,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 12.0,
+              "winner_games_since": 5,
               "winner_losses": 3,
               "winner_losses_since": 2,
               "winner_win_quality": 12.8205
@@ -15055,6 +15239,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 8.0,
+              "winner_games_since": 2,
               "winner_losses": 3,
               "winner_losses_since": 1,
               "winner_win_quality": 14.1804
@@ -15095,6 +15280,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 3,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -15145,6 +15331,7 @@
                 3
               ],
               "weeks_since": 13.0,
+              "winner_games_since": 6,
               "winner_losses": 5,
               "winner_losses_since": 4,
               "winner_win_quality": 9.8937
@@ -15433,6 +15620,7 @@
                 3
               ],
               "weeks_since": 12.0,
+              "winner_games_since": 6,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 8.1341
@@ -15467,7 +15655,7 @@
             },
             "conviction": 0.0045,
             "grounds": {
-              "band_rate": 1.5,
+              "band_rate": 1.0,
               "enforced": false,
               "loser_games_since": 3,
               "loser_losses": 4,
@@ -15482,6 +15670,7 @@
                 4
               ],
               "weeks_since": 11.0,
+              "winner_games_since": 4,
               "winner_losses": 5,
               "winner_losses_since": 2,
               "winner_win_quality": 0.9299
@@ -15527,6 +15716,7 @@
                 4
               ],
               "weeks_since": 19.0,
+              "winner_games_since": 9,
               "winner_losses": 4,
               "winner_losses_since": 4,
               "winner_win_quality": 5.7332
@@ -15563,18 +15753,19 @@
             },
             "conviction": -0.1842,
             "grounds": {
-              "band_rate": 1.5,
+              "band_rate": 0.5,
               "enforced": false,
               "loser_games_since": 4,
               "loser_losses": 4,
               "loser_losses_since": 1,
               "loser_win_quality": 10.4683,
-              "max_lead": 9.0,
+              "max_lead": 3.0,
               "quality_diff": 6.1721,
               "rules": [
                 4
               ],
               "weeks_since": 10.0,
+              "winner_games_since": 2,
               "winner_losses": 4,
               "winner_losses_since": 0,
               "winner_win_quality": 4.2963
@@ -15625,6 +15816,7 @@
                 3
               ],
               "weeks_since": 16.0,
+              "winner_games_since": 7,
               "winner_losses": 4,
               "winner_losses_since": 4,
               "winner_win_quality": 6.7416
@@ -15911,6 +16103,7 @@
                 3
               ],
               "weeks_since": 9.0,
+              "winner_games_since": 4,
               "winner_losses": 2,
               "winner_losses_since": 1,
               "winner_win_quality": 6.968
@@ -15947,18 +16140,19 @@
             },
             "conviction": -0.1842,
             "grounds": {
-              "band_rate": 1.5,
+              "band_rate": 0.5,
               "enforced": false,
               "loser_games_since": 4,
               "loser_losses": 4,
               "loser_losses_since": 1,
               "loser_win_quality": 10.4683,
-              "max_lead": 9.0,
+              "max_lead": 3.0,
               "quality_diff": 6.1721,
               "rules": [
                 4
               ],
               "weeks_since": 10.0,
+              "winner_games_since": 2,
               "winner_losses": 4,
               "winner_losses_since": 0,
               "winner_win_quality": 4.2963
@@ -16008,6 +16202,7 @@
                 3
               ],
               "weeks_since": 16.0,
+              "winner_games_since": 8,
               "winner_losses": 5,
               "winner_losses_since": 4,
               "winner_win_quality": 8.1442
@@ -16054,6 +16249,7 @@
                 3
               ],
               "weeks_since": 17.0,
+              "winner_games_since": 10,
               "winner_losses": 4,
               "winner_losses_since": 4,
               "winner_win_quality": 6.9394
@@ -16094,6 +16290,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 4,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -16141,6 +16338,7 @@
                 1
               ],
               "weeks_since": 8.0,
+              "winner_games_since": 2,
               "winner_losses": 4,
               "winner_losses_since": 0,
               "winner_win_quality": 12.6419
@@ -16424,6 +16622,7 @@
                 3
               ],
               "weeks_since": 17.0,
+              "winner_games_since": 10,
               "winner_losses": 4,
               "winner_losses_since": 4,
               "winner_win_quality": 6.9394
@@ -16472,6 +16671,7 @@
                 1
               ],
               "weeks_since": 11.0,
+              "winner_games_since": 4,
               "winner_losses": 4,
               "winner_losses_since": 1,
               "winner_win_quality": 7.0747
@@ -16520,6 +16720,7 @@
                 3
               ],
               "weeks_since": 8.0,
+              "winner_games_since": 2,
               "winner_losses": 4,
               "winner_losses_since": 1,
               "winner_win_quality": 8.4411
@@ -16562,6 +16763,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 4,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -16606,6 +16808,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 13.0,
+              "winner_games_since": 6,
               "winner_losses": 4,
               "winner_losses_since": 2,
               "winner_win_quality": 10.381
@@ -16896,6 +17099,7 @@
                 4
               ],
               "weeks_since": 15.0,
+              "winner_games_since": 8,
               "winner_losses": 3,
               "winner_losses_since": 2,
               "winner_win_quality": 4.032
@@ -16944,6 +17148,7 @@
                 3
               ],
               "weeks_since": 8.0,
+              "winner_games_since": 2,
               "winner_losses": 4,
               "winner_losses_since": 1,
               "winner_win_quality": 8.4411
@@ -16989,6 +17194,7 @@
                 1
               ],
               "weeks_since": 9.0,
+              "winner_games_since": 3,
               "winner_losses": 6,
               "winner_losses_since": 1,
               "winner_win_quality": 4.6878
@@ -17039,6 +17245,7 @@
                 4
               ],
               "weeks_since": 13.0,
+              "winner_games_since": 7,
               "winner_losses": 4,
               "winner_losses_since": 3,
               "winner_win_quality": 2.5107
@@ -17082,6 +17289,7 @@
                 3
               ],
               "weeks_since": 19.0,
+              "winner_games_since": 11,
               "winner_losses": 4,
               "winner_losses_since": 4,
               "winner_win_quality": 5.4867
@@ -17127,6 +17335,7 @@
                 3
               ],
               "weeks_since": 16.0,
+              "winner_games_since": 9,
               "winner_losses": 4,
               "winner_losses_since": 4,
               "winner_win_quality": 6.0686
@@ -17417,6 +17626,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 17.0,
+              "winner_games_since": 12,
               "winner_losses": 0,
               "winner_losses_since": 0,
               "winner_win_quality": 12.6988
@@ -17463,6 +17673,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 14.0,
+              "winner_games_since": 8,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 6.7422
@@ -17511,6 +17722,7 @@
                 3
               ],
               "weeks_since": 12.0,
+              "winner_games_since": 5,
               "winner_losses": 4,
               "winner_losses_since": 2,
               "winner_win_quality": 1.544
@@ -17558,6 +17770,7 @@
                 4
               ],
               "weeks_since": 16.0,
+              "winner_games_since": 8,
               "winner_losses": 4,
               "winner_losses_since": 3,
               "winner_win_quality": 4.3355
@@ -17598,6 +17811,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 4,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0

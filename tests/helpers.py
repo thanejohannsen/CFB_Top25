@@ -160,6 +160,7 @@ def grounds(max_lead: float, rules=(1,), **kw) -> Grounds:
         winner_losses_since=1,
         loser_losses_since=0,
         loser_games_since=1,
+        winner_games_since=4,
         winner_quality=0.0,
         loser_quality=0.0,
         quality_diff=0.0,

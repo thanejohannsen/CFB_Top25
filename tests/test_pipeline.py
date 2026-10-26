@@ -197,15 +197,22 @@ class TestHardCaps(unittest.TestCase):
         self.assertEqual(g.max_lead, float("inf"))
         self.assertEqual((g.winner_losses_since, g.loser_losses_since), (1, 0))
 
-    def test_a_banded_exception_binds_at_its_cap(self):
-        """Oklahoma State beat Oregon in week 2; Oregon has beaten better since."""
+    def test_a_banded_exception_is_measured_in_games_not_weeks(self):
+        """Oklahoma State beat Oregon in week 2; Oregon has beaten better since.
+
+        THREE calendar weeks have passed but Oklahoma State have played TWICE --
+        they were idle for one of them. The band sits at the floor of the ramp
+        for that reason; on the calendar it would have been a step higher and
+        bought Oregon two more places.
+        """
         pair = ("Oklahoma State", "Oregon")
         g = self.on.edge_facts[pair].grounds
         self.assertEqual(g.rules, (4,))
-        self.assertEqual(g.weeks_since, 3.0)
-        self.assertEqual(g.band_rate, 0.75)
-        self.assertEqual(g.max_lead, 6.0)
-        self.assertLessEqual(self.on.ordering.leads[pair], 6)
+        self.assertEqual(g.weeks_since, 3.0, "the calendar says three")
+        self.assertEqual(g.winner_games_since, 2, "the games say two")
+        self.assertEqual(g.band_rate, 0.5, "the floor of the ramp, not 0.75")
+        self.assertEqual(g.max_lead, 4.0)
+        self.assertLessEqual(self.on.ordering.leads[pair], g.max_lead)
 
     def test_no_cap_is_broken_and_nothing_had_to_be_relaxed(self):
         for pair, cap in self.on.ordering.max_lead.items():

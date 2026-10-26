@@ -390,8 +390,8 @@ recency_floor      = 0.15
 #     1. A has more losses than B                                   (any gap)
 #     2. A has lost since the game and B has not                    (any gap)
 #     3. A has lost more times since the game than B has            (any gap)
-#     4. B has impressive wins and A has mediocre wins, AND at least
-#        min_weeks have passed since the game                    (BANDED gap)
+#     4. B has impressive wins and A has mediocre wins, AND A has played
+#        at least min_games since the game                       (BANDED gap)
 #
 # Rules 1-3 are about slipping, rule 4 is about being overtaken, and nothing else
 # counts. Full reasoning in cfbrank/engine/grounds.py.
@@ -408,7 +408,7 @@ recency_floor      = 0.15
 #
 #     no exception   max_lead = 0      the winner must finish above the loser
 #     rule 1, 2, 3   max_lead = inf    stages 1-3 decide, i.e. "any gap"
-#     rule 4 alone   max_lead = floor(band_rate(weeks_since) x quality_diff)
+#     rule 4 alone   max_lead = floor(band_rate(winner_games_since) x quality_diff)
 #
 # Measured on the two checked-in seasons: 21 of 28 pool results are enforced on
 # 2026 week 5 and 59 of 111 on the completed 2025 season, the board violates only
@@ -436,19 +436,25 @@ enabled = true
 # count moves by only 1-3 edges across bars from 3.0 to 8.0.
 impressive_bar = 6.0
 
-# Weeks that must have passed before rule 4 can apply at all. Rules 1-3 have no
-# such gate -- a loss counts the moment it happens -- but being overtaken takes
-# time to establish, and one good win the week after a game proves little whatever
-# it was worth.
-min_weeks = 2
+# Games A must have PLAYED before rule 4 can apply at all. Rules 1-3 have no such
+# gate -- a loss counts the moment it happens -- but being overtaken takes time to
+# establish, and one good win the week after a game proves little whatever it was
+# worth.
+#
+# Games rather than weeks because a bye is not a chance missed, it is a chance
+# never offered. The calendar version let a week off tick this clock and widen the
+# band below, which on 2026 week 8 published Alabama eight places above the
+# Georgia side that had beaten them in Tuscaloosa.
+min_games = 2
 
 # Rule 4's band: places of licence per rating point of win-quality difference,
-# ramping with time because the evidence does.
+# ramping as A plays, because that is when the evidence arrives.
 #
-#     weeks since the game    2     3     4     5     6+
+#     games A has played      2     3     4     5     6+
 #     places per point       0.50  0.75  1.00  1.25  1.50
 #
-# So a loser whose wins since average 8.7 rating points better, three weeks on,
+# So a loser whose wins since average 8.7 rating points better, once A has played
+# three games,
 # may finish floor(0.75 x 8.7) = 6 places above the team that beat them.
 #
 # Note what this is NOT: a minimum. A small quality edge floors to zero places,

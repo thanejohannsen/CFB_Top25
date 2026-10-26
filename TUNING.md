@@ -331,11 +331,13 @@ is not a matter of degree:
 > 1. A has more losses than B — *any gap*
 > 2. A has lost since the game and B has not — *any gap*
 > 3. A has lost more times since than B has — *any gap*
-> 4. B has impressive wins and A has mediocre wins, **and** at least
->    `min_weeks` have passed — *banded gap*
+> 4. B has impressive wins and A has mediocre wins, **and** A has played at
+>    least `min_games` since — *banded gap*
 
 Nothing else counts. Rules 1–3 are about the team that beat you slipping; rule 4
-is about you overtaking it, which takes time to establish.
+is about you overtaking it, which takes time to establish. Rules 2 and 3 need B
+to have **played** since — a bye is not surviving — and rule 4 counts A's
+**games**, not the calendar, so a week A was not given does not widen B's band.
 
 **Why this replaced a price.** Everything in stage 4 used to be a price, so a
 result could always be outbid. That published a 45–17 Missouri win over Florida
@@ -367,10 +369,10 @@ measured better, so there's no trade-off to revisit:
 | --- | --- | --- |
 | `enabled` | true | `false` removes the requirement entirely and leaves the pure cost model |
 | `impressive_bar` | 6.0 | Rating points past the board mean. The **average** quality of the wins since, not the total — summing counts volume as quality and pinned most old results at the ceiling |
-| `min_weeks` | 2 | Weeks before rule 4 can apply. Rules 1–3 have no such gate |
-| `band_start` | 0.5 | Rule 4's places of gap per rating point of win-quality difference, at `min_weeks` |
-| `band_step` | 0.25 | Added per further week: 0.50 at 2 weeks, 0.75 at 3, 1.00 at 4, 1.25 at 5 |
-| `band_max` | 1.5 | Ceiling, reached at 6 weeks. On a completed season nearly every rule-4 result sits here, so the ramp is an early-season instrument |
+| `min_games` | 2 | Games **A** must have played before rule 4 can apply. Rules 1–3 have no such gate. Games rather than weeks: a bye is a chance never offered, and letting it tick the clock put Alabama eight places above the Georgia side that beat them |
+| `band_start` | 0.5 | Rule 4's places of gap per rating point of win-quality difference, at `min_games` |
+| `band_step` | 0.25 | Added per further game A plays: 0.50 at 2 games, 0.75 at 3, 1.00 at 4, 1.25 at 5 |
+| `band_max` | 1.5 | Ceiling, reached at 6 games. On a completed season nearly every rule-4 result sits here, so the ramp is an early-season instrument |
 
 ### Making two teams meet in the middle (`stage4.max_block`)
 

@@ -13,7 +13,7 @@ This module answers the second, and it is not a matter of degree:
       2. A has lost since the game and B has not, AND B has PLAYED  (any gap)
       3. A has lost more times since than B has, AND B has PLAYED   (any gap)
       4. B has impressive wins and A has mediocre wins, AND at
-         least `min_weeks` have passed since the game            (BANDED gap)
+         A has played at least `min_games` since the game       (BANDED gap)
 
 Rules 1-3 are about slipping; rule 4 is about being overtaken. Nothing else
 counts. If none of them applies the result stands, full stop.
@@ -43,20 +43,23 @@ which stage 4 treats as a hard constraint rather than a term:
 | --- | --- |
 | no exception applies | `0` -- the winner must finish above the loser |
 | rule 1, 2 or 3 | `inf` -- stages 1-3 decide, which is what the owner asked for |
-| rule 4 alone | `floor(band_rate(weeks_since) x quality_diff)` |
+| rule 4 alone | `floor(band_rate(winner_games_since) x quality_diff)` |
 
 `max_lead` is always an integer or infinity. `engine/order.py`'s feasibility
 shortcuts rely on that, so do not hand it a fraction.
 
-## Rule 4's band grows with time, because the evidence does
+## Rule 4's band grows with GAMES PLAYED, because that is the evidence
 
 `band_rate` is places of licence per rating point of win-quality difference, and
-it ramps: 0.5 at `min_weeks`, +`band_step` per further week, to `band_max`. One
-good win the week after a game proves little whatever it was worth; six weeks of
-them is a different team. Measured consequence worth knowing: on a completed
-season nearly every rule-4 edge is 6+ weeks old and sits at the ceiling, so the
-ramp is an early-season instrument rather than something that shapes a finished
-board.
+it ramps: 0.5 at `min_games`, +`band_step` per further game A plays, to
+`band_max`. One good win the week after a game proves little whatever it was
+worth; six games of them is a different team.
+
+It counts A's GAMES rather than the calendar because a bye is not a chance
+missed, it is a chance never offered -- and the calendar version charged a team
+for it. Measured consequence worth knowing: on a completed season nearly every
+rule-4 edge sits at the ceiling either way, so the ramp is an early-season
+instrument rather than something that shapes a finished board.
 
 ## Win quality is the MEAN of the wins since, not the sum
 
@@ -109,6 +112,7 @@ class Grounds:
     winner_losses_since: int     # losses after this game, for rules 2 and 3
     loser_losses_since: int
     loser_games_since: int       # games B has PLAYED since; a bye is not survival
+    winner_games_since: int      # games A has played since; rule 4's clock
     winner_quality: float        # mean rating points past the board mean, wins SINCE
     loser_quality: float
     quality_diff: float          # how far the loser's subsequent wins lead, >= 0
@@ -159,14 +163,17 @@ def _win_quality(
 
 
 def band_rate(
-    age: float, min_weeks: float, start: float, step: float, cap: float
+    games: float, min_games: float, start: float, step: float, cap: float
 ) -> float:
-    """Places of licence per rating point, for a result `age` weeks old.
+    """Places of licence per rating point, after A has played `games` since.
 
-    0.5 at two weeks, then +0.25 a week to a ceiling of 1.5 with the shipped
-    dials. Below `min_weeks` rule 4 cannot apply at all, so this is never asked.
+    0.5 at two games, then +0.25 a game to a ceiling of 1.5 with the shipped
+    dials. Below `min_games` rule 4 cannot apply at all, so this is never asked.
+
+    GAMES, not calendar weeks. A bye used to tick this clock and widen the band,
+    which charged a team for a week it was not allowed to play -- see `compute`.
     """
-    return min(cap, start + step * max(0.0, age - min_weeks))
+    return min(cap, start + step * max(0.0, games - min_games))
 
 
 def compute(
@@ -188,7 +195,7 @@ def compute(
         return {}
 
     bar_q = float(cfg.get("impressive_bar", 6.0))      # type: ignore[arg-type]
-    min_weeks = float(cfg.get("min_weeks", 2))         # type: ignore[arg-type]
+    min_games = float(cfg.get("min_games", 2))         # type: ignore[arg-type]
     start = float(cfg.get("band_start", 0.5))          # type: ignore[arg-type]
     step = float(cfg.get("band_step", 0.25))           # type: ignore[arg-type]
     cap = float(cfg.get("band_max", 1.5))              # type: ignore[arg-type]
@@ -229,6 +236,7 @@ def compute(
         w_since = losses_after(r.winner, played)
         l_since = losses_after(r.loser, played)
         l_games = games_after(r.loser, played)
+        w_games = games_after(r.winner, played)
         w_quality = _win_quality(wins_by[r.winner], played, quality, bar)
         l_quality = _win_quality(wins_by[r.loser], played, quality, bar)
         diff = max(0.0, l_quality - w_quality)
@@ -252,9 +260,22 @@ def compute(
         if w_since > l_since and l_games >= 1:
             rules.append(3)
         rate = 0.0
-        if l_quality >= bar_q and w_quality < bar_q and age >= min_weeks:
+        # RULE 4 RUNS ON A's GAMES, NOT THE CALENDAR. Being overtaken takes time
+        # to establish, but a team that has not played has not had the chance to
+        # answer -- and a bye used to tick the clock toward the gate and widen
+        # the band anyway. On 2026 week 8 that published Alabama EIGHT places
+        # above the Georgia side that beat them 20-17 in Tuscaloosa: Georgia lost
+        # to Auburn and then sat out, so against Alabama's two games since they
+        # had one, and the licence grew as though both had been asked the same
+        # question.
+        #
+        # Known edge, deliberately left: `_win_quality` returns `mean([]) = 0.0`,
+        # so A having NO wins since is still read as "mediocre wins" rather than
+        # as nothing to judge. The games clock delays rule 4, it does not settle
+        # that. Requiring A to have banked a win was offered and not taken.
+        if l_quality >= bar_q and w_quality < bar_q and w_games >= min_games:
             rules.append(4)
-            rate = band_rate(age, min_weeks, start, step, cap)
+            rate = band_rate(w_games, min_games, start, step, cap)
 
         if {1, 2, 3} & set(rules):
             # Slipping is unbounded: the owner's "any gap". Stages 1-3 decide,
@@ -278,6 +299,7 @@ def compute(
             winner_losses_since=w_since,
             loser_losses_since=l_since,
             loser_games_since=l_games,
+            winner_games_since=w_games,
             winner_quality=w_quality,
             loser_quality=l_quality,
             quality_diff=diff,

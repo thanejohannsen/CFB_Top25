@@ -85,7 +85,7 @@ DEFAULTS: dict[str, Any] = {
         "grounds": {
             "enabled": True,
             "impressive_bar": 6.0,
-            "min_weeks": 2,
+            "min_games": 2,
             "band_start": 0.5,
             "band_step": 0.25,
             "band_max": 1.5,
@@ -288,9 +288,9 @@ def validate(data: Mapping[str, Any]) -> None:
     for key in ("impressive_bar", "band_start", "band_step"):
         if gr[key] < 0:
             raise ConfigError(f"stage4.grounds.{key} must be >= 0")
-    weeks = gr["min_weeks"]
-    if not isinstance(weeks, int) or weeks < 0:
-        raise ConfigError("stage4.grounds.min_weeks must be an integer >= 0")
+    games = gr["min_games"]
+    if not isinstance(games, int) or games < 0:
+        raise ConfigError("stage4.grounds.min_games must be an integer >= 0")
     if gr["band_max"] < gr["band_start"]:
         raise ConfigError(
             "stage4.grounds.band_max must be >= band_start -- the band widens with time, "

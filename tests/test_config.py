@@ -139,8 +139,8 @@ class TestValidation(unittest.TestCase):
         self._bad("stage4.grounds.impressive_bar=-1")
         self._bad("stage4.grounds.band_start=-0.1")
         self._bad("stage4.grounds.band_step=-0.1")
-        self._bad("stage4.grounds.min_weeks=-1")
-        self._bad("stage4.grounds.min_weeks=1.5")
+        self._bad("stage4.grounds.min_games=-1")
+        self._bad("stage4.grounds.min_games=1.5")
         self._bad("stage4.grounds.enabled=yes")
         self._bad("stage4.max_block=1")
         self._bad("stage4.max_block=99")
@@ -179,7 +179,7 @@ class TestValidation(unittest.TestCase):
         load(SHIPPED, ["stage4.grounds.enabled=false"])
 
     def test_accepts_the_documented_edges(self):
-        load(SHIPPED, ["stage4.grounds.min_weeks=0"])
+        load(SHIPPED, ["stage4.grounds.min_games=0"])
         load(SHIPPED, ["stage4.grounds.impressive_bar=0"])
         load(SHIPPED, ["stage4.max_block=2", "stage4.max_block=40"])
         load(SHIPPED, ["stage3.strength=0", "stage3.strength=1.0"])
