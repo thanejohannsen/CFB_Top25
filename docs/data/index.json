@@ -38,8 +38,8 @@
           "year": 2026
         },
         {
-          "content_hash": "sha256:da66cd4d4e90941225e9edc435a76a8ea130d6d7c2ed885802c1590d4ff98e01",
-          "generated_at": "2026-10-26T14:23:36Z",
+          "content_hash": "sha256:be8c518d03e71abd1664275455628cb87c94820880fe57862f3f51238ed33d27",
+          "generated_at": "2026-10-26T15:17:53Z",
           "id": "2026-regular-08",
           "label": "Week 8",
           "path": "weeks/2026-regular-08.json",
@@ -68,5 +68,5 @@
       "year": 2025
     }
   ],
-  "updated_at": "2026-10-26T14:23:36Z"
+  "updated_at": "2026-10-26T15:17:53Z"
 }
