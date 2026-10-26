@@ -25,6 +25,7 @@
             "quality_diff": 0.0,
             "rules": [],
             "weeks_since": 0.0,
+            "winner_games_since": 0,
             "winner_losses": 2,
             "winner_losses_since": 0,
             "winner_win_quality": 0.0
@@ -67,11 +68,12 @@
             "quality_diff": 0.0,
             "rules": [],
             "weeks_since": 3.0,
+            "winner_games_since": 3,
             "winner_losses": 2,
             "winner_losses_since": 2,
             "winner_win_quality": 16.9428
           },
-          "lead": -22,
+          "lead": -18,
           "loser": "Mississippi State",
           "loser_rank": 24,
           "margin": 33,
@@ -83,7 +85,7 @@
           "week": 5,
           "weight": 5.4148,
           "winner": "Alabama",
-          "winner_rank": 2
+          "winner_rank": 6
         },
         {
           "adj_margin": 23.4934,
@@ -114,11 +116,12 @@
               3
             ],
             "weeks_since": 6.0,
+            "winner_games_since": 6,
             "winner_losses": 2,
             "winner_losses_since": 2,
             "winner_win_quality": 12.4769
           },
-          "lead": -7,
+          "lead": -3,
           "loser": "Kentucky",
           "loser_rank": 9,
           "margin": 28,
@@ -130,7 +133,7 @@
           "week": 2,
           "weight": 5.1939,
           "winner": "Alabama",
-          "winner_rank": 2
+          "winner_rank": 6
         },
         {
           "adj_margin": 19.4934,
@@ -154,6 +157,7 @@
             "quality_diff": 0.0,
             "rules": [],
             "weeks_since": 3.0,
+            "winner_games_since": 2,
             "winner_losses": 1,
             "winner_losses_since": 0,
             "winner_win_quality": 14.9774
@@ -194,6 +198,7 @@
             "quality_diff": 0.0,
             "rules": [],
             "weeks_since": 1.0,
+            "winner_games_since": 1,
             "winner_losses": 2,
             "winner_losses_since": 0,
             "winner_win_quality": 11.9382
@@ -240,11 +245,12 @@
               3
             ],
             "weeks_since": 4.0,
+            "winner_games_since": 4,
             "winner_losses": 2,
             "winner_losses_since": 2,
             "winner_win_quality": 13.8297
           },
-          "lead": -26,
+          "lead": -22,
           "loser": "South Carolina",
           "loser_rank": 28,
           "margin": 31,
@@ -256,7 +262,7 @@
           "week": 4,
           "weight": 4.9907,
           "winner": "Alabama",
-          "winner_rank": 2
+          "winner_rank": 6
         },
         {
           "adj_margin": 18.5066,
@@ -280,11 +286,12 @@
             "quality_diff": 4.334,
             "rules": [],
             "weeks_since": 4.0,
+            "winner_games_since": 3,
             "winner_losses": 1,
             "winner_losses_since": 1,
             "winner_win_quality": 14.2715
           },
-          "lead": -12,
+          "lead": -15,
           "loser": "Oklahoma",
           "loser_rank": 20,
           "margin": 28,
@@ -296,7 +303,7 @@
           "week": 4,
           "weight": 4.755,
           "winner": "Georgia",
-          "winner_rank": 8
+          "winner_rank": 5
         },
         {
           "adj_margin": 21.4934,
@@ -322,6 +329,7 @@
               1
             ],
             "weeks_since": 2.0,
+            "winner_games_since": 1,
             "winner_losses": 3,
             "winner_losses_since": 0,
             "winner_win_quality": 16.3585
@@ -362,11 +370,12 @@
             "quality_diff": 0.0,
             "rules": [],
             "weeks_since": 0.0,
+            "winner_games_since": 0,
             "winner_losses": 1,
             "winner_losses_since": 0,
             "winner_win_quality": 0.0
           },
-          "lead": -29,
+          "lead": -30,
           "loser": "Michigan",
           "loser_rank": 32,
           "margin": 7,
@@ -378,7 +387,7 @@
           "week": 8,
           "weight": 4.4923,
           "winner": "Indiana",
-          "winner_rank": 3
+          "winner_rank": 2
         },
         {
           "adj_margin": 10.4934,
@@ -402,6 +411,7 @@
             "quality_diff": 0.0,
             "rules": [],
             "weeks_since": 0.0,
+            "winner_games_since": 0,
             "winner_losses": 3,
             "winner_losses_since": 0,
             "winner_win_quality": 0.0
@@ -444,11 +454,12 @@
             "quality_diff": 0.0,
             "rules": [],
             "weeks_since": 1.0,
+            "winner_games_since": 1,
             "winner_losses": 2,
             "winner_losses_since": 1,
             "winner_win_quality": 0.0
           },
-          "lead": -10,
+          "lead": -9,
           "loser": "Missouri",
           "loser_rank": 17,
           "margin": 28,
@@ -460,7 +471,7 @@
           "week": 7,
           "weight": 4.3862,
           "winner": "Ole Miss",
-          "winner_rank": 7
+          "winner_rank": 8
         },
         {
           "adj_margin": 18.5066,
@@ -489,13 +500,14 @@
               3
             ],
             "weeks_since": 4.0,
+            "winner_games_since": 3,
             "winner_losses": 2,
             "winner_losses_since": 2,
             "winner_win_quality": 26.4944
           },
-          "lead": 11,
+          "lead": 10,
           "loser": "Ole Miss",
-          "loser_rank": 7,
+          "loser_rank": 8,
           "margin": 24,
           "rating_gap": -1.0137,
           "score": "52-28",
@@ -531,13 +543,14 @@
             "quality_diff": 0.0,
             "rules": [],
             "weeks_since": 0.0,
+            "winner_games_since": 0,
             "winner_losses": 2,
             "winner_losses_since": 0,
             "winner_win_quality": 0.0
           },
           "lead": -1,
           "loser": "Ole Miss",
-          "loser_rank": 7,
+          "loser_rank": 8,
           "margin": 7,
           "rating_gap": 7.0785,
           "score": "34-27",
@@ -547,7 +560,7 @@
           "week": 8,
           "weight": 4.1433,
           "winner": "Texas",
-          "winner_rank": 6
+          "winner_rank": 7
         },
         {
           "adj_margin": 6.4934,
@@ -571,13 +584,14 @@
             "quality_diff": 15.091,
             "rules": [],
             "weeks_since": 1.0,
+            "winner_games_since": 0,
             "winner_losses": 1,
             "winner_losses_since": 0,
             "winner_win_quality": 0.0
           },
-          "lead": -2,
+          "lead": -1,
           "loser": "Indiana",
-          "loser_rank": 3,
+          "loser_rank": 2,
           "margin": 4,
           "rating_gap": 2.7473,
           "score": "19-15",
@@ -611,6 +625,7 @@
             "quality_diff": 5.8462,
             "rules": [],
             "weeks_since": 1.0,
+            "winner_games_since": 1,
             "winner_losses": 1,
             "winner_losses_since": 0,
             "winner_win_quality": 4.8703
@@ -653,11 +668,12 @@
               3
             ],
             "weeks_since": 4.0,
+            "winner_games_since": 3,
             "winner_losses": 2,
             "winner_losses_since": 2,
             "winner_win_quality": 19.4159
           },
-          "lead": -6,
+          "lead": -5,
           "loser": "Tennessee",
           "loser_rank": 12,
           "margin": 3,
@@ -669,7 +685,7 @@
           "week": 4,
           "weight": 3.8465,
           "winner": "Texas",
-          "winner_rank": 6
+          "winner_rank": 7
         },
         {
           "adj_margin": 18.5066,
@@ -695,6 +711,7 @@
             "quality_diff": 9.5516,
             "rules": [],
             "weeks_since": 3.0,
+            "winner_games_since": 2,
             "winner_losses": 2,
             "winner_losses_since": 1,
             "winner_win_quality": 16.9428
@@ -735,6 +752,7 @@
             "quality_diff": 0.0,
             "rules": [],
             "weeks_since": 5.0,
+            "winner_games_since": 4,
             "winner_losses": 2,
             "winner_losses_since": 2,
             "winner_win_quality": 22.9551
@@ -780,13 +798,14 @@
               3
             ],
             "weeks_since": 1.0,
+            "winner_games_since": 1,
             "winner_losses": 2,
             "winner_losses_since": 1,
             "winner_win_quality": 0.0
           },
-          "lead": 10,
+          "lead": 6,
           "loser": "Alabama",
-          "loser_rank": 2,
+          "loser_rank": 6,
           "margin": 16,
           "rating_gap": -7.3141,
           "score": "26-10",
@@ -820,6 +839,7 @@
             "quality_diff": 14.3145,
             "rules": [],
             "weeks_since": 3.0,
+            "winner_games_since": 3,
             "winner_losses": 2,
             "winner_losses_since": 1,
             "winner_win_quality": 12.6082
@@ -850,35 +870,34 @@
           },
           "conviction": 0.7169,
           "grounds": {
-            "band_rate": 0.5,
-            "enforced": false,
+            "band_rate": 0.0,
+            "enforced": true,
             "loser_games_since": 2,
             "loser_losses": 2,
             "loser_losses_since": 1,
             "loser_win_quality": 16.9428,
-            "max_lead": 8.0,
+            "max_lead": 0.0,
             "quality_diff": 16.9428,
-            "rules": [
-              4
-            ],
+            "rules": [],
             "weeks_since": 2.0,
+            "winner_games_since": 1,
             "winner_losses": 1,
             "winner_losses_since": 1,
             "winner_win_quality": 0.0
           },
-          "lead": 6,
+          "lead": -1,
           "loser": "Alabama",
-          "loser_rank": 2,
+          "loser_rank": 6,
           "margin": 3,
           "rating_gap": 3.2501,
           "score": "20-17",
           "season_type": "regular",
           "site": "away",
-          "status": "overridden",
+          "status": "honored",
           "week": 6,
           "weight": 3.7169,
           "winner": "Georgia",
-          "winner_rank": 8
+          "winner_rank": 5
         },
         {
           "adj_margin": 5.4934,
@@ -904,13 +923,14 @@
             "quality_diff": 19.4159,
             "rules": [],
             "weeks_since": 1.0,
+            "winner_games_since": 0,
             "winner_losses": 2,
             "winner_losses_since": 0,
             "winner_win_quality": 0.0
           },
-          "lead": 12,
+          "lead": 11,
           "loser": "Texas",
-          "loser_rank": 6,
+          "loser_rank": 7,
           "margin": 3,
           "rating_gap": -8.0922,
           "score": "27-24",
@@ -948,6 +968,7 @@
               3
             ],
             "weeks_since": 5.0,
+            "winner_games_since": 4,
             "winner_losses": 3,
             "winner_losses_since": 3,
             "winner_win_quality": 13.5389
@@ -978,7 +999,7 @@
           },
           "conviction": 0.2865,
           "grounds": {
-            "band_rate": 1.0,
+            "band_rate": 0.75,
             "enforced": false,
             "loser_games_since": 3,
             "loser_losses": 2,
@@ -992,6 +1013,7 @@
               4
             ],
             "weeks_since": 4.0,
+            "winner_games_since": 3,
             "winner_losses": 3,
             "winner_losses_since": 3,
             "winner_win_quality": 0.0
@@ -1034,11 +1056,12 @@
               3
             ],
             "weeks_since": 5.0,
+            "winner_games_since": 4,
             "winner_losses": 2,
             "winner_losses_since": 2,
             "winner_win_quality": 9.2046
           },
-          "lead": -3,
+          "lead": -2,
           "loser": "LSU",
           "loser_rank": 10,
           "margin": 8,
@@ -1050,7 +1073,7 @@
           "week": 3,
           "weight": 3.271,
           "winner": "Ole Miss",
-          "winner_rank": 7
+          "winner_rank": 8
         },
         {
           "adj_margin": 3.4934,
@@ -1076,6 +1099,7 @@
             "quality_diff": 3.2547,
             "rules": [],
             "weeks_since": 4.0,
+            "winner_games_since": 3,
             "winner_losses": 2,
             "winner_losses_since": 2,
             "winner_win_quality": 11.1329
@@ -1118,6 +1142,7 @@
             "quality_diff": 2.2386,
             "rules": [],
             "weeks_since": 3.0,
+            "winner_games_since": 3,
             "winner_losses": 1,
             "winner_losses_since": 0,
             "winner_win_quality": 15.1417
@@ -1160,13 +1185,14 @@
               1
             ],
             "weeks_since": 2.0,
+            "winner_games_since": 2,
             "winner_losses": 3,
             "winner_losses_since": 1,
             "winner_win_quality": 10.7166
           },
-          "lead": 14,
+          "lead": 13,
           "loser": "Texas",
-          "loser_rank": 6,
+          "loser_rank": 7,
           "margin": 3,
           "rating_gap": -8.7321,
           "score": "27-24",
@@ -1204,6 +1230,7 @@
               3
             ],
             "weeks_since": 6.0,
+            "winner_games_since": 5,
             "winner_losses": 3,
             "winner_losses_since": 3,
             "winner_win_quality": 7.1938
@@ -1248,13 +1275,14 @@
               1
             ],
             "weeks_since": 1.0,
+            "winner_games_since": 1,
             "winner_losses": 3,
             "winner_losses_since": 1,
             "winner_win_quality": 0.0
           },
-          "lead": 13,
+          "lead": 16,
           "loser": "Georgia",
-          "loser_rank": 8,
+          "loser_rank": 5,
           "margin": 3,
           "rating_gap": -14.9845,
           "score": "27-24",
@@ -1292,6 +1320,7 @@
               1
             ],
             "weeks_since": 0.0,
+            "winner_games_since": 0,
             "winner_losses": 3,
             "winner_losses_since": 0,
             "winner_win_quality": 0.0
@@ -1336,11 +1365,12 @@
               3
             ],
             "weeks_since": 6.0,
+            "winner_games_since": 5,
             "winner_losses": 2,
             "winner_losses_since": 2,
             "winner_win_quality": 11.934
           },
-          "lead": 5,
+          "lead": 6,
           "loser": "Ohio State",
           "loser_rank": 1,
           "margin": 1,
@@ -1352,7 +1382,7 @@
           "week": 2,
           "weight": 2.7049,
           "winner": "Texas",
-          "winner_rank": 6
+          "winner_rank": 7
         },
         {
           "adj_margin": -1.4934,
@@ -1378,6 +1408,7 @@
             "quality_diff": 0.0111,
             "rules": [],
             "weeks_since": 2.0,
+            "winner_games_since": 2,
             "winner_losses": 1,
             "winner_losses_since": 0,
             "winner_win_quality": 11.3163
@@ -1397,11 +1428,11 @@
           "winner_rank": 9
         }
       ],
-      "explanation": "Ohio State, Alabama, Indiana, Texas, Ole Miss, Georgia, Kentucky, LSU, Tennessee, Missouri, Florida, Oklahoma, Auburn, Mississippi State, Iowa, South Carolina and Michigan form a loop: following every head-to-head result among them leads back to where it started, so no ordering can honour all 33 of them. The weakest link was Texas's 24-23 win over Ohio State (a 1-point win at home is worth -1.5 once venue is accounted for; the winner rates 3.3 points worse on the power ratings. Since then: Texas has more losses, 2 to 1; Texas has lost 2 since and Ohio State none; so the resume order decides how far apart they sit), so it was set aside, along with 10 other results in this loop.",
+      "explanation": "Ohio State, Indiana, Georgia, Alabama, Texas, Ole Miss, Kentucky, LSU, Tennessee, Missouri, Florida, Oklahoma, Auburn, Mississippi State, Iowa, South Carolina and Michigan form a loop: following every head-to-head result among them leads back to where it started, so no ordering can honour all 33 of them. The weakest link was Texas's 24-23 win over Ohio State (a 1-point win at home is worth -1.5 once venue is accounted for; the winner rates 3.3 points worse on the power ratings. Since then: Texas has more losses, 2 to 1; Texas has lost 2 since and Ohio State none; so the resume order decides how far apart they sit), so it was set aside, along with 9 other results in this loop.",
       "member_ranks": [
         1,
         2,
-        3,
+        5,
         6,
         7,
         8,
@@ -1419,11 +1450,11 @@
       ],
       "members": [
         "Ohio State",
-        "Alabama",
         "Indiana",
+        "Georgia",
+        "Alabama",
         "Texas",
         "Ole Miss",
-        "Georgia",
         "Kentucky",
         "LSU",
         "Tennessee",
@@ -1444,7 +1475,6 @@
         "Oklahoma over Texas",
         "Mississippi State over Missouri",
         "Florida over Texas",
-        "Georgia over Alabama",
         "Tennessee over Alabama",
         "Florida over Ole Miss",
         "South Carolina over Florida"
@@ -1468,18 +1498,19 @@
           },
           "conviction": 2.0544,
           "grounds": {
-            "band_rate": 0.75,
+            "band_rate": 0.5,
             "enforced": false,
             "loser_games_since": 2,
             "loser_losses": 2,
             "loser_losses_since": 1,
             "loser_win_quality": 17.0325,
-            "max_lead": 11.0,
+            "max_lead": 7.0,
             "quality_diff": 15.1598,
             "rules": [
               4
             ],
             "weeks_since": 3.0,
+            "winner_games_since": 2,
             "winner_losses": 1,
             "winner_losses_since": 0,
             "winner_win_quality": 1.8727
@@ -1526,11 +1557,12 @@
               4
             ],
             "weeks_since": 2.0,
+            "winner_games_since": 2,
             "winner_losses": 2,
             "winner_losses_since": 1,
             "winner_win_quality": 0.9712
           },
-          "lead": -1,
+          "lead": -3,
           "loser": "UCF",
           "loser_rank": 36,
           "margin": 14,
@@ -1542,7 +1574,7 @@
           "week": 6,
           "weight": 4.3429,
           "winner": "Oklahoma State",
-          "winner_rank": 35
+          "winner_rank": 33
         },
         {
           "adj_margin": 7.5066,
@@ -1568,6 +1600,7 @@
             "quality_diff": 5.4486,
             "rules": [],
             "weeks_since": 3.0,
+            "winner_games_since": 3,
             "winner_losses": 2,
             "winner_losses_since": 1,
             "winner_win_quality": 8.1577
@@ -1610,6 +1643,7 @@
               1
             ],
             "weeks_since": 0.0,
+            "winner_games_since": 0,
             "winner_losses": 2,
             "winner_losses_since": 0,
             "winner_win_quality": 0.0
@@ -1655,6 +1689,7 @@
               3
             ],
             "weeks_since": 6.0,
+            "winner_games_since": 5,
             "winner_losses": 1,
             "winner_losses_since": 1,
             "winner_win_quality": 9.5954
@@ -1699,6 +1734,7 @@
               1
             ],
             "weeks_since": 0.0,
+            "winner_games_since": 0,
             "winner_losses": 3,
             "winner_losses_since": 0,
             "winner_win_quality": 0.0
@@ -1744,13 +1780,14 @@
               3
             ],
             "weeks_since": 1.0,
+            "winner_games_since": 1,
             "winner_losses": 2,
             "winner_losses_since": 1,
             "winner_win_quality": 0.0
           },
-          "lead": -5,
+          "lead": -3,
           "loser": "Oklahoma State",
-          "loser_rank": 35,
+          "loser_rank": 33,
           "margin": 3,
           "rating_gap": 3.595,
           "score": "35-32",
@@ -1786,6 +1823,7 @@
             "quality_diff": 2.5297,
             "rules": [],
             "weeks_since": 5.0,
+            "winner_games_since": 4,
             "winner_losses": 1,
             "winner_losses_since": 1,
             "winner_win_quality": 2.187
@@ -1811,7 +1849,7 @@
         27,
         29,
         30,
-        35,
+        33,
         36,
         40
       ],
@@ -1838,7 +1876,7 @@
         "opponent_base_rank": 1,
         "opponent_rating": 29.8181,
         "points": -3.1226,
-        "rank": 6,
+        "rank": 7,
         "team": "Texas"
       },
       {
@@ -1886,7 +1924,7 @@
         "opponent_base_rank": 3,
         "opponent_rating": 23.6726,
         "points": -2.2083,
-        "rank": 8,
+        "rank": 5,
         "team": "Georgia"
       },
       {
@@ -1910,7 +1948,7 @@
         "opponent_base_rank": 10,
         "opponent_rating": 22.7926,
         "points": -2.0774,
-        "rank": 7,
+        "rank": 8,
         "team": "Ole Miss"
       },
       {
@@ -1966,7 +2004,7 @@
         "opponent_base_rank": 17,
         "opponent_rating": 13.7756,
         "points": -0.7359,
-        "rank": 3,
+        "rank": 2,
         "team": "Indiana"
       },
       {
@@ -1998,7 +2036,7 @@
         "opponent_base_rank": 8,
         "opponent_rating": 10.7166,
         "points": -0.2808,
-        "rank": 2,
+        "rank": 6,
         "team": "Alabama"
       },
       {
@@ -2014,7 +2052,7 @@
         "opponent_base_rank": 20,
         "opponent_rating": 9.0088,
         "points": -0.0267,
-        "rank": 5,
+        "rank": 4,
         "team": "UCLA"
       }
     ],
@@ -2028,13 +2066,13 @@
       {
         "national_rank": 2,
         "points": -0.4239,
-        "rank": 4,
+        "rank": 3,
         "team": "Miami"
       },
       {
         "national_rank": 3,
         "points": -0.4176,
-        "rank": 8,
+        "rank": 5,
         "team": "Georgia"
       },
       {
@@ -2052,19 +2090,19 @@
       {
         "national_rank": 6,
         "points": -0.3987,
-        "rank": 6,
+        "rank": 7,
         "team": "Texas"
       },
       {
         "national_rank": 7,
         "points": -0.3925,
-        "rank": 3,
+        "rank": 2,
         "team": "Indiana"
       },
       {
         "national_rank": 8,
         "points": -0.3862,
-        "rank": 7,
+        "rank": 8,
         "team": "Ole Miss"
       },
       {
@@ -2088,13 +2126,13 @@
       {
         "national_rank": 12,
         "points": -0.3611,
-        "rank": 2,
+        "rank": 6,
         "team": "Alabama"
       },
       {
         "national_rank": 13,
         "points": -0.3548,
-        "rank": 5,
+        "rank": 4,
         "team": "UCLA"
       },
       {
@@ -2242,7 +2280,7 @@
           }
         ],
         "points": 3.8512,
-        "rank": 35,
+        "rank": 33,
         "team": "Oklahoma State"
       },
       {
@@ -2370,7 +2408,7 @@
           }
         ],
         "points": 2.93,
-        "rank": 34,
+        "rank": 35,
         "team": "SMU"
       },
       {
@@ -2530,7 +2568,7 @@
           }
         ],
         "points": 2.4798,
-        "rank": 7,
+        "rank": 8,
         "team": "Ole Miss"
       },
       {
@@ -2594,7 +2632,7 @@
           }
         ],
         "points": 2.1051,
-        "rank": 33,
+        "rank": 34,
         "team": "Louisville"
       },
       {
@@ -2606,7 +2644,7 @@
           }
         ],
         "points": 2.103,
-        "rank": 8,
+        "rank": 5,
         "team": "Georgia"
       },
       {
@@ -2622,7 +2660,7 @@
           }
         ],
         "points": 2.0688,
-        "rank": 2,
+        "rank": 6,
         "team": "Alabama"
       },
       {
@@ -2670,7 +2708,7 @@
           }
         ],
         "points": 1.5005,
-        "rank": 6,
+        "rank": 7,
         "team": "Texas"
       },
       {
@@ -2787,7 +2825,7 @@
           "band_step": 0.25,
           "enabled": true,
           "impressive_bar": 6.0,
-          "min_weeks": 2
+          "min_games": 2
         },
         "max_block": 4,
         "max_passes": 400,
@@ -2795,21 +2833,21 @@
         "strength": 4.0
       }
     },
-    "content_hash": "sha256:a5e9a331e9676083a2bf753b140c88d10e79ce5c8a03307f7bb9f0ae4aa3b175",
+    "content_hash": "sha256:1afee5c19d6c0c3d84cda9a9e4d056851cad5a908ee2427a63236248723263f9",
     "cost": {
-      "drift": 77.3684,
-      "overrides": 193.6186,
+      "drift": 96.6821,
+      "overrides": 178.7511,
       "passes": 4,
-      "total": 270.987
+      "total": 275.4332
     },
     "counts": {
       "cycles": 2,
       "games_considered": 566,
-      "h2h_banded": 5,
+      "h2h_banded": 4,
       "h2h_binding": 1,
-      "h2h_enforced": 33,
-      "h2h_honored": 49,
-      "h2h_overridden": 14,
+      "h2h_enforced": 34,
+      "h2h_honored": 50,
+      "h2h_overridden": 13,
       "h2h_relaxed": 1,
       "largest_cycle": 17,
       "local_search_passes": 4,
@@ -2824,7 +2862,7 @@
       "resume_rated": 138,
       "series_split": 0
     },
-    "generated_at": "2026-10-26T16:17:01Z",
+    "generated_at": "2026-10-26T16:29:01Z",
     "previous_snapshot_id": "2026-regular-07",
     "ratings": {
       "market": {
@@ -2966,11 +3004,12 @@
           3
         ],
         "weeks_since": 6.0,
+        "winner_games_since": 5,
         "winner_losses": 2,
         "winner_losses_since": 2,
         "winner_win_quality": 11.934
       },
-      "lead": 5,
+      "lead": 6,
       "loser": "Ohio State",
       "loser_rank": 1,
       "margin": 1,
@@ -2983,7 +3022,7 @@
       "week": 2,
       "weight": 2.7049,
       "winner": "Texas",
-      "winner_rank": 6
+      "winner_rank": 7
     },
     {
       "adj_margin": 5.5066,
@@ -2998,28 +3037,29 @@
       "conviction": -0.1461,
       "cycle": "C2",
       "grounds": {
-        "band_rate": 1.5,
+        "band_rate": 1.25,
         "enforced": false,
         "loser_games_since": 5,
         "loser_losses": 3,
         "loser_losses_since": 2,
         "loser_win_quality": 10.5513,
-        "max_lead": 13.0,
+        "max_lead": 11.0,
         "quality_diff": 9.1243,
         "rules": [
           4
         ],
         "weeks_since": 6.0,
+        "winner_games_since": 5,
         "winner_losses": 2,
         "winner_losses_since": 1,
         "winner_win_quality": 1.4271
       },
-      "lead": 13,
+      "lead": 11,
       "loser": "Oregon",
       "loser_rank": 22,
       "margin": 8,
       "rating_gap": -14.5815,
-      "reason": "+5.5 adjusted margin; the winner rates 14.6 points worse on the power ratings. Since then: Oregon's wins since average 9.1 rating points better; 6 weeks on, so they may lead by 13 places",
+      "reason": "+5.5 adjusted margin; the winner rates 14.6 points worse on the power ratings. Since then: Oregon's wins since average 9.1 rating points better; 5 games on, so they may lead by 11 places",
       "score": "39-31",
       "season_type": "regular",
       "site": "home",
@@ -3027,7 +3067,7 @@
       "week": 2,
       "weight": 2.8539,
       "winner": "Oklahoma State",
-      "winner_rank": 35
+      "winner_rank": 33
     },
     {
       "adj_margin": 0.5066,
@@ -3056,6 +3096,7 @@
           1
         ],
         "weeks_since": 0.0,
+        "winner_games_since": 0,
         "winner_losses": 3,
         "winner_losses_since": 0,
         "winner_win_quality": 0.0
@@ -3102,16 +3143,17 @@
           1
         ],
         "weeks_since": 1.0,
+        "winner_games_since": 1,
         "winner_losses": 3,
         "winner_losses_since": 1,
         "winner_win_quality": 0.0
       },
-      "lead": 13,
+      "lead": 16,
       "loser": "Georgia",
-      "loser_rank": 8,
+      "loser_rank": 5,
       "margin": 3,
       "rating_gap": -14.9845,
-      "reason": "+5.5 adjusted margin; the winner rates 15.0 points worse on the power ratings; the loser fared better against 1 shared opponent. Since then: Auburn has more losses, 3 to 1; so the resume order decides how far apart they sit",
+      "reason": "+5.5 adjusted margin; the winner rates 15.0 points worse on the power ratings; the loser fared better against 1 shared opponent. Since then: Auburn has more losses, 3 to 1; so this result was free to set aside. Georgia is held above by results the ranking honours: Georgia beat Alabama, Alabama beat Kentucky, Kentucky beat LSU, LSU beat Auburn",
       "score": "27-24",
       "season_type": "regular",
       "site": "away",
@@ -3148,6 +3190,7 @@
           3
         ],
         "weeks_since": 6.0,
+        "winner_games_since": 5,
         "winner_losses": 3,
         "winner_losses_since": 3,
         "winner_win_quality": 7.1938
@@ -3192,13 +3235,14 @@
           1
         ],
         "weeks_since": 2.0,
+        "winner_games_since": 2,
         "winner_losses": 3,
         "winner_losses_since": 1,
         "winner_win_quality": 10.7166
       },
-      "lead": 14,
+      "lead": 13,
       "loser": "Texas",
-      "loser_rank": 6,
+      "loser_rank": 7,
       "margin": 3,
       "rating_gap": -8.7321,
       "reason": "+3.0 adjusted margin; the winner rates 8.7 points worse on the power ratings. Since then: Oklahoma has more losses, 3 to 2; so the resume order decides how far apart they sit",
@@ -3224,7 +3268,7 @@
       "conviction": 0.2865,
       "cycle": "C1",
       "grounds": {
-        "band_rate": 1.0,
+        "band_rate": 0.75,
         "enforced": false,
         "loser_games_since": 3,
         "loser_losses": 2,
@@ -3238,6 +3282,7 @@
           4
         ],
         "weeks_since": 4.0,
+        "winner_games_since": 3,
         "winner_losses": 3,
         "winner_losses_since": 3,
         "winner_win_quality": 0.0
@@ -3284,6 +3329,7 @@
           1
         ],
         "weeks_since": 0.0,
+        "winner_games_since": 0,
         "winner_losses": 3,
         "winner_losses_since": 0,
         "winner_win_quality": 0.0
@@ -3328,13 +3374,14 @@
         "quality_diff": 19.4159,
         "rules": [],
         "weeks_since": 1.0,
+        "winner_games_since": 0,
         "winner_losses": 2,
         "winner_losses_since": 0,
         "winner_win_quality": 0.0
       },
-      "lead": 12,
+      "lead": 11,
       "loser": "Texas",
-      "loser_rank": 6,
+      "loser_rank": 7,
       "margin": 3,
       "rating_gap": -8.0922,
       "reason": "+5.5 adjusted margin; the winner rates 8.1 points worse on the power ratings. Since then: nothing since the game lets this result be ranked against. Texas is held above by an enforced chain: Texas beat Ole Miss, Ole Miss beat Missouri, Missouri beat Florida",
@@ -3346,50 +3393,6 @@
       "weight": 3.6359,
       "winner": "Florida",
       "winner_rank": 18
-    },
-    {
-      "adj_margin": 5.4934,
-      "common_diff": 0.0,
-      "common_opponents": [],
-      "components": {
-        "common_opponents": 0.0,
-        "margin": -0.299,
-        "rating_gap": 0.0264,
-        "recency": 0.9896
-      },
-      "conviction": 0.7169,
-      "cycle": "C1",
-      "grounds": {
-        "band_rate": 0.5,
-        "enforced": false,
-        "loser_games_since": 2,
-        "loser_losses": 2,
-        "loser_losses_since": 1,
-        "loser_win_quality": 16.9428,
-        "max_lead": 8.0,
-        "quality_diff": 16.9428,
-        "rules": [
-          4
-        ],
-        "weeks_since": 2.0,
-        "winner_losses": 1,
-        "winner_losses_since": 1,
-        "winner_win_quality": 0.0
-      },
-      "lead": 6,
-      "loser": "Alabama",
-      "loser_rank": 2,
-      "margin": 3,
-      "rating_gap": 3.2501,
-      "reason": "+5.5 adjusted margin. Since then: Alabama's wins since average 16.9 rating points better; 2 weeks on, so they may lead by 8 places",
-      "score": "20-17",
-      "season_type": "regular",
-      "site": "away",
-      "status": "overridden",
-      "week": 6,
-      "weight": 3.7169,
-      "winner": "Georgia",
-      "winner_rank": 8
     },
     {
       "adj_margin": 10.5066,
@@ -3416,6 +3419,7 @@
           1
         ],
         "weeks_since": 0.0,
+        "winner_games_since": 0,
         "winner_losses": 2,
         "winner_losses_since": 0,
         "winner_win_quality": 0.0
@@ -3463,13 +3467,14 @@
           3
         ],
         "weeks_since": 1.0,
+        "winner_games_since": 1,
         "winner_losses": 2,
         "winner_losses_since": 1,
         "winner_win_quality": 0.0
       },
-      "lead": 10,
+      "lead": 6,
       "loser": "Alabama",
-      "loser_rank": 2,
+      "loser_rank": 6,
       "margin": 16,
       "rating_gap": -7.3141,
       "reason": "+13.5 adjusted margin; the winner rates 7.3 points worse on the power ratings; the loser fared better against 1 shared opponent. Since then: Tennessee has lost 1 since and Alabama none; so the resume order decides how far apart they sit",
@@ -3510,13 +3515,14 @@
           3
         ],
         "weeks_since": 4.0,
+        "winner_games_since": 3,
         "winner_losses": 2,
         "winner_losses_since": 2,
         "winner_win_quality": 26.4944
       },
-      "lead": 11,
+      "lead": 10,
       "loser": "Ole Miss",
-      "loser_rank": 7,
+      "loser_rank": 8,
       "margin": 24,
       "rating_gap": -1.0137,
       "reason": "+18.5 adjusted margin; the winner rates 1.0 points worse on the power ratings; the loser fared better against 2 shared opponents. Since then: Florida has lost 2 since against Ole Miss's 1; so this result was free to set aside. Ole Miss is held above by an enforced chain: Ole Miss beat Missouri, Missouri beat Florida",
@@ -3554,6 +3560,7 @@
           1
         ],
         "weeks_since": 2.0,
+        "winner_games_since": 1,
         "winner_losses": 3,
         "winner_losses_since": 0,
         "winner_win_quality": 16.3585
@@ -3674,6 +3681,20 @@
       "team": "Michigan"
     },
     {
+      "base_rank": 35,
+      "conference": "Big 12",
+      "fpi": 11.187,
+      "market_rank": 43,
+      "market_rating": 7.5467,
+      "ppa_rank": 36,
+      "ppa_rating": 0.1935,
+      "rank": 33,
+      "record": "5-2",
+      "sor_rank": 32,
+      "sos_rank": 54,
+      "team": "Oklahoma State"
+    },
+    {
       "base_rank": 34,
       "conference": "ACC",
       "fpi": 13.648,
@@ -3681,7 +3702,7 @@
       "market_rating": 13.8781,
       "ppa_rank": 27,
       "ppa_rating": 0.244,
-      "rank": 33,
+      "rank": 34,
       "record": "4-3",
       "sor_rank": 41,
       "sos_rank": 33,
@@ -3695,25 +3716,11 @@
       "market_rating": 13.8008,
       "ppa_rank": 67,
       "ppa_rating": -0.0187,
-      "rank": 34,
+      "rank": 35,
       "record": "6-1",
       "sor_rank": 21,
       "sos_rank": 73,
       "team": "SMU"
-    },
-    {
-      "base_rank": 35,
-      "conference": "Big 12",
-      "fpi": 11.187,
-      "market_rank": 43,
-      "market_rating": 7.5467,
-      "ppa_rank": 36,
-      "ppa_rating": 0.1935,
-      "rank": 35,
-      "record": "5-2",
-      "sor_rank": 32,
-      "sos_rank": 54,
-      "team": "Oklahoma State"
     },
     {
       "base_rank": 36,
@@ -3858,11 +3865,12 @@
                 3
               ],
               "weeks_since": 6.0,
+              "winner_games_since": 5,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 11.934
             },
-            "lead": 5,
+            "lead": 6,
             "loser": "Ohio State",
             "loser_rank": 1,
             "margin": 1,
@@ -3874,7 +3882,7 @@
             "week": 2,
             "weight": 2.7049,
             "winner": "Texas",
-            "winner_rank": 6
+            "winner_rank": 7
           }
         ],
         "wins_vs_pool": [
@@ -3900,13 +3908,14 @@
               "quality_diff": 15.091,
               "rules": [],
               "weeks_since": 1.0,
+              "winner_games_since": 0,
               "winner_losses": 1,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
             },
-            "lead": -2,
+            "lead": -1,
             "loser": "Indiana",
-            "loser_rank": 3,
+            "loser_rank": 2,
             "margin": 4,
             "rating_gap": 2.7473,
             "score": "19-15",
@@ -3940,6 +3949,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 3.0,
+              "winner_games_since": 2,
               "winner_losses": 1,
               "winner_losses_since": 0,
               "winner_win_quality": 14.9774
@@ -3984,8 +3994,8 @@
         "reasons": [
           "Resume order #1 from 0.55 x SoR #3 + 0.25 x Mkt #1 + 0.2 x PPA #5 = 2.90.",
           "Resume adjustment earned back 3.11 rank points, driven by best win.",
-          "Head-to-head held: beat #3 Indiana 19-15 on the road in week 7.",
-          "Ranked above #6 Texas despite losing 23-24 on the road in week 2 -- a 1-point win at home is worth -1.5 once venue is accounted for; the winner rates 3.3 points worse on the power ratings. Since then: Texas has more losses, 2 to 1; Texas has lost 2 since and Ohio State none; so the resume order decides how far apart they sit.",
+          "Head-to-head held: beat #2 Indiana 19-15 on the road in week 7.",
+          "Ranked above #7 Texas despite losing 23-24 on the road in week 2 -- a 1-point win at home is worth -1.5 once venue is accounted for; the winner rates 3.3 points worse on the power ratings. Since then: Texas has more losses, 2 to 1; Texas has lost 2 since and Ohio State none; so the resume order decides how far apart they sit.",
           "Part of contradiction loop C1, a 17-team tangle of results that no ordering can fully satisfy.",
           "Head-to-head results left this placement unchanged."
         ]
@@ -4098,466 +4108,6 @@
     },
     {
       "base": {
-        "espn_sor_rank": 7,
-        "formula": "0.55 x SoR #6 + 0.25 x Mkt #7 + 0.2 x PPA #3 = 5.65",
-        "market_rank": 7,
-        "missing": [],
-        "ppa_rank": 3,
-        "rank": 2,
-        "raw_score": 5.65,
-        "resume_rank": 3,
-        "score": 5.6125,
-        "sor_rank": 6,
-        "sos_rank": 7,
-        "weights": {
-          "Mkt": 0.25,
-          "PPA": 0.2,
-          "SoR": 0.55
-        }
-      },
-      "conference": "SEC",
-      "cover": {
-        "adjustment": -1.4644,
-        "corrected_margin": 4.5105,
-        "covers": 4,
-        "games": 8,
-        "mean_margin": 4.875,
-        "scored_margin": 3.007,
-        "worst": "-24 vs Tennessee"
-      },
-      "cycle": "C1",
-      "flags": [
-        "cycle"
-      ],
-      "fpi": {
-        "efficiencies": {
-          "defense": 85.713,
-          "offense": 80.988,
-          "overall": 88.089,
-          "special_teams": 56.926
-        },
-        "rank": 5,
-        "rating": 24.492
-      },
-      "h2h": {
-        "losses_vs_pool": [
-          {
-            "adj_margin": 5.4934,
-            "common_diff": 0.0,
-            "common_opponents": [],
-            "components": {
-              "common_opponents": 0.0,
-              "margin": -0.299,
-              "rating_gap": 0.0264,
-              "recency": 0.9896
-            },
-            "conviction": 0.7169,
-            "grounds": {
-              "band_rate": 0.5,
-              "enforced": false,
-              "loser_games_since": 2,
-              "loser_losses": 2,
-              "loser_losses_since": 1,
-              "loser_win_quality": 16.9428,
-              "max_lead": 8.0,
-              "quality_diff": 16.9428,
-              "rules": [
-                4
-              ],
-              "weeks_since": 2.0,
-              "winner_losses": 1,
-              "winner_losses_since": 1,
-              "winner_win_quality": 0.0
-            },
-            "lead": 6,
-            "loser": "Alabama",
-            "loser_rank": 2,
-            "margin": 3,
-            "rating_gap": 3.2501,
-            "score": "20-17",
-            "season_type": "regular",
-            "site": "away",
-            "status": "overridden",
-            "week": 6,
-            "weight": 3.7169,
-            "winner": "Georgia",
-            "winner_rank": 8
-          },
-          {
-            "adj_margin": 13.5066,
-            "common_diff": -19.0133,
-            "common_opponents": [
-              "South Carolina"
-            ],
-            "components": {
-              "common_opponents": -0.2469,
-              "margin": 0.2794,
-              "rating_gap": -0.308,
-              "recency": 1.0887
-            },
-            "conviction": 0.8133,
-            "grounds": {
-              "band_rate": 0.0,
-              "enforced": false,
-              "loser_games_since": 1,
-              "loser_losses": 2,
-              "loser_losses_since": 0,
-              "loser_win_quality": 16.9428,
-              "max_lead": null,
-              "quality_diff": 16.9428,
-              "rules": [
-                2,
-                3
-              ],
-              "weeks_since": 1.0,
-              "winner_losses": 2,
-              "winner_losses_since": 1,
-              "winner_win_quality": 0.0
-            },
-            "lead": 10,
-            "loser": "Alabama",
-            "loser_rank": 2,
-            "margin": 16,
-            "rating_gap": -7.3141,
-            "score": "26-10",
-            "season_type": "regular",
-            "site": "home",
-            "status": "overridden",
-            "week": 7,
-            "weight": 3.8133,
-            "winner": "Tennessee",
-            "winner_rank": 12
-          }
-        ],
-        "wins_vs_pool": [
-          {
-            "adj_margin": 23.4934,
-            "common_diff": 5.5133,
-            "common_opponents": [
-              "South Carolina",
-              "Texas A&M"
-            ],
-            "components": {
-              "common_opponents": 0.0694,
-              "margin": 1.0003,
-              "rating_gap": 0.3378,
-              "recency": 0.7865
-            },
-            "conviction": 2.1939,
-            "grounds": {
-              "band_rate": 0.0,
-              "enforced": false,
-              "loser_games_since": 6,
-              "loser_losses": 1,
-              "loser_losses_since": 0,
-              "loser_win_quality": 12.6033,
-              "max_lead": null,
-              "quality_diff": 0.1264,
-              "rules": [
-                1,
-                2,
-                3
-              ],
-              "weeks_since": 6.0,
-              "winner_losses": 2,
-              "winner_losses_since": 2,
-              "winner_win_quality": 12.4769
-            },
-            "lead": -7,
-            "loser": "Kentucky",
-            "loser_rank": 9,
-            "margin": 28,
-            "rating_gap": 13.0897,
-            "score": "45-17",
-            "season_type": "regular",
-            "site": "away",
-            "status": "honored",
-            "week": 2,
-            "weight": 5.1939,
-            "winner": "Alabama",
-            "winner_rank": 2
-          },
-          {
-            "adj_margin": 23.4934,
-            "common_diff": 9.0133,
-            "common_opponents": [
-              "South Carolina"
-            ],
-            "components": {
-              "common_opponents": 0.1145,
-              "margin": 1.0003,
-              "rating_gap": 0.3335,
-              "recency": 0.9665
-            },
-            "conviction": 2.4148,
-            "grounds": {
-              "band_rate": 0.0,
-              "enforced": true,
-              "loser_games_since": 2,
-              "loser_losses": 3,
-              "loser_losses_since": 2,
-              "loser_win_quality": 0.0,
-              "max_lead": 0.0,
-              "quality_diff": 0.0,
-              "rules": [],
-              "weeks_since": 3.0,
-              "winner_losses": 2,
-              "winner_losses_since": 2,
-              "winner_win_quality": 16.9428
-            },
-            "lead": -22,
-            "loser": "Mississippi State",
-            "loser_rank": 24,
-            "margin": 33,
-            "rating_gap": 12.956,
-            "score": "56-23",
-            "season_type": "regular",
-            "site": "away",
-            "status": "honored",
-            "week": 5,
-            "weight": 5.4148,
-            "winner": "Alabama",
-            "winner_rank": 2
-          },
-          {
-            "adj_margin": 18.5066,
-            "common_diff": 15.3201,
-            "common_opponents": [
-              "Kentucky",
-              "Mississippi State",
-              "Tennessee"
-            ],
-            "components": {
-              "common_opponents": 0.1958,
-              "margin": 0.6403,
-              "rating_gap": 0.2533,
-              "recency": 0.9012
-            },
-            "conviction": 1.9907,
-            "grounds": {
-              "band_rate": 0.0,
-              "enforced": false,
-              "loser_games_since": 3,
-              "loser_losses": 3,
-              "loser_losses_since": 1,
-              "loser_win_quality": 17.3803,
-              "max_lead": null,
-              "quality_diff": 3.5506,
-              "rules": [
-                3
-              ],
-              "weeks_since": 4.0,
-              "winner_losses": 2,
-              "winner_losses_since": 2,
-              "winner_win_quality": 13.8297
-            },
-            "lead": -26,
-            "loser": "South Carolina",
-            "loser_rank": 28,
-            "margin": 31,
-            "rating_gap": 10.4209,
-            "score": "49-18",
-            "season_type": "regular",
-            "site": "home",
-            "status": "honored",
-            "week": 4,
-            "weight": 4.9907,
-            "winner": "Alabama",
-            "winner_rank": 2
-          },
-          {
-            "adj_margin": 8.5066,
-            "common_diff": 35.9867,
-            "common_opponents": [
-              "Kentucky"
-            ],
-            "components": {
-              "common_opponents": 0.4623,
-              "margin": -0.0815,
-              "rating_gap": 0.1365,
-              "recency": 1.2
-            },
-            "conviction": 1.7173,
-            "grounds": {
-              "band_rate": 0.0,
-              "enforced": true,
-              "loser_games_since": 0,
-              "loser_losses": 4,
-              "loser_losses_since": 0,
-              "loser_win_quality": 0.0,
-              "max_lead": 0.0,
-              "quality_diff": 0.0,
-              "rules": [],
-              "weeks_since": 0.0,
-              "winner_losses": 2,
-              "winner_losses_since": 0,
-              "winner_win_quality": 0.0
-            },
-            "lead": -36,
-            "loser": "Texas A&M",
-            "loser_rank": 38,
-            "margin": 11,
-            "rating_gap": 6.7298,
-            "score": "31-20",
-            "season_type": "regular",
-            "site": "home",
-            "status": "honored",
-            "week": 8,
-            "weight": 4.7173,
-            "winner": "Alabama",
-            "winner_rank": 2
-          }
-        ]
-      },
-      "market": {
-        "games": 8,
-        "rank": 7,
-        "rating": 23.6726
-      },
-      "movement": {
-        "delta": 6,
-        "has_previous": true,
-        "previous_rank": 8,
-        "status": "up"
-      },
-      "performance": {
-        "games": 8,
-        "rank": 3,
-        "rating": 0.4921,
-        "unadjusted": 0.2838
-      },
-      "placement": {
-        "base_rank": 2,
-        "drift": 0,
-        "final_rank": 2,
-        "reasons": [
-          "Resume order #3 from 0.55 x SoR #6 + 0.25 x Mkt #7 + 0.2 x PPA #3 = 5.65.",
-          "Head-to-head held: beat #9 Kentucky 45-17 on the road in week 2.",
-          "Ranked above #8 Georgia despite losing 17-20 at home in week 6 -- +5.5 adjusted margin. Since then: Alabama's wins since average 16.9 rating points better; 2 weeks on, so they may lead by 8 places.",
-          "Ranked above #12 Tennessee despite losing 10-26 on the road in week 7 -- +13.5 adjusted margin; the winner rates 7.3 points worse on the power ratings; the loser fared better against 1 shared opponent. Since then: Tennessee has lost 1 since and Alabama none; so the resume order decides how far apart they sit.",
-          "Part of contradiction loop C1, a 17-team tangle of results that no ordering can fully satisfy.",
-          "Head-to-head results left this placement unchanged."
-        ]
-      },
-      "rank": 2,
-      "record": {
-        "conference": "4-2",
-        "losses": 2,
-        "overall": "6-2",
-        "wins": 6
-      },
-      "regression": null,
-      "resume": {
-        "actual_wins": 6,
-        "espn_rank": 7,
-        "expected_wins": 4.2283,
-        "probability": 0.1591,
-        "rank": 6,
-        "schedule": [
-          {
-            "opponent": "East Carolina",
-            "reference_win_probability": 0.9496,
-            "site": "home",
-            "week": 1,
-            "won": true
-          },
-          {
-            "opponent": "Kentucky",
-            "reference_win_probability": 0.5052,
-            "site": "away",
-            "week": 2,
-            "won": true
-          },
-          {
-            "opponent": "Florida State",
-            "reference_win_probability": 0.6914,
-            "site": "home",
-            "week": 3,
-            "won": true
-          },
-          {
-            "opponent": "South Carolina",
-            "reference_win_probability": 0.5733,
-            "site": "home",
-            "week": 4,
-            "won": true
-          },
-          {
-            "opponent": "Mississippi State",
-            "reference_win_probability": 0.5012,
-            "site": "away",
-            "week": 5,
-            "won": true
-          },
-          {
-            "opponent": "Georgia",
-            "reference_win_probability": 0.2038,
-            "site": "home",
-            "week": 6,
-            "won": false
-          },
-          {
-            "opponent": "Tennessee",
-            "reference_win_probability": 0.3391,
-            "site": "away",
-            "week": 7,
-            "won": false
-          },
-          {
-            "opponent": "Texas A&M",
-            "reference_win_probability": 0.4647,
-            "site": "home",
-            "week": 8,
-            "won": true
-          }
-        ]
-      },
-      "resume_adjustment": {
-        "components": {
-          "best_win": -0.2808,
-          "cover": -1.4644,
-          "game_control": -0.3611,
-          "loss_quality": 2.0688
-        },
-        "detail": {
-          "best_win_opponent": "Mississippi State",
-          "best_win_opponent_base_rank": 8,
-          "best_win_opponent_rating": 10.7166,
-          "best_win_over_bar": 1.8872,
-          "corrected_cover_margin": 4.5105,
-          "cover_games": 8,
-          "covers": 4,
-          "game_control_rank": 12,
-          "losses": [
-            {
-              "badness": 8.9239,
-              "opponent": "Tennessee"
-            },
-            {
-              "badness": 3.3297,
-              "opponent": "Georgia"
-            }
-          ],
-          "losses_considered": 2,
-          "mean_cover_margin": 4.875,
-          "mean_loss_badness": 6.1268,
-          "shrunk_cover_margin": 3.007,
-          "worst_cover": "-24 vs Tennessee"
-        },
-        "total": -0.0375
-      },
-      "resume_ranks": {
-        "average_win_probability": 31,
-        "fpi": 5,
-        "game_control": 12,
-        "remaining_strength_of_schedule": 39,
-        "strength_of_record": 7,
-        "strength_of_schedule": 7
-      },
-      "team": "Alabama"
-    },
-    {
-      "base": {
         "espn_sor_rank": 5,
         "formula": "0.55 x SoR #4 + 0.25 x Mkt #3 + 0.2 x PPA #7 = 4.35",
         "market_rank": 3,
@@ -4587,7 +4137,8 @@
       },
       "cycle": "C1",
       "flags": [
-        "cycle"
+        "cycle",
+        "lifted"
       ],
       "fpi": {
         "efficiencies": {
@@ -4623,13 +4174,14 @@
               "quality_diff": 15.091,
               "rules": [],
               "weeks_since": 1.0,
+              "winner_games_since": 0,
               "winner_losses": 1,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
             },
-            "lead": -2,
+            "lead": -1,
             "loser": "Indiana",
-            "loser_rank": 3,
+            "loser_rank": 2,
             "margin": 4,
             "rating_gap": 2.7473,
             "score": "19-15",
@@ -4670,11 +4222,12 @@
                 3
               ],
               "weeks_since": 4.0,
+              "winner_games_since": 4,
               "winner_losses": 1,
               "winner_losses_since": 1,
               "winner_win_quality": 9.6222
             },
-            "lead": -12,
+            "lead": -13,
             "loser": "Northwestern",
             "loser_rank": 15,
             "margin": 6,
@@ -4686,7 +4239,7 @@
             "week": 4,
             "weight": 3.9518,
             "winner": "Indiana",
-            "winner_rank": 3
+            "winner_rank": 2
           },
           {
             "adj_margin": 5.4934,
@@ -4710,11 +4263,12 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 2.0,
+              "winner_games_since": 2,
               "winner_losses": 1,
               "winner_losses_since": 1,
               "winner_win_quality": 15.091
             },
-            "lead": -20,
+            "lead": -21,
             "loser": "Nebraska",
             "loser_rank": 23,
             "margin": 3,
@@ -4726,7 +4280,7 @@
             "week": 6,
             "weight": 4.0829,
             "winner": "Indiana",
-            "winner_rank": 3
+            "winner_rank": 2
           },
           {
             "adj_margin": 9.4934,
@@ -4750,11 +4304,12 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 1,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
             },
-            "lead": -29,
+            "lead": -30,
             "loser": "Michigan",
             "loser_rank": 32,
             "margin": 7,
@@ -4766,7 +4321,7 @@
             "week": 8,
             "weight": 4.4923,
             "winner": "Indiana",
-            "winner_rank": 3
+            "winner_rank": 2
           }
         ]
       },
@@ -4776,7 +4331,7 @@
         "rating": 27.0709
       },
       "movement": {
-        "delta": 7,
+        "delta": 8,
         "has_previous": true,
         "previous_rank": 10,
         "status": "up"
@@ -4789,17 +4344,17 @@
       },
       "placement": {
         "base_rank": 3,
-        "drift": 0,
-        "final_rank": 3,
+        "drift": 1,
+        "final_rank": 2,
         "reasons": [
           "Resume order #2 from 0.55 x SoR #4 + 0.25 x Mkt #3 + 0.2 x PPA #7 = 4.35.",
           "Resume adjustment cost 1.40 rank points, driven by cover.",
           "Head-to-head held: beat #15 Northwestern 29-23 at home in week 4.",
           "Part of contradiction loop C1, a 17-team tangle of results that no ordering can fully satisfy.",
-          "Head-to-head results left this placement unchanged."
+          "Moved up 1 from its base position of #3."
         ]
       },
-      "rank": 3,
+      "rank": 2,
       "record": {
         "conference": "4-1",
         "losses": 1,
@@ -4942,7 +4497,9 @@
         "worst": "-12 vs Florida State"
       },
       "cycle": null,
-      "flags": [],
+      "flags": [
+        "lifted"
+      ],
       "fpi": {
         "efficiencies": {
           "defense": 79.932,
@@ -4980,11 +4537,12 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 5.0,
+              "winner_games_since": 4,
               "winner_losses": 0,
               "winner_losses_since": 0,
               "winner_win_quality": 5.9623
             },
-            "lead": -12,
+            "lead": -13,
             "loser": "Wake Forest",
             "loser_rank": 16,
             "margin": 13,
@@ -4996,7 +4554,7 @@
             "week": 3,
             "weight": 4.7746,
             "winner": "Miami",
-            "winner_rank": 4
+            "winner_rank": 3
           }
         ]
       },
@@ -5006,10 +4564,10 @@
         "rating": 25.3962
       },
       "movement": {
-        "delta": -1,
+        "delta": 0,
         "has_previous": true,
         "previous_rank": 3,
-        "status": "down"
+        "status": "same"
       },
       "performance": {
         "games": 6,
@@ -5019,16 +4577,16 @@
       },
       "placement": {
         "base_rank": 4,
-        "drift": 0,
-        "final_rank": 4,
+        "drift": 1,
+        "final_rank": 3,
         "reasons": [
           "Resume order #5 from 0.55 x SoR #5 + 0.25 x Mkt #6 + 0.2 x PPA #18 = 7.85.",
           "Resume adjustment earned back 1.91 rank points, driven by cover.",
           "Head-to-head held: beat #16 Wake Forest 33-20 on the road in week 3.",
-          "Head-to-head results left this placement unchanged."
+          "Moved up 1 from its base position of #4."
         ]
       },
-      "rank": 4,
+      "rank": 3,
       "record": {
         "conference": "5-0",
         "losses": 0,
@@ -5159,7 +4717,9 @@
         "worst": "+0 vs Purdue"
       },
       "cycle": null,
-      "flags": [],
+      "flags": [
+        "lifted"
+      ],
       "fpi": {
         "efficiencies": {
           "defense": 85.441,
@@ -5197,11 +4757,12 @@
               "quality_diff": 16.2232,
               "rules": [],
               "weeks_since": 1.0,
+              "winner_games_since": 1,
               "winner_losses": 0,
               "winner_losses_since": 0,
               "winner_win_quality": 1.6552
             },
-            "lead": -14,
+            "lead": -15,
             "loser": "Wisconsin",
             "loser_rank": 19,
             "margin": 10,
@@ -5213,7 +4774,7 @@
             "week": 7,
             "weight": 3.8347,
             "winner": "UCLA",
-            "winner_rank": 5
+            "winner_rank": 4
           },
           {
             "adj_margin": 4.4934,
@@ -5239,11 +4800,12 @@
                 4
               ],
               "weeks_since": 2.0,
+              "winner_games_since": 2,
               "winner_losses": 0,
               "winner_losses_since": 0,
               "winner_win_quality": 5.332
             },
-            "lead": -17,
+            "lead": -18,
             "loser": "Oregon",
             "loser_rank": 22,
             "margin": 2,
@@ -5255,7 +4817,7 @@
             "week": 6,
             "weight": 3.1433,
             "winner": "UCLA",
-            "winner_rank": 5
+            "winner_rank": 4
           }
         ]
       },
@@ -5265,10 +4827,10 @@
         "rating": 9.5338
       },
       "movement": {
-        "delta": -1,
+        "delta": 0,
         "has_previous": true,
         "previous_rank": 4,
-        "status": "down"
+        "status": "same"
       },
       "performance": {
         "games": 7,
@@ -5278,16 +4840,16 @@
       },
       "placement": {
         "base_rank": 5,
-        "drift": 0,
-        "final_rank": 5,
+        "drift": 1,
+        "final_rank": 4,
         "reasons": [
           "Resume order #11 from 0.55 x SoR #2 + 0.25 x Mkt #34 + 0.2 x PPA #11 = 11.80.",
           "Resume adjustment earned back 4.61 rank points, driven by cover.",
           "Head-to-head held: beat #19 Wisconsin 17-7 at home in week 7.",
-          "Head-to-head results left this placement unchanged."
+          "Moved up 1 from its base position of #5."
         ]
       },
-      "rank": 5,
+      "rank": 4,
       "record": {
         "conference": "5-0",
         "losses": 0,
@@ -5390,6 +4952,790 @@
     },
     {
       "base": {
+        "espn_sor_rank": 10,
+        "formula": "0.55 x SoR #9 + 0.25 x Mkt #4 + 0.2 x PPA #4 = 6.75",
+        "market_rank": 4,
+        "missing": [],
+        "ppa_rank": 4,
+        "rank": 8,
+        "raw_score": 6.75,
+        "resume_rank": 4,
+        "score": 9.0762,
+        "sor_rank": 9,
+        "sos_rank": 34,
+        "weights": {
+          "Mkt": 0.25,
+          "PPA": 0.2,
+          "SoR": 0.55
+        }
+      },
+      "conference": "SEC",
+      "cover": {
+        "adjustment": -0.7546,
+        "corrected_margin": 2.5537,
+        "covers": 5,
+        "games": 7,
+        "mean_margin": 3.1786,
+        "scored_margin": 1.6251,
+        "worst": "-22 vs Auburn"
+      },
+      "cycle": "C1",
+      "flags": [
+        "cycle",
+        "lifted",
+        "regressed"
+      ],
+      "fpi": {
+        "efficiencies": {
+          "defense": 77.667,
+          "offense": 90.426,
+          "overall": 89.681,
+          "special_teams": 60.55
+        },
+        "rank": 4,
+        "rating": 26.494
+      },
+      "h2h": {
+        "losses_vs_pool": [
+          {
+            "adj_margin": 5.4934,
+            "common_diff": -15.0,
+            "common_opponents": [
+              "Vanderbilt"
+            ],
+            "components": {
+              "common_opponents": -0.1951,
+              "margin": -0.299,
+              "rating_gap": -0.5507,
+              "recency": 1.0887
+            },
+            "conviction": 0.0438,
+            "grounds": {
+              "band_rate": 0.0,
+              "enforced": false,
+              "loser_games_since": 0,
+              "loser_losses": 1,
+              "loser_losses_since": 0,
+              "loser_win_quality": 0.0,
+              "max_lead": null,
+              "quality_diff": 0.0,
+              "rules": [
+                1
+              ],
+              "weeks_since": 1.0,
+              "winner_games_since": 1,
+              "winner_losses": 3,
+              "winner_losses_since": 1,
+              "winner_win_quality": 0.0
+            },
+            "lead": 16,
+            "loser": "Georgia",
+            "loser_rank": 5,
+            "margin": 3,
+            "rating_gap": -14.9845,
+            "score": "27-24",
+            "season_type": "regular",
+            "site": "away",
+            "status": "overridden",
+            "week": 7,
+            "weight": 3.0438,
+            "winner": "Auburn",
+            "winner_rank": 21
+          }
+        ],
+        "wins_vs_pool": [
+          {
+            "adj_margin": 5.4934,
+            "common_diff": 0.0,
+            "common_opponents": [],
+            "components": {
+              "common_opponents": 0.0,
+              "margin": -0.299,
+              "rating_gap": 0.0264,
+              "recency": 0.9896
+            },
+            "conviction": 0.7169,
+            "grounds": {
+              "band_rate": 0.0,
+              "enforced": true,
+              "loser_games_since": 2,
+              "loser_losses": 2,
+              "loser_losses_since": 1,
+              "loser_win_quality": 16.9428,
+              "max_lead": 0.0,
+              "quality_diff": 16.9428,
+              "rules": [],
+              "weeks_since": 2.0,
+              "winner_games_since": 1,
+              "winner_losses": 1,
+              "winner_losses_since": 1,
+              "winner_win_quality": 0.0
+            },
+            "lead": -1,
+            "loser": "Alabama",
+            "loser_rank": 6,
+            "margin": 3,
+            "rating_gap": 3.2501,
+            "score": "20-17",
+            "season_type": "regular",
+            "site": "away",
+            "status": "honored",
+            "week": 6,
+            "weight": 3.7169,
+            "winner": "Georgia",
+            "winner_rank": 5
+          },
+          {
+            "adj_margin": 18.5066,
+            "common_diff": 0.0,
+            "common_opponents": [],
+            "components": {
+              "common_opponents": 0.0,
+              "margin": 0.6403,
+              "rating_gap": 0.2134,
+              "recency": 0.9012
+            },
+            "conviction": 1.755,
+            "grounds": {
+              "band_rate": 0.0,
+              "enforced": true,
+              "loser_games_since": 3,
+              "loser_losses": 3,
+              "loser_losses_since": 1,
+              "loser_win_quality": 18.6055,
+              "max_lead": 0.0,
+              "quality_diff": 4.334,
+              "rules": [],
+              "weeks_since": 4.0,
+              "winner_games_since": 3,
+              "winner_losses": 1,
+              "winner_losses_since": 1,
+              "winner_win_quality": 14.2715
+            },
+            "lead": -15,
+            "loser": "Oklahoma",
+            "loser_rank": 20,
+            "margin": 28,
+            "rating_gap": 9.1604,
+            "score": "41-13",
+            "season_type": "regular",
+            "site": "home",
+            "status": "honored",
+            "week": 4,
+            "weight": 4.755,
+            "winner": "Georgia",
+            "winner_rank": 5
+          }
+        ]
+      },
+      "market": {
+        "games": 7,
+        "rank": 4,
+        "rating": 26.9227
+      },
+      "movement": {
+        "delta": 2,
+        "has_previous": true,
+        "previous_rank": 7,
+        "status": "up"
+      },
+      "performance": {
+        "games": 6,
+        "rank": 4,
+        "rating": 0.4518,
+        "unadjusted": 0.3683
+      },
+      "placement": {
+        "base_rank": 8,
+        "drift": 3,
+        "final_rank": 5,
+        "reasons": [
+          "Resume order #4 from 0.55 x SoR #9 + 0.25 x Mkt #4 + 0.2 x PPA #4 = 6.75.",
+          "Resume adjustment earned back 1.28 rank points, driven by best win.",
+          "Auburn beat Georgia 27-24 from 21 places lower on the resume board (#23 over #2), so both were pulled toward the midpoint.",
+          "Head-to-head held: beat #6 Alabama 20-17 on the road in week 6.",
+          "Ranked above #21 Auburn despite losing 24-27 at home in week 7 -- +5.5 adjusted margin; the winner rates 15.0 points worse on the power ratings; the loser fared better against 1 shared opponent. Since then: Auburn has more losses, 3 to 1; so this result was free to set aside. Georgia is held above by results the ranking honours: Georgia beat Alabama, Alabama beat Kentucky, Kentucky beat LSU, LSU beat Auburn.",
+          "Part of contradiction loop C1, a 17-team tangle of results that no ordering can fully satisfy.",
+          "Moved up 3 from its base position of #8."
+        ]
+      },
+      "rank": 5,
+      "record": {
+        "conference": "4-1",
+        "losses": 1,
+        "overall": "6-1",
+        "wins": 6
+      },
+      "regression": {
+        "adjustment": 3.6037,
+        "notes": [
+          "Auburn beat Georgia 27-24 from 21 places lower on the resume board (#23 over #2), so both were pulled toward the midpoint"
+        ]
+      },
+      "resume": {
+        "actual_wins": 6,
+        "espn_rank": 10,
+        "expected_wins": 4.7495,
+        "probability": 0.225,
+        "rank": 9,
+        "schedule": [
+          {
+            "opponent": "Tennessee State",
+            "reference_win_probability": 1.0,
+            "site": "home",
+            "week": 1,
+            "won": true
+          },
+          {
+            "opponent": "Western Kentucky",
+            "reference_win_probability": 0.9862,
+            "site": "home",
+            "week": 2,
+            "won": true
+          },
+          {
+            "opponent": "Arkansas",
+            "reference_win_probability": 0.7526,
+            "site": "away",
+            "week": 3,
+            "won": true
+          },
+          {
+            "opponent": "Oklahoma",
+            "reference_win_probability": 0.4406,
+            "site": "home",
+            "week": 4,
+            "won": true
+          },
+          {
+            "opponent": "Vanderbilt",
+            "reference_win_probability": 0.7897,
+            "site": "home",
+            "week": 5,
+            "won": true
+          },
+          {
+            "opponent": "Alabama",
+            "reference_win_probability": 0.1694,
+            "site": "away",
+            "week": 6,
+            "won": true
+          },
+          {
+            "opponent": "Auburn",
+            "reference_win_probability": 0.611,
+            "site": "home",
+            "week": 7,
+            "won": false
+          }
+        ]
+      },
+      "resume_adjustment": {
+        "components": {
+          "best_win": -2.2083,
+          "cover": -0.7546,
+          "game_control": -0.4176,
+          "loss_quality": 2.103
+        },
+        "detail": {
+          "best_win_opponent": "Alabama",
+          "best_win_opponent_base_rank": 3,
+          "best_win_opponent_rating": 23.6726,
+          "best_win_over_bar": 14.8432,
+          "corrected_cover_margin": 2.5537,
+          "cover_games": 7,
+          "covers": 5,
+          "game_control_rank": 3,
+          "losses": [
+            {
+              "badness": 6.2283,
+              "opponent": "Auburn"
+            }
+          ],
+          "losses_considered": 1,
+          "mean_cover_margin": 3.1786,
+          "mean_loss_badness": 6.2283,
+          "shrunk_cover_margin": 1.6251,
+          "worst_cover": "-22 vs Auburn"
+        },
+        "total": -1.2775
+      },
+      "resume_ranks": {
+        "average_win_probability": 5,
+        "fpi": 4,
+        "game_control": 3,
+        "remaining_strength_of_schedule": 26,
+        "strength_of_record": 10,
+        "strength_of_schedule": 34
+      },
+      "team": "Georgia"
+    },
+    {
+      "base": {
+        "espn_sor_rank": 7,
+        "formula": "0.55 x SoR #6 + 0.25 x Mkt #7 + 0.2 x PPA #3 = 5.65",
+        "market_rank": 7,
+        "missing": [],
+        "ppa_rank": 3,
+        "rank": 2,
+        "raw_score": 5.65,
+        "resume_rank": 3,
+        "score": 5.6125,
+        "sor_rank": 6,
+        "sos_rank": 7,
+        "weights": {
+          "Mkt": 0.25,
+          "PPA": 0.2,
+          "SoR": 0.55
+        }
+      },
+      "conference": "SEC",
+      "cover": {
+        "adjustment": -1.4644,
+        "corrected_margin": 4.5105,
+        "covers": 4,
+        "games": 8,
+        "mean_margin": 4.875,
+        "scored_margin": 3.007,
+        "worst": "-24 vs Tennessee"
+      },
+      "cycle": "C1",
+      "flags": [
+        "cycle",
+        "dropped"
+      ],
+      "fpi": {
+        "efficiencies": {
+          "defense": 85.713,
+          "offense": 80.988,
+          "overall": 88.089,
+          "special_teams": 56.926
+        },
+        "rank": 5,
+        "rating": 24.492
+      },
+      "h2h": {
+        "losses_vs_pool": [
+          {
+            "adj_margin": 5.4934,
+            "common_diff": 0.0,
+            "common_opponents": [],
+            "components": {
+              "common_opponents": 0.0,
+              "margin": -0.299,
+              "rating_gap": 0.0264,
+              "recency": 0.9896
+            },
+            "conviction": 0.7169,
+            "grounds": {
+              "band_rate": 0.0,
+              "enforced": true,
+              "loser_games_since": 2,
+              "loser_losses": 2,
+              "loser_losses_since": 1,
+              "loser_win_quality": 16.9428,
+              "max_lead": 0.0,
+              "quality_diff": 16.9428,
+              "rules": [],
+              "weeks_since": 2.0,
+              "winner_games_since": 1,
+              "winner_losses": 1,
+              "winner_losses_since": 1,
+              "winner_win_quality": 0.0
+            },
+            "lead": -1,
+            "loser": "Alabama",
+            "loser_rank": 6,
+            "margin": 3,
+            "rating_gap": 3.2501,
+            "score": "20-17",
+            "season_type": "regular",
+            "site": "away",
+            "status": "honored",
+            "week": 6,
+            "weight": 3.7169,
+            "winner": "Georgia",
+            "winner_rank": 5
+          },
+          {
+            "adj_margin": 13.5066,
+            "common_diff": -19.0133,
+            "common_opponents": [
+              "South Carolina"
+            ],
+            "components": {
+              "common_opponents": -0.2469,
+              "margin": 0.2794,
+              "rating_gap": -0.308,
+              "recency": 1.0887
+            },
+            "conviction": 0.8133,
+            "grounds": {
+              "band_rate": 0.0,
+              "enforced": false,
+              "loser_games_since": 1,
+              "loser_losses": 2,
+              "loser_losses_since": 0,
+              "loser_win_quality": 16.9428,
+              "max_lead": null,
+              "quality_diff": 16.9428,
+              "rules": [
+                2,
+                3
+              ],
+              "weeks_since": 1.0,
+              "winner_games_since": 1,
+              "winner_losses": 2,
+              "winner_losses_since": 1,
+              "winner_win_quality": 0.0
+            },
+            "lead": 6,
+            "loser": "Alabama",
+            "loser_rank": 6,
+            "margin": 16,
+            "rating_gap": -7.3141,
+            "score": "26-10",
+            "season_type": "regular",
+            "site": "home",
+            "status": "overridden",
+            "week": 7,
+            "weight": 3.8133,
+            "winner": "Tennessee",
+            "winner_rank": 12
+          }
+        ],
+        "wins_vs_pool": [
+          {
+            "adj_margin": 23.4934,
+            "common_diff": 5.5133,
+            "common_opponents": [
+              "South Carolina",
+              "Texas A&M"
+            ],
+            "components": {
+              "common_opponents": 0.0694,
+              "margin": 1.0003,
+              "rating_gap": 0.3378,
+              "recency": 0.7865
+            },
+            "conviction": 2.1939,
+            "grounds": {
+              "band_rate": 0.0,
+              "enforced": false,
+              "loser_games_since": 6,
+              "loser_losses": 1,
+              "loser_losses_since": 0,
+              "loser_win_quality": 12.6033,
+              "max_lead": null,
+              "quality_diff": 0.1264,
+              "rules": [
+                1,
+                2,
+                3
+              ],
+              "weeks_since": 6.0,
+              "winner_games_since": 6,
+              "winner_losses": 2,
+              "winner_losses_since": 2,
+              "winner_win_quality": 12.4769
+            },
+            "lead": -3,
+            "loser": "Kentucky",
+            "loser_rank": 9,
+            "margin": 28,
+            "rating_gap": 13.0897,
+            "score": "45-17",
+            "season_type": "regular",
+            "site": "away",
+            "status": "honored",
+            "week": 2,
+            "weight": 5.1939,
+            "winner": "Alabama",
+            "winner_rank": 6
+          },
+          {
+            "adj_margin": 23.4934,
+            "common_diff": 9.0133,
+            "common_opponents": [
+              "South Carolina"
+            ],
+            "components": {
+              "common_opponents": 0.1145,
+              "margin": 1.0003,
+              "rating_gap": 0.3335,
+              "recency": 0.9665
+            },
+            "conviction": 2.4148,
+            "grounds": {
+              "band_rate": 0.0,
+              "enforced": true,
+              "loser_games_since": 2,
+              "loser_losses": 3,
+              "loser_losses_since": 2,
+              "loser_win_quality": 0.0,
+              "max_lead": 0.0,
+              "quality_diff": 0.0,
+              "rules": [],
+              "weeks_since": 3.0,
+              "winner_games_since": 3,
+              "winner_losses": 2,
+              "winner_losses_since": 2,
+              "winner_win_quality": 16.9428
+            },
+            "lead": -18,
+            "loser": "Mississippi State",
+            "loser_rank": 24,
+            "margin": 33,
+            "rating_gap": 12.956,
+            "score": "56-23",
+            "season_type": "regular",
+            "site": "away",
+            "status": "honored",
+            "week": 5,
+            "weight": 5.4148,
+            "winner": "Alabama",
+            "winner_rank": 6
+          },
+          {
+            "adj_margin": 18.5066,
+            "common_diff": 15.3201,
+            "common_opponents": [
+              "Kentucky",
+              "Mississippi State",
+              "Tennessee"
+            ],
+            "components": {
+              "common_opponents": 0.1958,
+              "margin": 0.6403,
+              "rating_gap": 0.2533,
+              "recency": 0.9012
+            },
+            "conviction": 1.9907,
+            "grounds": {
+              "band_rate": 0.0,
+              "enforced": false,
+              "loser_games_since": 3,
+              "loser_losses": 3,
+              "loser_losses_since": 1,
+              "loser_win_quality": 17.3803,
+              "max_lead": null,
+              "quality_diff": 3.5506,
+              "rules": [
+                3
+              ],
+              "weeks_since": 4.0,
+              "winner_games_since": 4,
+              "winner_losses": 2,
+              "winner_losses_since": 2,
+              "winner_win_quality": 13.8297
+            },
+            "lead": -22,
+            "loser": "South Carolina",
+            "loser_rank": 28,
+            "margin": 31,
+            "rating_gap": 10.4209,
+            "score": "49-18",
+            "season_type": "regular",
+            "site": "home",
+            "status": "honored",
+            "week": 4,
+            "weight": 4.9907,
+            "winner": "Alabama",
+            "winner_rank": 6
+          },
+          {
+            "adj_margin": 8.5066,
+            "common_diff": 35.9867,
+            "common_opponents": [
+              "Kentucky"
+            ],
+            "components": {
+              "common_opponents": 0.4623,
+              "margin": -0.0815,
+              "rating_gap": 0.1365,
+              "recency": 1.2
+            },
+            "conviction": 1.7173,
+            "grounds": {
+              "band_rate": 0.0,
+              "enforced": true,
+              "loser_games_since": 0,
+              "loser_losses": 4,
+              "loser_losses_since": 0,
+              "loser_win_quality": 0.0,
+              "max_lead": 0.0,
+              "quality_diff": 0.0,
+              "rules": [],
+              "weeks_since": 0.0,
+              "winner_games_since": 0,
+              "winner_losses": 2,
+              "winner_losses_since": 0,
+              "winner_win_quality": 0.0
+            },
+            "lead": -32,
+            "loser": "Texas A&M",
+            "loser_rank": 38,
+            "margin": 11,
+            "rating_gap": 6.7298,
+            "score": "31-20",
+            "season_type": "regular",
+            "site": "home",
+            "status": "honored",
+            "week": 8,
+            "weight": 4.7173,
+            "winner": "Alabama",
+            "winner_rank": 6
+          }
+        ]
+      },
+      "market": {
+        "games": 8,
+        "rank": 7,
+        "rating": 23.6726
+      },
+      "movement": {
+        "delta": 2,
+        "has_previous": true,
+        "previous_rank": 8,
+        "status": "up"
+      },
+      "performance": {
+        "games": 8,
+        "rank": 3,
+        "rating": 0.4921,
+        "unadjusted": 0.2838
+      },
+      "placement": {
+        "base_rank": 2,
+        "drift": -4,
+        "final_rank": 6,
+        "reasons": [
+          "Resume order #3 from 0.55 x SoR #6 + 0.25 x Mkt #7 + 0.2 x PPA #3 = 5.65.",
+          "Head-to-head held: beat #9 Kentucky 45-17 on the road in week 2.",
+          "Ranked above #12 Tennessee despite losing 10-26 on the road in week 7 -- +13.5 adjusted margin; the winner rates 7.3 points worse on the power ratings; the loser fared better against 1 shared opponent. Since then: Tennessee has lost 1 since and Alabama none; so the resume order decides how far apart they sit.",
+          "Part of contradiction loop C1, a 17-team tangle of results that no ordering can fully satisfy.",
+          "Moved down 4 from its base position of #2."
+        ]
+      },
+      "rank": 6,
+      "record": {
+        "conference": "4-2",
+        "losses": 2,
+        "overall": "6-2",
+        "wins": 6
+      },
+      "regression": null,
+      "resume": {
+        "actual_wins": 6,
+        "espn_rank": 7,
+        "expected_wins": 4.2283,
+        "probability": 0.1591,
+        "rank": 6,
+        "schedule": [
+          {
+            "opponent": "East Carolina",
+            "reference_win_probability": 0.9496,
+            "site": "home",
+            "week": 1,
+            "won": true
+          },
+          {
+            "opponent": "Kentucky",
+            "reference_win_probability": 0.5052,
+            "site": "away",
+            "week": 2,
+            "won": true
+          },
+          {
+            "opponent": "Florida State",
+            "reference_win_probability": 0.6914,
+            "site": "home",
+            "week": 3,
+            "won": true
+          },
+          {
+            "opponent": "South Carolina",
+            "reference_win_probability": 0.5733,
+            "site": "home",
+            "week": 4,
+            "won": true
+          },
+          {
+            "opponent": "Mississippi State",
+            "reference_win_probability": 0.5012,
+            "site": "away",
+            "week": 5,
+            "won": true
+          },
+          {
+            "opponent": "Georgia",
+            "reference_win_probability": 0.2038,
+            "site": "home",
+            "week": 6,
+            "won": false
+          },
+          {
+            "opponent": "Tennessee",
+            "reference_win_probability": 0.3391,
+            "site": "away",
+            "week": 7,
+            "won": false
+          },
+          {
+            "opponent": "Texas A&M",
+            "reference_win_probability": 0.4647,
+            "site": "home",
+            "week": 8,
+            "won": true
+          }
+        ]
+      },
+      "resume_adjustment": {
+        "components": {
+          "best_win": -0.2808,
+          "cover": -1.4644,
+          "game_control": -0.3611,
+          "loss_quality": 2.0688
+        },
+        "detail": {
+          "best_win_opponent": "Mississippi State",
+          "best_win_opponent_base_rank": 8,
+          "best_win_opponent_rating": 10.7166,
+          "best_win_over_bar": 1.8872,
+          "corrected_cover_margin": 4.5105,
+          "cover_games": 8,
+          "covers": 4,
+          "game_control_rank": 12,
+          "losses": [
+            {
+              "badness": 8.9239,
+              "opponent": "Tennessee"
+            },
+            {
+              "badness": 3.3297,
+              "opponent": "Georgia"
+            }
+          ],
+          "losses_considered": 2,
+          "mean_cover_margin": 4.875,
+          "mean_loss_badness": 6.1268,
+          "shrunk_cover_margin": 3.007,
+          "worst_cover": "-24 vs Tennessee"
+        },
+        "total": -0.0375
+      },
+      "resume_ranks": {
+        "average_win_probability": 31,
+        "fpi": 5,
+        "game_control": 12,
+        "remaining_strength_of_schedule": 39,
+        "strength_of_record": 7,
+        "strength_of_schedule": 7
+      },
+      "team": "Alabama"
+    },
+    {
+      "base": {
         "espn_sor_rank": 12,
         "formula": "0.55 x SoR #8 + 0.25 x Mkt #5 + 0.2 x PPA #24 = 10.45",
         "market_rank": 5,
@@ -5458,13 +5804,14 @@
               "quality_diff": 19.4159,
               "rules": [],
               "weeks_since": 1.0,
+              "winner_games_since": 0,
               "winner_losses": 2,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
             },
-            "lead": 12,
+            "lead": 11,
             "loser": "Texas",
-            "loser_rank": 6,
+            "loser_rank": 7,
             "margin": 3,
             "rating_gap": -8.0922,
             "score": "27-24",
@@ -5500,13 +5847,14 @@
                 1
               ],
               "weeks_since": 2.0,
+              "winner_games_since": 2,
               "winner_losses": 3,
               "winner_losses_since": 1,
               "winner_win_quality": 10.7166
             },
-            "lead": 14,
+            "lead": 13,
             "loser": "Texas",
-            "loser_rank": 6,
+            "loser_rank": 7,
             "margin": 3,
             "rating_gap": -8.7321,
             "score": "27-24",
@@ -5546,11 +5894,12 @@
                 3
               ],
               "weeks_since": 6.0,
+              "winner_games_since": 5,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 11.934
             },
-            "lead": 5,
+            "lead": 6,
             "loser": "Ohio State",
             "loser_rank": 1,
             "margin": 1,
@@ -5562,7 +5911,7 @@
             "week": 2,
             "weight": 2.7049,
             "winner": "Texas",
-            "winner_rank": 6
+            "winner_rank": 7
           },
           {
             "adj_margin": 4.5066,
@@ -5588,13 +5937,14 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 2,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
             },
             "lead": -1,
             "loser": "Ole Miss",
-            "loser_rank": 7,
+            "loser_rank": 8,
             "margin": 7,
             "rating_gap": 7.0785,
             "score": "34-27",
@@ -5604,7 +5954,7 @@
             "week": 8,
             "weight": 4.1433,
             "winner": "Texas",
-            "winner_rank": 6
+            "winner_rank": 7
           },
           {
             "adj_margin": 5.4934,
@@ -5630,11 +5980,12 @@
                 3
               ],
               "weeks_since": 4.0,
+              "winner_games_since": 3,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 19.4159
             },
-            "lead": -6,
+            "lead": -5,
             "loser": "Tennessee",
             "loser_rank": 12,
             "margin": 3,
@@ -5646,7 +5997,7 @@
             "week": 4,
             "weight": 3.8465,
             "winner": "Texas",
-            "winner_rank": 6
+            "winner_rank": 7
           }
         ]
       },
@@ -5656,7 +6007,7 @@
         "rating": 26.4944
       },
       "movement": {
-        "delta": 10,
+        "delta": 9,
         "has_previous": true,
         "previous_rank": 16,
         "status": "up"
@@ -5669,20 +6020,20 @@
       },
       "placement": {
         "base_rank": 9,
-        "drift": 3,
-        "final_rank": 6,
+        "drift": 2,
+        "final_rank": 7,
         "reasons": [
           "Resume order #9 from 0.55 x SoR #8 + 0.25 x Mkt #5 + 0.2 x PPA #24 = 10.45.",
           "Resume adjustment earned back 1.21 rank points, driven by best win.",
-          "Head-to-head held: beat #7 Ole Miss 34-27 at home in week 8.",
+          "Head-to-head held: beat #8 Ole Miss 34-27 at home in week 8.",
           "Ranked above #18 Florida despite losing 24-27 at home in week 7 -- +5.5 adjusted margin; the winner rates 8.1 points worse on the power ratings. Since then: nothing since the game lets this result be ranked against. Texas is held above by an enforced chain: Texas beat Ole Miss, Ole Miss beat Missouri, Missouri beat Florida.",
           "Ranked above #20 Oklahoma despite losing 24-27 at a neutral site in week 6 -- +3.0 adjusted margin; the winner rates 8.7 points worse on the power ratings. Since then: Oklahoma has more losses, 3 to 2; so the resume order decides how far apart they sit.",
           "Ranked below #1 Ohio State despite winning 24-23 at home in week 2 -- a 1-point win at home is worth -1.5 once venue is accounted for; the winner rates 3.3 points worse on the power ratings. Since then: Texas has more losses, 2 to 1; Texas has lost 2 since and Ohio State none; so the resume order decides how far apart they sit.",
           "Part of contradiction loop C1, a 17-team tangle of results that no ordering can fully satisfy.",
-          "Moved up 3 from its base position of #9."
+          "Moved up 2 from its base position of #9."
         ]
       },
-      "rank": 6,
+      "rank": 7,
       "record": {
         "conference": "2-2",
         "losses": 2,
@@ -5862,13 +6213,14 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 2,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
             },
             "lead": -1,
             "loser": "Ole Miss",
-            "loser_rank": 7,
+            "loser_rank": 8,
             "margin": 7,
             "rating_gap": 7.0785,
             "score": "34-27",
@@ -5878,7 +6230,7 @@
             "week": 8,
             "weight": 4.1433,
             "winner": "Texas",
-            "winner_rank": 6
+            "winner_rank": 7
           },
           {
             "adj_margin": 18.5066,
@@ -5907,13 +6259,14 @@
                 3
               ],
               "weeks_since": 4.0,
+              "winner_games_since": 3,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 26.4944
             },
-            "lead": 11,
+            "lead": 10,
             "loser": "Ole Miss",
-            "loser_rank": 7,
+            "loser_rank": 8,
             "margin": 24,
             "rating_gap": -1.0137,
             "score": "52-28",
@@ -5951,11 +6304,12 @@
                 3
               ],
               "weeks_since": 5.0,
+              "winner_games_since": 4,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 9.2046
             },
-            "lead": -3,
+            "lead": -2,
             "loser": "LSU",
             "loser_rank": 10,
             "margin": 8,
@@ -5967,7 +6321,7 @@
             "week": 3,
             "weight": 3.271,
             "winner": "Ole Miss",
-            "winner_rank": 7
+            "winner_rank": 8
           },
           {
             "adj_margin": 18.5066,
@@ -5993,11 +6347,12 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 1.0,
+              "winner_games_since": 1,
               "winner_losses": 2,
               "winner_losses_since": 1,
               "winner_win_quality": 0.0
             },
-            "lead": -10,
+            "lead": -9,
             "loser": "Missouri",
             "loser_rank": 17,
             "margin": 28,
@@ -6009,7 +6364,7 @@
             "week": 7,
             "weight": 4.3862,
             "winner": "Ole Miss",
-            "winner_rank": 7
+            "winner_rank": 8
           },
           {
             "adj_margin": 3.0,
@@ -6033,13 +6388,14 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 7.0,
+              "winner_games_since": 6,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 10.3004
             },
             "lead": -26,
             "loser": "Louisville",
-            "loser_rank": 33,
+            "loser_rank": 34,
             "margin": 3,
             "rating_gap": 5.5379,
             "score": "41-38",
@@ -6049,7 +6405,7 @@
             "week": 1,
             "weight": 3.2541,
             "winner": "Ole Miss",
-            "winner_rank": 7
+            "winner_rank": 8
           }
         ]
       },
@@ -6059,7 +6415,7 @@
         "rating": 19.4159
       },
       "movement": {
-        "delta": -1,
+        "delta": -2,
         "has_previous": true,
         "previous_rank": 6,
         "status": "down"
@@ -6072,18 +6428,18 @@
       },
       "placement": {
         "base_rank": 6,
-        "drift": -1,
-        "final_rank": 7,
+        "drift": -2,
+        "final_rank": 8,
         "reasons": [
           "Resume order #6 from 0.55 x SoR #7 + 0.25 x Mkt #10 + 0.2 x PPA #12 = 8.75.",
           "Resume adjustment earned back 0.84 rank points, driven by loss quality.",
           "Head-to-head held: beat #10 LSU 32-24 at home in week 3.",
           "Ranked above #18 Florida despite losing 28-52 on the road in week 4 -- +18.5 adjusted margin; the winner rates 1.0 points worse on the power ratings; the loser fared better against 2 shared opponents. Since then: Florida has lost 2 since against Ole Miss's 1; so this result was free to set aside. Ole Miss is held above by an enforced chain: Ole Miss beat Missouri, Missouri beat Florida.",
           "Part of contradiction loop C1, a 17-team tangle of results that no ordering can fully satisfy.",
-          "Moved down 1 from its base position of #6."
+          "Moved down 2 from its base position of #6."
         ]
       },
-      "rank": 7,
+      "rank": 8,
       "record": {
         "conference": "3-2",
         "losses": 2,
@@ -6195,325 +6551,6 @@
     },
     {
       "base": {
-        "espn_sor_rank": 10,
-        "formula": "0.55 x SoR #9 + 0.25 x Mkt #4 + 0.2 x PPA #4 = 6.75",
-        "market_rank": 4,
-        "missing": [],
-        "ppa_rank": 4,
-        "rank": 8,
-        "raw_score": 6.75,
-        "resume_rank": 4,
-        "score": 9.0762,
-        "sor_rank": 9,
-        "sos_rank": 34,
-        "weights": {
-          "Mkt": 0.25,
-          "PPA": 0.2,
-          "SoR": 0.55
-        }
-      },
-      "conference": "SEC",
-      "cover": {
-        "adjustment": -0.7546,
-        "corrected_margin": 2.5537,
-        "covers": 5,
-        "games": 7,
-        "mean_margin": 3.1786,
-        "scored_margin": 1.6251,
-        "worst": "-22 vs Auburn"
-      },
-      "cycle": "C1",
-      "flags": [
-        "cycle",
-        "regressed"
-      ],
-      "fpi": {
-        "efficiencies": {
-          "defense": 77.667,
-          "offense": 90.426,
-          "overall": 89.681,
-          "special_teams": 60.55
-        },
-        "rank": 4,
-        "rating": 26.494
-      },
-      "h2h": {
-        "losses_vs_pool": [
-          {
-            "adj_margin": 5.4934,
-            "common_diff": -15.0,
-            "common_opponents": [
-              "Vanderbilt"
-            ],
-            "components": {
-              "common_opponents": -0.1951,
-              "margin": -0.299,
-              "rating_gap": -0.5507,
-              "recency": 1.0887
-            },
-            "conviction": 0.0438,
-            "grounds": {
-              "band_rate": 0.0,
-              "enforced": false,
-              "loser_games_since": 0,
-              "loser_losses": 1,
-              "loser_losses_since": 0,
-              "loser_win_quality": 0.0,
-              "max_lead": null,
-              "quality_diff": 0.0,
-              "rules": [
-                1
-              ],
-              "weeks_since": 1.0,
-              "winner_losses": 3,
-              "winner_losses_since": 1,
-              "winner_win_quality": 0.0
-            },
-            "lead": 13,
-            "loser": "Georgia",
-            "loser_rank": 8,
-            "margin": 3,
-            "rating_gap": -14.9845,
-            "score": "27-24",
-            "season_type": "regular",
-            "site": "away",
-            "status": "overridden",
-            "week": 7,
-            "weight": 3.0438,
-            "winner": "Auburn",
-            "winner_rank": 21
-          }
-        ],
-        "wins_vs_pool": [
-          {
-            "adj_margin": 5.4934,
-            "common_diff": 0.0,
-            "common_opponents": [],
-            "components": {
-              "common_opponents": 0.0,
-              "margin": -0.299,
-              "rating_gap": 0.0264,
-              "recency": 0.9896
-            },
-            "conviction": 0.7169,
-            "grounds": {
-              "band_rate": 0.5,
-              "enforced": false,
-              "loser_games_since": 2,
-              "loser_losses": 2,
-              "loser_losses_since": 1,
-              "loser_win_quality": 16.9428,
-              "max_lead": 8.0,
-              "quality_diff": 16.9428,
-              "rules": [
-                4
-              ],
-              "weeks_since": 2.0,
-              "winner_losses": 1,
-              "winner_losses_since": 1,
-              "winner_win_quality": 0.0
-            },
-            "lead": 6,
-            "loser": "Alabama",
-            "loser_rank": 2,
-            "margin": 3,
-            "rating_gap": 3.2501,
-            "score": "20-17",
-            "season_type": "regular",
-            "site": "away",
-            "status": "overridden",
-            "week": 6,
-            "weight": 3.7169,
-            "winner": "Georgia",
-            "winner_rank": 8
-          },
-          {
-            "adj_margin": 18.5066,
-            "common_diff": 0.0,
-            "common_opponents": [],
-            "components": {
-              "common_opponents": 0.0,
-              "margin": 0.6403,
-              "rating_gap": 0.2134,
-              "recency": 0.9012
-            },
-            "conviction": 1.755,
-            "grounds": {
-              "band_rate": 0.0,
-              "enforced": true,
-              "loser_games_since": 3,
-              "loser_losses": 3,
-              "loser_losses_since": 1,
-              "loser_win_quality": 18.6055,
-              "max_lead": 0.0,
-              "quality_diff": 4.334,
-              "rules": [],
-              "weeks_since": 4.0,
-              "winner_losses": 1,
-              "winner_losses_since": 1,
-              "winner_win_quality": 14.2715
-            },
-            "lead": -12,
-            "loser": "Oklahoma",
-            "loser_rank": 20,
-            "margin": 28,
-            "rating_gap": 9.1604,
-            "score": "41-13",
-            "season_type": "regular",
-            "site": "home",
-            "status": "honored",
-            "week": 4,
-            "weight": 4.755,
-            "winner": "Georgia",
-            "winner_rank": 8
-          }
-        ]
-      },
-      "market": {
-        "games": 7,
-        "rank": 4,
-        "rating": 26.9227
-      },
-      "movement": {
-        "delta": -1,
-        "has_previous": true,
-        "previous_rank": 7,
-        "status": "down"
-      },
-      "performance": {
-        "games": 6,
-        "rank": 4,
-        "rating": 0.4518,
-        "unadjusted": 0.3683
-      },
-      "placement": {
-        "base_rank": 8,
-        "drift": 0,
-        "final_rank": 8,
-        "reasons": [
-          "Resume order #4 from 0.55 x SoR #9 + 0.25 x Mkt #4 + 0.2 x PPA #4 = 6.75.",
-          "Resume adjustment earned back 1.28 rank points, driven by best win.",
-          "Auburn beat Georgia 27-24 from 21 places lower on the resume board (#23 over #2), so both were pulled toward the midpoint.",
-          "Head-to-head held: beat #20 Oklahoma 41-13 at home in week 4.",
-          "Ranked above #21 Auburn despite losing 24-27 at home in week 7 -- +5.5 adjusted margin; the winner rates 15.0 points worse on the power ratings; the loser fared better against 1 shared opponent. Since then: Auburn has more losses, 3 to 1; so the resume order decides how far apart they sit.",
-          "Ranked below #2 Alabama despite winning 20-17 on the road in week 6 -- +5.5 adjusted margin. Since then: Alabama's wins since average 16.9 rating points better; 2 weeks on, so they may lead by 8 places.",
-          "Part of contradiction loop C1, a 17-team tangle of results that no ordering can fully satisfy.",
-          "Head-to-head results left this placement unchanged."
-        ]
-      },
-      "rank": 8,
-      "record": {
-        "conference": "4-1",
-        "losses": 1,
-        "overall": "6-1",
-        "wins": 6
-      },
-      "regression": {
-        "adjustment": 3.6037,
-        "notes": [
-          "Auburn beat Georgia 27-24 from 21 places lower on the resume board (#23 over #2), so both were pulled toward the midpoint"
-        ]
-      },
-      "resume": {
-        "actual_wins": 6,
-        "espn_rank": 10,
-        "expected_wins": 4.7495,
-        "probability": 0.225,
-        "rank": 9,
-        "schedule": [
-          {
-            "opponent": "Tennessee State",
-            "reference_win_probability": 1.0,
-            "site": "home",
-            "week": 1,
-            "won": true
-          },
-          {
-            "opponent": "Western Kentucky",
-            "reference_win_probability": 0.9862,
-            "site": "home",
-            "week": 2,
-            "won": true
-          },
-          {
-            "opponent": "Arkansas",
-            "reference_win_probability": 0.7526,
-            "site": "away",
-            "week": 3,
-            "won": true
-          },
-          {
-            "opponent": "Oklahoma",
-            "reference_win_probability": 0.4406,
-            "site": "home",
-            "week": 4,
-            "won": true
-          },
-          {
-            "opponent": "Vanderbilt",
-            "reference_win_probability": 0.7897,
-            "site": "home",
-            "week": 5,
-            "won": true
-          },
-          {
-            "opponent": "Alabama",
-            "reference_win_probability": 0.1694,
-            "site": "away",
-            "week": 6,
-            "won": true
-          },
-          {
-            "opponent": "Auburn",
-            "reference_win_probability": 0.611,
-            "site": "home",
-            "week": 7,
-            "won": false
-          }
-        ]
-      },
-      "resume_adjustment": {
-        "components": {
-          "best_win": -2.2083,
-          "cover": -0.7546,
-          "game_control": -0.4176,
-          "loss_quality": 2.103
-        },
-        "detail": {
-          "best_win_opponent": "Alabama",
-          "best_win_opponent_base_rank": 3,
-          "best_win_opponent_rating": 23.6726,
-          "best_win_over_bar": 14.8432,
-          "corrected_cover_margin": 2.5537,
-          "cover_games": 7,
-          "covers": 5,
-          "game_control_rank": 3,
-          "losses": [
-            {
-              "badness": 6.2283,
-              "opponent": "Auburn"
-            }
-          ],
-          "losses_considered": 1,
-          "mean_cover_margin": 3.1786,
-          "mean_loss_badness": 6.2283,
-          "shrunk_cover_margin": 1.6251,
-          "worst_cover": "-22 vs Auburn"
-        },
-        "total": -1.2775
-      },
-      "resume_ranks": {
-        "average_win_probability": 5,
-        "fpi": 4,
-        "game_control": 3,
-        "remaining_strength_of_schedule": 26,
-        "strength_of_record": 10,
-        "strength_of_schedule": 34
-      },
-      "team": "Georgia"
-    },
-    {
-      "base": {
         "espn_sor_rank": 1,
         "formula": "0.55 x SoR #1 + 0.25 x Mkt #32 + 0.2 x PPA #9 = 10.35",
         "market_rank": 32,
@@ -6587,11 +6624,12 @@
                 3
               ],
               "weeks_since": 6.0,
+              "winner_games_since": 6,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 12.4769
             },
-            "lead": -7,
+            "lead": -3,
             "loser": "Kentucky",
             "loser_rank": 9,
             "margin": 28,
@@ -6603,7 +6641,7 @@
             "week": 2,
             "weight": 5.1939,
             "winner": "Alabama",
-            "winner_rank": 2
+            "winner_rank": 6
           }
         ],
         "wins_vs_pool": [
@@ -6631,6 +6669,7 @@
               "quality_diff": 0.0111,
               "rules": [],
               "weeks_since": 2.0,
+              "winner_games_since": 2,
               "winner_losses": 1,
               "winner_losses_since": 0,
               "winner_win_quality": 11.3163
@@ -6671,6 +6710,7 @@
               "quality_diff": 5.8462,
               "rules": [],
               "weeks_since": 1.0,
+              "winner_games_since": 1,
               "winner_losses": 1,
               "winner_losses_since": 0,
               "winner_win_quality": 4.8703
@@ -6713,6 +6753,7 @@
               "quality_diff": 2.2386,
               "rules": [],
               "weeks_since": 3.0,
+              "winner_games_since": 3,
               "winner_losses": 1,
               "winner_losses_since": 0,
               "winner_win_quality": 15.1417
@@ -6756,6 +6797,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 5.0,
+              "winner_games_since": 5,
               "winner_losses": 1,
               "winner_losses_since": 0,
               "winner_win_quality": 11.7354
@@ -6988,11 +7030,12 @@
                 3
               ],
               "weeks_since": 5.0,
+              "winner_games_since": 4,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 9.2046
             },
-            "lead": -3,
+            "lead": -2,
             "loser": "LSU",
             "loser_rank": 10,
             "margin": 8,
@@ -7004,7 +7047,7 @@
             "week": 3,
             "weight": 3.271,
             "winner": "Ole Miss",
-            "winner_rank": 7
+            "winner_rank": 8
           },
           {
             "adj_margin": -1.4934,
@@ -7030,6 +7073,7 @@
               "quality_diff": 0.0111,
               "rules": [],
               "weeks_since": 2.0,
+              "winner_games_since": 2,
               "winner_losses": 1,
               "winner_losses_since": 0,
               "winner_win_quality": 11.3163
@@ -7072,6 +7116,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 2,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -7112,6 +7157,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 1.0,
+              "winner_games_since": 1,
               "winner_losses": 2,
               "winner_losses_since": 0,
               "winner_win_quality": 11.9382
@@ -7154,6 +7200,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 4.0,
+              "winner_games_since": 4,
               "winner_losses": 2,
               "winner_losses_since": 1,
               "winner_win_quality": 7.5516
@@ -7386,6 +7433,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 0,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -7605,11 +7653,12 @@
                 3
               ],
               "weeks_since": 4.0,
+              "winner_games_since": 3,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 19.4159
             },
-            "lead": -6,
+            "lead": -5,
             "loser": "Tennessee",
             "loser_rank": 12,
             "margin": 3,
@@ -7621,7 +7670,7 @@
             "week": 4,
             "weight": 3.8465,
             "winner": "Texas",
-            "winner_rank": 6
+            "winner_rank": 7
           },
           {
             "adj_margin": 0.5066,
@@ -7649,6 +7698,7 @@
                 1
               ],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 3,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -7696,13 +7746,14 @@
                 3
               ],
               "weeks_since": 1.0,
+              "winner_games_since": 1,
               "winner_losses": 2,
               "winner_losses_since": 1,
               "winner_win_quality": 0.0
             },
-            "lead": 10,
+            "lead": 6,
             "loser": "Alabama",
-            "loser_rank": 2,
+            "loser_rank": 6,
             "margin": 16,
             "rating_gap": -7.3141,
             "score": "26-10",
@@ -7736,6 +7787,7 @@
               "quality_diff": 14.3145,
               "rules": [],
               "weeks_since": 3.0,
+              "winner_games_since": 3,
               "winner_losses": 2,
               "winner_losses_since": 1,
               "winner_win_quality": 12.6082
@@ -7782,7 +7834,7 @@
           "Resume adjustment earned back 2.01 rank points, driven by best win.",
           "Head-to-head held: beat #21 Auburn 24-14 at home in week 5.",
           "Ranked above #28 South Carolina despite losing 24-27 on the road in week 8 -- a 3-point win at home is worth +0.5 once venue is accounted for; the winner rates 3.1 points worse on the power ratings; the loser fared better against 1 shared opponent. Since then: South Carolina has more losses, 3 to 2; so the resume order decides how far apart they sit.",
-          "Ranked below #2 Alabama despite winning 26-10 at home in week 7 -- +13.5 adjusted margin; the winner rates 7.3 points worse on the power ratings; the loser fared better against 1 shared opponent. Since then: Tennessee has lost 1 since and Alabama none; so the resume order decides how far apart they sit.",
+          "Ranked below #6 Alabama despite winning 26-10 at home in week 7 -- +13.5 adjusted margin; the winner rates 7.3 points worse on the power ratings; the loser fared better against 1 shared opponent. Since then: Tennessee has lost 1 since and Alabama none; so the resume order decides how far apart they sit.",
           "Part of contradiction loop C1, a 17-team tangle of results that no ordering can fully satisfy.",
           "Moved up 1 from its base position of #13."
         ]
@@ -7977,6 +8029,7 @@
                 1
               ],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 3,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -8019,6 +8072,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 1.0,
+              "winner_games_since": 1,
               "winner_losses": 1,
               "winner_losses_since": 1,
               "winner_win_quality": 0.0
@@ -8064,6 +8118,7 @@
                 3
               ],
               "weeks_since": 6.0,
+              "winner_games_since": 5,
               "winner_losses": 1,
               "winner_losses_since": 1,
               "winner_win_quality": 9.5954
@@ -8293,6 +8348,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 1.0,
+              "winner_games_since": 1,
               "winner_losses": 1,
               "winner_losses_since": 1,
               "winner_win_quality": 0.0
@@ -8339,6 +8395,7 @@
                 4
               ],
               "weeks_since": 7.0,
+              "winner_games_since": 6,
               "winner_losses": 1,
               "winner_losses_since": 1,
               "winner_win_quality": 2.0366
@@ -8379,6 +8436,7 @@
               "quality_diff": 5.5157,
               "rules": [],
               "weeks_since": 3.0,
+              "winner_games_since": 2,
               "winner_losses": 1,
               "winner_losses_since": 1,
               "winner_win_quality": 0.0
@@ -8603,11 +8661,12 @@
                 3
               ],
               "weeks_since": 4.0,
+              "winner_games_since": 4,
               "winner_losses": 1,
               "winner_losses_since": 1,
               "winner_win_quality": 9.6222
             },
-            "lead": -12,
+            "lead": -13,
             "loser": "Northwestern",
             "loser_rank": 15,
             "margin": 6,
@@ -8619,7 +8678,7 @@
             "week": 4,
             "weight": 3.9518,
             "winner": "Indiana",
-            "winner_rank": 3
+            "winner_rank": 2
           }
         ],
         "wins_vs_pool": []
@@ -8824,11 +8883,12 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 5.0,
+              "winner_games_since": 4,
               "winner_losses": 0,
               "winner_losses_since": 0,
               "winner_win_quality": 5.9623
             },
-            "lead": -12,
+            "lead": -13,
             "loser": "Wake Forest",
             "loser_rank": 16,
             "margin": 13,
@@ -8840,7 +8900,7 @@
             "week": 3,
             "weight": 4.7746,
             "winner": "Miami",
-            "winner_rank": 4
+            "winner_rank": 3
           }
         ],
         "wins_vs_pool": [
@@ -8868,13 +8928,14 @@
               "quality_diff": 3.104,
               "rules": [],
               "weeks_since": 4.0,
+              "winner_games_since": 3,
               "winner_losses": 1,
               "winner_losses_since": 0,
               "winner_win_quality": 1.3943
             },
-            "lead": -17,
+            "lead": -18,
             "loser": "Louisville",
-            "loser_rank": 33,
+            "loser_rank": 34,
             "margin": 3,
             "rating_gap": -5.0487,
             "score": "30-27",
@@ -8912,7 +8973,7 @@
         "reasons": [
           "Resume order #16 from 0.55 x SoR #10 + 0.25 x Mkt #37 + 0.2 x PPA #17 = 18.15.",
           "Resume adjustment earned back 2.10 rank points, driven by cover.",
-          "Head-to-head held: beat #33 Louisville 30-27 on the road in week 4.",
+          "Head-to-head held: beat #34 Louisville 30-27 on the road in week 4.",
           "Head-to-head results left this placement unchanged."
         ]
       },
@@ -9092,11 +9153,12 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 1.0,
+              "winner_games_since": 1,
               "winner_losses": 2,
               "winner_losses_since": 1,
               "winner_win_quality": 0.0
             },
-            "lead": -10,
+            "lead": -9,
             "loser": "Missouri",
             "loser_rank": 17,
             "margin": 28,
@@ -9108,7 +9170,7 @@
             "week": 7,
             "weight": 4.3862,
             "winner": "Ole Miss",
-            "winner_rank": 7
+            "winner_rank": 8
           },
           {
             "adj_margin": 4.5066,
@@ -9122,7 +9184,7 @@
             },
             "conviction": 0.2865,
             "grounds": {
-              "band_rate": 1.0,
+              "band_rate": 0.75,
               "enforced": false,
               "loser_games_since": 3,
               "loser_losses": 2,
@@ -9136,6 +9198,7 @@
                 4
               ],
               "weeks_since": 4.0,
+              "winner_games_since": 3,
               "winner_losses": 3,
               "winner_losses_since": 3,
               "winner_win_quality": 0.0
@@ -9180,6 +9243,7 @@
               "quality_diff": 9.5516,
               "rules": [],
               "weeks_since": 3.0,
+              "winner_games_since": 2,
               "winner_losses": 2,
               "winner_losses_since": 1,
               "winner_win_quality": 16.9428
@@ -9220,6 +9284,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 2.0,
+              "winner_games_since": 1,
               "winner_losses": 2,
               "winner_losses_since": 1,
               "winner_win_quality": 0.0
@@ -9450,6 +9515,7 @@
               "quality_diff": 9.5516,
               "rules": [],
               "weeks_since": 3.0,
+              "winner_games_since": 2,
               "winner_losses": 2,
               "winner_losses_since": 1,
               "winner_win_quality": 16.9428
@@ -9492,6 +9558,7 @@
                 1
               ],
               "weeks_since": 2.0,
+              "winner_games_since": 1,
               "winner_losses": 3,
               "winner_losses_since": 0,
               "winner_win_quality": 16.3585
@@ -9536,13 +9603,14 @@
               "quality_diff": 19.4159,
               "rules": [],
               "weeks_since": 1.0,
+              "winner_games_since": 0,
               "winner_losses": 2,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
             },
-            "lead": 12,
+            "lead": 11,
             "loser": "Texas",
-            "loser_rank": 6,
+            "loser_rank": 7,
             "margin": 3,
             "rating_gap": -8.0922,
             "score": "27-24",
@@ -9581,13 +9649,14 @@
                 3
               ],
               "weeks_since": 4.0,
+              "winner_games_since": 3,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 26.4944
             },
-            "lead": 11,
+            "lead": 10,
             "loser": "Ole Miss",
-            "loser_rank": 7,
+            "loser_rank": 8,
             "margin": 24,
             "rating_gap": -1.0137,
             "score": "52-28",
@@ -9621,6 +9690,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 5.0,
+              "winner_games_since": 4,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 22.9551
@@ -9667,8 +9737,8 @@
           "Resume adjustment cost 2.14 rank points, driven by loss quality.",
           "Head-to-head held: beat #21 Auburn 44-39 on the road in week 3.",
           "Ranked above #28 South Carolina despite losing 19-38 at home in week 6 -- +21.5 adjusted margin; the winner rates 5.2 points worse on the power ratings. Since then: South Carolina has more losses, 3 to 2; so the resume order decides how far apart they sit.",
-          "Ranked below #6 Texas despite winning 27-24 on the road in week 7 -- +5.5 adjusted margin; the winner rates 8.1 points worse on the power ratings. Since then: nothing since the game lets this result be ranked against. Texas is held above by an enforced chain: Texas beat Ole Miss, Ole Miss beat Missouri, Missouri beat Florida.",
-          "Ranked below #7 Ole Miss despite winning 52-28 at home in week 4 -- +18.5 adjusted margin; the winner rates 1.0 points worse on the power ratings; the loser fared better against 2 shared opponents. Since then: Florida has lost 2 since against Ole Miss's 1; so this result was free to set aside. Ole Miss is held above by an enforced chain: Ole Miss beat Missouri, Missouri beat Florida.",
+          "Ranked below #7 Texas despite winning 27-24 on the road in week 7 -- +5.5 adjusted margin; the winner rates 8.1 points worse on the power ratings. Since then: nothing since the game lets this result be ranked against. Texas is held above by an enforced chain: Texas beat Ole Miss, Ole Miss beat Missouri, Missouri beat Florida.",
+          "Ranked below #8 Ole Miss despite winning 52-28 at home in week 4 -- +18.5 adjusted margin; the winner rates 1.0 points worse on the power ratings; the loser fared better against 2 shared opponents. Since then: Florida has lost 2 since against Ole Miss's 1; so this result was free to set aside. Ole Miss is held above by an enforced chain: Ole Miss beat Missouri, Missouri beat Florida.",
           "Part of contradiction loop C1, a 17-team tangle of results that no ordering can fully satisfy.",
           "Moved down 4 from its base position of #14."
         ]
@@ -9850,11 +9920,12 @@
               "quality_diff": 16.2232,
               "rules": [],
               "weeks_since": 1.0,
+              "winner_games_since": 1,
               "winner_losses": 0,
               "winner_losses_since": 0,
               "winner_win_quality": 1.6552
             },
-            "lead": -14,
+            "lead": -15,
             "loser": "Wisconsin",
             "loser_rank": 19,
             "margin": 10,
@@ -9866,7 +9937,7 @@
             "week": 7,
             "weight": 3.8347,
             "winner": "UCLA",
-            "winner_rank": 5
+            "winner_rank": 4
           },
           {
             "adj_margin": 21.0,
@@ -9894,6 +9965,7 @@
                 4
               ],
               "weeks_since": 7.0,
+              "winner_games_since": 6,
               "winner_losses": 1,
               "winner_losses_since": 1,
               "winner_win_quality": 2.0366
@@ -9938,6 +10010,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 2,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -10163,11 +10236,12 @@
               "quality_diff": 4.334,
               "rules": [],
               "weeks_since": 4.0,
+              "winner_games_since": 3,
               "winner_losses": 1,
               "winner_losses_since": 1,
               "winner_win_quality": 14.2715
             },
-            "lead": -12,
+            "lead": -15,
             "loser": "Oklahoma",
             "loser_rank": 20,
             "margin": 28,
@@ -10179,7 +10253,7 @@
             "week": 4,
             "weight": 4.755,
             "winner": "Georgia",
-            "winner_rank": 8
+            "winner_rank": 5
           },
           {
             "adj_margin": 10.4934,
@@ -10203,6 +10277,7 @@
               "quality_diff": 5.8462,
               "rules": [],
               "weeks_since": 1.0,
+              "winner_games_since": 1,
               "winner_losses": 1,
               "winner_losses_since": 0,
               "winner_win_quality": 4.8703
@@ -10247,6 +10322,7 @@
                 3
               ],
               "weeks_since": 6.0,
+              "winner_games_since": 5,
               "winner_losses": 3,
               "winner_losses_since": 3,
               "winner_win_quality": 7.1938
@@ -10291,13 +10367,14 @@
                 1
               ],
               "weeks_since": 2.0,
+              "winner_games_since": 2,
               "winner_losses": 3,
               "winner_losses_since": 1,
               "winner_win_quality": 10.7166
             },
-            "lead": 14,
+            "lead": 13,
             "loser": "Texas",
-            "loser_rank": 6,
+            "loser_rank": 7,
             "margin": 3,
             "rating_gap": -8.7321,
             "score": "27-24",
@@ -10331,6 +10408,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 3,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -10377,6 +10455,7 @@
                 3
               ],
               "weeks_since": 5.0,
+              "winner_games_since": 4,
               "winner_losses": 3,
               "winner_losses_since": 2,
               "winner_win_quality": 18.6055
@@ -10423,7 +10502,7 @@
           "Resume adjustment cost 1.16 rank points, driven by best win.",
           "Head-to-head held: beat #24 Mississippi State 23-15 on the road in week 8.",
           "Ranked above #32 Michigan despite losing 10-17 on the road in week 2 -- +4.5 adjusted margin; the winner rates 2.7 points worse on the power ratings. Since then: Michigan has lost 3 since against Oklahoma's 2; so the resume order decides how far apart they sit.",
-          "Ranked below #6 Texas despite winning 27-24 at a neutral site in week 6 -- +3.0 adjusted margin; the winner rates 8.7 points worse on the power ratings. Since then: Oklahoma has more losses, 3 to 2; so the resume order decides how far apart they sit.",
+          "Ranked below #7 Texas despite winning 27-24 at a neutral site in week 6 -- +3.0 adjusted margin; the winner rates 8.7 points worse on the power ratings. Since then: Oklahoma has more losses, 3 to 2; so the resume order decides how far apart they sit.",
           "Part of contradiction loop C1, a 17-team tangle of results that no ordering can fully satisfy.",
           "Head-to-head results left this placement unchanged."
         ]
@@ -10610,6 +10689,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 2,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -10650,6 +10730,7 @@
               "quality_diff": 14.3145,
               "rules": [],
               "weeks_since": 3.0,
+              "winner_games_since": 3,
               "winner_losses": 2,
               "winner_losses_since": 1,
               "winner_win_quality": 12.6082
@@ -10690,6 +10771,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 5.0,
+              "winner_games_since": 4,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 22.9551
@@ -10736,13 +10818,14 @@
                 1
               ],
               "weeks_since": 1.0,
+              "winner_games_since": 1,
               "winner_losses": 3,
               "winner_losses_since": 1,
               "winner_win_quality": 0.0
             },
-            "lead": 13,
+            "lead": 16,
             "loser": "Georgia",
-            "loser_rank": 8,
+            "loser_rank": 5,
             "margin": 3,
             "rating_gap": -14.9845,
             "score": "27-24",
@@ -10781,7 +10864,7 @@
           "Resume order #24 from 0.55 x SoR #24 + 0.25 x Mkt #27 + 0.2 x PPA #29 = 25.75.",
           "Resume adjustment cost 0.32 rank points, driven by loss quality.",
           "Auburn beat Georgia 27-24 from 21 places lower on the resume board (#23 over #2), so both were pulled toward the midpoint.",
-          "Ranked below #8 Georgia despite winning 27-24 on the road in week 7 -- +5.5 adjusted margin; the winner rates 15.0 points worse on the power ratings; the loser fared better against 1 shared opponent. Since then: Auburn has more losses, 3 to 1; so the resume order decides how far apart they sit.",
+          "Ranked below #5 Georgia despite winning 27-24 on the road in week 7 -- +5.5 adjusted margin; the winner rates 15.0 points worse on the power ratings; the loser fared better against 1 shared opponent. Since then: Auburn has more losses, 3 to 1; so this result was free to set aside. Georgia is held above by results the ranking honours: Georgia beat Alabama, Alabama beat Kentucky, Kentucky beat LSU, LSU beat Auburn.",
           "Part of contradiction loop C1, a 17-team tangle of results that no ordering can fully satisfy.",
           "Head-to-head results left this placement unchanged."
         ]
@@ -10974,11 +11057,12 @@
                 4
               ],
               "weeks_since": 2.0,
+              "winner_games_since": 2,
               "winner_losses": 0,
               "winner_losses_since": 0,
               "winner_win_quality": 5.332
             },
-            "lead": -17,
+            "lead": -18,
             "loser": "Oregon",
             "loser_rank": 22,
             "margin": 2,
@@ -10990,7 +11074,7 @@
             "week": 6,
             "weight": 3.1433,
             "winner": "UCLA",
-            "winner_rank": 5
+            "winner_rank": 4
           },
           {
             "adj_margin": 5.5066,
@@ -11004,23 +11088,24 @@
             },
             "conviction": -0.1461,
             "grounds": {
-              "band_rate": 1.5,
+              "band_rate": 1.25,
               "enforced": false,
               "loser_games_since": 5,
               "loser_losses": 3,
               "loser_losses_since": 2,
               "loser_win_quality": 10.5513,
-              "max_lead": 13.0,
+              "max_lead": 11.0,
               "quality_diff": 9.1243,
               "rules": [
                 4
               ],
               "weeks_since": 6.0,
+              "winner_games_since": 5,
               "winner_losses": 2,
               "winner_losses_since": 1,
               "winner_win_quality": 1.4271
             },
-            "lead": 13,
+            "lead": 11,
             "loser": "Oregon",
             "loser_rank": 22,
             "margin": 8,
@@ -11032,7 +11117,7 @@
             "week": 2,
             "weight": 2.8539,
             "winner": "Oklahoma State",
-            "winner_rank": 35
+            "winner_rank": 33
           }
         ],
         "wins_vs_pool": [
@@ -11060,6 +11145,7 @@
                 1
               ],
               "weeks_since": 1.0,
+              "winner_games_since": 1,
               "winner_losses": 3,
               "winner_losses_since": 1,
               "winner_win_quality": 0.0
@@ -11103,6 +11189,7 @@
                 3
               ],
               "weeks_since": 4.0,
+              "winner_games_since": 3,
               "winner_losses": 3,
               "winner_losses_since": 2,
               "winner_win_quality": 13.7756
@@ -11147,6 +11234,7 @@
                 3
               ],
               "weeks_since": 7.0,
+              "winner_games_since": 6,
               "winner_losses": 3,
               "winner_losses_since": 3,
               "winner_win_quality": 10.5513
@@ -11192,7 +11280,7 @@
           "Resume order #28 from 0.55 x SoR #37 + 0.25 x Mkt #9 + 0.2 x PPA #31 = 28.80.",
           "Resume adjustment cost 3.61 rank points, driven by loss quality.",
           "Head-to-head held: beat #23 Nebraska 17-14 at home in week 7.",
-          "Ranked above #35 Oklahoma State despite losing 31-39 on the road in week 2 -- +5.5 adjusted margin; the winner rates 14.6 points worse on the power ratings. Since then: Oregon's wins since average 9.1 rating points better; 6 weeks on, so they may lead by 13 places.",
+          "Ranked above #33 Oklahoma State despite losing 31-39 on the road in week 2 -- +5.5 adjusted margin; the winner rates 14.6 points worse on the power ratings. Since then: Oregon's wins since average 9.1 rating points better; 5 games on, so they may lead by 11 places.",
           "Moved up 8 from its base position of #30."
         ]
       },
@@ -11377,11 +11465,12 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 2.0,
+              "winner_games_since": 2,
               "winner_losses": 1,
               "winner_losses_since": 1,
               "winner_win_quality": 15.091
             },
-            "lead": -20,
+            "lead": -21,
             "loser": "Nebraska",
             "loser_rank": 23,
             "margin": 3,
@@ -11393,7 +11482,7 @@
             "week": 6,
             "weight": 4.0829,
             "winner": "Indiana",
-            "winner_rank": 3
+            "winner_rank": 2
           },
           {
             "adj_margin": 0.5066,
@@ -11419,6 +11508,7 @@
                 1
               ],
               "weeks_since": 1.0,
+              "winner_games_since": 1,
               "winner_losses": 3,
               "winner_losses_since": 1,
               "winner_win_quality": 0.0
@@ -11646,11 +11736,12 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 3.0,
+              "winner_games_since": 3,
               "winner_losses": 2,
               "winner_losses_since": 2,
               "winner_win_quality": 16.9428
             },
-            "lead": -22,
+            "lead": -18,
             "loser": "Mississippi State",
             "loser_rank": 24,
             "margin": 33,
@@ -11662,7 +11753,7 @@
             "week": 5,
             "weight": 5.4148,
             "winner": "Alabama",
-            "winner_rank": 2
+            "winner_rank": 6
           },
           {
             "adj_margin": 18.5066,
@@ -11686,6 +11777,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 1.0,
+              "winner_games_since": 1,
               "winner_losses": 2,
               "winner_losses_since": 0,
               "winner_win_quality": 11.9382
@@ -11726,6 +11818,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 3,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -11758,7 +11851,7 @@
             },
             "conviction": 0.2865,
             "grounds": {
-              "band_rate": 1.0,
+              "band_rate": 0.75,
               "enforced": false,
               "loser_games_since": 3,
               "loser_losses": 2,
@@ -11772,6 +11865,7 @@
                 4
               ],
               "weeks_since": 4.0,
+              "winner_games_since": 3,
               "winner_losses": 3,
               "winner_losses_since": 3,
               "winner_win_quality": 0.0
@@ -11816,6 +11910,7 @@
                 3
               ],
               "weeks_since": 5.0,
+              "winner_games_since": 4,
               "winner_losses": 3,
               "winner_losses_since": 3,
               "winner_win_quality": 13.5389
@@ -12047,6 +12142,7 @@
               "quality_diff": 0.0,
               "rules": [],
               "weeks_since": 0.0,
+              "winner_games_since": 0,
               "winner_losses": 2,
               "winner_losses_since": 0,
               "winner_win_quality": 0.0
@@ -12090,6 +12186,7 @@
                 3
               ],
               "weeks_since": 4.0,
+              "winner_games_since": 3,
               "winner_losses": 3,
               "winner_losses_since": 2,
               "winner_win_quality": 13.7756
