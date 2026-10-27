@@ -100,6 +100,7 @@ FROZEN = [
     "stage4.evidence.fit_home_field=true",
     "stage4.evidence.margin_cap=28",
     "stage4.evidence.weight_floor=1.0",
+    "stage4.evidence.rule_one_price=0.0",
     "stage4.evidence.conviction_floor=-2.0",
     "stage4.evidence.recency_floor=0.15",
 ]

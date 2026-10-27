@@ -11,7 +11,7 @@ from cfbrank.engine.evidence import (
     score_edges,
 )
 from cfbrank.engine.h2h import opponents
-from tests.helpers import result
+from tests.helpers import grounds, result
 
 EV = {
     "w_margin": 0.50, "w_rating_gap": 0.30, "w_recency": 0.20, "w_common_opponents": 0.15,
@@ -93,6 +93,62 @@ class TestCommonOpponents(unittest.TestCase):
         ]
         _, diff = common_opponent_diff("A", "B", opponents(res), 2.5, 28)
         self.assertLess(diff, 0)
+
+
+class TestRuleOneStopsPulling(unittest.TestCase):
+    """An exception has to mean something, or it only grants permission.
+
+    The four rules say when a result MAY be ranked against; they never said the
+    ranking should stop paying to honour it. So an exempted result kept its full
+    price and the optimiser kept buying it. On 2026 week 8 that put 4-3 Oregon,
+    30th on the resume, at #22: their wins over Nebraska, USC and Boise State
+    all carry rule 1, and honouring them cost less drift than breaking them.
+
+    Rule 1 is the one where the season-long record has already answered the
+    question, so it is the one whose price goes. Rules 2, 3 and 4 are about what
+    has happened SINCE, which is thinner evidence, and they keep theirs.
+    """
+
+    GAMES = [result("A", "B", 28, 14), result("C", "D", 21, 17)]
+
+    def facts(self, rules, price):
+        g = {("A", "B"): grounds(float("inf"), rules=rules)}
+        cfg = dict(EV, weight_floor=1.0, conviction_floor=-2.0, rule_one_price=price)
+        return score_edges(
+            self.GAMES, {"A": 1, "B": 2, "C": 3, "D": 4}, opponents(self.GAMES),
+            cfg, grounds=g,
+        )
+
+    def test_a_rule_one_result_carries_no_price_by_default(self):
+        f = self.facts((1,), 0.0)[("A", "B")]
+        self.assertEqual(f.weight, 0.0, "the resume decides outright")
+        self.assertGreater(f.conviction, -99, "conviction itself is untouched")
+
+    def test_the_other_rules_keep_theirs(self):
+        for rules in ((2,), (3,), (4,), (2, 3), (3, 4)):
+            with self.subTest(rules=rules):
+                self.assertGreater(self.facts(rules, 0.0)[("A", "B")].weight, 0.0)
+
+    def test_an_enforced_result_is_untouched(self):
+        """It is a hard constraint, so its price never comes up anyway."""
+        self.assertGreater(self.facts((), 0.0)[("A", "B")].weight, 0.0)
+
+    def test_one_point_zero_restores_the_old_behaviour(self):
+        full = self.facts((), 1.0)[("A", "B")].weight
+        self.assertAlmostEqual(self.facts((1,), 1.0)[("A", "B")].weight, full)
+
+    def test_it_scales_rather_than_switches(self):
+        full = self.facts((1,), 1.0)[("A", "B")].weight
+        self.assertAlmostEqual(self.facts((1,), 0.5)[("A", "B")].weight, full * 0.5)
+
+    def test_edges_with_no_grounds_at_all_are_untouched(self):
+        """`grounds.enabled = false` has to stay an exact escape hatch."""
+        cfg = dict(EV, weight_floor=1.0, conviction_floor=-2.0, rule_one_price=0.0)
+        facts = score_edges(
+            self.GAMES, {"A": 1, "B": 2, "C": 3, "D": 4}, opponents(self.GAMES), cfg
+        )
+        for f in facts.values():
+            self.assertGreater(f.weight, 0.0)
 
 
 class TestScoreEdges(unittest.TestCase):

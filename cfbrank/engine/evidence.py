@@ -239,7 +239,24 @@ def score_edges(
     # was emphatic, nothing is cheap.
     w_floor = float(cfg.get("weight_floor", 1.0))
     z_floor = float(cfg.get("conviction_floor", -2.0))
-    return {
-        key: replace(f, weight=w_floor + max(0.0, f.conviction - z_floor))
-        for key, f in facts.items()
-    }
+    # RULE 1 -- the winner has MORE LOSSES than the loser -- is the record
+    # already answering the question, so by default such a result stops pulling
+    # at all and stages 1-3 decide. The rules used to grant permission without
+    # expressing a preference: an exempted result still carried its full price,
+    # so the optimiser kept paying to honour it. On 2026 week 8 that put 4-3
+    # Oregon, 30th on the resume, at #22 -- their wins over Nebraska, USC and
+    # Boise State all carry rule 1, and honouring them cost 22.6 of drift
+    # against 32.3 to break, so it honoured and dragged Oregon eight places up.
+    #
+    # 1.0 restores the old behaviour; anything between discounts rather than
+    # erases. Only rule 1: rules 2, 3 and 4 are about what has happened SINCE,
+    # which is weaker evidence than the season-long record and keeps its price.
+    scale = float(cfg.get("rule_one_price", 0.0))
+
+    def price(f: EdgeFact) -> float:
+        full = w_floor + max(0.0, f.conviction - z_floor)
+        if f.grounds is not None and 1 in f.grounds.rules:
+            return full * scale
+        return full
+
+    return {key: replace(f, weight=price(f)) for key, f in facts.items()}

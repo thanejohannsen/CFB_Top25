@@ -357,6 +357,20 @@ margin_cap         = 21
 weight_floor       = 1.0
 conviction_floor   = -2.0
 
+# How much of its price a RULE 1 result keeps -- rule 1 being "the winner has
+# more losses than the loser". 0.0 means none: the record has already answered
+# the question, so the result stops pulling and stages 1-3 decide outright.
+#
+# The four rules say when a result MAY be ranked against. They never said the
+# ranking should stop PAYING to honour it, so an exempted result kept its full
+# price and the optimiser kept buying it. On 2026 week 8 that put 4-3 Oregon,
+# 30th on the resume, at #22: their wins over Nebraska, USC and Boise State all
+# carry rule 1, and honouring them cost 22.6 of drift against 32.3 to break.
+#
+# It is a cliff, not a dial -- on the 2025 season the board is unchanged from
+# 1.0 down to 0.25 and then jumps. 1.0 restores the old behaviour exactly.
+rule_one_price     = 0.0
+
 # How fast a head-to-head result stops mattering.
 #
 # A result fades with a half-life in WEEKS, and a convincing one fades slower:

@@ -80,6 +80,9 @@ DEFAULTS: dict[str, Any] = {
             "recency_half_life_good": 8.0,
             "recency_half_life_bad": 6.0,
             "weight_floor": 1.0,
+            # How much of its price a rule-1 result keeps. 0 = none, so when the
+            # winner has more losses the resume decides outright.
+            "rule_one_price": 0.0,
             "conviction_floor": -2.0,
         },
         "grounds": {
@@ -269,6 +272,11 @@ def validate(data: Mapping[str, Any]) -> None:
         raise ConfigError(
             "stage4.evidence.recency_half_life_good must be >= recency_half_life_bad "
             "-- a convincing result should not fade faster than a weak one"
+        )
+    if not 0.0 <= ev["rule_one_price"] <= 1.0:
+        raise ConfigError(
+            "stage4.evidence.rule_one_price must be in 0.0..1.0 -- it is the "
+            "share of its price a rule-1 result keeps, not a weight of its own"
         )
     if ev["weight_floor"] <= 0:
         raise ConfigError(

@@ -319,6 +319,7 @@ just stops reordering to fix them.
 | `recency_half_life_bad` | 6.0 | Weeks for a weak one. Must be ≤ the "good" value |
 | `recency_floor` | 0.15 | What results fade *toward* — they never stop counting entirely |
 | `weight_floor` | 1.0 | The cheapest possible override still costs this much |
+| `rule_one_price` | 0.0 | Share of its price a **rule-1** result keeps — rule 1 being "the winner has more losses". 0 means it stops pulling and the résumé decides outright; 1.0 is the old behaviour. A cliff rather than a dial: on 2025 the board is unchanged from 1.0 down to 0.25, then jumps |
 | `conviction_floor` | −2.0 | An absolute floor, so the weakest result isn't free to ignore |
 
 ### When a result may be contradicted at all (`[stage4.grounds]`)

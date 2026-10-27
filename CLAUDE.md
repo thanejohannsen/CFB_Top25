@@ -522,6 +522,51 @@ What was measured, and should not be re-derived:
   of the owner's "this gap can increase with time" -- which was about the *gap*,
   not about a new reason. Time only widens rule 4's band.
 
+### An exception has to MEAN something: rule 1 stops the result pulling
+
+The four rules say when a result MAY be ranked against. They never said the
+ranking should stop *paying* to honour it, so an exempted result kept its full
+conviction weight and the optimiser went on buying it. On **2026 week 8 that put
+4-3 Oregon, 30th on the resume, at #22**: their wins over Nebraska, USC and Boise
+State all carry rule 1, and honouring them cost `8^1.5 = 22.6` of drift against
+`4.0 x 8.07 = 32.3` to break, so it honoured and dragged Oregon eight places up.
+The Oklahoma State loss was never the cause -- its 11-place band is a ceiling
+Oregon happened to sit at, not a force.
+
+`stage4.evidence.rule_one_price` is the share of its price a rule-1 result
+keeps, shipped at **0.0**. Rule 1 is the one where the season-long record has
+already answered the question; rules 2, 3 and 4 are about what has happened
+SINCE, which is thinner evidence, and they keep theirs.
+
+**It is a CLIFF, not a dial.** On the completed 2025 season the board is
+identical from 1.0 down to 0.25 and then jumps: overrides 9 -> 17, head-to-head
+kept 91.7% -> 84.3%. There is no gentle setting, so do not reach for 0.5
+expecting half the effect.
+
+**What it costs to predict, measured both ways** (`scripts/evaluate.py --year
+2025 --offline`):
+
+| | 1.0 | 0.0 |
+| --- | --- | --- |
+| all FBS, `--weeks 4,6,8,10,12` (1,997 games) | 67.3% | **67.2%** |
+| all FBS, default weeks (1,726) | 68.1% | **68.1%** |
+| AP-vs-AP, `--weeks 4,6,8,10,12` (179) | 65.4% | **64.2%** |
+| AP-vs-AP, default weeks (161) | 65.8% | **65.8%** |
+| head-to-head kept, the two week sets | 86.9% / 88.5% | 86.1% / 86.8% |
+
+Free on the samples big enough to read. The AP-vs-AP rows disagree with each
+other on 161-179 games, which is what a sample that small does.
+
+**The consequence to know before touching this.** On 2025 it is not Oregon that
+moves, it is **Miami: #2 -> #14**. They finished 13-3 and beat Ohio State, Ole
+Miss, Notre Dame and Texas A&M -- every one of those four has TWO losses to
+Miami's three, so rule 1 covers all of them, and with the price gone Miami falls
+to their base position **below all four teams they beat**. That is rule 1 doing
+exactly what it says, and it is also four "my team beat them and is ranked below
+them" cases for one team. The owner chose it with the arithmetic in front of
+them; `rule_one_price = 1.0` is one config line away if the trade stops looking
+right.
+
 ### Say what actually holds the pair apart, not what you wish had
 
 An exception only says the ranking MAY go against a result. What usually *does*
