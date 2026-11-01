@@ -1,5 +1,5 @@
 {
-  "current": "2026-regular-08",
+  "current": "2026-regular-09",
   "schema_version": 1,
   "seasons": [
     {
@@ -47,6 +47,17 @@
           "top1": "Ohio State",
           "week": 8,
           "year": 2026
+        },
+        {
+          "content_hash": "sha256:4480ec52f9dcb21d39cec36ef80e147fe55a9aba4d4fae0396fdf4377dd800a3",
+          "generated_at": "2026-11-01T18:09:51Z",
+          "id": "2026-regular-09",
+          "label": "Week 9",
+          "path": "weeks/2026-regular-09.json",
+          "season_type": "regular",
+          "top1": "UCLA",
+          "week": 9,
+          "year": 2026
         }
       ],
       "year": 2026
@@ -68,5 +79,5 @@
       "year": 2025
     }
   ],
-  "updated_at": "2026-10-27T16:40:22Z"
+  "updated_at": "2026-11-01T18:09:51Z"
 }
