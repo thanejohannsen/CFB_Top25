@@ -1,5 +1,5 @@
 {
-  "current": "2026-regular-09",
+  "current": "2026-regular-10",
   "schema_version": 1,
   "seasons": [
     {
@@ -58,6 +58,17 @@
           "top1": "UCLA",
           "week": 9,
           "year": 2026
+        },
+        {
+          "content_hash": "sha256:a0e806e4d907c3945e829a8f0b395d4d066947ce2ba0f7f978cc695f5d0a93a6",
+          "generated_at": "2026-11-08T18:07:40Z",
+          "id": "2026-regular-10",
+          "label": "Week 10",
+          "path": "weeks/2026-regular-10.json",
+          "season_type": "regular",
+          "top1": "Notre Dame",
+          "week": 10,
+          "year": 2026
         }
       ],
       "year": 2026
@@ -79,5 +90,5 @@
       "year": 2025
     }
   ],
-  "updated_at": "2026-11-01T18:09:51Z"
+  "updated_at": "2026-11-08T18:07:40Z"
 }
