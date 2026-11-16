@@ -150,7 +150,7 @@ horizon_weeks     = 1
 # lifts a team that started badly and has since looked great -- which is exactly
 # how you talk yourself into a ranking the results do not support.
 [performance]
-min_games      = 3
+min_games      = 4
 fit_home_edge  = true
 
 # -- Stage 2: resume adjustment ("how do your losses look") ------------------
