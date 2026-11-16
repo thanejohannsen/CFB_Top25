@@ -1,5 +1,5 @@
 {
-  "current": "2026-regular-10",
+  "current": "2026-regular-11",
   "schema_version": 1,
   "seasons": [
     {
@@ -69,6 +69,17 @@
           "top1": "Notre Dame",
           "week": 10,
           "year": 2026
+        },
+        {
+          "content_hash": "sha256:19560c7169626a0d89320f0bb8b404cab0e68db02881e4131363b8609da78584",
+          "generated_at": "2026-11-16T14:33:56Z",
+          "id": "2026-regular-11",
+          "label": "Week 11",
+          "path": "weeks/2026-regular-11.json",
+          "season_type": "regular",
+          "top1": "Georgia",
+          "week": 11,
+          "year": 2026
         }
       ],
       "year": 2026
@@ -90,5 +101,5 @@
       "year": 2025
     }
   ],
-  "updated_at": "2026-11-08T18:07:40Z"
+  "updated_at": "2026-11-16T14:33:56Z"
 }
