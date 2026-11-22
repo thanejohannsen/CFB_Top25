@@ -1,5 +1,5 @@
 {
-  "current": "2026-regular-11",
+  "current": "2026-regular-12",
   "schema_version": 1,
   "seasons": [
     {
@@ -80,6 +80,17 @@
           "top1": "Georgia",
           "week": 11,
           "year": 2026
+        },
+        {
+          "content_hash": "sha256:f6f246852f8820263e5d7a38ae0b650b6c3ea3a31cd473f8f856bf6bf175cc00",
+          "generated_at": "2026-11-22T19:59:49Z",
+          "id": "2026-regular-12",
+          "label": "Week 12",
+          "path": "weeks/2026-regular-12.json",
+          "season_type": "regular",
+          "top1": "Georgia",
+          "week": 12,
+          "year": 2026
         }
       ],
       "year": 2026
@@ -101,5 +112,5 @@
       "year": 2025
     }
   ],
-  "updated_at": "2026-11-16T14:33:56Z"
+  "updated_at": "2026-11-22T19:59:49Z"
 }
